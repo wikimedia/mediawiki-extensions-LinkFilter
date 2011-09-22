@@ -41,32 +41,6 @@ $messages['en'] = array(
 	'linkfilter-submit-success-text' => 'Your link has been sent for approval',
 	'linkfilter-instructions' => 'You can add some instructions for users [[MediaWiki:Linkfilter-instructions|here]]',
 	'linkfilter-admin-instructions' => 'You can add some instructions for admins [[MediaWiki:Linkfilter-admin-instructions|here]]',
-/**
-	'linkfilter-instructions' => "==Ground Rules==
-1) If it's not safe for work, label it as \"NSFW\".
-
-2) Don't post the same link twice.
-
-3) No links to hate sites or private information.
-
-4) Make sure the links actually work, mmmkay?
-
-5) In general, use common sense.
-
-6) If you get banned for breaking these rules, don't whine about it.  The ban may only be for a day or two, but even if it's longer, stfu.
-
-__NOTOC__
-__NOEDITSECTION__",
-	'linkfilter-admin-instructions' => "==Before you approve a link, remember the RULES==\n
-1) No porn. <br />
-2) No graphic content unless there's an NSFW warning. <br />
-3) Don't post hate speech. <br />
-4) Don't post broken images/links. <br />
-5) Don't post private/contact information no matter how easily obtained.  <br />
-6) Don't post the same link more than once. <br />
-7) If some dude is spamming, don't post his links.  One is OK.<br />
-8) If someone is submitting really good stuff, let me me know -- s/he'd probably make a good admin.<br />",
-	*/
 	'linkfilter-admin-recent' => 'Recently approved',
 	'linkfilter-approve-title' => 'Link administration',
 	'linkfilter-submittedby' => 'Submitted by',
@@ -101,6 +75,32 @@ __NOEDITSECTION__",
 	'grouppage-linkadmin' => '{{ns:project}}:Link administrators',
 	// For Special:ListGroupRights
 	'right-linkadmin' => 'Administrate user-submitted links',
+/*
+	'linkfilter-instructions' => "==Ground Rules==
+1) If it's not safe for work, label it as \"NSFW\".
+
+2) Don't post the same link twice.
+
+3) No links to hate sites or private information.
+
+4) Make sure the links actually work, mmmkay?
+
+5) In general, use common sense.
+
+6) If you get banned for breaking these rules, don't whine about it.  The ban may only be for a day or two, but even if it's longer, stfu.
+
+__NOTOC__
+__NOEDITSECTION__",
+	'linkfilter-admin-instructions' => "==Before you approve a link, remember the RULES==\n
+1) No porn. <br />
+2) No graphic content unless there's an NSFW warning. <br />
+3) Don't post hate speech. <br />
+4) Don't post broken images/links. <br />
+5) Don't post private/contact information no matter how easily obtained.  <br />
+6) Don't post the same link more than once. <br />
+7) If some dude is spamming, don't post his links.  One is OK.<br />
+8) If someone is submitting really good stuff, let me me know -- s/he'd probably make a good admin.<br />",
+	*/
 );
 
 /** Finnish (Suomi)
