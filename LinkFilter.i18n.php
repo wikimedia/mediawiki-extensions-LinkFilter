@@ -41,7 +41,7 @@ $messages['en'] = array(
 	'linkfilter-submit-success-text' => 'Your link has been sent for approval',
 	'linkfilter-instructions' => 'You can add some instructions for users [[MediaWiki:Linkfilter-instructions|here]]',
 	'linkfilter-admin-instructions' => 'You can add some instructions for admins [[MediaWiki:Linkfilter-admin-instructions|here]]',
-	/*
+/**
 	'linkfilter-instructions' => "==Ground Rules==
 1) If it's not safe for work, label it as \"NSFW\".
 
@@ -97,7 +97,8 @@ __NOEDITSECTION__",
 	'linkfilter-feed-title' => '{{SITENAME}} links', // RSS feed title
 	// For Special:ListUsers - new group
 	'group-linkadmin' => 'Link administrators',
-	'group-linkadmin-member' => 'Link administrator',
+	'group-linkadmin-member' => 'link administrator',
+	'grouppage-linkadmin' => '{{ns:project}}:Link administrators',
 	// For Special:ListGroupRights
 	'right-linkadmin' => 'Administrate user-submitted links',
 );
