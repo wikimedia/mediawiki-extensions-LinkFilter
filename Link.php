@@ -23,10 +23,11 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 // Extension credits that will show up on Special:Version
 $wgExtensionCredits['other'][] = array( 
+	'path' => __FILE__,
 	'name' => 'LinkFilter',
-	'version' => '2.0',
+	'version' => '2.0.1',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
-	'description' => 'Adds some new special pages and a parser hook for link submitting/approval/reject',
+	'descriptionmsg' => 'linkfilter-desc',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:LinkFilter'
 );
 
