@@ -87,6 +87,24 @@ $messages['qqq'] = array(
 	'linkfilter-admin-instructions-url' => 'Page name for LinkFilter instructions for administrators. Use in content language in {{msg-mw|linkfilter-admin-instructions}}.',
 );
 
+/** Breton (Brezhoneg)
+ * @author Y-M D
+ */
+$messages['br'] = array(
+	'linkfilter-all' => 'Pep tra',
+	'linkfilter-submit' => 'Kas',
+	'linkfilter-edit-title' => 'Kemmañ $1',
+	'linkfilter-title' => 'Titl',
+	'linkfilter-admin-accept' => 'Asantiñ',
+	'linkfilter-admin-reject' => 'Disteurel',
+	'linkfilter-home-title' => '$1 liamm',
+	'linkfilter-home-title-all' => 'An holl liammoù',
+	'linkfilter-next' => "war-lerc'h",
+	'linkfilter-previous' => 'kent',
+	'linkfilter-new-links-title' => 'Liammoù nevez',
+	'linkfilter-edit-summary' => 'liamm nevez',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  */
@@ -94,7 +112,7 @@ $messages['de'] = array(
 	'linkapprove' => 'Akzeptieren von Links',
 	'linkshome' => 'Startseite zu Links',
 	'linksubmit' => 'Einen Link einreichen',
-	'linkfilter-desc' => 'Ergänzt eine Spezialseite zum Einreichen/ Akzeptieren und Ablehnen von Links, sowie einen entsprechenden Parser-Hook',
+	'linkfilter-desc' => 'Ergänzt eine Spezialseite zum Einreichen/Akzeptieren und Ablehnen von Links, sowie einen entsprechenden Parser-Hook',
 	'linkfilter-nothing-to-approve' => 'Derzeit sind keine Links zum Überprüfen vorhanden.',
 	'linkfilter-no-recently-approved' => 'In letzter Zeit wurden keine Links akzeptiert.',
 	'linkfilter-no-links-at-all' => 'Bislang wurden entweder noch keine Links eingereicht, oder die Linkadministratoren haben die eingereichten Links noch nicht überprüft.',
@@ -244,6 +262,28 @@ $messages['frp'] = array(
 	'linkfilter-edit-summary' => 'lim novél',
 );
 
+/** Galician (Galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'linkfilter-all' => 'Todos',
+	'linkfilter-submit' => 'Enviar',
+	'linkfilter-submit-no-title' => 'Escriba un título',
+	'linkfilter-edit-title' => 'Editar "$1"',
+	'linkfilter-login-title' => 'Non accedeu ao sistema',
+	'linkfilter-login-text' => 'Debe acceder ao sistema para enviar ligazóns.',
+	'linkfilter-title' => 'Título',
+	'linkfilter-description' => 'Descrición',
+	'linkfilter-approve-title' => 'Administración das ligazóns',
+	'linkfilter-admin-accept' => 'Aceptar',
+	'linkfilter-admin-reject' => 'Rexeitar',
+	'linkfilter-in-the-news' => 'Actualidade',
+	'group-linkadmin' => 'Administradores das ligazóns',
+	'group-linkadmin-member' => 'administrador das ligazóns',
+	'grouppage-linkadmin' => '{{ns:project}}:Administradores das ligazóns',
+	'right-linkadmin' => 'Administrar as ligazóns enviadas polos usuarios',
+);
+
 /** Interlingua (Interlingua)
  * @author McDutchie
  */
@@ -315,9 +355,67 @@ $messages['ia'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
+	'linkapprove' => 'Linken akzeptéieren',
+	'linkshome' => 'Haaptsäit vun de Linken',
+	'linksubmit' => 'E Link proposéieren',
+	'linkfilter-desc' => 'Setzt eng nei Spezialsäit an e Parser-Hook derbäi fir Linken ze proposéieren/akzeptéieren/refuséieren.',
+	'linkfilter-nothing-to-approve' => 'Et gëtt elo keng linken déi dorop waarde fir akzeptéiert ze ginn.',
+	'linkfilter-no-recently-approved' => 'Rezent goufe keng Linken akzeptéiert.',
+	'linkfilter-no-links-at-all' => "Et goufen entweder nach keng Linke proposéiert oder d'Link-Administrateuren hunn déi proposéiert Linken nach net nogekuckt.",
+	'linkfilter-ago' => 'Viru(n) $1 ënner <i>$2</i>',
+	'linkfilter-all' => 'All',
+	'linkfilter-submit' => 'Späicheren',
+	'linkfilter-submit-title' => 'E Link proposéieren',
+	'linkfilter-submit-no-title' => 'Gitt w.e.g. en Titel un',
+	'linkfilter-submit-no-type' => 'En Typ vu Link eraussichen.',
+	'linkfilter-edit-title' => '$1 änneren',
+	'linkfilter-approve-links' => 'Linken akzeptéieren',
+	'linkfilter-submit-another' => 'Nach ee Link proposéieren',
+	'linkfilter-login-title' => 'Net ageloggt',
+	'linkfilter-login-text' => 'Dir musst ageloggt si fir Linken ze proposéieren.',
 	'linkfilter-title' => 'Titel',
+	'linkfilter-type' => 'Typ vu Link',
+	'linkfilter-description' => 'Beschreiwung',
+	'linkfilter-submit-button' => 'Link proposéieren',
+	'linkfilter-home-button' => 'Haaptsäit vun de Linken',
+	'linkfilter-submit-success-title' => 'De Link ass elo proposéiert',
+	'linkfilter-submit-success-text' => "Äre Link gouf weiderginn un d'Administrateure fir akzeptéiert ze ginn",
+	'linkfilter-instructions-url' => 'Instruktioune fir de Linkfilter',
+	'linkfilter-instructions' => "Dir kënnt [[{{MediaWiki:Linkfilter-instructions-url}}|Instruktioune fir d'Benotzer]] derbäisetzen.",
+	'linkfilter-admin-instructions-url' => "Instruktioune fir d'Gestioun vum Linkfilter",
+	'linkfilter-admin-instructions' => "Dir kënnt [[{{MediaWiki:Linkfilter-admin-instructions-url}}|Instruktioune fir d'Aadministrateuren]] derbäisetzen.",
+	'linkfilter-admin-recent' => 'Rezent akzeptéiert',
+	'linkfilter-approve-title' => 'Gestioun vun de Linken',
+	'linkfilter-submittedby' => 'Proposéiert vum',
+	'linkfilter-submitted' => '$1 gespäichert',
 	'linkfilter-admin-accept' => 'Akzeptéieren',
+	'linkfilter-admin-reject' => 'Refuséieren',
+	'linkfilter-admin-reject-success' => 'De Link gouf refuséiert',
+	'linkfilter-admin-accept-success' => 'De Link gouf akzeptéiert',
 	'linkfilter-in-the-news' => 'An den Neiegkeeten',
+	'linkfilter-about-submitter' => 'Iwwer deen deen de Link proposéiert huet',
+	'linkfilter-anonymous' => 'Anonymen Unhänger',
+	'linkfilter-comments-of-day' => 'Beléifste Bemierkungen',
+	'linkfilter-comments' => '{{PLURAL:$1|eng Bemierkung|$1 Bemierkungen}}',
+	'linkfilter-home-title' => 'Linken $1',
+	'linkfilter-home-title-all' => 'All Linken',
+	'linkfilter-next' => 'nächsten',
+	'linkfilter-previous' => 'vireg',
+	'linkfilter-description-max' => 'Maximal Zuel vun Zeechen',
+	'linkfilter-description-left' => '$1 iwwreg',
+	'linkfilter-popular-articles' => 'Net verpassen',
+	'linkfilter-new-links-title' => 'Nei Linken',
+	'linkfilter-time-days' => '{{PLURAL:$1|een Dag|$1 Deeg}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|eng Stonn|$1 Stonnen}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|eng Minutt|$1 Minutten}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|eng Sekonn|$1 Sekonnen}}',
+	'linkfilter-edit-summary' => 'neie Link',
+	'linkfilter-no-results' => 'Keng Säite fonnt.',
+	'linkfilter-feed-title' => '{{SITENAME}}-Linken',
+	'group-linkadmin' => 'Link-Administrateuren',
+	'group-linkadmin-member' => 'Link-Administrateur',
+	'grouppage-linkadmin' => '{{ns:project}}:Link-Administrateuren',
+	'right-linkadmin' => 'Gestioun vun de Linken déi vun de Benotzer proposéiert goufen',
 );
 
 /** Macedonian (Македонски)
