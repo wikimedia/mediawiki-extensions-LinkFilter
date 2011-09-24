@@ -142,7 +142,7 @@ class LinkPage extends Article {
 			$dbr = wfGetDB( DB_MASTER );
 			$createDate = $dbr->selectField(
 				'revision',
-				array( 'rev_timestamp' ),
+				'rev_timestamp',
 				array( 'rev_page' => intval( $pageId ) ),
 				__METHOD__,
 				array( 'ORDER BY' => 'rev_timestamp ASC' )

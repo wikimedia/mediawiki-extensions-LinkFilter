@@ -123,7 +123,8 @@ class LinkApprove extends SpecialPage {
 
 		// Add CSS & JS
 		if ( defined( 'MW_SUPPORTS_RESOURCE_MODULES' ) ) {
-			$wgOut->addModules( 'ext.linkFilter' );
+			$wgOut->addModuleStyles( 'ext.linkFilter' );
+			$wgOut->addModuleScripts( 'ext.linkFilter' );
 		} else {
 			$wgOut->addExtensionStyle( $wgLinkFilterScripts . '/LinkFilter.css' );
 			$wgOut->addScriptFile( $wgLinkFilterScripts . '/LinkFilter.js' );
