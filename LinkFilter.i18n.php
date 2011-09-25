@@ -79,12 +79,14 @@ $messages['en'] = array(
 	'right-linkadmin' => 'Administrate user-submitted links',
 );
 
-/** Message documentation
+/** Message documentation (Message documentation)
  * @author Siebrand
+ * @author Umherirrender
  */
 $messages['qqq'] = array(
 	'linkfilter-instructions-url' => 'Page name for LinkFilter instructions. Use in content language in {{msg-mw|linkfilter-instructions}}.',
 	'linkfilter-admin-instructions-url' => 'Page name for LinkFilter instructions for administrators. Use in content language in {{msg-mw|linkfilter-admin-instructions}}.',
+	'right-linkadmin' => '{{doc-right|linkadmin}}',
 );
 
 /** Breton (Brezhoneg)
@@ -273,11 +275,26 @@ $messages['gl'] = array(
 	'linkfilter-login-title' => 'Non accedeu ao sistema',
 	'linkfilter-login-text' => 'Debe acceder ao sistema para enviar ligazóns.',
 	'linkfilter-title' => 'Título',
+	'linkfilter-type' => 'Tipo de ligazón',
 	'linkfilter-description' => 'Descrición',
 	'linkfilter-approve-title' => 'Administración das ligazóns',
 	'linkfilter-admin-accept' => 'Aceptar',
 	'linkfilter-admin-reject' => 'Rexeitar',
 	'linkfilter-in-the-news' => 'Actualidade',
+	'linkfilter-comments' => '{{PLURAL:$1|$1 comentario|$1 comentarios}}',
+	'linkfilter-home-title' => '$1 ligazóns',
+	'linkfilter-home-title-all' => 'Todas as ligazóns',
+	'linkfilter-next' => 'seguinte',
+	'linkfilter-previous' => 'anterior',
+	'linkfilter-description-max' => 'Número máximo de caracteres',
+	'linkfilter-description-left' => '$1 restantes',
+	'linkfilter-new-links-title' => 'Novas ligazóns',
+	'linkfilter-time-days' => '{{PLURAL:$1|un día|$1 días}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|unha hora|$1 horas}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|un minuto|$1 minutos}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|un segundo|$1 segundos}}',
+	'linkfilter-edit-summary' => 'nova ligazón',
+	'linkfilter-no-results' => 'Non se atopou ningunha páxina.',
 	'group-linkadmin' => 'Administradores das ligazóns',
 	'group-linkadmin-member' => 'administrador das ligazóns',
 	'grouppage-linkadmin' => '{{ns:project}}:Administradores das ligazóns',
