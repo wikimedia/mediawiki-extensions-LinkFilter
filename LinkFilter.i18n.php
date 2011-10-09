@@ -86,6 +86,9 @@ $messages['en'] = array(
 $messages['qqq'] = array(
 	'linkfilter-instructions-url' => 'Page name for LinkFilter instructions. Use in content language in {{msg-mw|linkfilter-instructions}}.',
 	'linkfilter-admin-instructions-url' => 'Page name for LinkFilter instructions for administrators. Use in content language in {{msg-mw|linkfilter-admin-instructions}}.',
+	'group-linkadmin' => '{{doc-group|linkadmin}}',
+	'group-linkadmin-member' => '{{doc-group|linkadmin|member}}',
+	'grouppage-linkadmin' => '{{doc-group|linkadmin|page}}',
 	'right-linkadmin' => '{{doc-right|linkadmin}}',
 );
 
@@ -665,5 +668,12 @@ $messages['nl'] = array(
 	'group-linkadmin-member' => 'verwijzingenbeheerder',
 	'grouppage-linkadmin' => '{{ns:project}}:Verwijzingenbeheerders',
 	'right-linkadmin' => 'Door gebruikers ingezonden verwijzingen beheren',
+);
+
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+ * @author Rancher
+ */
+$messages['sr-ec'] = array(
+	'linkfilter-url' => 'Адреса',
 );
 
