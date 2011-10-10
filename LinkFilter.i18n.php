@@ -73,7 +73,7 @@ $messages['en'] = array(
 	'linkfilter-feed-title' => '{{SITENAME}} links', // RSS feed title
 	// For Special:ListUsers - new group
 	'group-linkadmin' => 'Link administrators',
-	'group-linkadmin-member' => 'link administrator',
+	'group-linkadmin-member' => '{{GENDER:$1|link administrator}}',
 	'grouppage-linkadmin' => '{{ns:project}}:Link administrators',
 	// For Special:ListGroupRights
 	'right-linkadmin' => 'Administrate user-submitted links',
