@@ -172,7 +172,7 @@ $messages['de'] = array(
 	'linkfilter-no-results' => 'Es wurden keine Seiten gefunden.',
 	'linkfilter-feed-title' => 'Links bei {{SITENAME}}',
 	'group-linkadmin' => 'Linkadministratoren',
-	'group-linkadmin-member' => 'Linkadministrator',
+	'group-linkadmin-member' => '{{GENDER:$1|Linkadministrator|Linkadministratorin}}',
 	'grouppage-linkadmin' => '{{ns:project}}:Linkadminstrator',
 	'right-linkadmin' => 'Von Benutzern eingereichte Links verwalten',
 );
@@ -251,6 +251,7 @@ $messages['fi'] = array(
 
 /** French (Français)
  * @author Gomoko
+ * @author IAlex
  */
 $messages['fr'] = array(
 	'linkapprove' => 'Approuver les liens',
@@ -311,7 +312,7 @@ $messages['fr'] = array(
 	'linkfilter-no-results' => 'Aucune page trouvée.',
 	'linkfilter-feed-title' => 'Liens de {{SITENAME}}',
 	'group-linkadmin' => 'Administrateurs des liens',
-	'group-linkadmin-member' => 'administrateur des liens',
+	'group-linkadmin-member' => '{{GENDER:$1|administrateur des liens|administratrice des liens}}',
 	'grouppage-linkadmin' => '{{ns:project}}:Link administrators',
 	'right-linkadmin' => 'Administrer les liens soumis par les utilisateurs',
 );
@@ -396,7 +397,7 @@ $messages['gl'] = array(
 	'linkfilter-no-results' => 'Non se atopou ningunha páxina.',
 	'linkfilter-feed-title' => 'Ligazóns de {{SITENAME}}',
 	'group-linkadmin' => 'Administradores das ligazóns',
-	'group-linkadmin-member' => 'administrador das ligazóns',
+	'group-linkadmin-member' => '{{GENDER:$1|administrador|administradora}} das ligazóns',
 	'grouppage-linkadmin' => '{{ns:project}}:Administradores das ligazóns',
 	'right-linkadmin' => 'Administrar as ligazóns enviadas polos usuarios',
 );
