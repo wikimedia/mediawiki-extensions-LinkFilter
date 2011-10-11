@@ -599,7 +599,7 @@ $messages['mk'] = array(
 	'linkfilter-no-results' => 'Нема пронајдено ниедна страница.',
 	'linkfilter-feed-title' => 'Врски на {{SITENAME}}',
 	'group-linkadmin' => 'Администратори на врски',
-	'group-linkadmin-member' => 'администратор на врски',
+	'group-linkadmin-member' => '{{GENDER:$1|администратор на врски}}',
 	'grouppage-linkadmin' => '{{ns:project}}:Администратори на врски',
 	'right-linkadmin' => 'Администрација на врски поднесени од корисници',
 );
