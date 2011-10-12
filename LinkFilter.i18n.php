@@ -321,6 +321,7 @@ $messages['fr'] = array(
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
+	'linkfilter-all' => 'Tôs',
 	'linkfilter-admin-accept' => 'Accèptar',
 	'linkfilter-admin-reject' => 'Refusar',
 	'linkfilter-comments' => '$1 comentèro{{PLURAL:$1||s}}',
@@ -464,7 +465,7 @@ $messages['ia'] = array(
 	'linkfilter-no-results' => 'Nulle pagina trovate.',
 	'linkfilter-feed-title' => 'Ligamines de {{SITENAME}}',
 	'group-linkadmin' => 'Administratores de ligamines',
-	'group-linkadmin-member' => 'administrator de ligamines',
+	'group-linkadmin-member' => '{{GENDER:$1|administrator|administratrice}} de ligamines',
 	'grouppage-linkadmin' => '{{ns:project}}:Administratores de ligamines',
 	'right-linkadmin' => 'Administrar ligamines submittite per usatores',
 );
@@ -666,9 +667,19 @@ $messages['nl'] = array(
 	'linkfilter-no-results' => "Geen pagina's gevonden.",
 	'linkfilter-feed-title' => 'Verwijzingen van {{SITENAME}}',
 	'group-linkadmin' => 'Verwijzingenbeheerders',
-	'group-linkadmin-member' => 'verwijzingenbeheerder',
+	'group-linkadmin-member' => '{{GENDER:$1|verwijzingenbeheerder}}',
 	'grouppage-linkadmin' => '{{ns:project}}:Verwijzingenbeheerders',
 	'right-linkadmin' => 'Door gebruikers ingezonden verwijzingen beheren',
+);
+
+/** Russian (Русский)
+ * @author Adata80
+ */
+$messages['ru'] = array(
+	'linkfilter-title' => 'Заголовок',
+	'linkfilter-admin-accept' => 'Принять',
+	'linkfilter-admin-reject' => 'Отклонить',
+	'linkfilter-edit-summary' => 'Новая ссылка',
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
