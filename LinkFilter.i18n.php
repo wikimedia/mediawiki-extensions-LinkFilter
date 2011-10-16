@@ -532,7 +532,7 @@ $messages['lb'] = array(
 	'linkfilter-no-results' => 'Keng Säite fonnt.',
 	'linkfilter-feed-title' => '{{SITENAME}}-Linken',
 	'group-linkadmin' => 'Link-Administrateuren',
-	'group-linkadmin-member' => 'Link-Administrateur',
+	'group-linkadmin-member' => '{{GENDER:$1|Link-Administrateur|Link-Administratrice}}',
 	'grouppage-linkadmin' => '{{ns:project}}:Link-Administrateuren',
 	'right-linkadmin' => 'Gestioun vun de Linken déi vun de Benotzer proposéiert goufen',
 );
