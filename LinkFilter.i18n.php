@@ -93,21 +93,35 @@ $messages['qqq'] = array(
 );
 
 /** Breton (Brezhoneg)
+ * @author Fulup
  * @author Y-M D
  */
 $messages['br'] = array(
+	'linkapprove' => 'Aprouiñ al liammoù',
+	'linksubmit' => 'Kinnig ul liamm',
 	'linkfilter-all' => 'Pep tra',
 	'linkfilter-submit' => 'Kas',
+	'linkfilter-submit-title' => 'Kinnig ul liamm',
 	'linkfilter-edit-title' => 'Kemmañ $1',
+	'linkfilter-login-title' => 'Digevreet',
 	'linkfilter-title' => 'Titl',
+	'linkfilter-admin-recent' => 'Aprouet nevez zo',
+	'linkfilter-submittedby' => 'Kinniget gant',
+	'linkfilter-submitted' => 'Kinniget $1',
 	'linkfilter-admin-accept' => 'Asantiñ',
 	'linkfilter-admin-reject' => 'Disteurel',
+	'linkfilter-admin-reject-success' => "Nac'het eo bet al liamm",
+	'linkfilter-admin-accept-success' => 'Degemeret eo bet al liamm',
+	'linkfilter-in-the-news' => "Er C'heleier",
 	'linkfilter-home-title' => '$1 liamm',
 	'linkfilter-home-title-all' => 'An holl liammoù',
 	'linkfilter-next' => "war-lerc'h",
 	'linkfilter-previous' => 'kent',
+	'linkfilter-description-left' => 'chom a ra $1',
+	'linkfilter-popular-articles' => 'Arabat disoñjal',
 	'linkfilter-new-links-title' => 'Liammoù nevez',
 	'linkfilter-edit-summary' => 'liamm nevez',
+	'linkfilter-no-results' => 'Pajenn ebet kavet.',
 );
 
 /** German (Deutsch)
