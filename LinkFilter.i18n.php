@@ -717,6 +717,31 @@ $messages['nl'] = array(
 	'right-linkadmin' => 'Door gebruikers ingezonden verwijzingen beheren',
 );
 
+/** Polish (Polski)
+ * @author Woytecr
+ */
+$messages['pl'] = array(
+	'linkfilter-all' => 'Wszystkie',
+	'linkfilter-submit' => 'Zapisz',
+	'linkfilter-submit-no-title' => 'Wprowadź tytuł',
+	'linkfilter-edit-title' => 'Edytuj $1',
+	'linkfilter-login-title' => 'Nie jesteś zalogowany',
+	'linkfilter-login-text' => 'Musisz się zalogować aby przesyłać linki.',
+	'linkfilter-title' => 'Tytuł',
+	'linkfilter-description' => 'Opis',
+	'linkfilter-approve-title' => 'Zarządzanie linkami',
+	'linkfilter-admin-accept' => 'Zaakceptuj',
+	'linkfilter-admin-reject' => 'Odrzuć',
+	'linkfilter-comments' => '{{PLURAL:$1|$1 komentarz|$1 komentarzy}}',
+	'linkfilter-home-title' => '$1 linków',
+	'linkfilter-home-title-all' => 'Wszystkie linki',
+	'linkfilter-next' => 'następny',
+	'linkfilter-previous' => 'poprzedni',
+	'linkfilter-new-links-title' => 'Nowe linki',
+	'linkfilter-time-days' => '{{PLURAL:$1|jeden dzień|$1 dni}}',
+	'linkfilter-edit-summary' => 'nowy link',
+);
+
 /** Russian (Русский)
  * @author Adata80
  */
