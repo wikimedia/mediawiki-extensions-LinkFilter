@@ -6,10 +6,10 @@
  * @ingroup Extensions
  */
 
-$aliases = array();
+$specialPageAliases = array();
 
 /** English */
-$aliases['en'] = array(
+$specialPageAliases['en'] = array(
 	'LinkApprove' => array( 'LinkApprove' ),
 	'LinkEdit' => array( 'LinkEdit' ),
 	'LinksHome' => array( 'LinksHome' ),
@@ -18,7 +18,7 @@ $aliases['en'] = array(
 );
 
 /** Finnish (Suomi) */
-$aliases['fi'] = array(
+$specialPageAliases['fi'] = array(
 	'LinkApprove' => array( 'Hyväksy linkkejä' ),
 	'LinkEdit' => array( 'Muokkaa linkkiä' ),
 	'LinksHome' => array( 'Linkkien kotisivu' ),
@@ -27,7 +27,7 @@ $aliases['fi'] = array(
 );
 
 /** Dutch (Nederlands) */
-$aliases['nl'] = array(
+$specialPageAliases['nl'] = array(
 	'LinkApprove' => array( 'VerwijzingGoedkeuren' ),
 	'LinkEdit' => array( 'VerwijzingBewerken' ),
 	'LinksHome' => array( 'VerwijzingenStartpagina' ),
