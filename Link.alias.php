@@ -28,9 +28,9 @@ $aliases['fi'] = array(
 
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
-	'LinkApprove' => array( 'Linkgoedkeuring' ),
-	'LinkEdit' => array( 'Linkbewerken' ),
-	'LinksHome' => array( 'Linkshome' ),
-	'LinkRedirect' => array( 'Linkdoorverwijzen' ),
-	'LinkSubmit' => array( 'Linktoevoegen' ),
+	'LinkApprove' => array( 'VerwijzingGoedkeuren' ),
+	'LinkEdit' => array( 'VerwijzingBewerken' ),
+	'LinksHome' => array( 'VerwijzingenStartpagina' ),
+	'LinkRedirect' => array( 'VerwijzingDoorverwijzen' ),
+	'LinkSubmit' => array( 'VerwijzingToevoegen' ),
 );
