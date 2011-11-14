@@ -736,6 +736,18 @@ $messages['nl'] = array(
 	'right-linkadmin' => 'Door gebruikers ingezonden verwijzingen beheren',
 );
 
+/** Deitsch (Deitsch)
+ * @author Xqt
+ */
+$messages['pdc'] = array(
+	'linkfilter-all' => 'All',
+	'linkfilter-edit-title' => '$1 geennert',
+	'linkfilter-time-days' => '{{PLURAL:$1|een Daag|$1 Daag}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|ee Schtund|$1 Schtund}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|ee Minudd|$1 Minudde}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|ee Sekund|$1 Sekunde}}',
+);
+
 /** Polish (Polski)
  * @author Woytecr
  */
