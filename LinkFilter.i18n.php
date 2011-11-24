@@ -84,6 +84,7 @@ $messages['en'] = array(
  * @author Umherirrender
  */
 $messages['qqq'] = array(
+	'linkfilter-url' => '{{optional}}',
 	'linkfilter-instructions-url' => 'Page name for LinkFilter instructions. Use in content language in {{msg-mw|linkfilter-instructions}}.',
 	'linkfilter-admin-instructions-url' => 'Page name for LinkFilter instructions for administrators. Use in content language in {{msg-mw|linkfilter-admin-instructions}}.',
 	'group-linkadmin' => '{{doc-group|linkadmin}}',
