@@ -28,7 +28,7 @@ $wgExtensionCredits['other'][] = array(
 	'version' => '2.0.1',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
 	'descriptionmsg' => 'linkfilter-desc',
-	'url' => 'http://www.mediawiki.org/wiki/Extension:LinkFilter'
+	'url' => 'https://www.mediawiki.org/wiki/Extension:LinkFilter'
 );
 
 // ResourceLoader support for MediaWiki 1.17+
