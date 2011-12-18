@@ -112,6 +112,7 @@ $messages['br'] = array(
 	'linkfilter-login-title' => 'Digevreet',
 	'linkfilter-login-text' => "Ret eo deoc'h bezañ kevreet evit gallout kinnig liammoù.",
 	'linkfilter-title' => 'Titl',
+	'linkfilter-type' => 'Seurt liamm',
 	'linkfilter-description' => 'Deskrivadur',
 	'linkfilter-submit-button' => 'Kinnig ul liamm',
 	'linkfilter-home-button' => 'Liammoù degemer',
