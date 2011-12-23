@@ -792,3 +792,8 @@ $messages['sr-ec'] = array(
 	'linkfilter-url' => 'Адреса',
 );
 
+/** Serbian (Latin script) (‪Srpski (latinica)‬) */
+$messages['sr-el'] = array(
+	'linkfilter-url' => 'Adresa',
+);
+
