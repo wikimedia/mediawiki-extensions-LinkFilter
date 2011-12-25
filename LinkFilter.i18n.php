@@ -777,11 +777,22 @@ $messages['pl'] = array(
 
 /** Russian (Русский)
  * @author Adata80
+ * @author Eleferen
  */
 $messages['ru'] = array(
+	'linkfilter-nothing-to-approve' => 'В настоящее время нет ссылок, ожидающих утверждения.',
+	'linkfilter-submit' => 'Отправить',
+	'linkfilter-submit-title' => 'Добавить ссылку',
+	'linkfilter-submit-no-title' => 'Пожалуйста, введите название',
+	'linkfilter-submit-no-type' => 'Выберите тип связи.',
+	'linkfilter-edit-title' => 'Правка $1',
 	'linkfilter-title' => 'Заголовок',
+	'linkfilter-description' => 'Описание',
 	'linkfilter-admin-accept' => 'Принять',
 	'linkfilter-admin-reject' => 'Отклонить',
+	'linkfilter-home-title-all' => 'Все ссылки',
+	'linkfilter-next' => 'след.',
+	'linkfilter-previous' => 'пред.',
 	'linkfilter-edit-summary' => 'Новая ссылка',
 );
 
