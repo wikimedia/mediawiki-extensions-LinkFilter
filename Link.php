@@ -76,7 +76,7 @@ $wgLinkFilterTypes = array(
 
 // Internationalization files
 $wgExtensionMessagesFiles['LinkFilter'] = "{$wgLinkFilterDirectory}/LinkFilter.i18n.php";
-$wgExtensionAliasesFiles['LinkFilter'] = "{$wgLinkFilterDirectory}/Link.alias.php";
+$wgExtensionMessagesFiles['LinkFilterAlias'] = "{$wgLinkFilterDirectory}/Link.alias.php";
 // Namespace translations
 $wgExtensionMessagesFiles['LinkNamespaces'] = "{$wgLinkFilterDirectory}/Link.namespaces.php";
 
