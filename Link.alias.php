@@ -8,7 +8,7 @@
 
 $specialPageAliases = array();
 
-/** English */
+/** English (English) */
 $specialPageAliases['en'] = array(
 	'LinkApprove' => array( 'LinkApprove' ),
 	'LinkEdit' => array( 'LinkEdit' ),
@@ -24,6 +24,24 @@ $specialPageAliases['fi'] = array(
 	'LinksHome' => array( 'Linkkien kotisivu' ),
 	'LinkRedirect' => array( 'Ohjaus linkkiin' ),
 	'LinkSubmit' => array( 'Lähetä linkki' ),
+);
+
+/** Interlingua (Interlingua) */
+$specialPageAliases['ia'] = array(
+	'LinkApprove' => array( 'Approbar_ligamines' ),
+	'LinkEdit' => array( 'Modificar_ligamine' ),
+	'LinksHome' => array( 'Initio_de_ligamines' ),
+	'LinkRedirect' => array( 'Rediriger_ligamine' ),
+	'LinkSubmit' => array( 'Submitter_ligamine' ),
+);
+
+/** Macedonian (Македонски) */
+$specialPageAliases['mk'] = array(
+	'LinkApprove' => array( 'ВрскаОдобри' ),
+	'LinkEdit' => array( 'ВрскаУреди' ),
+	'LinksHome' => array( 'ВрскаГлавна' ),
+	'LinkRedirect' => array( 'ВрскаПренасочување' ),
+	'LinkSubmit' => array( 'ВрскаПоднесување' ),
 );
 
 /** Dutch (Nederlands) */
