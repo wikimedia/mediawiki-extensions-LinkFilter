@@ -808,3 +808,22 @@ $messages['sr-el'] = array(
 	'linkfilter-url' => 'Adresa',
 );
 
+/** Tulu (ತುಳು)
+ * @author VASANTH S.N.
+ */
+$messages['tcy'] = array(
+	'linkfilter-all' => 'ಮಾತಾ',
+	'linkfilter-submit' => 'ಒಪ್ಪಿಸಾಲೆ',
+	'linkfilter-login-title' => 'ಲಾಗಿನ್ ಆತ್‘ಜ್ಜರ್',
+	'linkfilter-description' => 'ವಿವರಣೆ',
+	'linkfilter-submit-button' => 'ಕೊಂಡಿ ಒಪ್ಪಿಸಾಲೆ',
+	'linkfilter-admin-accept' => 'ಒತ್ತೋನಿ',
+	'linkfilter-admin-reject' => 'ತಿರಸ್ಕಾರ ಮಲ್ಪುಲೆ',
+	'linkfilter-admin-reject-success' => 'ಕೊಂಡಿ ತಿರಸ್ಕಾರ ಆತ್‘ಂಡ್',
+	'linkfilter-next' => 'ಬೊಕ್ಕದ',
+	'linkfilter-previous' => 'ದುಂಬುದ',
+	'linkfilter-new-links-title' => 'ಪೊಸ ಕೊಂಡಿಲು',
+	'linkfilter-edit-summary' => 'ಪೊಸ ಕೊಂಡಿ',
+	'linkfilter-feed-title' => '{{SITENAME}}ಕೊಂಡಿಲು',
+);
+
