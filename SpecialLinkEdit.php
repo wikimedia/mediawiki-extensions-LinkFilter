@@ -15,7 +15,7 @@ class LinkEdit extends UnlistedSpecialPage {
 	 * @param $par Mixed: parameter passed to the page or null
 	 */
 	public function execute( $par ) {
-		global $wgUser, $wgOut, $wgRequest, $wgLinkFilterScripts; 
+		global $wgUser, $wgOut, $wgRequest;
 
 		// Check permissions
 		if ( !Link::canAdmin() ) {
@@ -36,13 +36,7 @@ class LinkEdit extends UnlistedSpecialPage {
 		}
 
 		// Add CSS & JS
-		if ( defined( 'MW_SUPPORTS_RESOURCE_MODULES' ) ) {
-			$wgOut->addModuleStyles( 'ext.linkFilter' );
-			$wgOut->addModuleScripts( 'ext.linkFilter' );
-		} else {
-			$wgOut->addExtensionStyle( $wgLinkFilterScripts . '/LinkFilter.css' );
-			$wgOut->addScriptFile( $wgLinkFilterScripts . '/LinkFilter.js' );
-		}
+		$wgOut->addModules( 'ext.linkFilter' );
 
 		if ( $wgRequest->wasPosted() && $_SESSION['alreadysubmitted'] == false ) {
 			$_SESSION['alreadysubmitted'] = true;
@@ -104,19 +98,19 @@ class LinkEdit extends UnlistedSpecialPage {
 		$output .= '<div class="cleared"></div>
 			</div>
 			<form name="link" id="linksubmit" method="post" action="">
-				<div class="link-submit-title">	
+				<div class="link-submit-title">
 					<label>' . wfMsg( 'linkfilter-url' ) . '</label>
 				</div>
 				<input tabindex="2" class="lr-input" type="text" name="lf_URL" id="lf_URL" value="' . $url . '"/>
 
-				<div class="link-submit-title">	
+				<div class="link-submit-title">
 					<label>' . wfMsg( 'linkfilter-description' ) . '</label>
 				</div>
 				<div class="link-characters-left">' .
 					wfMsg( 'linkfilter-description-max' ) . ' - ' .
 					wfMsg( 'linkfilter-description-left', '<span id="desc-remaining">300</span>' ) .
 				'</div>
-				<textarea tabindex="3" class="lr-input" onkeyup="LinkFilter.limitText(document.link.lf_desc,300)" onkeydown="LinkFilter.limitText(document.link.lf_desc,300)" rows="4" name="lf_desc" id="lf_desc">'
+				<textarea tabindex="3" class="lr-input" rows="4" name="lf_desc" id="lf_desc">'
 				. $description .
 				'</textarea>
 
@@ -135,7 +129,7 @@ class LinkEdit extends UnlistedSpecialPage {
 		}
 		$output .= '</select>
 				<div class="link-submit-button">
-					<input tabindex="5" class="site-button" type="button" onclick="javascript:LinkFilter.submitLink()" value="' . wfMsg( 'linkfilter-submit-button' ) . '" />
+					<input tabindex="5" class="site-button" type="button" id="link-submit-button" value="' . wfMsg( 'linkfilter-submit-button' ) . '" />
 				</div>
 			</form>
 		</div>';

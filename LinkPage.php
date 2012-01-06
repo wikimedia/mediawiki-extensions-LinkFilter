@@ -37,12 +37,12 @@ class LinkPage extends Article {
 	}
 
 	function view() {
-		global $wgOut, $wgUser, $wgTitle, $wgLinkPageDisplay;
+		global $wgOut, $wgUser, $wgLinkPageDisplay;
 
 		$sk = $wgUser->getSkin();
 
-		$wgOut->setHTMLTitle( $wgTitle->getText() );
-		$wgOut->setPageTitle( $wgTitle->getText() );
+		$wgOut->setHTMLTitle( $this->getTitle()->getText() );
+		$wgOut->setPageTitle( $this->getTitle()->getText() );
 
 		$wgOut->addHTML( '<div id="link-page-container" class="clearfix">' );
 

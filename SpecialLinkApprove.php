@@ -91,7 +91,7 @@ class LinkApprove extends SpecialPage {
 	 * @param $par Mixed: parameter passed to the page or null
 	 */
 	public function execute( $par ) {
-		global $wgUser, $wgOut, $wgRequest, $wgHooks, $wgLinkFilterScripts; 
+		global $wgUser, $wgOut, $wgRequest;
 
 		// Check for linkadmin permission
 		if( !$wgUser->isAllowed( 'linkadmin' ) ) {
@@ -114,21 +114,8 @@ class LinkApprove extends SpecialPage {
 		// Set the page title
 		$wgOut->setPageTitle( wfMsgHtml( 'linkfilter-approve-title' ) );
 
-		// i18n for JS
-		$wgHooks['MakeGlobalVariablesScript'][] = function( $vars ) {
-			$vars['_LINKFILTER_ACCEPT'] = wfMsg( 'linkfilter-admin-accept-success' );
-			$vars['_LINKFILTER_REJECT'] = wfMsg( 'linkfilter-admin-reject-success' );
-			return true;
-		};
-
 		// Add CSS & JS
-		if ( defined( 'MW_SUPPORTS_RESOURCE_MODULES' ) ) {
-			$wgOut->addModuleStyles( 'ext.linkFilter' );
-			$wgOut->addModuleScripts( 'ext.linkFilter' );
-		} else {
-			$wgOut->addExtensionStyle( $wgLinkFilterScripts . '/LinkFilter.css' );
-			$wgOut->addScriptFile( $wgLinkFilterScripts . '/LinkFilter.js' );
-		}
+		$wgOut->addModules( 'ext.linkFilter' );
 
 		$output = '';
 		$output .= '<div class="lr-left">';
@@ -178,9 +165,9 @@ class LinkApprove extends SpecialPage {
 						Link::getLinkType( $link['type'] )
 					) . "</div>
 					<div id=\"action-buttons-{$link['id']}\" class=\"action-buttons\">
-						<a href=\"javascript:LinkFilter.linkAction(1,{$link['id']})\" class=\"action-accept\">" .
+						<a href=\"javascript:void(0);\" class=\"action-accept\" data-link-id=\"{$link['id']}\">" .
 							wfMsgHtml( 'linkfilter-admin-accept' ) . "</a>
-						<a href=\"javascript:LinkFilter.linkAction(2,{$link['id']})\" class=\"action-reject\">" .
+						<a href=\"javascript:void(0);\" class=\"action-reject\" data-link-id=\"{$link['id']}\">" .
 							wfMsgHtml( 'linkfilter-admin-reject' ) . '</a>
 						<div class="cleared"></div>
 					</div>';
@@ -193,7 +180,7 @@ class LinkApprove extends SpecialPage {
 		$output .= '</div>';
 		$output .= '<div class="lr-right">
 			<div class="admin-link-instruction">' .
-				wfMsgExt( 'linkfilter-admin-instructions', 'parse' ) .
+				wfMessage( 'linkfilter-admin-instructions' )->inContentLanguage()->parse() .
 			'</div>
 			<div class="approved-link-container">
 				<h3>' . wfMsgHtml( 'linkfilter-admin-recent' ) . '</h3>';

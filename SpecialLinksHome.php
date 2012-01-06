@@ -148,18 +148,12 @@ class LinksHome extends SpecialPage {
 	 * @param $par Mixed: parameter passed to the page or null
 	 */
 	public function execute( $par ) {
-		global $wgOut, $wgRequest, $wgSupressPageTitle, $wgLinkFilterScripts;
+		global $wgOut, $wgRequest, $wgSupressPageTitle;
 
 		$wgSupressPageTitle = true;
 
 		// Add CSS & JS
-		if ( defined( 'MW_SUPPORTS_RESOURCE_MODULES' ) ) {
-			$wgOut->addModuleStyles( 'ext.linkFilter' );
-			$wgOut->addModuleScripts( 'ext.linkFilter' );
-		} else {
-			$wgOut->addExtensionStyle( $wgLinkFilterScripts . '/LinkFilter.css' );
-			$wgOut->addScriptFile( $wgLinkFilterScripts . '/LinkFilter.js' );
-		}
+		$wgOut->addModules( 'ext.linkFilter' );
 
 		$per_page = 20;
 		$page = $wgRequest->getInt( 'page', 1 );

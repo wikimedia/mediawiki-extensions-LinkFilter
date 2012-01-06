@@ -68,7 +68,7 @@ class LinkFilterHooks {
 	 */
 	public static function linkFromTitle( &$title, &$article ) {
 		if ( $title->getNamespace() == NS_LINK ) {
-			global $wgRequest, $wgOut, $wgTitle, $wgSupressPageTitle, $wgSupressSubTitle, $wgLinkFilterScripts;
+			global $wgRequest, $wgOut, $wgTitle, $wgSupressPageTitle, $wgSupressSubTitle;
 			$wgOut->enableClientCache( false );
 
 			if( $wgRequest->getVal( 'action' ) == 'edit' ) {
@@ -89,11 +89,7 @@ class LinkFilterHooks {
 			$wgSupressSubTitle = true;
 
 			// Add CSS
-			if ( defined( 'MW_SUPPORTS_RESOURCE_MODULES' ) ) {
-				$wgOut->addModuleStyles( 'ext.linkFilter' );
-			} else {
-				$wgOut->addExtensionStyle( $wgLinkFilterScripts . '/LinkFilter.css' );
-			}
+			$wgOut->addModuleStyles( 'ext.linkFilter' );
 
 			$article = new LinkPage( $title );
 		}
@@ -116,19 +112,17 @@ class LinkFilterHooks {
 	 * Callback function for registerLinkFilterHook.
 	 */
 	public static function renderLinkFilterHook( $input, $args, $parser ) {
-		global $wgMemc, $wgOut, $wgLinkFilterScripts;
-
-		// Add CSS
-		if ( defined( 'MW_SUPPORTS_RESOURCE_MODULES' ) ) {
-			$wgOut->addModuleStyles( 'ext.linkFilter' );
-		} else {
-			$wgOut->addExtensionStyle( $wgLinkFilterScripts . '/LinkFilter.css' );
-		}
+		global $wgMemc, $wgOut;
 
 		$parser->disableCache();
 
-		$count = intval( $args['count'] );
-		if( !$count ) {
+		// Add CSS (ParserOutput class only has addModules(), not
+		// addModuleStyles() or addModuleScripts()...strange)
+		$wgOut->addModuleStyles( 'ext.linkFilter' );
+
+		if ( isset( $args['count'] ) ) {
+			$count = intval( $args['count'] );
+		} else {
 			$count = 10;
 		}
 
@@ -243,18 +237,13 @@ class LinkFilterHooks {
 	 *              stats_links_approved columns; if not, apply
 	 *              patch-columns_for_user_stats.sql against the database
 	 *
-	 * @param $updater Object: instance of DatabaseUpdater
+	 * @param $updater DatabaseUpdater
 	 * @return Boolean: true
 	 */
-	public static function applySchemaChanges( $updater = null ) {
+	public static function applySchemaChanges( $updater ) {
 		$dir = dirname( __FILE__ );
 		$file = "$dir/link.sql";
-		if ( $updater === null ) {
-			global $wgExtNewTables;
-			$wgExtNewTables[] = array( 'link', $file );
-		} else {
-			$updater->addExtensionUpdate( array( 'addTable', 'link', $file, true ) );
-		}
+		$updater->addExtensionUpdate( array( 'addTable', 'link', $file, true ) );
 		return true;
 	}
 

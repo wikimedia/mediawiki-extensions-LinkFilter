@@ -23,7 +23,7 @@ class LinkRedirect extends UnlistedSpecialPage {
 		$wgOut->addHTML(
 			"<html>
 				<body onload=window.location=\"{$url}\">
-				{$sk->bottomScripts()}
+				{$sk->bottomScripts( $wgOut )}
 				</body>
 			</html>"
 		);

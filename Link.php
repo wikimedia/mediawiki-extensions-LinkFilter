@@ -5,11 +5,11 @@
  *
  * @file
  * @ingroup Extensions
- * @version 2.0
+ * @version 2.1
  * @author Aaron Wright <aaron.wright@gmail.com>
  * @author David Pean <david.pean@gmail.com>
  * @author Jack Phoenix <jack@countervandalism.net>
- * @link http://www.mediawiki.org/wiki/Extension:LinkFilter Documentation
+ * @link https://www.mediawiki.org/wiki/Extension:LinkFilter Documentation
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -25,7 +25,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['other'][] = array( 
 	'path' => __FILE__,
 	'name' => 'LinkFilter',
-	'version' => '2.0.1',
+	'version' => '2.1',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
 	'descriptionmsg' => 'linkfilter-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:LinkFilter'
@@ -54,9 +54,6 @@ define( 'LINK_REJECTED_STATUS', 2 );
 
 // Path to the LinkFilter extension files
 $wgLinkFilterDirectory = "$IP/extensions/LinkFilter";
-
-// Same as above, but a web-readable path instead
-$wgLinkFilterScripts = "$wgScriptPath/extensions/LinkFilter";
 
 // Array of LinkFilter types
 // Key is: number => 'description'
@@ -104,6 +101,7 @@ $wgSpecialPages['LinkApprove'] = 'LinkApprove';
 $wgAutoloadClasses['LinkEdit'] = "{$wgLinkFilterDirectory}/SpecialLinkEdit.php";
 $wgSpecialPages['LinkEdit'] = 'LinkEdit';
 
+// AJAX functions called by the JavaScript file
 require_once("{$wgLinkFilterDirectory}/LinkFilter_AjaxFunctions.php");
 
 // Default setup for displaying sections

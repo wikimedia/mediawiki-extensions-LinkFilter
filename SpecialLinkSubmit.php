@@ -20,7 +20,7 @@ class LinkSubmit extends SpecialPage {
 	 * @param $par Mixed: parameter passed to the page or null
 	 */
 	public function execute( $par ) {
-		global $wgUser, $wgOut, $wgRequest, $wgHooks, $wgLinkFilterScripts;
+		global $wgUser, $wgOut, $wgRequest;
 
 		// Anonymous users need to log in first
 		if ( $wgUser->isAnon() ) {
@@ -40,21 +40,8 @@ class LinkSubmit extends SpecialPage {
 			return false;
 		}
 
-		// i18n for JS
-		$wgHooks['MakeGlobalVariablesScript'][] = function( $vars ) {
-			$vars['_LINKFILTER_NO_TITLE'] = wfMsg( 'linkfilter-submit-no-title' );
-			$vars['_LINKFILTER_NO_TYPE'] = wfMsg( 'linkfilter-submit-no-type' );
-			return true;
-		};
-
 		// Add CSS & JS (JS is required by displayAddForm())
-		if ( defined( 'MW_SUPPORTS_RESOURCE_MODULES' ) ) {
-			$wgOut->addModuleStyles( 'ext.linkFilter' );
-			$wgOut->addModuleScripts( 'ext.linkFilter' );
-		} else {
-			$wgOut->addExtensionStyle( $wgLinkFilterScripts . '/LinkFilter.css' );
-			$wgOut->addScriptFile( $wgLinkFilterScripts . '/LinkFilter.js' );
-		}
+		$wgOut->addModules( 'ext.linkFilter' );
 
 		// If the request was POSTed and we haven't already submitted it, start
 		// processing it
@@ -170,7 +157,7 @@ class LinkSubmit extends SpecialPage {
 					wfMsg( 'linkfilter-description-max' ) . ' - ' .
 					wfMsg( 'linkfilter-description-left', '<span id="desc-remaining">300</span>' ) .
 				'</div>
-				<textarea tabindex="3" class="lr-input" onkeyup="LinkFilter.limitText(document.link.lf_desc,300)" onkeydown="LinkFilter.limitText(document.link.lf_desc,300)" rows="4" name="lf_desc" id="lf_desc" value="' . $lf_desc . '"/></textarea>
+				<textarea tabindex="3" class="lr-input" rows="4" name="lf_desc" id="lf_desc" value="' . $lf_desc . '"></textarea>
 
 				<div class="link-submit-title">
 					<label>' . wfMsg( 'linkfilter-type' ) . '</label>
@@ -183,13 +170,13 @@ class LinkSubmit extends SpecialPage {
 		}
 		$output .= '</select>
 				<div class="link-submit-button">
-					<input tabindex="5" class="site-button" type="button" onclick="javascript:LinkFilter.submitLink()" value="' . wfMsg( 'linkfilter-submit-button' ) . '" />
+					<input tabindex="5" class="site-button" type="button" id="link-submit-button" value="' . wfMsg( 'linkfilter-submit-button' ) . '" />
 				</div>
 			</form>
 		</div>';
 
 		$output .= '<div class="lr-right">' .
-			wfMsgExt( 'linkfilter-instructions', 'parse' ) .
+			wfMessage( 'linkfilter-instructions' )->inContentLanguage()->parse() .
 		'</div>
 		<div class="cleared"></div>';
 

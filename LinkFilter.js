@@ -7,17 +7,7 @@
  */
 var LinkFilter = {
 	linkAction: function( action, link_id ) {
-		var acceptMsg, rejectMsg;
-		if( typeof( mediaWiki ) == 'undefined' ) {
-			//acceptMsg = 'The link was accepted';
-			//rejectMsg = 'The link was rejected';
-			acceptMsg = _LINKFILTER_ACCEPT;
-			rejectMsg = _LINKFILTER_REJECT;
-		} else {
-			acceptMsg = mediaWiki.msg( 'linkfilter-admin-accept-success' );
-			rejectMsg = mediaWiki.msg( 'linkfilter-admin-reject-success' );
-		}
-		getElementsByClassName( document, 'div', 'action-buttons-1' ).display = 'none';
+		jQuery( 'div.action-buttons-1' ).hide();
 		sajax_request_type = 'POST';
 		sajax_do_call(
 			'wfLinkFilterStatus',
@@ -26,10 +16,10 @@ var LinkFilter = {
 				var msg;
 				switch( action ) {
 					case 1:
-						msg = acceptMsg;
+						msg = mediaWiki.msg( 'linkfilter-admin-accept-success' );
 						break;
 					case 2:
-						msg = rejectMsg;
+						msg = mediaWiki.msg( 'linkfilter-admin-reject-success' );
 						break;
 				}
 				var elementToDisplay = document.getElementById( 'action-buttons-' + link_id );
@@ -40,28 +30,18 @@ var LinkFilter = {
 	},
 
 	submitLink: function() {
-		var noTitleMsg, noTypeMsg;
-		if( typeof( mediaWiki ) == 'undefined' ) {
-			//noTitleMsg = 'Please enter a title';
-			//noTypeMsg = 'Hey, pick a link type!';
-			noTitleMsg = _LINKFILTER_NO_TITLE;
-			noTypeMsg = _LINKFILTER_NO_TYPE;
-		} else {
-			noTitleMsg = mediaWiki.msg( 'linkfilter-submit-no-title' );
-			noTypeMsg = mediaWiki.msg( 'linkfilter-submit-no-type' );
-		}
 		if (
 			typeof( wgCanonicalSpecialPageName ) !== 'undefined' &&
 			wgCanonicalSpecialPageName !== 'LinkEdit'
 		)
 		{
 			if( document.getElementById( 'lf_title' ).value === '' ) {
-				alert( noTitleMsg );
+				alert( mediaWiki.msg( 'linkfilter-submit-no-title' ) );
 				return '';
 			}
 		}
 		if( document.getElementById( 'lf_type' ).value === '' ) {
-			alert( noTypeMsg );
+			alert( mediaWiki.msg( 'linkfilter-submit-no-type' ) );
 			return '';
 		}
 		document.link.submit();
@@ -74,3 +54,29 @@ var LinkFilter = {
 		document.getElementById( 'desc-remaining' ).innerHTML = limit - field.value.length;
 	}
 };
+
+jQuery( document ).ready( function() {
+	// "Accept" links on Special:LinkApprove
+	jQuery( 'a.action-accept' ).click( function() {
+		var that = jQuery( this );
+		LinkFilter.linkAction( 1, that.data( 'link-id' ) );
+	} );
+
+	// "Reject" links on Special:LinkApprove
+	jQuery( 'a.action-reject' ).click( function() {
+		var that = jQuery( this );
+		LinkFilter.linkAction( 2, that.data( 'link-id' ) );
+	} );
+
+	// Textarea on Special:LinkEdit/Special:LinkSubmit
+	jQuery( 'textarea.lr-input' ).bind( 'keyup', function() {
+		LinkFilter.limitText( document.link.lf_desc, 300 );
+	} ).bind( 'keydown', function() {
+		LinkFilter.limitText( document.link.lf_desc, 300 );
+	} );
+
+	// Submit button on Special:LinkEdit/Special:LinkSubmit
+	jQuery( '#link-submit-button' ).click( function() {
+		LinkFilter.submitLink();
+	} );
+} );
