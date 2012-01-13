@@ -465,6 +465,8 @@ $messages['hsb'] = array(
 	'linkapprove' => 'Wotkazy schwalić',
 	'linkshome' => 'Startowa strona',
 	'linksubmit' => 'Wotkaz namjetować',
+	'linkfilter-desc' => 'Přidawa nowe specialne strony a parserowu hóčku za namjetowanje, schwalenje a wotpokazowanje wotkazow',
+	'linkfilter-nothing-to-approve' => 'Tuchwilu žane wotkazy na schwalenje nječakaja.',
 	'linkfilter-no-recently-approved' => 'Dotal njejsu žane wotkazy schwalene.',
 	'linkfilter-ago' => 'Před $1 pod <i>$2</i>',
 	'linkfilter-all' => 'Wšě',
@@ -495,6 +497,8 @@ $messages['hsb'] = array(
 	'linkfilter-admin-reject-success' => 'Wotkaz je so wotpokazał.',
 	'linkfilter-admin-accept-success' => 'Wotkaz je so akceptował.',
 	'linkfilter-in-the-news' => 'Nowinki',
+	'linkfilter-about-submitter' => 'Wo namjetowarju',
+	'linkfilter-anonymous' => 'Anonymny fanatikar',
 	'linkfilter-comments-of-day' => 'Najlěpše komentary',
 	'linkfilter-comments' => '{{PLURAL:$1|$1 komentar|$1 komentaraj|$1 komentary|$1 komentarow}}',
 	'linkfilter-home-title' => '$1 wotkazy',
@@ -511,6 +515,7 @@ $messages['hsb'] = array(
 	'group-linkadmin' => 'Wotkazowi administratorojo',
 	'group-linkadmin-member' => '{{GENDER:$1|wotkazowy administrator|wotkazowa administratorka}}',
 	'grouppage-linkadmin' => '{{ns:project}}:Wotkazowi administratorojo',
+	'right-linkadmin' => 'Wot wužiwarjow namjetowane wotkazy zarjadować',
 );
 
 /** Interlingua (Interlingua)
