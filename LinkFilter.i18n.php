@@ -75,6 +75,9 @@ $messages['en'] = array(
 	'grouppage-linkadmin' => '{{ns:project}}:Link administrators',
 	// For Special:ListGroupRights
 	'right-linkadmin' => 'Administrate user-submitted links',
+
+	'group-linkadmin.css' => '/* CSS placed here will affect linkadmins only */', # only translate this message to other languages if you have to change it
+	'group-linkadmin.js' => '/* JS placed here will affect linkadmins only */', # only translate this message to other languages if you have to change it
 );
 
 /** Message documentation (Message documentation)
