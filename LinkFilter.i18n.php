@@ -80,16 +80,56 @@ $messages['en'] = array(
 	'group-linkadmin.js' => '/* JS placed here will affect linkadmins only */', # only translate this message to other languages if you have to change it
 );
 
-/** Message documentation (Message documentation)
- * @author Siebrand
- * @author Umherirrender
- */
+/** Message documentation */
 $messages['qqq'] = array(
-	'linkfilter-url' => '{{optional}}',
-	'group-linkadmin' => '{{doc-group|linkadmin}}',
-	'group-linkadmin-member' => '{{doc-group|linkadmin|member}}',
-	'grouppage-linkadmin' => '{{doc-group|linkadmin|page}}',
-	'right-linkadmin' => '{{doc-right|linkadmin}}',
+	'linkapprove' => 'Title of Special:LinkApprove; shown on the special page and on Special:SpecialPages',
+	'linkshome' => 'Title of Special:LinsHome; shown on the special page and on Special:SpecialPages',
+	'linksubmit' => 'Title of Special:LinkSubmit; shown on the special page and on Special:SpecialPages',
+	'linkfilter-desc' => 'Extension description shown on [[Special:Version]]',
+	'linkfilter-nothing-to-approve' => 'Shown on Special:LinkApprove to link administrators when there are no links to approve.',
+	'linkfilter-no-recently-approved' => 'Shown on Special:LinkApprove to link administrators if no links have been approved recently.',
+	'linkfilter-no-links-at-all' => 'Shown on Special:LinksHome if for some reason there is nothing we can display to the user.',
+	'linkfilter-ago' => '$1 is [[MediaWiki:Linkfilter-time-days]], [[MediaWiki:Linkfilter-time-hours]], [[MediaWiki:Llinkfilter-time-minutes]] or [[MediaWiki:Linkfilter-time-seconds]]; $2 is the link category, as defined by site administrators in [[mw:Extension:LinkFilter#Configuration|$wgLinkTypes]]',
+	'linkfilter-all' => 'Link text; clicking on this links takes the user to Special:LinksHome, which shows all the approved, user-submitted links',
+	'linkfilter-submit' => 'Link text; clicking on this links takes the user to Special:LinkSubmit, which allows the user to submit a new link for approval',
+	'linkfilter-submit-title' => 'Title of Special:LinkSubmit',
+	'linkfilter-submit-no-title' => 'Displayed on Special:LinkSubmit to the user via a JavaScript alert() dialog if they forgot to enter a title for the link',
+	'linkfilter-submit-no-type' => 'Displayed on Special:LinkSubmit to the user via a JavaScript alert() dialog if they forgot to pick a type from the drop-down menu for the link',
+	'linkfilter-edit-title' => 'Page title of Special:LinkEdit; $1 is the name of the link (the page in the Link: namespace)',
+	'linkfilter-approve-links' => 'Link title shown in various places, clicking on the link with this message as the title takes the user to Special:LinkApprove where they can approve and reject submitted links if they are a link administrator',
+	'linkfilter-submit-another' => 'Button text, shown on Special:LinkSubmit after submitting a link; clicking on this button takes the user back to the main form on Special:LinkSubmit so that they can submit another link for approval if they wish to do so',
+	'linkfilter-login-title' => 'Shown on Special:LinkSubmit if an anonymous user tries to use the special page; this is the error message title',
+	'linkfilter-login-text' => 'Shown on Special:LinkSubmit if an anonymous user tries to use the special page; this is the actual error message',
+	'linkfilter-type' => '"Link type" is one of the types defined by the site administrators in [[mw:Extension:LinkFilter#Configuration|$wgLinkTypes]]',
+	'linkfilter-submit-button' => 'Submit button text',
+	'linkfilter-home-button' => 'Button text',
+	'linkfilter-submit-success-title' => 'Page title for Special:LinkSubmit after you\'ve successfully submitted a link for approval',
+	'linkfilter-submit-success-text' => 'Text displayed on Special:LinkSubmit after you\'ve successfully submitted a link for approval',
+	'linkfilter-instructions' => 'Shown on Special:LinkSubmit for users; site administrators can add instructions for users to this message (i.e. "don\'t submit offensive links", etc.)',
+	'linkfilter-admin-instructions' => 'Shown on Special:LinkApprove for link admins; site administrators can add instructions for link admins to this message (i.e. "approve only a maximum of three links from the same user per day", etc.)',
+	'linkfilter-admin-recent' => 'Header text shown on Special:LinkApprove for link admins',
+	'linkfilter-approve-title' => 'Page title of Special:LinkApprove',
+	'linkfilter-submittedby' => '$1 is the name of the user who submitted the link',
+	'linkfilter-submitted' => '$1 is the link creation timestamp (when the Link: page was created), containing date and time (formatted via $wgLang->timeanddate())',
+	'linkfilter-admin-accept' => 'Button text, shown on Special:LinkApprove for link administrators',
+	'linkfilter-admin-reject' => 'Button text, shown on Special:LinkApprove for link administrators',
+	'linkfilter-admin-reject-success' => 'Shown on Special:LinkApprove for link administrators after they have rejected a submitted link by pressing the [[MediaWiki:Linkfilter-admin-reject]] button. Used in JavaScript.',
+	'linkfilter-admin-accept-success' => 'Shown on Special:LinkApprove for link administrators after they have accepted a submitted link by pressing the [[MediaWiki:Linkfilter-admin-accept]] button. Used in JavaScript.',
+	'linkfilter-home-title' => '$1 is the link type',
+	'linkfilter-home-title-all' => 'This is the page title of Special:LinksHome when the user is viewing all the links (as opposed to viewing links of a specific type)',
+	'linkfilter-next' => 'Pagination link',
+	'linkfilter-previous' => 'Pagination link',
+	'linkfilter-description-max' => 'Shown on Special:LinkEdit and Special:LinkSubmit, followed by the message [[MediaWiki:Linkfilter-description-left]]',
+	'linkfilter-description-left' => '$1 is the amount of characters left; it is not a number, but rather an <code>&lt;input&gt;</code>',
+	'linkfilter-popular-articles' => "Displayed when \$wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration",
+	'linkfilter-new-links-title' => "Header text, shown when \$wgLinkPageDisplay['new_links'] is <code>true</code> in the configuration",
+	'linkfilter-edit-summary' => 'Edit summary; when a link administrator approves a link, a new page in the Link: namespace is created with this as the edit summary',
+	'linkfilter-no-results' => "Displayed when \$wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration but there are no popular pages (they are shown under the [[MediaWiki:Linkfilter-popular-articles]] header) to display.",
+	'linkfilter-feed-title' => 'RSS feed title',
+	'group-linkadmin' => 'Group name, shown on Special:ListUsers',
+	'group-linkadmin-member' => 'Member of the link admins group, shown on Special:ListUsers',
+	'grouppage-linkadmin' => 'Name of a wiki page describing the link admins group; Special:ListUsers links to this page',
+	'right-linkadmin' => 'Shown on Special:ListGroupRights',
 );
 
 /** Breton (Brezhoneg)
