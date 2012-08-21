@@ -133,8 +133,6 @@ class LinkApprove extends SpecialPage {
 		}
 
 		foreach( $links as $link ) {
-			$submitter = Title::makeTitle( NS_USER, $link['user_name'] );
-
 			$linkText = preg_replace_callback(
 				'/(<a[^>]*>)(.*?)(<\/a>)/i',
 				array( 'LinkApprove', 'cutLinkFilterLinkText' ),
@@ -156,9 +154,9 @@ class LinkApprove extends SpecialPage {
 					<div class="admin-url"><b>' . wfMsg( 'linkfilter-url' ) .
 						'</b>: <a href="' . $link['url'] . '" target="new">' .
 							$linkText . '</a></div>
-					<div class="admin-submitted"><b>' .
-						wfMsg( 'linkfilter-submittedby' ) .
-						"</b>: <a href=\"{$submitter->escapeFullURL()}\">{$link['user_name']}</a> " .
+					<div class="admin-submitted">' .
+						wfMessage( 'linkfilter-submittedby', $link['user_name'] )->parse() .
+						wfMessage( 'word-separator' )->text() .
 					wfMsg(
 						'linkfilter-ago',
 						self::getLFTimeAgo( $link['timestamp'] ),
