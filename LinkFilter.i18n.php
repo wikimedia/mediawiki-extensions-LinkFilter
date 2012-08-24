@@ -80,7 +80,9 @@ $messages['en'] = array(
 	'group-linkadmin.js' => '/* JS placed here will affect linkadmins only */', # only translate this message to other languages if you have to change it
 );
 
-/** Message documentation */
+/** Message documentation (Message documentation)
+ * @author Umherirrender
+ */
 $messages['qqq'] = array(
 	'linkapprove' => 'Title of Special:LinkApprove; shown on the special page and on Special:SpecialPages',
 	'linkshome' => 'Title of Special:LinsHome; shown on the special page and on Special:SpecialPages',
@@ -100,11 +102,12 @@ $messages['qqq'] = array(
 	'linkfilter-submit-another' => 'Button text, shown on Special:LinkSubmit after submitting a link; clicking on this button takes the user back to the main form on Special:LinkSubmit so that they can submit another link for approval if they wish to do so',
 	'linkfilter-login-title' => 'Shown on Special:LinkSubmit if an anonymous user tries to use the special page; this is the error message title',
 	'linkfilter-login-text' => 'Shown on Special:LinkSubmit if an anonymous user tries to use the special page; this is the actual error message',
+	'linkfilter-url' => '{{optional}}',
 	'linkfilter-type' => '"Link type" is one of the types defined by the site administrators in [[mw:Extension:LinkFilter#Configuration|$wgLinkTypes]]',
 	'linkfilter-submit-button' => 'Submit button text',
 	'linkfilter-home-button' => 'Button text',
-	'linkfilter-submit-success-title' => 'Page title for Special:LinkSubmit after you\'ve successfully submitted a link for approval',
-	'linkfilter-submit-success-text' => 'Text displayed on Special:LinkSubmit after you\'ve successfully submitted a link for approval',
+	'linkfilter-submit-success-title' => "Page title for Special:LinkSubmit after you've successfully submitted a link for approval",
+	'linkfilter-submit-success-text' => "Text displayed on Special:LinkSubmit after you've successfully submitted a link for approval",
 	'linkfilter-instructions' => 'Shown on Special:LinkSubmit for users; site administrators can add instructions for users to this message (i.e. "don\'t submit offensive links", etc.)',
 	'linkfilter-admin-instructions' => 'Shown on Special:LinkApprove for link admins; site administrators can add instructions for link admins to this message (i.e. "approve only a maximum of three links from the same user per day", etc.)',
 	'linkfilter-admin-recent' => 'Header text shown on Special:LinkApprove for link admins',
@@ -126,13 +129,13 @@ $messages['qqq'] = array(
 	'linkfilter-edit-summary' => 'Edit summary; when a link administrator approves a link, a new page in the Link: namespace is created with this as the edit summary',
 	'linkfilter-no-results' => "Displayed when \$wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration but there are no popular pages (they are shown under the [[MediaWiki:Linkfilter-popular-articles]] header) to display.",
 	'linkfilter-feed-title' => 'RSS feed title',
-	'group-linkadmin' => 'Group name, shown on Special:ListUsers',
-	'group-linkadmin-member' => 'Member of the link admins group, shown on Special:ListUsers',
-	'grouppage-linkadmin' => 'Name of a wiki page describing the link admins group; Special:ListUsers links to this page',
-	'right-linkadmin' => 'Shown on Special:ListGroupRights',
+	'group-linkadmin' => '{{doc-group|linkadmin}}',
+	'group-linkadmin-member' => '{{doc-group|linkadmin|member}}',
+	'grouppage-linkadmin' => '{{doc-group|linkadmin|page}}',
+	'right-linkadmin' => '{{doc-right|linkadmin}}',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fulup
  * @author Y-M D
  */
@@ -158,7 +161,7 @@ $messages['br'] = array(
 	'linkfilter-submit-success-title' => 'Liamm kinniget',
 	'linkfilter-admin-recent' => 'Aprouet nevez zo',
 	'linkfilter-approve-title' => 'Mererezh al liamm',
-	'linkfilter-submittedby' => "'''Kinniget gant''': [[User:$1|$1]]",
+	'linkfilter-submittedby' => 'Kinniget gant',
 	'linkfilter-submitted' => 'Kinniget $1',
 	'linkfilter-admin-accept' => 'Asantiñ',
 	'linkfilter-admin-reject' => 'Disteurel',
@@ -217,7 +220,7 @@ $messages['de'] = array(
 	'linkfilter-admin-instructions' => 'Du kannst [[MediaWiki:Linkfilter-admin-instructions|eine Anleitung für andere Administratoren hinzufügen]].',
 	'linkfilter-admin-recent' => 'Vor kurzem akzeptiert',
 	'linkfilter-approve-title' => 'Linkverwaltung',
-	'linkfilter-submittedby' => "'''Eingereicht von''' [[User:$1|$1]]",
+	'linkfilter-submittedby' => 'Eingereicht von',
 	'linkfilter-submitted' => '$1 eingereicht',
 	'linkfilter-admin-accept' => 'Akzeptieren',
 	'linkfilter-admin-reject' => 'Ablehnen',
@@ -259,7 +262,7 @@ $messages['de-formal'] = array(
 	'linkfilter-admin-instructions' => 'Sie können [[MediaWiki:Linkfilter-admin-instructions-url|eine Anleitung für andere Administratoren hinzufügen]].',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Jack Phoenix <jack@countervandalism.net>
  */
 $messages['fi'] = array(
@@ -290,7 +293,7 @@ $messages['fi'] = array(
 	'linkfilter-admin-instructions' => 'Voit lisätä ohjeita ylläpitäjille [[MediaWiki:Linkfilter-admin-instructions|täällä]]',
 	'linkfilter-admin-recent' => 'Äskettäin hyväksytyt',
 	'linkfilter-approve-title' => 'Linkkien ylläpito',
-	'linkfilter-submittedby' => "'''Lähettänyt''': [[User:$1|$1]]",
+	'linkfilter-submittedby' => 'Lähettänyt',
 	'linkfilter-submitted' => 'Lähetetty $1',
 	'linkfilter-admin-accept' => 'Hyväksy',
 	'linkfilter-admin-reject' => 'Hylkää',
@@ -321,7 +324,7 @@ $messages['fi'] = array(
 	'right-linkadmin' => 'Hallinnoida käyttäjien lähettämiä linkkejä',
 );
 
-/** French (Français)
+/** French (français)
  * @author Gomoko
  * @author IAlex
  */
@@ -355,7 +358,7 @@ $messages['fr'] = array(
 	'linkfilter-admin-instructions' => 'Vous pouvez ajouter [[MediaWiki:Linkfilter-admin-instructions|des instructions pour les administrateurs]].',
 	'linkfilter-admin-recent' => 'Récemment approuvé',
 	'linkfilter-approve-title' => 'Administration des liens',
-	'linkfilter-submittedby' => "'''Soumis par''' : [[User:$1|$1]]",
+	'linkfilter-submittedby' => 'Soumis par',
 	'linkfilter-submitted' => '$1 soumis',
 	'linkfilter-admin-accept' => 'Accepter',
 	'linkfilter-admin-reject' => 'Rejeter',
@@ -387,7 +390,7 @@ $messages['fr'] = array(
 	'right-linkadmin' => 'Administrer les liens soumis par les utilisateurs',
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -412,7 +415,7 @@ $messages['frp'] = array(
 	'linkfilter-submit-success-title' => 'Lim somês',
 	'linkfilter-admin-recent' => 'Aprovâ dês pou',
 	'linkfilter-approve-title' => 'Administracion des lims',
-	'linkfilter-submittedby' => "'''Somês per''': [[User:$1|$1]]",
+	'linkfilter-submittedby' => 'Somês per',
 	'linkfilter-submitted' => '$1 somês',
 	'linkfilter-admin-accept' => 'Accèptar',
 	'linkfilter-admin-reject' => 'Refusar',
@@ -436,7 +439,7 @@ $messages['frp'] = array(
 	'grouppage-linkadmin' => '{{ns:project}}:Administrators des lims',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -469,7 +472,7 @@ $messages['gl'] = array(
 	'linkfilter-admin-instructions' => 'Pode engadir [[MediaWiki:Linkfilter-admin-instructions|instrucións para os administradores]].',
 	'linkfilter-admin-recent' => 'Aprobadas recentemente',
 	'linkfilter-approve-title' => 'Administración das ligazóns',
-	'linkfilter-submittedby' => "'''Enviada por''': [[User:$1|$1]]",
+	'linkfilter-submittedby' => 'Enviada por',
 	'linkfilter-submitted' => 'Enviou $1',
 	'linkfilter-admin-accept' => 'Aceptar',
 	'linkfilter-admin-reject' => 'Rexeitar',
@@ -501,7 +504,7 @@ $messages['gl'] = array(
 	'right-linkadmin' => 'Administrar as ligazóns enviadas polos usuarios',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
@@ -533,7 +536,7 @@ $messages['hsb'] = array(
 	'linkfilter-admin-instructions' => 'Móžeš [[MediaWiki:Linkfilter-admin-instructions|instrukcije za administratorow]] přidać.',
 	'linkfilter-admin-recent' => 'Njedawno schwaleny',
 	'linkfilter-approve-title' => 'Wotkazowe zarjadowanje',
-	'linkfilter-submittedby' => "'''Namjetowany wot''' [[User:$1|$1]]",
+	'linkfilter-submittedby' => 'Namjetowany wot',
 	'linkfilter-submitted' => '$1 namjetowany',
 	'linkfilter-admin-accept' => 'Akceptować',
 	'linkfilter-admin-reject' => 'Wotpokazać',
@@ -561,7 +564,7 @@ $messages['hsb'] = array(
 	'right-linkadmin' => 'Wot wužiwarjow namjetowane wotkazy zarjadować',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -594,7 +597,7 @@ $messages['ia'] = array(
 	'linkfilter-admin-instructions' => 'Tu pote adder [[MediaWiki:Linkfilter-admin-instructions|instructiones pro administratores]].',
 	'linkfilter-admin-recent' => 'Recentemente approbate',
 	'linkfilter-approve-title' => 'Administration de ligamines',
-	'linkfilter-submittedby' => "'''Submittite per''' [[User:$1|$1]]",
+	'linkfilter-submittedby' => 'Submittite per',
 	'linkfilter-submitted' => '$1 submittite',
 	'linkfilter-admin-accept' => 'Acceptar',
 	'linkfilter-admin-reject' => 'Rejectar',
@@ -624,6 +627,42 @@ $messages['ia'] = array(
 	'group-linkadmin-member' => '{{GENDER:$1|administrator|administratrice}} de ligamines',
 	'grouppage-linkadmin' => '{{ns:project}}:Administratores de ligamines',
 	'right-linkadmin' => 'Administrar ligamines submittite per usatores',
+);
+
+/** Japanese (日本語)
+ * @author Shirayuki
+ */
+$messages['ja'] = array(
+	'linksubmit' => 'リンクの投稿',
+	'linkfilter-all' => 'すべて',
+	'linkfilter-submit' => '送信',
+	'linkfilter-submit-title' => 'リンクの投稿',
+	'linkfilter-submit-no-type' => 'リンクの種類を選択してください。',
+	'linkfilter-edit-title' => '$1を編集',
+	'linkfilter-type' => 'リンクの種類',
+	'linkfilter-description' => '説明',
+	'linkfilter-approve-title' => 'リンクの管理',
+	'linkfilter-submittedby' => "'''投稿者''': [[User:$1|$1]]",
+	'linkfilter-about-submitter' => '投稿者について',
+	'linkfilter-comments' => '{{PLURAL:$1|$1 件のコメント}}',
+	'linkfilter-home-title-all' => 'すべてのリンク',
+	'linkfilter-next' => '次',
+	'linkfilter-previous' => '前',
+	'linkfilter-description-left' => '残り $1 文字',
+	'linkfilter-new-links-title' => '新規リンク',
+	'linkfilter-time-days' => '{{PLURAL:$1|$1 日}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|$1 時間}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|$1 分}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|$1 秒}}',
+	'linkfilter-edit-summary' => '新規リンク',
+	'linkfilter-no-results' => 'ページが見つかりません。',
+	'linkfilter-feed-title' => '{{SITENAME}} のリンク',
+	'group-linkadmin' => 'リンク管理者',
+	'group-linkadmin-member' => '{{GENDER:$1|リンク管理者}}',
+	'grouppage-linkadmin' => '{{ns:project}}:リンク管理者',
+	'right-linkadmin' => '利用者が投稿したリンクを管理',
+	'group-linkadmin.css' => '/* ここに記述したCSSはリンク管理者のみに影響します */',
+	'group-linkadmin.js' => '/* ここに記述したJSはリンク管理者のみに影響します */',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -659,7 +698,7 @@ $messages['lb'] = array(
 	'linkfilter-admin-instructions' => "Dir kënnt [[MediaWiki:Linkfilter-admin-instructions|Instruktioune fir d'Aadministrateuren]] derbäisetzen.",
 	'linkfilter-admin-recent' => 'Rezent akzeptéiert',
 	'linkfilter-approve-title' => 'Gestioun vun de Linken',
-	'linkfilter-submittedby' => "'''Proposéiert vum''' [[User:$1|$1]]",
+	'linkfilter-submittedby' => 'Proposéiert vum',
 	'linkfilter-submitted' => '$1 gespäichert',
 	'linkfilter-admin-accept' => 'Akzeptéieren',
 	'linkfilter-admin-reject' => 'Refuséieren',
@@ -691,7 +730,7 @@ $messages['lb'] = array(
 	'right-linkadmin' => 'Gestioun vun de Linken déi vun de Benotzer proposéiert goufen',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -725,7 +764,7 @@ $messages['mk'] = array(
 	'linkfilter-admin-instructions' => 'Можете да додадете [[MediaWiki:Linkfilter-admin-instructions|напатствија за администраторите]].',
 	'linkfilter-admin-recent' => 'Неодамна одобрени',
 	'linkfilter-approve-title' => 'Администрација на врски',
-	'linkfilter-submittedby' => "'''Поднел''': [[User:$1|$1]]",
+	'linkfilter-submittedby' => 'Поднел',
 	'linkfilter-submitted' => 'Поднесено $1',
 	'linkfilter-admin-accept' => 'Прифати',
 	'linkfilter-admin-reject' => 'Одбиј',
@@ -791,7 +830,7 @@ $messages['nl'] = array(
 	'linkfilter-admin-instructions' => 'U kunt [[MediaWiki:Linkfilter-admin-instructions|beheerdersinstructies toevoegen]].',
 	'linkfilter-admin-recent' => 'Onlangs goedgekeurd',
 	'linkfilter-approve-title' => 'Verwijzingenbeheer',
-	'linkfilter-submittedby' => "'''Afkomstig van''' [[User:$1|$1]]",
+	'linkfilter-submittedby' => 'Afkomstig van',
 	'linkfilter-submitted' => 'Heeft $1 opgeslagen',
 	'linkfilter-admin-accept' => 'Aanvaarden',
 	'linkfilter-admin-reject' => 'Afwijzen',
@@ -910,5 +949,70 @@ $messages['tcy'] = array(
 	'linkfilter-new-links-title' => 'ಪೊಸ ಕೊಂಡಿಲು',
 	'linkfilter-edit-summary' => 'ಪೊಸ ಕೊಂಡಿ',
 	'linkfilter-feed-title' => '{{SITENAME}}ಕೊಂಡಿಲು',
+);
+
+/** Tagalog (Tagalog)
+ * @author AnakngAraw
+ */
+$messages['tl'] = array(
+	'linkapprove' => 'Pahintulutan ang mga kawing',
+	'linkshome' => 'Mga kawing sa tahanan',
+	'linksubmit' => 'Magpasa ng isang kawing',
+	'linkfilter-desc' => 'Nagdaragdag ng bagong natatanging mga pahina at isang kawit na pambanghay para sa kawing na ipinapasa/pagpayag/tanggihan',
+	'linkfilter-nothing-to-approve' => 'Kasalukuyang walang mga kawing na naghihintay ng pagpayag.',
+	'linkfilter-no-recently-approved' => 'Sa kamailan ay walang napayagang mga kawing',
+	'linkfilter-no-links-at-all' => 'Wala pang naipasang mga kawaing o hindi pa nasusuring muli ng mga tagapangasiwa ng kawing ang ipinasang mga kawing.',
+	'linkfilter-ago' => '$1 na ang nakalipas sa ilalim ng <i>$2</i>',
+	'linkfilter-all' => 'Lahat',
+	'linkfilter-submit' => 'Ipasa',
+	'linkfilter-submit-title' => 'Magpasa ng isang kawing',
+	'linkfilter-submit-no-title' => 'Paki magpasok ng isang pamagat',
+	'linkfilter-submit-no-type' => 'Pumili ng isang uri ng kawing.',
+	'linkfilter-edit-title' => 'Baguhin ang $1',
+	'linkfilter-approve-links' => 'Payagan ang mga kawing',
+	'linkfilter-submit-another' => 'Magpasa ng isa pang kawing',
+	'linkfilter-login-title' => 'Hindi nakalagda',
+	'linkfilter-login-text' => 'Dapat na nakalagda ka upang makapagpasa ng mga kawing.',
+	'linkfilter-title' => 'Pamagat',
+	'linkfilter-type' => 'Uri ng kawing',
+	'linkfilter-description' => 'Paglalarawan',
+	'linkfilter-submit-button' => 'Ipasa ang kawing',
+	'linkfilter-home-button' => 'Kumakawing sa tahanan',
+	'linkfilter-submit-success-title' => 'Kawing na ipinasa',
+	'linkfilter-submit-success-text' => 'Ang kawing mo ay ipinadala na para sa pagpapahintulot',
+	'linkfilter-instructions' => 'Maaari kang [[MediaWiki:Linkfilter-instructions|magdagdag ng mga tagubilin para sa mga tagagamit]].',
+	'linkfilter-admin-instructions' => 'Maaari kang magdagdag ng [[MediaWiki:Linkfilter-admin-instructions|mga tagubilin para sa mga tagapangasiwa]].',
+	'linkfilter-admin-recent' => 'Kamakailang napahintulutan',
+	'linkfilter-approve-title' => 'Pangangasiwa ng kawing',
+	'linkfilter-submittedby' => "'''Ipinasa ni''': [[User:$1|$1]]",
+	'linkfilter-submitted' => 'Ipinasa noong $1',
+	'linkfilter-admin-accept' => 'Tanggapin',
+	'linkfilter-admin-reject' => 'Tanggihan',
+	'linkfilter-admin-reject-success' => 'Tinanggihan ang kawing',
+	'linkfilter-admin-accept-success' => 'Tinanggap ang kawing',
+	'linkfilter-in-the-news' => 'Nasa balita',
+	'linkfilter-about-submitter' => 'Patungkol sa nagpasa',
+	'linkfilter-anonymous' => 'Panatikong hindi nagpakilala',
+	'linkfilter-comments-of-day' => 'Pangunahing mga puna',
+	'linkfilter-comments' => '{{PLURAL:$1|$1 puna|$1 mga puna}}',
+	'linkfilter-home-title' => '$1 mga kawing',
+	'linkfilter-home-title-all' => 'Lahat ng mga kawing',
+	'linkfilter-next' => 'susunod',
+	'linkfilter-previous' => 'sinundan',
+	'linkfilter-description-max' => 'Pinakamataas na dami ng mga panitik',
+	'linkfilter-description-left' => '$1 na natitira pa',
+	'linkfilter-popular-articles' => 'Huwag laktawan',
+	'linkfilter-new-links-title' => 'Bagong mga kawing',
+	'linkfilter-time-days' => '{{PLURAL:$1|isang araw|$1 mga araw}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|isang oras|$1 mga oras}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|isang minuto|$1 mga minuto}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|isang segundo|$1 mga segundo}}',
+	'linkfilter-edit-summary' => 'bagong kawing',
+	'linkfilter-no-results' => 'Walang natagpuang mga pahina.',
+	'linkfilter-feed-title' => 'Mga kawing sa {{SITENAME}}',
+	'group-linkadmin' => 'Mga tagapangasiwa ng kawing',
+	'group-linkadmin-member' => '{{GENDER:$1|tagapangasiwa ng kawing}}',
+	'grouppage-linkadmin' => '{{ns:project}}:Mga tagapangasiwa ng kawing',
+	'right-linkadmin' => 'Pangasiwaan ang mga kawing na ipinasa ng tagagamit',
 );
 

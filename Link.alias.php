@@ -17,7 +17,7 @@ $specialPageAliases['en'] = array(
 	'LinkSubmit' => array( 'LinkSubmit' ),
 );
 
-/** Finnish (Suomi) */
+/** Finnish (suomi) */
 $specialPageAliases['fi'] = array(
 	'LinkApprove' => array( 'Hyväksy linkkejä' ),
 	'LinkEdit' => array( 'Muokkaa linkkiä' ),
@@ -26,7 +26,7 @@ $specialPageAliases['fi'] = array(
 	'LinkSubmit' => array( 'Lähetä linkki' ),
 );
 
-/** Interlingua (Interlingua) */
+/** Interlingua (interlingua) */
 $specialPageAliases['ia'] = array(
 	'LinkApprove' => array( 'Approbar_ligamines' ),
 	'LinkEdit' => array( 'Modificar_ligamine' ),
@@ -35,7 +35,7 @@ $specialPageAliases['ia'] = array(
 	'LinkSubmit' => array( 'Submitter_ligamine' ),
 );
 
-/** Macedonian (Македонски) */
+/** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'LinkApprove' => array( 'ВрскаОдобри' ),
 	'LinkEdit' => array( 'ВрскаУреди' ),
