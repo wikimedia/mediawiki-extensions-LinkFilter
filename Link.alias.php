@@ -52,3 +52,12 @@ $specialPageAliases['nl'] = array(
 	'LinkRedirect' => array( 'VerwijzingDoorverwijzen' ),
 	'LinkSubmit' => array( 'VerwijzingToevoegen' ),
 );
+
+/** Turkish (Türkçe) */
+$specialPageAliases['tr'] = array(
+	'LinkApprove' => array( 'BağOnayla', 'BağlantıOnayla' ),
+	'LinkEdit' => array( 'BağDüzenle', 'BağlantıDüzenle' ),
+	'LinksHome' => array( 'BağAnaSayfa', 'BağlantıAnaSayfa' ),
+	'LinkRedirect' => array( 'BağYönlendir', 'BağlantıYönlendir' ),
+	'LinkSubmit' => array( 'BağGönder', 'BağlantıGönder' ),
+);

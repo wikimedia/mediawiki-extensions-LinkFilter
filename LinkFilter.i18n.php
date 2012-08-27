@@ -539,7 +539,7 @@ $messages['gl'] = array(
 	'linkfilter-admin-instructions' => 'Pode engadir [[MediaWiki:Linkfilter-admin-instructions|instrucións para os administradores]].',
 	'linkfilter-admin-recent' => 'Aprobadas recentemente',
 	'linkfilter-approve-title' => 'Administración das ligazóns',
-	'linkfilter-submittedby' => 'Enviada por',
+	'linkfilter-submittedby' => "'''Enviada por:''' [[User:$1|$1]]",
 	'linkfilter-submitted' => 'Enviou $1',
 	'linkfilter-admin-accept' => 'Aceptar',
 	'linkfilter-admin-reject' => 'Rexeitar',
@@ -569,6 +569,8 @@ $messages['gl'] = array(
 	'group-linkadmin-member' => '{{GENDER:$1|administrador|administradora}} das ligazóns',
 	'grouppage-linkadmin' => '{{ns:project}}:Administradores das ligazóns',
 	'right-linkadmin' => 'Administrar as ligazóns enviadas polos usuarios',
+	'group-linkadmin.css' => '/* O CSS que se coloque aquí afectará soamente aos administradores das ligazóns */',
+	'group-linkadmin.js' => '/* O JS que se coloque aquí afectará soamente aos administradores das ligazóns */',
 );
 
 /** Upper Sorbian (hornjoserbsce)
