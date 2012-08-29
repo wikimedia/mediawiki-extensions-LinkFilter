@@ -35,6 +35,15 @@ $specialPageAliases['ia'] = array(
 	'LinkSubmit' => array( 'Submitter_ligamine' ),
 );
 
+/** Korean (한국어) */
+$specialPageAliases['ko'] = array(
+	'LinkApprove' => array( '링크승인' ),
+	'LinkEdit' => array( '링크편집' ),
+	'LinksHome' => array( '링크대문' ),
+	'LinkRedirect' => array( '링크넘겨주기' ),
+	'LinkSubmit' => array( '링크보내기' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'LinkApprove' => array( 'ВрскаОдобри' ),
