@@ -17,6 +17,15 @@ $specialPageAliases['en'] = array(
 	'LinkSubmit' => array( 'LinkSubmit' ),
 );
 
+/** German (Deutsch) */
+$specialPageAliases['de'] = array(
+	'LinkApprove' => array( 'Link_akzeptieren' ),
+	'LinkEdit' => array( 'Link_bearbeiten' ),
+	'LinksHome' => array( 'Zielseite_des_Links' ),
+	'LinkRedirect' => array( 'Link_weiterleiten' ),
+	'LinkSubmit' => array( 'Link_speichern' ),
+);
+
 /** Finnish (suomi) */
 $specialPageAliases['fi'] = array(
 	'LinkApprove' => array( 'Hyväksy linkkejä' ),
