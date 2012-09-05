@@ -62,6 +62,14 @@ $specialPageAliases['mk'] = array(
 	'LinkSubmit' => array( 'ВрскаПоднесување' ),
 );
 
+/** Malayalam (മലയാളം) */
+$specialPageAliases['ml'] = array(
+	'LinkApprove' => array( 'കണ്ണിഅംഗീകരിക്കൽ' ),
+	'LinkEdit' => array( 'കണ്ണിതിരുത്തൽ' ),
+	'LinkRedirect' => array( 'കണ്ണിതിരിച്ചുവിടൽ' ),
+	'LinkSubmit' => array( 'കണ്ണിസമർപ്പണം' ),
+);
+
 /** Dutch (Nederlands) */
 $specialPageAliases['nl'] = array(
 	'LinkApprove' => array( 'VerwijzingGoedkeuren' ),
