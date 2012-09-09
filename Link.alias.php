@@ -17,6 +17,15 @@ $specialPageAliases['en'] = array(
 	'LinkSubmit' => array( 'LinkSubmit' ),
 );
 
+/** Arabic (العربية) */
+$specialPageAliases['ar'] = array(
+	'LinkApprove' => array( 'موافقة_الوصلة' ),
+	'LinkEdit' => array( 'تعديل_الوصلة' ),
+	'LinksHome' => array( 'بيت_الوصلات' ),
+	'LinkRedirect' => array( 'تحويلة_الوصلة' ),
+	'LinkSubmit' => array( 'إرسال_الوصلة' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'LinkApprove' => array( 'Link_akzeptieren' ),
