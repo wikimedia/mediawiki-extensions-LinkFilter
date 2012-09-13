@@ -1037,6 +1037,19 @@ $messages['pl'] = array(
 	'linkfilter-edit-summary' => 'nowy link',
 );
 
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'linkfilter-all' => 'ټول',
+	'linkfilter-submit' => 'سپارل',
+	'linkfilter-admin-accept' => 'منل',
+	'linkfilter-admin-reject' => 'ردول',
+	'linkfilter-home-title-all' => 'ټولې تړنې',
+	'linkfilter-next' => 'راتلونکی',
+	'linkfilter-previous' => 'پخوانی',
+);
+
 /** Russian (Русский)
  * @author Adata80
  * @author Eleferen
