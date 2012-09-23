@@ -137,6 +137,14 @@ $messages['qqq'] = array(
 	'right-linkadmin' => '{{doc-right|linkadmin}}',
 );
 
+/** Aramaic (ܐܪܡܝܐ)
+ * @author Basharh
+ */
+$messages['arc'] = array(
+	'linkfilter-next' => 'ܕܒܬܪ',
+	'linkfilter-previous' => 'ܕܩܕܡ',
+);
+
 /** Breton (brezhoneg)
  * @author Fulup
  * @author Y-M D
