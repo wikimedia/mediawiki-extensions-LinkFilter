@@ -262,7 +262,7 @@ $messages['de'] = array(
 	'right-linkadmin' => 'Von Benutzern eingereichte Links verwalten',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Kghbln
  */
 $messages['de-formal'] = array(
@@ -1099,7 +1099,7 @@ $messages['ps'] = array(
 	'linkfilter-previous' => 'پخوانی',
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Adata80
  * @author Eleferen
  */
@@ -1120,14 +1120,14 @@ $messages['ru'] = array(
 	'linkfilter-edit-summary' => 'Новая ссылка',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Rancher
  */
 $messages['sr-ec'] = array(
 	'linkfilter-url' => 'Адреса',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬) */
+/** Serbian (Latin script) (srpski (latinica)‎) */
 $messages['sr-el'] = array(
 	'linkfilter-url' => 'Adresa',
 );
