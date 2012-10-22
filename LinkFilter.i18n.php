@@ -268,8 +268,8 @@ $messages['de'] = array(
 $messages['de-formal'] = array(
 	'linkfilter-login-title' => 'Sie sind nicht angemeldet.',
 	'linkfilter-login-text' => 'Sie müssen angemeldet zu sein, um Links einreichen zu können.',
-	'linkfilter-instructions' => 'Sie können [[MediaWiki:Linkfilter-instructions-url|eine Anleitung für andere Benutzer hinzufügen]].',
-	'linkfilter-admin-instructions' => 'Sie können [[MediaWiki:Linkfilter-admin-instructions-url|eine Anleitung für andere Administratoren hinzufügen]].',
+	'linkfilter-instructions' => 'Sie können [[MediaWiki:Linkfilter-instructions-url|eine Anleitung für andere Benutzer hinzufügen]].', # Fuzzy
+	'linkfilter-admin-instructions' => 'Sie können [[MediaWiki:Linkfilter-admin-instructions-url|eine Anleitung für andere Administratoren hinzufügen]].', # Fuzzy
 );
 
 /** Spanish (español)
@@ -1127,7 +1127,8 @@ $messages['sr-ec'] = array(
 	'linkfilter-url' => 'Адреса',
 );
 
-/** Serbian (Latin script) (srpski (latinica)‎) */
+/** Serbian (Latin script) (srpski (latinica)‎)
+ */
 $messages['sr-el'] = array(
 	'linkfilter-url' => 'Adresa',
 );
@@ -1215,4 +1216,3 @@ $messages['tl'] = array(
 	'grouppage-linkadmin' => '{{ns:project}}:Mga tagapangasiwa ng kawing',
 	'right-linkadmin' => 'Pangasiwaan ang mga kawing na ipinasa ng tagagamit',
 );
-
