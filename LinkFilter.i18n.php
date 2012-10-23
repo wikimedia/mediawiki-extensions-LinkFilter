@@ -337,8 +337,23 @@ $messages['es'] = array(
 	'right-linkadmin' => 'Administrar los enlaces enviados por el usuario',
 );
 
+/** Persian (فارسی)
+ * @author پاناروما
+ */
+$messages['fa'] = array(
+	'linkfilter-edit-title' => 'ویرایش $1',
+	'linkfilter-approve-links' => 'تایید لینک',
+	'linkfilter-login-title' => 'به سامانه وارد نشده‌اید',
+	'linkfilter-login-text' => 'برای بارگذاری پرونده‌ها شما باید به سامانه وارد شوید.',
+	'linkfilter-title' => 'عنوان',
+	'linkfilter-description' => 'توضیح',
+	'linkfilter-next' => 'بعدی',
+	'linkfilter-previous' => 'قبلی',
+);
+
 /** Finnish (suomi)
  * @author Jack Phoenix <jack@countervandalism.net>
+ * @author Nike
  */
 $messages['fi'] = array(
 	'linkapprove' => 'Linkkien ylläpito',
@@ -383,7 +398,7 @@ $messages['fi'] = array(
 	'linkfilter-home-title-all' => 'Kaikki linkit',
 	'linkfilter-next' => 'seuraava',
 	'linkfilter-previous' => 'edellinen',
-	'linkfilter-description-max' => 'Merkkien maksimimäärä',
+	'linkfilter-description-max' => 'Merkkien enimmäismäärä',
 	'linkfilter-description-left' => '$1 jäljellä',
 	'linkfilter-popular-articles' => 'Älä unohda',
 	'linkfilter-new-links-title' => 'Uudet linkit',
