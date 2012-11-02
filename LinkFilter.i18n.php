@@ -272,6 +272,19 @@ $messages['de-formal'] = array(
 	'linkfilter-admin-instructions' => 'Sie können [[MediaWiki:Linkfilter-admin-instructions-url|eine Anleitung für andere Administratoren hinzufügen]].', # Fuzzy
 );
 
+/** Zazaki (Zazaki)
+ * @author Erdemaslancan
+ */
+$messages['diq'] = array(
+	'linkfilter-all' => 'Pêro',
+	'linkfilter-submit' => 'Bırşê',
+	'linkfilter-edit-title' => '$1 Bıvurne',
+	'linkfilter-title' => 'Sername',
+	'linkfilter-description' => 'Sılasnayış',
+	'linkfilter-admin-accept' => 'Qebul bıkê',
+	'linkfilter-admin-reject' => 'Red ke',
+);
+
 /** Spanish (español)
  * @author Armando-Martin
  */
@@ -410,7 +423,7 @@ $messages['fi'] = array(
 	'linkfilter-no-results' => 'Sivuja ei löytynyt.',
 	'linkfilter-feed-title' => '{{GRAMMAR:genitive|{{SITENAME}}}} linkit',
 	'group-linkadmin' => 'Linkkien ylläpitäjät',
-	'group-linkadmin-member' => 'Linkkien ylläpitäjä',
+	'group-linkadmin-member' => '{{GENDER:$1|linkkien ylläpitäjä}}',
 	'right-linkadmin' => 'Hallinnoida käyttäjien lähettämiä linkkejä',
 );
 
