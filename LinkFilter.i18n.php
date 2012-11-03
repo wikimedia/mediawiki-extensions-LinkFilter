@@ -274,14 +274,15 @@ $messages['de-formal'] = array(
 
 /** Zazaki (Zazaki)
  * @author Erdemaslancan
+ * @author Mirzali
  */
 $messages['diq'] = array(
 	'linkfilter-all' => 'Pêro',
-	'linkfilter-submit' => 'Bırşê',
+	'linkfilter-submit' => 'Bırışe',
 	'linkfilter-edit-title' => '$1 Bıvurne',
 	'linkfilter-title' => 'Sername',
-	'linkfilter-description' => 'Sılasnayış',
-	'linkfilter-admin-accept' => 'Qebul bıkê',
+	'linkfilter-description' => 'Şınasnayış',
+	'linkfilter-admin-accept' => 'Qebul ke',
 	'linkfilter-admin-reject' => 'Red ke',
 );
 
@@ -365,6 +366,7 @@ $messages['fa'] = array(
 );
 
 /** Finnish (suomi)
+ * @author Crt
  * @author Jack Phoenix <jack@countervandalism.net>
  * @author Nike
  */
@@ -422,7 +424,7 @@ $messages['fi'] = array(
 	'linkfilter-edit-summary' => 'uusi linkki',
 	'linkfilter-no-results' => 'Sivuja ei löytynyt.',
 	'linkfilter-feed-title' => '{{GRAMMAR:genitive|{{SITENAME}}}} linkit',
-	'group-linkadmin' => 'Linkkien ylläpitäjät',
+	'group-linkadmin' => 'linkkien ylläpitäjät',
 	'group-linkadmin-member' => '{{GENDER:$1|linkkien ylläpitäjä}}',
 	'right-linkadmin' => 'Hallinnoida käyttäjien lähettämiä linkkejä',
 );
