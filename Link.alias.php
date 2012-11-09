@@ -62,6 +62,11 @@ $specialPageAliases['ko'] = array(
 	'LinkSubmit' => array( '링크보내기' ),
 );
 
+/** Luxembourgish (Lëtzebuergesch) */
+$specialPageAliases['lb'] = array(
+	'LinkEdit' => array( 'Link_änneren' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'LinkApprove' => array( 'ВрскаОдобри' ),
