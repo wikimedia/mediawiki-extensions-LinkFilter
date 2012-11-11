@@ -611,6 +611,19 @@ $messages['gl'] = array(
 	'group-linkadmin.js' => '/* O JS que se coloque aquí afectará soamente aos administradores das ligazóns */',
 );
 
+/** Hebrew (עברית)
+ * @author חיים
+ */
+$messages['he'] = array(
+	'linkfilter-anonymous' => 'קנאי אנונימי',
+	'linkfilter-comments' => '{{PLURAL:$1|תגובה אחת|$1 תגובות}}',
+	'linkfilter-home-title' => '$1 קישורים',
+	'linkfilter-next' => 'הבא',
+	'linkfilter-previous' => 'הקודם',
+	'linkfilter-description-left' => '$1 נותרו',
+	'linkfilter-new-links-title' => 'קישור חדש',
+);
+
 /** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
