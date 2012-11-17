@@ -53,6 +53,15 @@ $specialPageAliases['ia'] = array(
 	'LinkSubmit' => array( 'Submitter_ligamine' ),
 );
 
+/** Italian (italiano) */
+$specialPageAliases['it'] = array(
+	'LinkApprove' => array( 'LinkApprova' ),
+	'LinkEdit' => array( 'LinkModifica' ),
+	'LinksHome' => array( 'LinkInizio' ),
+	'LinkRedirect' => array( 'LinkRinvia' ),
+	'LinkSubmit' => array( 'LinkInvia' ),
+);
+
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
 	'LinkApprove' => array( '링크승인' ),
