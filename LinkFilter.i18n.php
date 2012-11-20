@@ -284,6 +284,13 @@ $messages['diq'] = array(
 	'linkfilter-description' => 'Şınasnayış',
 	'linkfilter-admin-accept' => 'Qebul ke',
 	'linkfilter-admin-reject' => 'Red ke',
+	'linkfilter-comments' => '{{PLURAL:$1|yew vatış|$1 vatışi}}',
+	'linkfilter-time-days' => '{{PLURAL:$1|roce|$1 rocan}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|seate|$1 seatan}}',
+	'linkfilter-time-minutes' => '{{PLURAL: $1|deqe|$1 deqa}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|saniye|$1 saniyan}}',
+	'linkfilter-feed-title' => 'Linkê {{SITENAME}}',
+	'group-linkadmin-member' => '{{GENDER:$1|Linka administratori}}',
 );
 
 /** Spanish (español)
