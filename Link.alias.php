@@ -102,6 +102,15 @@ $specialPageAliases['nl'] = array(
 	'LinkSubmit' => array( 'VerwijzingToevoegen' ),
 );
 
+/** Sicilian (sicilianu) */
+$specialPageAliases['scn'] = array(
+	'LinkApprove' => array( 'LinkApprova' ),
+	'LinkEdit' => array( 'LinkModifica' ),
+	'LinksHome' => array( 'LinkInizio' ),
+	'LinkRedirect' => array( 'LinkRinvia' ),
+	'LinkSubmit' => array( 'LinkInvia' ),
+);
+
 /** Turkish (Türkçe) */
 $specialPageAliases['tr'] = array(
 	'LinkApprove' => array( 'BağOnayla', 'BağlantıOnayla' ),
