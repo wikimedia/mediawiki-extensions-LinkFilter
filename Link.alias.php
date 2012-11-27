@@ -37,11 +37,11 @@ $specialPageAliases['de'] = array(
 
 /** Finnish (suomi) */
 $specialPageAliases['fi'] = array(
-	'LinkApprove' => array( 'Hyväksy linkkejä' ),
-	'LinkEdit' => array( 'Muokkaa linkkiä' ),
-	'LinksHome' => array( 'Linkkien kotisivu' ),
-	'LinkRedirect' => array( 'Ohjaus linkkiin' ),
-	'LinkSubmit' => array( 'Lähetä linkki' ),
+	'LinkApprove' => array( 'Hyväksy_linkkejä' ),
+	'LinkEdit' => array( 'Muokkaa_linkkiä' ),
+	'LinksHome' => array( 'Linkkien_kotisivu' ),
+	'LinkRedirect' => array( 'Ohjaus_linkkiin' ),
+	'LinkSubmit' => array( 'Lähetä_linkki' ),
 );
 
 /** Interlingua (interlingua) */
