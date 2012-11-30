@@ -82,11 +82,12 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Darth Kule
+ * @author Shirayuki
  * @author Umherirrender
  */
 $messages['qqq'] = array(
 	'linkapprove' => 'Title of Special:LinkApprove; shown on the special page and on Special:SpecialPages',
-	'linkshome' => 'Title of Special:LinsHome; shown on the special page and on Special:SpecialPages',
+	'linkshome' => 'Title of Special:LinksHome; shown on the special page and on Special:SpecialPages',
 	'linksubmit' => 'Title of Special:LinkSubmit; shown on the special page and on Special:SpecialPages',
 	'linkfilter-desc' => 'Extension description shown on [[Special:Version]]',
 	'linkfilter-nothing-to-approve' => 'Shown on Special:LinkApprove to link administrators when there are no links to approve.',
@@ -831,6 +832,7 @@ $messages['ja'] = array(
 	'linksubmit' => 'リンクの投稿',
 	'linkfilter-desc' => 'リンクの送信/承認/却下のための新しい特別ページとパーサー関数を追加する',
 	'linkfilter-nothing-to-approve' => '現在、承認待ちのリンクはありません。',
+	'linkfilter-no-recently-approved' => '最近承認されたリンクはありません。',
 	'linkfilter-all' => 'すべて',
 	'linkfilter-submit' => '送信',
 	'linkfilter-submit-title' => 'リンクの投稿',
@@ -845,8 +847,11 @@ $messages['ja'] = array(
 	'linkfilter-type' => 'リンクの種類',
 	'linkfilter-description' => '説明',
 	'linkfilter-submit-button' => 'リンクを送信',
+	'linkfilter-submit-success-title' => 'リンクを送信しました',
+	'linkfilter-admin-recent' => '最近の承認',
 	'linkfilter-approve-title' => 'リンクの管理',
 	'linkfilter-submittedby' => "'''投稿者''': [[User:$1|$1]]",
+	'linkfilter-submitted' => '送信日時 $1',
 	'linkfilter-admin-accept' => '承認',
 	'linkfilter-admin-reject' => '却下',
 	'linkfilter-admin-reject-success' => 'リンクを却下しました',
