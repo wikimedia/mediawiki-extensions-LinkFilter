@@ -35,6 +35,15 @@ $specialPageAliases['de'] = array(
 	'LinkSubmit' => array( 'Link_speichern' ),
 );
 
+/** Zazaki (Zazaki) */
+$specialPageAliases['diq'] = array(
+	'LinkApprove' => array( 'LinkQebulkerdış' ),
+	'LinkEdit' => array( 'LinkVurnayış' ),
+	'LinksHome' => array( 'KeyeyLinkan' ),
+	'LinkRedirect' => array( 'HetenayışêLinkan' ),
+	'LinkSubmit' => array( 'LinkRıştayış' ),
+);
+
 /** Finnish (suomi) */
 $specialPageAliases['fi'] = array(
 	'LinkApprove' => array( 'Hyväksy_linkkejä' ),

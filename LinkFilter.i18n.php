@@ -136,6 +136,8 @@ $messages['qqq'] = array(
 	'group-linkadmin-member' => '{{doc-group|linkadmin|member}}',
 	'grouppage-linkadmin' => '{{doc-group|linkadmin|page}}',
 	'right-linkadmin' => '{{doc-right|linkadmin}}',
+	'group-linkadmin.css' => '{{optional}}',
+	'group-linkadmin.js' => '{{optional}}',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
