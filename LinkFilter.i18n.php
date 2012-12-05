@@ -1290,3 +1290,11 @@ $messages['tl'] = array(
 	'grouppage-linkadmin' => '{{ns:project}}:Mga tagapangasiwa ng kawing',
 	'right-linkadmin' => 'Pangasiwaan ang mga kawing na ipinasa ng tagagamit',
 );
+
+/** Ukrainian (українська)
+ * @author Base
+ */
+$messages['uk'] = array(
+	'linkapprove' => 'Затвердити посилання',
+	'linkshome' => 'Домашня сторінка посилань',
+);
