@@ -1297,4 +1297,9 @@ $messages['tl'] = array(
 $messages['uk'] = array(
 	'linkapprove' => 'Затвердити посилання',
 	'linkshome' => 'Домашня сторінка посилань',
+	'linksubmit' => 'Надати посилання',
+	'linkfilter-desc' => 'Додає нові спеціальні сторінки і обробник парсеру для надання/затвердження/відхилення посилань',
+	'linkfilter-nothing-to-approve' => 'Наразі немає посилань, що очікують затвердження.',
+	'linkfilter-no-recently-approved' => 'Недавно не було затверджено жодного посилання.',
+	'linkfilter-anonymous' => 'Анонімний фанатик',
 );
