@@ -200,6 +200,53 @@ $messages['br'] = array(
 	'group-linkadmin-member' => '{{GENDER:$1|merour al liammoù|merourez al liammoù}}',
 );
 
+/** Czech (česky)
+ * @author Vks
+ */
+$messages['cs'] = array(
+	'linkapprove' => 'Schválit odkazy',
+	'linkshome' => 'Odkazy domů',
+	'linksubmit' => 'Odeslat odkaz',
+	'linkfilter-ago' => 'Před $1 pod <i>$2</i>',
+	'linkfilter-all' => 'Všechny',
+	'linkfilter-submit' => 'Odeslat',
+	'linkfilter-submit-title' => 'Odeslat odkaz',
+	'linkfilter-submit-no-title' => 'Zadejte název',
+	'linkfilter-submit-no-type' => 'Vyberte typ odkazu.',
+	'linkfilter-edit-title' => 'Upravit $1',
+	'linkfilter-approve-links' => 'Schválit odkazy',
+	'linkfilter-submit-another' => 'Přidat další odkaz',
+	'linkfilter-login-title' => 'Nejste přihlášen(a)',
+	'linkfilter-login-text' => 'K přidávání odkazů musíte být přihlášen.',
+	'linkfilter-title' => 'Název',
+	'linkfilter-type' => 'Typ odkazu',
+	'linkfilter-description' => 'Popis',
+	'linkfilter-submit-button' => 'Odeslat odkaz',
+	'linkfilter-home-button' => 'Odkazy domů',
+	'linkfilter-submit-success-title' => 'Odkaz byl přidán.',
+	'linkfilter-submit-success-text' => 'Váš odkaz byl odeslán ke schválení',
+	'linkfilter-instructions' => 'Můžete [[MediaWiki:Linkfilter-instructions|přidat pokyny pro uživatele]].',
+	'linkfilter-admin-instructions' => 'Můžete přidat [[MediaWiki:Linkfilter-admin-instructions|instrukce pro správce]].',
+	'linkfilter-admin-recent' => 'Nedávno schváleno',
+	'linkfilter-admin-accept' => 'Přijmout',
+	'linkfilter-admin-reject' => 'Odmítnout',
+	'linkfilter-admin-reject-success' => 'Odkaz byl odmítnut',
+	'linkfilter-admin-accept-success' => 'Odkaz byl přijat',
+	'linkfilter-in-the-news' => 'V novinkách',
+	'linkfilter-anonymous' => 'Anonymní fanatik',
+	'linkfilter-comments-of-day' => 'Nejoblíbenější komentáře',
+	'linkfilter-comments' => '{{PLURAL:$1|Jeden komentář|$1 komentáře}}',
+	'linkfilter-home-title' => '$1 odkazy',
+	'linkfilter-home-title-all' => 'Všechny odkazy',
+	'linkfilter-next' => 'další',
+	'linkfilter-previous' => 'předchozí',
+	'linkfilter-description-max' => 'Maximální počet znaků',
+	'linkfilter-description-left' => '$1 zbývá',
+	'linkfilter-new-links-title' => 'Nové odkazy',
+	'linkfilter-time-days' => '{{PLURAL:$1|$1 den|$1 dny|$1 dní}}',
+	'linkfilter-edit-summary' => 'nový odkaz',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  */
@@ -361,18 +408,44 @@ $messages['es'] = array(
 	'right-linkadmin' => 'Administrar los enlaces enviados por el usuario',
 );
 
+/** Estonian (eesti)
+ * @author Avjoska
+ */
+$messages['et'] = array(
+	'linkfilter-login-title' => 'Ei ole sisse logitud',
+	'linkfilter-title' => 'Pealkiri',
+	'linkfilter-description' => 'Kirjeldus',
+	'linkfilter-next' => 'järgmine',
+	'linkfilter-previous' => 'eelmine',
+	'linkfilter-edit-summary' => 'uus link',
+);
+
 /** Persian (فارسی)
+ * @author Mjbmr
  * @author پاناروما
  */
 $messages['fa'] = array(
+	'linkfilter-all' => 'همه',
+	'linkfilter-submit' => 'ثبت',
+	'linkfilter-submit-title' => 'ثبت یک پیوند',
+	'linkfilter-submit-no-title' => 'لطفاً عنوانی وارد کنید',
+	'linkfilter-submit-no-type' => 'نوع پیوند را انتخاب کنید.',
 	'linkfilter-edit-title' => 'ویرایش $1',
 	'linkfilter-approve-links' => 'تایید لینک',
+	'linkfilter-submit-another' => 'ثبت پیوندی دیگر',
 	'linkfilter-login-title' => 'به سامانه وارد نشده‌اید',
 	'linkfilter-login-text' => 'برای بارگذاری پرونده‌ها شما باید به سامانه وارد شوید.',
 	'linkfilter-title' => 'عنوان',
+	'linkfilter-type' => 'نوع پیوند',
 	'linkfilter-description' => 'توضیح',
+	'linkfilter-submit-button' => 'ثبت پیوند',
+	'linkfilter-admin-accept' => 'پذیرفتن',
+	'linkfilter-admin-reject' => 'رد کردن',
+	'linkfilter-home-title' => '$1 پیوندها',
+	'linkfilter-home-title-all' => 'تمام پیوندها',
 	'linkfilter-next' => 'بعدی',
 	'linkfilter-previous' => 'قبلی',
+	'linkfilter-edit-summary' => 'پیوند جدید',
 );
 
 /** Finnish (suomi)
@@ -883,6 +956,41 @@ $messages['ja'] = array(
 	'group-linkadmin.js' => '/* ここに記述したJSはリンク管理者のみに影響します */',
 );
 
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'linkfilter-all' => 'ყველა',
+	'linkfilter-submit' => 'მიღება',
+	'linkfilter-submit-title' => 'ბმულის მიღება',
+	'linkfilter-submit-no-title' => 'გთხოვთ, შეიყვანეთ სათაური',
+	'linkfilter-submit-no-type' => 'აირჩიეთ კავშირის ტიპი.',
+	'linkfilter-edit-title' => '$1-ის რედაქტირება',
+	'linkfilter-login-title' => 'შესვლა არ განხორციელდა',
+	'linkfilter-title' => 'სათაური',
+	'linkfilter-type' => 'ბმულის ტიპი',
+	'linkfilter-description' => 'აღწერა',
+	'linkfilter-submit-button' => 'ბმულის მიღება',
+	'linkfilter-admin-accept' => 'მიღება',
+	'linkfilter-admin-reject' => 'უარყოფა',
+	'linkfilter-in-the-news' => 'სიახლეებში',
+	'linkfilter-comments-of-day' => 'საუკეთესო კომენტარები',
+	'linkfilter-comments' => '{{PLURAL:$1|$1 კომენტარი|$1 კომენტარი}}',
+	'linkfilter-home-title' => '$1 ბმულები',
+	'linkfilter-home-title-all' => 'ყველა ბმული',
+	'linkfilter-next' => 'შემდეგი',
+	'linkfilter-previous' => 'წინა',
+	'linkfilter-description-max' => 'სიმბოლოების მაქსიმალური რაოდენობა',
+	'linkfilter-new-links-title' => 'ახალი ბმულები',
+	'linkfilter-time-days' => '{{PLURAL:$1|ერთი დღე|$1 დღე}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|ერთი საათი|$1 საათი}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|ერთი წუთი|$1 წუთი}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|ერთი წამი|$1 წამი}}',
+	'linkfilter-edit-summary' => 'ახალი ბმული',
+	'linkfilter-no-results' => 'გვერდები ვერ მოიძებნა.',
+	'linkfilter-feed-title' => '{{SITENAME}}-ის ბმულები',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
@@ -1071,7 +1179,7 @@ $messages['nl'] = array(
 	'linkfilter-new-links-title' => 'Nieuwe verwijzingen',
 	'linkfilter-time-days' => '{{PLURAL:$1|één dag|$1 dagen}}',
 	'linkfilter-time-hours' => '{{PLURAL:$1|één uur|$1 uur}}',
-	'linkfilter-time-minutes' => '{{PLURAL:$1|minuut|$1 minuten}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|één minuut|$1 minuten}}',
 	'linkfilter-time-seconds' => '{{PLURAL:$1|één seconde|$1 seconden}}',
 	'linkfilter-edit-summary' => 'nieuwe verwijzing',
 	'linkfilter-no-results' => "Geen pagina's gevonden.",
@@ -1173,6 +1281,65 @@ $messages['ps'] = array(
 	'linkfilter-previous' => 'پخوانی',
 );
 
+/** Romanian (română)
+ * @author Firilacroco
+ * @author Minisarm
+ * @author Stelistcristi
+ */
+$messages['ro'] = array(
+	'linkapprove' => 'Aprobare legături',
+	'linkshome' => 'Pagina principală pentru legături',
+	'linksubmit' => 'Trimite o legătură',
+	'linkfilter-all' => 'Toate',
+	'linkfilter-submit' => 'Trimite',
+	'linkfilter-submit-title' => 'Trimite o legătură',
+	'linkfilter-submit-no-title' => 'Introduceți un titlu.',
+	'linkfilter-submit-no-type' => 'Alegeți un tip de legătură.',
+	'linkfilter-edit-title' => 'Modificare $1',
+	'linkfilter-approve-links' => 'Aprobați legături',
+	'linkfilter-submit-another' => 'Trimiteți o altă legătură',
+	'linkfilter-login-title' => 'Neautentificat',
+	'linkfilter-login-text' => 'Trebuie să fiți autentificat pentru a trimite legături.',
+	'linkfilter-title' => 'Titlu',
+	'linkfilter-type' => 'Tipul legăturii',
+	'linkfilter-description' => 'Descriere',
+	'linkfilter-submit-button' => 'Trimite legătura',
+	'linkfilter-submit-success-title' => 'Legături trimise',
+	'linkfilter-submit-success-text' => 'Legătura dumneavoastră a fost trimisă către aprobare',
+	'linkfilter-admin-recent' => 'Recent aprobate',
+	'linkfilter-approve-title' => 'Administrare legătură',
+	'linkfilter-submittedby' => "'''Trimisă de''': [[User:$1|$1]]",
+	'linkfilter-submitted' => 'Trimis $1',
+	'linkfilter-admin-accept' => 'Acceptă',
+	'linkfilter-admin-reject' => 'Respinge',
+	'linkfilter-admin-reject-success' => 'Legătură a fost respinsă',
+	'linkfilter-admin-accept-success' => 'Legătura a fost acceptată',
+	'linkfilter-in-the-news' => 'În știri',
+	'linkfilter-about-submitter' => 'Despre emitent',
+	'linkfilter-anonymous' => 'Fanatic anonim',
+	'linkfilter-comments-of-day' => 'Comentarii de top',
+	'linkfilter-comments' => '{{PLURAL:$1|$1 comentariu|$1 comentarii|$1 de comentarii}}',
+	'linkfilter-home-title' => '$1 legături',
+	'linkfilter-home-title-all' => 'Toate legăturile',
+	'linkfilter-next' => 'următorul',
+	'linkfilter-previous' => 'precedentul',
+	'linkfilter-description-max' => 'Număr maxim de caractere',
+	'linkfilter-description-left' => '$1 rămase',
+	'linkfilter-popular-articles' => 'Nu uitați',
+	'linkfilter-new-links-title' => 'Legături noi',
+	'linkfilter-time-days' => '{{PLURAL:$1|o zi|$1 zile|$1 de zile}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|o oră|$1 ore|$1 de ore}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|un minut|$1 minute|$1 de minute}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|o secundă|$1 secunde|$1 de secunde}}',
+	'linkfilter-edit-summary' => 'legătură nouă',
+	'linkfilter-no-results' => 'Nicio pagină găsită.',
+	'linkfilter-feed-title' => 'Legături {{SITENAME}}',
+	'group-linkadmin' => 'Administrator legături',
+	'group-linkadmin-member' => '{{GENDER:$1|administrator legături}}',
+	'grouppage-linkadmin' => '{{ns:project}}:Administratori legături',
+	'right-linkadmin' => 'Administrează legăturile trimise de utilizatori',
+);
+
 /** Russian (русский)
  * @author Adata80
  * @author Eleferen
@@ -1192,6 +1359,35 @@ $messages['ru'] = array(
 	'linkfilter-next' => 'след.',
 	'linkfilter-previous' => 'пред.',
 	'linkfilter-edit-summary' => 'Новая ссылка',
+);
+
+/** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['si'] = array(
+	'linkfilter-all' => 'සියල්ල',
+	'linkfilter-submit' => 'යොමන්න',
+	'linkfilter-edit-title' => '$1 සංස්කරණය',
+	'linkfilter-login-title' => 'ප්‍රවිෂ්ට වී නොමැත',
+	'linkfilter-title' => 'මාතෘකාව',
+	'linkfilter-type' => 'සබැඳි වර්ගය',
+	'linkfilter-description' => 'විස්තරය',
+	'linkfilter-submit-button' => 'සබැඳිය යොමන්න',
+	'linkfilter-admin-accept' => 'පිළිගන්න',
+	'linkfilter-admin-reject' => 'ප්‍රතික්ෂේප කරන්න',
+	'linkfilter-in-the-news' => 'පුවත් වලින්',
+	'linkfilter-comments-of-day' => 'ඉහලම පරිකථන',
+	'linkfilter-home-title' => '$1 සබැඳි',
+	'linkfilter-home-title-all' => 'සියලුම සබැඳි',
+	'linkfilter-next' => 'මීළඟ',
+	'linkfilter-previous' => 'පෙර',
+	'linkfilter-description-max' => 'උපරිම අක්ෂරයන්',
+	'linkfilter-description-left' => '$1 ඉතිරි',
+	'linkfilter-popular-articles' => 'මඟහරින්න එපා',
+	'linkfilter-new-links-title' => 'නව සබැඳි',
+	'linkfilter-edit-summary' => 'නව සබැඳිය',
+	'linkfilter-no-results' => 'කිසිදු පිටුවක් හමු නොවුනි.',
+	'linkfilter-feed-title' => '{{SITENAME}} සබැඳි',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
@@ -1293,6 +1489,7 @@ $messages['tl'] = array(
 
 /** Ukrainian (українська)
  * @author Base
+ * @author Steve.rusyn
  */
 $messages['uk'] = array(
 	'linkapprove' => 'Затвердити посилання',
@@ -1317,4 +1514,26 @@ $messages['uk'] = array(
 	'linkfilter-home-button' => 'Домашня сторінка посилань',
 	'linkfilter-submit-success-title' => 'Посилання подано',
 	'linkfilter-anonymous' => 'Анонімний фанатик',
+	'linkfilter-home-title' => '$1 посилання',
+	'linkfilter-home-title-all' => 'Всі посилання',
+	'linkfilter-new-links-title' => 'Нові посилання',
+	'linkfilter-edit-summary' => 'нове посилання',
+);
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Shirayuki
+ */
+$messages['zh-hans'] = array(
+	'linkfilter-submit' => '提交',
+	'linkfilter-description' => '说明',
+	'linkfilter-admin-reject' => '拒绝',
+);
+
+/** Traditional Chinese (中文（繁體）‎)
+ * @author Shirayuki
+ */
+$messages['zh-hant'] = array(
+	'linkfilter-submit' => '提交',
+	'linkfilter-admin-accept' => '接受',
+	'linkfilter-admin-reject' => '拒絕',
 );
