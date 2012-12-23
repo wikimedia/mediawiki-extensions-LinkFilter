@@ -148,6 +148,15 @@ $messages['arc'] = array(
 	'linkfilter-previous' => 'ܕܩܕܡ',
 );
 
+/** Bulgarian (български)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['bg'] = array(
+	'linkfilter-all' => 'Всички',
+	'linkfilter-title' => 'Заглавие',
+	'linkfilter-description' => 'Описание',
+);
+
 /** Breton (brezhoneg)
  * @author Fulup
  * @author Y-M D
@@ -837,6 +846,33 @@ $messages['ia'] = array(
 	'right-linkadmin' => 'Administrar ligamines submittite per usatores',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author Farras
+ * @author පසිඳු කාවින්ද
+ */
+$messages['id'] = array(
+	'linkfilter-all' => 'Semua',
+	'linkfilter-submit' => 'Kirim',
+	'linkfilter-title' => 'Judul',
+	'linkfilter-description' => 'Deskripsi',
+	'linkfilter-admin-accept' => 'Terima',
+	'linkfilter-admin-reject' => 'Tolak',
+	'linkfilter-home-title' => '$1 pranala',
+	'linkfilter-home-title-all' => 'Semua pranala',
+	'linkfilter-description-max' => 'Karakter maksimum',
+	'linkfilter-description-left' => '$1 tersisa',
+	'linkfilter-new-links-title' => 'Pranala baru',
+	'linkfilter-time-days' => '{{PLURAL:$1|satu hari|$1 hari}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|satu jam|$1 jam}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|satu menit|$1 menit}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|satu detik|$1 detik}}',
+	'linkfilter-edit-summary' => 'pranala baru',
+	'linkfilter-feed-title' => 'Pranala {{SITENAME}}',
+	'group-linkadmin' => 'Pengurus pranala',
+	'group-linkadmin-member' => '{{GENDER:$1|pengurus pranala}}',
+	'grouppage-linkadmin' => '{{ns:project}}:Pengurus pranala',
+);
+
 /** Italian (italiano)
  * @author Darth Kule
  */
@@ -1056,6 +1092,39 @@ $messages['lb'] = array(
 	'right-linkadmin' => 'Gestioun vun de Linken déi vun de Benotzer proposéiert goufen',
 );
 
+/** Lithuanian (lietuvių)
+ * @author Eitvys200
+ */
+$messages['lt'] = array(
+	'linksubmit' => 'Siųsti nuorodą',
+	'linkfilter-all' => 'Visi',
+	'linkfilter-submit' => 'Siųsti',
+	'linkfilter-submit-title' => 'Siųsti nuorodą',
+	'linkfilter-submit-no-title' => 'Prašome įveskite pavadinimą',
+	'linkfilter-submit-no-type' => 'Pasirinkite nuorodos tipą.',
+	'linkfilter-edit-title' => 'Redaguoti $1',
+	'linkfilter-submit-another' => 'Siųsti kitą nuorodą',
+	'linkfilter-login-text' => 'Jūs turite būti prisijungęs kad galėtumėte siųsti nuorodas.',
+	'linkfilter-title' => 'Pavadinimas',
+	'linkfilter-type' => 'Nuorodos tipas',
+	'linkfilter-description' => 'Aprašymas',
+	'linkfilter-submit-button' => 'Siųsti nuorodą',
+	'linkfilter-submit-success-title' => 'Nuoroda išsiųsta',
+	'linkfilter-admin-accept' => 'Sutikti',
+	'linkfilter-admin-reject' => 'Atmesti',
+	'linkfilter-admin-reject-success' => 'Nuoroda buvo atmesta',
+	'linkfilter-admin-accept-success' => 'Nuoroda buvo priimta',
+	'linkfilter-in-the-news' => 'Naujienose',
+	'linkfilter-about-submitter' => 'Apie siuntėją',
+	'linkfilter-home-title' => '$1 nuorodas',
+	'linkfilter-home-title-all' => 'Visos nuorodos',
+	'linkfilter-next' => 'kitas',
+	'linkfilter-previous' => 'ankstesnis',
+	'linkfilter-description-left' => 'liko $1',
+	'linkfilter-new-links-title' => 'Naujos nuorodos',
+	'group-linkadmin' => 'Nuorodos administratoriai',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
@@ -1122,6 +1191,68 @@ $messages['mk'] = array(
 	'right-linkadmin' => 'Администрација на врски поднесени од корисници',
 	'group-linkadmin.css' => '/* Тука поставениот CSS ќе се применува само врз администратори на врски */',
 	'group-linkadmin.js' => '/* Тука поставениот JS ќе се применува само врз администратори на врски */',
+);
+
+/** Maltese (Malti)
+ * @author Chrisportelli
+ */
+$messages['mt'] = array(
+	'linksubmit' => 'Ibgħat ħolqa',
+	'linkfilter-desc' => "Iżżid paġni speċjali u ''parser hook'' għas-sottomissjoni, approvazzjoni u rifjutar ta' ħoloq",
+	'linkfilter-nothing-to-approve' => "Attwalment m'hemm l-ebda ħolqa li qegħdha tistenna l-approvazzjoni",
+	'linkfilter-no-recently-approved' => 'L-ebda ħolqa ma ġiet aċċettata riċentament',
+	'linkfilter-no-links-at-all' => "L-ebda ħolqa għadha ma ntbagħtet s'issa jew l-amministraturi tal-ħoloq għadhom ma rrevedewx il-ħoloq li ntbagħtu.",
+	'linkfilter-ago' => '$1 ilou taħt <i>$2</i>',
+	'linkfilter-all' => 'Kollha',
+	'linkfilter-submit' => 'Ibgħat',
+	'linkfilter-submit-title' => 'Ibgħat ħolqa',
+	'linkfilter-submit-no-title' => 'Daħħal titlu',
+	'linkfilter-submit-no-type' => "Agħżel tip ta' ħolqa.",
+	'linkfilter-edit-title' => 'Immodifika $1',
+	'linkfilter-approve-links' => 'Approvazzjoni tal-ħoloq',
+	'linkfilter-submit-another' => 'Ibgħat ħolqa oħra',
+	'linkfilter-login-title' => "M'intix illoggjat",
+	'linkfilter-login-text' => 'Trid tkun fil-kont tiegħek sabiex tibgħat ħoloq.',
+	'linkfilter-title' => 'Titlu',
+	'linkfilter-type' => "Tip ta' ħolqa",
+	'linkfilter-description' => 'Deskrizzjoni',
+	'linkfilter-submit-button' => 'Ibgħat ħolqa',
+	'linkfilter-submit-success-title' => 'Ħolqa ntbagħtet',
+	'linkfilter-submit-success-text' => 'Il-ħolqa tiegħek intbagħtet għall-approvazzjoni',
+	'linkfilter-instructions' => "Tista' [[MediaWiki:Linkfilter-instructions|żżid struzzjonijiet lill-utenti]].",
+	'linkfilter-admin-instructions' => "Tista' [[MediaWiki:Linkfilter-instructions|żżid struzzjonijiet lill-amministraturi]].", # Fuzzy
+	'linkfilter-admin-recent' => 'Approvati riċentament',
+	'linkfilter-approve-title' => 'Ġestjoni tal-ħoloq',
+	'linkfilter-submittedby' => "'''Mibgħuta minn''': [[User:$1|$1]]",
+	'linkfilter-submitted' => 'Mibgħuta $1',
+	'linkfilter-admin-accept' => 'Aċċetta',
+	'linkfilter-admin-reject' => 'Irrifjuta',
+	'linkfilter-admin-reject-success' => 'Il-ħolqa ġiet rifjutata',
+	'linkfilter-admin-accept-success' => 'Il-ħolqa ġiet aċċettata',
+	'linkfilter-in-the-news' => 'Fl-aħbarijiet',
+	'linkfilter-about-submitter' => 'Dwar is-sottomittent',
+	'linkfilter-anonymous' => 'Fanatiku anonimu',
+	'linkfilter-comments-of-day' => 'Kummenti prinċipali',
+	'linkfilter-comments' => '{{PLURAL:$1|kumment wieħed|$1 kummenti}}',
+	'linkfilter-home-title' => 'Ħoloq $1',
+	'linkfilter-home-title-all' => 'Il-ħoloq kollha',
+	'linkfilter-next' => 'li jmiss',
+	'linkfilter-previous' => "ta' qabel",
+	'linkfilter-description-max' => "Numru massimu ta' karattri",
+	'linkfilter-description-left' => '$1 nieqsa',
+	'linkfilter-popular-articles' => 'Titlifx',
+	'linkfilter-new-links-title' => 'Ħoloq ġodda',
+	'linkfilter-time-days' => '{{PLURAL:$1|ġurnata|$1 ġranet}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|siegħa|$1 sigħat}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|minuta|$1 minuti}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|sekonda|$1 sekondi}}',
+	'linkfilter-edit-summary' => 'ħolqa ġdida',
+	'linkfilter-no-results' => 'L-ebda paġna ma nstabet.',
+	'linkfilter-feed-title' => "Ħoloq ta' {{SITENAME}}",
+	'group-linkadmin' => 'Amministraturi tal-ħoloq',
+	'group-linkadmin-member' => '{{GENDER:$1|amministratur tal-ħoloq}}',
+	'grouppage-linkadmin' => '{{ns:project}}:Amministraturi tal-ħoloq',
+	'right-linkadmin' => 'Jamministra ħoloq mibgħuta mill-utenti',
 );
 
 /** Dutch (Nederlands)
@@ -1289,15 +1420,15 @@ $messages['ps'] = array(
 $messages['ro'] = array(
 	'linkapprove' => 'Aprobare legături',
 	'linkshome' => 'Pagina principală pentru legături',
-	'linksubmit' => 'Trimite o legătură',
+	'linksubmit' => 'Trimitere legătură',
 	'linkfilter-all' => 'Toate',
 	'linkfilter-submit' => 'Trimite',
-	'linkfilter-submit-title' => 'Trimite o legătură',
+	'linkfilter-submit-title' => 'Trimitere legătură',
 	'linkfilter-submit-no-title' => 'Introduceți un titlu.',
 	'linkfilter-submit-no-type' => 'Alegeți un tip de legătură.',
 	'linkfilter-edit-title' => 'Modificare $1',
-	'linkfilter-approve-links' => 'Aprobați legături',
-	'linkfilter-submit-another' => 'Trimiteți o altă legătură',
+	'linkfilter-approve-links' => 'Aprobare legături',
+	'linkfilter-submit-another' => 'Trimite o altă legătură',
 	'linkfilter-login-title' => 'Neautentificat',
 	'linkfilter-login-text' => 'Trebuie să fiți autentificat pentru a trimite legături.',
 	'linkfilter-title' => 'Titlu',
@@ -1319,7 +1450,7 @@ $messages['ro'] = array(
 	'linkfilter-anonymous' => 'Fanatic anonim',
 	'linkfilter-comments-of-day' => 'Comentarii de top',
 	'linkfilter-comments' => '{{PLURAL:$1|$1 comentariu|$1 comentarii|$1 de comentarii}}',
-	'linkfilter-home-title' => '$1 legături',
+	'linkfilter-home-title' => 'legături $1',
 	'linkfilter-home-title-all' => 'Toate legăturile',
 	'linkfilter-next' => 'următorul',
 	'linkfilter-previous' => 'precedentul',
@@ -1365,14 +1496,18 @@ $messages['ru'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
+	'linkshome' => 'සබැඳි නිවස',
+	'linksubmit' => 'සබැඳියක් යොමන්න',
 	'linkfilter-all' => 'සියල්ල',
 	'linkfilter-submit' => 'යොමන්න',
+	'linkfilter-submit-title' => 'සබැඳියක් යොමන්න',
 	'linkfilter-edit-title' => '$1 සංස්කරණය',
 	'linkfilter-login-title' => 'ප්‍රවිෂ්ට වී නොමැත',
 	'linkfilter-title' => 'මාතෘකාව',
 	'linkfilter-type' => 'සබැඳි වර්ගය',
 	'linkfilter-description' => 'විස්තරය',
 	'linkfilter-submit-button' => 'සබැඳිය යොමන්න',
+	'linkfilter-home-button' => 'සබැඳි නිවස',
 	'linkfilter-admin-accept' => 'පිළිගන්න',
 	'linkfilter-admin-reject' => 'ප්‍රතික්ෂේප කරන්න',
 	'linkfilter-in-the-news' => 'පුවත් වලින්',
@@ -1505,6 +1640,8 @@ $messages['uk'] = array(
 	'linkfilter-submit-no-title' => 'Будь ласка, введіть назву',
 	'linkfilter-submit-no-type' => "Оберіть тип зв'язку.",
 	'linkfilter-edit-title' => 'Редагування $1',
+	'linkfilter-approve-links' => 'Затвердити посилання',
+	'linkfilter-submit-another' => 'Надістати інше посилання',
 	'linkfilter-login-title' => 'Не увійшли до системи',
 	'linkfilter-login-text' => 'Ви повинні увійти до системи, для подання посилань',
 	'linkfilter-title' => 'Назва',
@@ -1513,6 +1650,9 @@ $messages['uk'] = array(
 	'linkfilter-submit-button' => 'Подати посилання',
 	'linkfilter-home-button' => 'Домашня сторінка посилань',
 	'linkfilter-submit-success-title' => 'Посилання подано',
+	'linkfilter-submit-success-text' => 'Ваше посилання надіслано для затвердження',
+	'linkfilter-instructions' => 'Ви можете додати [[MediaWiki:Linkfilter-instructions|інструкції для користувачів]].',
+	'linkfilter-admin-instructions' => 'Ви можете додати [[MediaWiki:Linkfilter-admin-instructions|інструкції для адміністраторів]].',
 	'linkfilter-anonymous' => 'Анонімний фанатик',
 	'linkfilter-home-title' => '$1 посилання',
 	'linkfilter-home-title-all' => 'Всі посилання',
