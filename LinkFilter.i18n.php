@@ -148,6 +148,71 @@ $messages['arc'] = array(
 	'linkfilter-previous' => 'ܕܩܕܡ',
 );
 
+/** South Azerbaijani (تورکجه)
+ * @author Mousa
+ */
+$messages['azb'] = array(
+	'linkapprove' => 'باغلانتیلاری بَیَن',
+	'linkshome' => 'باغلانتیلار ائوی',
+	'linksubmit' => 'بیر باغلانتی گؤندر',
+	'linkfilter-desc' => 'یئنی اؤزل صحیفه‌لر و باغلانتی یول‌لاماق/بَیَنمک/رد ائتمک اوچون یئنی چنگل آرتیرار',
+	'linkfilter-nothing-to-approve' => 'ایندی بَیَنمگی گؤزله‌ین باغلانتیلار یوخدور.',
+	'linkfilter-no-recently-approved' => 'یاخیندا هئچ بیر باغلانتی بَیَنیلمه‌ییب‌دیر.',
+	'linkfilter-no-links-at-all' => 'هله‌لیک هئچ بیر باغلانتی گؤندریلمه‌ییب‌دیر یادا باغلانتی ایداره‌چیلری هله‌لیک گؤندریلن باغلانتیلاری گؤزدن گئچیتمه‌ییبلر.',
+	'linkfilter-ago' => '<i>$2</i> آلتیندا $1 قاباق',
+	'linkfilter-all' => 'هامیسی',
+	'linkfilter-submit' => 'گؤندر',
+	'linkfilter-submit-title' => 'بیر باغلانتی گؤندر',
+	'linkfilter-submit-no-title' => 'لوطفاً بیر باشلیق وئرین',
+	'linkfilter-submit-no-type' => 'بیر باغلانتی نوعو گؤتورون.',
+	'linkfilter-edit-title' => '$1-ی دَییشدیرمک',
+	'linkfilter-approve-links' => 'باغلانتیلاری بَیَن',
+	'linkfilter-submit-another' => 'آیری باغلانتی گؤندر',
+	'linkfilter-login-title' => 'گیریش ائدیلمه‌میش',
+	'linkfilter-login-text' => 'باغلانتی گؤندرمگه گیریش ائتمه‌نیز گرکلی‌دیر.',
+	'linkfilter-title' => 'باشلیق',
+	'linkfilter-type' => 'باغلانتی نوعو',
+	'linkfilter-description' => 'آچیقلاما',
+	'linkfilter-submit-button' => 'باغلانتی گؤندر',
+	'linkfilter-home-button' => 'باغلانتیلار ائوی',
+	'linkfilter-submit-success-title' => 'باغلانتی گؤندریلدی',
+	'linkfilter-submit-success-text' => 'سیزین باغلانتینیز بَیَنیلمگه گؤندریلدی',
+	'linkfilter-instructions' => 'سیز [[MediaWiki:Linkfilter-instructions|ایستیفاده‌چیلره تعلیمات آرتیر]]ابیلرسینیز.',
+	'linkfilter-admin-instructions' => 'سیز [[MediaWiki:Linkfilter-admin-instructions|ایداره‌چیلره تعلیمات آرتیر]]ا بیلرسینیز.',
+	'linkfilter-admin-recent' => 'یاخیندا بَیَنیلمیش',
+	'linkfilter-approve-title' => 'باغلانتی ایداره‌سی',
+	'linkfilter-submittedby' => "[[User:$1|$1]] ایله '''گؤندریلیب‌دیر'''",
+	'linkfilter-submitted' => '$1-ی گؤندریب‌دیر',
+	'linkfilter-admin-accept' => 'قبول ائت',
+	'linkfilter-admin-reject' => 'رد ائت',
+	'linkfilter-admin-reject-success' => 'باغلانتی رد اولونوب‌دور',
+	'linkfilter-admin-accept-success' => 'باغلانتی قبول اولونوب‌دور',
+	'linkfilter-in-the-news' => 'خبرلرده',
+	'linkfilter-about-submitter' => 'گؤندرنه گؤره',
+	'linkfilter-anonymous' => 'تانیلمایان فاناتیک',
+	'linkfilter-comments-of-day' => 'یوخاری یوروملار',
+	'linkfilter-comments' => '{{PLURAL:$1|بیر|$1}} یوروم',
+	'linkfilter-home-title' => '$1 باغلانتیلار',
+	'linkfilter-home-title-all' => 'بوتون باغلانتیلار',
+	'linkfilter-next' => 'سونراکی',
+	'linkfilter-previous' => 'قاباقکی',
+	'linkfilter-description-max' => 'ان یوخاری حرفلر',
+	'linkfilter-description-left' => '$1 قالیب‌دیر',
+	'linkfilter-popular-articles' => 'ال‌دن وئرمه',
+	'linkfilter-new-links-title' => 'یئنی باغلانتیلار',
+	'linkfilter-time-days' => '{{PLURAL:$1|بیر|$1}} گون',
+	'linkfilter-time-hours' => '{{PLURAL:$1|بیر|$1}} ساعات',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|بیر|$1}} دقیقه',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|بیر|$1}} ثانیه',
+	'linkfilter-edit-summary' => 'یئنی باغلانتی',
+	'linkfilter-no-results' => 'بیر صحیفه تاپیلمادی.',
+	'linkfilter-feed-title' => '{{SITENAME}} باغلانتیلاری',
+	'group-linkadmin' => 'باغلانتی ایداره‌چیلری',
+	'group-linkadmin-member' => '{{GENDER:$1|باغلانتی ایداره‌چیسی}}',
+	'grouppage-linkadmin' => '{{ns:project}}:باغلانتی ایداره‌چیلری',
+	'right-linkadmin' => 'ایستیفاده‌چی گؤندرن باغلانتیلاری ایداره ائت',
+);
+
 /** Bulgarian (български)
  * @author පසිඳු කාවින්ද
  */
@@ -1220,7 +1285,7 @@ $messages['mt'] = array(
 	'linkfilter-submit-success-title' => 'Ħolqa ntbagħtet',
 	'linkfilter-submit-success-text' => 'Il-ħolqa tiegħek intbagħtet għall-approvazzjoni',
 	'linkfilter-instructions' => "Tista' [[MediaWiki:Linkfilter-instructions|żżid struzzjonijiet lill-utenti]].",
-	'linkfilter-admin-instructions' => "Tista' [[MediaWiki:Linkfilter-instructions|żżid struzzjonijiet lill-amministraturi]].", # Fuzzy
+	'linkfilter-admin-instructions' => "Tista' [[MediaWiki:Linkfilter-admin-instructions|żżid struzzjonijiet lill-amministraturi]].",
 	'linkfilter-admin-recent' => 'Approvati riċentament',
 	'linkfilter-approve-title' => 'Ġestjoni tal-ħoloq',
 	'linkfilter-submittedby' => "'''Mibgħuta minn''': [[User:$1|$1]]",
@@ -1496,12 +1561,14 @@ $messages['ru'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
+	'linkapprove' => 'සබැඳි අනුමත කරන්න',
 	'linkshome' => 'සබැඳි නිවස',
 	'linksubmit' => 'සබැඳියක් යොමන්න',
 	'linkfilter-all' => 'සියල්ල',
 	'linkfilter-submit' => 'යොමන්න',
 	'linkfilter-submit-title' => 'සබැඳියක් යොමන්න',
 	'linkfilter-edit-title' => '$1 සංස්කරණය',
+	'linkfilter-approve-links' => 'සබැඳි අනුමත කරන්න',
 	'linkfilter-login-title' => 'ප්‍රවිෂ්ට වී නොමැත',
 	'linkfilter-title' => 'මාතෘකාව',
 	'linkfilter-type' => 'සබැඳි වර්ගය',
@@ -1523,6 +1590,7 @@ $messages['si'] = array(
 	'linkfilter-edit-summary' => 'නව සබැඳිය',
 	'linkfilter-no-results' => 'කිසිදු පිටුවක් හමු නොවුනි.',
 	'linkfilter-feed-title' => '{{SITENAME}} සබැඳි',
+	'group-linkadmin' => 'සබැඳි පරිපාලකවරු',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
@@ -1653,6 +1721,11 @@ $messages['uk'] = array(
 	'linkfilter-submit-success-text' => 'Ваше посилання надіслано для затвердження',
 	'linkfilter-instructions' => 'Ви можете додати [[MediaWiki:Linkfilter-instructions|інструкції для користувачів]].',
 	'linkfilter-admin-instructions' => 'Ви можете додати [[MediaWiki:Linkfilter-admin-instructions|інструкції для адміністраторів]].',
+	'linkfilter-admin-accept' => 'Прийняти',
+	'linkfilter-admin-reject' => 'Відхилити',
+	'linkfilter-admin-reject-success' => 'Посилання було відхилено',
+	'linkfilter-admin-accept-success' => 'Посилання було прийнято',
+	'linkfilter-in-the-news' => 'У новинах',
 	'linkfilter-anonymous' => 'Анонімний фанатик',
 	'linkfilter-home-title' => '$1 посилання',
 	'linkfilter-home-title-all' => 'Всі посилання',
