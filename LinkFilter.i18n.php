@@ -489,9 +489,13 @@ $messages['et'] = array(
 	'linkfilter-login-title' => 'Ei ole sisse logitud',
 	'linkfilter-title' => 'Pealkiri',
 	'linkfilter-description' => 'Kirjeldus',
+	'linkfilter-admin-accept' => 'Nõustu',
+	'linkfilter-admin-reject' => 'Lükka tagasi',
+	'linkfilter-in-the-news' => 'Uudistes',
 	'linkfilter-next' => 'järgmine',
 	'linkfilter-previous' => 'eelmine',
 	'linkfilter-edit-summary' => 'uus link',
+	'linkfilter-no-results' => 'Ühtegi lehekülge ei leitud.',
 );
 
 /** Persian (فارسی)
@@ -1092,6 +1096,15 @@ $messages['ka'] = array(
 	'linkfilter-feed-title' => '{{SITENAME}}-ის ბმულები',
 );
 
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'linkfilter-url' => '<i lang="en">URL</i>',
+	'group-linkadmin.css' => '/* Dat CSS heh aan dä Schtäll wirrek bloß op de Lengk-Verwallder */',
+	'group-linkadmin.js' => '/* Dat JavaSkrep heh aan dä Schtäll wirrek bloß op de Lengk-Verwallder */',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
@@ -1564,21 +1577,35 @@ $messages['si'] = array(
 	'linkapprove' => 'සබැඳි අනුමත කරන්න',
 	'linkshome' => 'සබැඳි නිවස',
 	'linksubmit' => 'සබැඳියක් යොමන්න',
+	'linkfilter-ago' => '$1 පෙර <i>$2</i> යටතේ',
 	'linkfilter-all' => 'සියල්ල',
 	'linkfilter-submit' => 'යොමන්න',
 	'linkfilter-submit-title' => 'සබැඳියක් යොමන්න',
+	'linkfilter-submit-no-title' => 'කරුණාකර මාතෘකාවක් ඇතුළත් කරන්න',
+	'linkfilter-submit-no-type' => 'සබැඳි වර්ගයක් තෝරාගන්න.',
 	'linkfilter-edit-title' => '$1 සංස්කරණය',
 	'linkfilter-approve-links' => 'සබැඳි අනුමත කරන්න',
+	'linkfilter-submit-another' => 'වෙනත් සබැඳියක් යොමන්න',
 	'linkfilter-login-title' => 'ප්‍රවිෂ්ට වී නොමැත',
+	'linkfilter-login-text' => 'සබැඳි යොමු කිරීම සඳහා ඔබ ප්‍රවිෂ්ට වී තිබිය යුතුයි.',
 	'linkfilter-title' => 'මාතෘකාව',
 	'linkfilter-type' => 'සබැඳි වර්ගය',
 	'linkfilter-description' => 'විස්තරය',
 	'linkfilter-submit-button' => 'සබැඳිය යොමන්න',
 	'linkfilter-home-button' => 'සබැඳි නිවස',
+	'linkfilter-submit-success-title' => 'සබැඳිය යොමන ලදී',
+	'linkfilter-admin-recent' => 'මෑතකදී අනුමතකල',
+	'linkfilter-approve-title' => 'සබැඳි පරිපාලකත්වය',
+	'linkfilter-submitted' => '$1 යොමන ලදී',
 	'linkfilter-admin-accept' => 'පිළිගන්න',
 	'linkfilter-admin-reject' => 'ප්‍රතික්ෂේප කරන්න',
+	'linkfilter-admin-reject-success' => 'සබැඳිය ප්‍රතික්ෂේප කරන ලදී',
+	'linkfilter-admin-accept-success' => 'සබැඳිය බාරගන්නා ලදී',
 	'linkfilter-in-the-news' => 'පුවත් වලින්',
+	'linkfilter-about-submitter' => 'යොමන්නා පිළිබඳ',
+	'linkfilter-anonymous' => 'නිර්නාමික සීමාන්තිකයා',
 	'linkfilter-comments-of-day' => 'ඉහලම පරිකථන',
+	'linkfilter-comments' => '{{PLURAL:$1|පරිකථන $1|පරිකථන $1}}', # Fuzzy
 	'linkfilter-home-title' => '$1 සබැඳි',
 	'linkfilter-home-title-all' => 'සියලුම සබැඳි',
 	'linkfilter-next' => 'මීළඟ',
@@ -1587,10 +1614,16 @@ $messages['si'] = array(
 	'linkfilter-description-left' => '$1 ඉතිරි',
 	'linkfilter-popular-articles' => 'මඟහරින්න එපා',
 	'linkfilter-new-links-title' => 'නව සබැඳි',
+	'linkfilter-time-days' => '{{PLURAL:$1|දවසක්|දවස් $1}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|පැයක්|පැය $1}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|මිනිත්තුවක්|මිනිත්තු $1}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|තත්පරයක්|තත්පර $1}}',
 	'linkfilter-edit-summary' => 'නව සබැඳිය',
 	'linkfilter-no-results' => 'කිසිදු පිටුවක් හමු නොවුනි.',
 	'linkfilter-feed-title' => '{{SITENAME}} සබැඳි',
 	'group-linkadmin' => 'සබැඳි පරිපාලකවරු',
+	'group-linkadmin-member' => '{{GENDER:$1|සබැඳි පරිපාලක}}',
+	'grouppage-linkadmin' => '{{ns:project}}:සබැඳි පරිපාලකවරු',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
@@ -1604,6 +1637,117 @@ $messages['sr-ec'] = array(
  */
 $messages['sr-el'] = array(
 	'linkfilter-url' => 'Adresa',
+);
+
+/** Swedish (svenska)
+ * @author WikiPhoenix
+ */
+$messages['sv'] = array(
+	'linkapprove' => 'Godkänn länkar',
+	'linkshome' => 'Länkar hem',
+	'linksubmit' => 'Skicka en länk',
+	'linkfilter-ago' => '$1 sedan under <i>$2</i>',
+	'linkfilter-all' => 'Alla',
+	'linkfilter-submit' => 'Skicka',
+	'linkfilter-submit-title' => 'Skicka en länk',
+	'linkfilter-submit-no-title' => 'Var god ange en titel',
+	'linkfilter-submit-no-type' => 'Välj en länktyp.',
+	'linkfilter-edit-title' => 'Redigera $1',
+	'linkfilter-approve-links' => 'Godkänn länkar',
+	'linkfilter-submit-another' => 'Skicka en annan länk',
+	'linkfilter-login-title' => 'Inte inloggad',
+	'linkfilter-login-text' => 'Du måste vara inloggad för att skicka länkar.',
+	'linkfilter-title' => 'Titel',
+	'linkfilter-type' => 'Länktyp',
+	'linkfilter-description' => 'Beskrivning',
+	'linkfilter-submit-button' => 'Skicka länk',
+	'linkfilter-home-button' => 'Länkar hem',
+	'linkfilter-submit-success-title' => 'Länk inskickad',
+	'linkfilter-submit-success-text' => 'Din länk har skickats för godkännande',
+	'linkfilter-admin-recent' => 'Nyligen godkända',
+	'linkfilter-approve-title' => 'Länkadministration',
+	'linkfilter-submittedby' => "'''Inlämnad av''': [[User:$1|$1]]",
+	'linkfilter-submitted' => 'Skickade in $1',
+	'linkfilter-admin-accept' => 'Acceptera',
+	'linkfilter-admin-reject' => 'Avvisa',
+	'linkfilter-admin-reject-success' => 'Länken avvisades',
+	'linkfilter-admin-accept-success' => 'Länken accepterades',
+	'linkfilter-in-the-news' => 'I nyheterna',
+	'linkfilter-about-submitter' => 'Om inskickaren',
+	'linkfilter-comments-of-day' => 'Toppkommentarer',
+	'linkfilter-comments' => '{{PLURAL:$1|$1 kommentar|$1 kommentarer}}',
+	'linkfilter-home-title' => '$1 länkar',
+	'linkfilter-home-title-all' => 'Alla länkar',
+	'linkfilter-next' => 'nästa',
+	'linkfilter-previous' => 'föregående',
+	'linkfilter-description-max' => 'Maximalt antal tecken',
+	'linkfilter-description-left' => '$1 kvar',
+	'linkfilter-popular-articles' => 'Missa inte',
+	'linkfilter-new-links-title' => 'Nya länkar',
+	'linkfilter-time-days' => '{{PLURAL:$1|en dag|$1 dagar}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|en timme|$1 timmar}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|en minut|$1 minuter}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|en sekund|$1 sekunder}}',
+	'linkfilter-edit-summary' => 'ny länk',
+	'linkfilter-no-results' => 'Inga sidor hittades.',
+	'linkfilter-feed-title' => 'Länkar på {{SITENAME}}',
+	'group-linkadmin' => 'Länkadministratörer',
+	'group-linkadmin-member' => '{{GENDER:$1|länkadministratör}}',
+	'grouppage-linkadmin' => '{{ns:project}}:Länkadministratörer',
+);
+
+/** Tamil (தமிழ்)
+ * @author Shanmugamp7
+ */
+$messages['ta'] = array(
+	'linkapprove' => 'இணைப்புகளை ஏற்றுக்கொள்',
+	'linkshome' => 'இணைப்புகள் முகப்பு',
+	'linksubmit' => 'ஒரு இணைப்பை சமர்ப்பிக்கவும்',
+	'linkfilter-all' => 'அனைத்தும்',
+	'linkfilter-submit' => 'சமர்ப்பி',
+	'linkfilter-submit-title' => 'ஒரு இணைப்பை சமர்ப்பிக்கவும்',
+	'linkfilter-submit-no-title' => 'தயவுசெய்து ஒரு தலைப்பை உள்ளிடவும்',
+	'linkfilter-submit-no-type' => 'ஒரு இணைப்பு வகையை தெரிவு செய்யவும்.',
+	'linkfilter-edit-title' => '$1-ஐ தொகு',
+	'linkfilter-approve-links' => 'இணைப்புகளை ஏற்றுக்கொள்',
+	'linkfilter-submit-another' => 'மற்றொரு இணைப்பை சமர்ப்பிக்கவும்',
+	'linkfilter-login-title' => 'புகுபதிகை செய்யப்படவில்லை',
+	'linkfilter-login-text' => 'இணைப்புகளை சமர்ப்பிக்க நீங்கள் கண்டிப்பாக புகுபதிகை செய்திருக்க வேண்டும்.',
+	'linkfilter-title' => 'தலைப்பு',
+	'linkfilter-type' => 'இணைப்பு வகை',
+	'linkfilter-description' => 'விளக்கம்',
+	'linkfilter-submit-button' => 'இணைப்பை சமர்ப்பிக்கவும்',
+	'linkfilter-home-button' => 'இணைப்புகள் முகப்பு',
+	'linkfilter-submit-success-title' => 'இணைப்பு சமர்ப்பிக்கப்பட்டது',
+	'linkfilter-submit-success-text' => 'உங்கள் இணைப்பு ஒப்புதலுக்காக அனுப்பப்பட்டுள்ளது',
+	'linkfilter-admin-recent' => 'அண்மையில் ஏற்றுக்கொள்ளப்பட்டது',
+	'linkfilter-approve-title' => 'இணைப்பு நிர்வாகம்',
+	'linkfilter-submitted' => '$1 சமர்ப்பிக்கப்பட்டது',
+	'linkfilter-admin-accept' => 'ஏற்றுக்கொள்',
+	'linkfilter-admin-reject' => 'நிராகரி',
+	'linkfilter-admin-reject-success' => 'இணைப்பு நிராகரிக்கப்பட்டது',
+	'linkfilter-admin-accept-success' => 'இணைப்பு ஏற்றுக்கொள்ளப்பட்டது',
+	'linkfilter-in-the-news' => 'செய்திகளில்',
+	'linkfilter-about-submitter' => 'சமர்ப்பிப்பவர் பற்றி',
+	'linkfilter-comments-of-day' => 'சிறந்த கருத்துகள்',
+	'linkfilter-comments' => '{{PLURAL:$1|$1 கருத்து|$1 கருத்துகள்}}',
+	'linkfilter-home-title' => '$1 இணைப்புகள்',
+	'linkfilter-home-title-all' => 'அனைத்து இணைப்புகள்',
+	'linkfilter-next' => 'அடுத்தது',
+	'linkfilter-previous' => 'முந்தைய',
+	'linkfilter-description-max' => 'அதிகபட்ச எழுத்துக்கள்',
+	'linkfilter-new-links-title' => 'புதிய இணைப்புகள்',
+	'linkfilter-time-days' => '{{PLURAL:$1|ஒரு நாள்|$1 நாட்கள்}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|ஒரு மணி|$1 மணிகள்}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|ஒரு நிமிடம்|$1 நிமிடங்கள்}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|ஒரு வினாடி|$1 வினாடிகள்}}',
+	'linkfilter-edit-summary' => 'புதிய இணைப்பு',
+	'linkfilter-no-results' => 'பக்கங்கள் எதுவும் காணப்படவில்லை',
+	'linkfilter-feed-title' => '{{SITENAME}} இணைப்புகள்',
+	'group-linkadmin' => 'இணைப்பு நிர்வாகிகள்',
+	'group-linkadmin-member' => '{{GENDER:$1|இணைப்பு நிர்வாகி}}',
+	'grouppage-linkadmin' => '{{ns:project}}:இணைப்பு நிர்வாகிகள்',
+	'right-linkadmin' => 'பயனர் சமர்ப்பித்த இணைப்புகளை நிர்வகிக்கவும்',
 );
 
 /** Tulu (ತುಳು)
