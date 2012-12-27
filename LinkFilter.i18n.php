@@ -850,6 +850,19 @@ $messages['hsb'] = array(
 	'right-linkadmin' => 'Wot wužiwarjow namjetowane wotkazy zarjadować',
 );
 
+/** Hungarian (magyar)
+ * @author Dj
+ */
+$messages['hu'] = array(
+	'linkfilter-time-days' => '{{PLURAL:$1|egy|$1}} nap',
+	'linkfilter-time-hours' => '{{PLURAL:$1|egy|$1}} óra',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|egy|$1}} perc',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|egy|$1}} másodperc',
+	'linkfilter-edit-summary' => 'új hivatkozás',
+	'linkfilter-no-results' => 'Nincs megfelelő lap.',
+	'linkfilter-feed-title' => '{{SITENAME}} hivatkozások',
+);
+
 /** Interlingua (interlingua)
  * @author McDutchie
  */
@@ -1475,6 +1488,71 @@ $messages['pl'] = array(
 	'group-linkadmin-member' => '{{GENDER:$1|administrator łącz}}',
 	'grouppage-linkadmin' => '{{ns:project}}:Administratorzy łącz',
 	'right-linkadmin' => 'Administruj łączami przedłożonymi przez przez użytkowników',
+);
+
+/** Piedmontese (Piemontèis)
+ * @author Dragonòt
+ */
+$messages['pms'] = array(
+	'linkapprove' => 'Apreuva colegament',
+	'linkshome' => 'A colega pagina prinsipal',
+	'linksubmit' => 'Spediss un colegament',
+	'linkfilter-desc' => 'A gionta pagine speciaj neuve e un gansi ëd parser për coleghé spedission/aprovassion/arfud',
+	'linkfilter-nothing-to-approve' => "A-i son gnun colegament al moment ch'a speto aprovassion.",
+	'linkfilter-no-recently-approved' => 'Gnun colegament a son stàit aprovà recentement.',
+	'linkfilter-no-links-at-all' => "Gnun colegament a son stàit anco' spedì o l'aministrador dij colegament a l'ha pa anco' revisionà ij colegament spedì.",
+	'linkfilter-ago' => '$1 fà sota <i>$2</i>',
+	'linkfilter-all' => 'Tùit',
+	'linkfilter-submit' => 'Spediss',
+	'linkfilter-submit-title' => 'Spediss un colegament',
+	'linkfilter-submit-no-title' => "Për piasì ch'a buta un tìtol",
+	'linkfilter-submit-no-type' => 'Sern na sòrt ëd colegament.',
+	'linkfilter-edit-title' => 'Modìfica $1',
+	'linkfilter-approve-links' => 'Apreuva colegament',
+	'linkfilter-submit-another' => "Spediss n'àutr colegament",
+	'linkfilter-login-title' => 'Nen rintrà ant ël sistema',
+	'linkfilter-login-text' => 'A dev esse intrà ant ël sistema për spedì dij colegament.',
+	'linkfilter-title' => 'Tìtol',
+	'linkfilter-type' => 'Sòrt ëd colegament',
+	'linkfilter-description' => 'Descrission',
+	'linkfilter-submit-button' => 'Spediss colegament',
+	'linkfilter-home-button' => 'A colega pagina prinsipal',
+	'linkfilter-submit-success-title' => 'Colegament spedì',
+	'linkfilter-submit-success-text' => "Tò colegament a l'é stàit mandà për aprovassion",
+	'linkfilter-instructions' => "It peule [[MediaWiki:Linkfilter-instructions|gionté istrussion për j'utent]].",
+	'linkfilter-admin-instructions' => "It peule gionté [[MediaWiki:Linkfilter-admin-instructions|istrussion për j'aministrador]].",
+	'linkfilter-admin-recent' => 'Aprovà recentement',
+	'linkfilter-approve-title' => 'Colega aministrassion',
+	'linkfilter-submittedby' => "'''Spedì da''': [[User:$1|$1]]",
+	'linkfilter-submitted' => 'Spedì $1',
+	'linkfilter-admin-accept' => 'Aceté',
+	'linkfilter-admin-reject' => 'Arfudé',
+	'linkfilter-admin-reject-success' => "Ël colegament a l'é stàit arfudà",
+	'linkfilter-admin-accept-success' => "Ël colegament a l'é stàit acetà",
+	'linkfilter-in-the-news' => 'Ant le neuve',
+	'linkfilter-about-submitter' => 'A propòsit dël mitent',
+	'linkfilter-anonymous' => 'Anònim fanàtic',
+	'linkfilter-comments-of-day' => 'Coment an testa',
+	'linkfilter-comments' => '{{PLURAL:$1|$1 coment}}',
+	'linkfilter-home-title' => '$1 anliura',
+	'linkfilter-home-title-all' => 'Tùit ij colegament',
+	'linkfilter-next' => 'anans',
+	'linkfilter-previous' => 'prima',
+	'linkfilter-description-max' => 'Caràter al pi',
+	'linkfilter-description-left' => '$1 lassà',
+	'linkfilter-popular-articles' => 'Da pa perde',
+	'linkfilter-new-links-title' => 'Colegament neuv',
+	'linkfilter-time-days' => '{{PLURAL:$1|un di|$1 di}}',
+	'linkfilter-time-hours' => "{{PLURAL:$1|n'ora|$1 ore}}",
+	'linkfilter-time-minutes' => '{{PLURAL:$1|na minuta|$1 minute}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|un second|$1 second}}',
+	'linkfilter-edit-summary' => 'colegament neuv',
+	'linkfilter-no-results' => 'Pa gnun-e pàgine trovà.',
+	'linkfilter-feed-title' => 'Colegament ëd {{SITENAME}}',
+	'group-linkadmin' => 'Aministrador ëd colegament',
+	'group-linkadmin-member' => '{{GENDER:$1|aministrador ëd colegament}}',
+	'grouppage-linkadmin' => '{{ns:project}}:Aministrador ëd colegament',
+	'right-linkadmin' => 'Aministra colegament spedì da utent',
 );
 
 /** Pashto (پښتو)
