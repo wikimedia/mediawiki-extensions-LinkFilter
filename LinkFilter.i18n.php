@@ -1949,9 +1949,14 @@ $messages['uk'] = array(
 	'linkfilter-admin-accept-success' => 'Посилання було прийнято',
 	'linkfilter-in-the-news' => 'У новинах',
 	'linkfilter-anonymous' => 'Анонімний фанатик',
+	'linkfilter-comments' => '$1 {{PLURAL:$1|коментар|коментарі|коментарів}}',
 	'linkfilter-home-title' => '$1 посилання',
 	'linkfilter-home-title-all' => 'Всі посилання',
 	'linkfilter-new-links-title' => 'Нові посилання',
+	'linkfilter-time-days' => '$1 {{PLURAL:$1|день|дні|днів}}',
+	'linkfilter-time-hours' => '$1 {{PLURAL:$1|годину|години|годин}}',
+	'linkfilter-time-minutes' => '$1 {{PLURAL:$1|хвилину|хвилини|хвилин}}',
+	'linkfilter-time-seconds' => '$1 {{PLURAL:$1|секунду|секунди|секунд}}',
 	'linkfilter-edit-summary' => 'нове посилання',
 );
 
