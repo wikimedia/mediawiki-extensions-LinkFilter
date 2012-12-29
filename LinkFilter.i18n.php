@@ -417,6 +417,46 @@ $messages['diq'] = array(
 	'group-linkadmin-member' => '{{GENDER:$1|Linka administratori}}',
 );
 
+/** Greek (Ελληνικά)
+ * @author ZaDiak
+ */
+$messages['el'] = array(
+	'linkfilter-all' => 'Όλα',
+	'linkfilter-submit' => 'Καταχώρηση',
+	'linkfilter-submit-title' => 'Καταχώρηση μια σύνδεσης',
+	'linkfilter-submit-no-title' => 'Παρακαλώ εισάγετε έναν τίτλο',
+	'linkfilter-submit-no-type' => 'Επιλέξτε έναν τύπο σύνδεσης.',
+	'linkfilter-edit-title' => 'Επεξεργασία $1',
+	'linkfilter-approve-links' => 'Έγκριση συνδέσεων',
+	'linkfilter-title' => 'Τίτλος',
+	'linkfilter-type' => 'Τύπος σύνδεσης',
+	'linkfilter-description' => 'Περιγραφή',
+	'linkfilter-submit-button' => 'Καταχώρηση σύνδεσης',
+	'linkfilter-admin-accept' => 'Αποδοχή',
+	'linkfilter-admin-reject' => 'Απόρριψη',
+	'linkfilter-admin-reject-success' => 'Η σύνδεση απορρίφθηκε',
+	'linkfilter-admin-accept-success' => 'Η σύνδεση έγινε δεκτή',
+	'linkfilter-in-the-news' => 'Στις ειδήσεις',
+	'linkfilter-about-submitter' => 'Σχετικά με τον υποβολέα',
+	'linkfilter-comments-of-day' => 'Κορυφαία σχόλια',
+	'linkfilter-comments' => '{{PLURAL:$1|$1 σχόλιο|$1 σχόλια}}',
+	'linkfilter-home-title' => '$1 συνδέσεις',
+	'linkfilter-home-title-all' => 'Όλες οι συνδέσεις',
+	'linkfilter-next' => 'επόμενο',
+	'linkfilter-previous' => 'προηγούμενο',
+	'linkfilter-description-max' => 'Μέγιστος αριθμός χαρακτήρων',
+	'linkfilter-description-left' => 'Έμειναν $1',
+	'linkfilter-popular-articles' => 'Μην το χάσετε',
+	'linkfilter-new-links-title' => 'Νέες συνδέσεις',
+	'linkfilter-time-days' => '{{PLURAL:$1|μια μέρα|$1 μέρες}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|μια ώρα|$1 ώρες}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|ένα λεπτό|$1 λεπτά}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|ένα δευτερόλεπτο|$1 δευτερόλεπτα}}',
+	'linkfilter-edit-summary' => 'νέα σύνδεση',
+	'linkfilter-no-results' => 'Δεν βρέθηκαν σελίδες.',
+	'linkfilter-feed-title' => 'Συνδέσεις {{SITENAME}}',
+);
+
 /** Spanish (español)
  * @author Armando-Martin
  */
@@ -1952,12 +1992,16 @@ $messages['uk'] = array(
 	'linkfilter-comments' => '$1 {{PLURAL:$1|коментар|коментарі|коментарів}}',
 	'linkfilter-home-title' => '$1 посилання',
 	'linkfilter-home-title-all' => 'Всі посилання',
+	'linkfilter-description-max' => 'Максимальна кількість символів',
+	'linkfilter-description-left' => '$1 залишилось',
+	'linkfilter-popular-articles' => 'Не пропустіть',
 	'linkfilter-new-links-title' => 'Нові посилання',
 	'linkfilter-time-days' => '$1 {{PLURAL:$1|день|дні|днів}}',
 	'linkfilter-time-hours' => '$1 {{PLURAL:$1|годину|години|годин}}',
 	'linkfilter-time-minutes' => '$1 {{PLURAL:$1|хвилину|хвилини|хвилин}}',
 	'linkfilter-time-seconds' => '$1 {{PLURAL:$1|секунду|секунди|секунд}}',
 	'linkfilter-edit-summary' => 'нове посилання',
+	'linkfilter-no-results' => 'Сторінок не знайдено.',
 );
 
 /** Simplified Chinese (中文（简体）‎)
