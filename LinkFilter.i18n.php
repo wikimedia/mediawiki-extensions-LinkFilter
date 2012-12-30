@@ -731,6 +731,8 @@ $messages['frp'] = array(
 	'linkfilter-home-title-all' => 'Tôs los lims',
 	'linkfilter-next' => 'aprés',
 	'linkfilter-previous' => 'devant',
+	'linkfilter-description-max' => 'Nombro maximon de caractèros',
+	'linkfilter-description-left' => '$1 que réstont',
 	'linkfilter-popular-articles' => 'Pas oubliar',
 	'linkfilter-new-links-title' => 'Lims novéls',
 	'linkfilter-time-days' => '$1 jorn{{PLURAL:$1||s}}',
@@ -743,6 +745,7 @@ $messages['frp'] = array(
 	'group-linkadmin' => 'Administrators des lims',
 	'group-linkadmin-member' => 'administrat{{GENDER:$1|or|rice}} des lims',
 	'grouppage-linkadmin' => '{{ns:project}}:Administrators des lims',
+	'right-linkadmin' => 'Administrar los lims somês per los utilisators',
 );
 
 /** Galician (galego)
@@ -1667,6 +1670,36 @@ $messages['ro'] = array(
 	'right-linkadmin' => 'Administrează legăturile trimise de utilizatori',
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'linkapprove' => 'Approve le collegaminde',
+	'linkfilter-all' => 'Tutte',
+	'linkfilter-submit' => 'Conferme',
+	'linkfilter-submit-title' => "Conferme 'nu collegamende",
+	'linkfilter-submit-no-title' => "Pe piacere mitte 'nu titole",
+	'linkfilter-edit-title' => 'Cange $1',
+	'linkfilter-title' => 'Titole',
+	'linkfilter-type' => 'Tipe de collegamende',
+	'linkfilter-description' => 'Descrizione',
+	'linkfilter-submit-button' => "Conferme 'u collegamende",
+	'linkfilter-admin-accept' => 'Accette',
+	'linkfilter-admin-reject' => 'Scitte',
+	'linkfilter-home-title' => '$1 collegaminde',
+	'linkfilter-home-title-all' => 'Tutte le collegaminde',
+	'linkfilter-next' => 'prossime',
+	'linkfilter-previous' => 'precedende',
+	'linkfilter-description-left' => '$1 mangande',
+	'linkfilter-new-links-title' => 'Collegaminde nuève',
+	'linkfilter-time-days' => "{{PLURAL: $1|'nu sciurne|$1 sciurne}}",
+	'linkfilter-time-hours' => "{{PLURAL: $1|'n'ore|$1 ore}}",
+	'linkfilter-time-minutes' => "{{PLURAL:$1|'nu minute|$1 minute}}",
+	'linkfilter-time-seconds' => "{{PLURAL:$1|'nu seconde|$1 seconde}}",
+	'linkfilter-edit-summary' => 'collegamende nuève',
+	'linkfilter-no-results' => 'Nisciuna pàgene acchiate.',
+);
+
 /** Russian (русский)
  * @author Adata80
  * @author Eleferen
@@ -1712,8 +1745,10 @@ $messages['si'] = array(
 	'linkfilter-submit-button' => 'සබැඳිය යොමන්න',
 	'linkfilter-home-button' => 'සබැඳි නිවස',
 	'linkfilter-submit-success-title' => 'සබැඳිය යොමන ලදී',
+	'linkfilter-submit-success-text' => 'ඔබේ සබැඳිය අනුමත කිරීම සඳහා යවන ලදී',
 	'linkfilter-admin-recent' => 'මෑතකදී අනුමතකල',
 	'linkfilter-approve-title' => 'සබැඳි පරිපාලකත්වය',
+	'linkfilter-submittedby' => "'''යොමු කරන ලද්දේ''': [[User:$1|$1]]",
 	'linkfilter-submitted' => '$1 යොමන ලදී',
 	'linkfilter-admin-accept' => 'පිළිගන්න',
 	'linkfilter-admin-reject' => 'ප්‍රතික්ෂේප කරන්න',

@@ -82,7 +82,10 @@ $specialPageAliases['ko'] = array(
 
 /** Luxembourgish (Lëtzebuergesch) */
 $specialPageAliases['lb'] = array(
+	'LinkApprove' => array( 'Link_akzeptéieren' ),
 	'LinkEdit' => array( 'Link_änneren' ),
+	'LinkRedirect' => array( 'Link_viruleeden' ),
+	'LinkSubmit' => array( 'Link_späicheren' ),
 );
 
 /** Macedonian (македонски) */
