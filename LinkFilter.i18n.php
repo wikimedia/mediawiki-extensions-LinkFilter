@@ -307,6 +307,7 @@ $messages['cs'] = array(
 	'linkfilter-admin-reject-success' => 'Odkaz byl odmítnut',
 	'linkfilter-admin-accept-success' => 'Odkaz byl přijat',
 	'linkfilter-in-the-news' => 'V novinkách',
+	'linkfilter-about-submitter' => 'O vkladateli',
 	'linkfilter-anonymous' => 'Anonymní fanatik',
 	'linkfilter-comments-of-day' => 'Nejoblíbenější komentáře',
 	'linkfilter-comments' => '{{PLURAL:$1|Jeden komentář|$1 komentáře}}',
@@ -316,9 +317,12 @@ $messages['cs'] = array(
 	'linkfilter-previous' => 'předchozí',
 	'linkfilter-description-max' => 'Maximální počet znaků',
 	'linkfilter-description-left' => '$1 zbývá',
+	'linkfilter-popular-articles' => 'Nenechte si ujít',
 	'linkfilter-new-links-title' => 'Nové odkazy',
 	'linkfilter-time-days' => '{{PLURAL:$1|$1 den|$1 dny|$1 dní}}',
 	'linkfilter-edit-summary' => 'nový odkaz',
+	'linkfilter-no-results' => 'Žádná stránka nenalezena.',
+	'linkfilter-feed-title' => 'Odkazy pro {{SITENAME}}',
 );
 
 /** German (Deutsch)
@@ -828,6 +832,16 @@ $messages['he'] = array(
 	'linkfilter-new-links-title' => 'קישור חדש',
 );
 
+/** Hindi (हिन्दी)
+ * @author Ansumang
+ */
+$messages['hi'] = array(
+	'linkfilter-admin-accept' => 'स्वीकार करें',
+	'linkfilter-admin-reject' => 'अस्वीकार करें',
+	'linkfilter-next' => 'अगले',
+	'linkfilter-previous' => 'पिछला',
+);
+
 /** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
@@ -1259,6 +1273,60 @@ $messages['lt'] = array(
 	'group-linkadmin' => 'Nuorodos administratoriai',
 );
 
+/** Basa Banyumasan (Basa Banyumasan)
+ * @author StefanusRA
+ */
+$messages['map-bms'] = array(
+	'linksubmit' => 'Nglebokna pranala',
+	'linkfilter-all' => 'Kabeh',
+	'linkfilter-submit' => 'Kirimna',
+	'linkfilter-submit-title' => 'Nglebokna pranala',
+	'linkfilter-submit-no-title' => 'Monggo lebokna judule',
+	'linkfilter-submit-no-type' => 'Jikot tipe pranala.',
+	'linkfilter-edit-title' => 'Nyunting $1',
+	'linkfilter-approve-links' => 'Sarujuki pranala',
+	'linkfilter-submit-another' => 'Lebokna pranala liyane',
+	'linkfilter-login-title' => 'Durung mlebu log',
+	'linkfilter-login-text' => 'Rika kudu mlebu log kanggo nglebokna pranala.',
+	'linkfilter-title' => 'Judule',
+	'linkfilter-type' => 'Tipe pranala',
+	'linkfilter-description' => 'Deskripsi',
+	'linkfilter-submit-button' => 'Nglebokna pranala',
+	'linkfilter-home-button' => 'Pranala kaca utama',
+	'linkfilter-submit-success-title' => 'Pranala wis dilebokna',
+	'linkfilter-submit-success-text' => 'Pranalane Rika wis dekirim nggo disarujuki disit',
+	'linkfilter-instructions' => 'Rika teyeng [[MediaWiki:Linkfilter-instructions|nambahna prentah nggo panganggo]].',
+	'linkfilter-admin-instructions' => 'Rika teyeng nambahna [[MediaWiki:Linkfilter-admin-instructions|prentah kanggo admine]].',
+	'linkfilter-admin-recent' => 'Tembe baen disarujuki',
+	'linkfilter-admin-accept' => 'Detampa',
+	'linkfilter-admin-reject' => 'Tolak',
+	'linkfilter-admin-reject-success' => 'Pranala wis detolak',
+	'linkfilter-admin-accept-success' => 'Pranala wis detampa',
+	'linkfilter-in-the-news' => 'Nang jero brita',
+	'linkfilter-about-submitter' => 'Bab wong sing ngirimna',
+	'linkfilter-anonymous' => 'Wong fanatik sing ra nganggo jeneng',
+	'linkfilter-comments-of-day' => 'Komentar paling dhuwur',
+	'linkfilter-comments' => '{{PLURAL:$1|$1 komentar|$1 komentar}}', # Fuzzy
+	'linkfilter-home-title' => '$1 pranala',
+	'linkfilter-home-title-all' => 'Kabeh pranala',
+	'linkfilter-next' => 'lanjutane',
+	'linkfilter-previous' => 'sedurunge',
+	'linkfilter-description-max' => 'Karakter maksimum',
+	'linkfilter-description-left' => 'kurang $1',
+	'linkfilter-popular-articles' => 'Aja nganti ketinggalan',
+	'linkfilter-new-links-title' => 'Pranala anyar',
+	'linkfilter-time-days' => '{{PLURAL:$1|sedina|$1 dina}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|sejam|$1 jam}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|semenit|$1 menit}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|sedetik|$1 detik}}',
+	'linkfilter-edit-summary' => 'pranala anyar',
+	'linkfilter-no-results' => 'Kaca ora ditemokna.',
+	'linkfilter-feed-title' => 'Pranala {{SITENAME}}',
+	'group-linkadmin' => 'Panguruse pranala',
+	'group-linkadmin-member' => '{{GENDER:$1|pangurus pranala}}',
+	'grouppage-linkadmin' => '{{ns:project}}:Pangurus pranala',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
@@ -1394,35 +1462,35 @@ $messages['mt'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
-	'linkapprove' => 'Verwijzingen controleren',
-	'linkshome' => 'Startpagina verwijzingen',
-	'linksubmit' => 'Verwijzing voorstellen',
-	'linkfilter-desc' => "Voegt speciale pagina's toe en een parserhook voor het voorstellen, goedkeuren en afwijzen van verwijzingen",
-	'linkfilter-nothing-to-approve' => 'Er zijn op dit moment geen te controleren verwijzingen.',
-	'linkfilter-no-recently-approved' => 'Er zijn onlangs geen verwijzingen goedgekeurd.',
-	'linkfilter-no-links-at-all' => 'Er zijn nog geen verwijzingen voorgesteld of de verwijzingenbeheerders hebben de voorstelde verwijzingen nog niet beoordeeld.',
+	'linkapprove' => 'Koppelingen controleren',
+	'linkshome' => 'Startpagina koppelingen',
+	'linksubmit' => 'Koppeling voorstellen',
+	'linkfilter-desc' => "Voegt speciale pagina's toe en een parserhook voor het voorstellen, goedkeuren en afwijzen van koppelingen",
+	'linkfilter-nothing-to-approve' => 'Er zijn op dit moment geen te controleren koppelingen.',
+	'linkfilter-no-recently-approved' => 'Er zijn onlangs geen koppelingen goedgekeurd.',
+	'linkfilter-no-links-at-all' => 'Er zijn nog geen koppelingen voorgesteld of de koppelingenbeheerders hebben de voorstelde koppelingen nog niet beoordeeld.',
 	'linkfilter-ago' => '$1 geleden onder <i>$2</i>',
 	'linkfilter-all' => 'Alle',
 	'linkfilter-submit' => 'Opslaan',
-	'linkfilter-submit-title' => 'Verwijzing voorstellen',
+	'linkfilter-submit-title' => 'Koppeling voorstellen',
 	'linkfilter-submit-no-title' => 'Geef een naam op',
-	'linkfilter-submit-no-type' => 'Kies een verwijzingstype.',
+	'linkfilter-submit-no-type' => 'Kies een koppelingstype.',
 	'linkfilter-edit-title' => '$1 bewerken',
-	'linkfilter-approve-links' => 'Verwijzingen goedkeuren',
-	'linkfilter-submit-another' => 'Nog een verwijzing voorstellen',
+	'linkfilter-approve-links' => 'Koppelingen goedkeuren',
+	'linkfilter-submit-another' => 'Nog een koppeling voorstellen',
 	'linkfilter-login-title' => 'Niet aangemeld',
-	'linkfilter-login-text' => 'U moet aangemeld zijn om verwijzingen te kunnen voorstellen.',
+	'linkfilter-login-text' => 'U moet aangemeld zijn om koppelingen te kunnen voorstellen.',
 	'linkfilter-title' => 'Titel',
-	'linkfilter-type' => 'Verwijzingstype',
+	'linkfilter-type' => 'Koppelingstype',
 	'linkfilter-description' => 'Beschrijving',
-	'linkfilter-submit-button' => 'Verwijzing opslaan',
-	'linkfilter-home-button' => 'Startpagina verwijzingen',
-	'linkfilter-submit-success-title' => 'De verwijzing is opgeslagen',
-	'linkfilter-submit-success-text' => 'Uw verwijzing is opgeslagen en moet gecontroleerd worden',
+	'linkfilter-submit-button' => 'Koppeling opslaan',
+	'linkfilter-home-button' => 'Startpagina koppelingen',
+	'linkfilter-submit-success-title' => 'De koppeling is opgeslagen',
+	'linkfilter-submit-success-text' => 'Uw koppelingen is opgeslagen en moet gecontroleerd worden',
 	'linkfilter-instructions' => 'U kunt [[MediaWiki:Linkfilter-instructions|instructies voor gebruikers toevoegen]].',
 	'linkfilter-admin-instructions' => 'U kunt [[MediaWiki:Linkfilter-admin-instructions|beheerdersinstructies toevoegen]].',
 	'linkfilter-admin-recent' => 'Onlangs goedgekeurd',
-	'linkfilter-approve-title' => 'Verwijzingenbeheer',
+	'linkfilter-approve-title' => 'Koppelingenbeheer',
 	'linkfilter-submittedby' => 'Afkomstig van [[User:$1|$1]]',
 	'linkfilter-submitted' => 'Heeft $1 opgeslagen',
 	'linkfilter-admin-accept' => 'Aanvaarden',
@@ -1434,25 +1502,35 @@ $messages['nl'] = array(
 	'linkfilter-anonymous' => 'Anonieme fanaat',
 	'linkfilter-comments-of-day' => 'Populairste opmerkingen',
 	'linkfilter-comments' => '{{PLURAL:$1|$1 reactie|$1 reacties}}',
-	'linkfilter-home-title' => '$1 verwijzingen',
-	'linkfilter-home-title-all' => 'Alle verwijzingen',
+	'linkfilter-home-title' => '$1 koppelingen',
+	'linkfilter-home-title-all' => 'Alle koppelingen',
 	'linkfilter-next' => 'volgende',
 	'linkfilter-previous' => 'vorige',
 	'linkfilter-description-max' => 'Maximum aantal tekens',
 	'linkfilter-description-left' => '$1 over',
 	'linkfilter-popular-articles' => 'Niet te missen',
-	'linkfilter-new-links-title' => 'Nieuwe verwijzingen',
+	'linkfilter-new-links-title' => 'Nieuwe koppelingen',
 	'linkfilter-time-days' => '{{PLURAL:$1|één dag|$1 dagen}}',
 	'linkfilter-time-hours' => '{{PLURAL:$1|één uur|$1 uur}}',
 	'linkfilter-time-minutes' => '{{PLURAL:$1|één minuut|$1 minuten}}',
 	'linkfilter-time-seconds' => '{{PLURAL:$1|één seconde|$1 seconden}}',
-	'linkfilter-edit-summary' => 'nieuwe verwijzing',
+	'linkfilter-edit-summary' => 'nieuwe koppeling',
 	'linkfilter-no-results' => "Geen pagina's gevonden.",
-	'linkfilter-feed-title' => 'Verwijzingen van {{SITENAME}}',
-	'group-linkadmin' => 'Verwijzingenbeheerders',
-	'group-linkadmin-member' => '{{GENDER:$1|verwijzingenbeheerder}}',
-	'grouppage-linkadmin' => '{{ns:project}}:Verwijzingenbeheerders',
-	'right-linkadmin' => 'Door gebruikers ingezonden verwijzingen beheren',
+	'linkfilter-feed-title' => 'Koppelingen van {{SITENAME}}',
+	'group-linkadmin' => 'Koppelingenbeheerders',
+	'group-linkadmin-member' => '{{GENDER:$1|koppelingenbeheerder}}',
+	'grouppage-linkadmin' => '{{ns:project}}:Koppelingenbeheerders',
+	'right-linkadmin' => 'Door gebruikers ingezonden koppelingen beheren',
+);
+
+/** Nederlands (informeel)‎ (Nederlands (informeel)‎)
+ * @author Siebrand
+ */
+$messages['nl-informal'] = array(
+	'linkfilter-login-text' => 'Je moet aangemeld zijn om koppelingen te kunnen voorstellen.',
+	'linkfilter-submit-success-text' => 'Jouw koppelingen is opgeslagen en moet gecontroleerd worden',
+	'linkfilter-instructions' => 'Je kunt [[MediaWiki:Linkfilter-instructions|instructies voor gebruikers toevoegen]].',
+	'linkfilter-admin-instructions' => 'Je kunt [[MediaWiki:Linkfilter-admin-instructions|beheerdersinstructies toevoegen]].',
 );
 
 /** Deitsch (Deitsch)
@@ -1620,6 +1698,7 @@ $messages['ro'] = array(
 	'linkapprove' => 'Aprobare legături',
 	'linkshome' => 'Pagina principală pentru legături',
 	'linksubmit' => 'Trimitere legătură',
+	'linkfilter-no-recently-approved' => 'Nicio legătură nu a fost aprobată recent.',
 	'linkfilter-all' => 'Toate',
 	'linkfilter-submit' => 'Trimite',
 	'linkfilter-submit-title' => 'Trimitere legătură',
