@@ -422,41 +422,42 @@ $messages['diq'] = array(
 );
 
 /** Greek (Ελληνικά)
+ * @author Glavkos
  * @author ZaDiak
  */
 $messages['el'] = array(
 	'linkfilter-all' => 'Όλα',
 	'linkfilter-submit' => 'Καταχώρηση',
-	'linkfilter-submit-title' => 'Καταχώρηση μια σύνδεσης',
+	'linkfilter-submit-title' => 'Υποβολή ενός συνδέσμου',
 	'linkfilter-submit-no-title' => 'Παρακαλώ εισάγετε έναν τίτλο',
-	'linkfilter-submit-no-type' => 'Επιλέξτε έναν τύπο σύνδεσης.',
+	'linkfilter-submit-no-type' => 'Επιλέξτε έναν τύπο συνδέσμου.',
 	'linkfilter-edit-title' => 'Επεξεργασία $1',
-	'linkfilter-approve-links' => 'Έγκριση συνδέσεων',
+	'linkfilter-approve-links' => 'Έγκριση συνδέσμων',
 	'linkfilter-title' => 'Τίτλος',
-	'linkfilter-type' => 'Τύπος σύνδεσης',
+	'linkfilter-type' => 'Τύπος συνδέσμου',
 	'linkfilter-description' => 'Περιγραφή',
-	'linkfilter-submit-button' => 'Καταχώρηση σύνδεσης',
+	'linkfilter-submit-button' => 'Υποβολή συνδέσμου',
 	'linkfilter-admin-accept' => 'Αποδοχή',
 	'linkfilter-admin-reject' => 'Απόρριψη',
-	'linkfilter-admin-reject-success' => 'Η σύνδεση απορρίφθηκε',
-	'linkfilter-admin-accept-success' => 'Η σύνδεση έγινε δεκτή',
+	'linkfilter-admin-reject-success' => 'Ο σύνδεσμος απορρίφθηκε',
+	'linkfilter-admin-accept-success' => 'Ο σύνδεσμος έγινε αποδεκτός',
 	'linkfilter-in-the-news' => 'Στις ειδήσεις',
 	'linkfilter-about-submitter' => 'Σχετικά με τον υποβολέα',
 	'linkfilter-comments-of-day' => 'Κορυφαία σχόλια',
 	'linkfilter-comments' => '{{PLURAL:$1|$1 σχόλιο|$1 σχόλια}}',
-	'linkfilter-home-title' => '$1 συνδέσεις',
-	'linkfilter-home-title-all' => 'Όλες οι συνδέσεις',
+	'linkfilter-home-title' => '$1 σύνδεσμοι',
+	'linkfilter-home-title-all' => 'Όλοι οι σύνδεσμοι',
 	'linkfilter-next' => 'επόμενο',
 	'linkfilter-previous' => 'προηγούμενο',
 	'linkfilter-description-max' => 'Μέγιστος αριθμός χαρακτήρων',
 	'linkfilter-description-left' => 'Έμειναν $1',
 	'linkfilter-popular-articles' => 'Μην το χάσετε',
-	'linkfilter-new-links-title' => 'Νέες συνδέσεις',
+	'linkfilter-new-links-title' => 'Νέοι σύνδεσμοι',
 	'linkfilter-time-days' => '{{PLURAL:$1|μια μέρα|$1 μέρες}}',
 	'linkfilter-time-hours' => '{{PLURAL:$1|μια ώρα|$1 ώρες}}',
 	'linkfilter-time-minutes' => '{{PLURAL:$1|ένα λεπτό|$1 λεπτά}}',
 	'linkfilter-time-seconds' => '{{PLURAL:$1|ένα δευτερόλεπτο|$1 δευτερόλεπτα}}',
-	'linkfilter-edit-summary' => 'νέα σύνδεση',
+	'linkfilter-edit-summary' => 'νέος σύνδεσμος',
 	'linkfilter-no-results' => 'Δεν βρέθηκαν σελίδες.',
 	'linkfilter-feed-title' => 'Συνδέσεις {{SITENAME}}',
 );
@@ -1170,7 +1171,11 @@ $messages['ka'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
+	'linkfilter-all' => 'All',
+	'linkfilter-submit' => 'Lohß Jonn!',
 	'linkfilter-url' => '<i lang="en">URL</i>',
+	'linkfilter-admin-accept' => 'Aannemme',
+	'linkfilter-admin-reject' => 'Afflähne',
 	'group-linkadmin.css' => '/* Dat CSS heh aan dä Schtäll wirrek bloß op de Lengk-Verwallder */',
 	'group-linkadmin.js' => '/* Dat JavaSkrep heh aan dä Schtäll wirrek bloß op de Lengk-Verwallder */',
 );
@@ -1807,6 +1812,7 @@ $messages['si'] = array(
 	'linkapprove' => 'සබැඳි අනුමත කරන්න',
 	'linkshome' => 'සබැඳි නිවස',
 	'linksubmit' => 'සබැඳියක් යොමන්න',
+	'linkfilter-no-recently-approved' => 'මෑතකදී කිසිදු සබැඳියක් අනුමත කර නොමැත.',
 	'linkfilter-ago' => '$1 පෙර <i>$2</i> යටතේ',
 	'linkfilter-all' => 'සියල්ල',
 	'linkfilter-submit' => 'යොමන්න',
@@ -1856,6 +1862,7 @@ $messages['si'] = array(
 	'group-linkadmin' => 'සබැඳි පරිපාලකවරු',
 	'group-linkadmin-member' => '{{GENDER:$1|සබැඳි පරිපාලක}}',
 	'grouppage-linkadmin' => '{{ns:project}}:සබැඳි පරිපාලකවරු',
+	'right-linkadmin' => 'පරිශීලක-යොමන ලද සබැඳි පාලනය කරන්න',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
