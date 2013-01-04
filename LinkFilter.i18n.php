@@ -423,12 +423,13 @@ $messages['diq'] = array(
 
 /** Greek (Ελληνικά)
  * @author Glavkos
+ * @author Protnet
  * @author ZaDiak
  */
 $messages['el'] = array(
 	'linkfilter-all' => 'Όλα',
 	'linkfilter-submit' => 'Καταχώρηση',
-	'linkfilter-submit-title' => 'Υποβολή ενός συνδέσμου',
+	'linkfilter-submit-title' => 'Υποβολή συνδέσμου',
 	'linkfilter-submit-no-title' => 'Παρακαλώ εισάγετε έναν τίτλο',
 	'linkfilter-submit-no-type' => 'Επιλέξτε έναν τύπο συνδέσμου.',
 	'linkfilter-edit-title' => 'Επεξεργασία $1',
@@ -445,7 +446,7 @@ $messages['el'] = array(
 	'linkfilter-about-submitter' => 'Σχετικά με τον υποβολέα',
 	'linkfilter-comments-of-day' => 'Κορυφαία σχόλια',
 	'linkfilter-comments' => '{{PLURAL:$1|$1 σχόλιο|$1 σχόλια}}',
-	'linkfilter-home-title' => '$1 σύνδεσμοι',
+	'linkfilter-home-title' => 'Σύνδεσμοι $1',
 	'linkfilter-home-title-all' => 'Όλοι οι σύνδεσμοι',
 	'linkfilter-next' => 'επόμενο',
 	'linkfilter-previous' => 'προηγούμενο',
