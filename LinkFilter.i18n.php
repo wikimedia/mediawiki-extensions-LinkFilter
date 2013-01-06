@@ -428,7 +428,7 @@ $messages['diq'] = array(
  */
 $messages['el'] = array(
 	'linkfilter-all' => 'Όλα',
-	'linkfilter-submit' => 'Καταχώρηση',
+	'linkfilter-submit' => 'Υποβολή',
 	'linkfilter-submit-title' => 'Υποβολή συνδέσμου',
 	'linkfilter-submit-no-title' => 'Παρακαλώ εισάγετε έναν τίτλο',
 	'linkfilter-submit-no-type' => 'Επιλέξτε έναν τύπο συνδέσμου.',
@@ -454,13 +454,13 @@ $messages['el'] = array(
 	'linkfilter-description-left' => 'Έμειναν $1',
 	'linkfilter-popular-articles' => 'Μην το χάσετε',
 	'linkfilter-new-links-title' => 'Νέοι σύνδεσμοι',
-	'linkfilter-time-days' => '{{PLURAL:$1|μια μέρα|$1 μέρες}}',
+	'linkfilter-time-days' => '{{PLURAL:$1|μια ημέρα|$1 ημέρες}}',
 	'linkfilter-time-hours' => '{{PLURAL:$1|μια ώρα|$1 ώρες}}',
 	'linkfilter-time-minutes' => '{{PLURAL:$1|ένα λεπτό|$1 λεπτά}}',
 	'linkfilter-time-seconds' => '{{PLURAL:$1|ένα δευτερόλεπτο|$1 δευτερόλεπτα}}',
 	'linkfilter-edit-summary' => 'νέος σύνδεσμος',
 	'linkfilter-no-results' => 'Δεν βρέθηκαν σελίδες.',
-	'linkfilter-feed-title' => 'Συνδέσεις {{SITENAME}}',
+	'linkfilter-feed-title' => 'Σύνδεσμοι {{SITENAME}}',
 );
 
 /** Spanish (español)
@@ -1508,7 +1508,7 @@ $messages['nl'] = array(
 	'linkfilter-anonymous' => 'Anonieme fanaat',
 	'linkfilter-comments-of-day' => 'Populairste opmerkingen',
 	'linkfilter-comments' => '{{PLURAL:$1|$1 reactie|$1 reacties}}',
-	'linkfilter-home-title' => '$1 koppelingen',
+	'linkfilter-home-title' => '$1koppelingen',
 	'linkfilter-home-title-all' => 'Alle koppelingen',
 	'linkfilter-next' => 'volgende',
 	'linkfilter-previous' => 'vorige',
