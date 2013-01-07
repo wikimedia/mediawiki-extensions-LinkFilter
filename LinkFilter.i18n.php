@@ -836,11 +836,12 @@ $messages['he'] = array(
 
 /** Hindi (हिन्दी)
  * @author Ansumang
+ * @author Siddhartha Ghai
  */
 $messages['hi'] = array(
 	'linkfilter-admin-accept' => 'स्वीकार करें',
 	'linkfilter-admin-reject' => 'अस्वीकार करें',
-	'linkfilter-next' => 'अगले',
+	'linkfilter-next' => 'अगला',
 	'linkfilter-previous' => 'पिछला',
 );
 
