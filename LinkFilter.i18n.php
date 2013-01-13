@@ -103,7 +103,8 @@ $messages['qqq'] = array(
 	'linkfilter-edit-title' => 'Page title of Special:LinkEdit; $1 is the name of the link (the page in the Link: namespace)',
 	'linkfilter-approve-links' => 'Link title shown in various places, clicking on the link with this message as the title takes the user to Special:LinkApprove where they can approve and reject submitted links if they are a link administrator',
 	'linkfilter-submit-another' => 'Button text, shown on Special:LinkSubmit after submitting a link; clicking on this button takes the user back to the main form on Special:LinkSubmit so that they can submit another link for approval if they wish to do so',
-	'linkfilter-login-title' => 'Shown on Special:LinkSubmit if an anonymous user tries to use the special page; this is the error message title',
+	'linkfilter-login-title' => 'Shown on Special:LinkSubmit if an anonymous user tries to use the special page; this is the error message title.
+{{Identical|Not logged in}}',
 	'linkfilter-login-text' => 'Shown on Special:LinkSubmit if an anonymous user tries to use the special page; this is the actual error message',
 	'linkfilter-url' => '{{optional}}',
 	'linkfilter-type' => '"Link type" is one of the types defined by the site administrators in [[mw:Extension:LinkFilter#Configuration|$wgLinkTypes]]',
@@ -2077,6 +2078,7 @@ $messages['tl'] = array(
 
 /** Ukrainian (українська)
  * @author Base
+ * @author Olvin
  * @author Steve.rusyn
  */
 $messages['uk'] = array(
@@ -2115,7 +2117,7 @@ $messages['uk'] = array(
 	'linkfilter-comments' => '$1 {{PLURAL:$1|коментар|коментарі|коментарів}}',
 	'linkfilter-home-title' => '$1 посилання',
 	'linkfilter-home-title-all' => 'Всі посилання',
-	'linkfilter-description-max' => 'Максимальна кількість символів',
+	'linkfilter-description-max' => 'Максимальна кількість літер',
 	'linkfilter-description-left' => '$1 залишилось',
 	'linkfilter-popular-articles' => 'Не пропустіть',
 	'linkfilter-new-links-title' => 'Нові посилання',
