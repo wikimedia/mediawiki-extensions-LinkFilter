@@ -71,6 +71,12 @@ $specialPageAliases['it'] = array(
 	'LinkSubmit' => array( 'LinkInvia' ),
 );
 
+/** Japanese (日本語) */
+$specialPageAliases['ja'] = array(
+	'LinkEdit' => array( 'リンク編集' ),
+	'LinksHome' => array( 'リンクホーム' ),
+);
+
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
 	'LinkApprove' => array( '링크승인' ),
