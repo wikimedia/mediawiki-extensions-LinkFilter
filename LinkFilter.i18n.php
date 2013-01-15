@@ -2080,6 +2080,7 @@ $messages['tl'] = array(
  * @author Base
  * @author Olvin
  * @author Steve.rusyn
+ * @author Ата
  */
 $messages['uk'] = array(
 	'linkapprove' => 'Затвердити посилання',
@@ -2089,6 +2090,7 @@ $messages['uk'] = array(
 	'linkfilter-nothing-to-approve' => 'Наразі немає посилань, що очікують затвердження.',
 	'linkfilter-no-recently-approved' => 'Недавно не було затверджено жодного посилання.',
 	'linkfilter-no-links-at-all' => 'Ще не було надано посилань, або адміністратори посилань ще не розглянув надані посилання.',
+	'linkfilter-ago' => '$1 тому під <i>$2</i>',
 	'linkfilter-all' => 'Усі',
 	'linkfilter-submit' => 'Подати',
 	'linkfilter-submit-title' => 'Подати посилання',
@@ -2108,15 +2110,23 @@ $messages['uk'] = array(
 	'linkfilter-submit-success-text' => 'Ваше посилання надіслано для затвердження',
 	'linkfilter-instructions' => 'Ви можете додати [[MediaWiki:Linkfilter-instructions|інструкції для користувачів]].',
 	'linkfilter-admin-instructions' => 'Ви можете додати [[MediaWiki:Linkfilter-admin-instructions|інструкції для адміністраторів]].',
+	'linkfilter-admin-recent' => 'Нещодавно затверджені',
+	'linkfilter-approve-title' => 'Адміністрування посилань',
+	'linkfilter-submittedby' => "'''{{GENDER:$1|Додав|Додала|Додано}}''': [[User:$1|$1]]",
+	'linkfilter-submitted' => 'Додано $1',
 	'linkfilter-admin-accept' => 'Прийняти',
 	'linkfilter-admin-reject' => 'Відхилити',
 	'linkfilter-admin-reject-success' => 'Посилання було відхилено',
 	'linkfilter-admin-accept-success' => 'Посилання було прийнято',
 	'linkfilter-in-the-news' => 'У новинах',
+	'linkfilter-about-submitter' => 'Про відправника',
 	'linkfilter-anonymous' => 'Анонімний фанатик',
+	'linkfilter-comments-of-day' => 'Топ коментарі',
 	'linkfilter-comments' => '$1 {{PLURAL:$1|коментар|коментарі|коментарів}}',
 	'linkfilter-home-title' => '$1 посилання',
 	'linkfilter-home-title-all' => 'Всі посилання',
+	'linkfilter-next' => 'наступна',
+	'linkfilter-previous' => 'попередня',
 	'linkfilter-description-max' => 'Максимальна кількість літер',
 	'linkfilter-description-left' => '$1 залишилось',
 	'linkfilter-popular-articles' => 'Не пропустіть',
@@ -2127,6 +2137,11 @@ $messages['uk'] = array(
 	'linkfilter-time-seconds' => '$1 {{PLURAL:$1|секунду|секунди|секунд}}',
 	'linkfilter-edit-summary' => 'нове посилання',
 	'linkfilter-no-results' => 'Сторінок не знайдено.',
+	'linkfilter-feed-title' => '{{SITENAME}} посилання',
+	'group-linkadmin' => 'Адміністратори посилань',
+	'group-linkadmin-member' => '{{GENDER:$1|Адміністратор посилань}}',
+	'grouppage-linkadmin' => '{{ns:project}}:Адміністратори посилань',
+	'right-linkadmin' => 'Адміністрування доданих користувачами посилань',
 );
 
 /** Simplified Chinese (中文（简体）‎)
