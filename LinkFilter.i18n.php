@@ -1790,23 +1790,37 @@ $messages['roa-tara'] = array(
 
 /** Russian (русский)
  * @author Adata80
+ * @author DCamer
  * @author Eleferen
  */
 $messages['ru'] = array(
 	'linkfilter-nothing-to-approve' => 'В настоящее время нет ссылок, ожидающих утверждения.',
+	'linkfilter-ago' => '$1 назад в <i>$2</i>',
+	'linkfilter-all' => 'Все',
 	'linkfilter-submit' => 'Отправить',
 	'linkfilter-submit-title' => 'Добавить ссылку',
 	'linkfilter-submit-no-title' => 'Пожалуйста, введите название',
 	'linkfilter-submit-no-type' => 'Выберите тип связи.',
 	'linkfilter-edit-title' => 'Правка $1',
+	'linkfilter-login-title' => 'Не выполнен вход',
 	'linkfilter-title' => 'Заголовок',
+	'linkfilter-type' => 'Тип ссылки',
 	'linkfilter-description' => 'Описание',
 	'linkfilter-admin-accept' => 'Принять',
 	'linkfilter-admin-reject' => 'Отклонить',
+	'linkfilter-comments' => '$1 {{PLURAL:$1|комментарий|комментария|комментариев}}',
 	'linkfilter-home-title-all' => 'Все ссылки',
 	'linkfilter-next' => 'след.',
 	'linkfilter-previous' => 'пред.',
+	'linkfilter-description-max' => 'Максимум символов',
+	'linkfilter-popular-articles' => 'Не пропустите',
+	'linkfilter-new-links-title' => 'Новые ссылки',
+	'linkfilter-time-days' => '{{PLURAL:$1|день|$1 дня|$1 дней}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|час|$1 часа|$1 часов}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|минуту|$1 минуты|$1 минут}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|секунду|$1 секунды|$1 секунд}}',
 	'linkfilter-edit-summary' => 'Новая ссылка',
+	'linkfilter-no-results' => 'Не найдено страниц.',
 );
 
 /** Sinhala (සිංහල)
