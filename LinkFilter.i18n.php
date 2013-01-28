@@ -1146,6 +1146,7 @@ $messages['ka'] = array(
 	'linkfilter-submit-no-type' => 'აირჩიეთ კავშირის ტიპი.',
 	'linkfilter-edit-title' => '$1-ის რედაქტირება',
 	'linkfilter-login-title' => 'შესვლა არ განხორციელდა',
+	'linkfilter-url' => 'URL',
 	'linkfilter-title' => 'სათაური',
 	'linkfilter-type' => 'ბმულის ტიპი',
 	'linkfilter-description' => 'აღწერა',
