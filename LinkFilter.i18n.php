@@ -275,6 +275,14 @@ $messages['br'] = array(
 	'group-linkadmin-member' => '{{GENDER:$1|merour al liammoù|merourez al liammoù}}',
 );
 
+/** Catalan (català)
+ * @author Pitort
+ */
+$messages['ca'] = array(
+	'linkfilter-edit-title' => 'Modifica $1',
+	'linkfilter-title' => 'Títol',
+);
+
 /** Czech (česky)
  * @author Vks
  */
