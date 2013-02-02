@@ -1147,12 +1147,15 @@ $messages['ja'] = array(
  * @author David1010
  */
 $messages['ka'] = array(
+	'linkapprove' => 'ბმულების დამოწმება',
+	'linksubmit' => 'ბმულის მიღება',
 	'linkfilter-all' => 'ყველა',
 	'linkfilter-submit' => 'მიღება',
 	'linkfilter-submit-title' => 'ბმულის მიღება',
 	'linkfilter-submit-no-title' => 'გთხოვთ, შეიყვანეთ სათაური',
 	'linkfilter-submit-no-type' => 'აირჩიეთ კავშირის ტიპი.',
 	'linkfilter-edit-title' => '$1-ის რედაქტირება',
+	'linkfilter-approve-links' => 'ბმულების დამოწმება',
 	'linkfilter-login-title' => 'შესვლა არ განხორციელდა',
 	'linkfilter-url' => 'URL',
 	'linkfilter-title' => 'სათაური',
@@ -1169,6 +1172,7 @@ $messages['ka'] = array(
 	'linkfilter-next' => 'შემდეგი',
 	'linkfilter-previous' => 'წინა',
 	'linkfilter-description-max' => 'სიმბოლოების მაქსიმალური რაოდენობა',
+	'linkfilter-popular-articles' => 'არ გამოტოვოთ',
 	'linkfilter-new-links-title' => 'ახალი ბმულები',
 	'linkfilter-time-days' => '{{PLURAL:$1|ერთი დღე|$1 დღე}}',
 	'linkfilter-time-hours' => '{{PLURAL:$1|ერთი საათი|$1 საათი}}',
