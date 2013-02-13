@@ -1181,6 +1181,9 @@ $messages['ka'] = array(
 	'linkfilter-edit-summary' => 'ახალი ბმული',
 	'linkfilter-no-results' => 'გვერდები ვერ მოიძებნა.',
 	'linkfilter-feed-title' => '{{SITENAME}}-ის ბმულები',
+	'group-linkadmin' => 'ბმულის ადმინისტრატორები',
+	'group-linkadmin-member' => '{{GENDER:$1|ბმულის ადმინისტრატორი}}',
+	'grouppage-linkadmin' => '{{ns:project}}:ბმულის ადმინისტრატორები',
 );
 
 /** Colognian (Ripoarisch)
