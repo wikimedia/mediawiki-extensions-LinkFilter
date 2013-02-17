@@ -86,9 +86,9 @@ $messages['en'] = array(
  * @author Umherirrender
  */
 $messages['qqq'] = array(
-	'linkapprove' => 'Title of Special:LinkApprove; shown on the special page and on Special:SpecialPages',
-	'linkshome' => 'Title of Special:LinksHome; shown on the special page and on Special:SpecialPages',
-	'linksubmit' => 'Title of Special:LinkSubmit; shown on the special page and on Special:SpecialPages',
+	'linkapprove' => 'Title of Special:LinkApprove; shown on the special page and on [[Special:SpecialPages]]',
+	'linkshome' => 'Title of Special:LinksHome; shown on the special page and on [[Special:SpecialPages]].',
+	'linksubmit' => 'Title of Special:LinkSubmit; shown on the special page and on [[Special:SpecialPages]].',
 	'linkfilter-desc' => 'Extension description shown on [[Special:Version]]',
 	'linkfilter-nothing-to-approve' => 'Shown on Special:LinkApprove to link administrators when there are no links to approve.',
 	'linkfilter-no-recently-approved' => 'Shown on Special:LinkApprove to link administrators if no links have been approved recently.',
