@@ -2227,6 +2227,17 @@ $messages['zh-hans'] = array(
 	'linkfilter-description-left' => '剩余$1',
 	'linkfilter-popular-articles' => '不要错过',
 	'linkfilter-new-links-title' => '新链接',
+	'linkfilter-time-days' => '$1天',
+	'linkfilter-time-hours' => '$1小时',
+	'linkfilter-time-minutes' => '$1分钟',
+	'linkfilter-time-seconds' => '$1秒',
+	'linkfilter-edit-summary' => '新链接',
+	'linkfilter-no-results' => '没有找到页面。',
+	'linkfilter-feed-title' => '{{SITENAME}}链接',
+	'group-linkadmin' => '链接管理员',
+	'group-linkadmin-member' => '{{GENDER:$1|链接管理员}}',
+	'grouppage-linkadmin' => '{{ns:project}}:链接管理员',
+	'right-linkadmin' => '管理用户提交的链接',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
