@@ -137,3 +137,12 @@ $specialPageAliases['tr'] = array(
 	'LinkRedirect' => array( 'BağYönlendir', 'BağlantıYönlendir' ),
 	'LinkSubmit' => array( 'BağGönder', 'BağlantıGönder' ),
 );
+
+/** Simplified Chinese (中文（简体）‎) */
+$specialPageAliases['zh-hans'] = array(
+	'LinkApprove' => array( '链接批准' ),
+	'LinkEdit' => array( '链接编辑' ),
+	'LinksHome' => array( '链接首页' ),
+	'LinkRedirect' => array( '链接重定向' ),
+	'LinkSubmit' => array( '链接提交' ),
+);
