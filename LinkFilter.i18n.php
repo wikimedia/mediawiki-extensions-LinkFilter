@@ -93,8 +93,13 @@ $messages['qqq'] = array(
 	'linkfilter-nothing-to-approve' => 'Shown on Special:LinkApprove to link administrators when there are no links to approve.',
 	'linkfilter-no-recently-approved' => 'Shown on Special:LinkApprove to link administrators if no links have been approved recently.',
 	'linkfilter-no-links-at-all' => 'Shown on Special:LinksHome if for some reason there is nothing we can display to the user.',
-	'linkfilter-ago' => '* <code>$1</code> is {{msg-mw|Linkfilter-time-days}}, {{msg-mw|Linkfilter-time-hours}}, {{msg-mw|Linkfilter-time-minutes}} or {{msg-mw|Linkfilter-time-seconds}};
-* <code>$2</code> is the link category, as defined by site administrators in [[mw:Extension:LinkFilter#Configuration|$wgLinkTypes]]',
+	'linkfilter-ago' => 'Parameters:
+* $1 - one of the following messages:
+** {{msg-mw|Linkfilter-time-days}}
+** {{msg-mw|Linkfilter-time-hours}}
+** {{msg-mw|Linkfilter-time-minutes}}
+** {{msg-mw|Linkfilter-time-seconds}}
+* $2 - the link category, as defined by site administrators in [[mw:Extension:LinkFilter#Configuration|$wgLinkTypes]]',
 	'linkfilter-all' => 'Link text; clicking on this links takes the user to Special:LinksHome, which shows all the approved, user-submitted links',
 	'linkfilter-submit' => 'Link text; clicking on this links takes the user to Special:LinkSubmit, which allows the user to submit a new link for approval',
 	'linkfilter-submit-title' => 'Title of Special:LinkSubmit',
