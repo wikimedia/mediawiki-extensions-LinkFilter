@@ -146,3 +146,12 @@ $specialPageAliases['zh-hans'] = array(
 	'LinkRedirect' => array( '链接重定向' ),
 	'LinkSubmit' => array( '链接提交' ),
 );
+
+/** Traditional Chinese (中文（繁體）‎) */
+$specialPageAliases['zh-hant'] = array(
+	'LinkApprove' => array( '批准連結' ),
+	'LinkEdit' => array( '編輯連結' ),
+	'LinksHome' => array( '首頁連結' ),
+	'LinkRedirect' => array( '重定向連結' ),
+	'LinkSubmit' => array( '提交連結' ),
+);
