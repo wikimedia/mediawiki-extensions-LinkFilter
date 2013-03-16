@@ -90,6 +90,7 @@ $specialPageAliases['ko'] = array(
 $specialPageAliases['lb'] = array(
 	'LinkApprove' => array( 'Link_akzeptéieren' ),
 	'LinkEdit' => array( 'Link_änneren' ),
+	'LinksHome' => array( 'Zilsäit_vum_Link' ),
 	'LinkRedirect' => array( 'Link_viruleeden' ),
 	'LinkSubmit' => array( 'Link_späicheren' ),
 );
