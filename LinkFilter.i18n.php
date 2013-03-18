@@ -127,6 +127,8 @@ $messages['qqq'] = array(
 	'linkfilter-admin-reject' => 'Button text, shown on Special:LinkApprove for link administrators',
 	'linkfilter-admin-reject-success' => 'Shown on Special:LinkApprove for link administrators after they have rejected a submitted link by pressing the [[MediaWiki:Linkfilter-admin-reject]] button. Used in JavaScript.',
 	'linkfilter-admin-accept-success' => 'Shown on Special:LinkApprove for link administrators after they have accepted a submitted link by pressing the [[MediaWiki:Linkfilter-admin-accept]] button. Used in JavaScript.',
+	'linkfilter-comments' => 'Used as link text. Parameters:
+* $1 - number of comments',
 	'linkfilter-home-title' => '$1 is the link type',
 	'linkfilter-home-title-all' => 'This is the page title of Special:LinksHome when the user is viewing all the links (as opposed to viewing links of a specific type)',
 	'linkfilter-next' => 'Pagination link',
@@ -135,6 +137,30 @@ $messages['qqq'] = array(
 	'linkfilter-description-left' => '$1 is the amount of characters left; it is not a number, but rather an <code>&lt;input&gt;</code>',
 	'linkfilter-popular-articles' => "Displayed when \$wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration",
 	'linkfilter-new-links-title' => "Header text, shown when \$wgLinkPageDisplay['new_links'] is <code>true</code> in the configuration",
+	'linkfilter-time-days' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
+
+See also:
+* {{msg-mw|Linkfilter-time-hours}}
+* {{msg-mw|Linkfilter-time-minutes}}
+* {{msg-mw|Linkfilter-time-seconds}}',
+	'linkfilter-time-hours' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
+
+See also:
+* {{msg-mw|Linkfilter-time-days}}
+* {{msg-mw|Linkfilter-time-minutes}}
+* {{msg-mw|Linkfilter-time-seconds}}',
+	'linkfilter-time-minutes' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
+
+See also:
+* {{msg-mw|Linkfilter-time-days}}
+* {{msg-mw|Linkfilter-time-hours}}
+* {{msg-mw|Linkfilter-time-seconds}}',
+	'linkfilter-time-seconds' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
+
+See also:
+* {{msg-mw|Linkfilter-time-days}}
+* {{msg-mw|Linkfilter-time-hours}}
+* {{msg-mw|Linkfilter-time-minutes}}',
 	'linkfilter-edit-summary' => 'Edit summary; when a link administrator approves a link, a new page in the Link: namespace is created with this as the edit summary',
 	'linkfilter-no-results' => "Displayed when \$wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration but there are no popular pages (they are shown under the [[MediaWiki:Linkfilter-popular-articles]] header) to display.",
 	'linkfilter-feed-title' => 'RSS feed title',
