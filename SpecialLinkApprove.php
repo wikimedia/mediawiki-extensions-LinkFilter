@@ -35,6 +35,9 @@ class LinkApprove extends SpecialPage {
 	function getLFTimeOffset( $time, $timeabrv, $timename ) {
 		$timeStr = '';
 		if( $time[$timeabrv] > 0 ) {
+			// Give grep a chance to find the usages:
+			// linkfilter-time-days, linkfilter-time-hours,
+			// linkfilter-time-minutes, linkfilter-time-seconds
 			$timeStr = wfMsgExt( "linkfilter-time-{$timename}", 'parsemag', $time[$timeabrv] );
 		}
 		if( $timeStr ) {
