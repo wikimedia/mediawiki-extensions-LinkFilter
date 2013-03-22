@@ -44,6 +44,15 @@ $specialPageAliases['diq'] = array(
 	'LinkSubmit' => array( 'LinkRıştayış' ),
 );
 
+/** Esperanto (Esperanto) */
+$specialPageAliases['eo'] = array(
+	'LinkApprove' => array( 'Aprobi_ligilojn' ),
+	'LinkEdit' => array( 'Redakti_ligilon' ),
+	'LinksHome' => array( 'Hejmo_de_ligiloj' ),
+	'LinkRedirect' => array( 'Alidirektilo_al_ligilo' ),
+	'LinkSubmit' => array( 'Sendi_ligilon' ),
+);
+
 /** Finnish (suomi) */
 $specialPageAliases['fi'] = array(
 	'LinkApprove' => array( 'Hyväksy_linkkejä' ),
