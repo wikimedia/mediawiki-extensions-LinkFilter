@@ -112,7 +112,13 @@ $messages['qqq'] = array(
 {{Identical|Not logged in}}',
 	'linkfilter-login-text' => 'Shown on Special:LinkSubmit if an anonymous user tries to use the special page; this is the actual error message',
 	'linkfilter-url' => '{{optional}}',
+	'linkfilter-title' => 'Used as label for "Title" input box or for output.
+{{Identical|Title}}',
 	'linkfilter-type' => '"Link type" is one of the types defined by the site administrators in [[mw:Extension:LinkFilter#Configuration|$wgLinkTypes]]',
+	'linkfilter-description' => 'Used in [[Special:LinkApprove]], [[Special:LinkEdit]] and [[Special:LinkSubmit]].
+
+Used as label for "description" input box and for output.
+{{Identical|Description}}',
 	'linkfilter-submit-button' => 'Submit button text',
 	'linkfilter-home-button' => 'Button text',
 	'linkfilter-submit-success-title' => "Page title for Special:LinkSubmit after you've successfully submitted a link for approval",
@@ -127,6 +133,14 @@ $messages['qqq'] = array(
 	'linkfilter-admin-reject' => 'Button text, shown on Special:LinkApprove for link administrators',
 	'linkfilter-admin-reject-success' => 'Shown on Special:LinkApprove for link administrators after they have rejected a submitted link by pressing the [[MediaWiki:Linkfilter-admin-reject]] button. Used in JavaScript.',
 	'linkfilter-admin-accept-success' => 'Shown on Special:LinkApprove for link administrators after they have accepted a submitted link by pressing the [[MediaWiki:Linkfilter-admin-accept]] button. Used in JavaScript.',
+	'linkfilter-in-the-news' => 'Used as label for the news item which was selected at random.',
+	'linkfilter-about-submitter' => 'Used as HTML <code><nowiki><h2></nowiki></code> heading in [[Special:LinksHome]].
+
+The section contains author (submitter) information like username and avatar.',
+	'linkfilter-anonymous' => 'Used if the username is undefined, instead of username.',
+	'linkfilter-comments-of-day' => 'Used as HTML <code><nowiki><h2></nowiki></code> heading.
+
+The section contains a comment (comment score and body).',
 	'linkfilter-comments' => 'Used as link text. Parameters:
 * $1 - number of comments',
 	'linkfilter-home-title' => '$1 is the link type',
