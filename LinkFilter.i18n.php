@@ -462,6 +462,7 @@ $messages['diq'] = array(
 	'linkfilter-all' => 'Pêro',
 	'linkfilter-submit' => 'Bırışe',
 	'linkfilter-edit-title' => '$1 Bıvurne',
+	'linkfilter-login-title' => 'Şıma cıkewtış nêvıraşto',
 	'linkfilter-title' => 'Sername',
 	'linkfilter-description' => 'Şınasnayış',
 	'linkfilter-admin-accept' => 'Qebul ke',
@@ -1524,6 +1525,14 @@ $messages['mt'] = array(
 	'group-linkadmin-member' => '{{GENDER:$1|amministratur tal-ħoloq}}',
 	'grouppage-linkadmin' => '{{ns:project}}:Amministraturi tal-ħoloq',
 	'right-linkadmin' => 'Jamministra ħoloq mibgħuta mill-utenti',
+);
+
+/** Low German (Plattdüütsch)
+ * @author Joachim Mos
+ */
+$messages['nds'] = array(
+	'linkfilter-all' => 'All',
+	'linkfilter-submit' => 'Spickern',
 );
 
 /** Dutch (Nederlands)
