@@ -2230,6 +2230,7 @@ $messages['uk'] = array(
 );
 
 /** Simplified Chinese (中文（简体）‎)
+ * @author Kuailong
  * @author Shirayuki
  * @author Yfdyh000
  */
@@ -2269,6 +2270,7 @@ $messages['zh-hans'] = array(
 	'linkfilter-admin-reject' => '拒绝',
 	'linkfilter-admin-reject-success' => '链接已被拒绝',
 	'linkfilter-admin-accept-success' => '链接已被接受',
+	'linkfilter-in-the-news' => '新闻动态',
 	'linkfilter-about-submitter' => '关于提交者',
 	'linkfilter-anonymous' => '匿名狂热者',
 	'linkfilter-comments-of-day' => '热门评论',
