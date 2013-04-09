@@ -129,7 +129,8 @@ Used as label for "description" input box and for output.
 	'linkfilter-approve-title' => 'Page title of Special:LinkApprove',
 	'linkfilter-submittedby' => '$1 is the name of the user who submitted the link',
 	'linkfilter-submitted' => '$1 is the link creation timestamp (when the Link: page was created), containing date and time (formatted via $wgLang->timeanddate())',
-	'linkfilter-admin-accept' => 'Button text, shown on Special:LinkApprove for link administrators',
+	'linkfilter-admin-accept' => 'Button text, shown on [[Special:LinkApprove]] for link administrators.
+{{Identical|Accept}}',
 	'linkfilter-admin-reject' => 'Button text, shown on Special:LinkApprove for link administrators',
 	'linkfilter-admin-reject-success' => 'Shown on Special:LinkApprove for link administrators after they have rejected a submitted link by pressing the [[MediaWiki:Linkfilter-admin-reject]] button. Used in JavaScript.',
 	'linkfilter-admin-accept-success' => 'Shown on Special:LinkApprove for link administrators after they have accepted a submitted link by pressing the [[MediaWiki:Linkfilter-admin-accept]] button. Used in JavaScript.',
