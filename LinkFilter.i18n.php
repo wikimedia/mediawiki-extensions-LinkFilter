@@ -632,12 +632,14 @@ $messages['fa'] = array(
  * @author Crt
  * @author Jack Phoenix <jack@countervandalism.net>
  * @author Nike
+ * @author Silvonen
  */
 $messages['fi'] = array(
 	'linkapprove' => 'Linkkien ylläpito',
 	'linkshome' => 'Linkkien kotisivu',
 	'linksubmit' => 'Lähetä linkki',
 	'linkfilter-nothing-to-approve' => 'Tällä hetkellä ei ole yhtään linkkiä odottamassa hyväksyntää.',
+	'linkfilter-no-recently-approved' => 'Linkkejä ei ole hyväksytty äskettäin.',
 	'linkfilter-ago' => '$1 sitten luokkaan "<i>$2</i>"',
 	'linkfilter-all' => 'Kaikki',
 	'linkfilter-submit' => 'Lähetä',
