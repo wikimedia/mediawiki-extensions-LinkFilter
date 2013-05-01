@@ -84,6 +84,7 @@ $specialPageAliases['it'] = array(
 $specialPageAliases['ja'] = array(
 	'LinkEdit' => array( 'リンク編集' ),
 	'LinksHome' => array( 'リンクホーム' ),
+	'LinkRedirect' => array( 'リンク転送', 'リンクリダイレクト' ),
 );
 
 /** Korean (한국어) */
