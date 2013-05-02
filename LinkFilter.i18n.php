@@ -1771,6 +1771,13 @@ $messages['ps'] = array(
 	'linkfilter-previous' => 'پخوانی',
 );
 
+/** Brazilian Portuguese (português do Brasil)
+ * @author Luckas
+ */
+$messages['pt-br'] = array(
+	'linkfilter-description' => 'Descrição',
+);
+
 /** Romanian (română)
  * @author Firilacroco
  * @author Minisarm
