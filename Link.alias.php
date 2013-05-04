@@ -82,9 +82,11 @@ $specialPageAliases['it'] = array(
 
 /** Japanese (日本語) */
 $specialPageAliases['ja'] = array(
+	'LinkApprove' => array( 'リンク承認' ),
 	'LinkEdit' => array( 'リンク編集' ),
 	'LinksHome' => array( 'リンクホーム' ),
 	'LinkRedirect' => array( 'リンク転送', 'リンクリダイレクト' ),
+	'LinkSubmit' => array( 'リンク投稿' ),
 );
 
 /** Korean (한국어) */
