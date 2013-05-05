@@ -322,11 +322,13 @@ $messages['br'] = array(
 );
 
 /** Catalan (català)
+ * @author Luckas
  * @author Pitort
  */
 $messages['ca'] = array(
 	'linkfilter-edit-title' => 'Modifica $1',
 	'linkfilter-title' => 'Títol',
+	'linkfilter-description' => 'Descripció',
 );
 
 /** Czech (česky)
@@ -378,6 +380,13 @@ $messages['cs'] = array(
 	'linkfilter-edit-summary' => 'nový odkaz',
 	'linkfilter-no-results' => 'Žádná stránka nenalezena.',
 	'linkfilter-feed-title' => 'Odkazy pro {{SITENAME}}',
+);
+
+/** Danish (dansk)
+ * @author Luckas
+ */
+$messages['da'] = array(
+	'linkfilter-description' => 'Beskrivelse',
 );
 
 /** German (Deutsch)
@@ -517,6 +526,13 @@ $messages['el'] = array(
 	'linkfilter-edit-summary' => 'νέος σύνδεσμος',
 	'linkfilter-no-results' => 'Δεν βρέθηκαν σελίδες.',
 	'linkfilter-feed-title' => 'Σύνδεσμοι {{SITENAME}}',
+);
+
+/** Esperanto (Esperanto)
+ * @author Luckas
+ */
+$messages['eo'] = array(
+	'linkfilter-description' => 'Priskribo',
 );
 
 /** Spanish (español)
