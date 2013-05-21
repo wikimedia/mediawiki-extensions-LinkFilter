@@ -151,6 +151,12 @@ $specialPageAliases['tr'] = array(
 	'LinkSubmit' => array( 'BağGönder', 'BağlantıGönder' ),
 );
 
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'LinkApprove' => array( 'Chấp_nhận_liên_kết' ),
+	'LinkEdit' => array( 'Sửa_liên_kết' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'LinkApprove' => array( '链接批准' ),
