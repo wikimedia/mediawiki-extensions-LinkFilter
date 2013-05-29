@@ -1792,6 +1792,7 @@ $messages['ps'] = array(
  * @author Luckas
  */
 $messages['pt-br'] = array(
+	'linkfilter-edit-title' => 'Editar $1',
 	'linkfilter-description' => 'Descrição',
 );
 
