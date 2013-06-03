@@ -1252,6 +1252,15 @@ $messages['ka'] = array(
 	'grouppage-linkadmin' => '{{ns:project}}:ბმულის ადმინისტრატორები',
 );
 
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'linkfilter-desc' => '제출/승인/거부 링크에 대한 새 특수 문서와 파서 훅을 추가합니다',
+	'group-linkadmin.css' => '/* 이 CSS 설정은 링크 관리자에만 적용됩니다 */',
+	'group-linkadmin.js' => '/* 이 자바스크립트 설정은 링크 관리자에만 적용됩니다 */',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */
