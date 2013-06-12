@@ -332,6 +332,13 @@ $messages['ca'] = array(
 	'linkfilter-description' => 'Descripció',
 );
 
+/** Chechen (нохчийн)
+ * @author Умар
+ */
+$messages['ce'] = array(
+	'linkfilter-description' => 'Цуьнах лаьцна',
+);
+
 /** Czech (česky)
  * @author Vks
  */
