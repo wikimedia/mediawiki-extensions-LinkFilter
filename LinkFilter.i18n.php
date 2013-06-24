@@ -2011,12 +2011,14 @@ $messages['sr-el'] = array(
 );
 
 /** Swedish (svenska)
+ * @author Jopparn
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
 	'linkapprove' => 'Godkänn länkar',
 	'linkshome' => 'Länkar hem',
 	'linksubmit' => 'Skicka en länk',
+	'linkfilter-no-recently-approved' => 'Inga länkar har godkänts den senaste tiden.',
 	'linkfilter-ago' => '$1 sedan under <i>$2</i>',
 	'linkfilter-all' => 'Alla',
 	'linkfilter-submit' => 'Skicka',
