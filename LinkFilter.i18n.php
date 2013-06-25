@@ -115,7 +115,8 @@ $messages['qqq'] = array(
 	'linkfilter-url' => '{{optional}}',
 	'linkfilter-title' => 'Used as label for "Title" input box or for output.
 {{Identical|Title}}',
-	'linkfilter-type' => '"Link type" is one of the types defined by the site administrators in [[mw:Extension:LinkFilter#Configuration|$wgLinkTypes]]',
+	'linkfilter-type' => '"Link type" is one of the types defined by the site administrators in [[mw:Extension:LinkFilter#Configuration|$wgLinkTypes]].
+{{Identical|Link type}}',
 	'linkfilter-description' => 'Used in [[Special:LinkApprove]], [[Special:LinkEdit]] and [[Special:LinkSubmit]].
 
 Used as label for "description" input box and for output.
@@ -336,6 +337,7 @@ $messages['ca'] = array(
  * @author Умар
  */
 $messages['ce'] = array(
+	'linkfilter-submit' => 'ДӀадахьийта',
 	'linkfilter-description' => 'Цуьнах лаьцна',
 );
 
