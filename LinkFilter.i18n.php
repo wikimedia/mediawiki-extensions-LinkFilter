@@ -787,6 +787,7 @@ $messages['fr'] = array(
 );
 
 /** Franco-Provençal (arpetan)
+ * @author Cedric31
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
