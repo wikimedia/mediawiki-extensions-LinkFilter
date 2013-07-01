@@ -40,7 +40,7 @@ $specialPageAliases['diq'] = array(
 	'LinkApprove' => array( 'LinkQebulkerdış' ),
 	'LinkEdit' => array( 'LinkVurnayış' ),
 	'LinksHome' => array( 'KeyeyLinkan' ),
-	'LinkRedirect' => array( 'HetenayışêLinkan' ),
+	'LinkRedirect' => array( 'HetenayışéLinkan' ),
 	'LinkSubmit' => array( 'LinkRıştayış' ),
 );
 

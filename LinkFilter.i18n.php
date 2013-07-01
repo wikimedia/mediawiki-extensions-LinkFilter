@@ -102,7 +102,8 @@ $messages['qqq'] = array(
 * $2 - the link category, as defined by site administrators in [[mw:Extension:LinkFilter#Configuration|$wgLinkTypes]]',
 	'linkfilter-all' => 'Link text; clicking on this links takes the user to Special:LinksHome, which shows all the approved, user-submitted links.
 {{Identical|All}}',
-	'linkfilter-submit' => 'Link text; clicking on this links takes the user to Special:LinkSubmit, which allows the user to submit a new link for approval',
+	'linkfilter-submit' => 'Link text; clicking on this links takes the user to [[Special:LinkSubmit]], which allows the user to submit a new link for approval.
+{{Identical|Submit}}',
 	'linkfilter-submit-title' => 'Title of Special:LinkSubmit',
 	'linkfilter-submit-no-title' => 'Displayed on Special:LinkSubmit to the user via a JavaScript alert() dialog if they forgot to enter a title for the link',
 	'linkfilter-submit-no-type' => 'Displayed on Special:LinkSubmit to the user via a JavaScript alert() dialog if they forgot to pick a type from the drop-down menu for the link',
