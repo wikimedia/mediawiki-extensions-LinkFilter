@@ -124,6 +124,15 @@ $specialPageAliases['ml'] = array(
 	'LinkSubmit' => array( 'കണ്ണിസമർപ്പണം' ),
 );
 
+/** Low Saxon (Netherlands) (Nedersaksies) */
+$specialPageAliases['nds-nl'] = array(
+	'LinkApprove' => array( 'Verwiezing_goedkeuren' ),
+	'LinkEdit' => array( 'Verwiezing_bewarken' ),
+	'LinksHome' => array( 'Verwiezing_startzied' ),
+	'LinkRedirect' => array( 'Verwiezing_deurverwiezen' ),
+	'LinkSubmit' => array( 'Verwiezing_derbie_doon' ),
+);
+
 /** Dutch (Nederlands) */
 $specialPageAliases['nl'] = array(
 	'LinkApprove' => array( 'VerwijzingGoedkeuren' ),
