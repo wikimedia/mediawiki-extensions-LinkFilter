@@ -113,7 +113,8 @@ $messages['qqq'] = array(
 	'linkfilter-login-title' => 'Shown on Special:LinkSubmit if an anonymous user tries to use the special page; this is the error message title.
 {{Identical|Not logged in}}',
 	'linkfilter-login-text' => 'Shown on Special:LinkSubmit if an anonymous user tries to use the special page; this is the actual error message',
-	'linkfilter-url' => '{{optional}}',
+	'linkfilter-url' => '{{optional}}
+{{Identical|URL}}',
 	'linkfilter-title' => 'Used as label for "Title" input box or for output.
 {{Identical|Title}}',
 	'linkfilter-type' => '"Link type" is one of the types defined by the site administrators in [[mw:Extension:LinkFilter#Configuration|$wgLinkTypes]].
