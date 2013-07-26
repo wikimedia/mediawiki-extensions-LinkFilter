@@ -180,7 +180,8 @@ See also:
 See also:
 * {{msg-mw|Linkfilter-time-days}}
 * {{msg-mw|Linkfilter-time-hours}}
-* {{msg-mw|Linkfilter-time-minutes}}',
+* {{msg-mw|Linkfilter-time-minutes}}
+{{Identical|Second}}',
 	'linkfilter-edit-summary' => 'Edit summary; when a link administrator approves a link, a new page in the Link: namespace is created with this as the edit summary',
 	'linkfilter-no-results' => "Displayed when \$wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration but there are no popular pages (they are shown under the [[MediaWiki:Linkfilter-popular-articles]] header) to display.",
 	'linkfilter-feed-title' => 'RSS feed title',
