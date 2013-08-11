@@ -94,7 +94,7 @@ $messages['qqq'] = array(
 	'linkfilter-no-recently-approved' => 'Shown on Special:LinkApprove to link administrators if no links have been approved recently.',
 	'linkfilter-no-links-at-all' => 'Shown on Special:LinksHome if for some reason there is nothing we can display to the user.',
 	'linkfilter-ago' => 'Parameters:
-* $1 - one of the following messages:
+* $1 - the duration (e.g. "{{int:Linkfilter-time-minutes|1}} {{int:Linkfilter-time-seconds|42}} "), uses the following messages:
 ** {{msg-mw|Linkfilter-time-days}}
 ** {{msg-mw|Linkfilter-time-hours}}
 ** {{msg-mw|Linkfilter-time-minutes}}
@@ -157,30 +157,14 @@ The section contains a comment (comment score and body).',
 	'linkfilter-description-left' => '$1 is the amount of characters left; it is not a number, but rather an <code>&lt;input&gt;</code>',
 	'linkfilter-popular-articles' => "Displayed when \$wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration",
 	'linkfilter-new-links-title' => "Header text, shown when \$wgLinkPageDisplay['new_links'] is <code>true</code> in the configuration",
-	'linkfilter-time-days' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
-
-See also:
-* {{msg-mw|Linkfilter-time-hours}}
-* {{msg-mw|Linkfilter-time-minutes}}
-* {{msg-mw|Linkfilter-time-seconds}}',
-	'linkfilter-time-hours' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
-
-See also:
-* {{msg-mw|Linkfilter-time-days}}
-* {{msg-mw|Linkfilter-time-minutes}}
-* {{msg-mw|Linkfilter-time-seconds}}',
-	'linkfilter-time-minutes' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
-
-See also:
-* {{msg-mw|Linkfilter-time-days}}
-* {{msg-mw|Linkfilter-time-hours}}
-* {{msg-mw|Linkfilter-time-seconds}}',
-	'linkfilter-time-seconds' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
-
-See also:
-* {{msg-mw|Linkfilter-time-days}}
-* {{msg-mw|Linkfilter-time-hours}}
-* {{msg-mw|Linkfilter-time-minutes}}
+	'linkfilter-time-days' => 'Used as the duration in {{msg-mw|Linkfilter-ago}}.
+{{Related|Linkfilter-time}}',
+	'linkfilter-time-hours' => 'Used as the duration in {{msg-mw|Linkfilter-ago}}.
+{{Related|Linkfilter-time}}',
+	'linkfilter-time-minutes' => 'Used as the duration in {{msg-mw|Linkfilter-ago}}.
+{{Related|Linkfilter-time}}',
+	'linkfilter-time-seconds' => 'Used as the duration in {{msg-mw|Linkfilter-ago}}.
+{{Related|Linkfilter-time}}
 {{Identical|Second}}',
 	'linkfilter-edit-summary' => 'Edit summary; when a link administrator approves a link, a new page in the Link: namespace is created with this as the edit summary',
 	'linkfilter-no-results' => "Displayed when \$wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration but there are no popular pages (they are shown under the [[MediaWiki:Linkfilter-popular-articles]] header) to display.",
