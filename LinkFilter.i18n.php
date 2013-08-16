@@ -394,6 +394,7 @@ $messages['ce'] = array(
 	'linkfilter-submit-no-title' => 'Дехар до, дӀаязеъе цӀе',
 	'linkfilter-title' => 'Корта',
 	'linkfilter-description' => 'Цуьнах лаьцна',
+	'linkfilter-edit-summary' => 'Керла хьажориг',
 );
 
 /** Czech (česky)
