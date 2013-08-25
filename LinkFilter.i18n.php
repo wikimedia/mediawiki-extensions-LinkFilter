@@ -157,13 +157,25 @@ The section contains a comment (comment score and body).',
 	'linkfilter-description-left' => '$1 is the amount of characters left; it is not a number, but rather an <code>&lt;input&gt;</code>',
 	'linkfilter-popular-articles' => "Displayed when \$wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration",
 	'linkfilter-new-links-title' => "Header text, shown when \$wgLinkPageDisplay['new_links'] is <code>true</code> in the configuration",
-	'linkfilter-time-days' => 'Used as the duration in {{msg-mw|Linkfilter-ago}}.
+	'linkfilter-time-days' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
+
+Parameters:
+* $1 - number of days
 {{Related|Linkfilter-time}}',
-	'linkfilter-time-hours' => 'Used as the duration in {{msg-mw|Linkfilter-ago}}.
+	'linkfilter-time-hours' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
+
+Parameters:
+* $1 - number of hours
 {{Related|Linkfilter-time}}',
-	'linkfilter-time-minutes' => 'Used as the duration in {{msg-mw|Linkfilter-ago}}.
+	'linkfilter-time-minutes' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
+
+Parameters:
+* $1 - number of minutes
 {{Related|Linkfilter-time}}',
-	'linkfilter-time-seconds' => 'Used as the duration in {{msg-mw|Linkfilter-ago}}.
+	'linkfilter-time-seconds' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
+
+Parameters:
+* $1 - number of seconds
 {{Related|Linkfilter-time}}
 {{Identical|Second}}',
 	'linkfilter-edit-summary' => 'Edit summary; when a link administrator approves a link, a new page in the Link: namespace is created with this as the edit summary',
@@ -1867,8 +1879,18 @@ $messages['ps'] = array(
  * @author Luckas
  */
 $messages['pt-br'] = array(
+	'linkfilter-submit' => 'Enviar',
 	'linkfilter-edit-title' => 'Editar $1',
+	'linkfilter-title' => 'Título',
+	'linkfilter-type' => 'Tipo de link',
 	'linkfilter-description' => 'Descrição',
+	'linkfilter-admin-accept' => 'Aceitar',
+	'linkfilter-comments' => '{{PLURAL:$1|$1 comentário|$1 comentários}}',
+	'linkfilter-home-title' => '$1 links',
+	'linkfilter-time-days' => '{{PLURAL:$1|um dia|$1 dias}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|uma hora|$1 horas}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|um minuto|$1 minutos}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|um segundo|$1 segundos}}',
 );
 
 /** Romanian (română)
