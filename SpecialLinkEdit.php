@@ -15,7 +15,9 @@ class LinkEdit extends UnlistedSpecialPage {
 	 * @param $par Mixed: parameter passed to the page or null
 	 */
 	public function execute( $par ) {
-		global $wgUser, $wgOut, $wgRequest;
+		$out = $this->getOutput();
+		$request = $this->getRequest();
+		$user = $this->getUser();
 
 		// Check permissions
 		if ( !Link::canAdmin() ) {
@@ -24,21 +26,21 @@ class LinkEdit extends UnlistedSpecialPage {
 		}
 
 		// Is the database locked or not?
-		if( wfReadOnly() ) {
-			$wgOut->readOnlyPage();
+		if ( wfReadOnly() ) {
+			$out->readOnlyPage();
 			return false;
 		}
 
 		// No access for blocked users
-		if( $wgUser->isBlocked() ) {
-			$wgOut->blockedPage( false );
+		if ( $user->isBlocked() ) {
+			$out->blockedPage( false );
 			return false;
 		}
 
 		// Add CSS & JS
-		$wgOut->addModules( 'ext.linkFilter' );
+		$out->addModules( 'ext.linkFilter' );
 
-		if ( $wgRequest->wasPosted() && $_SESSION['alreadysubmitted'] == false ) {
+		if ( $request->wasPosted() && $_SESSION['alreadysubmitted'] == false ) {
 			$_SESSION['alreadysubmitted'] = true;
 
 			// Update link
@@ -51,36 +53,37 @@ class LinkEdit extends UnlistedSpecialPage {
 					'link_type' => intval( $_POST['lf_type'] )
 				),
 				/* WHERE */array(
-					'link_page_id' => $wgRequest->getInt( 'id' )
+					'link_page_id' => $request->getInt( 'id' )
 				),
 				__METHOD__
 			);
 
-			$title = Title::newFromId( $wgRequest->getInt( 'id' ) );
-			$wgOut->redirect( $title->getFullURL() );
+			$title = Title::newFromId( $request->getInt( 'id' ) );
+			$out->redirect( $title->getFullURL() );
 		} else {
-			$wgOut->addHTML( $this->displayEditForm() );
+			$out->addHTML( $this->displayEditForm() );
 		}
 	}
 
 	function displayEditForm() {
-		global $wgOut, $wgRequest;
+		$out = $this->getOutput();
+		$request = $this->getRequest();
 
-		$url = $wgRequest->getVal( '_url' );
-		$title = $wgRequest->getVal( '_title' );
+		$url = $request->getVal( '_url' );
+		$title = $request->getVal( '_title' );
 
 		$l = new Link();
-		$link = $l->getLinkByPageID( $wgRequest->getInt( 'id' ) );
+		$link = $l->getLinkByPageID( $request->getInt( 'id' ) );
 
 		if( is_array( $link ) ) {
 			$url = htmlspecialchars( $link['url'], ENT_QUOTES );
 			$description = htmlspecialchars( $link['description'], ENT_QUOTES );
 		} else {
 			$title = SpecialPage::getTitleFor( 'LinkSubmit' );
-			$wgOut->redirect( $title->getFullURL() );
+			$out->redirect( $title->getFullURL() );
 		}
 
-		$wgOut->setPageTitle( wfMsg( 'linkfilter-edit-title', $link['title'] ) );
+		$out->setPageTitle( $this->msg( 'linkfilter-edit-title', $link['title'] )->text() );
 
 		$_SESSION['alreadysubmitted'] = false;
 
@@ -88,39 +91,39 @@ class LinkEdit extends UnlistedSpecialPage {
 
 			<div class="link-home-navigation">
 				<a href="' . Link::getHomeLinkURL() . '">' .
-					wfMsg( 'linkfilter-home-button' ) . '</a>';
+					$this->msg( 'linkfilter-home-button' )->text() . '</a>';
 
-		if( Link::canAdmin() ) {
+		if ( Link::canAdmin() ) {
 			$output .= ' <a href="' . Link::getLinkAdminURL() . '">' .
-				wfMsg( 'linkfilter-approve-links' ) . '</a>';
+				$this->msg( 'linkfilter-approve-links' )->text() . '</a>';
 		}
 
 		$output .= '<div class="cleared"></div>
 			</div>
 			<form name="link" id="linksubmit" method="post" action="">
 				<div class="link-submit-title">
-					<label>' . wfMsg( 'linkfilter-url' ) . '</label>
+					<label>' . $this->msg( 'linkfilter-url' )->text() . '</label>
 				</div>
 				<input tabindex="2" class="lr-input" type="text" name="lf_URL" id="lf_URL" value="' . $url . '"/>
 
 				<div class="link-submit-title">
-					<label>' . wfMsg( 'linkfilter-description' ) . '</label>
+					<label>' . $this->msg( 'linkfilter-description' )->text() . '</label>
 				</div>
 				<div class="link-characters-left">' .
-					wfMsg( 'linkfilter-description-max' ) . ' - ' .
-					wfMsg( 'linkfilter-description-left', '<span id="desc-remaining">300</span>' ) .
+					$this->msg( 'linkfilter-description-max' )->text() . ' - ' .
+					$this->msg( 'linkfilter-description-left', '<span id="desc-remaining">300</span>' )->text() .
 				'</div>
 				<textarea tabindex="3" class="lr-input" rows="4" name="lf_desc" id="lf_desc">'
 				. $description .
 				'</textarea>
 
 				<div class="link-submit-title">
-					<label>' . wfMsg( 'linkfilter-type' ) . '</label>
+					<label>' . $this->msg( 'linkfilter-type' )->text() . '</label>
 				</div>
 				<select tabindex="4" name="lf_type" id="lf_type">
 				<option value="">-</option>';
 		$linkTypes = Link::getLinkTypes();
-		foreach( $linkTypes as $id => $type ) {
+		foreach ( $linkTypes as $id => $type ) {
 			$selected = '';
 			if ( $link['type'] == $id ) {
 				$selected = ' selected="selected"';
@@ -129,13 +132,13 @@ class LinkEdit extends UnlistedSpecialPage {
 		}
 		$output .= '</select>
 				<div class="link-submit-button">
-					<input tabindex="5" class="site-button" type="button" id="link-submit-button" value="' . wfMsg( 'linkfilter-submit-button' ) . '" />
+					<input tabindex="5" class="site-button" type="button" id="link-submit-button" value="' . $this->msg( 'linkfilter-submit-button' )->text() . '" />
 				</div>
 			</form>
 		</div>';
 
 		$output .= '<div class="lr-right">' .
-			wfMsgExt( 'linkfilter-instructions', 'parse' ) .
+			$this->msg( 'linkfilter-instructions' )->inContentLanguage()->parse() .
 		'</div>
 		<div class="cleared"></div>';
 

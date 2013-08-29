@@ -34,13 +34,13 @@ class LinkApprove extends SpecialPage {
 
 	function getLFTimeOffset( $time, $timeabrv, $timename ) {
 		$timeStr = '';
-		if( $time[$timeabrv] > 0 ) {
+		if ( $time[$timeabrv] > 0 ) {
 			// Give grep a chance to find the usages:
 			// linkfilter-time-days, linkfilter-time-hours,
 			// linkfilter-time-minutes, linkfilter-time-seconds
-			$timeStr = wfMsgExt( "linkfilter-time-{$timename}", 'parsemag', $time[$timeabrv] );
+			$timeStr = wfMessage( "linkfilter-time-{$timename}", $time[$timeabrv] )->parse();
 		}
-		if( $timeStr ) {
+		if ( $timeStr ) {
 			$timeStr .= ' ';
 		}
 		return $timeStr;
@@ -54,15 +54,15 @@ class LinkApprove extends SpecialPage {
 		$timeStrM = self::getLFTimeOffset( $timeArray, 'm', 'minutes' );
 		$timeStrS = self::getLFTimeOffset( $timeArray, 's', 'seconds' );
 		$timeStr = $timeStrD;
-		if( $timeStr < 2 ) {
+		if ( $timeStr < 2 ) {
 			$timeStr .= $timeStrH;
 			$timeStr .= $timeStrM;
-			if( !$timeStr ) {
+			if ( !$timeStr ) {
 				$timeStr .= $timeStrS;
 			}
 		}
-		if( !$timeStr ) {
-			$timeStr = wfMsgExt( 'linkfilter-time-seconds', 'parsemag', 1 );
+		if ( !$timeStr ) {
+			$timeStr = wfMessage( 'linkfilter-time-seconds', 1 )->parse();
 		}
 		return $timeStr;
 	}
@@ -80,10 +80,10 @@ class LinkApprove extends SpecialPage {
 		$image = preg_match( '/<img src=/i', $linkText );
 		$isURL = Link::isURL( $linkText );
 
-		if( $isURL && !$image && strlen( $linkText ) > 60 ) {
+		if ( $isURL && !$image && strlen( $linkText ) > 60 ) {
 			$start = substr( $linkText, 0, ( 60 / 2 ) - 3 );
 			$end = substr( $linkText, strlen( $linkText ) - ( 60 / 2 ) + 3, ( 60 / 2 ) - 3 );
-			$linkText = trim( $start ) . wfMsg( 'ellipsis' ) . trim( $end );
+			$linkText = trim( $start ) . wfMessage( 'ellipsis' )->plain() . trim( $end );
 		}
 		return $tagOpen . $linkText . $tagClose;
 	}
@@ -94,31 +94,33 @@ class LinkApprove extends SpecialPage {
 	 * @param $par Mixed: parameter passed to the page or null
 	 */
 	public function execute( $par ) {
-		global $wgUser, $wgOut, $wgRequest;
+		$out = $this->getOutput();
+		$request = $this->getRequest();
+		$user = $this->getUser();
 
 		// Check for linkadmin permission
-		if( !$wgUser->isAllowed( 'linkadmin' ) ) {
+		if(  !$user->isAllowed( 'linkadmin' ) ) {
 			throw new ErrorPageError( 'error', 'badaccess' );
 			return false;
 		}
 
 		// Blocked through Special:Block? No access for you either!
-		if( $wgUser->isBlocked() ) {
-			$wgOut->blockedPage( false );
+		if ( $user->isBlocked() ) {
+			$out->blockedPage( false );
 			return false;
 		}
 
 		// Is the database locked or not?
-		if( wfReadOnly() ) {
-			$wgOut->readOnlyPage();
+		if ( wfReadOnly() ) {
+			$out->readOnlyPage();
 			return false;
 		}
 
 		// Set the page title
-		$wgOut->setPageTitle( wfMsgHtml( 'linkfilter-approve-title' ) );
+		$out->setPageTitle( $this->msg( 'linkfilter-approve-title' )->plain() );
 
 		// Add CSS & JS
-		$wgOut->addModules( 'ext.linkFilter' );
+		$out->addModules( 'ext.linkFilter' );
 
 		$output = '';
 		$output .= '<div class="lr-left">';
@@ -132,10 +134,10 @@ class LinkApprove extends SpecialPage {
 		// The approval queue is empty? If so, show a message to the user about
 		// that!
 		if ( $links_count <= 0 ) {
-			$wgOut->addWikiMsg( 'linkfilter-nothing-to-approve' );
+			$out->addWikiMsg( 'linkfilter-nothing-to-approve' );
 		}
 
-		foreach( $links as $link ) {
+		foreach ( $links as $link ) {
 			$linkText = preg_replace_callback(
 				'/(<a[^>]*>)(.*?)(<\/a>)/i',
 				array( 'LinkApprove', 'cutLinkFilterLinkText' ),
@@ -143,33 +145,32 @@ class LinkApprove extends SpecialPage {
 			);
 
 			$border_fix = '';
-			if( $links_count == $x ) {
+			if ( $links_count == $x ) {
 				$border_fix = ' border-fix';
 			}
 
 			$output .= "<div class=\"admin-link{$border_fix}\">
-					<div class=\"admin-title\"><b>" . wfMsg( 'linkfilter-title' ) .
+					<div class=\"admin-title\"><b>" . $this->msg( 'linkfilter-title' )->text() .
 						'</b>: ' . htmlspecialchars( $link['title'] ) .
 					'</div>
-					<div class="admin-desc"><b>' . wfMsg( 'linkfilter-description' ) .
+					<div class="admin-desc"><b>' . $this->msg( 'linkfilter-description' )->text() .
 						'</b>: ' . htmlspecialchars( $link['description'] ) .
 					'</div>
-					<div class="admin-url"><b>' . wfMsg( 'linkfilter-url' ) .
-						'</b>: <a href="' . $link['url'] . '" target="new">' .
-							$linkText . '</a></div>
+					<div class="admin-url"><b>' . $this->msg( 'linkfilter-url' )->text() .
+						'</b>: ' . $linkText . '</div>
 					<div class="admin-submitted">' .
-						wfMessage( 'linkfilter-submittedby', $link['user_name'] )->parse() .
-						wfMessage( 'word-separator' )->text() .
-					wfMsg(
+						$this->msg( 'linkfilter-submittedby', $link['user_name'] )->parse() .
+						$this->msg( 'word-separator' )->text() .
+					$this->msg(
 						'linkfilter-ago',
 						self::getLFTimeAgo( $link['timestamp'] ),
 						Link::getLinkType( $link['type'] )
-					) . "</div>
+					)->parse() . "</div>
 					<div id=\"action-buttons-{$link['id']}\" class=\"action-buttons\">
 						<a href=\"javascript:void(0);\" class=\"action-accept\" data-link-id=\"{$link['id']}\">" .
-							wfMsgHtml( 'linkfilter-admin-accept' ) . "</a>
+							$this->msg( 'linkfilter-admin-accept' )->text() . "</a>
 						<a href=\"javascript:void(0);\" class=\"action-reject\" data-link-id=\"{$link['id']}\">" .
-							wfMsgHtml( 'linkfilter-admin-reject' ) . '</a>
+							$this->msg( 'linkfilter-admin-reject' )->text() . '</a>
 						<div class="cleared"></div>
 					</div>';
 			$output .= '</div>';
@@ -181,29 +182,29 @@ class LinkApprove extends SpecialPage {
 		$output .= '</div>';
 		$output .= '<div class="lr-right">
 			<div class="admin-link-instruction">' .
-				wfMessage( 'linkfilter-admin-instructions' )->inContentLanguage()->parse() .
+				$this->msg( 'linkfilter-admin-instructions' )->inContentLanguage()->parse() .
 			'</div>
 			<div class="approved-link-container">
-				<h3>' . wfMsgHtml( 'linkfilter-admin-recent' ) . '</h3>';
+				<h3>' . $this->msg( 'linkfilter-admin-recent' )->text() . '</h3>';
 
 		$l = new LinkList();
 		$links = $l->getLinkList( LINK_APPROVED_STATUS, /*$type*/0, 10, 0, 'link_approved_date' );
 
 		// Nothing has been approved recently? Okay...
 		if ( count( $links ) <= 0 ) {
-			$output .= wfMsg( 'linkfilter-no-recently-approved' );
+			$output .= $this->msg( 'linkfilter-no-recently-approved' )->text();
 		} else { // Yay, we have something! Let's build a list!
-			foreach( $links as $link ) {
+			foreach ( $links as $link ) {
 				$output .= '<div class="approved-link">
 				<a href="' . $link['url'] . '" target="new">' .
 					$link['title'] .
 				'</a>
 				<span class="approve-link-time">' .
-				wfMsg(
+				$this->msg(
 					'linkfilter-ago',
 					self::getLFTimeAgo( $link['approved_timestamp'] ),
 					Link::getLinkType( $link['type'] )
-				) . '</span>
+				)->parse() . '</span>
 			</div>';
 			}
 		}
@@ -212,6 +213,6 @@ class LinkApprove extends SpecialPage {
 			</div>
 			<div class="cleared"></div>';
 
-		$wgOut->addHTML( $output );
+		$out->addHTML( $output );
 	}
 }

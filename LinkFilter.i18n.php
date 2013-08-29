@@ -94,7 +94,7 @@ $messages['qqq'] = array(
 	'linkfilter-no-recently-approved' => 'Shown on Special:LinkApprove to link administrators if no links have been approved recently.',
 	'linkfilter-no-links-at-all' => 'Shown on Special:LinksHome if for some reason there is nothing we can display to the user.',
 	'linkfilter-ago' => 'Parameters:
-* $1 - the duration (e.g. "{{int:Linkfilter-time-minutes|1}} {{int:Linkfilter-time-seconds|42}} "), uses the following messages:
+* $1 - one of the following messages:
 ** {{msg-mw|Linkfilter-time-days}}
 ** {{msg-mw|Linkfilter-time-hours}}
 ** {{msg-mw|Linkfilter-time-minutes}}
@@ -151,33 +151,35 @@ The section contains a comment (comment score and body).',
 	'linkfilter-home-title' => '$1 is the link type',
 	'linkfilter-home-title-all' => 'This is the page title of Special:LinksHome when the user is viewing all the links (as opposed to viewing links of a specific type)',
 	'linkfilter-next' => 'Pagination link',
-	'linkfilter-previous' => 'Pagination link.
-{{Identical|Previous}}',
+	'linkfilter-previous' => 'Pagination link',
 	'linkfilter-description-max' => 'Shown on Special:LinkEdit and Special:LinkSubmit, followed by the message [[MediaWiki:Linkfilter-description-left]]',
 	'linkfilter-description-left' => '$1 is the amount of characters left; it is not a number, but rather an <code>&lt;input&gt;</code>',
 	'linkfilter-popular-articles' => "Displayed when \$wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration",
 	'linkfilter-new-links-title' => "Header text, shown when \$wgLinkPageDisplay['new_links'] is <code>true</code> in the configuration",
 	'linkfilter-time-days' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
 
-Parameters:
-* $1 - number of days
-{{Related|Linkfilter-time}}',
+See also:
+* {{msg-mw|Linkfilter-time-hours}}
+* {{msg-mw|Linkfilter-time-minutes}}
+* {{msg-mw|Linkfilter-time-seconds}}',
 	'linkfilter-time-hours' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
 
-Parameters:
-* $1 - number of hours
-{{Related|Linkfilter-time}}',
+See also:
+* {{msg-mw|Linkfilter-time-days}}
+* {{msg-mw|Linkfilter-time-minutes}}
+* {{msg-mw|Linkfilter-time-seconds}}',
 	'linkfilter-time-minutes' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
 
-Parameters:
-* $1 - number of minutes
-{{Related|Linkfilter-time}}',
+See also:
+* {{msg-mw|Linkfilter-time-days}}
+* {{msg-mw|Linkfilter-time-hours}}
+* {{msg-mw|Linkfilter-time-seconds}}',
 	'linkfilter-time-seconds' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
 
-Parameters:
-* $1 - number of seconds
-{{Related|Linkfilter-time}}
-{{Identical|Second}}',
+See also:
+* {{msg-mw|Linkfilter-time-days}}
+* {{msg-mw|Linkfilter-time-hours}}
+* {{msg-mw|Linkfilter-time-minutes}}',
 	'linkfilter-edit-summary' => 'Edit summary; when a link administrator approves a link, a new page in the Link: namespace is created with this as the edit summary',
 	'linkfilter-no-results' => "Displayed when \$wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration but there are no popular pages (they are shown under the [[MediaWiki:Linkfilter-popular-articles]] header) to display.",
 	'linkfilter-feed-title' => 'RSS feed title',
@@ -403,10 +405,8 @@ $messages['ca'] = array(
  */
 $messages['ce'] = array(
 	'linkfilter-submit' => 'ДӀадахьийта',
-	'linkfilter-submit-no-title' => 'Дехар до, дӀаязеъе цӀе',
 	'linkfilter-title' => 'Корта',
 	'linkfilter-description' => 'Цуьнах лаьцна',
-	'linkfilter-edit-summary' => 'Керла хьажориг',
 );
 
 /** Czech (česky)
@@ -1879,18 +1879,8 @@ $messages['ps'] = array(
  * @author Luckas
  */
 $messages['pt-br'] = array(
-	'linkfilter-submit' => 'Enviar',
 	'linkfilter-edit-title' => 'Editar $1',
-	'linkfilter-title' => 'Título',
-	'linkfilter-type' => 'Tipo de link',
 	'linkfilter-description' => 'Descrição',
-	'linkfilter-admin-accept' => 'Aceitar',
-	'linkfilter-comments' => '{{PLURAL:$1|$1 comentário|$1 comentários}}',
-	'linkfilter-home-title' => '$1 links',
-	'linkfilter-time-days' => '{{PLURAL:$1|um dia|$1 dias}}',
-	'linkfilter-time-hours' => '{{PLURAL:$1|uma hora|$1 horas}}',
-	'linkfilter-time-minutes' => '{{PLURAL:$1|um minuto|$1 minutos}}',
-	'linkfilter-time-seconds' => '{{PLURAL:$1|um segundo|$1 segundos}}',
 );
 
 /** Romanian (română)
@@ -2118,8 +2108,6 @@ $messages['sv'] = array(
 	'linkfilter-home-button' => 'Länkar hem',
 	'linkfilter-submit-success-title' => 'Länk inskickad',
 	'linkfilter-submit-success-text' => 'Din länk har skickats för godkännande',
-	'linkfilter-instructions' => 'Du kan [[MediaWiki:Linkfilter-instructions|lägga till instruktioner för användare]].',
-	'linkfilter-admin-instructions' => 'Du kan lägga till [[MediaWiki:Linkfilter-admin-instructions|instruktioner för administratörer]].',
 	'linkfilter-admin-recent' => 'Nyligen godkända',
 	'linkfilter-approve-title' => 'Länkadministration',
 	'linkfilter-submittedby' => "'''Inlämnad av''': [[User:$1|$1]]",

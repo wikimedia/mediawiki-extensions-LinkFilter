@@ -6,7 +6,20 @@
  */
 class LinkPage extends Article {
 
+	/**
+	 * @var Title
+	 */
 	var $title = null;
+
+	/**
+	 * @var String: page content retrieved via getContent() in setContent()
+	 */
+	var $pageContent;
+
+	/**
+	 * @var Link: Link object representing the current link
+	 */
+	var $link;
 
 	function __construct( Title $title ) {
 		parent::__construct( $title );
@@ -23,7 +36,7 @@ class LinkPage extends Article {
 		// we have to load the text for the real page
 		// Note: If $this->getContent is called anywhere before parent::view,
 		// the real article text won't get loaded on the page
-		if( $this->isRedirect( $this->pageContent ) ) {
+		if ( $this->isRedirect( $this->pageContent ) ) {
 			wfDebugLog( 'LinkFilter', __METHOD__ . "\n" );
 
 			$target = $this->followRedirect();
@@ -61,11 +74,11 @@ class LinkPage extends Article {
 
 		// Get categories
 		$cat = $sk->getCategoryLinks();
-		if( $cat ) {
+		if ( $cat ) {
 			$wgOut->addHTML( "<div id=\"categories\">{$cat}</div>" );
 		}
 
-		if( class_exists( 'Comment' ) ) {
+		if ( class_exists( 'Comment' ) ) {
 			$wgOut->addWikiText( '<comments/>' );
 		}
 
@@ -91,7 +104,7 @@ class LinkPage extends Article {
 
 		$url = '';
 		$domain = '';
-		if( Link::isURL( $this->link['url'] ) ) {
+		if ( Link::isURL( $this->link['url'] ) ) {
 			$url = parse_url( $this->link['url'] );
 			$domain = $url['host'];
 		}
@@ -116,7 +129,7 @@ class LinkPage extends Article {
 					</a>
 				</div>
 				<div class=\"link-date\">(" .
-					wfMsg( 'linkfilter-submitted', $create_date ) . ")</div>
+					wfMessage( 'linkfilter-submitted', $create_date )->parse() . ")</div>
 				<div class=\"link-description\">
 					{$this->link['description']}
 				</div>
@@ -138,7 +151,8 @@ class LinkPage extends Article {
 
 		$key = wfMemcKey( 'page', 'create_date', $pageId );
 		$data = $wgMemc->get( $key );
-		if( !$data ) {
+
+		if ( !$data ) {
 			$dbr = wfGetDB( DB_MASTER );
 			$createDate = $dbr->selectField(
 				'revision',
@@ -172,7 +186,7 @@ class LinkPage extends Article {
 		$authorUserName = $this->link['user_name'];
 		$authorUserId = $this->link['user_id'];
 
-		if( !$authorUserId ) {
+		if ( !$authorUserId ) {
 			return '';
 		}
 
@@ -184,7 +198,7 @@ class LinkPage extends Article {
 		$avatar = new wAvatar( $authorUserId, 'm' );
 
 		$css_fix = 'author-container-fix';
-		$output = '<h2>' . wfMsg( 'linkfilter-about-submitter' ) . '</h2>';
+		$output = '<h2>' . wfMessage( 'linkfilter-about-submitter' )->text() . '</h2>';
 		$output .= "<div class=\"author-container $css_fix\">
 			<div class=\"author-info\">
 				<a href=\"" . $authorTitle->escapeFullURL() . "\" rel=\"nofollow\">
@@ -193,7 +207,7 @@ class LinkPage extends Article {
 				<div class=\"author-title\">
 					<a href=\"" . $authorTitle->escapeFullURL() . "\" rel=\"nofollow\">{$authorUserName}</a>
 				</div>";
-		if( $profileData['about'] ) {
+		if ( $profileData['about'] ) {
 			$output .= $wgOut->parse( $profileData['about'], false );
 		}
 		$output .= '</div>
@@ -212,7 +226,7 @@ class LinkPage extends Article {
 	function leftAdUnit() {
 		global $wgLinkPageDisplay;
 
-		if( !$wgLinkPageDisplay['left_ad'] ) {
+		if ( !$wgLinkPageDisplay['left_ad'] ) {
 			return '';
 		}
 
@@ -249,14 +263,14 @@ class LinkPage extends Article {
 	function getInTheNews() {
 		global $wgLinkPageDisplay, $wgOut;
 
-		if( !$wgLinkPageDisplay['in_the_news'] ) {
+		if ( !$wgLinkPageDisplay['in_the_news'] ) {
 			return '';
 		}
 
-		$newsArray = explode( "\n\n", wfMsgForContent( 'inthenews' ) );
+		$newsArray = explode( "\n\n", wfMessage( 'inthenews' )->inContentLanguage()->text() );
 		$newsItem = $newsArray[array_rand( $newsArray )];
 		$output = '<div class="link-container">
-			<h2>' . wfMsg( 'linkfilter-in-the-news' ) . '</h2>
+			<h2>' . wfMessage( 'linkfilter-in-the-news' )->text() . '</h2>
 			<div>' . $wgOut->parse( $newsItem, false ) . '</div>
 		</div>';
 
@@ -272,7 +286,7 @@ class LinkPage extends Article {
 	function getNewLinks() {
 		global $wgLinkPageDisplay;
 
-		if( !$wgLinkPageDisplay['new_links'] ) {
+		if ( !$wgLinkPageDisplay['new_links'] ) {
 			return '';
 		}
 
@@ -282,7 +296,7 @@ class LinkPage extends Article {
 		$l = new LinkList();
 		$links = $l->getLinkList( LINK_APPROVED_STATUS, '', 7, 0 );
 
-		foreach( $links as $link ) {
+		foreach ( $links as $link ) {
 			$output .= '<div class="link-recent">
 			<a href="' . $linkRedirect->escapeFullURL( "url={$link['url']}" ) .
 				"\" target=\"new\">{$link['title']}</a>
@@ -290,7 +304,7 @@ class LinkPage extends Article {
 		}
 
 		$output = '<div class="link-container">
-			<h2>' . wfMsg( 'linkfilter-new-links-title' ) . '</h2>
+			<h2>' . wfMessage( 'linkfilter-new-links-title' )->text() . '</h2>
 			<div>' . $output . '</div>
 		</div>';
 
@@ -306,11 +320,11 @@ class LinkPage extends Article {
 	function getRandomCasualGame() {
 		global $wgLinkPageDisplay;
 
-		if( !$wgLinkPageDisplay['games'] ) {
+		if ( !$wgLinkPageDisplay['games'] ) {
 			return '';
 		}
 
-		if( function_exists( 'wfGetRandomGameUnit' ) ) {
+		if ( function_exists( 'wfGetRandomGameUnit' ) ) {
 			return wfGetRandomGameUnit();
 		} else {
 			return '';
@@ -326,7 +340,7 @@ class LinkPage extends Article {
 	function getCommentsOfTheDay() {
 		global $wgLinkPageDisplay, $wgMemc;
 
-		if( !$wgLinkPageDisplay['comments_of_day'] ) {
+		if ( !$wgLinkPageDisplay['comments_of_day'] ) {
 			return '';
 		}
 
@@ -336,7 +350,8 @@ class LinkPage extends Article {
 		$key = wfMemcKey( 'comments-link', 'plus', '24hours' );
 		$wgMemc->delete( $key );
 		$data = $wgMemc->get( $key );
-		if( $data != '' ) {
+
+		if ( $data != '' ) {
 			wfDebugLog( 'LinkFilter', "Got comments of the day from cache\n" );
 			$comments = $data;
 		} else {
@@ -366,7 +381,7 @@ class LinkPage extends Article {
 				)
 			);
 
-			foreach( $res as $row ) {
+			foreach ( $res as $row ) {
 				$comments[] = array(
 					'user_name' => $row->Comment_Username,
 					'user_id' => $row->Comment_user_id,
@@ -382,19 +397,19 @@ class LinkPage extends Article {
 
 		$output = '';
 
-		foreach( $comments as $comment ) {
+		foreach ( $comments as $comment ) {
 			$pageTitle = Title::makeTitle( $comment['namespace'], $comment['title'] );
 
-			if( $comment['user_id'] != 0 ) {
+			if ( $comment['user_id'] != 0 ) {
 				$title = Title::makeTitle( NS_USER, $comment['user_name'] );
 				$commentPosterDisplay = $comment['user_name'];
 			} else {
-				$commentPosterDisplay = wfMsg( 'linkfilter-anonymous' );
+				$commentPosterDisplay = wfMessage( 'linkfilter-anonymous' )->text();
 			}
 
 			$commentText = substr( $comment['comment_text'], 0, 70 - strlen( $commentPosterDisplay ) );
-			if( $commentText != $comment['comment_text'] ) {
-				$commentText .= wfMsg( 'ellipsis' );
+			if ( $commentText != $comment['comment_text'] ) {
+				$commentText .= wfMessage( 'ellipsis' )->plain();
 			}
 			$output .= '<div class="cod-item">';
 			$output .= '<span class="cod-score">' . $comment['plus_count'] . '</span> ';
@@ -402,9 +417,9 @@ class LinkPage extends Article {
 			$output .= '</div>';
 		}
 
-		if( count( $comments ) > 0 ) {
+		if ( count( $comments ) > 0 ) {
 			$output = '<div class="link-container">
-				<h2>' . wfMsg( 'linkfilter-comments-of-day' ) . '</h2>' .
+				<h2>' . wfMessage( 'linkfilter-comments-of-day' )->text() . '</h2>' .
 				$output .
 			'</div>';
 		}

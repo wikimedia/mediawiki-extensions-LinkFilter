@@ -15,15 +15,14 @@ class LinkRedirect extends UnlistedSpecialPage {
 	 * @param $par Mixed: parameter passed to the page or null
 	 */
 	public function execute( $par ) {
-		global $wgRequest, $wgOut, $wgUser;
-
-		$wgOut->setArticleBodyOnly( true );
-		$sk = $wgUser->getSkin();
-		$url = $wgRequest->getVal( 'url' );
-		$wgOut->addHTML(
+		$out = $this->getOutput();
+		$out->setArticleBodyOnly( true );
+		$sk = $this->getUser()->getSkin();
+		$url = $this->getRequest()->getVal( 'url' );
+		$out->addHTML(
 			"<html>
 				<body onload=window.location=\"{$url}\">
-				{$sk->bottomScripts( $wgOut )}
+				{$sk->bottomScripts( $out )}
 				</body>
 			</html>"
 		);

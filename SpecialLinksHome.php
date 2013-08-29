@@ -19,17 +19,17 @@ class LinksHome extends SpecialPage {
 	 * @return HTML
 	 */
 	function getInTheNews() {
-		global $wgLinkPageDisplay, $wgOut;
+		global $wgLinkPageDisplay;
 
-		if( !$wgLinkPageDisplay['in_the_news'] ) {
+		if ( !$wgLinkPageDisplay['in_the_news'] ) {
 			return '';
 		}
 
-		$newsArray = explode( "\n\n", wfMsgForContent( 'inthenews' ) );
+		$newsArray = explode( "\n\n", $this->msg( 'inthenews' )->inContentLanguage()->text() );
 		$newsItem = $newsArray[array_rand( $newsArray )];
 		$output = '<div class="link-container border-fix">
-			<h2>' . wfMsg( 'linkfilter-in-the-news' ) . '</h2>
-			<div>' . $wgOut->parse( $newsItem, false ) . '</div>
+			<h2>' . $this->msg( 'linkfilter-in-the-news' )->text() . '</h2>
+			<div>' . $this->getOutput()->parse( $newsItem, false ) . '</div>
 		</div>';
 
 		return $output;
@@ -38,7 +38,7 @@ class LinksHome extends SpecialPage {
 	function getPopularArticles() {
 		global $wgLinkPageDisplay;
 
-		if( !$wgLinkPageDisplay['popular_articles'] ) {
+		if ( !$wgLinkPageDisplay['popular_articles'] ) {
 			return '';
 		}
 
@@ -74,9 +74,9 @@ class LinksHome extends SpecialPage {
 
 		$html = '<div class="listpages-container">';
 		if ( empty( $popularLinks ) ) {
-			$html .= wfMsg( 'linkfilter-no-results' );
+			$html .= $this->msg( 'linkfilter-no-results' )->text();
 		} else {
-			foreach( $popularLinks as $popularLink ) {
+			foreach ( $popularLinks as $popularLink ) {
 				$titleObj = Title::makeTitle( NS_LINK, $popularLink['title'] );
 				$html .= '<div class="listpages-item">';
 				$html .= '<a href="' . $titleObj->escapeFullURL() . '">' .
@@ -90,7 +90,7 @@ class LinksHome extends SpecialPage {
 		$html .= '</div>' . "\n"; // .listpages-container
 
 		$output = '<div class="link-container">
-			<h2>' . wfMsg( 'linkfilter-popular-articles' ) . '</h2>
+			<h2>' . $this->msg( 'linkfilter-popular-articles' )->text() . '</h2>
 			<div>' . $html . '</div>
 		</div>';
 
@@ -102,7 +102,7 @@ class LinksHome extends SpecialPage {
 	 * @return HTML or nothing
 	 */
 	function getRandomCasualGame() {
-		if( function_exists( 'wfGetRandomGameUnit' ) ) {
+		if ( function_exists( 'wfGetRandomGameUnit' ) ) {
 			return wfGetRandomGameUnit();
 		} else {
 			return '';
@@ -116,7 +116,7 @@ class LinksHome extends SpecialPage {
 	function getAdUnit() {
 		global $wgLinkPageDisplay, $wgAdConfig;
 
-		if( !$wgLinkPageDisplay['left_ad'] ) {
+		if ( !$wgLinkPageDisplay['left_ad'] ) {
 			return '';
 		}
 
@@ -148,36 +148,39 @@ class LinksHome extends SpecialPage {
 	 * @param $par Mixed: parameter passed to the page or null
 	 */
 	public function execute( $par ) {
-		global $wgOut, $wgRequest, $wgSupressPageTitle;
+		global $wgSupressPageTitle;
+
+		$out = $this->getOutput();
+		$request = $this->getRequest();
 
 		$wgSupressPageTitle = true;
 
 		// Add CSS & JS
-		$wgOut->addModules( 'ext.linkFilter' );
+		$out->addModules( 'ext.linkFilter' );
 
 		$per_page = 20;
-		$page = $wgRequest->getInt( 'page', 1 );
-		$link_type = $wgRequest->getInt( 'link_type' );
+		$page = $request->getInt( 'page', 1 );
+		$link_type = $request->getInt( 'link_type' );
 
-		if( $link_type ) {
+		if ( $link_type ) {
 			$type_name = Link::$link_types[$link_type];
-			$pageTitle = wfMsg( 'linkfilter-home-title', $type_name );
+			$pageTitle = $this->msg( 'linkfilter-home-title', $type_name )->text();
 		} else {
 			$type_name = 'All';
-			$pageTitle = wfMsg( 'linkfilter-home-title-all' );
+			$pageTitle = $this->msg( 'linkfilter-home-title-all' )->text();
 		}
 
-		$wgOut->setPageTitle( $pageTitle );
+		$out->setPageTitle( $pageTitle );
 
 		$output = '<div class="links-home-left">' . "\n\t";
 		$output .= '<h1 class="page-title">' . $pageTitle . '</h1>' . "\n\t";
 		$output .= '<div class="link-home-navigation">
 		<a href="' . Link::getSubmitLinkURL() . '">' .
-			wfMsg( 'linkfilter-submit-title' ) . '</a>' . "\n";
+			$this->msg( 'linkfilter-submit-title' )->text() . '</a>' . "\n";
 
-		if( Link::canAdmin() ) {
+		if ( Link::canAdmin() ) {
 			$output .= "\t\t" . '<a href="' . Link::getLinkAdminURL() . '">' .
-				wfMsg( 'linkfilter-approve-links' ) . '</a>' . "\n";
+				$this->msg( 'linkfilter-approve-links' )->text() . '</a>' . "\n";
 		}
 
 		$output .= "\t\t" . '<div class="cleared"></div>
@@ -194,35 +197,34 @@ class LinksHome extends SpecialPage {
 
 		// No links at all? Oh dear...show a message to the user about that!
 		if ( $link_count <= 0 ) {
-			$wgOut->addWikiMsg( 'linkfilter-no-links-at-all' );
+			$out->addWikiMsg( 'linkfilter-no-links-at-all' );
 		}
 
 		// Create RSS feed icon for special page
-		$wgOut->setSyndicated( true );
+		$out->setSyndicated( true );
 
 		// Make feed (RSS/Atom) if requested
-		$feedType = $wgRequest->getVal( 'feed' );
+		$feedType = $request->getVal( 'feed' );
 		if ( $feedType != '' ) {
 			return $this->makeFeed( $feedType, $links );
 		}
 
-		foreach( $links as $link ) {
+		foreach ( $links as $link ) {
 			$border_fix = '';
-			if( $link_count == $x ) {
+			if ( $link_count == $x ) {
 				$border_fix = 'border-fix';
 			}
 
 			$border_fix2 = '';
 			wfSuppressWarnings();
 			$date = date( 'l, F j, Y', $link['approved_timestamp'] );
-			if( $date != $last_date ) {
+			if ( $date != $last_date ) {
 				$border_fix2 = ' border-top-fix';
 				$output .= "<div class=\"links-home-date\">{$date}</div>";
-				#global $wgLang;
 				#$unix = wfTimestamp( TS_MW, $link['approved_timestamp'] );
-				#$weekday = $wgLang->getWeekdayName( gmdate( 'w', $unix ) + 1 );
+				#$weekday = $this->getLanguage()->getWeekdayName( gmdate( 'w', $unix ) + 1 );
 				#$output .= '<div class="links-home-date">' . $weekday .
-				#	wfMsg( 'word-separator' ) . $wgLang->date( $unix, true ) .
+				#	wfMsg( 'word-separator' ) . $this->getLanguage()->date( $unix, true ) .
 				#	'</div>';
 			}
 			wfRestoreWarnings(); // okay, so suppressing E_NOTICEs is kinda bad practise, but... -Jack, January 21, 2010
@@ -244,7 +246,7 @@ class LinksHome extends SpecialPage {
 					</div>
 					<div class="link-item-page">
 						<a href="' . $link['wiki_page'] . '">(' .
-							wfMsgExt( 'linkfilter-comments', 'parsemag', $link['comments'] ) .
+							$this->msg( 'linkfilter-comments', $link['comments'] )->parse() .
 						')</a>
 					</div>
 					<div class="cleared"></div>';
@@ -258,38 +260,52 @@ class LinksHome extends SpecialPage {
 		/**
 		 * Build next/prev nav
 		 */
-		$numofpages = $total / $per_page; 
+		$numofpages = $total / $per_page;
 
 		$pageLink = $this->getTitle();
 
-		if( $numofpages > 1 ) {
+		if ( $numofpages > 1 ) {
 			$output .= '<div class="page-nav">';
-			if( $page > 1 ) { 
-				$output .= '<a href="' . $pageLink->escapeFullURL( 'page=' . ( $page - 1 ) ) . '">' .
-					wfMsg( 'linkfilter-previous' ) . '</a> ';
+			if ( $page > 1 ) {
+				$output .= Linker::link(
+					$pageLink,
+					$this->msg( 'linkfilter-previous' )->plain(),
+					array(),
+					array( 'page' => ( $page - 1 ) )
+				) . $this->msg( 'word-separator' )->plain();
 			}
 
-			if( ( $total % $per_page ) != 0 ) {
+			if ( ( $total % $per_page ) != 0 ) {
 				$numofpages++;
 			}
-			if( $numofpages >= 9 && $page < $total ) {
+			if ( $numofpages >= 9 && $page < $total ) {
 				$numofpages = 9 + $page;
 			}
-			if( $numofpages > ( $total / $per_page ) ) {
+			if ( $numofpages > ( $total / $per_page ) ) {
 				$numofpages = ( $total / $per_page ) + 1;
 			}
 
-			for( $i = 1; $i <= $numofpages; $i++ ) {
-				if( $i == $page ) {
+			for ( $i = 1; $i <= $numofpages; $i++ ) {
+				if ( $i == $page ) {
 					$output .= ( $i . ' ' );
 				} else {
-					$output .= '<a href="' . $pageLink->escapeFullURL( 'page=' . $i ) . "\">$i</a> ";
+					$output .= Linker::link(
+						$pageLink,
+						$i,
+						array(),
+						array( 'page' => $i )
+					) . $this->msg( 'word-separator' )->plain();
 				}
 			}
 
-			if( ( $total - ( $per_page * $page ) ) > 0 ) {
-				$output .= ' <a href="' . $pageLink->escapeFullURL( 'page=' . ( $page + 1 ) ) . '">' .
-					wfMsg( 'linkfilter-next' ) . '</a>';
+			if ( ( $total - ( $per_page * $page ) ) > 0 ) {
+				$output .= $this->msg( 'word-separator' )->plain() .
+					Linker::link(
+						$pageLink,
+						$this->msg( 'linkfilter-next' )->plain(),
+						array(),
+						array( 'page' => ( $page + 1 ) )
+					);
 			}
 			$output .= '</div>';
 		}
@@ -297,7 +313,7 @@ class LinksHome extends SpecialPage {
 		$output .= '</div>' . "\n"; // .links-home-left
 
 		global $wgLinkPageDisplay;
-		if( $wgLinkPageDisplay['rightcolumn'] ) {
+		if ( $wgLinkPageDisplay['rightcolumn'] ) {
 			$output .= '<div class="links-home-right">';
 			$output .= '<div class="links-home-unit-container">';
 			$output .= $this->getPopularArticles();
@@ -306,8 +322,9 @@ class LinksHome extends SpecialPage {
 			$output .= $this->getAdUnit();
 			$output .= '</div>';
 		}
+
 		$output .= '<div class="cleared"></div>' . "\n";
-		$wgOut->addHTML( $output );
+		$out->addHTML( $output );
 	}
 
 	/**
@@ -321,7 +338,7 @@ class LinksHome extends SpecialPage {
 		wfProfileIn( __METHOD__ );
 
 		$feed = new LinkFeed(
-			wfMsgExt( 'linkfilter-feed-title', 'parsemag' ),
+			$this->msg( 'linkfilter-feed-title' )->parse(),
 			'',
 			$this->getTitle()->escapeFullURL()
 		);

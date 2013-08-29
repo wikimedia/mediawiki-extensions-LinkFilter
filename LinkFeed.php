@@ -15,15 +15,15 @@ class LinkFeed extends RSSFeed {
 
 		$stuff = '';
 		// This message is used by the ArticleMetaDescription extension
-		$message = trim( wfMsgForContent( 'description' ) );
-		if( !wfEmptyMsg( 'description', $message ) ) {
+		$message = wfMessage( 'description' )->inContentLanguage()->text();
+		if ( !$message->isDisabled() ) {
 			$stuff = '<description>' . $message . "</description>\n\t\t";
 		}
 
 		$this->outXmlHeader();
 ?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
 	<channel>
-		<title><?php echo wfMsgExt( 'linkfilter-feed-title', 'parsemag' ) ?></title>
+		<title><?php echo wfMessage( 'linkfilter-feed-title' )->parse() ?></title>
 		<link><?php echo $wgServer . $wgScriptPath ?></link>
 		<?php echo $stuff ?><language><?php echo $this->getLanguage() ?></language>
 		<pubDate><?php echo $this->formatTime( time() ) ?></pubDate>

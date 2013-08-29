@@ -3,52 +3,54 @@
  *
  * @file
  * @author Jack Phoenix <jack@countervandalism.net>
- * @date 20 June 2011
+ * @date 29 August 2013
  */
 var LinkFilter = {
 	linkAction: function( action, link_id ) {
 		jQuery( 'div.action-buttons-1' ).hide();
-		sajax_request_type = 'POST';
-		sajax_do_call(
-			'wfLinkFilterStatus',
-			[ link_id, action ], 
-			function( response ) {
+
+		jQuery.post(
+			mw.util.wikiScript( 'api' ), {
+				action: 'linkfilter',
+				id: link_id,
+				status: action,
+				format: 'json'
+			},
+			function( data ) {
 				var msg;
-				switch( action ) {
+				switch ( action ) {
 					case 1:
-						msg = mediaWiki.msg( 'linkfilter-admin-accept-success' );
+						msg = mw.msg( 'linkfilter-admin-accept-success' );
 						break;
 					case 2:
-						msg = mediaWiki.msg( 'linkfilter-admin-reject-success' );
+						msg = mw.msg( 'linkfilter-admin-reject-success' );
 						break;
 				}
-				var elementToDisplay = document.getElementById( 'action-buttons-' + link_id );
-				elementToDisplay.display = 'block';
-				elementToDisplay.innerHTML = msg;
+				jQuery( '#action-buttons-' + link_id ).html( msg ).show( 1000 );
 			}
 		);
 	},
 
 	submitLink: function() {
 		if (
-			typeof( wgCanonicalSpecialPageName ) !== 'undefined' &&
-			wgCanonicalSpecialPageName !== 'LinkEdit'
+			typeof mw.config.get( 'wgCanonicalSpecialPageName' ) !== 'undefined' &&
+			mw.config.get( 'wgCanonicalSpecialPageName' ) !== 'LinkEdit'
 		)
 		{
-			if( document.getElementById( 'lf_title' ).value === '' ) {
-				alert( mediaWiki.msg( 'linkfilter-submit-no-title' ) );
+			if ( document.getElementById( 'lf_title' ).value === '' ) {
+				alert( mw.msg( 'linkfilter-submit-no-title' ) );
 				return '';
 			}
 		}
-		if( document.getElementById( 'lf_type' ).value === '' ) {
-			alert( mediaWiki.msg( 'linkfilter-submit-no-type' ) );
+		if ( document.getElementById( 'lf_type' ).value === '' ) {
+			alert( mw.msg( 'linkfilter-submit-no-type' ) );
 			return '';
 		}
 		document.link.submit();
 	},
 
 	limitText: function( field, limit ) {
-		if( field.value.length > limit ) {
+		if ( field.value.length > limit ) {
 			field.value = field.value.substring( 0, limit );
 		}
 		document.getElementById( 'desc-remaining' ).innerHTML = limit - field.value.length;

@@ -19,7 +19,7 @@ class LinkFilterHooks {
 	 * @return Boolean: true
 	 */
 	public static function updateLinkFilter( &$title, &$newTitle, &$user, $oldId, $newId ) {
-		if( $title->getNamespace() == NS_LINK ) {
+		if ( $title->getNamespace() == NS_LINK ) {
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update(
 				'link',
@@ -41,7 +41,7 @@ class LinkFilterHooks {
 	 * @return Boolean: true
 	 */
 	public static function deleteLinkFilter( &$article, &$user, $reason ) {
-		if( $article->getTitle()->getNamespace() == NS_LINK ) {
+		if ( $article->getTitle()->getNamespace() == NS_LINK ) {
 			// Delete link record
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update(
@@ -71,8 +71,8 @@ class LinkFilterHooks {
 			global $wgRequest, $wgOut, $wgTitle, $wgSupressPageTitle, $wgSupressSubTitle;
 			$wgOut->enableClientCache( false );
 
-			if( $wgRequest->getVal( 'action' ) == 'edit' ) {
-				if( $wgTitle->getArticleID() == 0 ) {
+			if ( $wgRequest->getVal( 'action' ) == 'edit' ) {
+				if ( $wgTitle->getArticleID() == 0 ) {
 					$create = SpecialPage::getTitleFor( 'LinkSubmit' );
 					$wgOut->redirect(
 						$create->getFullURL( '_title=' . $wgTitle->getText() )
@@ -100,7 +100,7 @@ class LinkFilterHooks {
 	/**
 	 * Registers the <linkfilter> parser hook with MediaWiki's Parser.
 	 *
-	 * @param $parser Object: instance of Parser
+	 * @param $parser Parser
 	 * @return Boolean: true
 	 */
 	public static function registerLinkFilterHook( &$parser ) {
@@ -146,20 +146,20 @@ class LinkFilterHooks {
 
 				<div class="linkfilter-links">
 					<a href="' . $link_submit->escapeFullURL() . '">' .
-						wfMsg( 'linkfilter-submit' ) .
+						wfMessage( 'linkfilter-submit' )->plain() .
 					'</a> / <a href="' . $link_all->escapeFullURL() . '">' .
-						wfMsg( 'linkfilter-all' ) . '</a>';
+						wfMessage( 'linkfilter-all' )->plain() . '</a>';
 
 		// Show a link to the link administration panel for privileged users
-		if( Link::canAdmin() ) {
+		if ( Link::canAdmin() ) {
 			$output .= ' / <a href="' . Link::getLinkAdminURL() . '">' .
-				wfMsg( 'linkfilter-approve-links' ) . '</a>';
+				wfMessage( 'linkfilter-approve-links' )->plain() . '</a>';
 		}
 
 		$output .= '</div>
 				<div class="cleared"></div>';
 
-		foreach( $links as $link ) {
+		foreach ( $links as $link ) {
 			$output .= '<div class="link-item-hook">
 			<span class="link-item-hook-type">' .
 				$link['type_name'] .
@@ -171,11 +171,10 @@ class LinkFilterHooks {
 			</span>
 			<span class="link-item-hook-page">
 				<a href="' . $link['wiki_page'] . '">(' .
-					wfMsgExt(
+					wfMessage(
 						'linkfilter-comments',
-						'parsemag',
 						$link['comments']
-					) . ')</a>
+					)->parse() . ')</a>
 			</span>
 		</div>';
 		}
@@ -194,7 +193,7 @@ class LinkFilterHooks {
 	 * @return Boolean: true
 	 */
 	public static function onCommentAdd( $commentClass, $commentID, $pageID ) {
-		if( $commentID && $pageID ) {
+		if ( $commentID && $pageID ) {
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update(
 				'link',
@@ -216,7 +215,7 @@ class LinkFilterHooks {
 	 * @return Boolean: true
 	 */
 	public static function onCommentDelete( $commentClass, $commentID, $pageID ) {
-		if( $commentID && $pageID ) {
+		if ( $commentID && $pageID ) {
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update(
 				'link',

@@ -5,7 +5,7 @@
  *
  * @file
  * @ingroup Extensions
- * @version 2.1
+ * @version 3.0
  * @author Aaron Wright <aaron.wright@gmail.com>
  * @author David Pean <david.pean@gmail.com>
  * @author Jack Phoenix <jack@countervandalism.net>
@@ -22,10 +22,10 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 // Extension credits that will show up on Special:Version
-$wgExtensionCredits['other'][] = array( 
+$wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
 	'name' => 'LinkFilter',
-	'version' => '2.1',
+	'version' => '3.0',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
 	'descriptionmsg' => 'linkfilter-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:LinkFilter'
@@ -52,9 +52,6 @@ define( 'LINK_APPROVED_STATUS', 1 );
 define( 'LINK_OPEN_STATUS', 0 );
 define( 'LINK_REJECTED_STATUS', 2 );
 
-// Path to the LinkFilter extension files
-$wgLinkFilterDirectory = "$IP/extensions/LinkFilter";
-
 // Array of LinkFilter types
 // Key is: number => 'description'
 // For example: 2 => 'Awesome',
@@ -71,38 +68,41 @@ $wgLinkFilterTypes = array(
 	11 => 'Stupid',
 );
 
+$dir = dirname( __FILE__ );
+
 // Internationalization files
-$wgExtensionMessagesFiles['LinkFilter'] = "{$wgLinkFilterDirectory}/LinkFilter.i18n.php";
-$wgExtensionMessagesFiles['LinkFilterAlias'] = "{$wgLinkFilterDirectory}/Link.alias.php";
+$wgExtensionMessagesFiles['LinkFilter'] = "{$dir}/LinkFilter.i18n.php";
+$wgExtensionMessagesFiles['LinkFilterAlias'] = "{$dir}/Link.alias.php";
 // Namespace translations
-$wgExtensionMessagesFiles['LinkNamespaces'] = "{$wgLinkFilterDirectory}/Link.namespaces.php";
+$wgExtensionMessagesFiles['LinkNamespaces'] = "{$dir}/Link.namespaces.php";
 
 // Some base classes to be autoloaded
-$wgAutoloadClasses['Link'] = "{$wgLinkFilterDirectory}/LinkClass.php";
-$wgAutoloadClasses['LinkList'] = "{$wgLinkFilterDirectory}/LinkClass.php";
-$wgAutoloadClasses['LinkPage'] = "{$wgLinkFilterDirectory}/LinkPage.php";
+$wgAutoloadClasses['Link'] = "{$dir}/LinkClass.php";
+$wgAutoloadClasses['LinkList'] = "{$dir}/LinkClass.php";
+$wgAutoloadClasses['LinkPage'] = "{$dir}/LinkPage.php";
 
 // RSS feed class used on Special:LinksHome (replaces the hardcoded feed)
-$wgAutoloadClasses['LinkFeed'] = "{$wgLinkFilterDirectory}/LinkFeed.php";
+$wgAutoloadClasses['LinkFeed'] = "{$dir}/LinkFeed.php";
 
 // Special pages
-$wgAutoloadClasses['LinksHome'] = "{$wgLinkFilterDirectory}/SpecialLinksHome.php";
+$wgAutoloadClasses['LinksHome'] = "{$dir}/SpecialLinksHome.php";
 $wgSpecialPages['LinksHome'] = 'LinksHome';
 
-$wgAutoloadClasses['LinkSubmit'] = "{$wgLinkFilterDirectory}/SpecialLinkSubmit.php";
+$wgAutoloadClasses['LinkSubmit'] = "{$dir}/SpecialLinkSubmit.php";
 $wgSpecialPages['LinkSubmit'] = 'LinkSubmit';
 
-$wgAutoloadClasses['LinkRedirect'] = "{$wgLinkFilterDirectory}/SpecialLinkRedirect.php";
+$wgAutoloadClasses['LinkRedirect'] = "{$dir}/SpecialLinkRedirect.php";
 $wgSpecialPages['LinkRedirect'] = 'LinkRedirect';
 
-$wgAutoloadClasses['LinkApprove'] = "{$wgLinkFilterDirectory}/SpecialLinkApprove.php";
+$wgAutoloadClasses['LinkApprove'] = "{$dir}/SpecialLinkApprove.php";
 $wgSpecialPages['LinkApprove'] = 'LinkApprove';
 
-$wgAutoloadClasses['LinkEdit'] = "{$wgLinkFilterDirectory}/SpecialLinkEdit.php";
+$wgAutoloadClasses['LinkEdit'] = "{$dir}/SpecialLinkEdit.php";
 $wgSpecialPages['LinkEdit'] = 'LinkEdit';
 
-// AJAX functions called by the JavaScript file
-require_once("{$wgLinkFilterDirectory}/LinkFilter_AjaxFunctions.php");
+// API module used by the JavaScript file
+$wgAutoloadClasses['ApiLinkFilter'] = "{$dir}/ApiLinkFilter.php";
+$wgAPIModules['linkfilter'] = 'ApiLinkFilter';
 
 // Default setup for displaying sections
 $wgLinkPageDisplay = array(
@@ -117,15 +117,19 @@ $wgLinkPageDisplay = array(
 	'new_links' => false
 );
 
-// New user right
+// New user right, which is required to approve user-submitted links
 $wgAvailableRights[] = 'linkadmin';
 $wgGroupPermissions['linkadmin']['linkadmin'] = true;
 $wgGroupPermissions['staff']['linkadmin'] = true;
 $wgGroupPermissions['sysop']['linkadmin'] = true;
 
 // Hooked functions
-$wgAutoloadClasses['LinkFilterHooks'] = "{$wgLinkFilterDirectory}/LinkFilterHooks.php";
+$wgAutoloadClasses['LinkFilterHooks'] = "{$dir}/LinkFilterHooks.php";
 
+// Unset this variable when we don't need it, it's good practise (bug #47514)
+unset( $dir );
+
+// Hooked function registrations
 $wgHooks['TitleMoveComplete'][] = 'LinkFilterHooks::updateLinkFilter';
 $wgHooks['ArticleDelete'][] = 'LinkFilterHooks::deleteLinkFilter';
 $wgHooks['ArticleFromTitle'][] = 'LinkFilterHooks::linkFromTitle';

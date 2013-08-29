@@ -49,7 +49,7 @@ class Link {
 	public static function canAdmin() {
 		global $wgUser;
 
-		if(
+		if (
 			$wgUser->isAllowed( 'linkadmin' ) ||
 			in_array( 'linkadmin', $wgUser->getGroups() )
 		)
@@ -104,19 +104,26 @@ class Link {
 		);
 
 		// If SocialProfile extension is installed, increase social statistics.
-		if( class_exists( 'UserStatsTrack' ) ) {
+		if ( class_exists( 'UserStatsTrack' ) ) {
 			$stats = new UserStatsTrack( $wgUser->getID(), $wgUser->getName() );
 			$stats->incStatField( 'links_submitted' );
 		}
 	}
 
+	/**
+	 * Approve a link with the given ID and perform all the related magic.
+	 * This includes creating the Link: page, updating the database and updating
+	 * social statistics (when SocialProfile is installed & active).
+	 *
+	 * @param $id Integer: link identifier
+	 */
 	public function approveLink( $id ) {
 		$link = $this->getLink( $id );
 
 		// Create the wiki page for the newly-approved link
 		$linkTitle = Title::makeTitleSafe( NS_LINK, $link['title'] );
 		$article = new Article( $linkTitle );
-		$article->doEdit( $link['url'], wfMsgForContent( 'linkfilter-edit-summary' ) );
+		$article->doEdit( $link['url'], wfMessage( 'linkfilter-edit-summary' )->inContentLanguage()->text() );
 		$newPageId = $article->getID();
 
 		// Tie link record to wiki page
@@ -137,7 +144,7 @@ class Link {
 		);
 		$dbw->commit();
 
-		if( class_exists( 'UserStatsTrack' ) ) {
+		if ( class_exists( 'UserStatsTrack' ) ) {
 			$stats = new UserStatsTrack( $link['user_id'], $link['user_name'] );
 			$stats->incStatField( 'links_approved' );
 		}
@@ -152,7 +159,7 @@ class Link {
 	public function getLinkByPageID( $pageId ) {
 		global $wgOut;
 
-		if( !is_numeric( $pageId ) ) {
+		if ( !is_numeric( $pageId ) ) {
 			return '';
 		}
 
@@ -164,7 +171,7 @@ class Link {
 				'link_type', 'link_status', 'link_page_id',
 				'link_submitter_user_id', 'link_submitter_user_name'
 			),
-			array( "link_page_id = $pageId" ),
+			array( 'link_page_id' => $pageId ),
 			__METHOD__,
 			array(
 				'OFFSET' => 0,
@@ -175,7 +182,7 @@ class Link {
 		$row = $dbr->fetchObject( $res );
 
 		$link = array();
-		if( $row ) {
+		if ( $row ) {
 			$link['id'] = $row->link_id;
 			$link['title'] = $row->link_name;
 			$link['url'] = $row->link_url;
@@ -194,7 +201,7 @@ class Link {
 	static function getLinkTypes() {
 		global $wgLinkFilterTypes;
 
-		if( is_array( $wgLinkFilterTypes ) ) {
+		if ( is_array( $wgLinkFilterTypes ) ) {
 			return $wgLinkFilterTypes;
 		} else {
 			return self::$link_types;
@@ -208,13 +215,13 @@ class Link {
 	static function getLinkType( $index ) {
 		global $wgLinkFilterTypes;
 
-		if(
+		if (
 			is_array( $wgLinkFilterTypes ) &&
 			!empty( $wgLinkFilterTypes[$index] )
 		)
 		{
 			return $wgLinkFilterTypes[$index];
-		} elseif( isset( self::$link_types[$index] ) ) {
+		} elseif ( isset( self::$link_types[$index] ) ) {
 			return self::$link_types[$index];
 		} else {
 			return '';
@@ -223,13 +230,14 @@ class Link {
 
 	/**
 	 * Gets a link entry by given link ID number.
+	 *
 	 * @param $id Integer: link ID number
 	 * @return array
 	 */
 	public function getLink( $id ) {
 		global $wgOut;
 
-		if( !is_numeric( $id ) ) {
+		if ( !is_numeric( $id ) ) {
 			return '';
 		}
 
@@ -242,7 +250,7 @@ class Link {
 				'link_type', 'link_status', 'link_page_id',
 				'link_submitter_user_id', 'link_submitter_user_name'
 			),
-			array( "link_id = $id" ),
+			array( 'link_id' => $id ),
 			__METHOD__,
 			array(
 				'OFFSET' => 0,
@@ -252,7 +260,7 @@ class Link {
 
 		$row = $dbr->fetchObject( $res );
 		$link = array();
-		if( $row ) {
+		if ( $row ) {
 			$link['id'] = $row->link_id;
 			$link['title'] = $row->link_name;
 			$link['url'] = $row->link_url;
@@ -289,17 +297,17 @@ class LinkList {
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$params['ORDER BY'] = "$order DESC";
-		if( $limit ) {
+		if ( $limit ) {
 			$params['LIMIT'] = $limit;
 		}
-		if( $page ) {
+		if ( $page ) {
 			$params['OFFSET'] = $page * $limit - ( $limit );
 		}
 
-		if( $type > 0 ) {
+		if ( $type > 0 ) {
 			$where['link_type'] = $type;
 		}
-		if( is_numeric( $status ) ) {
+		if ( is_numeric( $status ) ) {
 			$where['link_status'] = $status;
 		}
 
@@ -321,7 +329,7 @@ class LinkList {
 
 		$links = array();
 
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$linkPage = Title::makeTitleSafe( NS_LINK, $row->link_name );
 			$links[] = array(
 				'id' => $row->link_id,
@@ -355,10 +363,10 @@ class LinkList {
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$where = array();
-		if( $type > 0 ) {
+		if ( $type > 0 ) {
 			$where['link_type'] = $type;
 		}
-		if( is_numeric( $status ) ) {
+		if ( is_numeric( $status ) ) {
 			$where['link_status'] = $status;
 		}
 
