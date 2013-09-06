@@ -93,7 +93,9 @@ $messages['qqq'] = array(
 	'linkfilter-nothing-to-approve' => 'Shown on Special:LinkApprove to link administrators when there are no links to approve.',
 	'linkfilter-no-recently-approved' => 'Shown on Special:LinkApprove to link administrators if no links have been approved recently.',
 	'linkfilter-no-links-at-all' => 'Shown on Special:LinksHome if for some reason there is nothing we can display to the user.',
-	'linkfilter-ago' => 'Parameters:
+	'linkfilter-ago' => 'Can be preceded by {{msg-mw|Linkfilter-submittedby}} and {{msg-mw|Word-separator}}.
+
+Parameters:
 * $1 - one of the following messages:
 ** {{msg-mw|Linkfilter-time-days}}
 ** {{msg-mw|Linkfilter-time-hours}}
@@ -131,8 +133,10 @@ Used as label for "description" input box and for output.
 	'linkfilter-admin-instructions' => 'Shown on Special:LinkApprove for link admins; site administrators can add instructions for link admins to this message (i.e. "approve only a maximum of three links from the same user per day", etc.)',
 	'linkfilter-admin-recent' => 'Header text shown on Special:LinkApprove for link admins',
 	'linkfilter-approve-title' => 'Page title of Special:LinkApprove',
-	'linkfilter-submittedby' => '$1 is the name of the user who submitted the link',
-	'linkfilter-submitted' => '$1 is the link creation timestamp (when the Link: page was created), containing date and time (formatted via $wgLang->timeanddate())',
+	'linkfilter-submittedby' => 'Followed by {{msg-mw|Linkfilter-ago}}. Parameters:
+* $1 - the name of the user who submitted the link',
+	'linkfilter-submitted' => 'Parameters:
+* $1 - the link creation timestamp (when the Link: page was created), containing date and time (localized)',
 	'linkfilter-admin-accept' => 'Button text, shown on [[Special:LinkApprove]] for link administrators.
 {{Identical|Accept}}',
 	'linkfilter-admin-reject' => 'Button text, shown on Special:LinkApprove for link administrators',
@@ -148,38 +152,37 @@ The section contains author (submitter) information like username and avatar.',
 The section contains a comment (comment score and body).',
 	'linkfilter-comments' => 'Used as link text. Parameters:
 * $1 - number of comments',
-	'linkfilter-home-title' => '$1 is the link type',
-	'linkfilter-home-title-all' => 'This is the page title of Special:LinksHome when the user is viewing all the links (as opposed to viewing links of a specific type)',
+	'linkfilter-home-title' => 'This is the page title of [[Special:LinksHome]] when the user is viewing links of a specific type (as opposed to viewing all the links).
+
+Parameters:
+* $1 - the link type
+See also:
+* {{msg-mw|Linkfilter-home-title-all}}',
+	'linkfilter-home-title-all' => 'This is the page title of [[Special:LinksHome]] when the user is viewing all the links (as opposed to viewing links of a specific type).
+
+See also:
+* {{msg-mw|Linkfilter-home-title}}',
 	'linkfilter-next' => 'Pagination link',
 	'linkfilter-previous' => 'Pagination link',
-	'linkfilter-description-max' => 'Shown on Special:LinkEdit and Special:LinkSubmit, followed by the message [[MediaWiki:Linkfilter-description-left]]',
-	'linkfilter-description-left' => '$1 is the amount of characters left; it is not a number, but rather an <code>&lt;input&gt;</code>',
+	'linkfilter-description-max' => 'Shown on [[Special:LinkEdit]] and [[Special:LinkSubmit]].
+
+Followed by " - " and {{msg-mw|Linkfilter-description-left}}.',
+	'linkfilter-description-left' => 'Used in [[Special:LinkEdit]] and [[Special:LinkSubmit]].
+
+Preceded by {{msg-mw|Linkfilter-description-max}} and " - ".
+
+Parameters:
+* $1 - hard-coded HTML "<code><nowiki><span id="desc-remaining">300</span></nowiki></code>" which is used to indicate the number of characters left',
 	'linkfilter-popular-articles' => "Displayed when \$wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration",
 	'linkfilter-new-links-title' => "Header text, shown when \$wgLinkPageDisplay['new_links'] is <code>true</code> in the configuration",
 	'linkfilter-time-days' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
-
-See also:
-* {{msg-mw|Linkfilter-time-hours}}
-* {{msg-mw|Linkfilter-time-minutes}}
-* {{msg-mw|Linkfilter-time-seconds}}',
+{{Related|Linkfilter-time}}',
 	'linkfilter-time-hours' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
-
-See also:
-* {{msg-mw|Linkfilter-time-days}}
-* {{msg-mw|Linkfilter-time-minutes}}
-* {{msg-mw|Linkfilter-time-seconds}}',
+{{Related|Linkfilter-time}}',
 	'linkfilter-time-minutes' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
-
-See also:
-* {{msg-mw|Linkfilter-time-days}}
-* {{msg-mw|Linkfilter-time-hours}}
-* {{msg-mw|Linkfilter-time-seconds}}',
+{{Related|Linkfilter-time}}',
 	'linkfilter-time-seconds' => 'Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.
-
-See also:
-* {{msg-mw|Linkfilter-time-days}}
-* {{msg-mw|Linkfilter-time-hours}}
-* {{msg-mw|Linkfilter-time-minutes}}',
+{{Related|Linkfilter-time}}',
 	'linkfilter-edit-summary' => 'Edit summary; when a link administrator approves a link, a new page in the Link: namespace is created with this as the edit summary',
 	'linkfilter-no-results' => "Displayed when \$wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration but there are no popular pages (they are shown under the [[MediaWiki:Linkfilter-popular-articles]] header) to display.",
 	'linkfilter-feed-title' => 'RSS feed title',
