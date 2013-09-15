@@ -1961,6 +1961,8 @@ $messages['ro'] = array(
  */
 $messages['roa-tara'] = array(
 	'linkapprove' => 'Approve le collegaminde',
+	'linkshome' => "Colleghe 'a pàgene prengepale",
+	'linksubmit' => "Conferme 'nu collegamende",
 	'linkfilter-all' => 'Tutte',
 	'linkfilter-submit' => 'Conferme',
 	'linkfilter-submit-title' => "Conferme 'nu collegamende",
@@ -1972,11 +1974,15 @@ $messages['roa-tara'] = array(
 	'linkfilter-submit-button' => "Conferme 'u collegamende",
 	'linkfilter-admin-accept' => 'Accette',
 	'linkfilter-admin-reject' => 'Scitte',
+	'linkfilter-comments-of-day' => 'Commende megghie megghie',
+	'linkfilter-comments' => '{{PLURAL:$1|$1 commende}}',
 	'linkfilter-home-title' => '$1 collegaminde',
 	'linkfilter-home-title-all' => 'Tutte le collegaminde',
 	'linkfilter-next' => 'prossime',
 	'linkfilter-previous' => 'precedende',
+	'linkfilter-description-max' => 'Carattere massime',
 	'linkfilter-description-left' => '$1 mangande',
+	'linkfilter-popular-articles' => 'No tu demendicà',
 	'linkfilter-new-links-title' => 'Collegaminde nuève',
 	'linkfilter-time-days' => "{{PLURAL: $1|'nu sciurne|$1 sciurne}}",
 	'linkfilter-time-hours' => "{{PLURAL: $1|'n'ore|$1 ore}}",
@@ -1984,6 +1990,10 @@ $messages['roa-tara'] = array(
 	'linkfilter-time-seconds' => "{{PLURAL:$1|'nu seconde|$1 seconde}}",
 	'linkfilter-edit-summary' => 'collegamende nuève',
 	'linkfilter-no-results' => 'Nisciuna pàgene acchiate.',
+	'linkfilter-feed-title' => 'Collegaminde de {{SITENAME}}',
+	'group-linkadmin' => 'Amministrature de le collegaminde',
+	'group-linkadmin-member' => '{{GENDER:$1|amministratore de le collegaminde}}',
+	'grouppage-linkadmin' => '{{ns:project}}:Amministrature de le collegaminde',
 );
 
 /** Russian (русский)
