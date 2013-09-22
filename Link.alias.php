@@ -93,7 +93,7 @@ $specialPageAliases['ja'] = array(
 $specialPageAliases['ko'] = array(
 	'LinkApprove' => array( '링크승인' ),
 	'LinkEdit' => array( '링크편집' ),
-	'LinksHome' => array( '링크대문' ),
+	'LinksHome' => array( '링크홈' ),
 	'LinkRedirect' => array( '링크넘겨주기' ),
 	'LinkSubmit' => array( '링크보내기' ),
 );
