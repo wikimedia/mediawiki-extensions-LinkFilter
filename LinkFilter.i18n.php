@@ -2058,6 +2058,7 @@ $messages['roa-tara'] = array(
  * @author Adata80
  * @author DCamer
  * @author Eleferen
+ * @author Okras
  */
 $messages['ru'] = array(
 	'linkfilter-nothing-to-approve' => 'В настоящее время нет ссылок, ожидающих утверждения.',
@@ -2072,6 +2073,9 @@ $messages['ru'] = array(
 	'linkfilter-title' => 'Заголовок',
 	'linkfilter-type' => 'Тип ссылки',
 	'linkfilter-description' => 'Описание',
+	'linkfilter-instructions' => 'Вы можете [[MediaWiki:Linkfilter-instructions|добавить инструкции для пользователей]].',
+	'linkfilter-admin-instructions' => 'Вы можете добавить [[MediaWiki:Linkfilter-admin-instructions|инструкции для администраторов]].',
+	'linkfilter-admin-recent' => 'Недавно одобрено',
 	'linkfilter-admin-accept' => 'Принять',
 	'linkfilter-admin-reject' => 'Отклонить',
 	'linkfilter-comments' => '$1 {{PLURAL:$1|комментарий|комментария|комментариев}}',
