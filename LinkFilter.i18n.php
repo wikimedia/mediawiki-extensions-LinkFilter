@@ -408,8 +408,10 @@ $messages['ca'] = array(
  */
 $messages['ce'] = array(
 	'linkfilter-submit' => 'ДӀадахьийта',
+	'linkfilter-submit-no-title' => 'Дехар до, дӀаязеъе цӀе',
 	'linkfilter-title' => 'Корта',
 	'linkfilter-description' => 'Цуьнах лаьцна',
+	'linkfilter-edit-summary' => 'Керла хьажориг',
 );
 
 /** Czech (česky)
@@ -2193,6 +2195,8 @@ $messages['sv'] = array(
 	'linkfilter-home-button' => 'Länkar hem',
 	'linkfilter-submit-success-title' => 'Länk inskickad',
 	'linkfilter-submit-success-text' => 'Din länk har skickats för godkännande',
+	'linkfilter-instructions' => 'Du kan [[MediaWiki:Linkfilter-instructions|lägga till instruktioner för användare]].',
+	'linkfilter-admin-instructions' => 'Du kan lägga till [[MediaWiki:Linkfilter-admin-instructions|instruktioner för administratörer]].',
 	'linkfilter-admin-recent' => 'Nyligen godkända',
 	'linkfilter-approve-title' => 'Länkadministration',
 	'linkfilter-submittedby' => "'''Inlämnad av''': [[User:$1|$1]]",
@@ -2367,6 +2371,7 @@ $messages['tl'] = array(
  * @author Base
  * @author Olvin
  * @author Steve.rusyn
+ * @author SteveR
  * @author Ата
  */
 $messages['uk'] = array(
