@@ -139,7 +139,8 @@ Used as label for "description" input box and for output.
 * $1 - the link creation timestamp (when the Link: page was created), containing date and time (localized)',
 	'linkfilter-admin-accept' => 'Button text, shown on [[Special:LinkApprove]] for link administrators.
 {{Identical|Accept}}',
-	'linkfilter-admin-reject' => 'Button text, shown on Special:LinkApprove for link administrators',
+	'linkfilter-admin-reject' => 'Button text, shown on Special:LinkApprove for link administrators.
+{{Identical|Reject}}',
 	'linkfilter-admin-reject-success' => 'Shown on Special:LinkApprove for link administrators after they have rejected a submitted link by pressing the [[MediaWiki:Linkfilter-admin-reject]] button. Used in JavaScript.',
 	'linkfilter-admin-accept-success' => 'Shown on Special:LinkApprove for link administrators after they have accepted a submitted link by pressing the [[MediaWiki:Linkfilter-admin-accept]] button. Used in JavaScript.',
 	'linkfilter-in-the-news' => 'Used as label for the news item which was selected at random.',
