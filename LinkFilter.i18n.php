@@ -2065,6 +2065,7 @@ $messages['roa-tara'] = array(
  * @author Okras
  */
 $messages['ru'] = array(
+	'linksubmit' => 'Добавить ссылку',
 	'linkfilter-nothing-to-approve' => 'В настоящее время нет ссылок, ожидающих утверждения.',
 	'linkfilter-ago' => '$1 назад в <i>$2</i>',
 	'linkfilter-all' => 'Все',
@@ -2073,20 +2074,26 @@ $messages['ru'] = array(
 	'linkfilter-submit-no-title' => 'Пожалуйста, введите название',
 	'linkfilter-submit-no-type' => 'Выберите тип связи.',
 	'linkfilter-edit-title' => 'Правка $1',
+	'linkfilter-submit-another' => 'Добавить ещё одну ссылку',
 	'linkfilter-login-title' => 'Не выполнен вход',
+	'linkfilter-login-text' => 'Вы должны представиться системе, чтоб добавлять ссылки.',
 	'linkfilter-title' => 'Заголовок',
 	'linkfilter-type' => 'Тип ссылки',
 	'linkfilter-description' => 'Описание',
+	'linkfilter-submit-button' => 'Добавить ссылку',
 	'linkfilter-instructions' => 'Вы можете [[MediaWiki:Linkfilter-instructions|добавить инструкции для пользователей]].',
 	'linkfilter-admin-instructions' => 'Вы можете добавить [[MediaWiki:Linkfilter-admin-instructions|инструкции для администраторов]].',
 	'linkfilter-admin-recent' => 'Недавно одобрено',
 	'linkfilter-admin-accept' => 'Принять',
 	'linkfilter-admin-reject' => 'Отклонить',
+	'linkfilter-anonymous' => 'Анонимный фанатик',
 	'linkfilter-comments' => '$1 {{PLURAL:$1|комментарий|комментария|комментариев}}',
+	'linkfilter-home-title' => '$1 ссылки',
 	'linkfilter-home-title-all' => 'Все ссылки',
 	'linkfilter-next' => 'след.',
 	'linkfilter-previous' => 'пред.',
 	'linkfilter-description-max' => 'Максимум символов',
+	'linkfilter-description-left' => '$1 осталось',
 	'linkfilter-popular-articles' => 'Не пропустите',
 	'linkfilter-new-links-title' => 'Новые ссылки',
 	'linkfilter-time-days' => '{{PLURAL:$1|день|$1 дня|$1 дней}}',
@@ -2095,6 +2102,9 @@ $messages['ru'] = array(
 	'linkfilter-time-seconds' => '{{PLURAL:$1|секунду|$1 секунды|$1 секунд}}',
 	'linkfilter-edit-summary' => 'Новая ссылка',
 	'linkfilter-no-results' => 'Не найдено страниц.',
+	'group-linkadmin-member' => '{{GENDER:$1|администратор ссылок}}',
+	'grouppage-linkadmin' => '{{ns:project}}:Администраторы ссылок',
+	'right-linkadmin' => 'Администрировать добавленные участниками ссылки',
 );
 
 /** Sinhala (සිංහල)
