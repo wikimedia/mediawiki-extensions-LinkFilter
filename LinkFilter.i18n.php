@@ -413,7 +413,7 @@ $messages['ce'] = array(
 	'linkfilter-submit-no-title' => 'Дехар до, дӀаязеъе цӀе',
 	'linkfilter-title' => 'Корта',
 	'linkfilter-description' => 'Цуьнах лаьцна',
-	'linkfilter-edit-summary' => 'Керла хьажориг',
+	'linkfilter-edit-summary' => 'Керла хьажораг',
 );
 
 /** Czech (česky)
@@ -2095,6 +2095,7 @@ $messages['ru'] = array(
 	'linkfilter-admin-reject-success' => 'Ссылка была отклонена',
 	'linkfilter-admin-accept-success' => 'Ссылка была принята',
 	'linkfilter-in-the-news' => 'В новостях',
+	'linkfilter-about-submitter' => 'О добавившем',
 	'linkfilter-anonymous' => 'Анонимный фанатик',
 	'linkfilter-comments' => '$1 {{PLURAL:$1|комментарий|комментария|комментариев}}',
 	'linkfilter-home-title' => '$1 ссылки',
