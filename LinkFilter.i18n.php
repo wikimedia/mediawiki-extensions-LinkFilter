@@ -203,6 +203,13 @@ $messages['arc'] = array(
 	'linkfilter-previous' => 'ܕܩܕܡ',
 );
 
+/** American sign language (American sign language)
+ * @author Icemandeaf
+ */
+$messages['ase'] = array(
+	'linkfilter-login-title' => 'M534x542S2ff00482x483S26500520x505S20e00521x526S1f540493x518 M538x521S2a200497x480S20b00462x508S11530523x482S15a37462x483S11551470x493',
+);
+
 /** Asturian (asturianu)
  * @author Xuacu
  */
