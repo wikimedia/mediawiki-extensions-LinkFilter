@@ -423,7 +423,7 @@ $messages['ce'] = array(
 	'linkfilter-edit-summary' => 'Керла хьажораг',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Vks
  */
 $messages['cs'] = array(
