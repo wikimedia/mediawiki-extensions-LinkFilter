@@ -416,7 +416,7 @@ $messages['ca'] = array(
  */
 $messages['ce'] = array(
 	'linkfilter-all' => 'Массо',
-	'linkfilter-submit' => 'ДӀадахьийта',
+	'linkfilter-submit' => 'ТӀетоха',
 	'linkfilter-submit-no-title' => 'Дехар до, дӀаязеъе цӀе',
 	'linkfilter-title' => 'Корта',
 	'linkfilter-description' => 'Цуьнах лаьцна',
