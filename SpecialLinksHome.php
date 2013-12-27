@@ -262,7 +262,7 @@ class LinksHome extends SpecialPage {
 		 */
 		$numofpages = $total / $per_page;
 
-		$pageLink = $this->getTitle();
+		$pageLink = $this->getPageTitle();
 
 		if ( $numofpages > 1 ) {
 			$output .= '<div class="page-nav">';
@@ -340,7 +340,7 @@ class LinksHome extends SpecialPage {
 		$feed = new LinkFeed(
 			$this->msg( 'linkfilter-feed-title' )->parse(),
 			'',
-			$this->getTitle()->escapeFullURL()
+			$this->getPageTitle()->escapeFullURL()
 		);
 
 		$feed->outHeader();
