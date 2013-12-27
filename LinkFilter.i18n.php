@@ -418,6 +418,7 @@ $messages['ce'] = array(
 	'linkfilter-all' => 'Массо',
 	'linkfilter-submit' => 'ТӀетоха',
 	'linkfilter-submit-no-title' => 'Дехар до, дӀаязеъе цӀе',
+	'linkfilter-submit-another' => 'ТӀетоха кхин цхьа хьажораг',
 	'linkfilter-title' => 'Корта',
 	'linkfilter-description' => 'Цуьнах лаьцна',
 	'linkfilter-edit-summary' => 'Керла хьажораг',
