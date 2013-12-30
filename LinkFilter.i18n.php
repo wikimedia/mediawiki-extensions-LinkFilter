@@ -712,6 +712,7 @@ $messages['et'] = array(
 
 /** Persian (فارسی)
  * @author Mjbmr
+ * @author Reza1615
  * @author پاناروما
  */
 $messages['fa'] = array(
@@ -725,6 +726,7 @@ $messages['fa'] = array(
 	'linkfilter-submit-another' => 'ثبت پیوندی دیگر',
 	'linkfilter-login-title' => 'به سامانه وارد نشده‌اید',
 	'linkfilter-login-text' => 'برای بارگذاری پرونده‌ها شما باید به سامانه وارد شوید.',
+	'linkfilter-url' => 'نشانی اینترنتی',
 	'linkfilter-title' => 'عنوان',
 	'linkfilter-type' => 'نوع پیوند',
 	'linkfilter-description' => 'توضیح',
