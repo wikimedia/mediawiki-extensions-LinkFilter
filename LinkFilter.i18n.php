@@ -423,6 +423,8 @@ $messages['ce'] = array(
 	'linkfilter-description' => 'Цуьнах лаьцна',
 	'linkfilter-in-the-news' => 'Керланашкахь',
 	'linkfilter-edit-summary' => 'Керла хьажораг',
+	'group-linkadmin' => 'Хьажорагашан куьйгалхой',
+	'grouppage-linkadmin' => '{{ns:project}}:Хьажорагашан куьйгалхой',
 );
 
 /** Czech (čeština)
