@@ -713,11 +713,19 @@ $messages['et'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Armin1392
  * @author Mjbmr
  * @author Reza1615
  * @author پاناروما
  */
 $messages['fa'] = array(
+	'linkapprove' => 'تأیید لینک‌ها',
+	'linkshome' => 'زادگاه لینک‌ها',
+	'linksubmit' => 'ارائهٔ یک لینک',
+	'linkfilter-desc' => 'اضافه کردن صفحات ویژهٔ جدید و یک قلاب تجزیه‌کننده برای ارائه/تأیید/رد لینک',
+	'linkfilter-nothing-to-approve' => 'در حال حاضر هیچ لینکی در حال انتظار تأیید نیست.',
+	'linkfilter-no-recently-approved' => 'اخیراً هیچ لینکی تأیید نشده‌است.',
+	'linkfilter-ago' => '$1 قبلی تحت <i>$2</i>',
 	'linkfilter-all' => 'همه',
 	'linkfilter-submit' => 'ثبت',
 	'linkfilter-submit-title' => 'ثبت یک پیوند',
@@ -733,13 +741,43 @@ $messages['fa'] = array(
 	'linkfilter-type' => 'نوع پیوند',
 	'linkfilter-description' => 'توضیح',
 	'linkfilter-submit-button' => 'ثبت پیوند',
+	'linkfilter-home-button' => 'زادگاه لینک‌ها',
+	'linkfilter-submit-success-title' => 'لینک ارائه شده',
+	'linkfilter-submit-success-text' => 'لینک شما برای تأیید فرستاده شده‌است',
+	'linkfilter-instructions' => 'شما می‌توانید [[MediaWiki:Linkfilter-instructions|دستورالعمل‌هایی برای کاربران اضافه کنید]].',
+	'linkfilter-admin-instructions' => 'شما می‌توانید [[MediaWiki:Linkfilter-admin-instructions|دستورالعمل‌هایی برای سرپرستان]] اضافه کنید.',
+	'linkfilter-admin-recent' => 'اخیراً تأیید شده',
+	'linkfilter-approve-title' => 'سرپرستی لینک',
+	'linkfilter-submittedby' => "'''ارائه شده توسط''':  [[User:$1|$1]]",
+	'linkfilter-submitted' => '$1 ارائه شده',
 	'linkfilter-admin-accept' => 'پذیرفتن',
 	'linkfilter-admin-reject' => 'رد کردن',
+	'linkfilter-admin-reject-success' => 'لینک رد شده بود',
+	'linkfilter-admin-accept-success' => 'لینک پذیرفته شده بود',
+	'linkfilter-in-the-news' => 'در اخبار',
+	'linkfilter-about-submitter' => 'دربارهٔ ارائه کننده',
+	'linkfilter-anonymous' => 'متعصب ناشناس',
+	'linkfilter-comments-of-day' => 'بهترین نظرات',
+	'linkfilter-comments' => '{{PLURAL:$1|$1 نظر|$1 نظرات}}',
 	'linkfilter-home-title' => '$1 پیوندها',
 	'linkfilter-home-title-all' => 'تمام پیوندها',
 	'linkfilter-next' => 'بعدی',
 	'linkfilter-previous' => 'قبلی',
+	'linkfilter-description-max' => 'حداکثر مشخصه‌ها',
+	'linkfilter-description-left' => '$1 چپ',
+	'linkfilter-popular-articles' => 'از دست ندهید',
+	'linkfilter-new-links-title' => 'لینک‌های جدید',
+	'linkfilter-time-days' => '{{PLURAL:$1|یک روز|$1 روز}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|یک ساعت|$1 ساعت}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|یک دقیقه|$1 دقیقه}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|یک ثانیه|$1 ثانیه}}',
 	'linkfilter-edit-summary' => 'پیوند جدید',
+	'linkfilter-no-results' => 'هیچ صفحه‌ای پیدا نشد.',
+	'linkfilter-feed-title' => 'لینک‌های {{SITENAME}}',
+	'group-linkadmin' => 'سرپرستان لینک',
+	'group-linkadmin-member' => '{{GENDER:$1|سرپرست لینک}}',
+	'grouppage-linkadmin' => '{{ns:project}}:سرپرستان لینک',
+	'right-linkadmin' => 'سرپرستی لینک‌های ارائه شدهٔ کاربران',
 );
 
 /** Finnish (suomi)
