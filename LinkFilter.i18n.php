@@ -714,6 +714,7 @@ $messages['et'] = array(
 
 /** Persian (فارسی)
  * @author Armin1392
+ * @author Ebraminio
  * @author Mjbmr
  * @author Reza1615
  * @author پاناروما
@@ -751,7 +752,7 @@ $messages['fa'] = array(
 	'linkfilter-submittedby' => "'''ارائه شده توسط''':  [[User:$1|$1]]",
 	'linkfilter-submitted' => '$1 ارائه شده',
 	'linkfilter-admin-accept' => 'پذیرفتن',
-	'linkfilter-admin-reject' => 'رد کردن',
+	'linkfilter-admin-reject' => 'ردکردن',
 	'linkfilter-admin-reject-success' => 'لینک رد شده بود',
 	'linkfilter-admin-accept-success' => 'لینک پذیرفته شده بود',
 	'linkfilter-in-the-news' => 'در اخبار',
@@ -2114,6 +2115,7 @@ $messages['roa-tara'] = array(
  * @author Adata80
  * @author DCamer
  * @author Eleferen
+ * @author Kaganer
  * @author Okras
  */
 $messages['ru'] = array(
@@ -2156,7 +2158,7 @@ $messages['ru'] = array(
 	'linkfilter-about-submitter' => 'О добавившем',
 	'linkfilter-anonymous' => 'Анонимный фанатик',
 	'linkfilter-comments-of-day' => 'Лучшие комментарии',
-	'linkfilter-comments' => '$1 {{PLURAL:$1|комментарий|комментариев|комментария}}', # Fuzzy
+	'linkfilter-comments' => '$1 {{PLURAL:$1|комментарий|комментариев|комментария}}',
 	'linkfilter-home-title' => '$1 ссылки',
 	'linkfilter-home-title-all' => 'Все ссылки',
 	'linkfilter-next' => 'след.',
@@ -2165,10 +2167,10 @@ $messages['ru'] = array(
 	'linkfilter-description-left' => '$1 осталось',
 	'linkfilter-popular-articles' => 'Не пропустите',
 	'linkfilter-new-links-title' => 'Новые ссылки',
-	'linkfilter-time-days' => '{{PLURAL:$1|день|$1 дней|$1 дня}}', # Fuzzy
-	'linkfilter-time-hours' => '{{PLURAL:$1|час|$1 часов|$1 часа}}', # Fuzzy
-	'linkfilter-time-minutes' => '{{PLURAL:$1|минуту|$1 минут|$1 минуты}}', # Fuzzy
-	'linkfilter-time-seconds' => '{{PLURAL:$1|секунду|$1 секунд|$1 секунды}}', # Fuzzy
+	'linkfilter-time-days' => '{{PLURAL:$1|$1 день|$1 дней|$1 дня|1=день}}',
+	'linkfilter-time-hours' => '{{PLURAL:$1|$1 час|$1 часов|$1 часа|1=час}}',
+	'linkfilter-time-minutes' => '{{PLURAL:$1|минуту|$1 минут|$1 минуты|1=минуту}}',
+	'linkfilter-time-seconds' => '{{PLURAL:$1|секунду|$1 секунд|$1 секунды|1=секунду}}',
 	'linkfilter-edit-summary' => 'Новая ссылка',
 	'linkfilter-no-results' => 'Не найдено страниц.',
 	'linkfilter-feed-title' => 'Ссылки {{SITENAME}}',
