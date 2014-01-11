@@ -17,12 +17,12 @@ class LinkRedirect extends UnlistedSpecialPage {
 	public function execute( $par ) {
 		$out = $this->getOutput();
 		$out->setArticleBodyOnly( true );
-		$sk = $this->getUser()->getSkin();
+		$sk = $this->getOutput()->getSkin();
 		$url = $this->getRequest()->getVal( 'url' );
 		$out->addHTML(
 			"<html>
 				<body onload=window.location=\"{$url}\">
-				{$sk->bottomScripts( $out )}
+				{$sk->bottomScripts()}
 				</body>
 			</html>"
 		);

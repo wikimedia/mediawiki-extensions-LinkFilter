@@ -50,9 +50,9 @@ class LinkPage extends Article {
 	}
 
 	function view() {
-		global $wgOut, $wgUser, $wgLinkPageDisplay;
+		global $wgOut, $wgLinkPageDisplay;
 
-		$sk = $wgUser->getSkin();
+		$sk = $wgOut->getSkin();
 
 		$wgOut->setHTMLTitle( $this->getTitle()->getText() );
 		$wgOut->setPageTitle( $this->getTitle()->getText() );
