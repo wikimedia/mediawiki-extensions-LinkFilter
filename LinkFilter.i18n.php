@@ -350,6 +350,7 @@ $messages['bg'] = array(
 );
 
 /** Breton (brezhoneg)
+ * @author Fohanno
  * @author Fulup
  * @author Y-M D
  */
@@ -357,11 +358,14 @@ $messages['br'] = array(
 	'linkapprove' => 'Aprouiñ al liammoù',
 	'linkshome' => 'Liammoù degemer',
 	'linksubmit' => 'Kinnig ul liamm',
+	'linkfilter-nothing-to-approve' => "Evit bremañ n'eus liamm ebet o c'hortoz bezañ aprouet.",
+	'linkfilter-no-recently-approved' => "N'eus bet aprouet liamm ebet nevez zo.",
 	'linkfilter-ago' => '$1 zo dindan <i>$2</i>',
 	'linkfilter-all' => 'Pep tra',
 	'linkfilter-submit' => 'Kas',
 	'linkfilter-submit-title' => 'Kinnig ul liamm',
 	'linkfilter-submit-no-title' => 'Merkit un titl',
+	'linkfilter-submit-no-type' => 'Dibab ur seurt link',
 	'linkfilter-edit-title' => 'Kemmañ $1',
 	'linkfilter-approve-links' => 'Aprouiñ al liammoù',
 	'linkfilter-submit-another' => 'Kinnig ul liamm all',
@@ -373,6 +377,9 @@ $messages['br'] = array(
 	'linkfilter-submit-button' => 'Kinnig ul liamm',
 	'linkfilter-home-button' => 'Liammoù degemer',
 	'linkfilter-submit-success-title' => 'Liamm kinniget',
+	'linkfilter-submit-success-text' => 'Kaset eo bet ho liamm da vezañ aprouet',
+	'linkfilter-instructions' => 'Gallout a rit [[MediaWiki:Linkfilter-instructions|ouzhpennañ kemennoù evit an implijerien]].',
+	'linkfilter-admin-instructions' => 'Gallout a rit ouzhpennañ [[MediaWiki:Linkfilter-admin-instructions|kemennoù evit ar verourien]].',
 	'linkfilter-admin-recent' => 'Aprouet nevez zo',
 	'linkfilter-approve-title' => 'Mererezh al liamm',
 	'linkfilter-submittedby' => 'Kinniget gant',
@@ -382,6 +389,7 @@ $messages['br'] = array(
 	'linkfilter-admin-reject-success' => "Nac'het eo bet al liamm",
 	'linkfilter-admin-accept-success' => 'Degemeret eo bet al liamm',
 	'linkfilter-in-the-news' => "Er C'heleier",
+	'linkfilter-comments' => '{{PLURAL:$1|$1 evezhiadenn}}',
 	'linkfilter-home-title' => '$1 liamm',
 	'linkfilter-home-title-all' => 'An holl liammoù',
 	'linkfilter-next' => "war-lerc'h",
@@ -399,6 +407,7 @@ $messages['br'] = array(
 	'linkfilter-feed-title' => 'Liammoù {{SITENAME}}',
 	'group-linkadmin' => 'Merourien al liammoù',
 	'group-linkadmin-member' => '{{GENDER:$1|merour al liammoù|merourez al liammoù}}',
+	'right-linkadmin' => 'Merañ al liammoù kaset gant an implijerien',
 );
 
 /** Catalan (català)
