@@ -100,7 +100,7 @@ class LinkPage extends Article {
 	}
 
 	function displayLink() {
-		global $wgLang, $wgTitle;
+		global $wgLang;
 
 		$url = '';
 		$domain = '';
@@ -109,9 +109,8 @@ class LinkPage extends Article {
 			$domain = $url['host'];
 		}
 
-		// @todo FIXME: can we use $this->title or something instead of $wgTitle?
 		$create_date = $wgLang->timeanddate(
-			$this->getCreateDate( $wgTitle->getArticleID() ),
+			$this->getCreateDate( $this->getTitle()->getArticleID() ),
 			true
 		);
 		$linkRedirect = SpecialPage::getTitleFor( 'LinkRedirect' );

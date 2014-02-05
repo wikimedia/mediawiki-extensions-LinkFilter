@@ -60,7 +60,6 @@ class LinkFilterHooks {
 	 * Calls LinkPage instead of standard article for pages in the NS_LINK
 	 * namespace.
 	 *
-	 * @todo FIXME: WHY is this using $wgTitle???
 	 * @param $title Object: Title object associated with the current page
 	 * @param $article Object: Article object (or child class) associated with
 	 *                         the current page
@@ -68,19 +67,19 @@ class LinkFilterHooks {
 	 */
 	public static function linkFromTitle( &$title, &$article ) {
 		if ( $title->getNamespace() == NS_LINK ) {
-			global $wgRequest, $wgOut, $wgTitle, $wgSupressPageTitle, $wgSupressSubTitle;
+			global $wgRequest, $wgOut, $wgSupressPageTitle, $wgSupressSubTitle;
 			$wgOut->enableClientCache( false );
 
 			if ( $wgRequest->getVal( 'action' ) == 'edit' ) {
-				if ( $wgTitle->getArticleID() == 0 ) {
+				if ( $title->getArticleID() == 0 ) {
 					$create = SpecialPage::getTitleFor( 'LinkSubmit' );
 					$wgOut->redirect(
-						$create->getFullURL( '_title=' . $wgTitle->getText() )
+						$create->getFullURL( '_title=' . $title->getText() )
 					);
 				} else {
 					$update = SpecialPage::getTitleFor( 'LinkEdit' );
 					$wgOut->redirect(
-						$update->getFullURL( 'id=' . $wgTitle->getArticleID() )
+						$update->getFullURL( 'id=' . $title->getArticleID() )
 					);
 				}
 			}
