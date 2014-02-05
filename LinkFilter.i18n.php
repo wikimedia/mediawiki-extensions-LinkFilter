@@ -859,6 +859,7 @@ $messages['fi'] = array(
 /** French (français)
  * @author Gomoko
  * @author IAlex
+ * @author Verdy p
  */
 $messages['fr'] = array(
 	'linkapprove' => 'Approuver les liens',
@@ -920,6 +921,8 @@ $messages['fr'] = array(
 	'group-linkadmin-member' => '{{GENDER:$1|administrateur des liens|administratrice des liens}}',
 	'grouppage-linkadmin' => '{{ns:project}}:Link administrators',
 	'right-linkadmin' => 'Administrer les liens soumis par les utilisateurs',
+	'group-linkadmin.css' => '/* Le CSS placé ici n’affectera que les administrateurs de liens */',
+	'group-linkadmin.js' => '/* Le Javascript placé ici n’affectera que les administrateurs de liens */',
 );
 
 /** Franco-Provençal (arpetan)
@@ -2018,6 +2021,13 @@ $messages['pt-br'] = array(
 	'linkfilter-time-hours' => '{{PLURAL:$1|uma hora|$1 horas}}',
 	'linkfilter-time-minutes' => '{{PLURAL:$1|um minuto|$1 minutos}}',
 	'linkfilter-time-seconds' => '{{PLURAL:$1|um segundo|$1 segundos}}',
+);
+
+/** Quechua (Runa Simi)
+ * @author AlimanRuna
+ */
+$messages['qu'] = array(
+	'linkfilter-ago' => '$1 ñaqha <i>$2</i> uranpi',
 );
 
 /** Romanian (română)
