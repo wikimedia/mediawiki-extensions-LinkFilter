@@ -735,6 +735,7 @@ $messages['fa'] = array(
 	'linkfilter-desc' => 'اضافه کردن صفحات ویژهٔ جدید و یک قلاب تجزیه‌کننده برای ارائه/تأیید/رد لینک',
 	'linkfilter-nothing-to-approve' => 'در حال حاضر هیچ لینکی در حال انتظار تأیید نیست.',
 	'linkfilter-no-recently-approved' => 'اخیراً هیچ لینکی تأیید نشده‌است.',
+	'linkfilter-no-links-at-all' => 'هیچ لینکی هنوز ارائه نشده‌است یا سرپرستان لینک هنوز لینک‌های ارائه شده را بازبینی نکرده‌اند.',
 	'linkfilter-ago' => '$1 قبلی تحت <i>$2</i>',
 	'linkfilter-all' => 'همه',
 	'linkfilter-submit' => 'ثبت',
