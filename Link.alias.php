@@ -27,6 +27,15 @@ $specialPageAliases['ar'] = array(
 	'LinkSubmit' => array( 'إرسال_الوصلة' ),
 );
 
+/** Egyptian Spoken Arabic (مصرى) */
+$specialPageAliases['arz'] = array(
+	'LinkApprove' => array( 'موافقه_الوصله' ),
+	'LinkEdit' => array( 'تعديل_الوصله' ),
+	'LinksHome' => array( 'بيت_الوصلات' ),
+	'LinkRedirect' => array( 'تحويلة_الوصلة' ),
+	'LinkSubmit' => array( 'تنفيذ_الوصله' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'LinkApprove' => array( 'Link_akzeptieren' ),
@@ -52,6 +61,15 @@ $specialPageAliases['eo'] = array(
 	'LinksHome' => array( 'Hejmo_de_ligiloj' ),
 	'LinkRedirect' => array( 'Alidirektilo_al_ligilo' ),
 	'LinkSubmit' => array( 'Sendi_ligilon' ),
+);
+
+/** Persian (فارسی) */
+$specialPageAliases['fa'] = array(
+	'LinkApprove' => array( 'تأیید_پیوند' ),
+	'LinkEdit' => array( 'ویرایش_پیوند' ),
+	'LinksHome' => array( 'خانهٔ_پیوند' ),
+	'LinkRedirect' => array( 'تغییرمسیر_پیوند' ),
+	'LinkSubmit' => array( 'ارسال_پیوند' ),
 );
 
 /** Finnish (suomi) */
@@ -165,6 +183,7 @@ $specialPageAliases['tr'] = array(
 $specialPageAliases['vi'] = array(
 	'LinkApprove' => array( 'Chấp_nhận_liên_kết' ),
 	'LinkEdit' => array( 'Sửa_liên_kết' ),
+	'LinkRedirect' => array( 'Đổi_hướng_liên_kết' ),
 );
 
 /** Simplified Chinese (中文（简体）‎) */
