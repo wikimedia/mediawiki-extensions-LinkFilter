@@ -431,6 +431,7 @@ $messages['ce'] = array(
 	'linkfilter-title' => 'Корта',
 	'linkfilter-description' => 'Цуьнах лаьцна',
 	'linkfilter-in-the-news' => 'Керланашкахь',
+	'linkfilter-description-left' => '$1 йисина',
 	'linkfilter-edit-summary' => 'Керла хьажораг',
 	'group-linkadmin' => 'Хьажорагашан куьйгалхой',
 	'grouppage-linkadmin' => '{{ns:project}}:Хьажорагашан куьйгалхой',
