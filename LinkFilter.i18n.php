@@ -2545,6 +2545,7 @@ $messages['uk'] = array(
 /** Simplified Chinese (中文（简体）‎)
  * @author Kuailong
  * @author Shirayuki
+ * @author Xiaomingyan
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
@@ -2588,7 +2589,7 @@ $messages['zh-hans'] = array(
 	'linkfilter-anonymous' => '匿名狂热者',
 	'linkfilter-comments-of-day' => '热门评论',
 	'linkfilter-comments' => '$1条评论',
-	'linkfilter-home-title' => '$1个链接',
+	'linkfilter-home-title' => '$1链接',
 	'linkfilter-home-title-all' => '所有链接',
 	'linkfilter-next' => '下一个',
 	'linkfilter-previous' => '上一个',
