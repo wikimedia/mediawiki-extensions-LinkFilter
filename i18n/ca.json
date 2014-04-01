@@ -1,0 +1,11 @@
+{
+    "@metadata": {
+        "authors": [
+            "Luckas",
+            "Pitort"
+        ]
+    },
+    "linkfilter-edit-title": "Modifica $1",
+    "linkfilter-title": "Títol",
+    "linkfilter-description": "Descripció"
+}

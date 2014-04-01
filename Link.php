@@ -5,7 +5,6 @@
  *
  * @file
  * @ingroup Extensions
- * @version 3.0
  * @author Aaron Wright <aaron.wright@gmail.com>
  * @author David Pean <david.pean@gmail.com>
  * @author Jack Phoenix <jack@countervandalism.net>
@@ -25,7 +24,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
 	'name' => 'LinkFilter',
-	'version' => '3.0',
+	'version' => '3.1.0',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
 	'descriptionmsg' => 'linkfilter-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:LinkFilter'
@@ -71,6 +70,7 @@ $wgLinkFilterTypes = array(
 $dir = dirname( __FILE__ );
 
 // Internationalization files
+$wgMessagesDirs['LinkFilter'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['LinkFilter'] = "{$dir}/LinkFilter.i18n.php";
 $wgExtensionMessagesFiles['LinkFilterAlias'] = "{$dir}/Link.alias.php";
 // Namespace translations

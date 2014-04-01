@@ -1,0 +1,34 @@
+{
+    "@metadata": {
+        "authors": [
+            "Eitvys200"
+        ]
+    },
+    "linksubmit": "Siųsti nuorodą",
+    "linkfilter-all": "Visi",
+    "linkfilter-submit": "Siųsti",
+    "linkfilter-submit-title": "Siųsti nuorodą",
+    "linkfilter-submit-no-title": "Prašome įveskite pavadinimą",
+    "linkfilter-submit-no-type": "Pasirinkite nuorodos tipą.",
+    "linkfilter-edit-title": "Redaguoti $1",
+    "linkfilter-submit-another": "Siųsti kitą nuorodą",
+    "linkfilter-login-text": "Jūs turite būti prisijungęs kad galėtumėte siųsti nuorodas.",
+    "linkfilter-title": "Pavadinimas",
+    "linkfilter-type": "Nuorodos tipas",
+    "linkfilter-description": "Aprašymas",
+    "linkfilter-submit-button": "Siųsti nuorodą",
+    "linkfilter-submit-success-title": "Nuoroda išsiųsta",
+    "linkfilter-admin-accept": "Sutikti",
+    "linkfilter-admin-reject": "Atmesti",
+    "linkfilter-admin-reject-success": "Nuoroda buvo atmesta",
+    "linkfilter-admin-accept-success": "Nuoroda buvo priimta",
+    "linkfilter-in-the-news": "Naujienose",
+    "linkfilter-about-submitter": "Apie siuntėją",
+    "linkfilter-home-title": "$1 nuorodas",
+    "linkfilter-home-title-all": "Visos nuorodos",
+    "linkfilter-next": "kitas",
+    "linkfilter-previous": "ankstesnis",
+    "linkfilter-description-left": "liko $1",
+    "linkfilter-new-links-title": "Naujos nuorodos",
+    "group-linkadmin": "Nuorodos administratoriai"
+}
