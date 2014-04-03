@@ -92,11 +92,11 @@ $specialPageAliases['ia'] = array(
 
 /** Italian (italiano) */
 $specialPageAliases['it'] = array(
-	'LinkApprove' => array( 'LinkApprova' ),
-	'LinkEdit' => array( 'LinkModifica' ),
-	'LinksHome' => array( 'LinkInizio' ),
-	'LinkRedirect' => array( 'LinkRinvia' ),
-	'LinkSubmit' => array( 'LinkInvia' ),
+	'LinkApprove' => array( 'ApprovaCollegamento' ),
+	'LinkEdit' => array( 'ModificaCollegamento' ),
+	'LinksHome' => array( 'PaginaPrincipaleCollegamenti' ),
+	'LinkRedirect' => array( 'RinviaCollegamento' ),
+	'LinkSubmit' => array( 'InviaCollegamento' ),
 );
 
 /** Japanese (日本語) */
