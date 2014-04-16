@@ -35,7 +35,7 @@
 	"linkfilter-admin-instructions": "Voit lisätä ohjeita ylläpitäjille [[MediaWiki:Linkfilter-admin-instructions|täällä]]",
 	"linkfilter-admin-recent": "Äskettäin hyväksytyt",
 	"linkfilter-approve-title": "Linkkien ylläpito",
-	"linkfilter-submittedby": "!!FUZZY!!Lähettänyt",
+	"linkfilter-submittedby": "Lähettänyt",
 	"linkfilter-submitted": "Lähetetty $1",
 	"linkfilter-admin-accept": "Hyväksy",
 	"linkfilter-admin-reject": "Hylkää",
