@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Joachim Mos"
-        ]
-    },
-    "linkfilter-all": "All",
-    "linkfilter-submit": "Spickern"
+	"@metadata": {
+		"authors": [
+			"Joachim Mos"
+		]
+	},
+	"linkfilter-all": "All",
+	"linkfilter-submit": "Spickern"
 }

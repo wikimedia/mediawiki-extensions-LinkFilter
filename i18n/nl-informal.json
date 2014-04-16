@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Siebrand"
-        ]
-    },
-    "linkfilter-login-text": "Je moet aangemeld zijn om koppelingen te kunnen voorstellen.",
-    "linkfilter-submit-success-text": "Jouw koppelingen is opgeslagen en moet gecontroleerd worden",
-    "linkfilter-instructions": "Je kunt [[MediaWiki:Linkfilter-instructions|instructies voor gebruikers toevoegen]].",
-    "linkfilter-admin-instructions": "Je kunt [[MediaWiki:Linkfilter-admin-instructions|beheerdersinstructies toevoegen]]."
+	"@metadata": {
+		"authors": [
+			"Siebrand"
+		]
+	},
+	"linkfilter-login-text": "Je moet aangemeld zijn om koppelingen te kunnen voorstellen.",
+	"linkfilter-submit-success-text": "Jouw koppelingen is opgeslagen en moet gecontroleerd worden",
+	"linkfilter-instructions": "Je kunt [[MediaWiki:Linkfilter-instructions|instructies voor gebruikers toevoegen]].",
+	"linkfilter-admin-instructions": "Je kunt [[MediaWiki:Linkfilter-admin-instructions|beheerdersinstructies toevoegen]]."
 }

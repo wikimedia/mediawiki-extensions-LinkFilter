@@ -1,17 +1,17 @@
 {
-    "@metadata": {
-        "authors": [
-            "Avjoska"
-        ]
-    },
-    "linkfilter-login-title": "Ei ole sisse logitud",
-    "linkfilter-title": "Pealkiri",
-    "linkfilter-description": "Kirjeldus",
-    "linkfilter-admin-accept": "Nõustu",
-    "linkfilter-admin-reject": "Lükka tagasi",
-    "linkfilter-in-the-news": "Uudistes",
-    "linkfilter-next": "järgmine",
-    "linkfilter-previous": "eelmine",
-    "linkfilter-edit-summary": "uus link",
-    "linkfilter-no-results": "Ühtegi lehekülge ei leitud."
+	"@metadata": {
+		"authors": [
+			"Avjoska"
+		]
+	},
+	"linkfilter-login-title": "Ei ole sisse logitud",
+	"linkfilter-title": "Pealkiri",
+	"linkfilter-description": "Kirjeldus",
+	"linkfilter-admin-accept": "Nõustu",
+	"linkfilter-admin-reject": "Lükka tagasi",
+	"linkfilter-in-the-news": "Uudistes",
+	"linkfilter-next": "järgmine",
+	"linkfilter-previous": "eelmine",
+	"linkfilter-edit-summary": "uus link",
+	"linkfilter-no-results": "Ühtegi lehekülge ei leitud."
 }

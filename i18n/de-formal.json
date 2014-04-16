@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kghbln"
-        ]
-    },
-    "linkfilter-login-title": "Sie sind nicht angemeldet.",
-    "linkfilter-login-text": "Sie müssen angemeldet zu sein, um Links einreichen zu können.",
-    "linkfilter-instructions": "Sie können [[MediaWiki:Linkfilter-instructions-url|eine Anleitung für andere Benutzer hinzufügen]].",
-    "linkfilter-admin-instructions": "Sie können [[MediaWiki:Linkfilter-admin-instructions-url|eine Anleitung für andere Administratoren hinzufügen]]."
+	"@metadata": {
+		"authors": [
+			"Kghbln"
+		]
+	},
+	"linkfilter-login-title": "Sie sind nicht angemeldet.",
+	"linkfilter-login-text": "Sie müssen angemeldet zu sein, um Links einreichen zu können.",
+	"linkfilter-instructions": "Sie können [[MediaWiki:Linkfilter-instructions-url|eine Anleitung für andere Benutzer hinzufügen]].",
+	"linkfilter-admin-instructions": "Sie können [[MediaWiki:Linkfilter-admin-instructions-url|eine Anleitung für andere Administratoren hinzufügen]]."
 }

@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Rancher"
-        ]
-    },
-    "linkfilter-url": "Адреса"
+	"@metadata": {
+		"authors": [
+			"Rancher"
+		]
+	},
+	"linkfilter-url": "Адреса"
 }

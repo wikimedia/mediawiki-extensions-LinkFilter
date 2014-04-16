@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Purodha"
-        ]
-    },
-    "linkfilter-all": "All",
-    "linkfilter-submit": "Lohß Jonn!",
-    "linkfilter-url": "<i lang=\"en\">URL</i>",
-    "linkfilter-admin-accept": "Aannemme",
-    "linkfilter-admin-reject": "Afflähne",
-    "group-linkadmin.css": "/* Dat CSS heh aan dä Schtäll wirrek bloß op de Lengk-Verwallder */",
-    "group-linkadmin.js": "/* Dat JavaSkrep heh aan dä Schtäll wirrek bloß op de Lengk-Verwallder */"
+	"@metadata": {
+		"authors": [
+			"Purodha"
+		]
+	},
+	"linkfilter-all": "All",
+	"linkfilter-submit": "Lohß Jonn!",
+	"linkfilter-url": "<i lang=\"en\">URL</i>",
+	"linkfilter-admin-accept": "Aannemme",
+	"linkfilter-admin-reject": "Afflähne",
+	"group-linkadmin.css": "/* Dat CSS heh aan dä Schtäll wirrek bloß op de Lengk-Verwallder */",
+	"group-linkadmin.js": "/* Dat JavaSkrep heh aan dä Schtäll wirrek bloß op de Lengk-Verwallder */"
 }

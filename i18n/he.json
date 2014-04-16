@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "חיים"
-        ]
-    },
-    "linkfilter-anonymous": "קנאי אנונימי",
-    "linkfilter-comments": "{{PLURAL:$1|תגובה אחת|$1 תגובות}}",
-    "linkfilter-home-title": "$1 קישורים",
-    "linkfilter-next": "הבא",
-    "linkfilter-previous": "הקודם",
-    "linkfilter-description-left": "$1 נותרו",
-    "linkfilter-new-links-title": "קישור חדש"
+	"@metadata": {
+		"authors": [
+			"חיים"
+		]
+	},
+	"linkfilter-anonymous": "קנאי אנונימי",
+	"linkfilter-comments": "{{PLURAL:$1|תגובה אחת|$1 תגובות}}",
+	"linkfilter-home-title": "$1 קישורים",
+	"linkfilter-next": "הבא",
+	"linkfilter-previous": "הקודם",
+	"linkfilter-description-left": "$1 נותרו",
+	"linkfilter-new-links-title": "קישור חדש"
 }
