@@ -35,7 +35,7 @@
 	"linkfilter-admin-instructions": "Vous pouvez ajouter [[MediaWiki:Linkfilter-admin-instructions|des instructions pour les administrateurs]].",
 	"linkfilter-admin-recent": "Récemment approuvé",
 	"linkfilter-approve-title": "Administration des liens",
-	"linkfilter-submittedby": "Soumis par",
+	"linkfilter-submittedby": "'''Soumis par''' : [[User:$1|$1]]",
 	"linkfilter-submitted": "$1 soumis",
 	"linkfilter-admin-accept": "Accepter",
 	"linkfilter-admin-reject": "Rejeter",
