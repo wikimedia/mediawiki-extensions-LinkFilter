@@ -81,6 +81,15 @@ $specialPageAliases['fi'] = array(
 	'LinkSubmit' => array( 'Lähetä_linkki' ),
 );
 
+/** Upper Sorbian (hornjoserbsce) */
+$specialPageAliases['hsb'] = array(
+	'LinkApprove' => array( 'Wotkaz_akceptować' ),
+	'LinkEdit' => array( 'Wotkaz_wobdźěłać' ),
+	'LinksHome' => array( 'Wotkazowy_cil' ),
+	'LinkRedirect' => array( 'Wotkaz_dale_sposrědkować' ),
+	'LinkSubmit' => array( 'Wotkaz_składować' ),
+);
+
 /** Interlingua (interlingua) */
 $specialPageAliases['ia'] = array(
 	'LinkApprove' => array( 'Approbar_ligamines' ),
