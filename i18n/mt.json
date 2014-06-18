@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrisportelli"
+			"Chrisportelli",
+			"Leli Forte"
 		]
 	},
 	"linksubmit": "Ibgħat ħolqa",
 	"linkfilter-desc": "Iżżid paġni speċjali u ''parser hook'' għas-sottomissjoni, approvazzjoni u rifjutar ta' ħoloq",
-	"linkfilter-nothing-to-approve": "Attwalment m'hemm l-ebda ħolqa li qegħdha tistenna l-approvazzjoni",
+	"linkfilter-nothing-to-approve": "Attwalment m'hemm l-ebda ħolqa li qiegħda tistenna l-approvazzjoni",
 	"linkfilter-no-recently-approved": "L-ebda ħolqa ma ġiet aċċettata riċentament",
 	"linkfilter-no-links-at-all": "L-ebda ħolqa għadha ma ntbagħtet s'issa jew l-amministraturi tal-ħoloq għadhom ma rrevedewx il-ħoloq li ntbagħtu.",
 	"linkfilter-ago": "$1 ilou taħt <i>$2</i>",

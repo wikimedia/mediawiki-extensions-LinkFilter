@@ -2,13 +2,17 @@
 	"@metadata": {
 		"authors": [
 			"Jopparn",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Lokal Profil"
 		]
 	},
 	"linkapprove": "Godkänn länkar",
 	"linkshome": "Länkar hem",
 	"linksubmit": "Skicka en länk",
+	"linkfilter-desc": "Lägger till nya specialsidor och en parser-hook för länkinskickning/-godkännande/-avvisning",
+	"linkfilter-nothing-to-approve": "Det finns för närvarande inga länkar som väntar på godkännande.",
 	"linkfilter-no-recently-approved": "Inga länkar har godkänts den senaste tiden.",
+	"linkfilter-no-links-at-all": "Inga länkar har skickats in ännu eller så har länkadministratörerna inte granskat de inskickade länkarna ännu.",
 	"linkfilter-ago": "$1 sedan under <i>$2</i>",
 	"linkfilter-all": "Alla",
 	"linkfilter-submit": "Skicka",
@@ -39,6 +43,7 @@
 	"linkfilter-admin-accept-success": "Länken accepterades",
 	"linkfilter-in-the-news": "I nyheterna",
 	"linkfilter-about-submitter": "Om inskickaren",
+	"linkfilter-anonymous": "Anonym fanatiker",
 	"linkfilter-comments-of-day": "Toppkommentarer",
 	"linkfilter-comments": "{{PLURAL:$1|$1 kommentar|$1 kommentarer}}",
 	"linkfilter-home-title": "$1 länkar",
@@ -58,5 +63,6 @@
 	"linkfilter-feed-title": "Länkar på {{SITENAME}}",
 	"group-linkadmin": "Länkadministratörer",
 	"group-linkadmin-member": "{{GENDER:$1|länkadministratör}}",
-	"grouppage-linkadmin": "{{ns:project}}:Länkadministratörer"
+	"grouppage-linkadmin": "{{ns:project}}:Länkadministratörer",
+	"right-linkadmin": "Administrera användarinskickade länkar"
 }
