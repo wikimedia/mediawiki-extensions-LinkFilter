@@ -144,9 +144,9 @@ class LinkFilterHooks {
 		$output = '<div>
 
 				<div class="linkfilter-links">
-					<a href="' . $link_submit->escapeFullURL() . '">' .
+					<a href="' . htmlspecialchars( $link_submit->getFullURL() ) . '">' .
 						wfMessage( 'linkfilter-submit' )->plain() .
-					'</a> / <a href="' . $link_all->escapeFullURL() . '">' .
+					'</a> / <a href="' . htmlspecialchars( $link_all->getFullURL() ) . '">' .
 						wfMessage( 'linkfilter-all' )->plain() . '</a>';
 
 		// Show a link to the link administration panel for privileged users

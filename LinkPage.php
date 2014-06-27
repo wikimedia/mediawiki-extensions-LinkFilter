@@ -114,10 +114,10 @@ class LinkPage extends Article {
 			true
 		);
 		$linkRedirect = SpecialPage::getTitleFor( 'LinkRedirect' );
-		$url = $linkRedirect->escapeFullURL( array(
+		$url = htmlspecialchars( $linkRedirect->getFullURL( array(
 			'link' => 'true',
 			'url' => $this->link['url']
-		) );
+		) ) );
 		$output = '<div class="link-container">
 				<div class="link-url">
 					<span class="link-type">'
@@ -200,11 +200,11 @@ class LinkPage extends Article {
 		$output = '<h2>' . wfMessage( 'linkfilter-about-submitter' )->text() . '</h2>';
 		$output .= "<div class=\"author-container $css_fix\">
 			<div class=\"author-info\">
-				<a href=\"" . $authorTitle->escapeFullURL() . "\" rel=\"nofollow\">
+				<a href=\"" . htmlspecialchars( $authorTitle->getFullURL() ) . "\" rel=\"nofollow\">
 					{$avatar->getAvatarURL()}
 				</a>
 				<div class=\"author-title\">
-					<a href=\"" . $authorTitle->escapeFullURL() . "\" rel=\"nofollow\">{$authorUserName}</a>
+					<a href=\"" . htmlspecialchars( $authorTitle->getFullURL() ) . "\" rel=\"nofollow\">{$authorUserName}</a>
 				</div>";
 		if ( $profileData['about'] ) {
 			$output .= $wgOut->parse( $profileData['about'], false );
@@ -297,7 +297,7 @@ class LinkPage extends Article {
 
 		foreach ( $links as $link ) {
 			$output .= '<div class="link-recent">
-			<a href="' . $linkRedirect->escapeFullURL( "url={$link['url']}" ) .
+			<a href="' . htmlspecialchars( $linkRedirect->getFullURL( "url={$link['url']}" ) ) .
 				"\" target=\"new\">{$link['title']}</a>
 		</div>";
 		}
@@ -412,7 +412,7 @@ class LinkPage extends Article {
 			}
 			$output .= '<div class="cod-item">';
 			$output .= '<span class="cod-score">' . $comment['plus_count'] . '</span> ';
-			$output .= " <span class=\"cod-comment\"><a href=\"{$pageTitle->escapeFullURL()}#comment-{$comment['comment_id']}\" title=\"{$pageTitle->getText()}\" >{$commentText}</a></span>";
+			$output .= " <span class=\"cod-comment\"><a href=\"{htmlspecialchars( $pageTitle->getFullURL() )}#comment-{$comment['comment_id']}\" title=\"{$pageTitle->getText()}\" >{$commentText}</a></span>";
 			$output .= '</div>';
 		}
 

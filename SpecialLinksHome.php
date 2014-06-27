@@ -79,7 +79,7 @@ class LinksHome extends SpecialPage {
 			foreach ( $popularLinks as $popularLink ) {
 				$titleObj = Title::makeTitle( NS_LINK, $popularLink['title'] );
 				$html .= '<div class="listpages-item">';
-				$html .= '<a href="' . $titleObj->escapeFullURL() . '">' .
+				$html .= '<a href="' . htmlspecialchars( $titleObj->getFullURL() ) . '">' .
 						$titleObj->getText() .
 					'</a>
 				</div><!-- .listpages-item -->
@@ -236,8 +236,8 @@ class LinksHome extends SpecialPage {
 					</div>
 					<div class=\"link-item\">
 						<div class=\"link-item-url\">
-							<a href=\"" . $linkRedirect->escapeFullURL( array(
-								'link' => 'true', 'url' => $link['url'] ) ) .
+							<a href=\"" . htmlspecialchars( $linkRedirect->getFullURL( array(
+								'link' => 'true', 'url' => $link['url'] ) ) ) .
 								'" target="new">' . $link['title'] .
 							'</a>
 						</div>
@@ -340,7 +340,7 @@ class LinksHome extends SpecialPage {
 		$feed = new LinkFeed(
 			$this->msg( 'linkfilter-feed-title' )->parse(),
 			'',
-			$this->getPageTitle()->escapeFullURL()
+			htmlspecialchars( $this->getPageTitle()->getFullURL() )
 		);
 
 		$feed->outHeader();
@@ -349,7 +349,7 @@ class LinksHome extends SpecialPage {
 			$item = new FeedItem(
 				'[' . $link['type_name'] . '] ' . $link['title'],
 				str_replace( 'http://', '', $link['url'] ),
-				Title::newFromId( $link['page_id'] )->escapeFullURL()
+				htmlspecialchars( Title::newFromId( $link['page_id'] )->getFullURL() )
 			);
 			$feed->outItem( $item );
 		}

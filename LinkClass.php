@@ -27,17 +27,17 @@ class Link {
 
 	public static function getSubmitLinkURL() {
 		$title = SpecialPage::getTitleFor( 'LinkSubmit' );
-		return $title->escapeFullURL();
+		return htmlspecialchars( $title->getFullURL() );
 	}
 
 	public static function getLinkAdminURL() {
 		$title = SpecialPage::getTitleFor( 'LinkApprove' );
-		return $title->escapeFullURL();
+		return htmlspecialchars( $title->getFullURL() );
 	}
 
 	public static function getHomeLinkURL() {
 		$title = SpecialPage::getTitleFor( 'LinksHome' );
-		return $title->escapeFullURL();
+		return htmlspecialchars( $title->getFullURL() );
 	}
 
 	/**
@@ -344,7 +344,7 @@ class LinkList {
 				'type_name' => Link::getLinkType( $row->link_type ),
 				'user_id' => $row->link_submitter_user_id,
 				'user_name' => $row->link_submitter_user_name,
-				'wiki_page' => ( ( $linkPage ) ? $linkPage->escapeFullURL() : null ),
+				'wiki_page' => ( ( $linkPage ) ? htmlspecialchars( $linkPage->getFullURL() ) : null ),
 				'comments' => ( ( $row->link_comment_count ) ? $row->link_comment_count : 0 )
 			);
 		}
