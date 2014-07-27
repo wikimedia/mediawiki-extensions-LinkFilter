@@ -13,6 +13,7 @@
 	"linkfilter-in-the-news": "Керланашкахь",
 	"linkfilter-comments": "$1 {{PLURAL:$1|къамел|къамелаш}}",
 	"linkfilter-home-title": "$1 хьажоргаш",
+	"linkfilter-home-title-all": "Массо хьажоргаш",
 	"linkfilter-description-left": "$1 йисина",
 	"linkfilter-time-days": "{{PLURAL:$1|де}}",
 	"linkfilter-time-hours": "{{PLURAL:$1|сахьат}}",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Justincheng12345",
-			"Shirayuki"
+			"Shirayuki",
+			"LNDDYL"
 		]
 	},
 	"linkapprove": "批准連結",
@@ -63,5 +64,5 @@
 	"group-linkadmin": "連結管理員",
 	"group-linkadmin-member": "{{GENDER:$1|連結管理員}}",
 	"grouppage-linkadmin": "{{ns:project}}:連結管理員",
-	"right-linkadmin": "管理用戶提交的連結"
+	"right-linkadmin": "管理使用者提交的連結"
 }
