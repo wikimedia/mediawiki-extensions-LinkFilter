@@ -4,7 +4,8 @@
 			"Kuailong",
 			"Shirayuki",
 			"Xiaomingyan",
-			"Yfdyh000"
+			"Yfdyh000",
+			"Liuxinyu970226"
 		]
 	},
 	"linkapprove": "批准链接",
@@ -65,5 +66,7 @@
 	"group-linkadmin": "链接管理员",
 	"group-linkadmin-member": "{{GENDER:$1|链接管理员}}",
 	"grouppage-linkadmin": "{{ns:project}}:链接管理员",
-	"right-linkadmin": "管理用户提交的链接"
+	"right-linkadmin": "管理用户提交的链接",
+	"group-linkadmin.css": "/* 放置于这里的CSS将只影响链接管理员 */",
+	"group-linkadmin.js": "/* 在此放置的JS只对链接管理员有效 */"
 }
