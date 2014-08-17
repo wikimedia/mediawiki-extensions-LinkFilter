@@ -9,17 +9,17 @@ class LinkPage extends Article {
 	/**
 	 * @var Title
 	 */
-	var $title = null;
+	public $title = null;
 
 	/**
 	 * @var String: page content retrieved via getContent() in setContent()
 	 */
-	var $pageContent;
+	public $pageContent;
 
 	/**
 	 * @var Link: Link object representing the current link
 	 */
-	var $link;
+	public $link;
 
 	function __construct( Title $title ) {
 		parent::__construct( $title );
