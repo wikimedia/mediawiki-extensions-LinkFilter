@@ -209,6 +209,6 @@ $specialPageAliases['zh-hant'] = array(
 	'LinkApprove' => array( '批准連結' ),
 	'LinkEdit' => array( '編輯連結' ),
 	'LinksHome' => array( '首頁連結' ),
-	'LinkRedirect' => array( '重定向連結' ),
-	'LinkSubmit' => array( '提交連結' ),
+	'LinkRedirect' => array( '重新導向連結' ),
+	'LinkSubmit' => array( '送出連結' ),
 );
