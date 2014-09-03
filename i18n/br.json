@@ -33,7 +33,7 @@
 	"linkfilter-admin-instructions": "Gallout a rit ouzhpennañ [[MediaWiki:Linkfilter-admin-instructions|kemennoù evit ar verourien]].",
 	"linkfilter-admin-recent": "Aprouet nevez zo",
 	"linkfilter-approve-title": "Mererezh al liamm",
-	"linkfilter-submittedby": "Kinniget gant",
+	"linkfilter-submittedby": "'''Kaset gant''' : [[Implijer : $1|$1]]",
 	"linkfilter-submitted": "Kinniget $1",
 	"linkfilter-admin-accept": "Asantiñ",
 	"linkfilter-admin-reject": "Disteurel",
