@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Darth Kule"
+			"Darth Kule",
+			"Beta16"
 		]
 	},
 	"linkapprove": "Approvazione collegamenti",
@@ -16,7 +17,7 @@
 	"linkfilter-submit-title": "Invia un collegamento",
 	"linkfilter-submit-no-title": "Inserire un titolo",
 	"linkfilter-submit-no-type": "Scegliere un tipo di collegamento.",
-	"linkfilter-edit-title": "Modifica $1",
+	"linkfilter-edit-title": "Modifica di $1",
 	"linkfilter-approve-links": "Approvazione collegamenti",
 	"linkfilter-submit-another": "Invia un altro collegamento",
 	"linkfilter-login-title": "Accesso non effettuato",
