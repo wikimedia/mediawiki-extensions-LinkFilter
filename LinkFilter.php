@@ -24,7 +24,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
 	'name' => 'LinkFilter',
-	'version' => '3.1.0',
+	'version' => '3.1.1',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
 	'descriptionmsg' => 'linkfilter-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:LinkFilter'
@@ -38,7 +38,7 @@ $wgResourceModules['ext.linkFilter'] = array(
 		'linkfilter-admin-accept-success', 'linkfilter-admin-reject-success',
 		'linkfilter-submit-no-title', 'linkfilter-submit-no-type'
 	),
-	'localBasePath' => dirname( __FILE__ ),
+	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'LinkFilter',
 	'position' => 'top' // available since r85616
 );
@@ -67,11 +67,10 @@ $wgLinkFilterTypes = array(
 	11 => 'Stupid',
 );
 
-$dir = dirname( __FILE__ );
+$dir = __DIR__;
 
 // Internationalization files
 $wgMessagesDirs['LinkFilter'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['LinkFilter'] = "{$dir}/LinkFilter.i18n.php";
 $wgExtensionMessagesFiles['LinkFilterAlias'] = "{$dir}/Link.alias.php";
 // Namespace translations
 $wgExtensionMessagesFiles['LinkNamespaces'] = "{$dir}/Link.namespaces.php";
