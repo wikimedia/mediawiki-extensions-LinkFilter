@@ -412,7 +412,8 @@ class LinkPage extends Article {
 			}
 			$output .= '<div class="cod-item">';
 			$output .= '<span class="cod-score">' . $comment['plus_count'] . '</span> ';
-			$output .= " <span class=\"cod-comment\"><a href=\"{htmlspecialchars( $pageTitle->getFullURL() )}#comment-{$comment['comment_id']}\" title=\"{$pageTitle->getText()}\" >{$commentText}</a></span>";
+			$url = htmlspecialchars( $pageTitle->getFullURL() );
+			$output .= " <span class=\"cod-comment\"><a href=\"{$url}#comment-{$comment['comment_id']}\" title=\"{$pageTitle->getText()}\" >{$commentText}</a></span>";
 			$output .= '</div>';
 		}
 
