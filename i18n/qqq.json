@@ -3,7 +3,8 @@
 		"authors": [
 			"Darth Kule",
 			"Shirayuki",
-			"Umherirrender"
+			"Umherirrender",
+			"Liuxinyu970226"
 		]
 	},
 	"linkapprove": "{{doc-special|LinkApprove}}",
@@ -58,7 +59,7 @@
 	"linkfilter-time-days": "Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.\n{{Related|Linkfilter-time}}",
 	"linkfilter-time-hours": "Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.\n{{Related|Linkfilter-time}}",
 	"linkfilter-time-minutes": "Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.\n{{Related|Linkfilter-time}}",
-	"linkfilter-time-seconds": "Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.\n{{Related|Linkfilter-time}}",
+	"linkfilter-time-seconds": "Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.\n{{Related|Linkfilter-time}}\n{{Identical|Second}}",
 	"linkfilter-edit-summary": "Edit summary; when a link administrator approves a link, a new page in the Link: namespace is created with this as the edit summary",
 	"linkfilter-no-results": "Displayed when $wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration but there are no popular pages (they are shown under the [[MediaWiki:Linkfilter-popular-articles]] header) to display.",
 	"linkfilter-feed-title": "RSS feed title",
