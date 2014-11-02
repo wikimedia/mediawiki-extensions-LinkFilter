@@ -48,7 +48,7 @@
 	"linkfilter-anonymous": "Used if the username is undefined, instead of username.",
 	"linkfilter-comments-of-day": "Used as HTML <code><nowiki><h2></nowiki></code> heading.\n\nThe section contains a comment (comment score and body).",
 	"linkfilter-comments": "Used as link text. Parameters:\n* $1 - number of comments",
-	"linkfilter-home-title": "This is the page title of [[Special:LinksHome]] when the user is viewing links of a specific type (as opposed to viewing all the links).\n\nParameters:\n* $1 - the link type\nSee also:\n* {{msg-mw|Linkfilter-home-title-all}}",
+	"linkfilter-home-title": "This is the page title of [[Special:LinksHome]] when the user is viewing links of a specific type (as opposed to viewing all the links).\n\nParameters:\n* $1 - the link type\nSee also:\n* {{msg-mw|Linkfilter-home-title-all}}\n{{Identical|Link}}",
 	"linkfilter-home-title-all": "This is the page title of [[Special:LinksHome]] when the user is viewing all the links (as opposed to viewing links of a specific type).\n\nSee also:\n* {{msg-mw|Linkfilter-home-title}}",
 	"linkfilter-next": "Pagination link",
 	"linkfilter-previous": "Pagination link",
