@@ -4,5 +4,6 @@
 			"Robin0van0der0vliet"
 		]
 	},
+	"linkfilter-previous": "foarige",
 	"linkfilter-time-seconds": "{{PLURAL:$1|ien sekonde|$1 sekonden}}"
 }
