@@ -57,7 +57,7 @@
 	"linkfilter-popular-articles": "不要错过",
 	"linkfilter-new-links-title": "新链接",
 	"linkfilter-time-days": "$1天",
-	"linkfilter-time-hours": "$1小时",
+	"linkfilter-time-hours": "{{PLURAL:$1|$1小时}}",
 	"linkfilter-time-minutes": "$1分钟",
 	"linkfilter-time-seconds": "$1秒",
 	"linkfilter-edit-summary": "新链接",

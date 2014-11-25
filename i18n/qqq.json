@@ -57,7 +57,7 @@
 	"linkfilter-popular-articles": "Displayed when $wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration",
 	"linkfilter-new-links-title": "Header text, shown when $wgLinkPageDisplay['new_links'] is <code>true</code> in the configuration",
 	"linkfilter-time-days": "Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.\n{{Related|Linkfilter-time}}",
-	"linkfilter-time-hours": "Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.\n{{Related|Linkfilter-time}}",
+	"linkfilter-time-hours": "Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.\n{{Related|Linkfilter-time}}\n{{Identical|Hour}}",
 	"linkfilter-time-minutes": "Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.\n{{Related|Linkfilter-time}}",
 	"linkfilter-time-seconds": "Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.\n{{Related|Linkfilter-time}}\n{{Identical|Second}}",
 	"linkfilter-edit-summary": "Edit summary; when a link administrator approves a link, a new page in the Link: namespace is created with this as the edit summary",
