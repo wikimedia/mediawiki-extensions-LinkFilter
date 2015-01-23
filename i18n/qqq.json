@@ -38,7 +38,7 @@
 	"linkfilter-admin-recent": "Header text shown on Special:LinkApprove for link admins",
 	"linkfilter-approve-title": "Page title of Special:LinkApprove",
 	"linkfilter-submittedby": "Followed by {{msg-mw|Linkfilter-ago}}. Parameters:\n* $1 - the name of the user who submitted the link",
-	"linkfilter-submitted": "Parameters:\n* $1 - the link creation timestamp (when the Link: page was created), containing date and time (localized)",
+	"linkfilter-submitted": "Parameters:\n* $1 - the link creation timestamp (when the Link: page was created), containing date and time (localized)\n\n{{Identical|Submitted}}",
 	"linkfilter-admin-accept": "Button text, shown on [[Special:LinkApprove]] for link administrators.\n{{Identical|Accept}}",
 	"linkfilter-admin-reject": "Button text, shown on Special:LinkApprove for link administrators.\n{{Identical|Reject}}",
 	"linkfilter-admin-reject-success": "Shown on Special:LinkApprove for link administrators after they have rejected a submitted link by pressing the [[MediaWiki:Linkfilter-admin-reject]] button. Used in JavaScript.",
