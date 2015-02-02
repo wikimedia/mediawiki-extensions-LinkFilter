@@ -50,7 +50,7 @@
 	"linkfilter-next": "следна",
 	"linkfilter-previous": "претходна",
 	"linkfilter-description-max": "Макс. знаци",
-	"linkfilter-description-left": "{{PLURAL:$1|преостанува $1|преостануваат $1}}",
+	"linkfilter-description-left": "{{PLURAL:$1|преостанува уште $1|преостануваат уште $1}}",
 	"linkfilter-popular-articles": "Не пропуштајте",
 	"linkfilter-new-links-title": "Нови врски",
 	"linkfilter-time-days": "{{PLURAL:$1|еден ден|$1 дена}}",
