@@ -49,9 +49,9 @@ $specialPageAliases['de'] = array(
 $specialPageAliases['diq'] = array(
 	'LinkApprove' => array( 'LinkQebulkerdış' ),
 	'LinkEdit' => array( 'LinkVurnayış' ),
-	'LinksHome' => array( 'KeyeyLinkan' ),
-	'LinkRedirect' => array( 'HetenayışéLinkan' ),
-	'LinkSubmit' => array( 'LinkRıştayış' ),
+	'LinksHome' => array( 'KeyeyêGıreyan' ),
+	'LinkRedirect' => array( 'SerberdışêGıreyan' ),
+	'LinkSubmit' => array( 'RıştışêGıreyan' ),
 );
 
 /** Esperanto (Esperanto) */
