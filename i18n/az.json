@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dağlı95"
+		]
+	},
+	"linkfilter-time-seconds": "{{PLURAL: $1|$1 saniyə|$1 saniyə}}"
+}
