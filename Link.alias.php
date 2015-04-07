@@ -36,6 +36,15 @@ $specialPageAliases['arz'] = array(
 	'LinkSubmit' => array( 'تنفيذ_الوصله' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'LinkApprove' => array( 'لینک_ئی_تائید' ),
+	'LinkEdit' => array( 'لینک_ئی_دستکاری' ),
+	'LinksHome' => array( 'لینک_ئی_گیس' ),
+	'LinkRedirect' => array( 'لینک_ئی_تغیرمسیر' ),
+	'LinkSubmit' => array( 'لینک_ئی_دیم_داتین' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'LinkApprove' => array( 'Link_akzeptieren' ),
