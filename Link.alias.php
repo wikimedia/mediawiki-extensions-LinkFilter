@@ -27,7 +27,7 @@ $specialPageAliases['ar'] = array(
 	'LinkSubmit' => array( 'إرسال_الوصلة' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'LinkApprove' => array( 'موافقه_الوصله' ),
 	'LinkEdit' => array( 'تعديل_الوصله' ),
