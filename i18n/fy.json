@@ -4,6 +4,9 @@
 			"Robin0van0der0vliet"
 		]
 	},
+	"linkfilter-submit": "Ferstjoere",
+	"linkfilter-url": "URL",
 	"linkfilter-previous": "foarige",
+	"linkfilter-time-hours": "{{PLURAL:$1|ien oere|$1 oere}}",
 	"linkfilter-time-seconds": "{{PLURAL:$1|ien sekonde|$1 sekonden}}"
 }
