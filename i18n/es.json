@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Armando-Martin"
+			"Armando-Martin",
+			"Macofe"
 		]
 	},
 	"linkapprove": "Aprobar enlaces",
@@ -15,7 +16,7 @@
 	"linkfilter-all": "Todos",
 	"linkfilter-submit": "Enviar",
 	"linkfilter-submit-title": "Enviar un enlace",
-	"linkfilter-submit-no-title": "Escriba un título",
+	"linkfilter-submit-no-title": "Escribe un título",
 	"linkfilter-submit-no-type": "Elige un tipo de enlace.",
 	"linkfilter-edit-title": "Editar $1",
 	"linkfilter-approve-links": "Aprobar enlaces",
