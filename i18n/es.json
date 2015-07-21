@@ -34,7 +34,7 @@
 	"linkfilter-admin-instructions": "Puedes añadirr [[MediaWiki:Linkfilter-admin-instructions|instrucciones para los administradores]].",
 	"linkfilter-admin-recent": "Aprobadas recentemente",
 	"linkfilter-approve-title": "Administración de enlaces",
-	"linkfilter-submittedby": "'''Presentada por''': [[User:$1|$1]]",
+	"linkfilter-submittedby": "'''Presentado por''': [[User:$1|$1]]",
 	"linkfilter-submitted": "Se ha enviado $1",
 	"linkfilter-admin-accept": "Aceptar",
 	"linkfilter-admin-reject": "Rechazar",
