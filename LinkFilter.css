@@ -792,3 +792,17 @@ textarea.lr-input {
 .link-home-navigation a:visited {
 	color: #FFFFFF !important;
 }
+
+/* Styles for low-end smartphones with a low resolution (i.e. Nokia X) */
+@media screen and (max-width: 750px) {
+	/* LinkFilter */
+	div.lr-right {
+		/* Make the instructions fit next to the form */
+		max-width: 35%;
+	}
+	/* Buttons on Special:LinkApprove */
+	div.action-buttons a.action-accept,
+	div.action-buttons a.action-reject {
+		padding: 15px;
+	}
+}

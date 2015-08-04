@@ -72,7 +72,7 @@ class LinkApprove extends SpecialPage {
 	 * For example, http://www.google.com/some_stuff_here could be changed into
 	 * http://goo...stuff_here or so.
 	 */
-	public static function cutLinkFilterLinkText( $matches ) {
+	public static function cutLinkText( $matches ) {
 		$tagOpen = $matches[1];
 		$linkText = $matches[2];
 		$tagClose = $matches[3];
@@ -91,7 +91,7 @@ class LinkApprove extends SpecialPage {
 	/**
 	 * Show the special page
 	 *
-	 * @param $par Mixed: parameter passed to the page or null
+	 * @param mixed|null $par Parameter passed to the page or null
 	 */
 	public function execute( $par ) {
 		$out = $this->getOutput();
@@ -99,7 +99,7 @@ class LinkApprove extends SpecialPage {
 		$user = $this->getUser();
 
 		// Check for linkadmin permission
-		if(  !$user->isAllowed( 'linkadmin' ) ) {
+		if ( !$user->isAllowed( 'linkadmin' ) ) {
 			throw new ErrorPageError( 'error', 'badaccess' );
 			return false;
 		}
@@ -122,8 +122,7 @@ class LinkApprove extends SpecialPage {
 		// Add CSS & JS
 		$out->addModules( 'ext.linkFilter' );
 
-		$output = '';
-		$output .= '<div class="lr-left">';
+		$output = '<div class="lr-left">';
 
 		$l = new LinkList();
 
@@ -140,7 +139,7 @@ class LinkApprove extends SpecialPage {
 		foreach ( $links as $link ) {
 			$linkText = preg_replace_callback(
 				'/(<a[^>]*>)(.*?)(<\/a>)/i',
-				array( 'LinkApprove', 'cutLinkFilterLinkText' ),
+				array( 'LinkApprove', 'cutLinkText' ),
 				"<a href=\"{$link['url']}\" target=\"new\">{$link['url']}</a>"
 			);
 
