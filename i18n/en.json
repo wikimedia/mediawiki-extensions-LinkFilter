@@ -16,6 +16,8 @@
 	"linkfilter-all": "All",
 	"linkfilter-submit": "Submit",
 	"linkfilter-submit-title": "Submit a link",
+	"linkfilter-submit-no-desc": "Please enter a description for this link",
+	"linkfilter-submit-no-url": "You must supply the URL!",
 	"linkfilter-submit-no-title": "Please enter a title",
 	"linkfilter-submit-no-type": "Pick a link type.",
 	"linkfilter-edit-title": "Edit $1",

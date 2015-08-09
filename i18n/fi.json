@@ -16,6 +16,8 @@
 	"linkfilter-all": "Kaikki",
 	"linkfilter-submit": "Lähetä",
 	"linkfilter-submit-title": "Lähetä linkki",
+	"linkfilter-submit-no-desc": "Anna tämän linkin kuvaus",
+	"linkfilter-submit-no-url": "Osoite on pakollinen tieto!",
 	"linkfilter-submit-no-title": "Ole hyvä ja anna otsikko",
 	"linkfilter-submit-no-type": "Hei, valitse linkin tyyppi!",
 	"linkfilter-edit-title": "Muokkaa $1",

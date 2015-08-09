@@ -16,7 +16,7 @@
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
 	'name' => 'LinkFilter',
-	'version' => '3.2',
+	'version' => '3.2.1',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
 	'descriptionmsg' => 'linkfilter-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:LinkFilter'
@@ -28,7 +28,8 @@ $wgResourceModules['ext.linkFilter'] = array(
 	'scripts' => 'LinkFilter.js',
 	'messages' => array(
 		'linkfilter-admin-accept-success', 'linkfilter-admin-reject-success',
-		'linkfilter-submit-no-title', 'linkfilter-submit-no-type'
+		'linkfilter-submit-no-title', 'linkfilter-submit-no-type',
+		'linkfilter-submit-no-desc', 'linkfilter-submit-no-url'
 	),
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'LinkFilter',
