@@ -77,6 +77,23 @@
 	color: #333;
 }
 
+/**
+ * This is kinda awful, and by kinda I mean totally.
+ * On some skins (such as Dusk, Nimbus) the default (10px, see above) is good
+ * enough, whereas on others it's just not enough and will cause a pesky UI glitch.
+ */
+.skin-deskmessmirrored div.admin-link:not(.border-fix),
+.skin-greystuff div.admin-link:not(.border-fix),
+.skin-mask div.admin-link:not(.border-fix),
+.skin-metrolook div.admin-link:not(.border-fix),
+.skin-monobook div.admin-link:not(.border-fix),
+.skin-refreshed div.admin-link:not(.border-fix),
+.skin-splash div.admin-link:not(.border-fix),
+.skin-truglass div.admin-link:not(.border-fix),
+.skin-vector div.admin-link:not(.border-fix) {
+	padding-bottom: 35px;
+}
+
 .admin-title {
 	font-size: 17px;
 	padding: 0px 0px 10px 0px;
