@@ -19,6 +19,8 @@
 	"linkfilter-all": "所有",
 	"linkfilter-submit": "提交",
 	"linkfilter-submit-title": "提交链接",
+	"linkfilter-submit-no-desc": "请为此链接输入一段描述",
+	"linkfilter-submit-no-url": "您必须提供一个URL！",
 	"linkfilter-submit-no-title": "请输入标题",
 	"linkfilter-submit-no-type": "请输入链接类型。",
 	"linkfilter-edit-title": "编辑“$1”",

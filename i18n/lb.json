@@ -16,6 +16,8 @@
 	"linkfilter-all": "All",
 	"linkfilter-submit": "Späicheren",
 	"linkfilter-submit-title": "E Link proposéieren",
+	"linkfilter-submit-no-desc": "Gitt w.e.g. eng Beschreiwung fir dëse Link an",
+	"linkfilter-submit-no-url": "Dir musst d'URL uginn!",
 	"linkfilter-submit-no-title": "Gitt w.e.g. en Titel un",
 	"linkfilter-submit-no-type": "En Typ vu Link eraussichen.",
 	"linkfilter-edit-title": "$1 änneren",

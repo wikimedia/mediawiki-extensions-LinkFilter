@@ -3,12 +3,14 @@
 		"authors": [
 			"Glavkos",
 			"Protnet",
-			"ZaDiak"
+			"ZaDiak",
+			"Stam.nikos"
 		]
 	},
 	"linkfilter-all": "Όλα",
 	"linkfilter-submit": "Υποβολή",
 	"linkfilter-submit-title": "Υποβολή συνδέσμου",
+	"linkfilter-submit-no-desc": "Παρακαλώ γράψτε μία περιγραφή για αυτό το σύνδεσμο",
 	"linkfilter-submit-no-title": "Παρακαλώ εισάγετε έναν τίτλο",
 	"linkfilter-submit-no-type": "Επιλέξτε έναν τύπο συνδέσμου.",
 	"linkfilter-edit-title": "Επεξεργασία $1",

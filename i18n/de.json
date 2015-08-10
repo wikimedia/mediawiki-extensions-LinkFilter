@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kghbln"
+			"Kghbln",
+			"Metalhead64"
 		]
 	},
 	"linkapprove": "Akzeptieren von Links",
@@ -15,6 +16,8 @@
 	"linkfilter-all": "Alle",
 	"linkfilter-submit": "Speichern",
 	"linkfilter-submit-title": "Einen Link einreichen",
+	"linkfilter-submit-no-desc": "Bitte gib eine Beschreibung für diesen Link ein",
+	"linkfilter-submit-no-url": "Du musst die URL angeben!",
 	"linkfilter-submit-no-title": "Bitte einen Namen angeben",
 	"linkfilter-submit-no-type": "Die Art des Links auswählen",
 	"linkfilter-edit-title": "$1 bearbeitet",

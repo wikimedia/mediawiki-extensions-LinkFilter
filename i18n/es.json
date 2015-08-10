@@ -16,6 +16,8 @@
 	"linkfilter-all": "Todos",
 	"linkfilter-submit": "Enviar",
 	"linkfilter-submit-title": "Enviar un enlace",
+	"linkfilter-submit-no-desc": "Escribe una descripción para este enlace",
+	"linkfilter-submit-no-url": "Debes proporcionar el URL.",
 	"linkfilter-submit-no-title": "Escribe un título",
 	"linkfilter-submit-no-type": "Elige un tipo de enlace.",
 	"linkfilter-edit-title": "Editar $1",

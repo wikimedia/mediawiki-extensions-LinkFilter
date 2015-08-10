@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Luckas",
-			"Pitort"
+			"Pitort",
+			"Eduardo Martinez"
 		]
 	},
+	"linkfilter-submit-no-desc": "Si us plau, introduïu una descripció per a aquest enllaç",
+	"linkfilter-submit-no-url": "Heu de proporcionar l'URL!",
 	"linkfilter-edit-title": "Modifica $1",
 	"linkfilter-title": "Títol",
 	"linkfilter-description": "Descripció"

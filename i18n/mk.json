@@ -15,6 +15,8 @@
 	"linkfilter-all": "Сите",
 	"linkfilter-submit": "Поднеси",
 	"linkfilter-submit-title": "Поднесување на врска",
+	"linkfilter-submit-no-desc": "Внесете опис на врскава",
+	"linkfilter-submit-no-url": "Мора да укажете URL!",
 	"linkfilter-submit-no-title": "Внесете наслов",
 	"linkfilter-submit-no-type": "Одберете тип на врска.",
 	"linkfilter-edit-title": "Уредување на $1",
