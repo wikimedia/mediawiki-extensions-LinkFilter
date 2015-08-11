@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"아라"
+			"아라",
+			"SeoJeongHo"
 		]
 	},
 	"linkapprove": "링크 승인",
@@ -15,6 +16,8 @@
 	"linkfilter-all": "모두",
 	"linkfilter-submit": "제출",
 	"linkfilter-submit-title": "링크 제출",
+	"linkfilter-submit-no-desc": "이 링크의 설명을 입력해 주십시오",
+	"linkfilter-submit-no-url": "당신은 반드시 URL을 제공해야 합니다!",
 	"linkfilter-submit-no-title": "제목을 입력하세요",
 	"linkfilter-submit-no-type": "링크 유형을 선택하세요.",
 	"linkfilter-edit-title": "$1 편집",
