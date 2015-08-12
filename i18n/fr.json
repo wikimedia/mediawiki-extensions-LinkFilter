@@ -3,7 +3,8 @@
 		"authors": [
 			"Gomoko",
 			"IAlex",
-			"Verdy p"
+			"Verdy p",
+			"SRXcraft"
 		]
 	},
 	"linkapprove": "Approuver les liens",
@@ -17,6 +18,8 @@
 	"linkfilter-all": "Tous",
 	"linkfilter-submit": "Soumettre",
 	"linkfilter-submit-title": "Soumettre un lien",
+	"linkfilter-submit-no-desc": "Veuillez entrer une description pour ce lien",
+	"linkfilter-submit-no-url": "Vous devez fournir l'URL !",
 	"linkfilter-submit-no-title": "Merci d'entrer un titre",
 	"linkfilter-submit-no-type": "Choisir un type de lien.",
 	"linkfilter-edit-title": "Modifier $1",
