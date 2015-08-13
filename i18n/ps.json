@@ -6,8 +6,10 @@
 	},
 	"linkfilter-all": "ټول",
 	"linkfilter-submit": "سپارل",
+	"linkfilter-title": "سرليک",
 	"linkfilter-admin-accept": "منل",
 	"linkfilter-admin-reject": "ردول",
+	"linkfilter-home-title": "$1 تړنې",
 	"linkfilter-home-title-all": "ټولې تړنې",
 	"linkfilter-next": "راتلونکی",
 	"linkfilter-previous": "پخوانی"
