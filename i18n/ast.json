@@ -15,6 +15,8 @@
 	"linkfilter-all": "Toos",
 	"linkfilter-submit": "Unviar",
 	"linkfilter-submit-title": "Unviar un enllaz",
+	"linkfilter-submit-no-desc": "Escribe una descripción pa esti enllaz",
+	"linkfilter-submit-no-url": "Tienes de dar la URL.",
 	"linkfilter-submit-no-title": "Escriba un títulu",
 	"linkfilter-submit-no-type": "Seleicione un tipu d'enllaz.",
 	"linkfilter-edit-title": "Editar $1",
