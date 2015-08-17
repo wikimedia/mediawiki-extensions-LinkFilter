@@ -6,7 +6,8 @@
 			"Steve.rusyn",
 			"SteveR",
 			"Ата",
-			"Translatemyname"
+			"Translatemyname",
+			"Dars"
 		]
 	},
 	"linkapprove": "Затвердити посилання",
@@ -21,6 +22,7 @@
 	"linkfilter-submit": "Подати",
 	"linkfilter-submit-title": "Подати посилання",
 	"linkfilter-submit-no-desc": "Будь ласка, введіть опис для цього посилання",
+	"linkfilter-submit-no-url": "Вам неохідно вказати веб-адресу!",
 	"linkfilter-submit-no-title": "Будь ласка, введіть назву",
 	"linkfilter-submit-no-type": "Оберіть тип зв'язку.",
 	"linkfilter-edit-title": "Редагування $1",
