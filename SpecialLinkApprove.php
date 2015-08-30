@@ -170,7 +170,7 @@ class LinkApprove extends SpecialPage {
 							$this->msg( 'linkfilter-admin-accept' )->text() . "</a>
 						<a href=\"javascript:void(0);\" class=\"action-reject\" data-link-id=\"{$link['id']}\">" .
 							$this->msg( 'linkfilter-admin-reject' )->text() . '</a>
-						<div class="cleared"></div>
+						<div class="visualClear"></div>
 					</div>';
 			$output .= '</div>';
 
@@ -210,7 +210,7 @@ class LinkApprove extends SpecialPage {
 
 		$output .= '</div>
 			</div>
-			<div class="cleared"></div>';
+			<div class="visualClear"></div>';
 
 		$out->addHTML( $output );
 	}

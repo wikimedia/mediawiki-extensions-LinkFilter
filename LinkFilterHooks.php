@@ -156,7 +156,7 @@ class LinkFilterHooks {
 		}
 
 		$output .= '</div>
-				<div class="cleared"></div>';
+				<div class="visualClear"></div>';
 
 		foreach ( $links as $link ) {
 			$output .= '<div class="link-item-hook">

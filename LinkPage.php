@@ -94,7 +94,7 @@ class LinkPage extends Article {
 
 			$wgOut->addHTML( '</div>' );
 		}
-		$wgOut->addHTML( '<div class="cleared"></div>' );
+		$wgOut->addHTML( '<div class="visualClear"></div>' );
 		$wgOut->addHTML( '</div>' );
 
 	}
@@ -210,7 +210,7 @@ class LinkPage extends Article {
 			$output .= $wgOut->parse( $profileData['about'], false );
 		}
 		$output .= '</div>
-			<div class="cleared"></div>
+			<div class="visualClear"></div>
 		</div>';
 
 		return $output;

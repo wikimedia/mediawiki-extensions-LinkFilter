@@ -140,7 +140,7 @@ class LinkSubmit extends SpecialPage {
 				$this->msg( 'linkfilter-approve-links' )->text() . '</a>';
 		}
 
-		$output .= '<div class="cleared"></div>
+		$output .= '<div class="visualClear"></div>
 			</div>
 			<form name="link" id="linksubmit" method="post" action="">
 				<div class="link-submit-title">
@@ -180,7 +180,7 @@ class LinkSubmit extends SpecialPage {
 		$output .= '<div class="lr-right">' .
 			$this->msg( 'linkfilter-instructions' )->inContentLanguage()->parse() .
 		'</div>
-		<div class="cleared"></div>';
+		<div class="visualClear"></div>';
 
 		return $output;
 	}

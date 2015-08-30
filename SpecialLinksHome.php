@@ -83,7 +83,7 @@ class LinksHome extends SpecialPage {
 						$titleObj->getText() .
 					'</a>
 				</div><!-- .listpages-item -->
-				<div class="cleared"></div>' . "\n";
+				<div class="visualClear"></div>' . "\n";
 			}
 		}
 
@@ -183,7 +183,7 @@ class LinksHome extends SpecialPage {
 				$this->msg( 'linkfilter-approve-links' )->text() . '</a>' . "\n";
 		}
 
-		$output .= "\t\t" . '<div class="cleared"></div>
+		$output .= "\t\t" . '<div class="visualClear"></div>
 		</div>' . "\n";
 		$l = new LinkList();
 
@@ -249,7 +249,7 @@ class LinksHome extends SpecialPage {
 							$this->msg( 'linkfilter-comments', $link['comments'] )->parse() .
 						')</a>
 					</div>
-					<div class="cleared"></div>';
+					<div class="visualClear"></div>';
 			$output .= '</div>';
 
 			$x++;
@@ -323,7 +323,7 @@ class LinksHome extends SpecialPage {
 			$output .= '</div>';
 		}
 
-		$output .= '<div class="cleared"></div>' . "\n";
+		$output .= '<div class="visualClear"></div>' . "\n";
 		$out->addHTML( $output );
 	}
 
