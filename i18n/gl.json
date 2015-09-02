@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Toliño"
+			"Toliño",
+			"Banjo"
 		]
 	},
 	"linkapprove": "Aprobar ligazóns",
@@ -15,6 +16,8 @@
 	"linkfilter-all": "Todos",
 	"linkfilter-submit": "Enviar",
 	"linkfilter-submit-title": "Enviar unha ligazón",
+	"linkfilter-submit-no-desc": "Por favor, introduza unha descrición para esta ligazón",
+	"linkfilter-submit-no-url": "Debe engadir a URL!",
 	"linkfilter-submit-no-title": "Escriba un título",
 	"linkfilter-submit-no-type": "Seleccione un tipo de ligazón.",
 	"linkfilter-edit-title": "Editar \"$1\"",
