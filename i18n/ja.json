@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shirayuki"
+			"Shirayuki",
+			"Otokoume"
 		]
 	},
 	"linkapprove": "リンクの承認",
@@ -32,6 +33,7 @@
 	"linkfilter-admin-reject": "却下",
 	"linkfilter-admin-reject-success": "リンクを却下しました",
 	"linkfilter-admin-accept-success": "リンクを承認しました",
+	"linkfilter-in-the-news": "新着情報",
 	"linkfilter-about-submitter": "投稿者について",
 	"linkfilter-comments-of-day": "上位コメント",
 	"linkfilter-comments": "{{PLURAL:$1|$1 件のコメント}}",
