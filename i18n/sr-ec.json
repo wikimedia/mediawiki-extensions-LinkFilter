@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Rancher"
+			"Rancher",
+			"Milicevic01"
 		]
 	},
+	"linkfilter-login-title": "Нисте пријављени",
 	"linkfilter-url": "Адреса"
 }
