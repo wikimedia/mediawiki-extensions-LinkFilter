@@ -18,6 +18,8 @@
 	"linkfilter-all": "Link text; clicking on this links takes the user to Special:LinksHome, which shows all the approved, user-submitted links.\n{{Identical|All}}",
 	"linkfilter-submit": "Link text; clicking on this links takes the user to [[Special:LinkSubmit]], which allows the user to submit a new link for approval.\n{{Identical|Submit}}",
 	"linkfilter-submit-title": "Title of Special:LinkSubmit",
+	"linkfilter-submit-no-desc": "Used as error message in javascript",
+	"linkfilter-submit-no-url": "Used as error message in javascript",
 	"linkfilter-submit-no-title": "Displayed on Special:LinkSubmit to the user via a JavaScript alert() dialog if they forgot to enter a title for the link",
 	"linkfilter-submit-no-type": "Displayed on Special:LinkSubmit to the user via a JavaScript alert() dialog if they forgot to pick a type from the drop-down menu for the link",
 	"linkfilter-edit-title": "Page title of Special:LinkEdit; $1 is the name of the link (the page in the Link: namespace)",
