@@ -32,7 +32,7 @@
 	"linkfilter-submit-button": "送出連結",
 	"linkfilter-home-button": "連結主頁",
 	"linkfilter-submit-success-title": "連結已送出",
-	"linkfilter-submit-success-text": "您的連結已發送以供審核",
+	"linkfilter-submit-success-text": "您的連結已傳送以供核准",
 	"linkfilter-instructions": "您可以[[MediaWiki:Linkfilter-instructions|為使用者新增說明]]。",
 	"linkfilter-admin-instructions": "您可以[[MediaWiki:Linkfilter-admin-instructions|為管理員加入說明]]。",
 	"linkfilter-admin-recent": "最近批准",
