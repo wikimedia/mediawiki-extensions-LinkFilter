@@ -16,7 +16,7 @@
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
 	'name' => 'LinkFilter',
-	'version' => '3.2.1',
+	'version' => '3.2.2',
 	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
 	'descriptionmsg' => 'linkfilter-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:LinkFilter'
@@ -36,13 +36,9 @@ $wgResourceModules['ext.linkFilter'] = array(
 	'position' => 'top' // available since r85616
 );
 
-// Define some constants (namespaces + some other stuff)
+// Define some constants (for namespaces)
 define( 'NS_LINK', 700 );
 define( 'NS_LINK_TALK', 701 );
-
-define( 'LINK_APPROVED_STATUS', 1 );
-define( 'LINK_OPEN_STATUS', 0 );
-define( 'LINK_REJECTED_STATUS', 2 );
 
 // Array of LinkFilter types
 // Key is: number => 'description'

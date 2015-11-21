@@ -188,8 +188,8 @@ class LinksHome extends SpecialPage {
 		$l = new LinkList();
 
 		$type = 0; // FIXME lazy hack --Jack on July 2, 2009
-		$total = $l->getLinkListCount( LINK_APPROVED_STATUS, $type );
-		$links = $l->getLinkList( LINK_APPROVED_STATUS, $type, $per_page, $page, 'link_approved_date' );
+		$total = $l->getLinkListCount( Link::$APPROVED_STATUS, $type );
+		$links = $l->getLinkList( Link::$APPROVED_STATUS, $type, $per_page, $page, 'link_approved_date' );
 		$linkRedirect = SpecialPage::getTitleFor( 'LinkRedirect' );
 		$output .= '<div class="links-home-container">';
 		$link_count = count( $links );
@@ -335,12 +335,10 @@ class LinksHome extends SpecialPage {
 	 * @param $links Array:
 	 */
 	function makeFeed( $type, &$links ) {
-		wfProfileIn( __METHOD__ );
-
 		$feed = new LinkFeed(
 			$this->msg( 'linkfilter-feed-title' )->parse(),
 			'',
-			htmlspecialchars( $this->getPageTitle()->getFullURL() )
+			htmlspecialchars( $this->getPageTitle()->getFullURL(), ENT_QUOTES )
 		);
 
 		$feed->outHeader();
@@ -349,14 +347,12 @@ class LinksHome extends SpecialPage {
 			$item = new FeedItem(
 				'[' . $link['type_name'] . '] ' . $link['title'],
 				str_replace( 'http://', '', $link['url'] ),
-				htmlspecialchars( Title::newFromId( $link['page_id'] )->getFullURL() )
+				htmlspecialchars( Title::newFromId( $link['page_id'] )->getFullURL(), ENT_QUOTES )
 			);
 			$feed->outItem( $item );
 		}
 
 		$feed->outFooter();
-
-		wfProfileOut( __METHOD__ );
 
 		return true;
 	}

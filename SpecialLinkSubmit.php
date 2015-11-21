@@ -80,7 +80,7 @@ class LinkSubmit extends SpecialPage {
 				$link->addLink(
 					$request->getVal( 'lf_title' ),
 					$request->getVal( 'lf_desc' ),
-					htmlspecialchars( $request->getVal( 'lf_URL' ) ),
+					htmlspecialchars( $request->getVal( 'lf_URL' ), ENT_QUOTES ),
 					$request->getInt( 'lf_type' )
 				);
 				// Great success, comrade!

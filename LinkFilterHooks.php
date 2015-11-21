@@ -46,7 +46,7 @@ class LinkFilterHooks {
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update(
 				'link',
-				/* SET */array( 'link_status' => LINK_REJECTED_STATUS ),
+				/* SET */array( 'link_status' => Link::$REJECTED_STATUS ),
 				/* WHERE */array( 'link_page_id' => intval( $article->getID() ) ),
 				__METHOD__
 			);
@@ -134,7 +134,7 @@ class LinkFilterHooks {
 		} else {
 			wfDebugLog( 'LinkFilter', "Loaded linkfilter hook from DB\n" );
 			$l = new LinkList();
-			$links = $l->getLinkList( LINK_APPROVED_STATUS, '', $count, 1, 'link_approved_date' );
+			$links = $l->getLinkList( Link::$APPROVED_STATUS, '', $count, 1, 'link_approved_date' );
 			$wgMemc->set( $key, $links, 60 * 5 );
 		}
 
@@ -144,9 +144,9 @@ class LinkFilterHooks {
 		$output = '<div>
 
 				<div class="linkfilter-links">
-					<a href="' . htmlspecialchars( $link_submit->getFullURL() ) . '">' .
+					<a href="' . htmlspecialchars( $link_submit->getFullURL(), ENT_QUOTES ) . '">' .
 						wfMessage( 'linkfilter-submit' )->plain() .
-					'</a> / <a href="' . htmlspecialchars( $link_all->getFullURL() ) . '">' .
+					'</a> / <a href="' . htmlspecialchars( $link_all->getFullURL(), ENT_QUOTES ) . '">' .
 						wfMessage( 'linkfilter-all' )->plain() . '</a>';
 
 		// Show a link to the link administration panel for privileged users

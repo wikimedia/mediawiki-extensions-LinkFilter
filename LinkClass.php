@@ -12,6 +12,10 @@ class Link {
 	/* private */ function __construct() {
 	}
 
+	static $OPEN_STATUS = 0;
+	static $APPROVED_STATUS = 1;
+	static $REJECTED_STATUS = 2;
+
 	static $link_types = array(
 		1 => 'Arrest Report',
 		2 => 'Awesome',
@@ -27,17 +31,17 @@ class Link {
 
 	public static function getSubmitLinkURL() {
 		$title = SpecialPage::getTitleFor( 'LinkSubmit' );
-		return htmlspecialchars( $title->getFullURL() );
+		return htmlspecialchars( $title->getFullURL(), ENT_QUOTES );
 	}
 
 	public static function getLinkAdminURL() {
 		$title = SpecialPage::getTitleFor( 'LinkApprove' );
-		return htmlspecialchars( $title->getFullURL() );
+		return htmlspecialchars( $title->getFullURL(), ENT_QUOTES );
 	}
 
 	public static function getHomeLinkURL() {
 		$title = SpecialPage::getTitleFor( 'LinksHome' );
-		return htmlspecialchars( $title->getFullURL() );
+		return htmlspecialchars( $title->getFullURL(), ENT_QUOTES );
 	}
 
 	/**
@@ -344,7 +348,7 @@ class LinkList {
 				'type_name' => Link::getLinkType( $row->link_type ),
 				'user_id' => $row->link_submitter_user_id,
 				'user_name' => $row->link_submitter_user_name,
-				'wiki_page' => ( ( $linkPage ) ? htmlspecialchars( $linkPage->getFullURL() ) : null ),
+				'wiki_page' => ( ( $linkPage ) ? htmlspecialchars( $linkPage->getFullURL(), ENT_QUOTES ) : null ),
 				'comments' => ( ( $row->link_comment_count ) ? $row->link_comment_count : 0 )
 			);
 		}
