@@ -3,10 +3,11 @@
 		"authors": [
 			"Luckas",
 			"Pitort",
-			"Eduardo Martinez"
+			"Eduardo Martinez",
+			"Jaumeortola"
 		]
 	},
-	"linkfilter-submit-no-desc": "Si us plau, introduïu una descripció per a aquest enllaç",
+	"linkfilter-submit-no-desc": "Introduïu una descripció per a aquest enllaç",
 	"linkfilter-submit-no-url": "Heu de proporcionar l'URL!",
 	"linkfilter-edit-title": "Modifica $1",
 	"linkfilter-title": "Títol",
