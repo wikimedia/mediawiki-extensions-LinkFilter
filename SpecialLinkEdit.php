@@ -33,8 +33,7 @@ class LinkEdit extends UnlistedSpecialPage {
 
 		// No access for blocked users
 		if ( $user->isBlocked() ) {
-			$out->blockedPage( false );
-			return false;
+			throw new UserBlockedError( $user->getBlock() );
 		}
 
 		// Add CSS & JS

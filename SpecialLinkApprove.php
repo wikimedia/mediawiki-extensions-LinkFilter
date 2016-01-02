@@ -95,19 +95,16 @@ class LinkApprove extends SpecialPage {
 	 */
 	public function execute( $par ) {
 		$out = $this->getOutput();
-		$request = $this->getRequest();
 		$user = $this->getUser();
 
 		// Check for linkadmin permission
 		if ( !$user->isAllowed( 'linkadmin' ) ) {
 			throw new ErrorPageError( 'error', 'badaccess' );
-			return false;
 		}
 
 		// Blocked through Special:Block? No access for you either!
 		if ( $user->isBlocked() ) {
-			$out->blockedPage( false );
-			return false;
+			throw new UserBlockedError( $user->getBlock() );
 		}
 
 		// Is the database locked or not?

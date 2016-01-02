@@ -27,7 +27,6 @@ class LinkSubmit extends SpecialPage {
 		// Anonymous users need to log in first
 		if ( $user->isAnon() ) {
 			throw new ErrorPageError( 'linkfilter-login-title', 'linkfilter-login-text' );
-			return true;
 		}
 
 		// Is the database locked or not?
@@ -38,8 +37,7 @@ class LinkSubmit extends SpecialPage {
 
 		// Blocked through Special:Block? No access for you either
 		if ( $user->isBlocked() ) {
-			$out->blockedPage( false );
-			return false;
+			throw new UserBlockedError( $user->getBlock() );
 		}
 
 		// Add CSS & JS (JS is required by displayAddForm())
