@@ -224,7 +224,6 @@ class LinksHome extends SpecialPage {
 				#$unix = wfTimestamp( TS_MW, $link['approved_timestamp'] );
 				#$weekday = $this->getLanguage()->getWeekdayName( gmdate( 'w', $unix ) + 1 );
 				#$output .= '<div class="links-home-date">' . $weekday .
-				#	wfMsg( 'word-separator' ) . $this->getLanguage()->date( $unix, true ) .
 				#	'</div>';
 			}
 			wfRestoreWarnings(); // okay, so suppressing E_NOTICEs is kinda bad practise, but... -Jack, January 21, 2010
