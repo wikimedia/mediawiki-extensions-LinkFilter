@@ -200,7 +200,6 @@ class LinkFilterHooks {
 				/* WHERE */array( 'link_page_id' => intval( $pageID ) ),
 				__METHOD__
 			);
-			$dbw->commit();
 		}
 		return true;
 	}
@@ -222,7 +221,6 @@ class LinkFilterHooks {
 				/* WHERE */array( 'link_page_id' => intval( $pageID ) ),
 				__METHOD__
 			);
-			$dbw->commit();
 		}
 		return true;
 	}

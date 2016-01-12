@@ -146,7 +146,6 @@ class Link {
 			/* WHERE */array( 'link_id' => intval( $id ) ),
 			__METHOD__
 		);
-		$dbw->commit();
 
 		if ( class_exists( 'UserStatsTrack' ) ) {
 			$stats = new UserStatsTrack( $link['user_id'], $link['user_name'] );

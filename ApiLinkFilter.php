@@ -40,7 +40,6 @@ class ApiLinkFilter extends ApiBase {
 			/* WHERE */array( 'link_id' => intval( $id ) ),
 			__METHOD__
 		);
-		$dbw->commit();
 
 		if ( $status == 1 ) {
 			$l = new Link();
