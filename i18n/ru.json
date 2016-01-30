@@ -5,7 +5,8 @@
 			"DCamer",
 			"Eleferen",
 			"Kaganer",
-			"Okras"
+			"Okras",
+			"Исмаил Садуев"
 		]
 	},
 	"linkapprove": "Одобрить ссылки",
@@ -41,8 +42,8 @@
 	"linkfilter-submitted": "Добавлена $1",
 	"linkfilter-admin-accept": "Принять",
 	"linkfilter-admin-reject": "Отклонить",
-	"linkfilter-admin-reject-success": "Ссылка была отклонена",
-	"linkfilter-admin-accept-success": "Ссылка была принята",
+	"linkfilter-admin-reject-success": "Хьажорг дӀаяьккхина ю",
+	"linkfilter-admin-accept-success": "Хьажорг тӀелаьцна ю",
 	"linkfilter-in-the-news": "В новостях",
 	"linkfilter-about-submitter": "О добавившем",
 	"linkfilter-anonymous": "Анонимный фанатик",
