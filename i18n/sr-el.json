@@ -1,4 +1,9 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": [
+			"Milicevic01"
+		]
+	},
+	"linkfilter-login-title": "Niste prijavljeni",
 	"linkfilter-url": "Adresa"
 }
