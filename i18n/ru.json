@@ -6,7 +6,8 @@
 			"Eleferen",
 			"Kaganer",
 			"Okras",
-			"Исмаил Садуев"
+			"Исмаил Садуев",
+			"Putnik"
 		]
 	},
 	"linkapprove": "Одобрить ссылки",
@@ -42,8 +43,8 @@
 	"linkfilter-submitted": "Добавлена $1",
 	"linkfilter-admin-accept": "Принять",
 	"linkfilter-admin-reject": "Отклонить",
-	"linkfilter-admin-reject-success": "Хьажорг дӀаяьккхина ю",
-	"linkfilter-admin-accept-success": "Хьажорг тӀелаьцна ю",
+	"linkfilter-admin-reject-success": "Ссылка была отклонена",
+	"linkfilter-admin-accept-success": "Ссылка была принята",
 	"linkfilter-in-the-news": "В новостях",
 	"linkfilter-about-submitter": "О добавившем",
 	"linkfilter-anonymous": "Анонимный фанатик",
