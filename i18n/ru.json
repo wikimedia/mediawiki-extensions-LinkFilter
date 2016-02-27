@@ -21,6 +21,8 @@
 	"linkfilter-all": "Все",
 	"linkfilter-submit": "Добавить",
 	"linkfilter-submit-title": "Добавить ссылку",
+	"linkfilter-submit-no-desc": "Пожалуйста, введите описание для этой ссылки",
+	"linkfilter-submit-no-url": "Необходимо указать URL-адрес!",
 	"linkfilter-submit-no-title": "Пожалуйста, введите название",
 	"linkfilter-submit-no-type": "Выберите тип связи.",
 	"linkfilter-edit-title": "Правка $1",
