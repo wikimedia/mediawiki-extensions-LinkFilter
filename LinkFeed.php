@@ -43,8 +43,8 @@ class LinkFeed extends RSSFeed {
 	<item>
 		<title><?php echo $item->getTitle() ?></title>
 		<description><![CDATA[<?php echo $item->getDescription() ?>]]></description>
-		<link><?php echo $url ?></link>
-		<guid isPermaLink="true"><?php echo $url ?></guid>
+		<link><?php echo wfExpandUrl( $url, PROTO_CURRENT ) ?></link>
+		<guid isPermaLink="true"><?php echo wfExpandUrl( $url, PROTO_CURRENT ) ?></guid>
 	</item>
 <?php
 	}
