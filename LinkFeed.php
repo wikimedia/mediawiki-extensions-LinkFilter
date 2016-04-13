@@ -15,9 +15,9 @@ class LinkFeed extends RSSFeed {
 
 		$stuff = '';
 		// This message is used by the ArticleMetaDescription extension
-		$message = wfMessage( 'description' )->inContentLanguage()->text();
+		$message = wfMessage( 'description' )->inContentLanguage();
 		if ( !$message->isDisabled() ) {
-			$stuff = '<description>' . $message . "</description>\n\t\t";
+			$stuff = '<description>' . $message->text() . "</description>\n\t\t";
 		}
 
 		$this->outXmlHeader();
