@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"חיים"
+			"חיים",
+			"Guycn2"
 		]
 	},
 	"linkfilter-anonymous": "קנאי אנונימי",
@@ -10,5 +11,6 @@
 	"linkfilter-next": "הבא",
 	"linkfilter-previous": "הקודם",
 	"linkfilter-description-left": "$1 נותרו",
-	"linkfilter-new-links-title": "קישור חדש"
+	"linkfilter-new-links-title": "קישור חדש",
+	"right-linkadmin": "ניהול קישורים שנשלחו על־ידי משתמשים"
 }
