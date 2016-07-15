@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"George Animal"
+		]
+	},
+	"linksubmit": "Girêdanekê tomar bike",
+	"linkfilter-all": "Hemû",
+	"linkfilter-submit": "Tomar bike",
+	"linkfilter-submit-title": "Girêdanekê tomar bike",
+	"linkfilter-submit-no-desc": "Ji kerema xwe re bo vê girêdanê danasînekê binivîse",
+	"linkfilter-submit-no-title": "Ji kerema xwe re sernavekî binivîse",
+	"linkfilter-edit-title": "$1 biguherîne",
+	"linkfilter-title": "Sernav",
+	"linkfilter-description": "Danasîn",
+	"linkfilter-submit-button": "Girêdanê tomar bike",
+	"linkfilter-admin-accept": "Bipejirîne",
+	"linkfilter-in-the-news": "Di nûçeyan de",
+	"linkfilter-home-title": "$1 girêdan",
+	"linkfilter-home-title-all": "Hemû girêdan",
+	"linkfilter-new-links-title": "Girêdanên nû",
+	"linkfilter-time-days": "{{PLURAL:$1|rojek|$1 roj}}",
+	"linkfilter-time-hours": "{{PLURAL:$1|demjimêrek|$1 demjimêr}}",
+	"linkfilter-edit-summary": "girêdana nû"
+}
