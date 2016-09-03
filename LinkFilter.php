@@ -12,115 +12,14 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-// Extension credits that will show up on Special:Version
-$wgExtensionCredits['other'][] = array(
-	'path' => __FILE__,
-	'name' => 'LinkFilter',
-	'version' => '3.2.2',
-	'author' => array( 'Aaron Wright', 'David Pean', 'Jack Phoenix' ),
-	'descriptionmsg' => 'linkfilter-desc',
-	'url' => 'https://www.mediawiki.org/wiki/Extension:LinkFilter'
-);
-
-// ResourceLoader support for MediaWiki 1.17+
-$wgResourceModules['ext.linkFilter'] = array(
-	'styles' => 'LinkFilter.css',
-	'scripts' => 'LinkFilter.js',
-	'messages' => array(
-		'linkfilter-admin-accept-success', 'linkfilter-admin-reject-success',
-		'linkfilter-submit-no-title', 'linkfilter-submit-no-type',
-		'linkfilter-submit-no-desc', 'linkfilter-submit-no-url'
-	),
-	'localBasePath' => __DIR__,
-	'remoteExtPath' => 'LinkFilter',
-	'position' => 'top' // available since r85616
-);
-
-// Define some constants (for namespaces)
-define( 'NS_LINK', 700 );
-define( 'NS_LINK_TALK', 701 );
-
-// Array of LinkFilter types
-// Key is: number => 'description'
-// For example: 2 => 'Awesome',
-$wgLinkFilterTypes = array(
-	1 => 'Arrest Report',
-	2 => 'Awesome',
-	3 => 'Cool',
-	4 => 'Funny',
-	6 => 'Interesting',
-	7 => 'Obvious',
-	8 => 'OMG WTF?!?',
-	9 => 'Rumor',
-	10 => 'Scary',
-	11 => 'Stupid',
-);
-
-// Internationalization files
-$wgMessagesDirs['LinkFilter'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['LinkFilterAlias'] = __DIR__ . '/Link.alias.php';
-// Namespace translations
-$wgExtensionMessagesFiles['LinkNamespaces'] = __DIR__ . '/Link.namespaces.php';
-
-// Some base classes to be autoloaded
-$wgAutoloadClasses['Link'] = __DIR__ . '/LinkClass.php';
-$wgAutoloadClasses['LinkList'] = __DIR__ . '/LinkClass.php';
-$wgAutoloadClasses['LinkPage'] = __DIR__ . '/LinkPage.php';
-
-// RSS feed class used on Special:LinksHome (replaces the hardcoded feed)
-$wgAutoloadClasses['LinkFeed'] = __DIR__ . '/LinkFeed.php';
-
-// Special pages
-$wgAutoloadClasses['LinksHome'] = __DIR__ . '/SpecialLinksHome.php';
-$wgSpecialPages['LinksHome'] = 'LinksHome';
-
-$wgAutoloadClasses['LinkSubmit'] = __DIR__ . '/SpecialLinkSubmit.php';
-$wgSpecialPages['LinkSubmit'] = 'LinkSubmit';
-
-$wgAutoloadClasses['LinkRedirect'] = __DIR__ . '/SpecialLinkRedirect.php';
-$wgSpecialPages['LinkRedirect'] = 'LinkRedirect';
-
-$wgAutoloadClasses['LinkApprove'] = __DIR__ . '/SpecialLinkApprove.php';
-$wgSpecialPages['LinkApprove'] = 'LinkApprove';
-
-$wgAutoloadClasses['LinkEdit'] = __DIR__ . '/SpecialLinkEdit.php';
-$wgSpecialPages['LinkEdit'] = 'LinkEdit';
-
-// API module used by the JavaScript file
-$wgAutoloadClasses['ApiLinkFilter'] = __DIR__ . '/ApiLinkFilter.php';
-$wgAPIModules['linkfilter'] = 'ApiLinkFilter';
-
-// Default setup for displaying sections
-$wgLinkPageDisplay = array(
-	'leftcolumn' => true,
-	'rightcolumn' => false,
-	'author' => true,
-	'left_ad' => false,
-	'popular_articles' => false,
-	'in_the_news' => false,
-	'comments_of_day' => true,
-	'games' => true,
-	'new_links' => false
-);
-
-// New user right, which is required to approve user-submitted links
-$wgAvailableRights[] = 'linkadmin';
-$wgGroupPermissions['linkadmin']['linkadmin'] = true;
-$wgGroupPermissions['staff']['linkadmin'] = true;
-$wgGroupPermissions['sysop']['linkadmin'] = true;
-
-// Hooked functions
-$wgAutoloadClasses['LinkFilterHooks'] = __DIR__ . '/LinkFilterHooks.php';
-
-// Hooked function registrations
-$wgHooks['TitleMoveComplete'][] = 'LinkFilterHooks::updateLinkFilter';
-$wgHooks['ArticleDelete'][] = 'LinkFilterHooks::deleteLinkFilter';
-$wgHooks['ArticleFromTitle'][] = 'LinkFilterHooks::linkFromTitle';
-$wgHooks['ParserFirstCallInit'][] = 'LinkFilterHooks::registerLinkFilterHook';
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'LinkFilterHooks::applySchemaChanges';
-$wgHooks['CanonicalNamespaces'][] = 'LinkFilterHooks::onCanonicalNamespaces';
-// For the Renameuser extension
-$wgHooks['RenameUserSQL'][] = 'LinkFilterHooks::onUserRename';
-// Interaction with the Comments extension
-$wgHooks['Comment::add'][] = 'LinkFilterHooks::onCommentAdd';
-$wgHooks['Comment::delete'][] = 'LinkFilterHooks::onCommentDelete';
+if ( function_exists( 'wfLoadExtension' ) ) {
+	wfLoadExtension( 'LinkFilter' );
+	$wgMessagesDirs['LinkFilter'] =  __DIR__ . '/i18n';
+	wfWarn(
+		'Deprecated PHP entry point used for LinkFilter extension. Please use wfLoadExtension instead, ' .
+		'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+	);
+	return;
+} else {
+	die( 'This version of the LinkFilter extension requires MediaWiki 1.25+' );
+}
