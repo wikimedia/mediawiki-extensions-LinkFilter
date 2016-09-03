@@ -156,7 +156,8 @@ class LinksHome extends SpecialPage {
 		$wgSupressPageTitle = true;
 
 		// Add CSS & JS
-		$out->addModules( 'ext.linkFilter' );
+		$out->addModuleStyles( 'ext.linkFilter.styles' );
+		$out->addModules( 'ext.linkFilter.scripts' );
 
 		$per_page = 20;
 		$page = $request->getInt( 'page', 1 );

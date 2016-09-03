@@ -117,7 +117,8 @@ class LinkApprove extends SpecialPage {
 		$out->setPageTitle( $this->msg( 'linkfilter-approve-title' )->plain() );
 
 		// Add CSS & JS
-		$out->addModules( 'ext.linkFilter' );
+		$out->addModuleStyles( 'ext.linkFilter.styles' );
+		$out->addModules( 'ext.linkFilter.scripts' );
 
 		$output = '<div class="lr-left">';
 

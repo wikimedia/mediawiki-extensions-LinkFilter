@@ -88,7 +88,7 @@ class LinkFilterHooks {
 			$wgSupressSubTitle = true;
 
 			// Add CSS
-			$wgOut->addModuleStyles( 'ext.linkFilter' );
+			$wgOut->addModuleStyles( 'ext.linkFilter.styles' );
 
 			$article = new LinkPage( $title );
 		}
@@ -117,7 +117,7 @@ class LinkFilterHooks {
 
 		// Add CSS (ParserOutput class only has addModules(), not
 		// addModuleStyles() or addModuleScripts()...strange)
-		$wgOut->addModuleStyles( 'ext.linkFilter' );
+		$wgOut->addModuleStyles( 'ext.linkFilter.styles' );
 
 		if ( isset( $args['count'] ) ) {
 			$count = intval( $args['count'] );
@@ -237,8 +237,7 @@ class LinkFilterHooks {
 	 * @return Boolean: true
 	 */
 	public static function applySchemaChanges( $updater ) {
-		$dir = dirname( __FILE__ );
-		$file = "$dir/link.sql";
+		$file = __DIR__ . '/link.sql';
 		$updater->addExtensionUpdate( array( 'addTable', 'link', $file, true ) );
 		return true;
 	}

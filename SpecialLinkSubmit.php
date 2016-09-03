@@ -41,7 +41,8 @@ class LinkSubmit extends SpecialPage {
 		}
 
 		// Add CSS & JS (JS is required by displayAddForm())
-		$out->addModules( 'ext.linkFilter' );
+		$out->addModuleStyles( 'ext.linkFilter.styles' );
+		$out->addModules( 'ext.linkFilter.scripts' );
 
 		// If the request was POSTed and we haven't already submitted it, start
 		// processing it

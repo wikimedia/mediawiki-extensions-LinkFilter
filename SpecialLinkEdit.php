@@ -37,7 +37,8 @@ class LinkEdit extends UnlistedSpecialPage {
 		}
 
 		// Add CSS & JS
-		$out->addModules( 'ext.linkFilter' );
+		$out->addModuleStyles( 'ext.linkFilter.styles' );
+		$out->addModules( 'ext.linkFilter.scripts' );
 
 		if ( $request->wasPosted() && $_SESSION['alreadysubmitted'] == false ) {
 			$_SESSION['alreadysubmitted'] = true;
