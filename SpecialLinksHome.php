@@ -102,8 +102,8 @@ class LinksHome extends SpecialPage {
 	 * @return HTML or nothing
 	 */
 	function getRandomCasualGame() {
-		if ( function_exists( 'wfGetRandomGameUnit' ) ) {
-			return wfGetRandomGameUnit();
+		if ( class_exists( 'RandomGameUnit' ) ) {
+			return RandomGameUnit::getRandomGameUnit();
 		} else {
 			return '';
 		}
