@@ -3,7 +3,6 @@
  *
  * @file
  * @author Jack Phoenix <jack@countervandalism.net>
- * @date 9 August 2015
  */
 var LinkFilter = {
 	/**
@@ -14,28 +13,25 @@ var LinkFilter = {
 	 * @param {Number} ID of the link to approve or reject
 	 */
 	linkAction: function( action, link_id ) {
-		jQuery( 'div.action-buttons-1' ).hide();
+		$( 'div.action-buttons-1' ).hide();
 
-		jQuery.post(
-			mw.util.wikiScript( 'api' ), {
-				action: 'linkfilter',
-				id: link_id,
-				status: action,
-				format: 'json'
-			},
-			function( data ) {
-				var msg;
-				switch ( action ) {
-					case 1:
-						msg = mw.msg( 'linkfilter-admin-accept-success' );
-						break;
-					case 2:
-						msg = mw.msg( 'linkfilter-admin-reject-success' );
-						break;
-				}
-				jQuery( '#action-buttons-' + link_id ).html( msg ).show( 1000 );
+		( new mw.Api() ).postWithToken( 'edit', {
+			action: 'linkfilter',
+			id: link_id,
+			status: action,
+			format: 'json'
+		} ).done( function( data ) {
+			var msg;
+			switch ( action ) {
+				case 1:
+					msg = mw.msg( 'linkfilter-admin-accept-success' );
+					break;
+				case 2:
+					msg = mw.msg( 'linkfilter-admin-reject-success' );
+					break;
 			}
-		);
+			$( '#action-buttons-' + link_id ).html( msg ).show( 1000 );
+		} );
 	},
 
 	/**
@@ -91,28 +87,28 @@ var LinkFilter = {
 	}
 };
 
-jQuery( document ).ready( function() {
+$( document ).ready( function() {
 	// "Accept" links on Special:LinkApprove
-	jQuery( 'a.action-accept' ).click( function() {
-		var that = jQuery( this );
+	$( 'a.action-accept' ).click( function() {
+		var that = $( this );
 		LinkFilter.linkAction( 1, that.data( 'link-id' ) );
 	} );
 
 	// "Reject" links on Special:LinkApprove
-	jQuery( 'a.action-reject' ).click( function() {
-		var that = jQuery( this );
+	$( 'a.action-reject' ).click( function() {
+		var that = $( this );
 		LinkFilter.linkAction( 2, that.data( 'link-id' ) );
 	} );
 
 	// Textarea on Special:LinkEdit/Special:LinkSubmit
-	jQuery( 'textarea.lr-input' ).bind( 'keyup', function() {
+	$( 'textarea.lr-input' ).bind( 'keyup', function() {
 		LinkFilter.limitText( document.link.lf_desc, 300 );
 	} ).bind( 'keydown', function() {
 		LinkFilter.limitText( document.link.lf_desc, 300 );
 	} );
 
 	// Submit button on Special:LinkEdit/Special:LinkSubmit
-	jQuery( '#link-submit-button' ).click( function() {
+	$( '#link-submit-button' ).click( function() {
 		LinkFilter.submitLink();
 	} );
 } );

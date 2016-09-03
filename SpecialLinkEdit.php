@@ -40,7 +40,12 @@ class LinkEdit extends UnlistedSpecialPage {
 		$out->addModuleStyles( 'ext.linkFilter.styles' );
 		$out->addModules( 'ext.linkFilter.scripts' );
 
-		if ( $request->wasPosted() && $_SESSION['alreadysubmitted'] == false ) {
+		if (
+			$request->wasPosted() &&
+			$_SESSION['alreadysubmitted'] == false &&
+			$user->matchEditToken( $request->getVal( 'wpEditToken' ) )
+		)
+		{
 			$_SESSION['alreadysubmitted'] = true;
 
 			// Update link
@@ -75,7 +80,7 @@ class LinkEdit extends UnlistedSpecialPage {
 		$l = new Link();
 		$link = $l->getLinkByPageID( $request->getInt( 'id' ) );
 
-		if( is_array( $link ) ) {
+		if ( is_array( $link ) && !empty( $link ) ) {
 			$url = htmlspecialchars( $link['url'], ENT_QUOTES );
 			$description = htmlspecialchars( $link['description'], ENT_QUOTES );
 		} else {
@@ -133,8 +138,9 @@ class LinkEdit extends UnlistedSpecialPage {
 		$output .= '</select>
 				<div class="link-submit-button">
 					<input tabindex="5" class="site-button" type="button" id="link-submit-button" value="' . $this->msg( 'linkfilter-submit-button' )->text() . '" />
-				</div>
-			</form>
+				</div>' .
+				Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
+			'</form>
 		</div>';
 
 		$output .= '<div class="lr-right">' .

@@ -46,7 +46,12 @@ class LinkSubmit extends SpecialPage {
 
 		// If the request was POSTed and we haven't already submitted it, start
 		// processing it
-		if ( $request->wasPosted() && $_SESSION['alreadysubmitted'] == false ) {
+		if (
+			$request->wasPosted() &&
+			$_SESSION['alreadysubmitted'] == false &&
+			$user->matchEditToken( $request->getVal( 'wpEditToken' ) )
+		)
+		{
 			$_SESSION['alreadysubmitted'] = true;
 
 			// No link title? Show an error message in that case.
@@ -172,8 +177,9 @@ class LinkSubmit extends SpecialPage {
 		$output .= '</select>
 				<div class="link-submit-button">
 					<input tabindex="5" class="site-button" type="button" id="link-submit-button" value="' . $this->msg( 'linkfilter-submit-button' )->text() . '" />
-				</div>
-			</form>
+				</div>' .
+				Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
+			'</form>
 		</div>';
 
 		$output .= '<div class="lr-right">' .

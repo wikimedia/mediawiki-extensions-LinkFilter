@@ -63,6 +63,14 @@ class ApiLinkFilter extends ApiBase {
 		return true;
 	}
 
+	public function needsToken() {
+		return 'csrf';
+	}
+
+	public function isWriteMode() {
+		return true;
+	}
+
 	/**
 	 * @return String: human-readable module description
 	 */
