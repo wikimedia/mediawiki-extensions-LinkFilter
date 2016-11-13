@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Hamilton Abreu"
 		]
 	},
 	"linkfilter-submit": "Enviar",
@@ -37,7 +38,7 @@
 	"linkfilter-time-seconds": "{{PLURAL:$1|um segundo|$1 segundos}}",
 	"linkfilter-edit-summary": "nova ligação",
 	"linkfilter-no-results": "Não foi encontrada nenhuma página.",
-	"linkfilter-feed-title": "Ligações de {{SITENAME}}",
+	"linkfilter-feed-title": "Ligações da wiki {{SITENAME}}",
 	"group-linkadmin": "Administradores de ligações",
 	"group-linkadmin-member": "{{GENDER:$1|Administrador de ligações|Administradora de ligações|Administrador(a) de ligações}}",
 	"grouppage-linkadmin": "{{ns:project}}:Administradores de ligações"
