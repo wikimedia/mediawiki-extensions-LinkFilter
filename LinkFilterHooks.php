@@ -18,7 +18,7 @@ class LinkFilterHooks {
 	 * @param $newId Integer
 	 * @return Boolean: true
 	 */
-	public static function updateLinkFilter( &$title, &$newTitle, &$user, $oldId, $newId ) {
+	public static function updateLinkFilter( &$title, &$newTitle, $user, $oldId, $newId ) {
 		if ( $title->getNamespace() == NS_LINK ) {
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update(
