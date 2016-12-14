@@ -30,18 +30,18 @@ class LinkPage extends Article {
 
 	function setContent() {
 		// Get the page content for later use
-		$this->pageContent = $this->getContent();
+		$this->pageContent = ContentHandler::getContentText( $this->getContentObject() );
 
 		// If its a redirect, in order to get the *real* content for later use,
 		// we have to load the text for the real page
 		// Note: If $this->getContent is called anywhere before parent::view,
 		// the real article text won't get loaded on the page
-		if ( $this->isRedirect( $this->pageContent ) ) {
+		if ( $this->isRedirect() ) {
 			wfDebugLog( 'LinkFilter', __METHOD__ . "\n" );
 
 			$target = $this->followRedirect();
-			$rarticle = new Article( $target );
-			$this->pageContent = $rarticle->getContent();
+			$page = WikiPage::factory( $target );
+			$this->pageContent = ContentHandler::getContentText( $page->getContent() );
 
 			// if we don't clear, the page content will be [[redirect-blah]],
 			// and not actual page
