@@ -70,5 +70,5 @@
 	"grouppage-linkadmin": "{{ns:project}}:链接管理员",
 	"right-linkadmin": "管理用户提交的链接",
 	"group-linkadmin.css": "/* 这里放置的CSS将只影响链接管理员 */",
-	"group-linkadmin.js": "/* 在此放置的JS只对链接管理员有效 */"
+	"group-linkadmin.js": "/* 这里放置的JS只对链接管理员有效 */"
 }
