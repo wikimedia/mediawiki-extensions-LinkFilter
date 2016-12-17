@@ -4,7 +4,8 @@
 			"Darth Kule",
 			"Shirayuki",
 			"Umherirrender",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Divadsn"
 		]
 	},
 	"linkapprove": "{{doc-special|LinkApprove}}",
@@ -70,5 +71,9 @@
 	"grouppage-linkadmin": "{{doc-group|linkadmin|page}}",
 	"right-linkadmin": "{{doc-right|linkadmin}}",
 	"group-linkadmin.css": "{{doc-group|linkadmin|css}}",
-	"group-linkadmin.js": "{{doc-group|linkadmin|js}}"
+	"group-linkadmin.js": "{{doc-group|linkadmin|js}}",
+	"apihelp-linkfilter-description": "{{doc-apihelp-description|linkfilter}}",
+	"apihelp-linkfilter-param-id": "{{doc-apihelp-param|linkfilter|id}}",
+	"apihelp-linkfilter-param-status": "{{doc-apihelp-param|linkfilter|status}}",
+	"apihelp-linkfilter-example-1": "{{doc-apihelp-example|linkfilter}}"
 }

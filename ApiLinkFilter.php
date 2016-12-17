@@ -72,13 +72,6 @@ class ApiLinkFilter extends ApiBase {
 	}
 
 	/**
-	 * @return String: human-readable module description
-	 */
-	public function getDescription() {
-		return 'Backend API module for approving user-submitted links';
-	}
-
-	/**
 	 * @return Array
 	 */
 	public function getAllowedParams() {
@@ -95,23 +88,12 @@ class ApiLinkFilter extends ApiBase {
 	}
 
 	/**
-	 * Describe the parameters
-	 * @return Array
+	 * @see ApiBase::getExamplesMessages()
 	 */
-	public function getParamDescription() {
-		return array_merge( parent::getParamDescription(), array(
-			'id' => 'Link identifier number',
-			'status' => '1 to accept, 2 to reject'
-		) );
-	}
-
-	/**
-	 * Get examples
-	 * @return Array
-	 */
-	public function getExamples() {
+	public function getExamplesMessages() {
 		return array(
-			'api.php?action=linkfilter&id=37&status=2' => 'Rejects the link #37'
+			'action=linkfilter&id=37&status=2'
+				=> 'apihelp-linkfilter-example-1'
 		);
 	}
 }
