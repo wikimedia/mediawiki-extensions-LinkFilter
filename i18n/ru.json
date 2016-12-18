@@ -7,7 +7,8 @@
 			"Kaganer",
 			"Okras",
 			"Исмаил Садуев",
-			"Putnik"
+			"Putnik",
+			"Kareyac"
 		]
 	},
 	"linkapprove": "Одобрить ссылки",
@@ -70,5 +71,7 @@
 	"group-linkadmin": "Администраторы ссылок",
 	"group-linkadmin-member": "{{GENDER:$1|администратор ссылок}}",
 	"grouppage-linkadmin": "{{ns:project}}:Администраторы ссылок",
-	"right-linkadmin": "Администрировать добавленные участниками ссылки"
+	"right-linkadmin": "Администрировать добавленные участниками ссылки",
+	"apihelp-linkfilter-param-status": "1 принять, 2 отклонить",
+	"apihelp-linkfilter-example-1": "Отклоняет ссылку #37"
 }

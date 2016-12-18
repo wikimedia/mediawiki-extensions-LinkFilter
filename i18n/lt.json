@@ -30,5 +30,8 @@
 	"linkfilter-previous": "ankstesnis",
 	"linkfilter-description-left": "liko $1",
 	"linkfilter-new-links-title": "Naujos nuorodos",
-	"group-linkadmin": "Nuorodos administratoriai"
+	"group-linkadmin": "Nuorodos administratoriai",
+	"apihelp-linkfilter-param-id": "Nuorodos identifikavimo numeris",
+	"apihelp-linkfilter-param-status": "1 - priimti, 2 - atmesti",
+	"apihelp-linkfilter-example-1": "Atmetą #37 nuorodą"
 }
