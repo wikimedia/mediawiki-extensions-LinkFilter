@@ -65,5 +65,6 @@
 	"group-linkadmin": "লিংক প্রশাসক",
 	"group-linkadmin-member": "{{GENDER:$1|লিংক প্রশাসক}}",
 	"grouppage-linkadmin": "{{ns:project}}:লিংক প্রশাসক",
-	"right-linkadmin": "শাসিত ব্যবহারকারীর-জমা দেওয়া লিংক"
+	"right-linkadmin": "শাসিত ব্যবহারকারীর-জমা দেওয়া লিংক",
+	"apihelp-linkfilter-param-status": "গ্রহণ করতে 1, প্রত্যাখ্যান করতে 2"
 }

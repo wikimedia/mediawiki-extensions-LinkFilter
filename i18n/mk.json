@@ -67,5 +67,9 @@
 	"grouppage-linkadmin": "{{ns:project}}:Администратори на врски",
 	"right-linkadmin": "Администрација на врски поднесени од корисници",
 	"group-linkadmin.css": "/* Тука поставениот CSS ќе се применува само врз администратори на врски */",
-	"group-linkadmin.js": "/* Тука поставениот JS ќе се применува само врз администратори на врски */"
+	"group-linkadmin.js": "/* Тука поставениот JS ќе се применува само врз администратори на врски */",
+	"apihelp-linkfilter-description": "Заднина на извршничкиот модул за одобрување на кориснички поднесени врски",
+	"apihelp-linkfilter-param-id": "Број на врската",
+	"apihelp-linkfilter-param-status": "1 за прифаќање, 2 за одбивање",
+	"apihelp-linkfilter-example-1": "Одбиј ја врската бр. 37"
 }

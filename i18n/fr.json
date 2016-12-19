@@ -71,6 +71,7 @@
 	"right-linkadmin": "Administrer les liens soumis par les utilisateurs",
 	"group-linkadmin.css": "/* Le CSS placé ici n’affectera que les administrateurs de liens */",
 	"group-linkadmin.js": "/* Le Javascript placé ici n’affectera que les administrateurs de liens */",
+	"apihelp-linkfilter-description": "Module API du serveur pour approuver les liens soumis par l’utilisateur",
 	"apihelp-linkfilter-param-id": "Numéro d'identification du lien",
 	"apihelp-linkfilter-param-status": "1 pour accepter, 2 pour refuser",
 	"apihelp-linkfilter-example-1": "Refuser le lien numéro 37"
