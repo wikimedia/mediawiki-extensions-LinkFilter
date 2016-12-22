@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"아라",
-			"SeoJeongHo"
+			"SeoJeongHo",
+			"Ykhwong"
 		]
 	},
 	"linkapprove": "링크 승인",
@@ -67,5 +68,6 @@
 	"grouppage-linkadmin": "{{ns:project}}:링크 관리자",
 	"right-linkadmin": "사용자가 제출한 링크 관리",
 	"group-linkadmin.css": "/* 이 CSS 설정은 링크 관리자에만 적용됩니다 */",
-	"group-linkadmin.js": "/* 이 자바스크립트 설정은 링크 관리자에만 적용됩니다 */"
+	"group-linkadmin.js": "/* 이 자바스크립트 설정은 링크 관리자에만 적용됩니다 */",
+	"apihelp-linkfilter-param-status": "1: 수락, 2: 거절"
 }

@@ -65,5 +65,6 @@
 	"group-linkadmin": "Link-Administrateuren",
 	"group-linkadmin-member": "{{GENDER:$1|Link-Administrateur|Link-Administratrice}}",
 	"grouppage-linkadmin": "{{ns:project}}:Link-Administrateuren",
-	"right-linkadmin": "Gestioun vun de Linken déi vun de Benotzer proposéiert goufen"
+	"right-linkadmin": "Gestioun vun de Linken déi vun de Benotzer proposéiert goufen",
+	"apihelp-linkfilter-param-status": "1 fir z'akzeptéieren, 2 fir ze refuséieren"
 }
