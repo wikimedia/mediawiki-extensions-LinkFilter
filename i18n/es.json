@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Armando-Martin",
-			"Macofe"
+			"Macofe",
+			"Dgstranz"
 		]
 	},
 	"linkapprove": "Aprobar enlaces",
@@ -66,5 +67,6 @@
 	"group-linkadmin-member": "{{GENDER:$1|administrador|administradora}} de enlacess",
 	"grouppage-linkadmin": "{{ns:project}}:Administradores de enlaces",
 	"right-linkadmin": "Administrar los enlaces enviados por el usuario",
-	"apihelp-linkfilter-param-status": "1 para aceptar, 2 para rechazar"
+	"apihelp-linkfilter-param-status": "1 para aceptar, 2 para rechazar",
+	"apihelp-linkfilter-example-1": "Rechaza el enlace #37"
 }
