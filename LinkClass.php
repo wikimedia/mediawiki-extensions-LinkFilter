@@ -126,9 +126,16 @@ class Link {
 
 		// Create the wiki page for the newly-approved link
 		$linkTitle = Title::makeTitleSafe( NS_LINK, $link['title'] );
-		$article = new Article( $linkTitle );
-		$article->doEdit( $link['url'], wfMessage( 'linkfilter-edit-summary' )->inContentLanguage()->text() );
-		$newPageId = $article->getID();
+		$page = WikiPage::factory( $linkTitle );
+		$pageContent = ContentHandler::makeContent(
+			$link['url'],
+			$page->getTitle()
+		);
+		$page->doEditContent(
+			$pageContent,
+			wfMessage( 'linkfilter-edit-summary' )->inContentLanguage()->text()
+		);
+		$newPageID = $page->getID();
 
 		// Tie link record to wiki page
 		$dbw = wfGetDB( DB_MASTER );
@@ -140,7 +147,7 @@ class Link {
 		$dbw->update(
 			'link',
 			/* SET */array(
-				'link_page_id' => intval( $newPageId ),
+				'link_page_id' => intval( $newPageID ),
 				'link_approved_date' => $date
 			),
 			/* WHERE */array( 'link_id' => intval( $id ) ),
