@@ -11,7 +11,7 @@
 	"linkapprove": "{{doc-special|LinkApprove}}",
 	"linkshome": "{{doc-special|LinksHome}}",
 	"linksubmit": "{{doc-special|LinkSubmit}}",
-	"linkfilter-desc": "Extension description shown on [[Special:Version]]",
+	"linkfilter-desc": "{{desc|name=LinkFilter|url=https://www.mediawiki.org/wiki/Extension:LinkFilter}}",
 	"linkfilter-nothing-to-approve": "Shown on Special:LinkApprove to link administrators when there are no links to approve.",
 	"linkfilter-no-recently-approved": "Shown on Special:LinkApprove to link administrators if no links have been approved recently.",
 	"linkfilter-no-links-at-all": "Shown on Special:LinksHome if for some reason there is nothing we can display to the user.",
