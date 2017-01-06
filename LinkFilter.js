@@ -87,7 +87,7 @@ var LinkFilter = {
 	}
 };
 
-$( document ).ready( function() {
+$( function() {
 	// "Accept" links on Special:LinkApprove
 	$( 'a.action-accept' ).click( function() {
 		var that = $( this );
@@ -101,9 +101,9 @@ $( document ).ready( function() {
 	} );
 
 	// Textarea on Special:LinkEdit/Special:LinkSubmit
-	$( 'textarea.lr-input' ).bind( 'keyup', function() {
+	$( 'textarea.lr-input' ).on( 'keyup', function() {
 		LinkFilter.limitText( document.link.lf_desc, 300 );
-	} ).bind( 'keydown', function() {
+	} ).on( 'keydown', function() {
 		LinkFilter.limitText( document.link.lf_desc, 300 );
 	} );
 
