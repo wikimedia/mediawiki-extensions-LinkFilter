@@ -328,9 +328,7 @@ class LinkList {
 				'link_id', 'link_page_id', 'link_type', 'link_status',
 				'link_name', 'link_description', 'link_url',
 				'link_submitter_user_id', 'link_submitter_user_name',
-				'link_submit_date', 'UNIX_TIMESTAMP(link_submit_date) AS submit_timestamp',
-				'UNIX_TIMESTAMP(link_approved_date) AS approved_timestamp',
-				'link_comment_count'
+				'link_submit_date', 'link_approved_date', 'link_comment_count'
 			),
 			$where,
 			__METHOD__,
@@ -343,11 +341,11 @@ class LinkList {
 			$linkPage = Title::makeTitleSafe( NS_LINK, $row->link_name );
 			$links[] = array(
 				'id' => $row->link_id,
-				'timestamp' => ( $row->submit_timestamp ),
-				'approved_timestamp' => ( $row->approved_timestamp ),
+				'timestamp' => wfTimestamp( TS_UNIX, $row->link_submit_date ),
+				'approved_timestamp' => wfTimestamp( TS_UNIX, $row->link_approved_date ),
 				'url' => $row->link_url,
 				'title' => $row->link_name,
-				'description' => ( $row->link_description ),
+				'description' => $row->link_description,
 				'page_id' => $row->link_page_id,
 				'type' => $row->link_type,
 				'status' => $row->link_status,
