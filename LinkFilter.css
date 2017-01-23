@@ -1,4 +1,13 @@
 /* CSS for LinkFilter extension */
+
+/**
+ * Hide redundant heading, title is already shown
+ * @see https://phabricator.wikimedia.org/T143145
+ */
+.ns-700 .firstHeading {
+	display: none;
+}
+
 .lr-left {
 	float: left;
 	width: 55%;
@@ -216,11 +225,6 @@ a.action-accept:hover {
 	border-left: 1px solid #dcdcdc;
 	border-bottom: 1px solid #dcdcdc;
 	padding: 10px;
-}
-
-#link-page-middle h1.page-title {
-	margin: 5px 0px 0px 0px !important;
-	line-height: 22px;
 }
 
 #link-page-middle #edit-menu {
@@ -658,12 +662,6 @@ a.action-accept:hover {
 	width: 70%;
 	float: left;
 	padding: 15px 0px 0px 0px;
-}
-
-.links-home-left h1.page-title {
-	padding: 0px 0px 15px 0px;
-	margin: 0px !important;
-	line-height: 24px;
 }
 
 .links-home-right {

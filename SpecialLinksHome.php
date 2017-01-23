@@ -148,12 +148,8 @@ class LinksHome extends SpecialPage {
 	 * @param $par Mixed: parameter passed to the page or null
 	 */
 	public function execute( $par ) {
-		global $wgSupressPageTitle;
-
 		$out = $this->getOutput();
 		$request = $this->getRequest();
-
-		$wgSupressPageTitle = true;
 
 		// Add CSS & JS
 		$out->addModuleStyles( 'ext.linkFilter.styles' );
@@ -174,7 +170,6 @@ class LinksHome extends SpecialPage {
 		$out->setPageTitle( $pageTitle );
 
 		$output = '<div class="links-home-left">' . "\n\t";
-		$output .= '<h1 class="page-title">' . $pageTitle . '</h1>' . "\n\t";
 		$output .= '<div class="link-home-navigation">
 		<a href="' . Link::getSubmitLinkURL() . '">' .
 			$this->msg( 'linkfilter-submit-title' )->text() . '</a>' . "\n";

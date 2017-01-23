@@ -67,7 +67,7 @@ class LinkFilterHooks {
 	 */
 	public static function linkFromTitle( &$title, &$article ) {
 		if ( $title->getNamespace() == NS_LINK ) {
-			global $wgRequest, $wgOut, $wgSupressPageTitle, $wgSupressSubTitle;
+			global $wgRequest, $wgOut;
 			$wgOut->enableClientCache( false );
 
 			if ( $wgRequest->getVal( 'action' ) == 'edit' ) {
@@ -83,9 +83,6 @@ class LinkFilterHooks {
 					);
 				}
 			}
-
-			$wgSupressPageTitle = true;
-			$wgSupressSubTitle = true;
 
 			// Add CSS
 			$wgOut->addModuleStyles( 'ext.linkFilter.styles' );
