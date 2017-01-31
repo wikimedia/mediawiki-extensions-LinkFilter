@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"BeginaFelicysym",
-			"Woytecr"
+			"Woytecr",
+			"Chrumps",
+			"Sp5uhe"
 		]
 	},
 	"linkapprove": "Zatwierdź łącza",
@@ -16,6 +18,8 @@
 	"linkfilter-all": "Wszystkie",
 	"linkfilter-submit": "Zapisz",
 	"linkfilter-submit-title": "Przedłóż łącze",
+	"linkfilter-submit-no-desc": "Wprowadź opis dla tego linku",
+	"linkfilter-submit-no-url": "Należy podać adres URL!",
 	"linkfilter-submit-no-title": "Wprowadź tytuł",
 	"linkfilter-submit-no-type": "Wybierz typ łącza.",
 	"linkfilter-edit-title": "Edytuj $1",
@@ -63,5 +67,6 @@
 	"group-linkadmin": "Administratorzy łącz",
 	"group-linkadmin-member": "{{GENDER:$1|administrator łącz}}",
 	"grouppage-linkadmin": "{{ns:project}}:Administratorzy łącz",
-	"right-linkadmin": "Administruj łączami przedłożonymi przez przez użytkowników"
+	"right-linkadmin": "Administruj łączami przedłożonymi przez przez użytkowników",
+	"apihelp-linkfilter-param-status": "1 aby zaakceptować, 2 aby odrzucić"
 }
