@@ -30,10 +30,7 @@ class LinkSubmit extends SpecialPage {
 		}
 
 		// Is the database locked or not?
-		if ( wfReadOnly() ) {
-			$out->readOnlyPage();
-			return false;
-		}
+		$this->checkReadOnly();
 
 		// Blocked through Special:Block? No access for you either
 		if ( $user->isBlocked() ) {

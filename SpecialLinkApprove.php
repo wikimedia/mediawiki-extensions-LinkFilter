@@ -108,10 +108,7 @@ class LinkApprove extends SpecialPage {
 		}
 
 		// Is the database locked or not?
-		if ( wfReadOnly() ) {
-			$out->readOnlyPage();
-			return false;
-		}
+		$this->checkReadOnly();
 
 		// Set the page title
 		$out->setPageTitle( $this->msg( 'linkfilter-approve-title' )->plain() );

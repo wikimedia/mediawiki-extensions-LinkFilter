@@ -26,10 +26,7 @@ class LinkEdit extends UnlistedSpecialPage {
 		}
 
 		// Is the database locked or not?
-		if ( wfReadOnly() ) {
-			$out->readOnlyPage();
-			return false;
-		}
+		$this->checkReadOnly();
 
 		// No access for blocked users
 		if ( $user->isBlocked() ) {
