@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Toliño",
-			"Banjo"
+			"Banjo",
+			"Elisardojm"
 		]
 	},
 	"linkapprove": "Aprobar ligazóns",
@@ -67,5 +68,8 @@
 	"grouppage-linkadmin": "{{ns:project}}:Administradores das ligazóns",
 	"right-linkadmin": "Administrar as ligazóns enviadas polos usuarios",
 	"group-linkadmin.css": "/* O CSS que se coloque aquí afectará soamente aos administradores das ligazóns */",
-	"group-linkadmin.js": "/* O JS que se coloque aquí afectará soamente aos administradores das ligazóns */"
+	"group-linkadmin.js": "/* O JS que se coloque aquí afectará soamente aos administradores das ligazóns */",
+	"apihelp-linkfilter-param-id": "Número de identificación da ligazón",
+	"apihelp-linkfilter-param-status": "1 para aceptar, 2 para rexeitar",
+	"apihelp-linkfilter-example-1": "Rexeita a ligazón número 37"
 }
