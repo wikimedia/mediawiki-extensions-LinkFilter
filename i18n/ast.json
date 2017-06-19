@@ -66,6 +66,7 @@
 	"grouppage-linkadmin": "{{ns:project}}:Alministradores d'enllaces",
 	"right-linkadmin": "Alministrar los enllaces unviaos polos usuarios",
 	"apihelp-linkfilter-description": "Módulu API del backend p'aprobar enllaces unviaos pol usuariu",
+	"apihelp-linkfilter-summary": "Módulu API del backend p'aprobar enllaces unviaos pol usuariu",
 	"apihelp-linkfilter-param-id": "Númberu d'identificación del enllaz",
 	"apihelp-linkfilter-param-status": "1 p'aceptar, 2 pa refugar",
 	"apihelp-linkfilter-example-1": "Refuga l'enllaz #37"
