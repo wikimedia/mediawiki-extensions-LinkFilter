@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Rancher",
-			"Milicevic01"
+			"Milicevic01",
+			"Obsuser"
 		]
 	},
 	"linkfilter-login-title": "Нисте пријављени",
-	"linkfilter-url": "Адреса"
+	"linkfilter-url": "Адреса",
+	"linkfilter-time-seconds": "{{PLURAL:$1|1 секунда|$1 секунда|$1 секунди}}"
 }

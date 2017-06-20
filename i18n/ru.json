@@ -8,7 +8,8 @@
 			"Okras",
 			"Исмаил Садуев",
 			"Putnik",
-			"Kareyac"
+			"Kareyac",
+			"Facenapalm"
 		]
 	},
 	"linkapprove": "Одобрить ссылки",
@@ -72,6 +73,9 @@
 	"group-linkadmin-member": "{{GENDER:$1|администратор ссылок}}",
 	"grouppage-linkadmin": "{{ns:project}}:Администраторы ссылок",
 	"right-linkadmin": "Администрировать добавленные участниками ссылки",
+	"apihelp-linkfilter-description": "Бэкенд-модуль API для проверки отправленных пользователями ссылок",
+	"apihelp-linkfilter-summary": "Бэкенд-модуль API для проверки отправленных пользователями ссылок",
+	"apihelp-linkfilter-param-id": "Числовой идентификатор ссылки",
 	"apihelp-linkfilter-param-status": "1 принять, 2 отклонить",
 	"apihelp-linkfilter-example-1": "Отклоняет ссылку #37"
 }
