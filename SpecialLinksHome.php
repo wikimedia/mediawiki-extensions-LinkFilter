@@ -98,18 +98,6 @@ class LinksHome extends SpecialPage {
 	}
 
 	/**
-	 * Gets a random casual game if RandomGameUnit extension is installed.
-	 * @return HTML or nothing
-	 */
-	function getRandomCasualGame() {
-		if ( class_exists( 'RandomGameUnit' ) ) {
-			return RandomGameUnit::getRandomGameUnit();
-		} else {
-			return '';
-		}
-	}
-
-	/**
 	 * Gets a wide skyscraper ad unit
 	 * @return HTML
 	 */
