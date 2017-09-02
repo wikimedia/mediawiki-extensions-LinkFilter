@@ -324,7 +324,7 @@ class LinkPage extends Article {
 		}
 
 		if ( class_exists( 'RandomGameUnit' ) ) {
-			$this->getContext->getOutput()->addModuleStyles( 'ext.RandomGameUnit.css' );
+			$this->getContext()->getOutput()->addModuleStyles( 'ext.RandomGameUnit.css' );
 			return RandomGameUnit::getRandomGameUnit();
 		} else {
 			return '';
