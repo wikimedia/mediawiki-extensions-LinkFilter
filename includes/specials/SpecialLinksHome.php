@@ -200,7 +200,7 @@ class LinksHome extends SpecialPage {
 			}
 
 			$border_fix2 = '';
-			wfSuppressWarnings();
+			MediaWiki\suppressWarnings();
 			$date = date( 'l, F j, Y', $link['approved_timestamp'] );
 			if ( $date != $last_date ) {
 				$border_fix2 = ' border-top-fix';
@@ -210,7 +210,7 @@ class LinksHome extends SpecialPage {
 				#$output .= '<div class="links-home-date">' . $weekday .
 				#	'</div>';
 			}
-			wfRestoreWarnings(); // okay, so suppressing E_NOTICEs is kinda bad practise, but... -Jack, January 21, 2010
+			MediaWiki\restoreWarnings(); // okay, so suppressing E_NOTICEs is kinda bad practise, but... -Jack, January 21, 2010
 			$last_date = $date;
 
 			$output .= "<div class=\"link-item-container{$border_fix2}\">

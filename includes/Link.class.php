@@ -87,9 +87,9 @@ class Link {
 
 		$dbw = wfGetDB( DB_MASTER );
 
-		wfSuppressWarnings();
+		MediaWiki\suppressWarnings();
 		$date = date( 'Y-m-d H:i:s' );
-		wfRestoreWarnings();
+		MediaWiki\restoreWarnings();
 
 		$dbw->insert(
 			'link',
@@ -140,9 +140,9 @@ class Link {
 		// Tie link record to wiki page
 		$dbw = wfGetDB( DB_MASTER );
 
-		wfSuppressWarnings();
+		MediaWiki\suppressWarnings();
 		$date = date( 'Y-m-d H:i:s' );
-		wfRestoreWarnings();
+		MediaWiki\restoreWarnings();
 
 		$dbw->update(
 			'link',
