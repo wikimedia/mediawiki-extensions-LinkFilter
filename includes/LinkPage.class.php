@@ -78,7 +78,7 @@ class LinkPage extends Article {
 			$wgOut->addHTML( "<div id=\"categories\">{$cat}</div>" );
 		}
 
-		if ( class_exists( 'Comment' ) ) {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'Comments' ) ) {
 			$wgOut->addWikiText( '<comments/>' );
 		}
 
@@ -323,7 +323,7 @@ class LinkPage extends Article {
 			return '';
 		}
 
-		if ( class_exists( 'RandomGameUnit' ) ) {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'RandomGameUnit' ) ) {
 			$this->getContext()->getOutput()->addModuleStyles( 'ext.RandomGameUnit.css' );
 			return RandomGameUnit::getRandomGameUnit();
 		} else {
