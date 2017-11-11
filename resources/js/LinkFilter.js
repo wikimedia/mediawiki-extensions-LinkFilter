@@ -2,7 +2,6 @@
  * JavaScript for LinkFilter extension
  *
  * @file
- * @author Jack Phoenix <jack@countervandalism.net>
  */
 var LinkFilter = {
 	/**
