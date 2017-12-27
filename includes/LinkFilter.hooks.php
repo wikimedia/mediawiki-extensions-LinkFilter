@@ -235,7 +235,7 @@ class LinkFilterHooks {
 	 */
 	public static function applySchemaChanges( $updater ) {
 		$file = __DIR__ . '/../sql/link.sql';
-		$updater->addExtensionUpdate( array( 'addTable', 'link', $file, true ) );
+		$updater->addExtensionTable( 'link', $file );
 		return true;
 	}
 
