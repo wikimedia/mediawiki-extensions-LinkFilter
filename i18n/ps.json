@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"Baloch Khan"
 		]
 	},
 	"linkfilter-all": "ټول",
@@ -13,5 +14,6 @@
 	"linkfilter-home-title": "$1 تړنې",
 	"linkfilter-home-title-all": "ټولې تړنې",
 	"linkfilter-next": "راتلونکی",
-	"linkfilter-previous": "پخوانی"
+	"linkfilter-previous": "پخوانی",
+	"linkfilter-time-hours": "{{PLURAL:$1|يو ساعت|$1 ساعته}}"
 }
