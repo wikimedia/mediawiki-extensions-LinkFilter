@@ -110,7 +110,7 @@ class LinkFilterHooks {
 	public static function renderLinkFilterHook( $input, $args, $parser ) {
 		global $wgMemc, $wgOut;
 
-		$parser->disableCache();
+		$parser->getOutput()->updateCacheExpiry( 0 );
 
 		// Add CSS (ParserOutput class only has addModules(), not
 		// addModuleStyles() or addModuleScripts()...strange)
