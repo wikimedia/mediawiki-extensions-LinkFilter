@@ -3,7 +3,8 @@
 		"authors": [
 			"Armando-Martin",
 			"Macofe",
-			"Dgstranz"
+			"Dgstranz",
+			"Fitoschido"
 		]
 	},
 	"linkapprove": "Aprobar enlaces",
@@ -24,7 +25,7 @@
 	"linkfilter-edit-title": "Editar $1",
 	"linkfilter-approve-links": "Aprobar enlaces",
 	"linkfilter-submit-another": "Enviar otro enlace",
-	"linkfilter-login-title": "No has iniciado sesión",
+	"linkfilter-login-title": "No has accedido",
 	"linkfilter-login-text": "Debes iniciar sesión para enviar enlaces.",
 	"linkfilter-title": "Título",
 	"linkfilter-type": "Tipo de enlace",
