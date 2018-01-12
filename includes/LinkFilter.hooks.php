@@ -122,7 +122,7 @@ class LinkFilterHooks {
 			$count = 10;
 		}
 
-		$key = wfMemcKey( 'linkfilter', $count );
+		$key = $wgMemc->makeKey( 'linkfilter', $count );
 		$data = $wgMemc->get( $key );
 
 		if ( $data ) {

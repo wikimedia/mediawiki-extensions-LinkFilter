@@ -148,7 +148,7 @@ class LinkPage extends Article {
 	function getCreateDate( $pageId ) {
 		global $wgMemc;
 
-		$key = wfMemcKey( 'page', 'create_date', $pageId );
+		$key = $wgMemc->makeKey( 'page', 'create_date', $pageId );
 		$data = $wgMemc->get( $key );
 
 		if ( !$data ) {
@@ -347,7 +347,7 @@ class LinkPage extends Article {
 		$comments = array();
 
 		// Try cache first
-		$key = wfMemcKey( 'comments-link', 'plus', '24hours' );
+		$key = $wgMemc->makeKey( 'comments-link', 'plus', '24hours' );
 		$wgMemc->delete( $key );
 		$data = $wgMemc->get( $key );
 
