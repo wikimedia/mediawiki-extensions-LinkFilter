@@ -63,7 +63,7 @@
 	"linkfilter-time-minutes": "$1分钟",
 	"linkfilter-time-seconds": "$1秒",
 	"linkfilter-edit-summary": "新链接",
-	"linkfilter-no-results": "没有找到页面。",
+	"linkfilter-no-results": "找不到页面。",
 	"linkfilter-feed-title": "{{SITENAME}}链接",
 	"group-linkadmin": "链接管理员",
 	"group-linkadmin-member": "{{GENDER:$1|链接管理员}}",
