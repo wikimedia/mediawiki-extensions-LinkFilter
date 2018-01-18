@@ -1,9 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Luckas"
+			"Luckas",
+			"Eduardo Addad de Oliveira"
 		]
 	},
+	"linkapprove": "Aprovar hiperligações",
+	"linkshome": "Central de links",
+	"linksubmit": "Enviar uma hiperligação",
+	"linkfilter-desc": "Adiciona páginas especiais novas e um ''hook'' do analisador sintático para o envio, aprovação e rejeição de links",
+	"linkfilter-nothing-to-approve": "De momento não existem links à espera de aprovação.",
 	"linkfilter-submit": "Enviar",
 	"linkfilter-edit-title": "Editar $1",
 	"linkfilter-title": "Título",
