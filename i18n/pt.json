@@ -2,14 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Vitorvicentevalente",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Athena in Wonderland"
 		]
 	},
 	"linkapprove": "Aprovar hiperligações",
-	"linkshome": "Central de links",
+	"linkshome": "Central de hiperligações",
 	"linksubmit": "Enviar uma hiperligação",
-	"linkfilter-desc": "Adiciona páginas especiais novas e um ''hook'' do analisador sintático para o envio, aprovação e rejeição de links",
-	"linkfilter-nothing-to-approve": "De momento não existem links à espera de aprovação.",
+	"linkfilter-desc": "Adiciona páginas especiais novas e um ''hook'' do analisador sintático para o envio, aprovação e rejeição de hiperligações",
+	"linkfilter-nothing-to-approve": "De momento não existem hiperligações à espera de aprovação.",
 	"linkfilter-no-recently-approved": "Não foram aprovadas nenhumas hiperligações recentemente.",
 	"linkfilter-no-links-at-all": "Ainda não foi enviada nenhuma hiperligação ou os administradores ainda não reviram as hiperligações enviadas.",
 	"linkfilter-ago": "há $1 sob <i>$2</i>",
@@ -29,7 +30,7 @@
 	"linkfilter-type": "Tipo de hiperligação",
 	"linkfilter-description": "Descrição",
 	"linkfilter-submit-button": "Enviar hiperligação",
-	"linkfilter-home-button": "Central de links",
+	"linkfilter-home-button": "Central de hiperligações",
 	"linkfilter-submit-success-title": "Hiperligação enviada",
 	"linkfilter-submit-success-text": "A sua hiperligação foi enviada para aprovação",
 	"linkfilter-instructions": "Pode [[MediaWiki:Linkfilter-instructions|acrescentar instruções para utilizadores]].",
@@ -61,13 +62,13 @@
 	"linkfilter-time-seconds": "{{PLURAL:$1|um segundo|$1 segundos}}",
 	"linkfilter-edit-summary": "hiperligação nova",
 	"linkfilter-no-results": "Não foi encontrada nenhuma página.",
-	"linkfilter-feed-title": "Links da wiki {{SITENAME}}",
-	"group-linkadmin": "Administradores de links",
+	"linkfilter-feed-title": "Hiperligações da wiki {{SITENAME}}",
+	"group-linkadmin": "Administradores de hiperligações",
 	"group-linkadmin-member": "{{GENDER:$1|Administrador de hiperligações|Administradora de hiperligações}}",
 	"grouppage-linkadmin": "{{ns:project}}:Administradores de hiperligações",
-	"right-linkadmin": "Administrar links enviados pelos utilizadores",
-	"apihelp-linkfilter-description": "Módulo de bastidores da API para aprovação de links enviados pelos utilizadores",
-	"apihelp-linkfilter-summary": "Módulo de bastidores da API para aprovação de links enviados pelos utilizadores",
+	"right-linkadmin": "Administrar hiperligações enviadas pelos utilizadores",
+	"apihelp-linkfilter-description": "Módulo de bastidores da API para aprovação de hiperligações enviadas pelos utilizadores",
+	"apihelp-linkfilter-summary": "Módulo de bastidores da API para aprovação de hiperligações enviadas pelos utilizadores",
 	"apihelp-linkfilter-param-id": "Número de identificação da hiperligação",
 	"apihelp-linkfilter-param-status": "1 para aceitar, 2 para rejeitar",
 	"apihelp-linkfilter-example-1": "Rejeita a hiperligação n.º 37"
