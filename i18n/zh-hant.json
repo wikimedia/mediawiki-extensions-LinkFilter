@@ -5,7 +5,8 @@
 			"Shirayuki",
 			"LNDDYL",
 			"Cwlin0416",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Kly"
 		]
 	},
 	"linkapprove": "批准連結",
@@ -19,6 +20,8 @@
 	"linkfilter-all": "全部",
 	"linkfilter-submit": "提交",
 	"linkfilter-submit-title": "提交連結",
+	"linkfilter-submit-no-desc": "請輸入有關此連結的描述",
+	"linkfilter-submit-no-url": "您必須要提供 URL！",
 	"linkfilter-submit-no-title": "請輸入標題",
 	"linkfilter-submit-no-type": "挑選一個連結類型。",
 	"linkfilter-edit-title": "編輯$1",
@@ -66,5 +69,10 @@
 	"group-linkadmin": "連結管理員",
 	"group-linkadmin-member": "{{GENDER:$1|連結管理員}}",
 	"grouppage-linkadmin": "{{ns:project}}:連結管理員",
-	"right-linkadmin": "管理使用者提交的連結"
+	"right-linkadmin": "管理使用者提交的連結",
+	"apihelp-linkfilter-description": "用於核准使用者所提交連結的後端 API 模組",
+	"apihelp-linkfilter-summary": "用於核准使用者所提交連結的後端 API 模組",
+	"apihelp-linkfilter-param-id": "連結識別號碼",
+	"apihelp-linkfilter-param-status": "1 為接受；2 為拒絕",
+	"apihelp-linkfilter-example-1": "拒絕連結 #37"
 }
