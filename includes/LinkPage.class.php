@@ -160,7 +160,7 @@ class LinkPage extends Article {
 				__METHOD__,
 				array( 'ORDER BY' => 'rev_timestamp ASC' )
 			);
-			$wgMemc->set( $key, $createDate );
+			$wgMemc->set( $key, $createDate, 7 * 86400 );
 		} else {
 			wfDebugLog( 'LinkFilter', "Loading create_date for page {$pageId} from cache\n" );
 			$createDate = $data;
