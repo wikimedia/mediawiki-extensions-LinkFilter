@@ -13,10 +13,10 @@ class ApiLinkFilter extends ApiBase {
 		// Get the request parameters
 		$params = $this->extractRequestParams();
 
-		MediaWiki\suppressWarnings();
+		Wikimedia\suppressWarnings();
 		$id = $params['id'];
 		$status = $params['status'];
-		MediaWiki\restoreWarnings();
+		Wikimedia\restoreWarnings();
 
 		// Make sure that we have the parameters we need and that their datatypes
 		// are even somewhat sane
