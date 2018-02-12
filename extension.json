@@ -114,8 +114,7 @@
 	},
 	"ResourceModules": {
 		"ext.linkFilter.styles": {
-			"styles": "resources/css/LinkFilter.css",
-			"position": "top"
+			"styles": "resources/css/LinkFilter.css"
 		},
 		"ext.linkFilter.scripts": {
 			"scripts": "resources/js/LinkFilter.js",
@@ -124,8 +123,7 @@
 				"linkfilter-admin-accept-success", "linkfilter-admin-reject-success",
 				"linkfilter-submit-no-title", "linkfilter-submit-no-type",
 				"linkfilter-submit-no-desc", "linkfilter-submit-no-url"
-			],
-			"position": "bottom"
+			]
 		}
 	},
 	"AvailableRights": [
