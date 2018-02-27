@@ -72,6 +72,7 @@
 		"LinkList": "includes/LinkList.class.php",
 		"LinkPage": "includes/LinkPage.class.php",
 		"LinkFeed": "includes/LinkFeed.class.php",
+		"LinkStatus": "includes/LinkStatus.php",
 		"LinkFilterHooks": "includes/LinkFilter.hooks.php",
 		"LinkApprove": "includes/specials/SpecialLinkApprove.php",
 		"LinkEdit": "includes/specials/SpecialLinkEdit.php",

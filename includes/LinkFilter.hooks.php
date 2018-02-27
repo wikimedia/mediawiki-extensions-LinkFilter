@@ -46,7 +46,7 @@ class LinkFilterHooks {
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update(
 				'link',
-				/* SET */array( 'link_status' => Link::$REJECTED_STATUS ),
+				/* SET */array( 'link_status' => LinkStatus::REJECTED ),
 				/* WHERE */array( 'link_page_id' => intval( $article->getID() ) ),
 				__METHOD__
 			);
@@ -131,7 +131,7 @@ class LinkFilterHooks {
 		} else {
 			wfDebugLog( 'LinkFilter', "Loaded linkfilter hook from DB\n" );
 			$l = new LinkList();
-			$links = $l->getLinkList( Link::$APPROVED_STATUS, '', $count, 1, 'link_approved_date' );
+			$links = $l->getLinkList( LinkStatus::APPROVED, '', $count, 1, 'link_approved_date' );
 			$wgMemc->set( $key, $links, 60 * 5 );
 		}
 

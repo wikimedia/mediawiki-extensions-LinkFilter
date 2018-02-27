@@ -172,8 +172,8 @@ class LinksHome extends SpecialPage {
 		$l = new LinkList();
 
 		$type = 0; // FIXME lazy hack --Jack on July 2, 2009
-		$total = $l->getLinkListCount( Link::$APPROVED_STATUS, $type );
-		$links = $l->getLinkList( Link::$APPROVED_STATUS, $type, $per_page, $page, 'link_approved_date' );
+		$total = $l->getLinkListCount( LinkStatus::APPROVED, $type );
+		$links = $l->getLinkList( LinkStatus::APPROVED, $type, $per_page, $page, 'link_approved_date' );
 		$linkRedirect = SpecialPage::getTitleFor( 'LinkRedirect' );
 		$output .= '<div class="links-home-container">';
 		$link_count = count( $links );

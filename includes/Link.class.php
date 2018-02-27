@@ -12,10 +12,6 @@ class Link {
 	/* private */ function __construct() {
 	}
 
-	static $OPEN_STATUS = 0;
-	static $APPROVED_STATUS = 1;
-	static $REJECTED_STATUS = 2;
-
 	static $link_types = array(
 		1 => 'Arrest Report',
 		2 => 'Awesome',

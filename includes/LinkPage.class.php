@@ -293,7 +293,7 @@ class LinkPage extends Article {
 
 		$linkRedirect = SpecialPage::getTitleFor( 'LinkRedirect' );
 		$l = new LinkList();
-		$links = $l->getLinkList( Link::$APPROVED_STATUS, '', 7, 0 );
+		$links = $l->getLinkList( LinkStatus::APPROVED, '', 7, 0 );
 
 		foreach ( $links as $link ) {
 			$output .= '<div class="link-recent">

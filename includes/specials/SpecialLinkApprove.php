@@ -121,7 +121,7 @@ class LinkApprove extends SpecialPage {
 
 		$l = new LinkList();
 
-		$links = $l->getLinkList( Link::$OPEN_STATUS, /*$type*/0, 0, 0 );
+		$links = $l->getLinkList( LinkStatus::OPEN, /*$type*/0, 0, 0 );
 		$links_count = count( $links );
 		$x = 1;
 
@@ -182,7 +182,7 @@ class LinkApprove extends SpecialPage {
 				<h3>' . $this->msg( 'linkfilter-admin-recent' )->text() . '</h3>';
 
 		$l = new LinkList();
-		$links = $l->getLinkList( Link::$APPROVED_STATUS, /*$type*/0, 10, 0, 'link_approved_date' );
+		$links = $l->getLinkList( LinkStatus::APPROVED, /*$type*/0, 10, 0, 'link_approved_date' );
 
 		// Nothing has been approved recently? Okay...
 		if ( count( $links ) <= 0 ) {
