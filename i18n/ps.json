@@ -5,15 +5,21 @@
 			"Baloch Khan"
 		]
 	},
+	"linkfilter-ago": "$1  مخکې لاندې <i>$2</i>",
 	"linkfilter-all": "ټول",
 	"linkfilter-submit": "سپارل",
+	"linkfilter-edit-title": "$1 سمون",
 	"linkfilter-title": "سرليک",
 	"linkfilter-description": "څرگندونه",
+	"linkfilter-submittedby": "'''سپارنه د''': [[User:$1|$1]] لخوا",
 	"linkfilter-admin-accept": "منل",
 	"linkfilter-admin-reject": "ردول",
 	"linkfilter-home-title": "$1 تړنې",
 	"linkfilter-home-title-all": "ټولې تړنې",
 	"linkfilter-next": "راتلونکی",
 	"linkfilter-previous": "پخوانی",
-	"linkfilter-time-hours": "{{PLURAL:$1|يو ساعت|$1 ساعته}}"
+	"linkfilter-time-days": "{{PLURAL:$1|يوه ورځ|$1 ورځې}}",
+	"linkfilter-time-hours": "{{PLURAL:$1|يو ساعت|$1 ساعته}}",
+	"linkfilter-time-minutes": "{{PLURAL:$1|يوه دقيقه|$1 دقیقي}}",
+	"linkfilter-time-seconds": "{{PLURAL:$1|يوه ثانيه|$1 ثانيې}}"
 }
