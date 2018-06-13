@@ -9,9 +9,11 @@
 		]
 	},
 	"linkapprove": "Έγκριση συνδέσμων",
+	"linkshome": "Συνδέει την αρχική",
 	"linksubmit": "Υποβολή συνδέσμου",
 	"linkfilter-nothing-to-approve": "Δεν υπάρχουν σύνδεσμοι που περιμένουν έγκριση προς το παρόν.",
 	"linkfilter-no-recently-approved": "Δεν εγκρίθηκαν σύνδεσμοι πρόσφατα.",
+	"linkfilter-ago": "$1 πριν υπό το <i>$2</i>",
 	"linkfilter-all": "Όλα",
 	"linkfilter-submit": "Υποβολή",
 	"linkfilter-submit-title": "Υποβολή συνδέσμου",
@@ -28,9 +30,12 @@
 	"linkfilter-type": "Τύπος συνδέσμου",
 	"linkfilter-description": "Περιγραφή",
 	"linkfilter-submit-button": "Υποβολή συνδέσμου",
+	"linkfilter-home-button": "Συνδέει την αρχική",
 	"linkfilter-submit-success-title": "Ο σύνδεσμος υποβλήθηκε",
 	"linkfilter-submit-success-text": "Ο σύνδεσμος σας έχει σταλεί για έγκριση",
 	"linkfilter-admin-recent": "Εγκρίθηκε πρόσφατα",
+	"linkfilter-approve-title": "Σύνδεση διαχείρισης",
+	"linkfilter-submittedby": "'''Υπεβλήθη από''': [[User:$1|$1]]",
 	"linkfilter-submitted": "Υποβλήθηκε $1",
 	"linkfilter-admin-accept": "Αποδοχή",
 	"linkfilter-admin-reject": "Απόρριψη",
@@ -56,5 +61,6 @@
 	"linkfilter-edit-summary": "νέος σύνδεσμος",
 	"linkfilter-no-results": "Δεν βρέθηκαν σελίδες.",
 	"linkfilter-feed-title": "Σύνδεσμοι {{SITENAME}}",
+	"group-linkadmin": "Σύνδεση διαχειριστών",
 	"apihelp-linkfilter-example-1": "Απορρίπτει τον σύνδεσμο #37"
 }
