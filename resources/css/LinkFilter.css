@@ -106,6 +106,8 @@
 .admin-title {
 	font-size: 17px;
 	padding: 0px 0px 10px 0px;
+	/* Prevent long link titles from overflowing (T156133) */
+	word-break: break-all;
 }
 
 .admin-submitted {
@@ -146,6 +148,8 @@ a.action-accept:hover {
 
 .approved-link {
 	padding: 0px 0px 6px 0px;
+	/* Prevent long link titles from overflowing (T156133) */
+	word-break: break-all;
 }
 
 .approved-link a {
@@ -166,6 +170,8 @@ a.action-accept:hover {
 
 .link-url {
 	padding-top: 10px;
+	/* Prevent long link titles from overflowing (T156133) */
+	word-break: break-all;
 }
 
 .link-type {
