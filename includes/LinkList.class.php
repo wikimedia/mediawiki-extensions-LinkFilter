@@ -16,7 +16,7 @@ class LinkList {
 	 * @param $order String: ORDER BY clause for SQL query.
 	 */
 	public function getLinkList( $status, $type, $limit = 0, $page = 0, $order = 'link_submit_date' ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		$params['ORDER BY'] = "$order DESC";
 		if ( $limit ) {
@@ -80,7 +80,7 @@ class LinkList {
 	 * @return Integer: number of links matching the given criteria
 	 */
 	public function getLinkListCount( $status, $type ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		$where = [];
 		if ( $type > 0 ) {
@@ -90,7 +90,7 @@ class LinkList {
 			$where['link_status'] = $status;
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'link',
 			[ 'COUNT(*) AS count' ],

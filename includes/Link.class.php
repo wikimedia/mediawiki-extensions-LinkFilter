@@ -169,7 +169,7 @@ class Link {
 			return '';
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'link',
 			[
@@ -247,7 +247,7 @@ class Link {
 			return '';
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		$res = $dbr->select(
 			'link',
