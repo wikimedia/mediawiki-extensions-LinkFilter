@@ -12,7 +12,7 @@ class Link {
 	/* private */ function __construct() {
 	}
 
-	static $link_types = array(
+	static $link_types = [
 		1 => 'Arrest Report',
 		2 => 'Awesome',
 		3 => 'Cool',
@@ -23,7 +23,7 @@ class Link {
 		9 => 'Rumor',
 		10 => 'Scary',
 		11 => 'Stupid'
-	);
+	];
 
 	public static function getSubmitLinkURL() {
 		$title = SpecialPage::getTitleFor( 'LinkSubmit' );
@@ -89,7 +89,7 @@ class Link {
 
 		$dbw->insert(
 			'link',
-			array(
+			[
 				'link_name' => $title,
 				'link_page_id' => 0,
 				'link_url' => $url,
@@ -99,7 +99,7 @@ class Link {
 				'link_submitter_user_id' => $wgUser->getID(),
 				'link_submitter_user_name' => $wgUser->getName(),
 				'link_submit_date' => $date
-			),
+			],
 			__METHOD__
 		);
 
@@ -142,11 +142,11 @@ class Link {
 
 		$dbw->update(
 			'link',
-			/* SET */array(
+			[
 				'link_page_id' => intval( $newPageID ),
 				'link_approved_date' => $date
-			),
-			/* WHERE */array( 'link_id' => intval( $id ) ),
+			],
+			[ 'link_id' => intval( $id ) ],
 			__METHOD__
 		);
 
@@ -172,22 +172,22 @@ class Link {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			'link',
-			array(
+			[
 				'link_id', 'link_name', 'link_url', 'link_description',
 				'link_type', 'link_status', 'link_page_id',
 				'link_submitter_user_id', 'link_submitter_user_name'
-			),
-			array( 'link_page_id' => $pageId ),
+			],
+			[ 'link_page_id' => $pageId ],
 			__METHOD__,
-			array(
+			[
 				'OFFSET' => 0,
 				'LIMIT' => 1
-			)
+			]
 		);
 
 		$row = $dbr->fetchObject( $res );
 
-		$link = array();
+		$link = [];
 		if ( $row ) {
 			$link['id'] = $row->link_id;
 			$link['title'] = $row->link_name;
@@ -251,21 +251,21 @@ class Link {
 
 		$res = $dbr->select(
 			'link',
-			array(
+			[
 				'link_id', 'link_name', 'link_url', 'link_description',
 				'link_type', 'link_status', 'link_page_id',
 				'link_submitter_user_id', 'link_submitter_user_name'
-			),
-			array( 'link_id' => $id ),
+			],
+			[ 'link_id' => $id ],
 			__METHOD__,
-			array(
+			[
 				'OFFSET' => 0,
 				'LIMIT' => 1
-			)
+			]
 		);
 
 		$row = $dbr->fetchObject( $res );
-		$link = array();
+		$link = [];
 		if ( $row ) {
 			$link['id'] = $row->link_id;
 			$link['title'] = $row->link_name;

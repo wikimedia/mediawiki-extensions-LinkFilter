@@ -4,7 +4,6 @@
  *
  * @file
  * @ingroup API
- * @date 29 August 2013
  * @see http://www.mediawiki.org/wiki/API:Extensions#ApiSampleApiExtension.php
  */
 class ApiLinkFilter extends ApiBase {
@@ -36,8 +35,8 @@ class ApiLinkFilter extends ApiBase {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->update(
 			'link',
-			/* SET */array( 'link_status' => intval( $status ) ),
-			/* WHERE */array( 'link_id' => intval( $id ) ),
+			[ 'link_status' => intval( $status ) ],
+			[ 'link_id' => intval( $id ) ],
 			__METHOD__
 		);
 
@@ -48,7 +47,7 @@ class ApiLinkFilter extends ApiBase {
 
 		// Top level
 		$this->getResult()->addValue( null, $this->getModuleName(),
-			array( 'result' => 'ok' )
+			[ 'result' => 'ok' ]
 		);
 
 		return true;
@@ -57,7 +56,7 @@ class ApiLinkFilter extends ApiBase {
 	/**
 	 * Does this module require a POST request instead of a standard GET?
 	 *
-	 * @return Boolean
+	 * @return bool
 	 */
 	function mustBePosted() {
 		return true;
@@ -72,28 +71,28 @@ class ApiLinkFilter extends ApiBase {
 	}
 
 	/**
-	 * @return Array
+	 * @return array
 	 */
 	public function getAllowedParams() {
-		return array(
-			'id' => array(
+		return [
+			'id' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => true
-			),
-			'status' => array(
+			],
+			'status' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => true
-			),
-		);
+			],
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	public function getExamplesMessages() {
-		return array(
+		return [
 			'action=linkfilter&id=37&status=2'
 				=> 'apihelp-linkfilter-example-1'
-		);
+		];
 	}
 }

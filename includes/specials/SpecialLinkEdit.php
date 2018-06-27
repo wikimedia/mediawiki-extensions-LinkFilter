@@ -49,14 +49,14 @@ class LinkEdit extends UnlistedSpecialPage {
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update(
 				'link',
-				array(
+				[
 					'link_url' => $_POST['lf_URL'],
 					'link_description' => $_POST['lf_desc'],
 					'link_type' => intval( $_POST['lf_type'] )
-				),
-				/* WHERE */array(
+				],
+				[
 					'link_page_id' => $request->getInt( 'id' )
-				),
+				],
 				__METHOD__
 			);
 

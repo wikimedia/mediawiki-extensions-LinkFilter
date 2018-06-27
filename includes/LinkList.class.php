@@ -35,23 +35,23 @@ class LinkList {
 
 		$dbr = wfGetDB( DB_MASTER );
 		$res = $dbr->select(
-			array( 'link' ),
-			array(
+			[ 'link' ],
+			[
 				'link_id', 'link_page_id', 'link_type', 'link_status',
 				'link_name', 'link_description', 'link_url',
 				'link_submitter_user_id', 'link_submitter_user_name',
 				'link_submit_date', 'link_approved_date', 'link_comment_count'
-			),
+			],
 			$where,
 			__METHOD__,
 			$params
 		);
 
-		$links = array();
+		$links = [];
 
 		foreach ( $res as $row ) {
 			$linkPage = Title::makeTitleSafe( NS_LINK, $row->link_name );
-			$links[] = array(
+			$links[] = [
 				'id' => $row->link_id,
 				'timestamp' => wfTimestamp( TS_UNIX, $row->link_submit_date ),
 				'approved_timestamp' => wfTimestamp( TS_UNIX, $row->link_approved_date ),
@@ -66,7 +66,7 @@ class LinkList {
 				'user_name' => $row->link_submitter_user_name,
 				'wiki_page' => ( ( $linkPage ) ? htmlspecialchars( $linkPage->getFullURL(), ENT_QUOTES ) : null ),
 				'comments' => ( ( $row->link_comment_count ) ? $row->link_comment_count : 0 )
-			);
+			];
 		}
 
 		return $links;
@@ -82,7 +82,7 @@ class LinkList {
 	public function getLinkListCount( $status, $type ) {
 		$dbr = wfGetDB( DB_SLAVE );
 
-		$where = array();
+		$where = [];
 		if ( $type > 0 ) {
 			$where['link_type'] = $type;
 		}
@@ -93,7 +93,7 @@ class LinkList {
 		$dbr = wfGetDB( DB_SLAVE );
 		$s = $dbr->selectRow(
 			'link',
-			array( 'COUNT(*) AS count' ),
+			[ 'COUNT(*) AS count' ],
 			$where,
 			__METHOD__
 		);

@@ -114,10 +114,10 @@ class LinkPage extends Article {
 			true
 		);
 		$linkRedirect = SpecialPage::getTitleFor( 'LinkRedirect' );
-		$url = htmlspecialchars( $linkRedirect->getFullURL( array(
+		$url = htmlspecialchars( $linkRedirect->getFullURL( [
 			'link' => 'true',
 			'url' => $this->link['url']
-		) ), ENT_QUOTES );
+		] ), ENT_QUOTES );
 		$output = '<div class="link-container">
 				<div class="link-url">
 					<span class="link-type">'
@@ -156,9 +156,9 @@ class LinkPage extends Article {
 			$createDate = $dbr->selectField(
 				'revision',
 				'rev_timestamp',
-				array( 'rev_page' => intval( $pageId ) ),
+				[ 'rev_page' => intval( $pageId ) ],
 				__METHOD__,
-				array( 'ORDER BY' => 'rev_timestamp ASC' )
+				[ 'ORDER BY' => 'rev_timestamp ASC' ]
 			);
 			$wgMemc->set( $key, $createDate, 7 * 86400 );
 		} else {
@@ -344,7 +344,7 @@ class LinkPage extends Article {
 			return '';
 		}
 
-		$comments = array();
+		$comments = [];
 
 		// Try cache first
 		$key = $wgMemc->makeKey( 'comments-link', 'plus', '24hours' );
@@ -359,30 +359,30 @@ class LinkPage extends Article {
 
 			$dbr = wfGetDB( DB_MASTER );
 			$res = $dbr->select(
-				array( 'Comments', 'page' ),
-				array(
+				[ 'Comments', 'page' ],
+				[
 					'Comment_Username', 'comment_ip', 'comment_text',
 					'comment_date', 'Comment_user_id', 'CommentID',
 					'IFNULL(Comment_Plus_Count - Comment_Minus_Count,0) AS Comment_Score',
 					'Comment_Plus_Count AS CommentVotePlus',
 					'Comment_Minus_Count AS CommentVoteMinus',
 					'Comment_Parent_ID', 'page_title', 'page_namespace'
-				),
-				array(
+				],
+				[
 					'comment_page_id = page_id',
 					'UNIX_TIMESTAMP(comment_date) > ' . ( time() - ( 60 * 60 * 24 ) ),
 					'page_namespace = ' . NS_LINK
-				),
+				],
 				__METHOD__,
-				array(
+				[
 					'ORDER BY' => '(Comment_Plus_Count) DESC',
 					'OFFSET' => 0,
 					'LIMIT' => 5
-				)
+				]
 			);
 
 			foreach ( $res as $row ) {
-				$comments[] = array(
+				$comments[] = [
 					'user_name' => $row->Comment_Username,
 					'user_id' => $row->Comment_user_id,
 					'title' => $row->page_title,
@@ -390,7 +390,7 @@ class LinkPage extends Article {
 					'comment_id' => $row->CommentID,
 					'plus_count' => $row->CommentVotePlus,
 					'comment_text' => $row->comment_text
-				);
+				];
 			}
 			$wgMemc->set( $key, $comments, 60 * 15 );
 		}

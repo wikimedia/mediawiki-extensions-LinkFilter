@@ -134,7 +134,7 @@ class LinkApprove extends SpecialPage {
 		foreach ( $links as $link ) {
 			$linkText = preg_replace_callback(
 				'/(<a[^>]*>)(.*?)(<\/a>)/i',
-				array( 'LinkApprove', 'cutLinkText' ),
+				[ 'LinkApprove', 'cutLinkText' ],
 				"<a href=\"{$link['url']}\" target=\"new\">{$link['url']}</a>"
 			);
 

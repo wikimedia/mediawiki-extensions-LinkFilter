@@ -47,29 +47,29 @@ class LinksHome extends SpecialPage {
 		// This query is a lot simpler than the ugly one used by BlogPage et
 		// al. which uses three tables and has that nasty subquery
 		$res = $dbr->select(
-			array( 'link', 'page' ),
-			array(
+			[ 'link', 'page' ],
+			[
 				'DISTINCT link_page_id', 'page_id', 'page_title',
 				'page_is_redirect'
-			),
-			array(
+			],
+			[
 				'link_comment_count >= 5',
 				'link_page_id = page_id',
 				'page_is_redirect' => 0
-			),
+			],
 			__METHOD__,
-			array(
+			[
 				'ORDER BY' => 'page_id DESC',
 				'LIMIT' => 7
-			)
+			]
 		);
 
-		$popularLinks = array();
+		$popularLinks = [];
 		foreach ( $res as $row ) {
-			$popularLinks[] = array(
+			$popularLinks[] = [
 				'title' => $row->page_title,
 				'id' => $row->page_id
-			);
+			];
 		}
 
 		$html = '<div class="listpages-container">';
@@ -219,8 +219,8 @@ class LinksHome extends SpecialPage {
 					</div>
 					<div class=\"link-item\">
 						<div class=\"link-item-url\">
-							<a href=\"" . htmlspecialchars( $linkRedirect->getFullURL( array(
-								'link' => 'true', 'url' => $link['url'] ) ) ) .
+							<a href=\"" . htmlspecialchars( $linkRedirect->getFullURL( [
+								'link' => 'true', 'url' => $link['url'] ] ) ) .
 								'" target="new">' . $link['title'] .
 							'</a>
 						</div>
@@ -253,8 +253,8 @@ class LinksHome extends SpecialPage {
 				$output .= Linker::link(
 					$pageLink,
 					$this->msg( 'linkfilter-previous' )->plain(),
-					array(),
-					array( 'page' => ( $page - 1 ) )
+					[],
+					[ 'page' => ( $page - 1 ) ]
 				) . $this->msg( 'word-separator' )->plain();
 			}
 
@@ -275,8 +275,8 @@ class LinksHome extends SpecialPage {
 					$output .= Linker::link(
 						$pageLink,
 						$i,
-						array(),
-						array( 'page' => $i )
+						[],
+						[ 'page' => $i ]
 					) . $this->msg( 'word-separator' )->plain();
 				}
 			}
@@ -286,8 +286,8 @@ class LinksHome extends SpecialPage {
 					Linker::link(
 						$pageLink,
 						$this->msg( 'linkfilter-next' )->plain(),
-						array(),
-						array( 'page' => ( $page + 1 ) )
+						[],
+						[ 'page' => ( $page + 1 ) ]
 					);
 			}
 			$output .= '</div>';

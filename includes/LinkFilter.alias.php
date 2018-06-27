@@ -7,217 +7,217 @@
  */
 // @codingStandardsIgnoreFile
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English (English) */
-$specialPageAliases['en'] = array(
-	'LinkApprove' => array( 'LinkApprove' ),
-	'LinkEdit' => array( 'LinkEdit' ),
-	'LinksHome' => array( 'LinksHome' ),
-	'LinkRedirect' => array( 'LinkRedirect' ),
-	'LinkSubmit' => array( 'LinkSubmit' ),
-);
+$specialPageAliases['en'] = [
+	'LinkApprove' => [ 'LinkApprove' ],
+	'LinkEdit' => [ 'LinkEdit' ],
+	'LinksHome' => [ 'LinksHome' ],
+	'LinkRedirect' => [ 'LinkRedirect' ],
+	'LinkSubmit' => [ 'LinkSubmit' ],
+];
 
 /** Arabic (العربية) */
-$specialPageAliases['ar'] = array(
-	'LinkApprove' => array( 'موافقة_الوصلة' ),
-	'LinkEdit' => array( 'تعديل_الوصلة' ),
-	'LinksHome' => array( 'بيت_الوصلات' ),
-	'LinkRedirect' => array( 'تحويلة_الوصلة' ),
-	'LinkSubmit' => array( 'إرسال_الوصلة' ),
-);
+$specialPageAliases['ar'] = [
+	'LinkApprove' => [ 'موافقة_الوصلة' ],
+	'LinkEdit' => [ 'تعديل_الوصلة' ],
+	'LinksHome' => [ 'بيت_الوصلات' ],
+	'LinkRedirect' => [ 'تحويلة_الوصلة' ],
+	'LinkSubmit' => [ 'إرسال_الوصلة' ],
+];
 
 /** Egyptian Arabic (مصرى) */
-$specialPageAliases['arz'] = array(
-	'LinkApprove' => array( 'موافقه_الوصله' ),
-	'LinkEdit' => array( 'تعديل_الوصله' ),
-	'LinksHome' => array( 'بيت_الوصلات' ),
-	'LinkRedirect' => array( 'تحويلة_الوصلة' ),
-	'LinkSubmit' => array( 'تنفيذ_الوصله' ),
-);
+$specialPageAliases['arz'] = [
+	'LinkApprove' => [ 'موافقه_الوصله' ],
+	'LinkEdit' => [ 'تعديل_الوصله' ],
+	'LinksHome' => [ 'بيت_الوصلات' ],
+	'LinkRedirect' => [ 'تحويلة_الوصلة' ],
+	'LinkSubmit' => [ 'تنفيذ_الوصله' ],
+];
 
 /** Western Balochi (بلوچی رخشانی) */
-$specialPageAliases['bgn'] = array(
-	'LinkApprove' => array( 'لینک_ئی_تائید' ),
-	'LinkEdit' => array( 'لینک_ئی_دستکاری' ),
-	'LinksHome' => array( 'لینک_ئی_گیس' ),
-	'LinkRedirect' => array( 'لینک_ئی_تغیرمسیر' ),
-	'LinkSubmit' => array( 'لینک_ئی_دیم_داتین' ),
-);
+$specialPageAliases['bgn'] = [
+	'LinkApprove' => [ 'لینک_ئی_تائید' ],
+	'LinkEdit' => [ 'لینک_ئی_دستکاری' ],
+	'LinksHome' => [ 'لینک_ئی_گیس' ],
+	'LinkRedirect' => [ 'لینک_ئی_تغیرمسیر' ],
+	'LinkSubmit' => [ 'لینک_ئی_دیم_داتین' ],
+];
 
 /** German (Deutsch) */
-$specialPageAliases['de'] = array(
-	'LinkApprove' => array( 'Link_akzeptieren' ),
-	'LinkEdit' => array( 'Link_bearbeiten' ),
-	'LinksHome' => array( 'Zielseite_des_Links' ),
-	'LinkRedirect' => array( 'Link_weiterleiten' ),
-	'LinkSubmit' => array( 'Link_speichern' ),
-);
+$specialPageAliases['de'] = [
+	'LinkApprove' => [ 'Link_akzeptieren' ],
+	'LinkEdit' => [ 'Link_bearbeiten' ],
+	'LinksHome' => [ 'Zielseite_des_Links' ],
+	'LinkRedirect' => [ 'Link_weiterleiten' ],
+	'LinkSubmit' => [ 'Link_speichern' ],
+];
 
 /** Zazaki (Zazaki) */
-$specialPageAliases['diq'] = array(
-	'LinkApprove' => array( 'LinkQebulkerdış' ),
-	'LinkEdit' => array( 'LinkVurnayış' ),
-	'LinksHome' => array( 'KeyeyêGıreyan' ),
-	'LinkRedirect' => array( 'SerberdışêGıreyan' ),
-	'LinkSubmit' => array( 'RıştışêGıreyan' ),
-);
+$specialPageAliases['diq'] = [
+	'LinkApprove' => [ 'LinkQebulkerdış' ],
+	'LinkEdit' => [ 'LinkVurnayış' ],
+	'LinksHome' => [ 'KeyeyêGıreyan' ],
+	'LinkRedirect' => [ 'SerberdışêGıreyan' ],
+	'LinkSubmit' => [ 'RıştışêGıreyan' ],
+];
 
 /** Esperanto (Esperanto) */
-$specialPageAliases['eo'] = array(
-	'LinkApprove' => array( 'Aprobi_ligilojn' ),
-	'LinkEdit' => array( 'Redakti_ligilon' ),
-	'LinksHome' => array( 'Hejmo_de_ligiloj' ),
-	'LinkRedirect' => array( 'Alidirektilo_al_ligilo' ),
-	'LinkSubmit' => array( 'Sendi_ligilon' ),
-);
+$specialPageAliases['eo'] = [
+	'LinkApprove' => [ 'Aprobi_ligilojn' ],
+	'LinkEdit' => [ 'Redakti_ligilon' ],
+	'LinksHome' => [ 'Hejmo_de_ligiloj' ],
+	'LinkRedirect' => [ 'Alidirektilo_al_ligilo' ],
+	'LinkSubmit' => [ 'Sendi_ligilon' ],
+];
 
 /** Persian (فارسی) */
-$specialPageAliases['fa'] = array(
-	'LinkApprove' => array( 'تأیید_پیوند' ),
-	'LinkEdit' => array( 'ویرایش_پیوند' ),
-	'LinksHome' => array( 'خانهٔ_پیوند' ),
-	'LinkRedirect' => array( 'تغییرمسیر_پیوند' ),
-	'LinkSubmit' => array( 'ارسال_پیوند' ),
-);
+$specialPageAliases['fa'] = [
+	'LinkApprove' => [ 'تأیید_پیوند' ],
+	'LinkEdit' => [ 'ویرایش_پیوند' ],
+	'LinksHome' => [ 'خانهٔ_پیوند' ],
+	'LinkRedirect' => [ 'تغییرمسیر_پیوند' ],
+	'LinkSubmit' => [ 'ارسال_پیوند' ],
+];
 
 /** Finnish (suomi) */
-$specialPageAliases['fi'] = array(
-	'LinkApprove' => array( 'Hyväksy_linkkejä' ),
-	'LinkEdit' => array( 'Muokkaa_linkkiä' ),
-	'LinksHome' => array( 'Linkkien_kotisivu' ),
-	'LinkRedirect' => array( 'Ohjaus_linkkiin' ),
-	'LinkSubmit' => array( 'Lähetä_linkki' ),
-);
+$specialPageAliases['fi'] = [
+	'LinkApprove' => [ 'Hyväksy_linkkejä' ],
+	'LinkEdit' => [ 'Muokkaa_linkkiä' ],
+	'LinksHome' => [ 'Linkkien_kotisivu' ],
+	'LinkRedirect' => [ 'Ohjaus_linkkiin' ],
+	'LinkSubmit' => [ 'Lähetä_linkki' ],
+];
 
 /** Upper Sorbian (hornjoserbsce) */
-$specialPageAliases['hsb'] = array(
-	'LinkApprove' => array( 'Wotkaz_akceptować' ),
-	'LinkEdit' => array( 'Wotkaz_wobdźěłać' ),
-	'LinksHome' => array( 'Wotkazowy_cil' ),
-	'LinkRedirect' => array( 'Wotkaz_dale_sposrědkować' ),
-	'LinkSubmit' => array( 'Wotkaz_składować' ),
-);
+$specialPageAliases['hsb'] = [
+	'LinkApprove' => [ 'Wotkaz_akceptować' ],
+	'LinkEdit' => [ 'Wotkaz_wobdźěłać' ],
+	'LinksHome' => [ 'Wotkazowy_cil' ],
+	'LinkRedirect' => [ 'Wotkaz_dale_sposrědkować' ],
+	'LinkSubmit' => [ 'Wotkaz_składować' ],
+];
 
 /** Interlingua (interlingua) */
-$specialPageAliases['ia'] = array(
-	'LinkApprove' => array( 'Approbar_ligamines' ),
-	'LinkEdit' => array( 'Modificar_ligamine' ),
-	'LinksHome' => array( 'Initio_de_ligamines' ),
-	'LinkRedirect' => array( 'Rediriger_ligamine' ),
-	'LinkSubmit' => array( 'Submitter_ligamine' ),
-);
+$specialPageAliases['ia'] = [
+	'LinkApprove' => [ 'Approbar_ligamines' ],
+	'LinkEdit' => [ 'Modificar_ligamine' ],
+	'LinksHome' => [ 'Initio_de_ligamines' ],
+	'LinkRedirect' => [ 'Rediriger_ligamine' ],
+	'LinkSubmit' => [ 'Submitter_ligamine' ],
+];
 
 /** Italian (italiano) */
-$specialPageAliases['it'] = array(
-	'LinkApprove' => array( 'ApprovaCollegamento' ),
-	'LinkEdit' => array( 'ModificaCollegamento' ),
-	'LinksHome' => array( 'PaginaPrincipaleCollegamenti' ),
-	'LinkRedirect' => array( 'RinviaCollegamento' ),
-	'LinkSubmit' => array( 'InviaCollegamento' ),
-);
+$specialPageAliases['it'] = [
+	'LinkApprove' => [ 'ApprovaCollegamento' ],
+	'LinkEdit' => [ 'ModificaCollegamento' ],
+	'LinksHome' => [ 'PaginaPrincipaleCollegamenti' ],
+	'LinkRedirect' => [ 'RinviaCollegamento' ],
+	'LinkSubmit' => [ 'InviaCollegamento' ],
+];
 
 /** Japanese (日本語) */
-$specialPageAliases['ja'] = array(
-	'LinkApprove' => array( 'リンク承認' ),
-	'LinkEdit' => array( 'リンク編集' ),
-	'LinksHome' => array( 'リンクホーム' ),
-	'LinkRedirect' => array( 'リンク転送', 'リンクリダイレクト' ),
-	'LinkSubmit' => array( 'リンク投稿' ),
-);
+$specialPageAliases['ja'] = [
+	'LinkApprove' => [ 'リンク承認' ],
+	'LinkEdit' => [ 'リンク編集' ],
+	'LinksHome' => [ 'リンクホーム' ],
+	'LinkRedirect' => [ 'リンク転送', 'リンクリダイレクト' ],
+	'LinkSubmit' => [ 'リンク投稿' ],
+];
 
 /** Korean (한국어) */
-$specialPageAliases['ko'] = array(
-	'LinkApprove' => array( '링크승인' ),
-	'LinkEdit' => array( '링크편집' ),
-	'LinksHome' => array( '링크홈' ),
-	'LinkRedirect' => array( '링크넘겨주기' ),
-	'LinkSubmit' => array( '링크보내기' ),
-);
+$specialPageAliases['ko'] = [
+	'LinkApprove' => [ '링크승인' ],
+	'LinkEdit' => [ '링크편집' ],
+	'LinksHome' => [ '링크홈' ],
+	'LinkRedirect' => [ '링크넘겨주기' ],
+	'LinkSubmit' => [ '링크보내기' ],
+];
 
 /** Luxembourgish (Lëtzebuergesch) */
-$specialPageAliases['lb'] = array(
-	'LinkApprove' => array( 'Link_akzeptéieren' ),
-	'LinkEdit' => array( 'Link_änneren' ),
-	'LinksHome' => array( 'Zilsäit_vum_Link' ),
-	'LinkRedirect' => array( 'Link_viruleeden' ),
-	'LinkSubmit' => array( 'Link_späicheren' ),
-);
+$specialPageAliases['lb'] = [
+	'LinkApprove' => [ 'Link_akzeptéieren' ],
+	'LinkEdit' => [ 'Link_änneren' ],
+	'LinksHome' => [ 'Zilsäit_vum_Link' ],
+	'LinkRedirect' => [ 'Link_viruleeden' ],
+	'LinkSubmit' => [ 'Link_späicheren' ],
+];
 
 /** Macedonian (македонски) */
-$specialPageAliases['mk'] = array(
-	'LinkApprove' => array( 'ВрскаОдобри' ),
-	'LinkEdit' => array( 'ВрскаУреди' ),
-	'LinksHome' => array( 'ВрскаГлавна' ),
-	'LinkRedirect' => array( 'ВрскаПренасочување' ),
-	'LinkSubmit' => array( 'ВрскаПоднесување' ),
-);
+$specialPageAliases['mk'] = [
+	'LinkApprove' => [ 'ВрскаОдобри' ],
+	'LinkEdit' => [ 'ВрскаУреди' ],
+	'LinksHome' => [ 'ВрскаГлавна' ],
+	'LinkRedirect' => [ 'ВрскаПренасочување' ],
+	'LinkSubmit' => [ 'ВрскаПоднесување' ],
+];
 
 /** Malayalam (മലയാളം) */
-$specialPageAliases['ml'] = array(
-	'LinkApprove' => array( 'കണ്ണിഅംഗീകരിക്കൽ' ),
-	'LinkEdit' => array( 'കണ്ണിതിരുത്തൽ' ),
-	'LinkRedirect' => array( 'കണ്ണിതിരിച്ചുവിടൽ' ),
-	'LinkSubmit' => array( 'കണ്ണിസമർപ്പണം' ),
-);
+$specialPageAliases['ml'] = [
+	'LinkApprove' => [ 'കണ്ണിഅംഗീകരിക്കൽ' ],
+	'LinkEdit' => [ 'കണ്ണിതിരുത്തൽ' ],
+	'LinkRedirect' => [ 'കണ്ണിതിരിച്ചുവിടൽ' ],
+	'LinkSubmit' => [ 'കണ്ണിസമർപ്പണം' ],
+];
 
 /** Low Saxon (Netherlands) (Nedersaksies) */
-$specialPageAliases['nds-nl'] = array(
-	'LinkApprove' => array( 'Verwiezing_goedkeuren' ),
-	'LinkEdit' => array( 'Verwiezing_bewarken' ),
-	'LinksHome' => array( 'Verwiezing_startzied' ),
-	'LinkRedirect' => array( 'Verwiezing_deurverwiezen' ),
-	'LinkSubmit' => array( 'Verwiezing_derbie_doon' ),
-);
+$specialPageAliases['nds-nl'] = [
+	'LinkApprove' => [ 'Verwiezing_goedkeuren' ],
+	'LinkEdit' => [ 'Verwiezing_bewarken' ],
+	'LinksHome' => [ 'Verwiezing_startzied' ],
+	'LinkRedirect' => [ 'Verwiezing_deurverwiezen' ],
+	'LinkSubmit' => [ 'Verwiezing_derbie_doon' ],
+];
 
 /** Dutch (Nederlands) */
-$specialPageAliases['nl'] = array(
-	'LinkApprove' => array( 'VerwijzingGoedkeuren' ),
-	'LinkEdit' => array( 'VerwijzingBewerken' ),
-	'LinksHome' => array( 'VerwijzingenStartpagina' ),
-	'LinkRedirect' => array( 'VerwijzingDoorverwijzen' ),
-	'LinkSubmit' => array( 'VerwijzingToevoegen' ),
-);
+$specialPageAliases['nl'] = [
+	'LinkApprove' => [ 'VerwijzingGoedkeuren' ],
+	'LinkEdit' => [ 'VerwijzingBewerken' ],
+	'LinksHome' => [ 'VerwijzingenStartpagina' ],
+	'LinkRedirect' => [ 'VerwijzingDoorverwijzen' ],
+	'LinkSubmit' => [ 'VerwijzingToevoegen' ],
+];
 
 /** Sicilian (sicilianu) */
-$specialPageAliases['scn'] = array(
-	'LinkApprove' => array( 'LinkApprova' ),
-	'LinkEdit' => array( 'LinkModifica' ),
-	'LinksHome' => array( 'LinkInizio' ),
-	'LinkRedirect' => array( 'LinkRinvia' ),
-	'LinkSubmit' => array( 'LinkInvia' ),
-);
+$specialPageAliases['scn'] = [
+	'LinkApprove' => [ 'LinkApprova' ],
+	'LinkEdit' => [ 'LinkModifica' ],
+	'LinksHome' => [ 'LinkInizio' ],
+	'LinkRedirect' => [ 'LinkRinvia' ],
+	'LinkSubmit' => [ 'LinkInvia' ],
+];
 
 /** Turkish (Türkçe) */
-$specialPageAliases['tr'] = array(
-	'LinkApprove' => array( 'BağOnayla', 'BağlantıOnayla' ),
-	'LinkEdit' => array( 'BağDüzenle', 'BağlantıDüzenle' ),
-	'LinksHome' => array( 'BağAnaSayfa', 'BağlantıAnaSayfa' ),
-	'LinkRedirect' => array( 'BağYönlendir', 'BağlantıYönlendir' ),
-	'LinkSubmit' => array( 'BağGönder', 'BağlantıGönder' ),
-);
+$specialPageAliases['tr'] = [
+	'LinkApprove' => [ 'BağOnayla', 'BağlantıOnayla' ],
+	'LinkEdit' => [ 'BağDüzenle', 'BağlantıDüzenle' ],
+	'LinksHome' => [ 'BağAnaSayfa', 'BağlantıAnaSayfa' ],
+	'LinkRedirect' => [ 'BağYönlendir', 'BağlantıYönlendir' ],
+	'LinkSubmit' => [ 'BağGönder', 'BağlantıGönder' ],
+];
 
 /** Vietnamese (Tiếng Việt) */
-$specialPageAliases['vi'] = array(
-	'LinkApprove' => array( 'Chấp_nhận_liên_kết' ),
-	'LinkEdit' => array( 'Sửa_liên_kết' ),
-	'LinkRedirect' => array( 'Đổi_hướng_liên_kết' ),
-);
+$specialPageAliases['vi'] = [
+	'LinkApprove' => [ 'Chấp_nhận_liên_kết' ],
+	'LinkEdit' => [ 'Sửa_liên_kết' ],
+	'LinkRedirect' => [ 'Đổi_hướng_liên_kết' ],
+];
 
 /** Simplified Chinese (中文（简体）‎) */
-$specialPageAliases['zh-hans'] = array(
-	'LinkApprove' => array( '链接批准' ),
-	'LinkEdit' => array( '链接编辑' ),
-	'LinksHome' => array( '链接首页' ),
-	'LinkRedirect' => array( '链接重定向' ),
-	'LinkSubmit' => array( '链接提交' ),
-);
+$specialPageAliases['zh-hans'] = [
+	'LinkApprove' => [ '链接批准' ],
+	'LinkEdit' => [ '链接编辑' ],
+	'LinksHome' => [ '链接首页' ],
+	'LinkRedirect' => [ '链接重定向' ],
+	'LinkSubmit' => [ '链接提交' ],
+];
 
 /** Traditional Chinese (中文（繁體）‎) */
-$specialPageAliases['zh-hant'] = array(
-	'LinkApprove' => array( '批准連結' ),
-	'LinkEdit' => array( '編輯連結' ),
-	'LinksHome' => array( '首頁連結' ),
-	'LinkRedirect' => array( '重新導向連結' ),
-	'LinkSubmit' => array( '送出連結' ),
-);
+$specialPageAliases['zh-hant'] = [
+	'LinkApprove' => [ '批准連結' ],
+	'LinkEdit' => [ '編輯連結' ],
+	'LinksHome' => [ '首頁連結' ],
+	'LinkRedirect' => [ '重新導向連結' ],
+	'LinkSubmit' => [ '送出連結' ],
+];

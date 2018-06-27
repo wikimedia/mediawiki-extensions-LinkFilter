@@ -23,8 +23,8 @@ class LinkFilterHooks {
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update(
 				'link',
-				array( 'link_name' => $newTitle->getText() ),
-				array( 'link_page_id' => intval( $oldId ) ),
+				[ 'link_name' => $newTitle->getText() ],
+				[ 'link_page_id' => intval( $oldId ) ],
 				__METHOD__
 			);
 		}
@@ -46,8 +46,8 @@ class LinkFilterHooks {
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update(
 				'link',
-				/* SET */array( 'link_status' => LinkStatus::REJECTED ),
-				/* WHERE */array( 'link_page_id' => intval( $article->getID() ) ),
+				[ 'link_status' => LinkStatus::REJECTED ],
+				[ 'link_page_id' => intval( $article->getID() ) ],
 				__METHOD__
 			);
 		}
@@ -100,7 +100,7 @@ class LinkFilterHooks {
 	 * @return Boolean: true
 	 */
 	public static function registerLinkFilterHook( &$parser ) {
-		$parser->setHook( 'linkfilter', array( 'LinkFilterHooks', 'renderLinkFilterHook' ) );
+		$parser->setHook( 'linkfilter', [ 'LinkFilterHooks', 'renderLinkFilterHook' ] );
 		return true;
 	}
 
@@ -193,8 +193,8 @@ class LinkFilterHooks {
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update(
 				'link',
-				/* SET */array( 'link_comment_count = link_comment_count+1' ),
-				/* WHERE */array( 'link_page_id' => intval( $pageID ) ),
+				[ 'link_comment_count = link_comment_count+1' ],
+				[ 'link_page_id' => intval( $pageID ) ],
 				__METHOD__
 			);
 		}
@@ -214,8 +214,8 @@ class LinkFilterHooks {
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update(
 				'link',
-				/* SET */array( 'link_comment_count = link_comment_count-1' ),
-				/* WHERE */array( 'link_page_id' => intval( $pageID ) ),
+				[ 'link_comment_count = link_comment_count-1' ],
+				[ 'link_page_id' => intval( $pageID ) ],
 				__METHOD__
 			);
 		}
@@ -246,9 +246,9 @@ class LinkFilterHooks {
 	 * @return Boolean: true
 	 */
 	public static function onUserRename( $renameUserSQL ) {
-		$renameUserSQL->tables['link'] = array(
+		$renameUserSQL->tables['link'] = [
 			'link_submitter_user_name', 'link_submitter_user_id'
-		);
+		];
 		return true;
 	}
 
