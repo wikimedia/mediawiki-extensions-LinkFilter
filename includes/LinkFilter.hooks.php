@@ -11,11 +11,11 @@ class LinkFilterHooks {
 	 * This function is called after a page has been moved successfully to
 	 * update the LinkFilter entries.
 	 *
-	 * @param $title Object: Title object
-	 * @param $newTitle Object: Title obejct
-	 * @param $user Object: User object ($wgUser)
-	 * @param $oldId Integer
-	 * @param $newId Integer
+	 * @param Title $title Original/old Title
+	 * @param Title $newTitle New Title
+	 * @param User $user User (object) who performed the page move
+	 * @param int $oldId Old page ID
+	 * @param int $newId New page ID
 	 */
 	public static function updateLinkFilter( &$title, &$newTitle, $user, $oldId, $newId ) {
 		if ( $title->getNamespace() == NS_LINK ) {
@@ -33,9 +33,9 @@ class LinkFilterHooks {
 	 * Whenever a page in the NS_LINK namespace is deleted, update the records
 	 * in the link table.
 	 *
-	 * @param $article Object: Article object (or child class)
-	 * @param $user Object: User object ($wgUser)
-	 * @param $reason String: user-supplied reason for the deletion
+	 * @param Article|WikiPage $article Article object (or child class) being deleted
+	 * @param User $user User (object) performing the page deletion
+	 * @param string $reason User-supplied reason for the deletion
 	 */
 	public static function deleteLinkFilter( &$article, &$user, $reason ) {
 		if ( $article->getTitle()->getNamespace() == NS_LINK ) {
@@ -55,8 +55,8 @@ class LinkFilterHooks {
 	 * Calls LinkPage instead of standard article for pages in the NS_LINK
 	 * namespace.
 	 *
-	 * @param $title Object: Title object associated with the current page
-	 * @param $article Object: Article object (or child class) associated with
+	 * @param Title $title Title object associated with the current page
+	 * @param Article|WikiPage $article Article object (or child class) associated with
 	 *                         the current page
 	 */
 	public static function linkFromTitle( &$title, &$article ) {
@@ -88,7 +88,7 @@ class LinkFilterHooks {
 	/**
 	 * Registers the <linkfilter> parser hook with MediaWiki's Parser.
 	 *
-	 * @param $parser Parser
+	 * @param Parser $parser
 	 */
 	public static function registerLinkFilterHook( &$parser ) {
 		$parser->setHook( 'linkfilter', [ 'LinkFilterHooks', 'renderLinkFilterHook' ] );
@@ -173,9 +173,9 @@ class LinkFilterHooks {
 	 * Updates the link_comment_count field on link table whenever someone
 	 * comments on a link.
 	 *
-	 * @param $commentClass Object: instance of Comment class
-	 * @param $commentID Integer: comment ID number
-	 * @param $pageID Integer: ID number of the page
+	 * @param Comment $commentClass Instance of the Comment class
+	 * @param int $commentID Comment ID number
+	 * @param int $pageID Page ID number
 	 */
 	public static function onCommentAdd( $commentClass, $commentID, $pageID ) {
 		if ( $commentID && $pageID ) {
@@ -192,9 +192,9 @@ class LinkFilterHooks {
 	/**
 	 * Does the opposite of the above hook. Parameters are the same.
 	 *
-	 * @param $commentClass Object: instance of Comment class
-	 * @param $commentID Integer: comment ID number
-	 * @param $pageID Integer: ID number of the page
+	 * @param Comment $commentClass Instance of Comment class
+	 * @param int $commentID Comment ID number
+	 * @param int $pageID Page ID number
 	 */
 	public static function onCommentDelete( $commentClass, $commentID, $pageID ) {
 		if ( $commentID && $pageID ) {
@@ -216,7 +216,7 @@ class LinkFilterHooks {
 	 *              stats_links_approved columns; if not, apply
 	 *              patch-columns_for_user_stats.sql against the database
 	 *
-	 * @param $updater DatabaseUpdater
+	 * @param DatabaseUpdater $updater
 	 */
 	public static function applySchemaChanges( $updater ) {
 		$file = __DIR__ . '/../sql/link.sql';
@@ -226,7 +226,7 @@ class LinkFilterHooks {
 	/**
 	 * For the Renameuser extension.
 	 *
-	 * @param $renameUserSQL
+	 * @param RenameuserSQL $renameUserSQL
 	 */
 	public static function onUserRename( $renameUserSQL ) {
 		$renameUserSQL->tables['link'] = [
@@ -237,7 +237,7 @@ class LinkFilterHooks {
 	/**
 	 * Register the canonical names for our namespace and its talkspace.
 	 *
-	 * @param $list Array: array of namespace numbers with corresponding
+	 * @param array $list Array of namespace numbers with corresponding
 	 *                     canonical names
 	 */
 	public static function onCanonicalNamespaces( &$list ) {

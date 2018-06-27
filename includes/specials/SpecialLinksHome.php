@@ -16,7 +16,7 @@ class LinksHome extends SpecialPage {
 
 	/**
 	 * Displays news items from MediaWiki:Inthenews
-	 * @return HTML
+	 * @return string HTML
 	 */
 	function getInTheNews() {
 		global $wgLinkPageDisplay;
@@ -99,7 +99,7 @@ class LinksHome extends SpecialPage {
 
 	/**
 	 * Gets a wide skyscraper ad unit
-	 * @return HTML
+	 * @return string HTML
 	 */
 	function getAdUnit() {
 		global $wgLinkPageDisplay, $wgAdConfig;
@@ -133,7 +133,7 @@ class LinksHome extends SpecialPage {
 	/**
 	 * Show the special page
 	 *
-	 * @param $par Mixed: parameter passed to the page or null
+	 * @param string|null $par Parameter passed to the page, if any [unused]
 	 */
 	public function execute( $par ) {
 		$out = $this->getOutput();
@@ -314,8 +314,9 @@ class LinksHome extends SpecialPage {
 	 * Create feed (RSS/Atom) from given links array
 	 * Based on ProblemReports' makeFeed() function by Maciej Brencz
 	 *
-	 * @param $type String: feed type, RSS or Atom
-	 * @param $links Array:
+	 * @param string $type Feed type, RSS or Atom
+	 * @param array $links
+	 * @return bool
 	 */
 	function makeFeed( $type, &$links ) {
 		$feed = new LinkFeed(

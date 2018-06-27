@@ -12,7 +12,7 @@ class LinkRedirect extends UnlistedSpecialPage {
 	/**
 	 * Show the special page
 	 *
-	 * @param $par Mixed: parameter passed to the page or null
+	 * @param string|null $par Parameter passed to the page, if any [unused]
 	 */
 	public function execute( $par ) {
 		$out = $this->getOutput();

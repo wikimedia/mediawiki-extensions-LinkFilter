@@ -9,11 +9,11 @@ class LinkList {
 	}
 
 	/**
-	 * @param $status Integer: link status
-	 * @param $type Integer: link type (one of Link::$link_types integers)
-	 * @param $limit Integer: LIMIT for SQL query, 0 by default.
-	 * @param $page Integer: used to build the OFFSET in the SQL query.
-	 * @param $order String: ORDER BY clause for SQL query.
+	 * @param int $status Link status
+	 * @param int $type Link type (one of Link::$link_types integers)
+	 * @param int $limit LIMIT for SQL query, 0 by default.
+	 * @param int $page Used to build the OFFSET in the SQL query.
+	 * @param string $order ORDER BY clause for SQL query.
 	 */
 	public function getLinkList( $status, $type, $limit = 0, $page = 0, $order = 'link_submit_date' ) {
 		$dbr = wfGetDB( DB_REPLICA );
@@ -75,9 +75,9 @@ class LinkList {
 	/**
 	 * Get the number of links matching the given criteria.
 	 *
-	 * @param $status Integer: link status
-	 * @param $type Integer: link type (one of Link::$link_types integers)
-	 * @return Integer: number of links matching the given criteria
+	 * @param int $status Link status
+	 * @param int $type Link type (one of Link::$link_types integers)
+	 * @return int Number of links matching the given criteria
 	 */
 	public function getLinkListCount( $status, $type ) {
 		$dbr = wfGetDB( DB_REPLICA );

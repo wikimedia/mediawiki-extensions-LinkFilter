@@ -43,7 +43,7 @@ class Link {
 	/**
 	 * Checks if user is allowed to access LinkFilter's special pages
 	 *
-	 * @return Boolean: true if s/he has linkadmin permission or is in the
+	 * @return bool True if s/he has linkadmin permission or is in the
 	 *                  linkadmin user group, else false
 	 */
 	public static function canAdmin() {
@@ -63,7 +63,7 @@ class Link {
 	/**
 	 * Checks if $code is an URL.
 	 *
-	 * @return Boolean: true if it's an URL, otherwise false
+	 * @return bool True if it's an URL, otherwise false
 	 */
 	public static function isURL( $code ) {
 		return preg_match( '%^(?:http|https|ftp)://(?:www\.)?.*$%i', $code ) ? true : false;
@@ -72,10 +72,10 @@ class Link {
 	/**
 	 * Adds a link to the database table.
 	 *
-	 * @param $title String: link title as supplied by the user
-	 * @param $desc String: link description as supplied by the user
-	 * @param $url String: the actual URL
-	 * @param $type Integer: link type, either from the global variable or from
+	 * @param string $title Link title as supplied by the user
+	 * @param string $desc Link description as supplied by the user
+	 * @param string $url The actual URL
+	 * @param int $type Link type, either from the global variable or from
 	 *						this class' static array.
 	 */
 	public function addLink( $title, $desc, $url, $type ) {
@@ -115,7 +115,7 @@ class Link {
 	 * This includes creating the Link: page, updating the database and updating
 	 * social statistics (when SocialProfile is installed & active).
 	 *
-	 * @param $id Integer: link identifier
+	 * @param int $id Link identifier
 	 */
 	public function approveLink( $id ) {
 		$link = $this->getLink( $id );
@@ -159,7 +159,7 @@ class Link {
 	/**
 	 * Gets a link entry by given page ID.
 	 *
-	 * @param $pageId Integer: page ID number
+	 * @param int $pageId Page ID number
 	 * @return array
 	 */
 	public function getLinkByPageID( $pageId ) {
@@ -204,6 +204,9 @@ class Link {
 		return $link;
 	}
 
+	/**
+	 * @return array
+	 */
 	static function getLinkTypes() {
 		global $wgLinkFilterTypes;
 
@@ -215,8 +218,8 @@ class Link {
 	}
 
 	/**
-	 * @param $index Integer: numerical index representing the link filter type
-	 * @return String: link type name or nothing
+	 * @param int $index Numerical index representing the link filter type
+	 * @return string Link type name or nothing
 	 */
 	static function getLinkType( $index ) {
 		global $wgLinkFilterTypes;
@@ -237,7 +240,7 @@ class Link {
 	/**
 	 * Gets a link entry by given link ID number.
 	 *
-	 * @param $id Integer: link ID number
+	 * @param int $id Link ID number
 	 * @return array
 	 */
 	public function getLink( $id ) {

@@ -4,7 +4,7 @@
  *
  * @file
  * @ingroup API
- * @see http://www.mediawiki.org/wiki/API:Extensions#ApiSampleApiExtension.php
+ * @see https://www.mediawiki.org/wiki/API:Extensions#ApiSampleApiExtension.php
  */
 class ApiLinkFilter extends ApiBase {
 

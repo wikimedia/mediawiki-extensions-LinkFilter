@@ -17,7 +17,7 @@ class LinkSubmit extends SpecialPage {
 	/**
 	 * Show the special page
 	 *
-	 * @param $par Mixed: parameter passed to the page or null
+	 * @param string|null $par Parameter passed to the page, if any [unused]
 	 */
 	public function execute( $par ) {
 		$out = $this->getOutput();
@@ -105,7 +105,7 @@ class LinkSubmit extends SpecialPage {
 
 	/**
 	 * Display the form for submitting a new link.
-	 * @return String: HTML
+	 * @return string HTML
 	 */
 	function displayAddForm() {
 		$request = $this->getRequest();

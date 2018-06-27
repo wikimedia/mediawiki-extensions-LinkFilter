@@ -142,8 +142,8 @@ class LinkPage extends Article {
 	 * Get the creation date of the page with ID = $pageId, either from
 	 * memcached or if that fails, then from the database.
 	 *
-	 * @param $pageId Integer: page ID number
-	 * @return Integer: page creation date as a UNIX timestamp
+	 * @param int $pageId Page ID number
+	 * @return int Page creation date as a UNIX timestamp
 	 */
 	function getCreateDate( $pageId ) {
 		global $wgMemc;
@@ -173,7 +173,7 @@ class LinkPage extends Article {
 	 * Displays the box which displays information about the person who
 	 * submitted this link if this feature is enabled in $wgLinkPageDisplay.
 	 *
-	 * @return HTML
+	 * @return string HTML
 	 */
 	function displaySubmitterBox() {
 		global $wgOut, $wgLinkPageDisplay;
@@ -220,7 +220,7 @@ class LinkPage extends Article {
 	 * Gets a wide skyscraper ad unit, if this feature is enabled in
 	 * $wgLinkPageDisplay.
 	 *
-	 * @return HTML
+	 * @return string HTML
 	 */
 	function leftAdUnit() {
 		global $wgLinkPageDisplay;
@@ -257,7 +257,7 @@ class LinkPage extends Article {
 	 * Displays news items from MediaWiki:Inthenews if this feature is enabled
 	 * in $wgLinkPageDisplay.
 	 *
-	 * @return HTML
+	 * @return string HTML
 	 */
 	function getInTheNews() {
 		global $wgLinkPageDisplay, $wgOut;
@@ -280,7 +280,7 @@ class LinkPage extends Article {
 	 * Displays a list of recently approved links if this feature is enabled in
 	 * $wgLinkPageDisplay.
 	 *
-	 * @return HTML
+	 * @return string HTML
 	 */
 	function getNewLinks() {
 		global $wgLinkPageDisplay;
@@ -314,7 +314,7 @@ class LinkPage extends Article {
 	 * Gets a random casual game if RandomGameUnit extension is installed and
 	 * this feature is enabled in $wgLinkPageDisplay.
 	 *
-	 * @return HTML or nothing
+	 * @return string HTML or nothing
 	 */
 	function getRandomCasualGame() {
 		global $wgLinkPageDisplay;
@@ -335,7 +335,7 @@ class LinkPage extends Article {
 	 * Gets the comments of the day if this feature is enabled in
 	 * $wgLinkPageDisplay.
 	 *
-	 * @return HTML
+	 * @return string HTML
 	 */
 	function getCommentsOfTheDay() {
 		global $wgLinkPageDisplay, $wgMemc;
