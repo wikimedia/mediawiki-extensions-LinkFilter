@@ -16,7 +16,6 @@ class LinkFilterHooks {
 	 * @param $user Object: User object ($wgUser)
 	 * @param $oldId Integer
 	 * @param $newId Integer
-	 * @return Boolean: true
 	 */
 	public static function updateLinkFilter( &$title, &$newTitle, $user, $oldId, $newId ) {
 		if ( $title->getNamespace() == NS_LINK ) {
@@ -28,7 +27,6 @@ class LinkFilterHooks {
 				__METHOD__
 			);
 		}
-		return true;
 	}
 
 	/**
@@ -38,7 +36,6 @@ class LinkFilterHooks {
 	 * @param $article Object: Article object (or child class)
 	 * @param $user Object: User object ($wgUser)
 	 * @param $reason String: user-supplied reason for the deletion
-	 * @return Boolean: true
 	 */
 	public static function deleteLinkFilter( &$article, &$user, $reason ) {
 		if ( $article->getTitle()->getNamespace() == NS_LINK ) {
@@ -51,8 +48,6 @@ class LinkFilterHooks {
 				__METHOD__
 			);
 		}
-
-		return true;
 	}
 
 	/**
@@ -63,7 +58,6 @@ class LinkFilterHooks {
 	 * @param $title Object: Title object associated with the current page
 	 * @param $article Object: Article object (or child class) associated with
 	 *                         the current page
-	 * @return Boolean: true
 	 */
 	public static function linkFromTitle( &$title, &$article ) {
 		if ( $title->getNamespace() == NS_LINK ) {
@@ -89,19 +83,15 @@ class LinkFilterHooks {
 
 			$article = new LinkPage( $title );
 		}
-
-		return true;
 	}
 
 	/**
 	 * Registers the <linkfilter> parser hook with MediaWiki's Parser.
 	 *
 	 * @param $parser Parser
-	 * @return Boolean: true
 	 */
 	public static function registerLinkFilterHook( &$parser ) {
 		$parser->setHook( 'linkfilter', [ 'LinkFilterHooks', 'renderLinkFilterHook' ] );
-		return true;
 	}
 
 	/**
@@ -186,7 +176,6 @@ class LinkFilterHooks {
 	 * @param $commentClass Object: instance of Comment class
 	 * @param $commentID Integer: comment ID number
 	 * @param $pageID Integer: ID number of the page
-	 * @return Boolean: true
 	 */
 	public static function onCommentAdd( $commentClass, $commentID, $pageID ) {
 		if ( $commentID && $pageID ) {
@@ -198,7 +187,6 @@ class LinkFilterHooks {
 				__METHOD__
 			);
 		}
-		return true;
 	}
 
 	/**
@@ -207,7 +195,6 @@ class LinkFilterHooks {
 	 * @param $commentClass Object: instance of Comment class
 	 * @param $commentID Integer: comment ID number
 	 * @param $pageID Integer: ID number of the page
-	 * @return Boolean: true
 	 */
 	public static function onCommentDelete( $commentClass, $commentID, $pageID ) {
 		if ( $commentID && $pageID ) {
@@ -219,7 +206,6 @@ class LinkFilterHooks {
 				__METHOD__
 			);
 		}
-		return true;
 	}
 
 	/**
@@ -231,25 +217,21 @@ class LinkFilterHooks {
 	 *              patch-columns_for_user_stats.sql against the database
 	 *
 	 * @param $updater DatabaseUpdater
-	 * @return Boolean: true
 	 */
 	public static function applySchemaChanges( $updater ) {
 		$file = __DIR__ . '/../sql/link.sql';
 		$updater->addExtensionTable( 'link', $file );
-		return true;
 	}
 
 	/**
 	 * For the Renameuser extension.
 	 *
 	 * @param $renameUserSQL
-	 * @return Boolean: true
 	 */
 	public static function onUserRename( $renameUserSQL ) {
 		$renameUserSQL->tables['link'] = [
 			'link_submitter_user_name', 'link_submitter_user_id'
 		];
-		return true;
 	}
 
 	/**
@@ -257,11 +239,9 @@ class LinkFilterHooks {
 	 *
 	 * @param $list Array: array of namespace numbers with corresponding
 	 *                     canonical names
-	 * @return Boolean: true
 	 */
 	public static function onCanonicalNamespaces( &$list ) {
 		$list[NS_LINK] = 'Link';
 		$list[NS_LINK_TALK] = 'Link_talk';
-		return true;
 	}
 }
