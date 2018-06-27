@@ -211,16 +211,22 @@ class LinkFilterHooks {
 	/**
 	 * Applies the schema changes when the user runs maintenance/update.php.
 	 *
-	 * @todo FIXME: this should check if user_stats DB table exists and if it
-	 *              has the necessary stats_links_submitted and
-	 *              stats_links_approved columns; if not, apply
-	 *              patch-columns_for_user_stats.sql against the database
-	 *
 	 * @param DatabaseUpdater $updater
 	 */
 	public static function applySchemaChanges( $updater ) {
-		$file = __DIR__ . '/../sql/link.sql';
-		$updater->addExtensionTable( 'link', $file );
+		$sqlPath = __DIR__ . '/../sql';
+		$updater->addExtensionTable( 'link', $sqlPath . '/link.sql' );
+		$db = $updater->getDB();
+		// If the user_stats table exists (=SocialProfile is installed), check if
+		// it has the columns we need and if not, create them.
+		if ( $db->tableExists( 'user_stats' ) ) {
+			if ( !$db->fieldExists( 'user_stats', 'stats_links_submitted', __METHOD__ ) ) {
+				$updater->addExtensionField( 'user_stats', 'stats_links_submitted', $sqlPath . '/patch-add_stats_links_submitted_column.sql' );
+			}
+			if ( !$db->fieldExists( 'user_stats', 'stats_links_approved', __METHOD__ ) ) {
+				$updater->addExtensionField( 'user_stats', 'stats_links_approved', $sqlPath . '/patch-add_stats_links_approved_column.sql' );
+			}
+		}
 	}
 
 	/**
