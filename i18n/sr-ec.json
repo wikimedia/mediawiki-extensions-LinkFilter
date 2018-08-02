@@ -3,9 +3,11 @@
 		"authors": [
 			"Rancher",
 			"Milicevic01",
-			"Obsuser"
+			"Obsuser",
+			"BadDog"
 		]
 	},
+	"linkapprove": "Одобравање веза",
 	"linkfilter-login-title": "Нисте пријављени",
 	"linkfilter-url": "Адреса",
 	"linkfilter-time-seconds": "{{PLURAL:$1|1 секунда|$1 секунда|$1 секунди}}"
