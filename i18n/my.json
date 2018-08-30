@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ninjastrikers"
+			"Ninjastrikers",
+			"Dr Lotus Black"
 		]
 	},
-	"linkfilter-all": "အားလုံး"
+	"linkfilter-all": "အားလုံး",
+	"linkfilter-description": "ဖော်ပြချက်"
 }
