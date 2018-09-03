@@ -120,8 +120,8 @@ class LinkApprove extends SpecialPage {
 		$output = '<div class="lr-left">';
 
 		$l = new LinkList();
-
-		$links = $l->getLinkList( LinkStatus::OPEN, /*$type*/0, 0, 0 );
+		$type = $this->getRequest()->getInt( 'type', 0 );
+		$links = $l->getLinkList( LinkStatus::OPEN, $type, 0, 0 );
 		$links_count = count( $links );
 		$x = 1;
 
@@ -174,15 +174,34 @@ class LinkApprove extends SpecialPage {
 
 		// Admin instructions and the column of recently approved links
 		$output .= '</div>';
-		$output .= '<div class="lr-right">
-			<div class="admin-link-instruction">' .
+		$output .= '<div class="lr-right">';
+		// Link category filter
+		$output .= '<div class="admin-link-type-filter-container">';
+		$output .= $this->msg( 'linkfilter-admin-cat-filter' )->escaped();
+		$output .= '<select id="admin-link-type-filter">';
+		// @note Intentionally _not_ using array_merge() but rather the plus operator.
+		// Using array_merge() results in Link::getLinkTypes() keys being reordered
+		// so that all the categories after "Funny" (ID #4) are given the wrong ID.
+		// For whatever reason Link::getLinkTypes() skips over ID #5 and we must also
+		// do the same and avoid reintroducing that ID, despite that we want to add
+		// "All" as ID #0.
+		$linkTypes = [ 0 => $this->msg( 'linkfilter-all' )->escaped() ] + Link::getLinkTypes();
+		foreach ( $linkTypes as $id => $linkType ) {
+			$output .= Xml::option( $linkType, $id, ( $id === $type ) );
+		}
+		$output .= '</select>';
+		$output .= '</div>';
+		// Admin instructions
+		$output .= '<div class="admin-link-instruction">' .
 				$this->msg( 'linkfilter-admin-instructions' )->inContentLanguage()->parse() .
-			'</div>
-			<div class="approved-link-container">
+			'</div>';
+		// A listing of recently approved links (in this category, if a category was
+		// specified; otherwise shows all queued links, which is the default)
+		$output .= '<div class="approved-link-container">
 				<h3>' . $this->msg( 'linkfilter-admin-recent' )->text() . '</h3>';
 
 		$l = new LinkList();
-		$links = $l->getLinkList( LinkStatus::APPROVED, /*$type*/0, 10, 0, 'link_approved_date' );
+		$links = $l->getLinkList( LinkStatus::APPROVED, $type, 10, 0, 'link_approved_date' );
 
 		// Nothing has been approved recently? Okay...
 		if ( count( $links ) <= 0 ) {

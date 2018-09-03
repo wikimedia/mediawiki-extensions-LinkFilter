@@ -99,6 +99,11 @@ $( function() {
 		LinkFilter.linkAction( 2, that.data( 'link-id' ) );
 	} );
 
+	// Link type filter on Special:LinkApprove
+	$( '#admin-link-type-filter' ).change( function() {
+		window.location = mw.util.getUrl( 'Special:LinkApprove', { type: $( this ).val() } );
+	} );
+
 	// Textarea on Special:LinkEdit/Special:LinkSubmit
 	$( 'textarea.lr-input' ).on( 'keyup', function() {
 		LinkFilter.limitText( document.link.lf_desc, 300 );

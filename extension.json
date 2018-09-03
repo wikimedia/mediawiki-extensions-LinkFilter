@@ -1,6 +1,6 @@
 {
 	"name": "LinkFilter",
-	"version": "3.5.2",
+	"version": "3.5.3",
 	"author": [
 		"Aaron Wright",
 		"David Pean",
@@ -119,7 +119,10 @@
 		},
 		"ext.linkFilter.scripts": {
 			"scripts": "resources/js/LinkFilter.js",
-			"dependencies": [ "mediawiki.api" ],
+			"dependencies": [
+				"mediawiki.api",
+				"mediawiki.util"
+			],
 			"messages": [
 				"linkfilter-admin-accept-success", "linkfilter-admin-reject-success",
 				"linkfilter-submit-no-title", "linkfilter-submit-no-type",

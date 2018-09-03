@@ -40,6 +40,7 @@
 	"linkfilter-approve-title": "Link administration",
 	"linkfilter-submittedby": "'''Submitted by''': [[User:$1|$1]]",
 	"linkfilter-submitted": "Submitted $1",
+	"linkfilter-admin-cat-filter": "Show only links pending approval in category:",
 	"linkfilter-admin-accept": "Accept",
 	"linkfilter-admin-reject": "Reject",
 	"linkfilter-admin-reject-success": "The link was rejected",
