@@ -38,6 +38,7 @@
 	"linkfilter-approve-title": "Administração de hiperligações",
 	"linkfilter-submittedby": "'''Enviado por''': [[User:$1|$1]]",
 	"linkfilter-submitted": "Enviado em $1",
+	"linkfilter-admin-cat-filter": "Mostrar apenas links com aprovação pendente na categoria:",
 	"linkfilter-admin-accept": "Aceitar",
 	"linkfilter-admin-reject": "Recusar",
 	"linkfilter-admin-reject-success": "A hiperligação foi rejeitada",

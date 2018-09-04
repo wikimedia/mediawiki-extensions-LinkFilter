@@ -41,6 +41,7 @@
 	"linkfilter-approve-title": "Administration des liens",
 	"linkfilter-submittedby": "'''Soumis par''' : [[User:$1|$1]]",
 	"linkfilter-submitted": "$1 soumis",
+	"linkfilter-admin-cat-filter": "Afficher uniquement les liens en attente d’approbation dans la catégorie :",
 	"linkfilter-admin-accept": "Accepter",
 	"linkfilter-admin-reject": "Rejeter",
 	"linkfilter-admin-reject-success": "Le lien a été rejeté",

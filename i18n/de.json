@@ -38,6 +38,7 @@
 	"linkfilter-approve-title": "Linkverwaltung",
 	"linkfilter-submittedby": "'''Eingereicht von:''' [[User:$1|$1]]",
 	"linkfilter-submitted": "$1 eingereicht",
+	"linkfilter-admin-cat-filter": "Nur Links anzeigen, bei denen eine Akzeptierung ausstehend ist in der Kategorie:",
 	"linkfilter-admin-accept": "Akzeptieren",
 	"linkfilter-admin-reject": "Ablehnen",
 	"linkfilter-admin-reject-success": "Der Link wurde abgelehnt.",
