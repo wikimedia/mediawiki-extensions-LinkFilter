@@ -37,6 +37,7 @@
 	"linkfilter-approve-title": "Länkadministration",
 	"linkfilter-submittedby": "'''Inlämnad av''': [[User:$1|$1]]",
 	"linkfilter-submitted": "Skickade in $1",
+	"linkfilter-admin-cat-filter": "Visa endast länkar som väntar på godkännande i kategori:",
 	"linkfilter-admin-accept": "Acceptera",
 	"linkfilter-admin-reject": "Avvisa",
 	"linkfilter-admin-reject-success": "Länken avvisades",

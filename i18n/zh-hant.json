@@ -42,6 +42,7 @@
 	"linkfilter-approve-title": "連結管理員",
 	"linkfilter-submittedby": "'''提交者'''：[[User:$1|$1]]",
 	"linkfilter-submitted": "提交於$1",
+	"linkfilter-admin-cat-filter": "僅顯示在分類裡待批准連結：",
 	"linkfilter-admin-accept": "接受",
 	"linkfilter-admin-reject": "拒絕",
 	"linkfilter-admin-reject-success": "連結已拒絕",

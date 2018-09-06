@@ -37,6 +37,7 @@
 	"linkfilter-approve-title": "Alministración d'enllaces",
 	"linkfilter-submittedby": "'''Unviáu por:''' [[User:$1|$1]]",
 	"linkfilter-submitted": "Unviáu el $1",
+	"linkfilter-admin-cat-filter": "Ver sólo los enllaces pendientes d'aprobar na categoría:",
 	"linkfilter-admin-accept": "Aceutar",
 	"linkfilter-admin-reject": "Refugar",
 	"linkfilter-admin-reject-success": "Refugóse l'enllaz",

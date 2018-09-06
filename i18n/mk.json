@@ -38,6 +38,7 @@
 	"linkfilter-approve-title": "Администрација на врски",
 	"linkfilter-submittedby": "'''Поднел''': [[User:$1|$1]]",
 	"linkfilter-submitted": "Поднесено $1",
+	"linkfilter-admin-cat-filter": "Прикажувај само содржини што чекаат на одобрување во категорија:",
 	"linkfilter-admin-accept": "Прифати",
 	"linkfilter-admin-reject": "Одбиј",
 	"linkfilter-admin-reject-success": "Врската е одбиена",

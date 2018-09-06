@@ -39,6 +39,7 @@
 	"linkfilter-approve-title": "링크 관리",
 	"linkfilter-submittedby": "'''제출자''': [[User:$1|$1]]",
 	"linkfilter-submitted": "$1에 제출함",
+	"linkfilter-admin-cat-filter": "분류에서 승인을 대기 중인 링크만 표시합니다:",
 	"linkfilter-admin-accept": "승인",
 	"linkfilter-admin-reject": "거부",
 	"linkfilter-admin-reject-success": "링크가 거부되었습니다",
