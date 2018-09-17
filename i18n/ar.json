@@ -38,6 +38,7 @@
 	"linkfilter-approve-title": "إدارة الرابط",
 	"linkfilter-submittedby": "'''قدمه''': [[User:$1|$1]]",
 	"linkfilter-submitted": "قُدِّم في $1",
+	"linkfilter-admin-cat-filter": "إظهار الروابط فقط في انتظار الموافقة في التصنيف:",
 	"linkfilter-admin-accept": "قبول",
 	"linkfilter-admin-reject": "رفض",
 	"linkfilter-admin-reject-success": "تم رفض الرابط",
