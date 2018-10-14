@@ -4,7 +4,8 @@
 			"Armando-Martin",
 			"Macofe",
 			"Dgstranz",
-			"Fitoschido"
+			"Fitoschido",
+			"Tiberius1701"
 		]
 	},
 	"linkapprove": "Aprobar enlaces",
@@ -35,7 +36,7 @@
 	"linkfilter-submit-success-title": "Enlace enviado",
 	"linkfilter-submit-success-text": "Tu enlace ha sido enviado para su aprobación",
 	"linkfilter-instructions": "Puedes [[MediaWiki:Linkfilter-instructions|añadir instrucciones para los usuarios]].",
-	"linkfilter-admin-instructions": "Puedes añadirr [[MediaWiki:Linkfilter-admin-instructions|instrucciones para los administradores]].",
+	"linkfilter-admin-instructions": "Puedes añadir [[MediaWiki:Linkfilter-admin-instructions|instrucciones para los administradores]].",
 	"linkfilter-admin-recent": "Aprobadas recentemente",
 	"linkfilter-approve-title": "Administración de enlaces",
 	"linkfilter-submittedby": "'''Presentado por''': [[User:$1|$1]]",
