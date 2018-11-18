@@ -68,6 +68,7 @@
 	"grouppage-linkadmin": "{{ns:project}}:Administradores de hiperligações",
 	"right-linkadmin": "Administrar hiperligações enviadas pelos usuários",
 	"group-linkadmin.css": "/* CSS colocado aqui afetará apenas os linkadmins */",
+	"group-linkadmin.js": "/* JS colocado aqui afetará apenas os linkadmins */",
 	"apihelp-linkfilter-description": "Módulo de bastidores da API para aprovação de hiperligações enviadas pelos usuários",
 	"apihelp-linkfilter-summary": "Módulo de bastidores da API para aprovação de hiperligações enviadas pelos usuários",
 	"apihelp-linkfilter-param-id": "Número de identificação da hiperligação",
