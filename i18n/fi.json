@@ -4,7 +4,8 @@
 			"Crt",
 			"Jack Phoenix",
 			"Nike",
-			"Silvonen"
+			"Silvonen",
+			"Valtlait"
 		]
 	},
 	"linkapprove": "Linkkien ylläpito",
@@ -12,7 +13,7 @@
 	"linksubmit": "Lähetä linkki",
 	"linkfilter-nothing-to-approve": "Tällä hetkellä ei ole yhtään linkkiä odottamassa hyväksyntää.",
 	"linkfilter-no-recently-approved": "Linkkejä ei ole hyväksytty äskettäin.",
-	"linkfilter-ago": "$1 sitten luokkaan \"<i>$2</i>\"",
+	"linkfilter-ago": "$1 sitten luokkaan <i>$2</i>",
 	"linkfilter-all": "Kaikki",
 	"linkfilter-submit": "Lähetä",
 	"linkfilter-submit-title": "Lähetä linkki",
