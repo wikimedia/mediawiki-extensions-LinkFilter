@@ -44,6 +44,7 @@
 	"linkfilter-approve-title": "Адміністрування посилань",
 	"linkfilter-submittedby": "'''{{GENDER:$1|Додав|Додала|Додано}}''': [[User:$1|$1]]",
 	"linkfilter-submitted": "Додано $1",
+	"linkfilter-admin-cat-filter": "Показувати лише посилання, які потребують затвердження, в категорії:",
 	"linkfilter-admin-accept": "Прийняти",
 	"linkfilter-admin-reject": "Відхилити",
 	"linkfilter-admin-reject-success": "Посилання було відхилено",
