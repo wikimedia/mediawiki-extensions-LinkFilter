@@ -10,6 +10,9 @@
 	"url": "https://www.mediawiki.org/wiki/Extension:LinkFilter",
 	"descriptionmsg": "linkfilter-desc",
 	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.31.0"
+	},
 	"config": {
 		"LinkFilterTypes": {
 			"1": "Arrest Report",
