@@ -9,7 +9,8 @@
 			"Исмаил Садуев",
 			"Putnik",
 			"Kareyac",
-			"Facenapalm"
+			"Facenapalm",
+			"Movses"
 		]
 	},
 	"linkapprove": "Одобрить ссылки",
@@ -45,6 +46,7 @@
 	"linkfilter-approve-title": "Администрирование ссылок",
 	"linkfilter-submittedby": "'''Добавлена {{GENDER:$1|участником|участницей}}''': [[User:$1|$1]]",
 	"linkfilter-submitted": "Добавлена $1",
+	"linkfilter-admin-cat-filter": "Показывать только ссылки, ожидающие утверждения, в категории:",
 	"linkfilter-admin-accept": "Принять",
 	"linkfilter-admin-reject": "Отклонить",
 	"linkfilter-admin-reject-success": "Ссылка была отклонена",
