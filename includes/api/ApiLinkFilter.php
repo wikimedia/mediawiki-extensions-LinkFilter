@@ -24,7 +24,7 @@ class ApiLinkFilter extends ApiBase {
 			!$status || $status === null || !is_numeric( $status )
 		)
 		{
-			$this->dieUsageMsg( 'missingparam' );
+			$this->dieWithError( [ 'apierror-missingparam' ], 'missingparam' );
 		}
 
 		// Check permissions
