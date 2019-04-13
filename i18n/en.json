@@ -68,6 +68,7 @@
 	"group-linkadmin": "Link administrators",
 	"group-linkadmin-member": "{{GENDER:$1|link administrator}}",
 	"grouppage-linkadmin": "{{ns:project}}:Link administrators",
+	"action-linkadmin": "administrate user-submitted links",
 	"right-linkadmin": "Administrate user-submitted links",
 	"group-linkadmin.css": "/* CSS placed here will affect linkadmins only */",
 	"group-linkadmin.js": "/* JS placed here will affect linkadmins only */",

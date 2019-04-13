@@ -70,6 +70,7 @@
 	"group-linkadmin": "{{doc-group|linkadmin}}",
 	"group-linkadmin-member": "{{doc-group|linkadmin|member}}",
 	"grouppage-linkadmin": "{{doc-group|linkadmin|page}}",
+	"action-linkadmin": "{{doc-action|linkadmin}}",
 	"right-linkadmin": "{{doc-right|linkadmin}}",
 	"group-linkadmin.css": "{{doc-group|linkadmin|css}}",
 	"group-linkadmin.js": "{{doc-group|linkadmin|js}}",
