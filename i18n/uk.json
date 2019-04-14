@@ -8,7 +8,8 @@
 			"Ата",
 			"Translatemyname",
 			"Dars",
-			"Piramidion"
+			"Piramidion",
+			"Vlad5250"
 		]
 	},
 	"linkapprove": "Затвердити посилання",
@@ -72,6 +73,7 @@
 	"group-linkadmin": "Адміністратори посилань",
 	"group-linkadmin-member": "{{GENDER:$1|Адміністратор посилань}}",
 	"grouppage-linkadmin": "{{ns:project}}:Адміністратори посилань",
+	"action-linkadmin": "адміністрування доданих користувачами коментарів",
 	"right-linkadmin": "Адміністрування доданих користувачами посилань",
 	"apihelp-linkfilter-description": "Backend-API-модуль для затвердження посилань, що додаються користувачами",
 	"apihelp-linkfilter-summary": "Бекенд-модуль API для затвердження поданих користувачами посилань",

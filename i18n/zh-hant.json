@@ -70,6 +70,7 @@
 	"group-linkadmin": "連結管理員",
 	"group-linkadmin-member": "{{GENDER:$1|連結管理員}}",
 	"grouppage-linkadmin": "{{ns:project}}:連結管理員",
+	"action-linkadmin": "管理使用者提交的連結",
 	"right-linkadmin": "管理使用者提交的連結",
 	"apihelp-linkfilter-description": "用於核准使用者所提交連結的後端 API 模組",
 	"apihelp-linkfilter-summary": "用於核准使用者所提交連結的後端 API 模組",

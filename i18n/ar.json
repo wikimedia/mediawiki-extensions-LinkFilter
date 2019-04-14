@@ -67,6 +67,7 @@
 	"group-linkadmin": "إداريو الروابط",
 	"group-linkadmin-member": "{{GENDER:$1|إداري وصلات|إدارية وصلات}}",
 	"grouppage-linkadmin": "{{ns:project}}:إداريو الروابط",
+	"action-linkadmin": "إدارة الوصلات المرسلة بواسطة المستخدم",
 	"right-linkadmin": "إدارة الروابط التي يرسلها المستخدم",
 	"group-linkadmin.css": "/* الأنماط المتراصة CSS المعروضة هنا ستؤثر على إداريي الوصلات فقط */",
 	"group-linkadmin.js": "/* الجافا سكريبت المعروضة هنا ستؤثر على إداريي الوصلات فقط */",
