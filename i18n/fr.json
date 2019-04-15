@@ -69,6 +69,7 @@
 	"group-linkadmin": "Administrateurs des liens",
 	"group-linkadmin-member": "{{GENDER:$1|administrateur des liens|administratrice des liens}}",
 	"grouppage-linkadmin": "{{ns:project}}:Link administrators",
+	"action-linkadmin": "gérer les liens soumis par l’utilisateur",
 	"right-linkadmin": "Administrer les liens soumis par les utilisateurs",
 	"group-linkadmin.css": "/* Le CSS placé ici n’affectera que les administrateurs de liens */",
 	"group-linkadmin.js": "/* Le Javascript placé ici n’affectera que les administrateurs de liens */",
