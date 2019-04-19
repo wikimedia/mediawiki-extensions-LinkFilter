@@ -67,6 +67,7 @@
 	"group-linkadmin": "Administradores de hiperligações",
 	"group-linkadmin-member": "{{GENDER:$1|Administrador de hiperligações|Administradora de hiperligações}}",
 	"grouppage-linkadmin": "{{ns:project}}:Administradores de hiperligações",
+	"action-linkadmin": "administrar hiperligações enviadas pelos utilizadores",
 	"right-linkadmin": "Administrar hiperligações enviadas pelos utilizadores",
 	"apihelp-linkfilter-description": "Módulo de bastidores da API para aprovação de hiperligações enviadas pelos utilizadores",
 	"apihelp-linkfilter-summary": "Módulo de bastidores da API para aprovação de hiperligações enviadas pelos utilizadores",
