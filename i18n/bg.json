@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"StanProg"
 		]
 	},
 	"linkfilter-all": "Всички",
+	"linkfilter-submit": "Изпращане",
 	"linkfilter-title": "Заглавие",
 	"linkfilter-description": "Описание"
 }
