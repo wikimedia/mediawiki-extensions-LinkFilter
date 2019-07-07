@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"SPQRobin",
-			"Siebrand"
+			"Siebrand",
+			"Mainframe98"
 		]
 	},
 	"linkapprove": "Koppelingen controleren",
@@ -16,6 +17,8 @@
 	"linkfilter-all": "Alle",
 	"linkfilter-submit": "Opslaan",
 	"linkfilter-submit-title": "Koppeling voorstellen",
+	"linkfilter-submit-no-desc": "Voer een beschrijving in voor deze koppeling",
+	"linkfilter-submit-no-url": "U moet een URL invoeren!",
 	"linkfilter-submit-no-title": "Geef een naam op",
 	"linkfilter-submit-no-type": "Kies een koppelingstype.",
 	"linkfilter-edit-title": "$1 bewerken",
