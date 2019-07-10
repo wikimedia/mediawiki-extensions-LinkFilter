@@ -227,6 +227,10 @@ class LinkFilterHooks {
 				$updater->addExtensionField( 'user_stats', 'stats_links_approved', $sqlPath . '/patch-add_stats_links_approved_column.sql' );
 			}
 		}
+		// Actor support (see T227345)
+		if ( $db->tableExists( 'link' ) && !$db->fieldExists( 'link', 'link_submitter_actor', __METHOD__ ) ) {
+			$updater->addExtensionField( 'link', 'link_submitter_actor', $sqlPath . '/patch-add_link_submitter_actor_column.sql' );
+		}
 	}
 
 	/**

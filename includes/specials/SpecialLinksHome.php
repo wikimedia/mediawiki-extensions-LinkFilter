@@ -29,7 +29,7 @@ class LinksHome extends SpecialPage {
 		$newsItem = $newsArray[array_rand( $newsArray )];
 		$output = '<div class="link-container border-fix">
 			<h2>' . $this->msg( 'linkfilter-in-the-news' )->text() . '</h2>
-			<div>' . $this->getOutput()->parse( $newsItem, false ) . '</div>
+			<div>' . $this->getOutput()->parseAsContent( $newsItem, false ) . '</div>
 		</div>';
 
 		return $output;
