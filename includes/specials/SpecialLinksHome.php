@@ -143,7 +143,7 @@ class LinksHome extends SpecialPage {
 		$out->addModuleStyles( 'ext.linkFilter.styles' );
 		$out->addModules( 'ext.linkFilter.scripts' );
 
-		$per_page = 20;
+		$per_page = $request->getInt( 'per_page', 20 );
 		$page = $request->getInt( 'page', 1 );
 		$link_type = $request->getInt( 'link_type' );
 
@@ -171,9 +171,8 @@ class LinksHome extends SpecialPage {
 		</div>' . "\n";
 		$l = new LinkList();
 
-		$type = 0; // FIXME lazy hack --Jack on July 2, 2009
-		$total = $l->getLinkListCount( LinkStatus::APPROVED, $type );
-		$links = $l->getLinkList( LinkStatus::APPROVED, $type, $per_page, $page, 'link_approved_date' );
+		$total = $l->getLinkListCount( LinkStatus::APPROVED, $link_type );
+		$links = $l->getLinkList( LinkStatus::APPROVED, $link_type, $per_page, $page, 'link_approved_date' );
 		$linkRedirect = SpecialPage::getTitleFor( 'LinkRedirect' );
 		$output .= '<div class="links-home-container">';
 		$link_count = count( $links );
