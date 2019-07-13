@@ -81,6 +81,7 @@ class LinkEdit extends UnlistedSpecialPage {
 
 		$l = new Link();
 		$link = $l->getLinkByPageID( $request->getInt( 'id' ) );
+		$description = '';
 
 		if ( is_array( $link ) && !empty( $link ) ) {
 			$url = htmlspecialchars( $link['url'], ENT_QUOTES );
