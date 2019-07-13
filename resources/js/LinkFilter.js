@@ -14,7 +14,7 @@ var LinkFilter = {
 	linkAction: function( action, link_id ) {
 		$( 'div.action-buttons-1' ).hide();
 
-		( new mw.Api() ).postWithToken( 'edit', {
+		( new mw.Api() ).postWithToken( 'csrf', {
 			action: 'linkfilter',
 			id: link_id,
 			status: action,
