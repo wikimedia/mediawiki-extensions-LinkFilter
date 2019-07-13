@@ -246,16 +246,17 @@ class LinksHome extends SpecialPage {
 		$numofpages = $total / $per_page;
 
 		$pageLink = $this->getPageTitle();
+		$linkRenderer = $this->getLinkRenderer();
 
 		if ( $numofpages > 1 ) {
 			$output .= '<div class="page-nav">';
 			if ( $page > 1 ) {
-				$output .= Linker::link(
+				$output .= $linkRenderer->makeLink(
 					$pageLink,
-					$this->msg( 'linkfilter-previous' )->plain(),
+					$this->msg( 'linkfilter-previous' )->text(),
 					[],
 					[ 'page' => ( $page - 1 ) ]
-				) . $this->msg( 'word-separator' )->plain();
+				) . $this->msg( 'word-separator' )->escaped();
 			}
 
 			if ( ( $total % $per_page ) != 0 ) {
@@ -272,20 +273,20 @@ class LinksHome extends SpecialPage {
 				if ( $i == $page ) {
 					$output .= ( $i . ' ' );
 				} else {
-					$output .= Linker::link(
+					$output .= $linkRenderer->makeLink(
 						$pageLink,
 						$i,
 						[],
 						[ 'page' => $i ]
-					) . $this->msg( 'word-separator' )->plain();
+					) . $this->msg( 'word-separator' )->escaped();
 				}
 			}
 
 			if ( ( $total - ( $per_page * $page ) ) > 0 ) {
-				$output .= $this->msg( 'word-separator' )->plain() .
-					Linker::link(
+				$output .= $this->msg( 'word-separator' )->escaped() .
+					$linkRenderer->makeLink(
 						$pageLink,
-						$this->msg( 'linkfilter-next' )->plain(),
+						$this->msg( 'linkfilter-next' )->text(),
 						[],
 						[ 'page' => ( $page + 1 ) ]
 					);
