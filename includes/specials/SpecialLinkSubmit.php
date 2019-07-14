@@ -67,7 +67,7 @@ class LinkSubmit extends SpecialPage {
 
 			// ...and it needs a type
 			if ( !$request->getInt( 'lf_type' ) ) {
-				$out->setPageTitle( $this->msg( 'error' )-text() );
+				$out->setPageTitle( $this->msg( 'error' )->text() );
 				$out->addHTML( $this->displayAddForm() );
 				return true;
 			}
