@@ -11,7 +11,7 @@
 	"descriptionmsg": "linkfilter-desc",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.31.0"
+		"MediaWiki": ">= 1.32.0"
 	},
 	"config": {
 		"LinkFilterTypes": {

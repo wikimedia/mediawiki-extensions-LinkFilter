@@ -79,7 +79,7 @@ class LinkPage extends Article {
 		}
 
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'Comments' ) ) {
-			$wgOut->addWikiText( '<comments/>' );
+			$wgOut->addWikiTextAsInterface( '<comments/>' );
 		}
 
 		$wgOut->addHTML( '</div>' );
