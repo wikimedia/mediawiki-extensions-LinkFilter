@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"linkfilter-all": "Svi",
+	"linkfilter-submit": "Unesi",
+	"linkfilter-edit-title": "Uređivanje $1",
+	"linkfilter-login-title": "Niste prijavljeni",
+	"linkfilter-login-text": "Morate biti prijavljeni da biste mogli podavati linkove.",
+	"linkfilter-title": "Naslov",
+	"linkfilter-description": "Opis",
+	"linkfilter-edit-summary": "novi link",
+	"linkfilter-no-results": "Nema pronađeno nijednu stranicu.",
+	"group-linkadmin": "Administratori linkova",
+	"group-linkadmin-member": "{{GENDER:$1|administrator linkova|administratorica linkova}}",
+	"grouppage-linkadmin": "{{ns:project}}:Administratori linkova"
+}
