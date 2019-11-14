@@ -1,0 +1,1 @@
+ALTER TABLE /*_*/link ADD COLUMN link_submitter_actor bigint unsigned NOT NULL AFTER link_status;

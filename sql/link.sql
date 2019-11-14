@@ -13,6 +13,8 @@ CREATE TABLE /*_*/link (
   link_type int(5) NOT NULL default 0,
    -- 1 = accepted, 2 = rejected
   link_status int(5) NOT NULL default 0,
+  -- Key to actor_id for the person who submitted the link
+  link_submitter_actor bigint unsigned NOT NULL,
    -- User ID of the person who submitted the link
   link_submitter_user_id int(11) NOT NULL default 0,
    -- User name of the person who submitted the link

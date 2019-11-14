@@ -176,14 +176,21 @@ class LinkPage extends Article {
 	 * @return string HTML
 	 */
 	function displaySubmitterBox() {
-		global $wgOut, $wgLinkPageDisplay;
+		global $wgActorTableSchemaMigrationStage, $wgOut, $wgLinkPageDisplay;
 
 		if ( !$wgLinkPageDisplay['author'] ) {
 			return '';
 		}
 
-		$authorUserName = $this->link['user_name'];
-		$authorUserId = $this->link['user_id'];
+		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
+			$author = User::newFromActorId( $this->link['actor'] );
+			$authorUserId = $author->getId();
+			$authorUserName = $author->getName();
+		}
+		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
+			$authorUserName = $this->link['user_name'];
+			$authorUserId = $this->link['user_id'];
+		}
 
 		if ( !$authorUserId ) {
 			return '';
@@ -207,7 +214,7 @@ class LinkPage extends Article {
 					<a href=\"" . htmlspecialchars( $authorTitle->getFullURL(), ENT_QUOTES ) . "\" rel=\"nofollow\">{$authorUserName}</a>
 				</div>";
 		if ( $profileData['about'] ) {
-			$output .= $wgOut->parse( $profileData['about'], false );
+			$output .= $wgOut->parseAsContent( $profileData['about'], false );
 		}
 		$output .= '</div>
 			<div class="visualClear"></div>
@@ -270,7 +277,7 @@ class LinkPage extends Article {
 		$newsItem = $newsArray[array_rand( $newsArray )];
 		$output = '<div class="link-container">
 			<h2>' . wfMessage( 'linkfilter-in-the-news' )->text() . '</h2>
-			<div>' . $wgOut->parse( $newsItem, false ) . '</div>
+			<div>' . $wgOut->parseAsContent( $newsItem, false ) . '</div>
 		</div>';
 
 		return $output;

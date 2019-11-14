@@ -79,7 +79,7 @@ class Link {
 	 *						this class' static array.
 	 */
 	public function addLink( $title, $desc, $url, $type ) {
-		global $wgUser;
+		global $wgActorTableSchemaMigrationStage, $wgUser;
 
 		$dbw = wfGetDB( DB_MASTER );
 
@@ -87,25 +87,34 @@ class Link {
 		$date = date( 'Y-m-d H:i:s' );
 		Wikimedia\restoreWarnings();
 
+		$fields = [
+			'link_name' => $title,
+			'link_page_id' => 0,
+			'link_url' => $url,
+			'link_description' => $desc,
+			'link_type' => intval( $type ),
+			'link_status' => 0,
+			'link_submit_date' => $date
+		];
+
+		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_WRITE_NEW ) {
+			$fields['link_submitter_actor'] = $wgUser->getActorId();
+		}
+
+		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_WRITE_OLD ) {
+			$fields['link_submitter_user_id'] = $wgUser->getId();
+			$fields['link_submitter_user_name'] = $wgUser->getName();
+		}
+
 		$dbw->insert(
 			'link',
-			[
-				'link_name' => $title,
-				'link_page_id' => 0,
-				'link_url' => $url,
-				'link_description' => $desc,
-				'link_type' => intval( $type ),
-				'link_status' => 0,
-				'link_submitter_user_id' => $wgUser->getID(),
-				'link_submitter_user_name' => $wgUser->getName(),
-				'link_submit_date' => $date
-			],
+			$fields,
 			__METHOD__
 		);
 
 		// If SocialProfile extension is installed, increase social statistics.
 		if ( class_exists( 'UserStatsTrack' ) ) {
-			$stats = new UserStatsTrack( $wgUser->getID(), $wgUser->getName() );
+			$stats = new UserStatsTrack( $wgUser->getId(), $wgUser->getName() );
 			$stats->incStatField( 'links_submitted' );
 		}
 	}
@@ -118,6 +127,8 @@ class Link {
 	 * @param int $id Link identifier
 	 */
 	public function approveLink( $id ) {
+		global $wgActorTableSchemaMigrationStage;
+
 		$link = $this->getLink( $id );
 
 		// Create the wiki page for the newly-approved link
@@ -151,7 +162,17 @@ class Link {
 		);
 
 		if ( class_exists( 'UserStatsTrack' ) ) {
-			$stats = new UserStatsTrack( $link['user_id'], $link['user_name'] );
+			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
+				$userId = $link['user_id'];
+				$userName = $link['user_name'];
+			}
+			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
+				$user = User::newFromActorId( $link['actor'] );
+				$userId = $user->getId();
+				$userName = $user->getName();
+			}
+
+			$stats = new UserStatsTrack( $userId, $userName );
 			$stats->incStatField( 'links_approved' );
 		}
 	}
@@ -163,20 +184,27 @@ class Link {
 	 * @return array
 	 */
 	public function getLinkByPageID( $pageId ) {
-		global $wgOut;
+		global $wgActorTableSchemaMigrationStage;
 
 		if ( !is_numeric( $pageId ) ) {
 			return '';
 		}
 
 		$dbr = wfGetDB( DB_REPLICA );
+		$fields = [
+			'link_id', 'link_name', 'link_url', 'link_description',
+			'link_type', 'link_status', 'link_page_id'
+		];
+		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
+			$fields[] = 'link_submitter_actor';
+		}
+		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
+			$fields[] = 'link_submitter_user_id';
+			$fields[] = 'link_submitter_user_name';
+		}
 		$res = $dbr->select(
 			'link',
-			[
-				'link_id', 'link_name', 'link_url', 'link_description',
-				'link_type', 'link_status', 'link_page_id',
-				'link_submitter_user_id', 'link_submitter_user_name'
-			],
+			$fields,
 			[ 'link_page_id' => $pageId ],
 			__METHOD__,
 			[
@@ -193,12 +221,17 @@ class Link {
 			$link['title'] = $row->link_name;
 			$link['url'] = $row->link_url;
 			$link['type'] = $row->link_type;
-			$link['description'] = $wgOut->parse( $row->link_description, false );
+			$link['description'] = $this->parseDescription( $row->link_description, false );
 			$link['type_name'] = self::getLinkType( $row->link_type );
 			$link['status'] = $row->link_status;
 			$link['page_id'] = $row->link_page_id;
-			$link['user_id'] = $row->link_submitter_user_id;
-			$link['user_name'] = $row->link_submitter_user_name;
+			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
+				$link['actor'] = $row->link_submitter_actor;
+			}
+			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
+				$link['user_id'] = $row->link_submitter_user_id;
+				$link['user_name'] = $row->link_submitter_user_name;
+			}
 		}
 
 		return $link;
@@ -244,7 +277,7 @@ class Link {
 	 * @return array
 	 */
 	public function getLink( $id ) {
-		global $wgOut;
+		global $wgActorTableSchemaMigrationStage;
 
 		if ( !is_numeric( $id ) ) {
 			return '';
@@ -252,13 +285,20 @@ class Link {
 
 		$dbr = wfGetDB( DB_REPLICA );
 
+		$fields = [
+			'link_id', 'link_name', 'link_url', 'link_description',
+			'link_type', 'link_status', 'link_page_id'
+		];
+		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
+			$fields[] = 'link_submitter_actor';
+		}
+		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
+			$fields[] = 'link_submitter_user_id';
+			$fields[] = 'link_submitter_user_name';
+		}
 		$res = $dbr->select(
 			'link',
-			[
-				'link_id', 'link_name', 'link_url', 'link_description',
-				'link_type', 'link_status', 'link_page_id',
-				'link_submitter_user_id', 'link_submitter_user_name'
-			],
+			$fields,
 			[ 'link_id' => $id ],
 			__METHOD__,
 			[
@@ -273,15 +313,34 @@ class Link {
 			$link['id'] = $row->link_id;
 			$link['title'] = $row->link_name;
 			$link['url'] = $row->link_url;
-			$link['description'] = $wgOut->parse( $row->link_description, false );
+			$link['description'] = $this->parseDescription( $row->link_description );
 			$link['type'] = $row->link_type;
 			$link['type_name'] = self::getLinkType( $row->link_type );
 			$link['status'] = $row->link_status;
 			$link['page_id'] = $row->link_page_id;
-			$link['user_id'] = $row->link_submitter_user_id;
-			$link['user_name'] = $row->link_submitter_user_name;
+			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
+				$link['actor'] = $row->link_submitter_actor;
+			}
+			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
+				$link['user_id'] = $row->link_submitter_user_id;
+				$link['user_name'] = $row->link_submitter_user_name;
+			}
 		}
 
 		return $link;
+	}
+
+	/**
+	 * Parse link description. Basically a wrapper around OutputPage's parseAsContent
+	 * method, but also removes the resulting <p>...</p> tags parseAsContent's
+	 * return value is wrapped into, because they're awfully pointless and probably
+	 * more harmful than useful.
+	 *
+	 * @param string $desc User-submitted link description from the link DB table
+	 * @return string Cleaned-up and fully parsed link description
+	 */
+	private function parseDescription( $desc ) {
+		global $wgOut;
+		return str_replace( [ '<p>', '</p>' ], '', $wgOut->parseAsContent( $desc, false ) );
 	}
 }

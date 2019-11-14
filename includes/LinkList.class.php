@@ -16,6 +16,8 @@ class LinkList {
 	 * @param string $order ORDER BY clause for SQL query.
 	 */
 	public function getLinkList( $status, $type, $limit = 0, $page = 0, $order = 'link_submit_date' ) {
+		global $wgActorTableSchemaMigrationStage;
+
 		$dbr = wfGetDB( DB_REPLICA );
 
 		$params['ORDER BY'] = "$order DESC";
@@ -34,14 +36,21 @@ class LinkList {
 		}
 
 		$dbr = wfGetDB( DB_MASTER );
+		$fields = [
+			'link_id', 'link_page_id', 'link_type', 'link_status',
+			'link_name', 'link_description', 'link_url',
+			'link_submit_date', 'link_approved_date', 'link_comment_count'
+		];
+		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
+			$fields[] = 'link_submitter_actor';
+		}
+		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
+			$fields[] = 'link_submitter_user_id';
+			$fields[] = 'link_submitter_user_name';
+		}
 		$res = $dbr->select(
 			[ 'link' ],
-			[
-				'link_id', 'link_page_id', 'link_type', 'link_status',
-				'link_name', 'link_description', 'link_url',
-				'link_submitter_user_id', 'link_submitter_user_name',
-				'link_submit_date', 'link_approved_date', 'link_comment_count'
-			],
+			$fields,
 			$where,
 			__METHOD__,
 			$params
@@ -62,10 +71,11 @@ class LinkList {
 				'type' => $row->link_type,
 				'status' => $row->link_status,
 				'type_name' => Link::getLinkType( $row->link_type ),
-				'user_id' => $row->link_submitter_user_id,
-				'user_name' => $row->link_submitter_user_name,
 				'wiki_page' => ( ( $linkPage ) ? htmlspecialchars( $linkPage->getFullURL(), ENT_QUOTES ) : null ),
-				'comments' => ( ( $row->link_comment_count ) ? $row->link_comment_count : 0 )
+				'comments' => ( ( $row->link_comment_count ) ? $row->link_comment_count : 0 ),
+				'actor' => ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) ? $row->link_submitter_actor : null,
+				'user_id' => ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) ? $row->link_submitter_user_id : null,
+				'user_name' => ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) ? $row->link_submitter_user_name : null
 			];
 		}
 
