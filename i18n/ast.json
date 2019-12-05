@@ -65,6 +65,7 @@
 	"group-linkadmin": "Alministradores d'enllaces",
 	"group-linkadmin-member": "{{GENDER:$1|alministrador|alministradora}} d'enllaces",
 	"grouppage-linkadmin": "{{ns:project}}:Alministradores d'enllaces",
+	"action-linkadmin": "alministrar los enllaces unviaos polos usuarios",
 	"right-linkadmin": "Alministrar los enllaces unviaos polos usuarios",
 	"apihelp-linkfilter-description": "Módulu API del backend p'aprobar enllaces unviaos pol usuariu",
 	"apihelp-linkfilter-summary": "Módulu API del backend p'aprobar enllaces unviaos pol usuariu",
