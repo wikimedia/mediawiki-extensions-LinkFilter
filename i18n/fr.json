@@ -5,7 +5,8 @@
 			"IAlex",
 			"Verdy p",
 			"SRXcraft",
-			"Wladek92"
+			"Wladek92",
+			"Thibaut120094"
 		]
 	},
 	"linkapprove": "Approuver les liens",
@@ -75,7 +76,7 @@
 	"group-linkadmin.js": "/* Le Javascript placé ici n’affectera que les administrateurs de liens */",
 	"apihelp-linkfilter-description": "Module API du serveur pour approuver les liens soumis par l’utilisateur",
 	"apihelp-linkfilter-summary": "Module de l’API serveur pour approuver les liens soumis par l’utilisateur",
-	"apihelp-linkfilter-param-id": "Numéro d'identification du lien",
+	"apihelp-linkfilter-param-id": "Numéro d’identification du lien",
 	"apihelp-linkfilter-param-status": "1 pour accepter, 2 pour refuser",
 	"apihelp-linkfilter-example-1": "Refuser le lien numéro 37"
 }
