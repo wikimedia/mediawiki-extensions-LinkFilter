@@ -176,21 +176,15 @@ class LinkPage extends Article {
 	 * @return string HTML
 	 */
 	function displaySubmitterBox() {
-		global $wgActorTableSchemaMigrationStage, $wgOut, $wgLinkPageDisplay;
+		global $wgOut, $wgLinkPageDisplay;
 
 		if ( !$wgLinkPageDisplay['author'] ) {
 			return '';
 		}
 
-		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
-			$author = User::newFromActorId( $this->link['actor'] );
-			$authorUserId = $author->getId();
-			$authorUserName = $author->getName();
-		}
-		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
-			$authorUserName = $this->link['user_name'];
-			$authorUserId = $this->link['user_id'];
-		}
+		$author = User::newFromActorId( $this->link['actor'] );
+		$authorUserId = $author->getId();
+		$authorUserName = $author->getName();
 
 		if ( !$authorUserId ) {
 			return '';

@@ -16,8 +16,10 @@ CREATE TABLE /*_*/link (
   -- Key to actor_id for the person who submitted the link
   link_submitter_actor bigint unsigned NOT NULL,
    -- User ID of the person who submitted the link
+   -- @todo FIXME: legacy unused field, should be removed in favor of link_submitter_actor
   link_submitter_user_id int(11) NOT NULL default 0,
    -- User name of the person who submitted the link
+   -- @todo FIXME: legacy unused field, should be removed in favor of link_submitter_actor
   link_submitter_user_name varchar(255) NOT NULL,
    -- Timestamp indicating when the link was submitted
   link_submit_date datetime default NULL,

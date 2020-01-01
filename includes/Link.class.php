@@ -79,7 +79,7 @@ class Link {
 	 *						this class' static array.
 	 */
 	public function addLink( $title, $desc, $url, $type ) {
-		global $wgActorTableSchemaMigrationStage, $wgUser;
+		global $wgUser;
 
 		$dbw = wfGetDB( DB_MASTER );
 
@@ -87,28 +87,18 @@ class Link {
 		$date = date( 'Y-m-d H:i:s' );
 		Wikimedia\restoreWarnings();
 
-		$fields = [
-			'link_name' => $title,
-			'link_page_id' => 0,
-			'link_url' => $url,
-			'link_description' => $desc,
-			'link_type' => intval( $type ),
-			'link_status' => 0,
-			'link_submit_date' => $date
-		];
-
-		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_WRITE_NEW ) {
-			$fields['link_submitter_actor'] = $wgUser->getActorId();
-		}
-
-		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_WRITE_OLD ) {
-			$fields['link_submitter_user_id'] = $wgUser->getId();
-			$fields['link_submitter_user_name'] = $wgUser->getName();
-		}
-
 		$dbw->insert(
 			'link',
-			$fields,
+			[
+				'link_name' => $title,
+				'link_page_id' => 0,
+				'link_url' => $url,
+				'link_description' => $desc,
+				'link_type' => intval( $type ),
+				'link_status' => 0,
+				'link_submit_date' => $date,
+				'link_submitter_actor' => $wgUser->getActorId()
+			],
 			__METHOD__
 		);
 
@@ -127,8 +117,6 @@ class Link {
 	 * @param int $id Link identifier
 	 */
 	public function approveLink( $id ) {
-		global $wgActorTableSchemaMigrationStage;
-
 		$link = $this->getLink( $id );
 
 		// Create the wiki page for the newly-approved link
@@ -162,15 +150,9 @@ class Link {
 		);
 
 		if ( class_exists( 'UserStatsTrack' ) ) {
-			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
-				$userId = $link['user_id'];
-				$userName = $link['user_name'];
-			}
-			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
-				$user = User::newFromActorId( $link['actor'] );
-				$userId = $user->getId();
-				$userName = $user->getName();
-			}
+			$user = User::newFromActorId( $link['actor'] );
+			$userId = $user->getId();
+			$userName = $user->getName();
 
 			$stats = new UserStatsTrack( $userId, $userName );
 			$stats->incStatField( 'links_approved' );
@@ -184,27 +166,19 @@ class Link {
 	 * @return array
 	 */
 	public function getLinkByPageID( $pageId ) {
-		global $wgActorTableSchemaMigrationStage;
-
 		if ( !is_numeric( $pageId ) ) {
 			return '';
 		}
 
 		$dbr = wfGetDB( DB_REPLICA );
-		$fields = [
-			'link_id', 'link_name', 'link_url', 'link_description',
-			'link_type', 'link_status', 'link_page_id'
-		];
-		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
-			$fields[] = 'link_submitter_actor';
-		}
-		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
-			$fields[] = 'link_submitter_user_id';
-			$fields[] = 'link_submitter_user_name';
-		}
+
 		$res = $dbr->select(
 			'link',
-			$fields,
+			[
+				'link_id', 'link_name', 'link_url', 'link_description',
+				'link_type', 'link_status', 'link_page_id',
+				'link_submitter_actor'
+			],
 			[ 'link_page_id' => $pageId ],
 			__METHOD__,
 			[
@@ -225,13 +199,7 @@ class Link {
 			$link['type_name'] = self::getLinkType( $row->link_type );
 			$link['status'] = $row->link_status;
 			$link['page_id'] = $row->link_page_id;
-			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
-				$link['actor'] = $row->link_submitter_actor;
-			}
-			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
-				$link['user_id'] = $row->link_submitter_user_id;
-				$link['user_name'] = $row->link_submitter_user_name;
-			}
+			$link['actor'] = $row->link_submitter_actor;
 		}
 
 		return $link;
@@ -277,28 +245,19 @@ class Link {
 	 * @return array
 	 */
 	public function getLink( $id ) {
-		global $wgActorTableSchemaMigrationStage;
-
 		if ( !is_numeric( $id ) ) {
 			return '';
 		}
 
 		$dbr = wfGetDB( DB_REPLICA );
 
-		$fields = [
-			'link_id', 'link_name', 'link_url', 'link_description',
-			'link_type', 'link_status', 'link_page_id'
-		];
-		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
-			$fields[] = 'link_submitter_actor';
-		}
-		if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
-			$fields[] = 'link_submitter_user_id';
-			$fields[] = 'link_submitter_user_name';
-		}
 		$res = $dbr->select(
 			'link',
-			$fields,
+			[
+				'link_id', 'link_name', 'link_url', 'link_description',
+				'link_type', 'link_status', 'link_page_id',
+				'link_submitter_actor'
+			],
 			[ 'link_id' => $id ],
 			__METHOD__,
 			[
@@ -318,13 +277,7 @@ class Link {
 			$link['type_name'] = self::getLinkType( $row->link_type );
 			$link['status'] = $row->link_status;
 			$link['page_id'] = $row->link_page_id;
-			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
-				$link['actor'] = $row->link_submitter_actor;
-			}
-			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
-				$link['user_id'] = $row->link_submitter_user_id;
-				$link['user_name'] = $row->link_submitter_user_name;
-			}
+			$link['actor'] = $row->link_submitter_actor;
 		}
 
 		return $link;
