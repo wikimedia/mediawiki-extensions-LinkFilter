@@ -136,7 +136,7 @@ class LinkSubmit extends SpecialPage {
 					$this->msg( 'linkfilter-home-button' )->plain() . '</a>';
 
 		// Show a link to the LinkAdmin page for privileged users
-		if ( Link::canAdmin() ) {
+		if ( Link::canAdmin( $this->getUser() ) ) {
 			$output .= ' <a href="' . Link::getLinkAdminURL() . '">' .
 				$this->msg( 'linkfilter-approve-links' )->text() . '</a>';
 		}

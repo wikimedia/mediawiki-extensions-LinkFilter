@@ -137,7 +137,7 @@ class LinkFilterHooks {
 						wfMessage( 'linkfilter-all' )->plain() . '</a>';
 
 		// Show a link to the link administration panel for privileged users
-		if ( Link::canAdmin() ) {
+		if ( Link::canAdmin( $parser->getUser() ) ) {
 			$output .= ' / <a href="' . Link::getLinkAdminURL() . '">' .
 				wfMessage( 'linkfilter-approve-links' )->plain() . '</a>';
 		}

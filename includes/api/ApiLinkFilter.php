@@ -28,7 +28,7 @@ class ApiLinkFilter extends ApiBase {
 		}
 
 		// Check permissions
-		if ( !Link::canAdmin() ) {
+		if ( !Link::canAdmin( $this->getUser() ) ) {
 			return '';
 		}
 

@@ -43,15 +43,14 @@ class Link {
 	/**
 	 * Checks if user is allowed to access LinkFilter's special pages
 	 *
+	 * @param User $user
 	 * @return bool True if s/he has linkadmin permission or is in the
 	 *                  linkadmin user group, else false
 	 */
-	public static function canAdmin() {
-		global $wgUser;
-
+	public static function canAdmin( User $user ) {
 		if (
-			$wgUser->isAllowed( 'linkadmin' ) ||
-			in_array( 'linkadmin', $wgUser->getGroups() )
+			$user->isAllowed( 'linkadmin' ) ||
+			in_array( 'linkadmin', $user->getGroups() )
 		)
 		{
 			return true;

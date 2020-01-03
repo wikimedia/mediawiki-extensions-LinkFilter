@@ -20,7 +20,7 @@ class LinkEdit extends UnlistedSpecialPage {
 		$user = $this->getUser();
 
 		// Check permissions
-		if ( !Link::canAdmin() ) {
+		if ( !Link::canAdmin( $user ) ) {
 			$this->displayRestrictionError();
 			return;
 		}
@@ -101,7 +101,7 @@ class LinkEdit extends UnlistedSpecialPage {
 				<a href="' . Link::getHomeLinkURL() . '">' .
 					$this->msg( 'linkfilter-home-button' )->text() . '</a>';
 
-		if ( Link::canAdmin() ) {
+		if ( Link::canAdmin( $this->getUser() ) ) {
 			$output .= ' <a href="' . Link::getLinkAdminURL() . '">' .
 				$this->msg( 'linkfilter-approve-links' )->text() . '</a>';
 		}

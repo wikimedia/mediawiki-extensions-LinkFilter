@@ -162,7 +162,7 @@ class LinksHome extends SpecialPage {
 		<a href="' . Link::getSubmitLinkURL() . '">' .
 			$this->msg( 'linkfilter-submit-title' )->text() . '</a>' . "\n";
 
-		if ( Link::canAdmin() ) {
+		if ( Link::canAdmin( $this->getUser() ) ) {
 			$output .= "\t\t" . '<a href="' . Link::getLinkAdminURL() . '">' .
 				$this->msg( 'linkfilter-approve-links' )->text() . '</a>' . "\n";
 		}
