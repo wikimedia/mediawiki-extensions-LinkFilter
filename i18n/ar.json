@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Meno25",
-			"ديفيد"
+			"ديفيد",
+			"Sonic N800"
 		]
 	},
 	"linkapprove": "الموافقة على الروابط",
@@ -12,7 +13,7 @@
 	"linkfilter-nothing-to-approve": "لا توجد حاليا أية وصلات في انتظار الموافقة.",
 	"linkfilter-no-recently-approved": "لم تتم الموافقة على أية وصلات مؤخرا.",
 	"linkfilter-no-links-at-all": "لم يتم بعد تقديم أية وصلات أو لم يقم إداريو الوصلات بمراجعة الوصلات المقدمة بعد.",
-	"linkfilter-ago": "منذ $1 تحت <i>$2</i>",
+	"linkfilter-ago": "قبلَ $1 تحت <i>$2</i>",
 	"linkfilter-all": "الكل",
 	"linkfilter-submit": "إرسال",
 	"linkfilter-submit-title": "تقديم رابط",
