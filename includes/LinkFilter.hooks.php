@@ -234,18 +234,6 @@ class LinkFilterHooks {
 	}
 
 	/**
-	 * For the Renameuser extension.
-	 *
-	 * @todo FIXME: drop this once these nowadays unused columns are dropped for good.
-	 * @param RenameuserSQL $renameUserSQL
-	 */
-	public static function onUserRename( $renameUserSQL ) {
-		$renameUserSQL->tables['link'] = [
-			'link_submitter_user_name', 'link_submitter_user_id'
-		];
-	}
-
-	/**
 	 * Register the canonical names for our namespace and its talkspace.
 	 *
 	 * @param array $list Array of namespace numbers with corresponding

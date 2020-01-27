@@ -102,9 +102,6 @@
 		"CanonicalNamespaces": [
 			"LinkFilterHooks::onCanonicalNamespaces"
 		],
-		"RenameUserSQL": [
-			"LinkFilterHooks::onUserRename"
-		],
 		"Comment::add": [
 			"LinkFilterHooks::onCommentAdd"
 		],
