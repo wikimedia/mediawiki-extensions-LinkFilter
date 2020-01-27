@@ -94,8 +94,6 @@ class LinkApprove extends SpecialPage {
 	 * @param mixed|null $par Parameter passed to the page or null
 	 */
 	public function execute( $par ) {
-		global $wgActorTableSchemaMigrationStage;
-
 		$out = $this->getOutput();
 		$user = $this->getUser();
 
@@ -145,13 +143,7 @@ class LinkApprove extends SpecialPage {
 				$border_fix = ' border-fix';
 			}
 
-			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_NEW ) {
-				$submittedBy = User::newFromActorId( $link['actor'] )->getName();
-			}
-
-			if ( $wgActorTableSchemaMigrationStage & SCHEMA_COMPAT_READ_OLD ) {
-				$submittedBy = $link['user_name'];
-			}
+			$submittedBy = User::newFromActorId( $link['actor'] )->getName();
 
 			$output .= "<div class=\"admin-link{$border_fix}\">
 					<div class=\"admin-title\"><b>" . $this->msg( 'linkfilter-title' )->text() .

@@ -236,6 +236,7 @@ class LinkFilterHooks {
 	/**
 	 * For the Renameuser extension.
 	 *
+	 * @todo FIXME: drop this once these nowadays unused columns are dropped for good.
 	 * @param RenameuserSQL $renameUserSQL
 	 */
 	public static function onUserRename( $renameUserSQL ) {
