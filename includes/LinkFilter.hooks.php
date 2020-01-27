@@ -215,18 +215,27 @@ class LinkFilterHooks {
 	 */
 	public static function applySchemaChanges( $updater ) {
 		$sqlPath = __DIR__ . '/../sql';
-		$updater->addExtensionTable( 'link', $sqlPath . '/link.sql' );
 		$db = $updater->getDB();
+
+		$file = $sqlPath . '/link.sql';
+		$isPostgreSQL = ( $db->getType() === 'postgres' );
+		if ( $isPostgreSQL ) {
+			$file = $sqlPath . '/link.postgres.sql';
+		}
+		$updater->addExtensionTable( 'link', $file );
+
 		// If the user_stats table exists (=SocialProfile is installed), check if
 		// it has the columns we need and if not, create them.
 		if ( $db->tableExists( 'user_stats' ) ) {
+			$ext = $isPostgreSQL ? '.postgres.sql' : '.sql';
 			if ( !$db->fieldExists( 'user_stats', 'stats_links_submitted', __METHOD__ ) ) {
-				$updater->addExtensionField( 'user_stats', 'stats_links_submitted', $sqlPath . '/patch-add_stats_links_submitted_column.sql' );
+				$updater->addExtensionField( 'user_stats', 'stats_links_submitted', $sqlPath . '/patch-add_stats_links_submitted_column' . $ext );
 			}
 			if ( !$db->fieldExists( 'user_stats', 'stats_links_approved', __METHOD__ ) ) {
-				$updater->addExtensionField( 'user_stats', 'stats_links_approved', $sqlPath . '/patch-add_stats_links_approved_column.sql' );
+				$updater->addExtensionField( 'user_stats', 'stats_links_approved', $sqlPath . '/patch-add_stats_links_approved_column' . $ext );
 			}
 		}
+
 		// Actor support (see T227345)
 		if ( $db->tableExists( 'link' ) && !$db->fieldExists( 'link', 'link_submitter_actor', __METHOD__ ) ) {
 			$updater->addExtensionField( 'link', 'link_submitter_actor', $sqlPath . '/patch-add_link_submitter_actor_column.sql' );
