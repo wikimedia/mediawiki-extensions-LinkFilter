@@ -362,8 +362,8 @@ class LinkPage extends Article {
 			$res = $dbr->select(
 				[ 'Comments', 'page' ],
 				[
-					'Comment_Username', 'comment_ip', 'comment_text',
-					'comment_date', 'Comment_user_id', 'CommentID',
+					'Comment_actor', 'comment_ip', 'comment_text',
+					'comment_date', 'CommentID',
 					'IFNULL(Comment_Plus_Count - Comment_Minus_Count,0) AS Comment_Score',
 					'Comment_Plus_Count AS CommentVotePlus',
 					'Comment_Minus_Count AS CommentVoteMinus',
@@ -384,8 +384,7 @@ class LinkPage extends Article {
 
 			foreach ( $res as $row ) {
 				$comments[] = [
-					'user_name' => $row->Comment_Username,
-					'user_id' => $row->Comment_user_id,
+					'actor' => $row->Comment_actor,
 					'title' => $row->page_title,
 					'namespace' => $row->page_namespace,
 					'comment_id' => $row->CommentID,
@@ -401,11 +400,15 @@ class LinkPage extends Article {
 		foreach ( $comments as $comment ) {
 			$pageTitle = Title::makeTitle( $comment['namespace'], $comment['title'] );
 
-			if ( $comment['user_id'] != 0 ) {
-				$title = Title::makeTitle( NS_USER, $comment['user_name'] );
-				$commentPosterDisplay = $comment['user_name'];
-			} else {
+			$actor = User::newFromActorId( $comment['actor'] );
+			if ( !$actor || !$actor instanceof User ) {
+				continue;
+			}
+
+			if ( $actor->isAnon() ) {
 				$commentPosterDisplay = wfMessage( 'linkfilter-anonymous' )->text();
+			} else {
+				$commentPosterDisplay = $actor->getName();
 			}
 
 			$commentText = substr( $comment['comment_text'], 0, 70 - strlen( $commentPosterDisplay ) );
