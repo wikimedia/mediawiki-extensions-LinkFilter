@@ -89,6 +89,7 @@ class LinkEdit extends UnlistedSpecialPage {
 		} else {
 			$title = SpecialPage::getTitleFor( 'LinkSubmit' );
 			$out->redirect( $title->getFullURL() );
+			return '';
 		}
 
 		$out->setPageTitle( $this->msg( 'linkfilter-edit-title', $link['title'] )->text() );
