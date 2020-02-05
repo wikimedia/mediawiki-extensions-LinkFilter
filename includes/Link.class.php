@@ -76,10 +76,9 @@ class Link {
 	 * @param string $url The actual URL
 	 * @param int $type Link type, either from the global variable or from
 	 *						this class' static array.
+	 * @param User $user
 	 */
-	public function addLink( $title, $desc, $url, $type ) {
-		global $wgUser;
-
+	public function addLink( $title, $desc, $url, $type, User $user ) {
 		$dbw = wfGetDB( DB_MASTER );
 
 		Wikimedia\suppressWarnings();
@@ -96,14 +95,14 @@ class Link {
 				'link_type' => intval( $type ),
 				'link_status' => 0,
 				'link_submit_date' => $date,
-				'link_submitter_actor' => $wgUser->getActorId()
+				'link_submitter_actor' => $user->getActorId()
 			],
 			__METHOD__
 		);
 
 		// If SocialProfile extension is installed, increase social statistics.
 		if ( class_exists( 'UserStatsTrack' ) ) {
-			$stats = new UserStatsTrack( $wgUser->getId(), $wgUser->getName() );
+			$stats = new UserStatsTrack( $user->getId(), $user->getName() );
 			$stats->incStatField( 'links_submitted' );
 		}
 	}

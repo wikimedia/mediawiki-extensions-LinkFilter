@@ -82,7 +82,8 @@ class LinkSubmit extends SpecialPage {
 					$request->getVal( 'lf_title' ),
 					$request->getVal( 'lf_desc' ),
 					htmlspecialchars( $request->getVal( 'lf_URL' ), ENT_QUOTES ),
-					$request->getInt( 'lf_type' )
+					$request->getInt( 'lf_type' ),
+					$user
 				);
 				// Great success, comrade!
 				$out->setPageTitle( $this->msg( 'linkfilter-submit-success-title' )->plain() );
