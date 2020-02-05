@@ -100,8 +100,6 @@ class LinkPage extends Article {
 	}
 
 	function displayLink() {
-		global $wgLang;
-
 		$url = '';
 		$domain = '';
 		if ( Link::isURL( $this->link['url'] ) ) {
@@ -109,7 +107,7 @@ class LinkPage extends Article {
 			$domain = $url['host'];
 		}
 
-		$create_date = $wgLang->timeanddate(
+		$create_date = $this->getContext()->getLanguage()->timeanddate(
 			$this->getCreateDate( $this->getTitle()->getArticleID() ),
 			true
 		);
