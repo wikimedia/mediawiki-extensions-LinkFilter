@@ -50,53 +50,57 @@ class LinkPage extends Article {
 	}
 
 	function view() {
-		global $wgOut, $wgLinkPageDisplay;
+		global $wgLinkPageDisplay;
 
-		$sk = $wgOut->getSkin();
+		$context = $this->getContext();
+		$out = $context->getOutput();
+		$user = $context->getUser();
 
-		$wgOut->setHTMLTitle( $this->getTitle()->getText() );
-		$wgOut->setPageTitle( $this->getTitle()->getText() );
+		$sk = $out->getSkin();
 
-		$wgOut->addHTML( '<div id="link-page-container" class="clearfix">' );
+		$out->setHTMLTitle( $this->getTitle()->getText() );
+		$out->setPageTitle( $this->getTitle()->getText() );
+
+		$out->addHTML( '<div id="link-page-container" class="clearfix">' );
 
 		if ( $wgLinkPageDisplay['leftcolumn'] == true ) {
-			$wgOut->addHTML( '<div id="link-page-left">' );
-			$wgOut->addHTML( '<div class="link-left-units">' );
-			$wgOut->addHTML( $this->displaySubmitterBox() );
-			$wgOut->addHTML( '</div>' );
-			$wgOut->addHTML( $this->leftAdUnit() );
-			$wgOut->addHTML( '</div>' );
+			$out->addHTML( '<div id="link-page-left">' );
+			$out->addHTML( '<div class="link-left-units">' );
+			$out->addHTML( $this->displaySubmitterBox() );
+			$out->addHTML( '</div>' );
+			$out->addHTML( $this->leftAdUnit() );
+			$out->addHTML( '</div>' );
 		}
 
-		$wgOut->addHTML( '<div id="link-page-middle">' );
+		$out->addHTML( '<div id="link-page-middle">' );
 
-		$wgOut->addHTML( $this->displayLink() );
+		$out->addHTML( $this->displayLink() );
 
 		// Get categories
 		$cat = $sk->getCategoryLinks();
 		if ( $cat ) {
-			$wgOut->addHTML( "<div id=\"categories\">{$cat}</div>" );
+			$out->addHTML( "<div id=\"categories\">{$cat}</div>" );
 		}
 
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'Comments' ) ) {
-			$wgOut->addWikiTextAsInterface( '<comments/>' );
+			$out->addWikiTextAsInterface( '<comments/>' );
 		}
 
-		$wgOut->addHTML( '</div>' );
+		$out->addHTML( '</div>' );
 
 		if ( $wgLinkPageDisplay['rightcolumn'] == true ) {
-			$wgOut->addHTML( '<div id="link-page-right">' );
+			$out->addHTML( '<div id="link-page-right">' );
 
-			$wgOut->addHTML( $this->getNewLinks() );
-			$wgOut->addHTML( $this->getInTheNews() );
-			$wgOut->addHTML( $this->getCommentsOfTheDay() );
-			$wgOut->addHTML( $this->getRandomCasualGame() );
+			$out->addHTML( $this->getNewLinks() );
+			$out->addHTML( $this->getInTheNews() );
+			$out->addHTML( $this->getCommentsOfTheDay() );
+			$out->addHTML( $this->getRandomCasualGame() );
 
-			$wgOut->addHTML( '</div>' );
+			$out->addHTML( '</div>' );
 		}
-		$wgOut->addHTML( '<div class="visualClear"></div>' );
-		$wgOut->addHTML( '</div>' );
 
+		$out->addHTML( '<div class="visualClear"></div>' );
+		$out->addHTML( '</div>' );
 	}
 
 	function displayLink() {
@@ -174,7 +178,7 @@ class LinkPage extends Article {
 	 * @return string HTML
 	 */
 	function displaySubmitterBox() {
-		global $wgOut, $wgLinkPageDisplay;
+		global $wgLinkPageDisplay;
 
 		if ( !$wgLinkPageDisplay['author'] ) {
 			return '';
@@ -206,7 +210,7 @@ class LinkPage extends Article {
 					<a href=\"" . htmlspecialchars( $authorTitle->getFullURL(), ENT_QUOTES ) . "\" rel=\"nofollow\">{$authorUserName}</a>
 				</div>";
 		if ( $profileData['about'] ) {
-			$output .= $wgOut->parseAsContent( $profileData['about'], false );
+			$output .= $this->getContext()->getOutput()->parseAsContent( $profileData['about'], false );
 		}
 		$output .= '</div>
 			<div class="visualClear"></div>
@@ -259,17 +263,18 @@ class LinkPage extends Article {
 	 * @return string HTML
 	 */
 	function getInTheNews() {
-		global $wgLinkPageDisplay, $wgOut;
+		global $wgLinkPageDisplay;
 
 		if ( !$wgLinkPageDisplay['in_the_news'] ) {
 			return '';
 		}
 
-		$newsArray = explode( "\n\n", wfMessage( 'inthenews' )->inContentLanguage()->text() );
+		$context = $this->getContext();
+		$newsArray = explode( "\n\n", $context->msg( 'inthenews' )->inContentLanguage()->text() );
 		$newsItem = $newsArray[array_rand( $newsArray )];
 		$output = '<div class="link-container">
-			<h2>' . wfMessage( 'linkfilter-in-the-news' )->text() . '</h2>
-			<div>' . $wgOut->parseAsContent( $newsItem, false ) . '</div>
+			<h2>' . $context->msg( 'linkfilter-in-the-news' )->text() . '</h2>
+			<div>' . $context->getOutput()->parseAsContent( $newsItem, false ) . '</div>
 		</div>';
 
 		return $output;
@@ -302,7 +307,7 @@ class LinkPage extends Article {
 		}
 
 		$output = '<div class="link-container">
-			<h2>' . wfMessage( 'linkfilter-new-links-title' )->text() . '</h2>
+			<h2>' . $this->getContext()->msg( 'linkfilter-new-links-title' )->text() . '</h2>
 			<div>' . $output . '</div>
 		</div>';
 

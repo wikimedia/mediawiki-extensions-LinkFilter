@@ -58,28 +58,29 @@ class LinkFilterHooks {
 	 * @param Title $title Title object associated with the current page
 	 * @param Article|WikiPage $article Article object (or child class) associated with
 	 *                         the current page
+	 * @param RequestContext $context
 	 */
-	public static function linkFromTitle( &$title, &$article ) {
+	public static function linkFromTitle( &$title, &$article, $context ) {
 		if ( $title->getNamespace() == NS_LINK ) {
-			global $wgRequest, $wgOut;
-			$wgOut->enableClientCache( false );
+			$out = $context->getOutput();
+			$out->enableClientCache( false );
 
-			if ( $wgRequest->getVal( 'action' ) == 'edit' ) {
+			if ( $context->getRequest()->getVal( 'action' ) == 'edit' ) {
 				if ( $title->getArticleID() == 0 ) {
 					$create = SpecialPage::getTitleFor( 'LinkSubmit' );
-					$wgOut->redirect(
+					$out->redirect(
 						$create->getFullURL( '_title=' . $title->getText() )
 					);
 				} else {
 					$update = SpecialPage::getTitleFor( 'LinkEdit' );
-					$wgOut->redirect(
+					$out->redirect(
 						$update->getFullURL( 'id=' . $title->getArticleID() )
 					);
 				}
 			}
 
 			// Add CSS
-			$wgOut->addModuleStyles( 'ext.linkFilter.styles' );
+			$out->addModuleStyles( 'ext.linkFilter.styles' );
 
 			$article = new LinkPage( $title );
 		}
@@ -96,15 +97,20 @@ class LinkFilterHooks {
 
 	/**
 	 * Callback function for registerLinkFilterHook.
+	 *
+	 * @param string $input User-supplied input [unused]
+	 * @param array $args Arguments supplied to the hook, e.g. <linkfilter count="5" />
+	 * @param Parser $parser
+	 * @return string HTML suitable for output
 	 */
-	public static function renderLinkFilterHook( $input, $args, $parser ) {
-		global $wgMemc, $wgOut;
+	public static function renderLinkFilterHook( $input, $args, Parser $parser ) {
+		global $wgMemc;
 
-		$parser->getOutput()->updateCacheExpiry( 0 );
+		$pOutput = $parser->getOutput();
+		$pOutput->updateCacheExpiry( 0 );
 
-		// Add CSS (ParserOutput class only has addModules(), not
-		// addModuleStyles() or addModuleScripts()...strange)
-		$wgOut->addModuleStyles( 'ext.linkFilter.styles' );
+		// Add CSS
+		$pOutput->addModuleStyles( 'ext.linkFilter.styles' );
 
 		if ( isset( $args['count'] ) ) {
 			$count = intval( $args['count'] );
@@ -128,6 +134,9 @@ class LinkFilterHooks {
 		$link_submit = SpecialPage::getTitleFor( 'LinkSubmit' );
 		$link_all = SpecialPage::getTitleFor( 'LinksHome' );
 
+		// @todo FIXME: the wfMessage calls would need a ->setContext( $context )
+		// to avoid a GlobalTitleFail being logged into the debug log, but I can't see
+		// a way to get a valid context object here...
 		$output = '<div>
 
 				<div class="linkfilter-links">
