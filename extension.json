@@ -84,30 +84,14 @@
 		"LinkSubmit": "includes/specials/SpecialLinkSubmit.php"
 	},
 	"Hooks": {
-		"TitleMoveComplete": [
-			"LinkFilterHooks::updateLinkFilter"
-		],
-		"ArticleDelete": [
-			"LinkFilterHooks::deleteLinkFilter"
-		],
-		"ArticleFromTitle": [
-			"LinkFilterHooks::linkFromTitle"
-		],
-		"ParserFirstCallInit": [
-			"LinkFilterHooks::registerLinkFilterHook"
-		],
-		"LoadExtensionSchemaUpdates": [
-			"LinkFilterHooks::applySchemaChanges"
-		],
-		"CanonicalNamespaces": [
-			"LinkFilterHooks::onCanonicalNamespaces"
-		],
-		"Comment::add": [
-			"LinkFilterHooks::onCommentAdd"
-		],
-		"Comment::delete": [
-			"LinkFilterHooks::onCommentDelete"
-		]
+		"TitleMoveComplete": "LinkFilterHooks::updateLinkFilter",
+		"ArticleDelete": "LinkFilterHooks::deleteLinkFilter",
+		"ArticleFromTitle": "LinkFilterHooks::linkFromTitle",
+		"ParserFirstCallInit": "LinkFilterHooks::registerLinkFilterHook",
+		"LoadExtensionSchemaUpdates": "LinkFilterHooks::applySchemaChanges",
+		"CanonicalNamespaces": "LinkFilterHooks::onCanonicalNamespaces",
+		"Comment::add": "LinkFilterHooks::onCommentAdd",
+		"Comment::delete": "LinkFilterHooks::onCommentDelete"
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
