@@ -146,13 +146,13 @@ class LinkApprove extends SpecialPage {
 			$submittedBy = User::newFromActorId( $link['actor'] )->getName();
 
 			$output .= "<div class=\"admin-link{$border_fix}\">
-					<div class=\"admin-title\"><b>" . $this->msg( 'linkfilter-title' )->text() .
+					<div class=\"admin-title\"><b>" . $this->msg( 'linkfilter-title' )->escaped() .
 						'</b>: ' . htmlspecialchars( $link['title'], ENT_QUOTES ) .
 					'</div>
-					<div class="admin-desc"><b>' . $this->msg( 'linkfilter-description' )->text() .
+					<div class="admin-desc"><b>' . $this->msg( 'linkfilter-description' )->escaped() .
 						'</b>: ' . htmlspecialchars( $link['description'], ENT_QUOTES ) .
 					'</div>
-					<div class="admin-url"><b>' . $this->msg( 'linkfilter-url' )->text() .
+					<div class="admin-url"><b>' . $this->msg( 'linkfilter-url' )->escaped() .
 						'</b>: ' . $linkText . '</div>
 					<div class="admin-submitted">' .
 						$this->msg( 'linkfilter-submittedby', $submittedBy )->parse() .
@@ -164,9 +164,9 @@ class LinkApprove extends SpecialPage {
 					)->parse() . "</div>
 					<div id=\"action-buttons-{$link['id']}\" class=\"action-buttons\">
 						<a href=\"javascript:void(0);\" class=\"action-accept\" data-link-id=\"{$link['id']}\">" .
-							$this->msg( 'linkfilter-admin-accept' )->text() . "</a>
+							$this->msg( 'linkfilter-admin-accept' )->escaped() . "</a>
 						<a href=\"javascript:void(0);\" class=\"action-reject\" data-link-id=\"{$link['id']}\">" .
-							$this->msg( 'linkfilter-admin-reject' )->text() . '</a>
+							$this->msg( 'linkfilter-admin-reject' )->escaped() . '</a>
 						<div class="visualClear"></div>
 					</div>';
 			$output .= '</div>';
@@ -200,14 +200,14 @@ class LinkApprove extends SpecialPage {
 		// A listing of recently approved links (in this category, if a category was
 		// specified; otherwise shows all queued links, which is the default)
 		$output .= '<div class="approved-link-container">
-				<h3>' . $this->msg( 'linkfilter-admin-recent' )->text() . '</h3>';
+				<h3>' . $this->msg( 'linkfilter-admin-recent' )->escaped() . '</h3>';
 
 		$l = new LinkList();
 		$links = $l->getLinkList( LinkStatus::APPROVED, $type, 10, 0, 'link_approved_date' );
 
 		// Nothing has been approved recently? Okay...
 		if ( count( $links ) <= 0 ) {
-			$output .= $this->msg( 'linkfilter-no-recently-approved' )->text();
+			$output .= $this->msg( 'linkfilter-no-recently-approved' )->escaped();
 		} else { // Yay, we have something! Let's build a list!
 			foreach ( $links as $link ) {
 				$output .= '<div class="approved-link">

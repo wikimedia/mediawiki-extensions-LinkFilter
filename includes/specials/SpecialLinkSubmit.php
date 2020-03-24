@@ -86,20 +86,20 @@ class LinkSubmit extends SpecialPage {
 					$user
 				);
 				// Great success, comrade!
-				$out->setPageTitle( $this->msg( 'linkfilter-submit-success-title' )->plain() );
+				$out->setPageTitle( $this->msg( 'linkfilter-submit-success-title' )->escaped() );
 				$out->addHTML(
 					'<div class="link-success-text">' .
-						$this->msg( 'linkfilter-submit-success-text' )->text() .
+						$this->msg( 'linkfilter-submit-success-text' )->escaped() .
 					'</div>
 					<div class="link-submit-button">
 						<input type="button" onclick="window.location=\'' .
 							Link::getSubmitLinkURL() . '\'" value="' .
-							$this->msg( 'linkfilter-submit-another' )->plain() . '" />
+							$this->msg( 'linkfilter-submit-another' )->escaped() . '" />
 					</div>'
 				);
 			}
 		} else { // Something went wrong...
-			$out->setPageTitle( $this->msg( 'linkfilter-submit-title' )->plain() );
+			$out->setPageTitle( $this->msg( 'linkfilter-submit-title' )->escaped() );
 			$out->addHTML( $this->displayAddForm() );
 		}
 	}
@@ -134,37 +134,37 @@ class LinkSubmit extends SpecialPage {
 
 			<div class="link-home-navigation">
 				<a href="' . Link::getHomeLinkURL() . '">' .
-					$this->msg( 'linkfilter-home-button' )->plain() . '</a>';
+					$this->msg( 'linkfilter-home-button' )->escaped() . '</a>';
 
 		// Show a link to the LinkAdmin page for privileged users
 		if ( Link::canAdmin( $this->getUser() ) ) {
 			$output .= ' <a href="' . Link::getLinkAdminURL() . '">' .
-				$this->msg( 'linkfilter-approve-links' )->text() . '</a>';
+				$this->msg( 'linkfilter-approve-links' )->escaped() . '</a>';
 		}
 
 		$output .= '<div class="visualClear"></div>
 			</div>
 			<form name="link" id="linksubmit" method="post" action="">
 				<div class="link-submit-title">
-					<label>' . $this->msg( 'linkfilter-title' )->plain() . '</label>
+					<label>' . $this->msg( 'linkfilter-title' )->escaped() . '</label>
 				</div>
 				<input tabindex="1" class="lr-input" type="text" name="lf_title" id="lf_title" value="' . $title . '" maxlength="150" />
 				<div class="link-submit-title">
-					<label>' . $this->msg( 'linkfilter-url' )->plain() . '</label>
+					<label>' . $this->msg( 'linkfilter-url' )->escaped() . '</label>
 				</div>
 				<input tabindex="2" class="lr-input" type="text" name="lf_URL" id="lf_URL" value="' . $url . '"/>
 
 				<div class="link-submit-title">
-					<label>' . $this->msg( 'linkfilter-description' )->plain() . '</label>
+					<label>' . $this->msg( 'linkfilter-description' )->escaped() . '</label>
 				</div>
 				<div class="link-characters-left">' .
-					$this->msg( 'linkfilter-description-max' )->text() . ' - ' .
+					$this->msg( 'linkfilter-description-max' )->escaped() . ' - ' .
 					$this->msg( 'linkfilter-description-left', '<span id="desc-remaining">300</span>' )->text() .
 				'</div>
 				<textarea tabindex="3" class="lr-input" rows="4" name="lf_desc" id="lf_desc" value="' . $lf_desc . '"></textarea>
 
 				<div class="link-submit-title">
-					<label>' . $this->msg( 'linkfilter-type' )->plain() . '</label>
+					<label>' . $this->msg( 'linkfilter-type' )->escaped() . '</label>
 				</div>
 				<select tabindex="4" name="lf_type" id="lf_type">
 				<option value="">-</option>';
@@ -174,7 +174,7 @@ class LinkSubmit extends SpecialPage {
 		}
 		$output .= '</select>
 				<div class="link-submit-button">
-					<input tabindex="5" class="site-button" type="button" id="link-submit-button" value="' . $this->msg( 'linkfilter-submit-button' )->text() . '" />
+					<input tabindex="5" class="site-button" type="button" id="link-submit-button" value="' . $this->msg( 'linkfilter-submit-button' )->escaped() . '" />
 				</div>' .
 				Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			'</form>

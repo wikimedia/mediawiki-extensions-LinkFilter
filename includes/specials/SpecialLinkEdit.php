@@ -100,26 +100,26 @@ class LinkEdit extends UnlistedSpecialPage {
 
 			<div class="link-home-navigation">
 				<a href="' . Link::getHomeLinkURL() . '">' .
-					$this->msg( 'linkfilter-home-button' )->text() . '</a>';
+					$this->msg( 'linkfilter-home-button' )->escaped() . '</a>';
 
 		if ( Link::canAdmin( $this->getUser() ) ) {
 			$output .= ' <a href="' . Link::getLinkAdminURL() . '">' .
-				$this->msg( 'linkfilter-approve-links' )->text() . '</a>';
+				$this->msg( 'linkfilter-approve-links' )->escaped() . '</a>';
 		}
 
 		$output .= '<div class="visualClear"></div>
 			</div>
 			<form name="link" id="linksubmit" method="post" action="">
 				<div class="link-submit-title">
-					<label>' . $this->msg( 'linkfilter-url' )->text() . '</label>
+					<label>' . $this->msg( 'linkfilter-url' )->escaped() . '</label>
 				</div>
 				<input tabindex="2" class="lr-input" type="text" name="lf_URL" id="lf_URL" value="' . $url . '"/>
 
 				<div class="link-submit-title">
-					<label>' . $this->msg( 'linkfilter-description' )->text() . '</label>
+					<label>' . $this->msg( 'linkfilter-description' )->escaped() . '</label>
 				</div>
 				<div class="link-characters-left">' .
-					$this->msg( 'linkfilter-description-max' )->text() . ' - ' .
+					$this->msg( 'linkfilter-description-max' )->escaped() . ' - ' .
 					$this->msg( 'linkfilter-description-left', '<span id="desc-remaining">300</span>' )->text() .
 				'</div>
 				<textarea tabindex="3" class="lr-input" rows="4" name="lf_desc" id="lf_desc">'
@@ -127,7 +127,7 @@ class LinkEdit extends UnlistedSpecialPage {
 				'</textarea>
 
 				<div class="link-submit-title">
-					<label>' . $this->msg( 'linkfilter-type' )->text() . '</label>
+					<label>' . $this->msg( 'linkfilter-type' )->escaped() . '</label>
 				</div>
 				<select tabindex="4" name="lf_type" id="lf_type">
 				<option value="">-</option>';
@@ -141,7 +141,7 @@ class LinkEdit extends UnlistedSpecialPage {
 		}
 		$output .= '</select>
 				<div class="link-submit-button">
-					<input tabindex="5" class="site-button" type="button" id="link-submit-button" value="' . $this->msg( 'linkfilter-submit-button' )->text() . '" />
+					<input tabindex="5" class="site-button" type="button" id="link-submit-button" value="' . $this->msg( 'linkfilter-submit-button' )->escaped() . '" />
 				</div>' .
 				Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			'</form>

@@ -28,7 +28,7 @@ class LinksHome extends SpecialPage {
 		$newsArray = explode( "\n\n", $this->msg( 'inthenews' )->inContentLanguage()->text() );
 		$newsItem = $newsArray[array_rand( $newsArray )];
 		$output = '<div class="link-container border-fix">
-			<h2>' . $this->msg( 'linkfilter-in-the-news' )->text() . '</h2>
+			<h2>' . $this->msg( 'linkfilter-in-the-news' )->escaped() . '</h2>
 			<div>' . $this->getOutput()->parseAsContent( $newsItem, false ) . '</div>
 		</div>';
 
@@ -74,7 +74,7 @@ class LinksHome extends SpecialPage {
 
 		$html = '<div class="listpages-container">';
 		if ( empty( $popularLinks ) ) {
-			$html .= $this->msg( 'linkfilter-no-results' )->text();
+			$html .= $this->msg( 'linkfilter-no-results' )->escaped();
 		} else {
 			foreach ( $popularLinks as $popularLink ) {
 				$titleObj = Title::makeTitle( NS_LINK, $popularLink['title'] );
@@ -90,7 +90,7 @@ class LinksHome extends SpecialPage {
 		$html .= '</div>' . "\n"; // .listpages-container
 
 		$output = '<div class="link-container">
-			<h2>' . $this->msg( 'linkfilter-popular-articles' )->text() . '</h2>
+			<h2>' . $this->msg( 'linkfilter-popular-articles' )->escaped() . '</h2>
 			<div>' . $html . '</div>
 		</div>';
 
@@ -149,10 +149,10 @@ class LinksHome extends SpecialPage {
 
 		if ( $link_type ) {
 			$type_name = Link::$link_types[$link_type];
-			$pageTitle = $this->msg( 'linkfilter-home-title', $type_name )->text();
+			$pageTitle = $this->msg( 'linkfilter-home-title', $type_name )->escaped();
 		} else {
 			$type_name = 'All';
-			$pageTitle = $this->msg( 'linkfilter-home-title-all' )->text();
+			$pageTitle = $this->msg( 'linkfilter-home-title-all' )->escaped();
 		}
 
 		$out->setPageTitle( $pageTitle );
@@ -160,11 +160,11 @@ class LinksHome extends SpecialPage {
 		$output = '<div class="links-home-left">' . "\n\t";
 		$output .= '<div class="link-home-navigation">
 		<a href="' . Link::getSubmitLinkURL() . '">' .
-			$this->msg( 'linkfilter-submit-title' )->text() . '</a>' . "\n";
+			$this->msg( 'linkfilter-submit-title' )->escaped() . '</a>' . "\n";
 
 		if ( Link::canAdmin( $this->getUser() ) ) {
 			$output .= "\t\t" . '<a href="' . Link::getLinkAdminURL() . '">' .
-				$this->msg( 'linkfilter-approve-links' )->text() . '</a>' . "\n";
+				$this->msg( 'linkfilter-approve-links' )->escaped() . '</a>' . "\n";
 		}
 
 		$output .= "\t\t" . '<div class="visualClear"></div>
