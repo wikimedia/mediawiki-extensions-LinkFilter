@@ -193,7 +193,7 @@ class Link {
 			$link['title'] = $row->link_name;
 			$link['url'] = $row->link_url;
 			$link['type'] = $row->link_type;
-			$link['description'] = $this->parseDescription( $row->link_description, false );
+			$link['description'] = $row->link_description;
 			$link['type_name'] = self::getLinkType( $row->link_type );
 			$link['status'] = $row->link_status;
 			$link['page_id'] = $row->link_page_id;
@@ -270,7 +270,7 @@ class Link {
 			$link['id'] = $row->link_id;
 			$link['title'] = $row->link_name;
 			$link['url'] = $row->link_url;
-			$link['description'] = $this->parseDescription( $row->link_description );
+			$link['description'] = self::parseDescription( $row->link_description );
 			$link['type'] = $row->link_type;
 			$link['type_name'] = self::getLinkType( $row->link_type );
 			$link['status'] = $row->link_status;
@@ -290,7 +290,7 @@ class Link {
 	 * @param string $desc User-submitted link description from the link DB table
 	 * @return string Cleaned-up and fully parsed link description
 	 */
-	private function parseDescription( $desc ) {
+	public static function parseDescription( $desc ) {
 		global $wgOut;
 		return str_replace( [ '<p>', '</p>' ], '', $wgOut->parseAsContent( $desc, false ) );
 	}

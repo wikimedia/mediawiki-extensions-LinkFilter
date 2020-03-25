@@ -17,7 +17,7 @@ class LinkPage extends Article {
 	public $pageContent;
 
 	/**
-	 * @var Link: Link object representing the current link
+	 * @var array Link information about the current link gotten via Link#getLinkByPageID
 	 */
 	public $link;
 
@@ -130,10 +130,10 @@ class LinkPage extends Article {
 					</a>
 				</div>
 				<div class=\"link-date\">(" .
-					wfMessage( 'linkfilter-submitted', $create_date )->parse() . ")</div>
-				<div class=\"link-description\">
-					{$this->link['description']}
-				</div>
+					wfMessage( 'linkfilter-submitted', $create_date )->parse() . ')</div>
+				<div class="link-description">' .
+					Link::parseDescription( $this->link['description'] ) .
+				"</div>
 				<div class=\"link-domain\">{$domain}</div>
 			</div>";
 

@@ -726,11 +726,10 @@ a.action-accept:hover {
 .link-item a {
 	font-size: 14px;
 	font-weight: bold;
-	display: block;
 	margin: 0px 0px 5px 0px;
 }
 
-.link-item-page{
+.link-item-page {
 	float: left;
 }
 

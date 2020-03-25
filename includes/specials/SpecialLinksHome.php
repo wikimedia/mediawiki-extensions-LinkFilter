@@ -223,7 +223,8 @@ class LinksHome extends SpecialPage {
 								'" target="new">' . $link['title'] .
 							'</a>
 						</div>
-						<div class="link-item-desc">' . $link['description'] .
+						<div class="link-item-desc">' .
+							Link::parseDescription( $link['description'] ) .
 						'</div>
 					</div>
 					<div class="link-item-page">
