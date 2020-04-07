@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Luckas",
-			"Pitort",
 			"Eduardo Martinez",
-			"Jaumeortola"
+			"Jaumeortola",
+			"Luckas",
+			"Pitort"
 		]
 	},
 	"linkfilter-submit-no-desc": "Introduïu una descripció per a aquest enllaç",
