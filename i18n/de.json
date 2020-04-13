@@ -8,7 +8,7 @@
 	"linkapprove": "Akzeptieren von Links",
 	"linkshome": "Startseite zu Links",
 	"linksubmit": "Einen Link einreichen",
-	"linkfilter-desc": "Ergänzt eine Spezialseite zum Einreichen/Akzeptieren und Ablehnen von Links, sowie einen entsprechenden Parser-Hook",
+	"linkfilter-desc": "Erweitert das Wiki um eine Spezialseite zum Einreichen sowie Akzeptieren oder Ablehnen von Weblinks",
 	"linkfilter-nothing-to-approve": "Derzeit sind keine Links zum Überprüfen vorhanden.",
 	"linkfilter-no-recently-approved": "In letzter Zeit wurden keine Links akzeptiert.",
 	"linkfilter-no-links-at-all": "Bislang wurden entweder noch keine Links eingereicht, oder die Linkadministratoren haben die eingereichten Links noch nicht überprüft.",
