@@ -4,6 +4,9 @@
  *
  * @file
  */
+
+use MediaWiki\MediaWikiServices;
+
 class LinkPage extends Article {
 
 	/**
@@ -142,16 +145,15 @@ class LinkPage extends Article {
 
 	/**
 	 * Get the creation date of the page with ID = $pageId, either from
-	 * memcached or if that fails, then from the database.
+	 * cache or if that fails, then from the database.
 	 *
 	 * @param int $pageId Page ID number
 	 * @return int Page creation date as a UNIX timestamp
 	 */
 	function getCreateDate( $pageId ) {
-		global $wgMemc;
-
-		$key = $wgMemc->makeKey( 'page', 'create_date', $pageId );
-		$data = $wgMemc->get( $key );
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$key = $cache->makeKey( 'page', 'create_date', $pageId );
+		$data = $cache->get( $key );
 
 		if ( !$data ) {
 			$dbr = wfGetDB( DB_MASTER );
@@ -162,7 +164,7 @@ class LinkPage extends Article {
 				__METHOD__,
 				[ 'ORDER BY' => 'rev_timestamp ASC' ]
 			);
-			$wgMemc->set( $key, $createDate, 7 * 86400 );
+			$cache->set( $key, $createDate, 7 * 86400 );
 		} else {
 			wfDebugLog( 'LinkFilter', "Loading create_date for page {$pageId} from cache\n" );
 			$createDate = $data;
@@ -342,7 +344,7 @@ class LinkPage extends Article {
 	 * @return string HTML
 	 */
 	function getCommentsOfTheDay() {
-		global $wgLinkPageDisplay, $wgMemc;
+		global $wgLinkPageDisplay;
 
 		if ( !$wgLinkPageDisplay['comments_of_day'] ) {
 			return '';
@@ -351,9 +353,10 @@ class LinkPage extends Article {
 		$comments = [];
 
 		// Try cache first
-		$key = $wgMemc->makeKey( 'comments-link', 'plus', '24hours' );
-		$wgMemc->delete( $key );
-		$data = $wgMemc->get( $key );
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$key = $cache->makeKey( 'comments-link', 'plus', '24hours' );
+		$cache->delete( $key );
+		$data = $cache->get( $key );
 
 		if ( $data != '' ) {
 			wfDebugLog( 'LinkFilter', "Got comments of the day from cache\n" );
@@ -395,7 +398,8 @@ class LinkPage extends Article {
 					'comment_text' => $row->comment_text
 				];
 			}
-			$wgMemc->set( $key, $comments, 60 * 15 );
+
+			$cache->set( $key, $comments, 60 * 15 );
 		}
 
 		$output = '';

@@ -5,6 +5,9 @@
  * @file
  * @ingroup Extensions
  */
+
+use MediaWiki\MediaWikiServices;
+
 class LinkFilterHooks {
 
 	/**
@@ -104,8 +107,6 @@ class LinkFilterHooks {
 	 * @return string HTML suitable for output
 	 */
 	public static function renderLinkFilterHook( $input, $args, Parser $parser ) {
-		global $wgMemc;
-
 		$pOutput = $parser->getOutput();
 		$pOutput->updateCacheExpiry( 0 );
 
@@ -118,8 +119,9 @@ class LinkFilterHooks {
 			$count = 10;
 		}
 
-		$key = $wgMemc->makeKey( 'linkfilter', $count );
-		$data = $wgMemc->get( $key );
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$key = $cache->makeKey( 'linkfilter', $count );
+		$data = $cache->get( $key );
 
 		if ( $data ) {
 			wfDebugLog( 'LinkFilter', "Loaded linkfilter hook from cache\n" );
@@ -128,7 +130,7 @@ class LinkFilterHooks {
 			wfDebugLog( 'LinkFilter', "Loaded linkfilter hook from DB\n" );
 			$l = new LinkList();
 			$links = $l->getLinkList( LinkStatus::APPROVED, '', $count, 1, 'link_approved_date' );
-			$wgMemc->set( $key, $links, 60 * 5 );
+			$cache->set( $key, $links, 60 * 5 );
 		}
 
 		$link_submit = SpecialPage::getTitleFor( 'LinkSubmit' );
