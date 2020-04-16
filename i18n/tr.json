@@ -23,7 +23,7 @@
 	"linkfilter-edit-title": "$1 düzenle",
 	"linkfilter-approve-links": "Bağlantıları onayla",
 	"linkfilter-submit-another": "Başka bir bağlantı gönder",
-	"linkfilter-login-title": "Giriş yapmadınız",
+	"linkfilter-login-title": "Oturum açık değil",
 	"linkfilter-login-text": "Bağlantı göndermek için giriş yapmalısınız.",
 	"linkfilter-url": "URL",
 	"linkfilter-title": "Başlık",
