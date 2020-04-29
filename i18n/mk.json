@@ -61,7 +61,7 @@
 	"linkfilter-time-minutes": "{{PLURAL:$1|една минута|$1 минути}}",
 	"linkfilter-time-seconds": "{{PLURAL:$1|една секунда|$1 секунди}}",
 	"linkfilter-edit-summary": "нова врска",
-	"linkfilter-no-results": "Нема пронајдено ниедна страница.",
+	"linkfilter-no-results": "Не пронајдов ниедна страница.",
 	"linkfilter-feed-title": "Врски на {{SITENAME}}",
 	"group-linkadmin": "Администратори на врски",
 	"group-linkadmin-member": "{{GENDER:$1|администратор на врски}}",
