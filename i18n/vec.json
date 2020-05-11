@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fierodelveneto"
+		]
+	},
+	"linkfilter-time-days": "{{PLURAL:$1|$1 dì}}",
+	"linkfilter-time-hours": "{{PLURAL:$1|1 boto|$1 boti}}",
+	"linkfilter-time-minutes": "{{PLURAL:$1|1 minuto|$1 minuti}}",
+	"linkfilter-time-seconds": "{{PLURAL:$1|1 secondo|$1 secondi}}",
+	"linkfilter-edit-summary": "novo linganbo",
+	"linkfilter-no-results": "Nisuna pàjina catada",
+	"linkfilter-feed-title": "Ligamenti {{SITENAME}}",
+	"group-linkadmin": "Xestori dei linganbi",
+	"group-linkadmin-member": "{{GENDER:$1|xestionadore dei linganbi|xestionadora dei linganbi}}"
+}
