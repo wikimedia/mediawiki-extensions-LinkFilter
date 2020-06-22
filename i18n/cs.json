@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Patriccck",
 			"Vks"
 		]
 	},
@@ -34,7 +35,7 @@
 	"linkfilter-admin-accept-success": "Odkaz byl přijat",
 	"linkfilter-in-the-news": "V novinkách",
 	"linkfilter-about-submitter": "O vkladateli",
-	"linkfilter-anonymous": "Anonymní fanatik",
+	"linkfilter-anonymous": "Neregistrovaný fanatik",
 	"linkfilter-comments-of-day": "Nejoblíbenější komentáře",
 	"linkfilter-comments": "{{PLURAL:$1|Jeden komentář|$1 komentáře}}",
 	"linkfilter-home-title": "$1 odkazy",
