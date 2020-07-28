@@ -54,6 +54,7 @@
 	"group-linkadmin": "リンク管理者",
 	"group-linkadmin-member": "{{GENDER:$1|リンク管理者}}",
 	"grouppage-linkadmin": "{{ns:project}}:リンク管理者",
+	"action-linkadmin": "利用者が投稿したリンクの管理",
 	"right-linkadmin": "利用者が投稿したリンクを管理",
 	"group-linkadmin.css": "/* ここに記述したCSSはリンク管理者のみに影響します */",
 	"group-linkadmin.js": "/* ここに記述したJSはリンク管理者のみに影響します */"
