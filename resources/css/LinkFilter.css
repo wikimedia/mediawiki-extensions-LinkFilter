@@ -86,6 +86,10 @@
 	color: #333;
 }
 
+.client-js .no-js-btn {
+	display: none;
+}
+
 /**
  * This is kinda awful, and by kinda I mean totally.
  * On some skins (such as Dusk, Nimbus) the default (10px, see above) is good
@@ -114,7 +118,11 @@
 	padding: 0px 0px 10px 0px;
 }
 
-a.action-reject {
+.client-nojs .action-buttons form {
+	display: inline-block;
+}
+
+.action-reject {
 	display: block;
 	background-color: #F15A3A;
 	font-weight: bold;
@@ -125,7 +133,7 @@ a.action-reject {
 	float: left;
 }
 
-a.action-accept {
+.action-accept {
 	display: block;
 	background-color: #68BD46;
 	font-weight: bold;
@@ -136,12 +144,12 @@ a.action-accept {
 	margin: 0px 5px 0px 0px;
 }
 
-a.action-reject:hover {
+.action-reject:hover {
 	background-color: #b80202;
 	color: #fff;
 }
 
-a.action-accept:hover {
+.action-accept:hover {
 	background-color: #466C2C;
 	color: #fff;
 }

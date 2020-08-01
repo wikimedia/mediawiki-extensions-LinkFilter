@@ -88,13 +88,15 @@ var LinkFilter = {
 
 $( function() {
 	// "Accept" links on Special:LinkApprove
-	$( 'a.action-accept' ).click( function() {
+	$( '.action-accept' ).click( function( e ) {
+		e.preventDefault();
 		var that = $( this );
 		LinkFilter.linkAction( 1, that.data( 'link-id' ) );
 	} );
 
 	// "Reject" links on Special:LinkApprove
-	$( 'a.action-reject' ).click( function() {
+	$( '.action-reject' ).click( function( e ) {
+		e.preventDefault();
 		var that = $( this );
 		LinkFilter.linkAction( 2, that.data( 'link-id' ) );
 	} );

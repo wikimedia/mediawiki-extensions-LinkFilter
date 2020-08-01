@@ -15,6 +15,17 @@ class LinkApprove extends SpecialPage {
 	}
 
 	/**
+	 * This special page handles no-JS requests, which do indeed perform
+	 * write actions. For users with JS enabled, the API modules performs the
+	 * actions instead.
+	 *
+	 * @return bool
+	 */
+	public function doesWrites() {
+		return true;
+	}
+
+	/**
 	 * The following four functions are borrowed
 	 * from includes/wikia/GlobalFunctionsNY.php
 	 */
@@ -95,6 +106,7 @@ class LinkApprove extends SpecialPage {
 	 */
 	public function execute( $par ) {
 		$out = $this->getOutput();
+		$request = $this->getRequest();
 		$user = $this->getUser();
 
 		// Check for linkadmin permission
@@ -117,6 +129,27 @@ class LinkApprove extends SpecialPage {
 		$out->addModuleStyles( 'ext.linkFilter.styles' );
 		$out->addModules( 'ext.linkFilter.scripts' );
 
+		// Handle no-JS approval actions
+		// @todo FIXME: the code inside this if() loop duplicates ApiLinkFilter code way too much
+		if ( $request->wasPosted() && $user->matchEditToken( $request->getVal( 'token' ) ) ) {
+			$id = $request->getInt( 'link-id' );
+
+			$dbw = wfGetDB( DB_MASTER );
+			$dbw->update(
+				'link',
+				// 1 = accept; 2 = reject
+				[ 'link_status' => ( $request->getVal( 'action' ) === 'accept' ?
+					LinkStatus::APPROVED : LinkStatus::REJECTED ) ],
+				[ 'link_id' => $id ],
+				__METHOD__
+			);
+
+			if ( $status == 1 ) {
+				$link = new Link();
+				$link->approveLink( $id );
+			}
+		}
+
 		$output = '<div class="lr-left">';
 
 		$l = new LinkList();
@@ -130,6 +163,8 @@ class LinkApprove extends SpecialPage {
 		if ( $links_count <= 0 ) {
 			$out->addWikiMsg( 'linkfilter-nothing-to-approve' );
 		}
+
+		$url = htmlspecialchars( $this->getPageTitle()->getFullURL(), ENT_QUOTES );
 
 		foreach ( $links as $link ) {
 			$linkText = preg_replace_callback(
@@ -161,12 +196,23 @@ class LinkApprove extends SpecialPage {
 						'linkfilter-ago',
 						self::getLFTimeAgo( $link['timestamp'] ),
 						Link::getLinkType( $link['type'] )
-					)->parse() . "</div>
+					)->parse() .
+					"</div>
 					<div id=\"action-buttons-{$link['id']}\" class=\"action-buttons\">
-						<a href=\"javascript:void(0);\" class=\"action-accept\" data-link-id=\"{$link['id']}\">" .
-							$this->msg( 'linkfilter-admin-accept' )->escaped() . "</a>
-						<a href=\"javascript:void(0);\" class=\"action-reject\" data-link-id=\"{$link['id']}\">" .
-							$this->msg( 'linkfilter-admin-reject' )->escaped() . '</a>
+						<form id=\"link-accept-form\" action=\"{$url}\" method=\"post\">
+							<input type=\"hidden\" name=\"action\" value=\"accept\" />
+							<input type=\"hidden\" name=\"link-id\" value=\"{$link['id']}\" />
+							<input type=\"hidden\" name=\"token\" value=\"" . htmlspecialchars( $user->getEditToken(), ENT_QUOTES ) . "\" />
+							<input type=\"submit\" class=\"action-accept\" data-link-id=\"{$link['id']}\" value=\"" .
+								$this->msg( 'linkfilter-admin-accept' )->escaped() . "\" />
+						</form>
+						<form id=\"link-reject-form\" action=\"{$url}\" method=\"post\">
+							<input type=\"hidden\" name=\"action\" value=\"reject\" />
+							<input type=\"hidden\" name=\"link-id\" value=\"{$link['id']}\" />
+							<input type=\"hidden\" name=\"token\" value=\"" . htmlspecialchars( $user->getEditToken(), ENT_QUOTES ) . "\" />
+							<input type=\"submit\" class=\"action-reject\" data-link-id=\"{$link['id']}\" value=\"" .
+								$this->msg( 'linkfilter-admin-reject' )->escaped() . '" />
+						</form>
 						<div class="visualClear"></div>
 					</div>';
 			$output .= '</div>';
@@ -180,7 +226,8 @@ class LinkApprove extends SpecialPage {
 		// Link category filter
 		$output .= '<div class="admin-link-type-filter-container">';
 		$output .= $this->msg( 'linkfilter-admin-cat-filter' )->escaped();
-		$output .= '<select id="admin-link-type-filter">';
+		$output .= '<form method="get" action="' . htmlspecialchars( $this->getPageTitle()->getFullURL(), ENT_QUOTES ) . '">';
+		$output .= '<select id="admin-link-type-filter" name="type">';
 		// @note Intentionally _not_ using array_merge() but rather the plus operator.
 		// Using array_merge() results in Link::getLinkTypes() keys being reordered
 		// so that all the categories after "Funny" (ID #4) are given the wrong ID.
@@ -192,6 +239,8 @@ class LinkApprove extends SpecialPage {
 			$output .= Xml::option( $linkType, $id, ( $id === $type ) );
 		}
 		$output .= '</select>';
+		$output .= '<input type="submit" class="no-js-btn site-button" value="' . $this->msg( 'linkfilter-submit' )->escaped() . '" />';
+		$output .= '</form>';
 		$output .= '</div>';
 		// Admin instructions
 		$output .= '<div class="admin-link-instruction">' .
@@ -202,7 +251,6 @@ class LinkApprove extends SpecialPage {
 		$output .= '<div class="approved-link-container">
 				<h3>' . $this->msg( 'linkfilter-admin-recent' )->escaped() . '</h3>';
 
-		$l = new LinkList();
 		$links = $l->getLinkList( LinkStatus::APPROVED, $type, 10, 0, 'link_approved_date' );
 
 		// Nothing has been approved recently? Okay...

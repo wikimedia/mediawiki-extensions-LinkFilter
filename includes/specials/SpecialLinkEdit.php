@@ -141,7 +141,7 @@ class LinkEdit extends UnlistedSpecialPage {
 		}
 		$output .= '</select>
 				<div class="link-submit-button">
-					<input tabindex="5" class="site-button" type="button" id="link-submit-button" value="' . $this->msg( 'linkfilter-submit-button' )->escaped() . '" />
+					<input tabindex="5" class="site-button" type="submit" id="link-submit-button" value="' . $this->msg( 'linkfilter-submit-button' )->escaped() . '" />
 				</div>' .
 				Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			'</form>

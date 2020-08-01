@@ -92,9 +92,11 @@ class LinkSubmit extends SpecialPage {
 						$this->msg( 'linkfilter-submit-success-text' )->escaped() .
 					'</div>
 					<div class="link-submit-button">
-						<input type="button" onclick="window.location=\'' .
-							Link::getSubmitLinkURL() . '\'" value="' .
-							$this->msg( 'linkfilter-submit-another' )->escaped() . '" />
+						<form method="get" action="' . Link::getSubmitLinkURL()  . '">
+							<input type="submit" onclick="window.location=\'' .
+								Link::getSubmitLinkURL() . '\'" value="' .
+								$this->msg( 'linkfilter-submit-another' )->escaped() . '" />
+						</form>
 					</div>'
 				);
 			}
@@ -174,7 +176,7 @@ class LinkSubmit extends SpecialPage {
 		}
 		$output .= '</select>
 				<div class="link-submit-button">
-					<input tabindex="5" class="site-button" type="button" id="link-submit-button" value="' . $this->msg( 'linkfilter-submit-button' )->escaped() . '" />
+					<input tabindex="5" class="site-button" type="submit" id="link-submit-button" value="' . $this->msg( 'linkfilter-submit-button' )->escaped() . '" />
 				</div>' .
 				Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			'</form>
