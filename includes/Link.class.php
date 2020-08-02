@@ -94,7 +94,7 @@ class Link {
 				'link_description' => $desc,
 				'link_type' => intval( $type ),
 				'link_status' => 0,
-				'link_submit_date' => $date,
+				'link_submit_date' => $dbw->timestamp( $date ),
 				'link_submitter_actor' => $user->getActorId()
 			],
 			__METHOD__
