@@ -8,10 +8,10 @@ var LinkFilter = {
 	 * Perform an administrative action (approval or rejection) on a submitted
 	 * link.
 	 *
-	 * @param {Number} Action to perform (1 = accept, 2 = reject)
-	 * @param {Number} ID of the link to approve or reject
+	 * @param {number} action Action to perform (1 = accept, 2 = reject)
+	 * @param {number} link_id ID of the link to approve or reject
 	 */
-	linkAction: function( action, link_id ) {
+	linkAction: function ( action, link_id ) {
 		$( 'div.action-buttons-1' ).hide();
 
 		( new mw.Api() ).postWithToken( 'csrf', {
@@ -19,7 +19,7 @@ var LinkFilter = {
 			id: link_id,
 			status: action,
 			format: 'json'
-		} ).done( function( data ) {
+		} ).done( function ( data ) {
 			var msg;
 			switch ( action ) {
 				case 1:
@@ -42,12 +42,11 @@ var LinkFilter = {
 	 * Provided that all the mandatory fields have been filled in, this submits
 	 * the form.
 	 */
-	submitLink: function() {
+	submitLink: function () {
 		if (
 			typeof mw.config.get( 'wgCanonicalSpecialPageName' ) !== 'undefined' &&
 			mw.config.get( 'wgCanonicalSpecialPageName' ) !== 'LinkEdit'
-		)
-		{
+		) {
 			if ( document.getElementById( 'lf_title' ).value === '' ) {
 				alert( mw.msg( 'linkfilter-submit-no-title' ) );
 				return '';
@@ -60,8 +59,7 @@ var LinkFilter = {
 		if (
 			document.getElementById( 'lf_URL' ).value === '' ||
 			document.getElementById( 'lf_URL' ).value == 'http://' // this is the default value
-		)
-		{
+		) {
 			alert( mw.msg( 'linkfilter-submit-no-url' ) );
 			return '';
 		}
@@ -75,10 +73,10 @@ var LinkFilter = {
 	/**
 	 * Update the "X characters remain" message as the user types
 	 *
-	 * @param {HTMLTextAreaElement} Name of the field whose length we're checking
-	 * @param {Number} Maximum amount of characters allowed to be entered
+	 * @param {HTMLTextAreaElement} field Name of the field whose length we're checking
+	 * @param {number} limit Maximum amount of characters allowed to be entered
 	 */
-	limitText: function( field, limit ) {
+	limitText: function ( field, limit ) {
 		if ( field.value.length > limit ) {
 			field.value = field.value.substring( 0, limit );
 		}
@@ -86,35 +84,35 @@ var LinkFilter = {
 	}
 };
 
-$( function() {
+$( function () {
 	// "Accept" links on Special:LinkApprove
-	$( '.action-accept' ).click( function( e ) {
+	$( '.action-accept' ).on( 'click', function ( e ) {
 		e.preventDefault();
 		var that = $( this );
 		LinkFilter.linkAction( 1, that.data( 'link-id' ) );
 	} );
 
 	// "Reject" links on Special:LinkApprove
-	$( '.action-reject' ).click( function( e ) {
+	$( '.action-reject' ).on( 'click', function ( e ) {
 		e.preventDefault();
 		var that = $( this );
 		LinkFilter.linkAction( 2, that.data( 'link-id' ) );
 	} );
 
 	// Link type filter on Special:LinkApprove
-	$( '#admin-link-type-filter' ).change( function() {
+	$( '#admin-link-type-filter' ).on( 'change', function () {
 		window.location = mw.util.getUrl( 'Special:LinkApprove', { type: $( this ).val() } );
 	} );
 
 	// Textarea on Special:LinkEdit/Special:LinkSubmit
-	$( 'textarea.lr-input' ).on( 'keyup', function() {
+	$( 'textarea.lr-input' ).on( 'keyup', function () {
 		LinkFilter.limitText( document.link.lf_desc, 300 );
-	} ).on( 'keydown', function() {
+	} ).on( 'keydown', function () {
 		LinkFilter.limitText( document.link.lf_desc, 300 );
 	} );
 
 	// Submit button on Special:LinkEdit/Special:LinkSubmit
-	$( '#link-submit-button' ).click( function() {
+	$( '#link-submit-button' ).on( 'click', function () {
 		LinkFilter.submitLink();
 	} );
 } );
