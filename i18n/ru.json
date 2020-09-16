@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"1233qwer1234qwer4",
 			"Adata80",
 			"DCamer",
 			"Diralik",
@@ -33,7 +34,7 @@
 	"linkfilter-approve-links": "Одобрить ссылки",
 	"linkfilter-submit-another": "Добавить ещё одну ссылку",
 	"linkfilter-login-title": "Не выполнен вход",
-	"linkfilter-login-text": "Вы должны представиться системе, чтоб добавлять ссылки.",
+	"linkfilter-login-text": "Вы должны представиться системе, чтобы добавлять ссылки.",
 	"linkfilter-title": "Заголовок",
 	"linkfilter-type": "Тип ссылки",
 	"linkfilter-description": "Описание",
