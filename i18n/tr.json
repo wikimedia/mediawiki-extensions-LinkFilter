@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
-			"McAang"
+			"McAang",
+			"MuratTheTurkish"
 		]
 	},
 	"linkapprove": "Bağlantıları onayla",
@@ -33,8 +34,8 @@
 	"linkfilter-home-button": "Bağlantı ana sayfası",
 	"linkfilter-submit-success-title": "Bağlantı gönderildi",
 	"linkfilter-submit-success-text": "Bağlantınız onay için gönderildi",
-	"linkfilter-instructions": "[[MediaWiki:Linkfilter-instructions|Kullanıcılar için talimatlar ekleyin]].",
-	"linkfilter-admin-instructions": "[[MediaWiki:Linkfilter-admin-instructions|Yöneticiler için talimatlar]] ekleyebilirsiniz.",
+	"linkfilter-instructions": "[[MediaWiki:Linkfilter-instructions|Kullanıcılar için talimatları ekleyebilirsiniz]].",
+	"linkfilter-admin-instructions": "[[MediaWiki:Linkfilter-admin-instructions|Hizmetliler için talimatlar]] ekleyebilirsiniz.",
 	"linkfilter-admin-recent": "Son zamanlarda onaylandı",
 	"linkfilter-approve-title": "Bağlantı yönetimi",
 	"linkfilter-submittedby": "'''Gönderen''': [[User:$1|$1]]",
