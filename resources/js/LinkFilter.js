@@ -112,7 +112,8 @@ $( function () {
 	} );
 
 	// Submit button on Special:LinkEdit/Special:LinkSubmit
-	$( '#link-submit-button' ).on( 'click', function () {
+	$( '#link-submit-button' ).on( 'click', function ( e ) {
+		e.preventDefault();
 		LinkFilter.submitLink();
 	} );
 } );
