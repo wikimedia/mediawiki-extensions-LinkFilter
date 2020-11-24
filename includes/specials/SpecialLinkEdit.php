@@ -21,8 +21,7 @@ class LinkEdit extends UnlistedSpecialPage {
 
 		// Check permissions
 		if ( !Link::canAdmin( $user ) ) {
-			$this->displayRestrictionError();
-			return;
+			$this->requireLogin();
 		}
 
 		// Is the database locked or not?
