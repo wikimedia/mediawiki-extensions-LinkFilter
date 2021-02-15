@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"George Animal"
+			"George Animal",
+			"Guherto"
 		]
 	},
 	"linksubmit": "Girêdanekê tomar bike",
@@ -20,6 +21,6 @@
 	"linkfilter-home-title-all": "Hemû girêdan",
 	"linkfilter-new-links-title": "Girêdanên nû",
 	"linkfilter-time-days": "{{PLURAL:$1|rojek|$1 roj}}",
-	"linkfilter-time-hours": "{{PLURAL:$1|demjimêrek|$1 demjimêr}}",
+	"linkfilter-time-hours": "{{PLURAL:$1|saetek|$1 saet}}",
 	"linkfilter-edit-summary": "girêdana nû"
 }
