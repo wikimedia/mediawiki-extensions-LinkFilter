@@ -252,15 +252,4 @@ class LinkFilterHooks {
 			$updater->addExtensionField( 'link', 'link_submitter_actor', $sqlPath . '/patch-add_link_submitter_actor_column.sql' );
 		}
 	}
-
-	/**
-	 * Register the canonical names for our namespace and its talkspace.
-	 *
-	 * @param array $list Array of namespace numbers with corresponding
-	 *                     canonical names
-	 */
-	public static function onCanonicalNamespaces( &$list ) {
-		$list[NS_LINK] = 'Link';
-		$list[NS_LINK_TALK] = 'Link_talk';
-	}
 }
