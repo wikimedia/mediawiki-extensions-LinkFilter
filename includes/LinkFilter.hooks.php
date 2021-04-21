@@ -14,18 +14,28 @@ class LinkFilterHooks {
 	 * This function is called after a page has been moved successfully to
 	 * update the LinkFilter entries.
 	 *
-	 * @param Title $title Original/old Title
-	 * @param Title $newTitle New Title
-	 * @param User $user User (object) who performed the page move
+	 * @param MediaWiki\Linker\LinkTarget $title Original/old title
+	 * @param MediaWiki\Linker\LinkTarget $newTitle New title
+	 * @param MediaWiki\User\UserIdentity $user User (object) who performed the page move
 	 * @param int $oldId Old page ID
 	 * @param int $newId New page ID
+	 * @param string $reason User-supplied reason for moving the page
+	 * @param MediaWiki\Revision\RevisionRecord $revision
 	 */
-	public static function updateLinkFilter( &$title, &$newTitle, $user, $oldId, $newId ) {
-		if ( $title->getNamespace() == NS_LINK ) {
+	public static function updateLinkFilter(
+		MediaWiki\Linker\LinkTarget $old,
+		MediaWiki\Linker\LinkTarget $new,
+		MediaWiki\User\UserIdentity $userIdentity,
+		int $oldId,
+		int $newId,
+		string $reason,
+		MediaWiki\Revision\RevisionRecord $revision
+	) {
+		if ( $old->getNamespace() == NS_LINK ) {
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update(
 				'link',
-				[ 'link_name' => $newTitle->getText() ],
+				[ 'link_name' => $new->getText() ],
 				[ 'link_page_id' => intval( $oldId ) ],
 				__METHOD__
 			);
