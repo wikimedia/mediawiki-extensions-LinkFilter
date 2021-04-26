@@ -65,6 +65,21 @@ class LinkSubmit extends SpecialPage {
 				$out->setPageTitle( $this->msg( 'error' )->text() );
 				$out->addHTML( $this->displayAddForm() );
 				return true;
+			} else {
+				// Perform some title validation to avoid a situation where we have a link
+				// that has a title which cannot be converted to a valid Title, which thus
+				// would prevent approving such a link, leaving link admins with no other
+				// choice than to reject it
+				try {
+					$title = Title::newFromTextThrow( $request->getVal( 'lf_title' ) );
+				} catch ( Exception $e ) {
+					$out->setPageTitle( $this->msg( 'error' )->text() );
+					$out->addHTML( $this->displayAddForm(
+						// Yes, I'm reusing a core MW msg here. Naughty!
+						$this->msg( 'img-auth-badtitle', $request->getVal( 'lf_title' ) )->escaped()
+					) );
+					return true;
+				}
 			}
 
 			// The link must have a description, too!
@@ -102,7 +117,7 @@ class LinkSubmit extends SpecialPage {
 					'</div>
 					<div class="link-submit-button">
 						<form method="get" action="' . Link::getSubmitLinkURL()  . '">
-							<input type="submit" onclick="window.location=\'' .
+							<input type="submit" class="site-button" onclick="window.location=\'' .
 								Link::getSubmitLinkURL() . '\'" value="' .
 								$this->msg( 'linkfilter-submit-another' )->escaped() . '" />
 						</form>
@@ -117,12 +132,15 @@ class LinkSubmit extends SpecialPage {
 
 	/**
 	 * Display the form for submitting a new link.
+	 *
+	 * @param string $errorMsg Error message to be displayed, if any
 	 * @return string HTML
 	 */
-	function displayAddForm() {
+	function displayAddForm( $errorMsg = '' ) {
 		$request = $this->getRequest();
 
-		$url = $request->getVal( '_url' );
+		// Preserve the URL in case if the form was submitted but there were errors
+		$url = $request->getVal( '_url', $request->getVal( 'lf_URL' ) );
 		$title = $request->getVal( '_title' );
 
 		if ( !$url ) {
@@ -141,7 +159,11 @@ class LinkSubmit extends SpecialPage {
 		$descFromRequest = $request->getVal( 'lf_desc' );
 		$lf_desc = isset( $descFromRequest ) ? $descFromRequest : '';
 
-		$output = '<div class="lr-left">
+		$output = '';
+		if ( $errorMsg !== '' ) {
+			$output .= Html::errorBox( $errorMsg );
+		}
+		$output .= '<div class="lr-left">
 
 			<div class="link-home-navigation">
 				<a href="' . Link::getHomeLinkURL() . '">' .
@@ -159,11 +181,11 @@ class LinkSubmit extends SpecialPage {
 				<div class="link-submit-title">
 					<label>' . $this->msg( 'linkfilter-title' )->escaped() . '</label>
 				</div>
-				<input tabindex="1" class="lr-input" type="text" name="lf_title" id="lf_title" value="' . $title . '" maxlength="150" />
+				<input tabindex="1" class="lr-input" type="text" name="lf_title" id="lf_title" value="' . htmlspecialchars( $title, ENT_QUOTES ) . '" maxlength="150" />
 				<div class="link-submit-title">
 					<label>' . $this->msg( 'linkfilter-url' )->escaped() . '</label>
 				</div>
-				<input tabindex="2" class="lr-input" type="text" name="lf_URL" id="lf_URL" value="' . $url . '"/>
+				<input tabindex="2" class="lr-input" type="text" name="lf_URL" id="lf_URL" value="' . htmlspecialchars( $url, ENT_QUOTES ) . '"/>
 
 				<div class="link-submit-title">
 					<label>' . $this->msg( 'linkfilter-description' )->escaped() . '</label>
@@ -172,7 +194,9 @@ class LinkSubmit extends SpecialPage {
 					$this->msg( 'linkfilter-description-max' )->escaped() . ' - ' .
 					$this->msg( 'linkfilter-description-left', '<span id="desc-remaining">300</span>' )->text() .
 				'</div>
-				<textarea tabindex="3" class="lr-input" rows="4" name="lf_desc" id="lf_desc" value="' . $lf_desc . '"></textarea>
+				<textarea tabindex="3" class="lr-input" rows="4" name="lf_desc" id="lf_desc">' .
+					htmlspecialchars( $lf_desc, ENT_QUOTES ) .
+				'</textarea>
 
 				<div class="link-submit-title">
 					<label>' . $this->msg( 'linkfilter-type' )->escaped() . '</label>
@@ -181,7 +205,8 @@ class LinkSubmit extends SpecialPage {
 				<option value="">-</option>';
 		$linkTypes = Link::getLinkTypes();
 		foreach ( $linkTypes as $id => $type ) {
-			$output .= "<option value=\"{$id}\">{$type}</option>";
+			// Preserve value in case if the form was submitted but there were errors
+			$output .= Xml::option( $type, $id, ( $id === $request->getInt( 'lf_type' ) ) );
 		}
 		$output .= '</select>
 				<div class="link-submit-button">
