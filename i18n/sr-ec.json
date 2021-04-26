@@ -9,6 +9,8 @@
 		]
 	},
 	"linkapprove": "Одобравање веза",
+	"linkfilter-all": "Све",
+	"linkfilter-submit-no-title": "Унесите наслов",
 	"linkfilter-edit-title": "Измени $1",
 	"linkfilter-login-title": "Нисте пријављени",
 	"linkfilter-url": "Адреса",

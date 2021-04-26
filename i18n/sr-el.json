@@ -5,7 +5,30 @@
 			"Obsuser"
 		]
 	},
+	"linkapprove": "Odobravanje veza",
+	"linkfilter-all": "Sve",
+	"linkfilter-submit-no-title": "Unesite naslov",
+	"linkfilter-edit-title": "Izmeni $1",
 	"linkfilter-login-title": "Niste prijavljeni",
 	"linkfilter-url": "Adresa",
-	"linkfilter-time-seconds": "{{PLURAL:$1|1 sekunda|$1 sekunda|$1 sekundi}}"
+	"linkfilter-title": "Naslov",
+	"linkfilter-type": "Tip veze",
+	"linkfilter-description": "Opis",
+	"linkfilter-approve-title": "Administracija veza",
+	"linkfilter-admin-accept": "Prihvati",
+	"linkfilter-admin-reject": "Odbij",
+	"linkfilter-admin-reject-success": "Veza je odbijena.",
+	"linkfilter-admin-accept-success": "Veza je prihvaćena",
+	"linkfilter-in-the-news": "U vestima",
+	"linkfilter-comments-of-day": "Top komentari",
+	"linkfilter-home-title": "$1 veze",
+	"linkfilter-home-title-all": "Sve veze",
+	"linkfilter-next": "sledeće",
+	"linkfilter-previous": "prethodno",
+	"linkfilter-description-max": "Maksimalno karaktera",
+	"linkfilter-description-left": "$1 je ostalo",
+	"linkfilter-new-links-title": "Nove veze",
+	"linkfilter-time-seconds": "{{PLURAL:$1|1 sekunda|$1 sekunda|$1 sekundi}}",
+	"linkfilter-no-results": "Nisu pronađene stranice.",
+	"group-linkadmin": "Administratori veza"
 }
