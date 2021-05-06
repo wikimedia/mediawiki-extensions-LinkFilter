@@ -20,7 +20,7 @@ class LinkSubmit extends SpecialPage {
 	 * @return bool
 	 */
 	public function isListed() {
-		return (bool)$this->getUser()->isLoggedIn();
+		return (bool)$this->getUser()->isRegistered();
 	}
 
 	/**
