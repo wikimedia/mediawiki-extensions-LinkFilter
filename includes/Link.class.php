@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * Link class
  * Functions for managing Link pages.
@@ -50,7 +53,7 @@ class Link {
 	public static function canAdmin( User $user ) {
 		if (
 			$user->isAllowed( 'linkadmin' ) ||
-			in_array( 'linkadmin', $user->getGroups() )
+			in_array( 'linkadmin', MediaWikiServices::getInstance()->getUserGroupManager()->getUserGroups( $user ) )
 		)
 		{
 			return true;
