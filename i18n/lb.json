@@ -34,7 +34,7 @@
 	"linkfilter-submit-success-title": "De Link ass elo proposéiert",
 	"linkfilter-submit-success-text": "Äre Link gouf weiderginn un d'Administrateure fir akzeptéiert ze ginn",
 	"linkfilter-instructions": "Dir kënnt [[MediaWiki:Linkfilter-instructions|Instruktioune fir d'Benotzer]] derbäisetzen.",
-	"linkfilter-admin-instructions": "Dir kënnt [[MediaWiki:Linkfilter-admin-instructions|Instruktioune fir d'Administrateuren]] dobäisetzen.",
+	"linkfilter-admin-instructions": "Dir kënnt [[MediaWiki:Linkfilter-admin-instructions|Instruktioune fir d'Administrateuren]] derbäisetzen.",
 	"linkfilter-admin-recent": "Rezent akzeptéiert",
 	"linkfilter-approve-title": "Gestioun vun de Linken",
 	"linkfilter-submittedby": "'''Proposéiert vum'': [[User:$1|$1]]",
