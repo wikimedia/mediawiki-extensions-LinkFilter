@@ -15,7 +15,6 @@
 		"eqeqeq": "warn",
 		"no-alert": "warn",
 		"no-unused-vars": "warn",
-		"vars-on-top": "warn",
 		"no-jquery/no-global-selector": "warn",
 		"no-jquery/no-animate-toggle": "warn",
 		"no-jquery/variable-pattern": "warn"
