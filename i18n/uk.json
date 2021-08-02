@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Base",
+			"DDPAT",
 			"Dars",
 			"Olvin",
 			"Piramidion",
@@ -29,7 +30,7 @@
 	"linkfilter-submit-no-type": "Оберіть тип зв'язку.",
 	"linkfilter-edit-title": "Редагування $1",
 	"linkfilter-approve-links": "Затвердити посилання",
-	"linkfilter-submit-another": "Надістати інше посилання",
+	"linkfilter-submit-another": "Надіслати інше посилання",
 	"linkfilter-login-title": "Не увійшли до системи",
 	"linkfilter-login-text": "Ви повинні увійти до системи, для подання посилань",
 	"linkfilter-title": "Назва",
