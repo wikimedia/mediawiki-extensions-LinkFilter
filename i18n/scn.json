@@ -5,5 +5,6 @@
 		]
 	},
 	"linkfilter-title": "Tìtulu",
-	"linkfilter-description": "Discrizzioni"
+	"linkfilter-description": "Discrizzioni",
+	"linkfilter-time-hours": "{{PLURAL:$1|na ura|$1 uri}}"
 }
