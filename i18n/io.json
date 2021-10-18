@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"JSantos",
 			"Joao Xavier"
 		]
 	},
 	"linkfilter-all": "Omna",
+	"linkfilter-title": "Titulo",
 	"linkfilter-admin-cat-filter": "Montrar nur ligili qui demandas aprobo en la kategorio:",
 	"linkfilter-time-days": "{{PLURAL:$1|un dio|$1 dii}}",
 	"linkfilter-time-hours": "{{PLURAL:$1|1 horo|$1 hori}}",
