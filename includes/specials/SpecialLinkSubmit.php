@@ -42,7 +42,7 @@ class LinkSubmit extends SpecialPage {
 		$this->checkReadOnly();
 
 		// Blocked through Special:Block? No access for you either
-		if ( $user->isBlocked() ) {
+		if ( $user->getBlock() ) {
 			throw new UserBlockedError( $user->getBlock() );
 		}
 

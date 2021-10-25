@@ -28,7 +28,7 @@ class LinkEdit extends UnlistedSpecialPage {
 		$this->checkReadOnly();
 
 		// No access for blocked users
-		if ( $user->isBlocked() ) {
+		if ( $user->getBlock() ) {
 			throw new UserBlockedError( $user->getBlock() );
 		}
 
