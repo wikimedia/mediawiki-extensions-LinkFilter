@@ -9,7 +9,8 @@
 			"SteveR",
 			"Translatemyname",
 			"Vlad5250",
-			"Ата"
+			"Ата",
+			"DDPAT"
 		]
 	},
 	"linkapprove": "Затвердити посилання",
@@ -29,9 +30,10 @@
 	"linkfilter-submit-no-type": "Оберіть тип зв'язку.",
 	"linkfilter-edit-title": "Редагування $1",
 	"linkfilter-approve-links": "Затвердити посилання",
-	"linkfilter-submit-another": "Надістати інше посилання",
+	"linkfilter-submit-another": "Надіслати інше посилання",
 	"linkfilter-login-title": "Не увійшли до системи",
 	"linkfilter-login-text": "Ви повинні увійти до системи, для подання посилань",
+	"linkfilter-url": "URL",
 	"linkfilter-title": "Назва",
 	"linkfilter-type": "Тип посилання",
 	"linkfilter-description": "Опис",
@@ -75,6 +77,8 @@
 	"grouppage-linkadmin": "{{ns:project}}:Адміністратори посилань",
 	"action-linkadmin": "адміністрування доданих користувачами посилань",
 	"right-linkadmin": "Адміністрування доданих користувачами посилань",
+	"group-linkadmin.css": "/* CSS, розміщений тут, вплине лише на linkadmins */",
+	"group-linkadmin.js": "/* JS, розміщений тут, вплине лише на linkadmins */",
 	"apihelp-linkfilter-description": "Backend-API-модуль для затвердження посилань, що додаються користувачами",
 	"apihelp-linkfilter-summary": "Бекенд-модуль API для затвердження поданих користувачами посилань",
 	"apihelp-linkfilter-param-id": "Номер ідентифікатора посилання",

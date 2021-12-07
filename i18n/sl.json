@@ -4,6 +4,8 @@
 			"Eleassar"
 		]
 	},
+	"linkfilter-submit": "Shrani",
+	"linkfilter-title": "Naslov",
 	"linkfilter-description": "Opis",
 	"linkfilter-in-the-news": "V novicah",
 	"linkfilter-home-title": "$1 povezave"
