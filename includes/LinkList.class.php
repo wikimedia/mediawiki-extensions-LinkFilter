@@ -18,6 +18,7 @@ class LinkList {
 	public function getLinkList( $status, $type, $limit = 0, $page = 0, $order = 'link_submit_date' ) {
 		$dbr = wfGetDB( DB_REPLICA );
 
+		$params = [];
 		$params['ORDER BY'] = "$order DESC";
 		if ( $limit ) {
 			$params['LIMIT'] = $limit;
@@ -26,6 +27,7 @@ class LinkList {
 			$params['OFFSET'] = $page * $limit - ( $limit );
 		}
 
+		$where = [];
 		if ( $type > 0 ) {
 			$where['link_type'] = $type;
 		}
@@ -64,7 +66,7 @@ class LinkList {
 				'status' => $row->link_status,
 				'type_name' => Link::getLinkType( $row->link_type ),
 				'wiki_page' => ( ( $linkPage ) ? htmlspecialchars( $linkPage->getFullURL(), ENT_QUOTES ) : null ),
-				'comments' => ( ( $row->link_comment_count ) ? $row->link_comment_count : 0 ),
+				'comments' => ( $row->link_comment_count ?: 0 ),
 				'actor' => $row->link_submitter_actor
 			];
 		}

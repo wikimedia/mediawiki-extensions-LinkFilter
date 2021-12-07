@@ -20,7 +20,9 @@ class ApiLinkFilter extends ApiBase {
 		// Make sure that we have the parameters we need and that their datatypes
 		// are even somewhat sane
 		if (
+			// @phan-suppress-next-line PhanImpossibleTypeComparison
 			!$id || $id === null || !is_numeric( $id ) ||
+			// @phan-suppress-next-line PhanImpossibleTypeComparison
 			!$status || $status === null || !is_numeric( $status )
 		)
 		{

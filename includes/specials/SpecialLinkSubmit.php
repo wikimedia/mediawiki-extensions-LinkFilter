@@ -20,7 +20,7 @@ class LinkSubmit extends SpecialPage {
 	 * @return bool
 	 */
 	public function isListed() {
-		return (bool)$this->getUser()->isRegistered();
+		return $this->getUser()->isRegistered();
 	}
 
 	/**
@@ -43,6 +43,7 @@ class LinkSubmit extends SpecialPage {
 
 		// Blocked through Special:Block? No access for you either
 		if ( $user->getBlock() ) {
+			// @phan-suppress-next-line PhanTypeMismatchArgumentNullable False positive caused by core MW or something
 			throw new UserBlockedError( $user->getBlock() );
 		}
 
@@ -157,7 +158,7 @@ class LinkSubmit extends SpecialPage {
 		$_SESSION['alreadysubmitted'] = false;
 
 		$descFromRequest = $request->getVal( 'lf_desc' );
-		$lf_desc = isset( $descFromRequest ) ? $descFromRequest : '';
+		$lf_desc = $descFromRequest ?: '';
 
 		$output = '';
 		if ( $errorMsg !== '' ) {
@@ -181,7 +182,9 @@ class LinkSubmit extends SpecialPage {
 				<div class="link-submit-title">
 					<label>' . $this->msg( 'linkfilter-title' )->escaped() . '</label>
 				</div>
-				<input tabindex="1" class="lr-input" type="text" name="lf_title" id="lf_title" value="' . htmlspecialchars( $title, ENT_QUOTES ) . '" maxlength="150" />
+				<input tabindex="1" class="lr-input" type="text" name="lf_title" id="lf_title" value="' .
+					// @phan-suppress-next-line PhanTypeMismatchArgumentNullableInternal Whatever...
+					htmlspecialchars( $title, ENT_QUOTES ) . '" maxlength="150" />
 				<div class="link-submit-title">
 					<label>' . $this->msg( 'linkfilter-url' )->escaped() . '</label>
 				</div>
@@ -192,7 +195,7 @@ class LinkSubmit extends SpecialPage {
 				</div>
 				<div class="link-characters-left">' .
 					$this->msg( 'linkfilter-description-max' )->escaped() . ' - ' .
-					$this->msg( 'linkfilter-description-left', '<span id="desc-remaining">300</span>' )->text() .
+					$this->msg( 'linkfilter-description-left', '<span id="desc-remaining">300</span>' )->parse() .
 				'</div>
 				<textarea tabindex="3" class="lr-input" rows="4" name="lf_desc" id="lf_desc">' .
 					htmlspecialchars( $lf_desc, ENT_QUOTES ) .
