@@ -4,11 +4,34 @@
 			"BadDog",
 			"Milicevic01",
 			"Obsuser",
-			"Rancher"
+			"Rancher",
+			"Kizule"
 		]
 	},
 	"linkapprove": "Одобравање веза",
+	"linkfilter-all": "Све",
+	"linkfilter-submit-no-title": "Унесите наслов",
+	"linkfilter-edit-title": "Измени $1",
 	"linkfilter-login-title": "Нисте пријављени",
 	"linkfilter-url": "Адреса",
-	"linkfilter-time-seconds": "{{PLURAL:$1|1 секунда|$1 секунда|$1 секунди}}"
+	"linkfilter-title": "Наслов",
+	"linkfilter-type": "Тип везе",
+	"linkfilter-description": "Опис",
+	"linkfilter-approve-title": "Администрација веза",
+	"linkfilter-admin-accept": "Прихвати",
+	"linkfilter-admin-reject": "Одбиј",
+	"linkfilter-admin-reject-success": "Веза је одбијена.",
+	"linkfilter-admin-accept-success": "Веза је прихваћена",
+	"linkfilter-in-the-news": "У вестима",
+	"linkfilter-comments-of-day": "Топ коментари",
+	"linkfilter-home-title": "$1 везе",
+	"linkfilter-home-title-all": "Све везе",
+	"linkfilter-next": "следеће",
+	"linkfilter-previous": "претходно",
+	"linkfilter-description-max": "Максимално карактера",
+	"linkfilter-description-left": "$1 је остало",
+	"linkfilter-new-links-title": "Нове везе",
+	"linkfilter-time-seconds": "{{PLURAL:$1|1 секунда|$1 секунда|$1 секунди}}",
+	"linkfilter-no-results": "Нису пронађене странице.",
+	"group-linkadmin": "Администратори веза"
 }

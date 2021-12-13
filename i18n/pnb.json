@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Abbas dhothar"
+		]
+	},
+	"linkfilter-description-left": "$1 رہ گئے",
+	"linkfilter-time-days": "{{PLURAL:$1|اک دن|$1 دناں}}",
+	"linkfilter-time-seconds": "$1 {{PLURAL:$1|سکنٹ}}"
+}

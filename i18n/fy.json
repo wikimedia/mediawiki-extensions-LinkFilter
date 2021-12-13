@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Robin van der Vliet",
-			"Robin0van0der0vliet"
+			"Robin0van0der0vliet",
+			"PiefPafPier"
 		]
 	},
 	"linkfilter-submit": "Ferstjoere",
 	"linkfilter-url": "URL",
 	"linkfilter-previous": "foarige",
-	"linkfilter-time-hours": "{{PLURAL:$1|ien oere|$1 oere}}",
+	"linkfilter-time-hours": "{{PLURAL:$1|ien oere|$1 oeren}}",
 	"linkfilter-time-seconds": "{{PLURAL:$1|ien sekonde|$1 sekonden}}"
 }

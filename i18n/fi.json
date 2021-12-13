@@ -14,6 +14,7 @@
 	"linksubmit": "Lähetä linkki",
 	"linkfilter-nothing-to-approve": "Tällä hetkellä ei ole yhtään linkkiä odottamassa hyväksyntää.",
 	"linkfilter-no-recently-approved": "Linkkejä ei ole hyväksytty äskettäin.",
+	"linkfilter-no-links-at-all": "Linkkejä ei ole vielä lähetetty tai sitten linkkien ylläpitäjät eivät ole vielä arvioineet lähetettyjä linkkejä.",
 	"linkfilter-ago": "$1 sitten luokkaan <i>$2</i>",
 	"linkfilter-all": "Kaikki",
 	"linkfilter-submit": "Lähetä",
@@ -41,6 +42,7 @@
 	"linkfilter-approve-title": "Linkkien ylläpito",
 	"linkfilter-submittedby": "'''Lähettänyt''': [[User:$1|$1]]",
 	"linkfilter-submitted": "Lähetetty $1",
+	"linkfilter-admin-cat-filter": "Näytä vain hyväksyntää odottavat linkit luokassa:",
 	"linkfilter-admin-accept": "Hyväksy",
 	"linkfilter-admin-reject": "Hylkää",
 	"linkfilter-admin-reject-success": "Linkki hylättiin",
@@ -67,5 +69,7 @@
 	"linkfilter-feed-title": "{{GRAMMAR:genitive|{{SITENAME}}}} linkit",
 	"group-linkadmin": "linkkien ylläpitäjät",
 	"group-linkadmin-member": "{{GENDER:$1|linkkien ylläpitäjä}}",
+	"grouppage-linkadmin": "{{ns:project}}:Linkkien ylläpitäjät",
+	"action-linkadmin": "hallinnoida käyttäjien lähettämiä linkkejä",
 	"right-linkadmin": "Hallinnoida käyttäjien lähettämiä linkkejä"
 }

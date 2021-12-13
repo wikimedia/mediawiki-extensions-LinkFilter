@@ -37,6 +37,7 @@
 	"linkfilter-approve-title": "Administration de ligamines",
 	"linkfilter-submittedby": "'''Submittite per''': [[User:$1|$1]]",
 	"linkfilter-submitted": "$1 submittite",
+	"linkfilter-admin-cat-filter": "Monstrar solmente le ligamines attendente approbation in le categoria:",
 	"linkfilter-admin-accept": "Acceptar",
 	"linkfilter-admin-reject": "Rejectar",
 	"linkfilter-admin-reject-success": "Le ligamine ha essite rejectate",
@@ -64,5 +65,11 @@
 	"group-linkadmin": "Administratores de ligamines",
 	"group-linkadmin-member": "{{GENDER:$1|administrator|administratrice}} de ligamines",
 	"grouppage-linkadmin": "{{ns:project}}:Administratores de ligamines",
-	"right-linkadmin": "Administrar ligamines submittite per usatores"
+	"action-linkadmin": "administrar ligamines submittite per usatores",
+	"right-linkadmin": "Administrar ligamines submittite per usatores",
+	"apihelp-linkfilter-description": "Modulo API del servitor pro approbar ligamines submittite per le usator",
+	"apihelp-linkfilter-summary": "Modulo API del servitor pro approbar ligamines submittite per le usator",
+	"apihelp-linkfilter-param-id": "Numero de identification del ligamine",
+	"apihelp-linkfilter-param-status": "1 pro acceptar, 2 pro rejectar",
+	"apihelp-linkfilter-example-1": "Rejecta le ligamine #37"
 }
