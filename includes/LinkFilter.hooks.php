@@ -93,7 +93,7 @@ class LinkFilterHooks {
 			}
 
 			// Add CSS
-			$out->addModuleStyles( 'ext.linkFilter.styles' );
+			$out->addModuleStyles( [ 'ext.linkFilter.styles' ] );
 
 			$article = new LinkPage( $title );
 		}
