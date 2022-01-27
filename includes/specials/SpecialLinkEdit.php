@@ -29,6 +29,7 @@ class LinkEdit extends UnlistedSpecialPage {
 
 		// No access for blocked users
 		if ( $user->getBlock() ) {
+			// @phan-suppress-next-line PhanTypeMismatchArgumentNullable False positive caused by core MW or something
 			throw new UserBlockedError( $user->getBlock() );
 		}
 
@@ -119,7 +120,7 @@ class LinkEdit extends UnlistedSpecialPage {
 				</div>
 				<div class="link-characters-left">' .
 					$this->msg( 'linkfilter-description-max' )->escaped() . ' - ' .
-					$this->msg( 'linkfilter-description-left', '<span id="desc-remaining">300</span>' )->text() .
+					$this->msg( 'linkfilter-description-left', '<span id="desc-remaining">300</span>' )->parse() .
 				'</div>
 				<textarea tabindex="3" class="lr-input" rows="4" name="lf_desc" id="lf_desc">'
 				. $description .
@@ -132,11 +133,7 @@ class LinkEdit extends UnlistedSpecialPage {
 				<option value="">-</option>';
 		$linkTypes = Link::getLinkTypes();
 		foreach ( $linkTypes as $id => $type ) {
-			$selected = '';
-			if ( $link['type'] == $id ) {
-				$selected = ' selected="selected"';
-			}
-			$output .= "<option value=\"{$id}\"{$selected}>{$type}</option>";
+			$output .= Xml::option( $type, $id, ( $link['type'] == $id ) );
 		}
 		$output .= '</select>
 				<div class="link-submit-button">

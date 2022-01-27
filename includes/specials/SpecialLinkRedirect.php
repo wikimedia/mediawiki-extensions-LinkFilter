@@ -18,7 +18,7 @@ class LinkRedirect extends UnlistedSpecialPage {
 		$out = $this->getOutput();
 		$out->setArticleBodyOnly( true );
 		$sk = $this->getOutput()->getSkin();
-		$url = $this->getRequest()->getVal( 'url' );
+		$url = htmlspecialchars( $this->getRequest()->getVal( 'url' ), ENT_QUOTES );
 		$out->addHTML(
 			"<html>
 				<body onload=window.location=\"{$url}\">

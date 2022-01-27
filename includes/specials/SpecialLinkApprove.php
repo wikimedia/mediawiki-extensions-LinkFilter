@@ -30,10 +30,11 @@ class LinkApprove extends SpecialPage {
 	 * from includes/wikia/GlobalFunctionsNY.php
 	 */
 	function dateDifference( $date1, $date2 ) {
-		$dtDiff = $date1 - $date2;
+		$dtDiff = $date1 - (int)$date2;
 
 		$totalDays = intval( $dtDiff / ( 24 * 60 * 60 ) );
 		$totalSecs = $dtDiff - ( $totalDays * 24 * 60 * 60 );
+		$dif = [];
 		$dif['w'] = intval( $totalDays / 7 );
 		$dif['d'] = $totalDays;
 		$dif['h'] = $h = intval( $totalSecs / ( 60 * 60 ) );
@@ -94,7 +95,7 @@ class LinkApprove extends SpecialPage {
 		if ( $isURL && !$image && strlen( $linkText ) > 60 ) {
 			$start = substr( $linkText, 0, ( 60 / 2 ) - 3 );
 			$end = substr( $linkText, strlen( $linkText ) - ( 60 / 2 ) + 3, ( 60 / 2 ) - 3 );
-			$linkText = trim( $start ) . wfMessage( 'ellipsis' )->plain() . trim( $end );
+			$linkText = trim( $start ) . wfMessage( 'ellipsis' )->escaped() . trim( $end );
 		}
 		return $tagOpen . $linkText . $tagClose;
 	}
@@ -116,6 +117,7 @@ class LinkApprove extends SpecialPage {
 
 		// Blocked through Special:Block? No access for you either!
 		if ( $user->getBlock() ) {
+			// @phan-suppress-next-line PhanTypeMismatchArgumentNullable False positive caused by core MW or something
 			throw new UserBlockedError( $user->getBlock() );
 		}
 
@@ -123,7 +125,7 @@ class LinkApprove extends SpecialPage {
 		$this->checkReadOnly();
 
 		// Set the page title
-		$out->setPageTitle( $this->msg( 'linkfilter-approve-title' )->plain() );
+		$out->setPageTitle( $this->msg( 'linkfilter-approve-title' ) );
 
 		// Add CSS & JS
 		$out->addModuleStyles( 'ext.linkFilter.styles' );
@@ -133,18 +135,19 @@ class LinkApprove extends SpecialPage {
 		// @todo FIXME: the code inside this if() loop duplicates ApiLinkFilter code way too much
 		if ( $request->wasPosted() && $user->matchEditToken( $request->getVal( 'token' ) ) ) {
 			$id = $request->getInt( 'link-id' );
+			$status = ( $request->getVal( 'action' ) === 'accept' ?
+					LinkStatus::APPROVED : LinkStatus::REJECTED );
 
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update(
 				'link',
 				// 1 = accept; 2 = reject
-				[ 'link_status' => ( $request->getVal( 'action' ) === 'accept' ?
-					LinkStatus::APPROVED : LinkStatus::REJECTED ) ],
+				[ 'link_status' => $status ],
 				[ 'link_id' => $id ],
 				__METHOD__
 			);
 
-			if ( $status == 1 ) {
+			if ( $status == LinkStatus::APPROVED ) {
 				$link = new Link();
 				$link->approveLink( $id );
 			}
@@ -179,38 +182,39 @@ class LinkApprove extends SpecialPage {
 			}
 
 			$submittedBy = User::newFromActorId( $link['actor'] )->getName();
+			$id = (int)$link['id'];
 
 			$output .= "<div class=\"admin-link{$border_fix}\">
 					<div class=\"admin-title\"><b>" . $this->msg( 'linkfilter-title' )->escaped() .
-						'</b>: ' . htmlspecialchars( $link['title'], ENT_QUOTES ) .
+						'</b>: ' . $link['title'] .
 					'</div>
 					<div class="admin-desc"><b>' . $this->msg( 'linkfilter-description' )->escaped() .
-						'</b>: ' . htmlspecialchars( $link['description'], ENT_QUOTES ) .
+						'</b>: ' . $link['description'] .
 					'</div>
 					<div class="admin-url"><b>' . $this->msg( 'linkfilter-url' )->escaped() .
 						'</b>: ' . $linkText . '</div>
 					<div class="admin-submitted">' .
 						$this->msg( 'linkfilter-submittedby', $submittedBy )->parse() .
-						$this->msg( 'word-separator' )->text() .
+						$this->msg( 'word-separator' )->escaped() .
 					$this->msg(
 						'linkfilter-ago',
 						self::getLFTimeAgo( $link['timestamp'] ),
 						Link::getLinkType( $link['type'] )
 					)->parse() .
 					"</div>
-					<div id=\"action-buttons-{$link['id']}\" class=\"action-buttons\">
+					<div id=\"action-buttons-{$id}\" class=\"action-buttons\">
 						<form id=\"link-accept-form\" action=\"{$url}\" method=\"post\">
 							<input type=\"hidden\" name=\"action\" value=\"accept\" />
-							<input type=\"hidden\" name=\"link-id\" value=\"{$link['id']}\" />
+							<input type=\"hidden\" name=\"link-id\" value=\"{$id}\" />
 							<input type=\"hidden\" name=\"token\" value=\"" . htmlspecialchars( $user->getEditToken(), ENT_QUOTES ) . "\" />
-							<input type=\"submit\" class=\"action-accept\" data-link-id=\"{$link['id']}\" value=\"" .
+							<input type=\"submit\" class=\"action-accept\" data-link-id=\"{$id}\" value=\"" .
 								$this->msg( 'linkfilter-admin-accept' )->escaped() . "\" />
 						</form>
 						<form id=\"link-reject-form\" action=\"{$url}\" method=\"post\">
 							<input type=\"hidden\" name=\"action\" value=\"reject\" />
-							<input type=\"hidden\" name=\"link-id\" value=\"{$link['id']}\" />
+							<input type=\"hidden\" name=\"link-id\" value=\"{$id}\" />
 							<input type=\"hidden\" name=\"token\" value=\"" . htmlspecialchars( $user->getEditToken(), ENT_QUOTES ) . "\" />
-							<input type=\"submit\" class=\"action-reject\" data-link-id=\"{$link['id']}\" value=\"" .
+							<input type=\"submit\" class=\"action-reject\" data-link-id=\"{$id}\" value=\"" .
 								$this->msg( 'linkfilter-admin-reject' )->escaped() . '" />
 						</form>
 						<div class="visualClear"></div>
@@ -234,7 +238,7 @@ class LinkApprove extends SpecialPage {
 		// For whatever reason Link::getLinkTypes() skips over ID #5 and we must also
 		// do the same and avoid reintroducing that ID, despite that we want to add
 		// "All" as ID #0.
-		$linkTypes = [ 0 => $this->msg( 'linkfilter-all' )->escaped() ] + Link::getLinkTypes();
+		$linkTypes = [ 0 => $this->msg( 'linkfilter-all' )->text() ] + Link::getLinkTypes();
 		foreach ( $linkTypes as $id => $linkType ) {
 			$output .= Xml::option( $linkType, $id, ( $id === $type ) );
 		}
@@ -276,6 +280,10 @@ class LinkApprove extends SpecialPage {
 			</div>
 			<div class="visualClear"></div>';
 
+		// This is 100% certified all-natural bullshit; phan just hates $link['title'] being pre-escaped
+		// _but_ it also hates it being escaped closer to the output. It's a lose-lose situation for the poor developer.
+		// Same thing happens in LinkFilter.hooks.php#renderLinkFilterHook and SpecialLinksHome.php#execute too.
+		// @phan-suppress-next-line SecurityCheck-XSS
 		$out->addHTML( $output );
 	}
 }

@@ -143,7 +143,7 @@ class Link {
 		$dbw->update(
 			'link',
 			[
-				'link_page_id' => intval( $newPageID ),
+				'link_page_id' => $newPageID,
 				'link_approved_date' => $date
 			],
 			[ 'link_id' => intval( $id ) ],
@@ -168,7 +168,7 @@ class Link {
 	 */
 	public function getLinkByPageID( $pageId ) {
 		if ( !is_numeric( $pageId ) ) {
-			return '';
+			return [];
 		}
 
 		$dbr = wfGetDB( DB_REPLICA );
@@ -247,7 +247,7 @@ class Link {
 	 */
 	public function getLink( $id ) {
 		if ( !is_numeric( $id ) ) {
-			return '';
+			return [];
 		}
 
 		$dbr = wfGetDB( DB_REPLICA );

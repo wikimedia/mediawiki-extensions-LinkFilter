@@ -14,9 +14,9 @@ class LinkFilterHooks {
 	 * This function is called after a page has been moved successfully to
 	 * update the LinkFilter entries.
 	 *
-	 * @param MediaWiki\Linker\LinkTarget $title Original/old title
-	 * @param MediaWiki\Linker\LinkTarget $newTitle New title
-	 * @param MediaWiki\User\UserIdentity $user User (object) who performed the page move
+	 * @param MediaWiki\Linker\LinkTarget $old Original/old title
+	 * @param MediaWiki\Linker\LinkTarget $new New title
+	 * @param MediaWiki\User\UserIdentity $userIdentity User (object) who performed the page move
 	 * @param int $oldId Old page ID
 	 * @param int $newId New page ID
 	 * @param string $reason User-supplied reason for moving the page
@@ -36,7 +36,7 @@ class LinkFilterHooks {
 			$dbw->update(
 				'link',
 				[ 'link_name' => $new->getText() ],
-				[ 'link_page_id' => intval( $oldId ) ],
+				[ 'link_page_id' => $oldId ],
 				__METHOD__
 			);
 		}
@@ -57,7 +57,7 @@ class LinkFilterHooks {
 			$dbw->update(
 				'link',
 				[ 'link_status' => LinkStatus::REJECTED ],
-				[ 'link_page_id' => intval( $article->getID() ) ],
+				[ 'link_page_id' => $article->getID() ],
 				__METHOD__
 			);
 		}
@@ -121,7 +121,7 @@ class LinkFilterHooks {
 		$pOutput->updateCacheExpiry( 0 );
 
 		// Add CSS
-		$pOutput->addModuleStyles( 'ext.linkFilter.styles' );
+		$pOutput->addModuleStyles( [ 'ext.linkFilter.styles' ] );
 
 		if ( isset( $args['count'] ) ) {
 			$count = intval( $args['count'] );
@@ -139,7 +139,7 @@ class LinkFilterHooks {
 		} else {
 			wfDebugLog( 'LinkFilter', "Loaded linkfilter hook from DB\n" );
 			$l = new LinkList();
-			$links = $l->getLinkList( LinkStatus::APPROVED, '', $count, 1, 'link_approved_date' );
+			$links = $l->getLinkList( LinkStatus::APPROVED, 0, $count, 1, 'link_approved_date' );
 			$cache->set( $key, $links, 60 * 5 );
 		}
 
@@ -153,14 +153,22 @@ class LinkFilterHooks {
 
 				<div class="linkfilter-links">
 					<a href="' . htmlspecialchars( $link_submit->getFullURL(), ENT_QUOTES ) . '">' .
-						wfMessage( 'linkfilter-submit' )->plain() .
+						wfMessage( 'linkfilter-submit' )->escaped() .
 					'</a> / <a href="' . htmlspecialchars( $link_all->getFullURL(), ENT_QUOTES ) . '">' .
-						wfMessage( 'linkfilter-all' )->plain() . '</a>';
+						wfMessage( 'linkfilter-all' )->escaped() . '</a>';
+
+		if ( method_exists( $parser, 'getUserIdentity' ) ) {
+			// MW 1.36+
+			$user = MediaWikiServices::getInstance()->getUserFactory()->newFromUserIdentity( $parser->getUserIdentity() );
+		} else {
+			// @phan-suppress-next-line PhanUndeclaredMethod
+			$user = $parser->getUser();
+		}
 
 		// Show a link to the link administration panel for privileged users
-		if ( Link::canAdmin( $parser->getUser() ) ) {
+		if ( Link::canAdmin( $user ) ) {
 			$output .= ' / <a href="' . Link::getLinkAdminURL() . '">' .
-				wfMessage( 'linkfilter-approve-links' )->plain() . '</a>';
+				wfMessage( 'linkfilter-approve-links' )->escaped() . '</a>';
 		}
 
 		$output .= '</div>
@@ -187,6 +195,10 @@ class LinkFilterHooks {
 		}
 		$output .= '</div>';
 
+		// This is 100% certified all-natural bullshit; phan just hates $link['title'] being pre-escaped
+		// _but_ it also hates it being escaped closer to the output. It's a lose-lose situation for the poor developer.
+		// Same thing happens in SpecialLinkApprove.php#execute too.
+		// @phan-suppress-next-line SecurityCheck-XSS
 		return $output;
 	}
 

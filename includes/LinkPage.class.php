@@ -25,6 +25,12 @@ class LinkPage extends Article {
 		$this->link = $l->getLinkByPageID( $title->getArticleID() );
 	}
 
+	/**
+	 * @suppress SecurityCheck-XSS Phan likes to complain essentially about $link['title'] in
+	 *   getNewLinks(), but it has been pre-escaped already, but adding the suppression to that
+	 *   method (whether method-level, like here, or using the "suppress previous/next line" syntax)
+	 *   just doesn't work. :-(
+	 */
 	function view() {
 		global $wgLinkPageDisplay;
 
@@ -84,11 +90,12 @@ class LinkPage extends Article {
 		$domain = '';
 		if ( Link::isURL( $this->link['url'] ) ) {
 			$url = parse_url( $this->link['url'] );
+			// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 			$domain = $url['host'];
 		}
 
 		$create_date = $this->getContext()->getLanguage()->timeanddate(
-			$this->getCreateDate( $this->getTitle()->getArticleID() ),
+			(string)$this->getCreateDate( $this->getTitle()->getArticleID() ),
 			true
 		);
 		$linkRedirect = SpecialPage::getTitleFor( 'LinkRedirect' );
@@ -99,19 +106,19 @@ class LinkPage extends Article {
 		$output = '<div class="link-container">
 				<div class="link-url">
 					<span class="link-type">'
-						. $this->link['type_name'] .
+						. htmlspecialchars( $this->link['type_name'], ENT_QUOTES ) .
 					'</span>
-					<a href="' . $url . "\" target=\"new\">
-						{$this->link['title']}
-					</a>
+					<a href="' . $url . '" target="new">' .
+						htmlspecialchars( $this->link['title'], ENT_QUOTES ) .
+					'</a>
 				</div>
-				<div class=\"link-date\">(" .
+				<div class="link-date">(' .
 					wfMessage( 'linkfilter-submitted', $create_date )->parse() . ')</div>
 				<div class="link-description">' .
 					Link::parseDescription( $this->link['description'] ) .
-				"</div>
-				<div class=\"link-domain\">{$domain}</div>
-			</div>";
+				'</div>
+				<div class="link-domain">' . htmlspecialchars( $domain, ENT_QUOTES ) . '</div>
+			</div>';
 
 		return $output;
 	}
@@ -174,15 +181,17 @@ class LinkPage extends Article {
 
 		$avatar = new wAvatar( $authorUserId, 'm' );
 
+		$safeAuthorUserName = htmlspecialchars( $author->getName(), ENT_QUOTES );
+
 		$css_fix = 'author-container-fix';
-		$output = '<h2>' . wfMessage( 'linkfilter-about-submitter' )->text() . '</h2>';
+		$output = '<h2>' . wfMessage( 'linkfilter-about-submitter' )->escaped() . '</h2>';
 		$output .= "<div class=\"author-container $css_fix\">
 			<div class=\"author-info\">
 				<a href=\"" . htmlspecialchars( $authorTitle->getFullURL(), ENT_QUOTES ) . "\" rel=\"nofollow\">
 					{$avatar->getAvatarURL()}
 				</a>
 				<div class=\"author-title\">
-					<a href=\"" . htmlspecialchars( $authorTitle->getFullURL(), ENT_QUOTES ) . "\" rel=\"nofollow\">{$authorUserName}</a>
+					<a href=\"" . htmlspecialchars( $authorTitle->getFullURL(), ENT_QUOTES ) . "\" rel=\"nofollow\">{$safeAuthorUserName}</a>
 				</div>";
 		if ( $profileData['about'] ) {
 			$output .= $this->getContext()->getOutput()->parseAsContent( $profileData['about'], false );
@@ -248,7 +257,7 @@ class LinkPage extends Article {
 		$newsArray = explode( "\n\n", $context->msg( 'inthenews' )->inContentLanguage()->text() );
 		$newsItem = $newsArray[array_rand( $newsArray )];
 		$output = '<div class="link-container">
-			<h2>' . $context->msg( 'linkfilter-in-the-news' )->text() . '</h2>
+			<h2>' . $context->msg( 'linkfilter-in-the-news' )->escaped() . '</h2>
 			<div>' . $context->getOutput()->parseAsContent( $newsItem, false ) . '</div>
 		</div>';
 
@@ -272,17 +281,17 @@ class LinkPage extends Article {
 
 		$linkRedirect = SpecialPage::getTitleFor( 'LinkRedirect' );
 		$l = new LinkList();
-		$links = $l->getLinkList( LinkStatus::APPROVED, '', 7, 0 );
+		$links = $l->getLinkList( LinkStatus::APPROVED, 0, 7, 0 );
 
 		foreach ( $links as $link ) {
 			$output .= '<div class="link-recent">
-			<a href="' . htmlspecialchars( $linkRedirect->getFullURL( "url={$link['url']}" ), ENT_QUOTES ) .
-				"\" target=\"new\">{$link['title']}</a>
-		</div>";
+			<a href="' . htmlspecialchars( $linkRedirect->getFullURL( "url={$link['url']}" ), ENT_QUOTES ) . '" target="new">' .
+				$link['title'] . '</a>
+		</div>';
 		}
 
 		$output = '<div class="link-container">
-			<h2>' . $this->getContext()->msg( 'linkfilter-new-links-title' )->text() . '</h2>
+			<h2>' . $this->getContext()->msg( 'linkfilter-new-links-title' )->escaped() . '</h2>
 			<div>' . $output . '</div>
 		</div>';
 
@@ -386,7 +395,7 @@ class LinkPage extends Article {
 			}
 
 			if ( $actor->isAnon() ) {
-				$commentPosterDisplay = wfMessage( 'linkfilter-anonymous' )->text();
+				$commentPosterDisplay = wfMessage( 'linkfilter-anonymous' )->escaped();
 			} else {
 				$commentPosterDisplay = $actor->getName();
 			}
@@ -396,15 +405,18 @@ class LinkPage extends Article {
 				$commentText .= wfMessage( 'ellipsis' )->plain();
 			}
 			$output .= '<div class="cod-item">';
-			$output .= '<span class="cod-score">' . $comment['plus_count'] . '</span> ';
+			$output .= '<span class="cod-score">' . (int)$comment['plus_count'] . '</span> ';
 			$url = htmlspecialchars( $pageTitle->getFullURL(), ENT_QUOTES );
-			$output .= " <span class=\"cod-comment\"><a href=\"{$url}#comment-{$comment['comment_id']}\" title=\"{$pageTitle->getText()}\" >{$commentText}</a></span>";
+			$output .= " <span class=\"cod-comment\">";
+			$output .= '<a href="' . $url . '#comment-' . (int)$comment['comment_id'] . '" title="' . htmlspecialchars( $pageTitle->getText(), ENT_QUOTES ) . '">';
+			$output .= htmlspecialchars( $commentText, ENT_QUOTES );
+			$output .= '</a></span>';
 			$output .= '</div>';
 		}
 
 		if ( count( $comments ) > 0 ) {
 			$output = '<div class="link-container">
-				<h2>' . wfMessage( 'linkfilter-comments-of-day' )->text() . '</h2>' .
+				<h2>' . wfMessage( 'linkfilter-comments-of-day' )->escaped() . '</h2>' .
 				$output .
 			'</div>';
 		}

@@ -200,10 +200,15 @@ class LinksHome extends SpecialPage {
 
 			$border_fix2 = '';
 			Wikimedia\suppressWarnings();
-			$date = date( 'l, F j, Y', $link['approved_timestamp'] );
+			// @note approved_timestamp should be a TS in the TS_UNIX format but without
+			// the cast phan thinks it's *totally* not an integer...
+			$date = date( 'l, F j, Y', (int)$link['approved_timestamp'] );
+			// @phan-suppress-next-line PhanUndeclaredVariable Valid complaint, but I'm not sure how to fix it...
 			if ( $date != $last_date ) {
 				$border_fix2 = ' border-top-fix';
-				$output .= "<div class=\"links-home-date\">{$date}</div>";
+				$output .= '<div class="links-home-date">';
+				$output .= htmlspecialchars( $date, ENT_QUOTES );
+				$output .= '</div>';
 				#$unix = wfTimestamp( TS_MW, $link['approved_timestamp'] );
 				#$weekday = $this->getLanguage()->getWeekdayName( gmdate( 'w', $unix ) + 1 );
 				#$output .= '<div class="links-home-date">' . $weekday .
@@ -213,14 +218,15 @@ class LinksHome extends SpecialPage {
 			$last_date = $date;
 
 			$output .= "<div class=\"link-item-container{$border_fix2}\">
-					<div class=\"link-item-type\">
-						{$link['type_name']}
-					</div>
-					<div class=\"link-item\">
-						<div class=\"link-item-url\">
-							<a href=\"" . htmlspecialchars( $linkRedirect->getFullURL( [
+					<div class=\"link-item-type\">" .
+						$link['type_name'] .
+					'</div>
+					<div class="link-item">
+						<div class="link-item-url">
+							<a href="' . htmlspecialchars( $linkRedirect->getFullURL( [
 								'link' => 'true', 'url' => $link['url'] ] ) ) .
-								'" target="new">' . $link['title'] .
+								'" target="new">' .
+									$link['title'] .
 							'</a>
 						</div>
 						<div class="link-item-desc">' .
@@ -275,7 +281,7 @@ class LinksHome extends SpecialPage {
 				} else {
 					$output .= $linkRenderer->makeLink(
 						$pageLink,
-						$i,
+						(string)$i,
 						[],
 						[ 'page' => $i ]
 					) . $this->msg( 'word-separator' )->escaped();
@@ -308,6 +314,10 @@ class LinksHome extends SpecialPage {
 		}
 
 		$output .= '<div class="visualClear"></div>' . "\n";
+		// This is 100% certified all-natural bullshit; phan just hates $link['title'] being pre-escaped
+		// _but_ it also hates it being escaped closer to the output. It's a lose-lose situation for the poor developer.
+		// Same thing happens in LinkFilter.hooks.php#renderLinkFilterHook and SpecialLinkApprove.php#execute too.
+		// @phan-suppress-next-line SecurityCheck-XSS
 		$out->addHTML( $output );
 	}
 
