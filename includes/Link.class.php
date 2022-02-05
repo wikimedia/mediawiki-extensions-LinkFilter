@@ -173,7 +173,7 @@ class Link {
 
 		$dbr = wfGetDB( DB_REPLICA );
 
-		$res = $dbr->select(
+		$row = $dbr->selectRow(
 			'link',
 			[
 				'link_id', 'link_name', 'link_url', 'link_description',
@@ -181,14 +181,8 @@ class Link {
 				'link_submitter_actor'
 			],
 			[ 'link_page_id' => $pageId ],
-			__METHOD__,
-			[
-				'OFFSET' => 0,
-				'LIMIT' => 1
-			]
+			__METHOD__
 		);
-
-		$row = $dbr->fetchObject( $res );
 
 		$link = [];
 		if ( $row ) {
@@ -252,7 +246,7 @@ class Link {
 
 		$dbr = wfGetDB( DB_REPLICA );
 
-		$res = $dbr->select(
+		$row = $dbr->selectRow(
 			'link',
 			[
 				'link_id', 'link_name', 'link_url', 'link_description',
@@ -260,14 +254,9 @@ class Link {
 				'link_submitter_actor'
 			],
 			[ 'link_id' => $id ],
-			__METHOD__,
-			[
-				'OFFSET' => 0,
-				'LIMIT' => 1
-			]
+			__METHOD__
 		);
 
-		$row = $dbr->fetchObject( $res );
 		$link = [];
 		if ( $row ) {
 			$link['id'] = $row->link_id;
