@@ -76,7 +76,7 @@ class LinkFilterHooks {
 	public static function linkFromTitle( &$title, &$article, $context ) {
 		if ( $title->getNamespace() == NS_LINK ) {
 			$out = $context->getOutput();
-			$out->enableClientCache( false );
+			$out->disableClientCache();
 
 			if ( $context->getRequest()->getVal( 'action' ) == 'edit' ) {
 				if ( $title->getArticleID() == 0 ) {
