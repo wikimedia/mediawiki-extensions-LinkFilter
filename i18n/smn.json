@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Seipinne",
 			"Yupik"
 		]
 	},
@@ -8,5 +9,6 @@
 	"linkfilter-login-title": "Jieh lah čälittâm jieijâd siisâ",
 	"linkfilter-in-the-news": "Uđđâsijn",
 	"linkfilter-home-title": "Liiŋkah fáádást $1",
-	"linkfilter-home-title-all": "Puoh liiŋkah"
+	"linkfilter-home-title-all": "Puoh liiŋkah",
+	"linkfilter-time-days": "{{PLURAL:$1|ohtâ peivi|$1 peivid}}"
 }
