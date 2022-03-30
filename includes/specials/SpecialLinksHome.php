@@ -1,4 +1,7 @@
 <?php
+
+use Wikimedia\AtEase\AtEase;
+
 /**
  * Links' homepage -- a listing of user-submitted links.
  *
@@ -199,7 +202,7 @@ class LinksHome extends SpecialPage {
 			}
 
 			$border_fix2 = '';
-			Wikimedia\suppressWarnings();
+			AtEase::suppressWarnings();
 			// @note approved_timestamp should be a TS in the TS_UNIX format but without
 			// the cast phan thinks it's *totally* not an integer...
 			$date = date( 'l, F j, Y', (int)$link['approved_timestamp'] );
@@ -214,7 +217,7 @@ class LinksHome extends SpecialPage {
 				#$output .= '<div class="links-home-date">' . $weekday .
 				#	'</div>';
 			}
-			Wikimedia\restoreWarnings(); // okay, so suppressing E_NOTICEs is kinda bad practise, but... -Jack, January 21, 2010
+			AtEase::restoreWarnings(); // okay, so suppressing E_NOTICEs is kinda bad practise, but... -Jack, January 21, 2010
 			$last_date = $date;
 
 			$output .= "<div class=\"link-item-container{$border_fix2}\">

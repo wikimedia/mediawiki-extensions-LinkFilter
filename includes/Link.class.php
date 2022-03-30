@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use Wikimedia\AtEase\AtEase;
 
 /**
  * Link class
@@ -84,9 +85,9 @@ class Link {
 	public function addLink( $title, $desc, $url, $type, User $user ) {
 		$dbw = wfGetDB( DB_MASTER );
 
-		Wikimedia\suppressWarnings();
+		AtEase::suppressWarnings();
 		$date = date( 'Y-m-d H:i:s' );
-		Wikimedia\restoreWarnings();
+		AtEase::restoreWarnings();
 
 		$dbw->insert(
 			'link',
@@ -136,9 +137,9 @@ class Link {
 		// Tie link record to wiki page
 		$dbw = wfGetDB( DB_MASTER );
 
-		Wikimedia\suppressWarnings();
+		AtEase::suppressWarnings();
 		$date = date( 'Y-m-d H:i:s' );
-		Wikimedia\restoreWarnings();
+		AtEase::restoreWarnings();
 
 		$dbw->update(
 			'link',

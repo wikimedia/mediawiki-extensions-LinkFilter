@@ -1,4 +1,7 @@
 <?php
+
+use Wikimedia\AtEase\AtEase;
+
 /**
  * LinkFilter API module
  *
@@ -12,10 +15,10 @@ class ApiLinkFilter extends ApiBase {
 		// Get the request parameters
 		$params = $this->extractRequestParams();
 
-		Wikimedia\suppressWarnings();
+		AtEase::suppressWarnings();
 		$id = $params['id'];
 		$status = $params['status'];
-		Wikimedia\restoreWarnings();
+		AtEase::restoreWarnings();
 
 		// Make sure that we have the parameters we need and that their datatypes
 		// are even somewhat sane
