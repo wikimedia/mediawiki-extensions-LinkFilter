@@ -6,10 +6,10 @@
 		]
 	},
 	"linkfilter-all": "Puoh",
-	"linkfilter-login-title": "Jieh lah čälittâm jieijâd siisâ",
+	"linkfilter-login-title": "Jieh lah čáládâttâm siisâ",
 	"linkfilter-in-the-news": "Uđđâsijn",
 	"linkfilter-home-title": "Liiŋkah fáádást $1",
 	"linkfilter-home-title-all": "Puoh liiŋkah",
 	"linkfilter-next": "čuávuvâš",
-	"linkfilter-time-days": "{{PLURAL:$1|ohtâ peivi|$1 peivid}}"
+	"linkfilter-time-days": "{{PLURAL:$1|ohtâ peivi|$1 peeivi|$1 peeivi|$1 peivid}}"
 }

@@ -6,13 +6,14 @@
 			"Ebraminio",
 			"Mjbmr",
 			"Reza1615",
-			"پاناروما"
+			"پاناروما",
+			"Beginneruser"
 		]
 	},
 	"linkapprove": "تأیید پیوندها",
 	"linkshome": "زادگاه پیوندها",
 	"linksubmit": "ارائهٔ یک پیوند",
-	"linkfilter-desc": "اضافه کردن صفحات ویژهٔ تازه و یک قلاب تجزیه‌کننده برای ارائه/تأیید/رد پیوند",
+	"linkfilter-desc": "اضافه کردن صفحه‌های ویژهٔ تازه و یک قلاب تجزیه‌کننده برای ارائه/تأیید/رد پیوند",
 	"linkfilter-nothing-to-approve": "در حال حاضر هیچ پیوندی در حال انتظار تأیید نیست.",
 	"linkfilter-no-recently-approved": "اخیراً هیچ پیوندی تأیید نشده‌است.",
 	"linkfilter-no-links-at-all": "هیچ پیوندی هنوز ارائه نشده‌است یا سرپرستان پیوند هنوز پیوندهای ارائه‌شده را بازبینی نکرده‌اند.",
@@ -66,7 +67,7 @@
 	"linkfilter-no-results": "هیچ صفحه‌ای پیدا نشد.",
 	"linkfilter-feed-title": "پیوندهای {{SITENAME}}",
 	"group-linkadmin": "مدیران پیوند",
-	"group-linkadmin-member": "{{GENDER:$1|مدیر پیوند}}",
+	"group-linkadmin-member": "{{GENDER:$1|مدیریت پیوند}}",
 	"grouppage-linkadmin": "{{ns:project}}:مدیران پیوند",
 	"right-linkadmin": "سرپرستی پیوندهای ارائه‌شدهٔ کاربران"
 }
