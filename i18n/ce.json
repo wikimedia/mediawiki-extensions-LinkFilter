@@ -34,7 +34,7 @@
 	"linkfilter-instructions": "Хьан йиш йу [[MediaWiki:Linkfilter-instructions|декъашхошна инструкци тӀетоха]].",
 	"linkfilter-admin-instructions": "Хьан йиш йу [[MediaWiki:Linkfilter-admin-instructions|куьйгалхошна инструкци тӀетоха]].",
 	"linkfilter-admin-recent": "Кеста бакъйинарш",
-	"linkfilter-approve-title": "Хьажорагашка куьйгалхой хьажар",
+	"linkfilter-approve-title": "Хьажорагашка администраторш хьажар",
 	"linkfilter-submittedby": "'''ТӀетоьхна {{GENDER:$1|декъашхочо}}''': [[User:$1|$1]]",
 	"linkfilter-submitted": "ТӀетоьхна $1",
 	"linkfilter-admin-accept": "ТӀелаца",
@@ -61,8 +61,8 @@
 	"linkfilter-edit-summary": "Керла хьажорг",
 	"linkfilter-no-results": "АгӀонаш цакарий",
 	"linkfilter-feed-title": "Хьажоргаш {{SITENAME}}",
-	"group-linkadmin": "Хьажорагашан куьйгалхой",
-	"group-linkadmin-member": "{{GENDER:$1|хьажоргийн куьгалхо}}",
-	"grouppage-linkadmin": "{{ns:project}}:Хьажорагашан куьйгалхой",
+	"group-linkadmin": "Хьажорагийн администраторш",
+	"group-linkadmin-member": "{{GENDER:$1|хьажоргийн администратор}}",
+	"grouppage-linkadmin": "{{ns:project}}:Хьажорагийн администраторш",
 	"right-linkadmin": "Декъашхочо тӀетоьхна хьажоргашна куьйгалла де"
 }
