@@ -2,9 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Guycn2",
-			"חיים"
+			"חיים",
+			"Ex-Diktator"
 		]
 	},
+	"linksubmit": "שליחת קישור",
+	"linkfilter-submit": "שליחה",
+	"linkfilter-submit-button": "שליחת קישור",
 	"linkfilter-anonymous": "קנאי אנונימי",
 	"linkfilter-comments": "{{PLURAL:$1|תגובה אחת|$1 תגובות}}",
 	"linkfilter-home-title": "$1 קישורים",
