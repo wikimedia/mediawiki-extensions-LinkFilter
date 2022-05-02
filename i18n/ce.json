@@ -32,7 +32,7 @@
 	"linkfilter-submit-success-title": "Хьажорг тӀетоьхна",
 	"linkfilter-submit-success-text": "Хьан хьажорг бакъйан йахьийтина",
 	"linkfilter-instructions": "Хьан йиш йу [[MediaWiki:Linkfilter-instructions|декъашхошна инструкци тӀетоха]].",
-	"linkfilter-admin-instructions": "Хьан йиш йу [[MediaWiki:Linkfilter-admin-instructions|куьйгалхошна инструкци тӀетоха]].",
+	"linkfilter-admin-instructions": "Хьан йиш йу [[MediaWiki:Linkfilter-admin-instructions|администраторшна инструкци тӀетоха]].",
 	"linkfilter-admin-recent": "Кеста бакъйинарш",
 	"linkfilter-approve-title": "Хьажорагашка администраторш хьажар",
 	"linkfilter-submittedby": "'''ТӀетоьхна {{GENDER:$1|декъашхочо}}''': [[User:$1|$1]]",
