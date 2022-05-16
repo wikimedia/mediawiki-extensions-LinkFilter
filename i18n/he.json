@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Ex-Diktator",
 			"Guycn2",
 			"חיים"
@@ -8,7 +9,12 @@
 	},
 	"linksubmit": "שליחת קישור",
 	"linkfilter-submit": "שליחה",
+	"linkfilter-submit-title": "שליחת קישור",
+	"linkfilter-edit-title": "עריכת $1",
 	"linkfilter-submit-button": "שליחת קישור",
+	"linkfilter-submit-success-title": "הקישור נשלח",
+	"linkfilter-submittedby": "'''נשלח על־ידי''': [[User:$1|$1]]",
+	"linkfilter-about-submitter": "אודות השולח",
 	"linkfilter-anonymous": "קנאי אנונימי",
 	"linkfilter-comments": "{{PLURAL:$1|תגובה אחת|$1 תגובות}}",
 	"linkfilter-home-title": "$1 קישורים",
