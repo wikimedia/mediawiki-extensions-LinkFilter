@@ -8,9 +8,11 @@
 		]
 	},
 	"linksubmit": "שליחת קישור",
+	"linkfilter-all": "הכול",
 	"linkfilter-submit": "שליחה",
 	"linkfilter-submit-title": "שליחת קישור",
 	"linkfilter-edit-title": "עריכת $1",
+	"linkfilter-title": "כותרת",
 	"linkfilter-submit-button": "שליחת קישור",
 	"linkfilter-submit-success-title": "הקישור נשלח",
 	"linkfilter-submittedby": "'''נשלח על־ידי''': [[User:$1|$1]]",
