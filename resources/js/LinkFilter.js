@@ -78,7 +78,7 @@ var LinkFilter = {
 	 */
 	limitText: function ( field, limit ) {
 		if ( field.value.length > limit ) {
-			field.value = field.value.substring( 0, limit );
+			field.value = field.value.slice( 0, Math.max( 0, limit ) );
 		}
 		document.getElementById( 'desc-remaining' ).innerHTML = limit - field.value.length;
 	}
