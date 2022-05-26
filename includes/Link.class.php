@@ -128,10 +128,17 @@ class Link {
 			$link['url'],
 			$page->getTitle()
 		);
-		$page->doEditContent(
-			$pageContent,
-			wfMessage( 'linkfilter-edit-summary' )->inContentLanguage()->text()
-		);
+		$summary = wfMessage( 'linkfilter-edit-summary' )->inContentLanguage()->text();
+		if ( method_exists( $page, 'doUserEditContent' ) ) {
+			// MW 1.36+
+			$page->doUserEditContent(
+				$pageContent,
+				RequestContext::getMain()->getUser(),
+				$summary
+			);
+		} else {
+			$page->doEditContent( $pageContent, $summary );
+		}
 		$newPageID = $page->getID();
 
 		// Tie link record to wiki page
