@@ -123,7 +123,12 @@ class Link {
 
 		// Create the wiki page for the newly-approved link
 		$linkTitle = Title::makeTitleSafe( NS_LINK, $link['title'] );
-		$page = WikiPage::factory( $linkTitle );
+		if ( method_exists( MediaWikiServices::class, 'getWikiPageFactory' ) ) {
+			// MW 1.36+
+			$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $linkTitle );
+		} else {
+			$page = WikiPage::factory( $linkTitle );
+		}
 		$pageContent = ContentHandler::makeContent(
 			$link['url'],
 			$page->getTitle()
@@ -137,6 +142,7 @@ class Link {
 				$summary
 			);
 		} else {
+			// @phan-suppress-next-line PhanUndeclaredMethod
 			$page->doEditContent( $pageContent, $summary );
 		}
 		$newPageID = $page->getID();
