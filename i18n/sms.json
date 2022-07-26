@@ -4,9 +4,16 @@
 			"Yupik"
 		]
 	},
+	"linksubmit": "Vuõlttâd liiŋk",
 	"linkfilter-all": "Puk",
+	"linkfilter-submit": "Vuõlttâd",
+	"linkfilter-submit-title": "Liiŋk vuõlttummuš",
+	"linkfilter-approve-links": "Priim liiŋkid",
 	"linkfilter-login-title": "Jiõk leäkku ǩeeʹrjtõõttâm sizz",
+	"linkfilter-login-text": "Ton õõlǥak leeʹd sizz ǩeeʹrjtõõttâm, jõs haaʹlääk liiŋkid vuoltteed.",
 	"linkfilter-url": "URL",
+	"linkfilter-description": "Deskriptt",
+	"linkfilter-submit-button": "Vuõlttâd liiŋk",
 	"linkfilter-in-the-news": "Ođđsin",
 	"linkfilter-home-title": "Liiŋk teeʹmest $1",
 	"linkfilter-home-title-all": "Puk liiŋk",
