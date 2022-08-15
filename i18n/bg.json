@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kareyac",
 			"StanProg",
 			"පසිඳු කාවින්ද"
 		]
@@ -9,5 +10,6 @@
 	"linkfilter-submit": "Изпращане",
 	"linkfilter-title": "Заглавие",
 	"linkfilter-description": "Описание",
+	"linkfilter-admin-accept": "Приемане",
 	"linkfilter-next": "следваща"
 }
