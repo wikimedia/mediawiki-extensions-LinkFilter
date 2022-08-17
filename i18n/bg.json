@@ -2,12 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"StanProg",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Kareyac"
 		]
 	},
 	"linkfilter-all": "Всички",
 	"linkfilter-submit": "Изпращане",
 	"linkfilter-title": "Заглавие",
 	"linkfilter-description": "Описание",
+	"linkfilter-admin-accept": "Приемане",
 	"linkfilter-next": "следваща"
 }
