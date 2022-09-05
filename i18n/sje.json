@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Olve Utne"
+		]
+	},
+	"linkfilter-submit-no-desc": "Tjále gåvådimev dán liŋŋkaj",
+	"linkfilter-description": "Gåvådibme",
+	"linkfilter-approve-title": "Liŋŋkaháldadibme",
+	"group-linkadmin": "Liŋŋkaháldadiejje",
+	"group-linkadmin-member": "{{GENDER:$1|Liŋŋkaháldadäjje}}"
+}

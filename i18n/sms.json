@@ -14,6 +14,7 @@
 	"linkfilter-url": "URL",
 	"linkfilter-description": "Deskriptt",
 	"linkfilter-submit-button": "Vuõlttâd liiŋk",
+	"linkfilter-admin-accept": "Priim",
 	"linkfilter-in-the-news": "Ođđsin",
 	"linkfilter-home-title": "Liiŋk teeʹmest $1",
 	"linkfilter-home-title-all": "Puk liiŋk",
@@ -23,5 +24,6 @@
 	"linkfilter-time-minutes": "{{PLURAL:$1|õhtt minutt|$1 minuutt|$1 minuttâd}}",
 	"linkfilter-time-seconds": "{{PLURAL:$1|õhtt sekuntt|$1 sekuunt|$1 sekunttâd}}",
 	"linkfilter-edit-summary": "ođđ liŋkk",
-	"linkfilter-feed-title": "{{SITENAME}} liiŋk"
+	"linkfilter-feed-title": "{{SITENAME}} liiŋk",
+	"group-linkadmin-member": "{{GENDER:$1|liiŋki âʹlnnõõʹnni}}"
 }
