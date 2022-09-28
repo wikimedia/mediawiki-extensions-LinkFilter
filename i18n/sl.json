@@ -10,5 +10,8 @@
 	"linkfilter-title": "Naslov",
 	"linkfilter-description": "Opis",
 	"linkfilter-in-the-news": "V novicah",
-	"linkfilter-home-title": "$1 povezave"
+	"linkfilter-home-title": "$1 povezave",
+	"linkfilter-previous": "prejšnje",
+	"linkfilter-time-hours": "{{PLURAL:$1|ena ura|$1 uri|$1 ure|$1 ur}}",
+	"linkfilter-time-seconds": "{{PLURAL:$1|ena sekunda|$1 sekundi|$1 sekunde|$1 sekund}}"
 }
