@@ -80,6 +80,7 @@ class LinkFilterHooks {
 				// MW 1.38+
 				$out->disableClientCache();
 			} else {
+				// @phan-suppress-next-line PhanParamTooMany
 				$out->enableClientCache( false );
 			}
 
