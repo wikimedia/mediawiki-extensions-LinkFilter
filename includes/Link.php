@@ -9,14 +9,8 @@ use Wikimedia\AtEase\AtEase;
  */
 class Link {
 
-	/**
-	 * Constructor
-	 * @private
-	 */
-	/* private */ function __construct() {
-	}
-
-	static $link_types = [
+	/** @var string[] */
+	public static $link_types = [
 		1 => 'Arrest Report',
 		2 => 'Awesome',
 		3 => 'Cool',
@@ -29,16 +23,31 @@ class Link {
 		11 => 'Stupid'
 	];
 
+	/**
+	 * Get the full URL to the link submission page.
+	 *
+	 * @return string
+	 */
 	public static function getSubmitLinkURL() {
 		$title = SpecialPage::getTitleFor( 'LinkSubmit' );
 		return htmlspecialchars( $title->getFullURL(), ENT_QUOTES );
 	}
 
+	/**
+	 * Get the full URL to the link approval page.
+	 *
+	 * @return string
+	 */
 	public static function getLinkAdminURL() {
 		$title = SpecialPage::getTitleFor( 'LinkApprove' );
 		return htmlspecialchars( $title->getFullURL(), ENT_QUOTES );
 	}
 
+	/**
+	 * Get the full URL to the link overview ("home") page.
+	 *
+	 * @return string
+	 */
 	public static function getHomeLinkURL() {
 		$title = SpecialPage::getTitleFor( 'LinksHome' );
 		return htmlspecialchars( $title->getFullURL(), ENT_QUOTES );
@@ -55,8 +64,7 @@ class Link {
 		if (
 			$user->isAllowed( 'linkadmin' ) ||
 			in_array( 'linkadmin', MediaWikiServices::getInstance()->getUserGroupManager()->getUserGroups( $user ) )
-		)
-		{
+		) {
 			return true;
 		}
 
@@ -66,10 +74,11 @@ class Link {
 	/**
 	 * Checks if $code is an URL.
 	 *
+	 * @param string $code
 	 * @return bool True if it's an URL, otherwise false
 	 */
 	public static function isURL( $code ) {
-		return preg_match( '%^(?:http|https|ftp)://(?:www\.)?.*$%i', $code ) ? true : false;
+		return preg_match( '%^(?:http|https|ftp)://(?:www\.)?.*$%i', $code );
 	}
 
 	/**
@@ -83,7 +92,7 @@ class Link {
 	 * @param User $user
 	 */
 	public function addLink( $title, $desc, $url, $type, User $user ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		AtEase::suppressWarnings();
 		$date = date( 'Y-m-d H:i:s' );
@@ -148,7 +157,7 @@ class Link {
 		$newPageID = $page->getID();
 
 		// Tie link record to wiki page
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		AtEase::suppressWarnings();
 		$date = date( 'Y-m-d H:i:s' );
@@ -237,8 +246,7 @@ class Link {
 		if (
 			is_array( $wgLinkFilterTypes ) &&
 			!empty( $wgLinkFilterTypes[$index] )
-		)
-		{
+		) {
 			return $wgLinkFilterTypes[$index];
 		} elseif ( isset( self::$link_types[$index] ) ) {
 			return self::$link_types[$index];

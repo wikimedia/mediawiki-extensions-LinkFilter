@@ -32,7 +32,7 @@ class LinkFilterHooks {
 		MediaWiki\Revision\RevisionRecord $revision
 	) {
 		if ( $old->getNamespace() == NS_LINK ) {
-			$dbw = wfGetDB( DB_MASTER );
+			$dbw = wfGetDB( DB_PRIMARY );
 			$dbw->update(
 				'link',
 				[ 'link_name' => $new->getText() ],
@@ -46,14 +46,14 @@ class LinkFilterHooks {
 	 * Whenever a page in the NS_LINK namespace is deleted, update the records
 	 * in the link table.
 	 *
-	 * @param Article|WikiPage $article Article object (or child class) being deleted
-	 * @param User $user User (object) performing the page deletion
+	 * @param Article|WikiPage &$article Article object (or child class) being deleted
+	 * @param User &$user User (object) performing the page deletion
 	 * @param string $reason User-supplied reason for the deletion
 	 */
 	public static function deleteLinkFilter( &$article, &$user, $reason ) {
 		if ( $article->getTitle()->getNamespace() == NS_LINK ) {
 			// Delete link record
-			$dbw = wfGetDB( DB_MASTER );
+			$dbw = wfGetDB( DB_PRIMARY );
 			$dbw->update(
 				'link',
 				[ 'link_status' => LinkStatus::REJECTED ],
@@ -68,8 +68,8 @@ class LinkFilterHooks {
 	 * Calls LinkPage instead of standard article for pages in the NS_LINK
 	 * namespace.
 	 *
-	 * @param Title $title Title object associated with the current page
-	 * @param Article|WikiPage $article Article object (or child class) associated with
+	 * @param Title &$title Title object associated with the current page
+	 * @param Article|WikiPage &$article Article object (or child class) associated with
 	 *                         the current page
 	 * @param RequestContext $context
 	 */
@@ -108,7 +108,7 @@ class LinkFilterHooks {
 	/**
 	 * Registers the <linkfilter> parser hook with MediaWiki's Parser.
 	 *
-	 * @param Parser $parser
+	 * @param Parser &$parser
 	 */
 	public static function registerLinkFilterHook( &$parser ) {
 		$parser->setHook( 'linkfilter', [ 'LinkFilterHooks', 'renderLinkFilterHook' ] );
@@ -218,7 +218,7 @@ class LinkFilterHooks {
 	 */
 	public static function onCommentAdd( $commentClass, $commentID, $pageID ) {
 		if ( $commentID && $pageID ) {
-			$dbw = wfGetDB( DB_MASTER );
+			$dbw = wfGetDB( DB_PRIMARY );
 			$dbw->update(
 				'link',
 				[ 'link_comment_count = link_comment_count+1' ],
@@ -237,7 +237,7 @@ class LinkFilterHooks {
 	 */
 	public static function onCommentDelete( $commentClass, $commentID, $pageID ) {
 		if ( $commentID && $pageID ) {
-			$dbw = wfGetDB( DB_MASTER );
+			$dbw = wfGetDB( DB_PRIMARY );
 			$dbw->update(
 				'link',
 				[ 'link_comment_count = link_comment_count-1' ],

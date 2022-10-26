@@ -39,11 +39,11 @@
 		}
 	},
 	"SpecialPages": {
-		"LinkApprove": "LinkApprove",
-		"LinkEdit": "LinkEdit",
-		"LinksHome": "LinksHome",
-		"LinkRedirect": "LinkRedirect",
-		"LinkSubmit": "LinkSubmit"
+		"LinkApprove": "SpecialLinkApprove",
+		"LinkEdit": "SpecialLinkEdit",
+		"LinksHome": "SpecialLinksHome",
+		"LinkRedirect": "SpecialLinkRedirect",
+		"LinkSubmit": "SpecialLinkSubmit"
 	},
 	"MessagesDirs": {
 		"LinkFilter": [
@@ -71,17 +71,17 @@
 	},
 	"AutoloadClasses": {
 		"ApiLinkFilter": "includes/api/ApiLinkFilter.php",
-		"Link": "includes/Link.class.php",
-		"LinkList": "includes/LinkList.class.php",
-		"LinkPage": "includes/LinkPage.class.php",
-		"LinkFeed": "includes/LinkFeed.class.php",
+		"Link": "includes/Link.php",
+		"LinkList": "includes/LinkList.php",
+		"LinkPage": "includes/LinkPage.php",
+		"LinkFeed": "includes/LinkFeed.php",
 		"LinkStatus": "includes/LinkStatus.php",
-		"LinkFilterHooks": "includes/LinkFilter.hooks.php",
-		"LinkApprove": "includes/specials/SpecialLinkApprove.php",
-		"LinkEdit": "includes/specials/SpecialLinkEdit.php",
-		"LinksHome": "includes/specials/SpecialLinksHome.php",
-		"LinkRedirect": "includes/specials/SpecialLinkRedirect.php",
-		"LinkSubmit": "includes/specials/SpecialLinkSubmit.php"
+		"LinkFilterHooks": "includes/LinkFilterHooks.php",
+		"SpecialLinkApprove": "includes/specials/SpecialLinkApprove.php",
+		"SpecialLinkEdit": "includes/specials/SpecialLinkEdit.php",
+		"SpecialLinksHome": "includes/specials/SpecialLinksHome.php",
+		"SpecialLinkRedirect": "includes/specials/SpecialLinkRedirect.php",
+		"SpecialLinkSubmit": "includes/specials/SpecialLinkSubmit.php"
 	},
 	"Hooks": {
 		"PageMoveComplete": "LinkFilterHooks::updateLinkFilter",

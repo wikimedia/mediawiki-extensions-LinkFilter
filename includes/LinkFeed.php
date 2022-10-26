@@ -51,7 +51,7 @@ class LinkFeed extends RSSFeed {
 	/**
 	 * Output an individual feed item.
 	 *
-	 * @param $item
+	 * @param FeedItem $item Item to be output
 	 */
 	function outItem( $item ) {
 		$url = $item->getUrl();
@@ -65,4 +65,4 @@ class LinkFeed extends RSSFeed {
 <?php
 	}
 
-} // end of the class
+}

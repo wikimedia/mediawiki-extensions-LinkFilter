@@ -19,6 +19,9 @@ class LinkPage extends Article {
 	 */
 	public $link;
 
+	/**
+	 * @param Title $title
+	 */
 	function __construct( Title $title ) {
 		parent::__construct( $title );
 		$l = new Link();
@@ -136,7 +139,7 @@ class LinkPage extends Article {
 		$data = $cache->get( $key );
 
 		if ( !$data ) {
-			$dbr = wfGetDB( DB_MASTER );
+			$dbr = wfGetDB( DB_PRIMARY );
 			$createDate = $dbr->selectField(
 				'revision',
 				'rev_timestamp',
@@ -346,7 +349,7 @@ class LinkPage extends Article {
 		} else {
 			wfDebugLog( 'LinkFilter', "Got comments of the day from DB\n" );
 
-			$dbr = wfGetDB( DB_MASTER );
+			$dbr = wfGetDB( DB_PRIMARY );
 			$res = $dbr->select(
 				[ 'Comments', 'page' ],
 				[

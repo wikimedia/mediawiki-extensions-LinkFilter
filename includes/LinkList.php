@@ -1,12 +1,6 @@
 <?php
-class LinkList {
 
-	/**
-	 * Constructor
-	 * @private
-	 */
-	/* private */ function __construct() {
-	}
+class LinkList {
 
 	/**
 	 * @param int $status Link status
@@ -14,6 +8,7 @@ class LinkList {
 	 * @param int $limit LIMIT for SQL query, 0 by default.
 	 * @param int $page Used to build the OFFSET in the SQL query.
 	 * @param string $order ORDER BY clause for SQL query.
+	 * @return array
 	 */
 	public function getLinkList( $status, $type, $limit = 0, $page = 0, $order = 'link_submit_date' ) {
 		$dbr = wfGetDB( DB_REPLICA );
@@ -35,7 +30,7 @@ class LinkList {
 			$where['link_status'] = $status;
 		}
 
-		$dbr = wfGetDB( DB_MASTER );
+		$dbr = wfGetDB( DB_PRIMARY );
 
 		$res = $dbr->select(
 			[ 'link' ],

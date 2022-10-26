@@ -5,7 +5,7 @@
  * @file
  * @ingroup Extensions
  */
-class LinkSubmit extends SpecialPage {
+class SpecialLinkSubmit extends SpecialPage {
 
 	/**
 	 * Constructor
@@ -27,6 +27,7 @@ class LinkSubmit extends SpecialPage {
 	 * Show the special page
 	 *
 	 * @param string|null $par Parameter passed to the page, if any [unused]
+	 * @return bool|void
 	 */
 	public function execute( $par ) {
 		$out = $this->getOutput();
@@ -57,8 +58,7 @@ class LinkSubmit extends SpecialPage {
 			$request->wasPosted() &&
 			$_SESSION['alreadysubmitted'] == false &&
 			$user->matchEditToken( $request->getVal( 'wpEditToken' ) )
-		)
-		{
+		) {
 			$_SESSION['alreadysubmitted'] = true;
 
 			// No link title? Show an error message in that case.
@@ -117,7 +117,7 @@ class LinkSubmit extends SpecialPage {
 						$this->msg( 'linkfilter-submit-success-text' )->escaped() .
 					'</div>
 					<div class="link-submit-button">
-						<form method="get" action="' . Link::getSubmitLinkURL()  . '">
+						<form method="get" action="' . Link::getSubmitLinkURL() . '">
 							<input type="submit" class="site-button" onclick="window.location=\'' .
 								Link::getSubmitLinkURL() . '\'" value="' .
 								$this->msg( 'linkfilter-submit-another' )->escaped() . '" />
@@ -125,7 +125,8 @@ class LinkSubmit extends SpecialPage {
 					</div>'
 				);
 			}
-		} else { // Something went wrong...
+		} else {
+			// Something went wrong...
 			$out->setPageTitle( $this->msg( 'linkfilter-submit-title' )->escaped() );
 			$out->addHTML( $this->displayAddForm() );
 		}

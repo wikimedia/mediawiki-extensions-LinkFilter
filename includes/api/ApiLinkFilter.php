@@ -27,8 +27,7 @@ class ApiLinkFilter extends ApiBase {
 			!$id || $id === null || !is_numeric( $id ) ||
 			// @phan-suppress-next-line PhanImpossibleTypeComparison
 			!$status || $status === null || !is_numeric( $status )
-		)
-		{
+		) {
 			$this->dieWithError( [ 'apierror-missingparam' ], 'missingparam' );
 		}
 
@@ -37,7 +36,7 @@ class ApiLinkFilter extends ApiBase {
 			return '';
 		}
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->update(
 			'link',
 			[ 'link_status' => intval( $status ) ],
@@ -93,6 +92,7 @@ class ApiLinkFilter extends ApiBase {
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
+	 * @return array
 	 */
 	public function getExamplesMessages() {
 		return [

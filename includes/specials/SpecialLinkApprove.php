@@ -5,7 +5,7 @@
  * @file
  * @ingroup Extensions
  */
-class LinkApprove extends SpecialPage {
+class SpecialLinkApprove extends SpecialPage {
 
 	/**
 	 * Constructor
@@ -28,9 +28,13 @@ class LinkApprove extends SpecialPage {
 	/**
 	 * The following four functions are borrowed
 	 * from includes/wikia/GlobalFunctionsNY.php
+	 *
+	 * @param int $date1
+	 * @param int $date2
+	 * @return array
 	 */
 	function dateDifference( $date1, $date2 ) {
-		$dtDiff = $date1 - (int)$date2;
+		$dtDiff = $date1 - $date2;
 
 		$totalDays = intval( $dtDiff / ( 24 * 60 * 60 ) );
 		$totalSecs = $dtDiff - ( $totalDays * 24 * 60 * 60 );
@@ -44,12 +48,19 @@ class LinkApprove extends SpecialPage {
 		return $dif;
 	}
 
+	/**
+	 * @param array $time Time information array calculated by dateDifference()
+	 * @param string $timeabrv One-letter abbreviation ('s', 'm', 'h', 'd') corresponding to $timename
+	 * @param string $timename 'seconds', 'minutes', 'hours' or 'days'
+	 * @return string Internationalized text suitable for output
+	 */
 	function getLFTimeOffset( $time, $timeabrv, $timename ) {
 		$timeStr = '';
 		if ( $time[$timeabrv] > 0 ) {
 			// Give grep a chance to find the usages:
 			// linkfilter-time-days, linkfilter-time-hours,
 			// linkfilter-time-minutes, linkfilter-time-seconds
+			// phpcs:ignore MediaWiki.Usage.ExtendClassUsage.FunctionVarUsage
 			$timeStr = wfMessage( "linkfilter-time-{$timename}", $time[$timeabrv] )->parse();
 		}
 		if ( $timeStr ) {
@@ -58,6 +69,10 @@ class LinkApprove extends SpecialPage {
 		return $timeStr;
 	}
 
+	/**
+	 * @param int $time
+	 * @return string Internationalized text suitable for output
+	 */
 	function getLFTimeAgo( $time ) {
 		$timeArray = self::dateDifference( time(), $time );
 		$timeStr = '';
@@ -74,6 +89,7 @@ class LinkApprove extends SpecialPage {
 			}
 		}
 		if ( !$timeStr ) {
+			// phpcs:ignore MediaWiki.Usage.ExtendClassUsage.FunctionVarUsage
 			$timeStr = wfMessage( 'linkfilter-time-seconds', 1 )->parse();
 		}
 		return $timeStr;
@@ -83,6 +99,9 @@ class LinkApprove extends SpecialPage {
 	 * Cuts link text if it's too long.
 	 * For example, http://www.google.com/some_stuff_here could be changed into
 	 * http://goo...stuff_here or so.
+	 *
+	 * @param array $matches
+	 * @return string
 	 */
 	public static function cutLinkText( $matches ) {
 		$tagOpen = $matches[1];
@@ -138,7 +157,7 @@ class LinkApprove extends SpecialPage {
 			$status = ( $request->getVal( 'action' ) === 'accept' ?
 					LinkStatus::APPROVED : LinkStatus::REJECTED );
 
-			$dbw = wfGetDB( DB_MASTER );
+			$dbw = wfGetDB( DB_PRIMARY );
 			$dbw->update(
 				'link',
 				// 1 = accept; 2 = reject
@@ -172,7 +191,7 @@ class LinkApprove extends SpecialPage {
 		foreach ( $links as $link ) {
 			$linkText = preg_replace_callback(
 				'/(<a[^>]*>)(.*?)(<\/a>)/i',
-				[ 'LinkApprove', 'cutLinkText' ],
+				[ 'SpecialLinkApprove', 'cutLinkText' ],
 				"<a href=\"{$link['url']}\" target=\"new\">{$link['url']}</a>"
 			);
 
@@ -260,7 +279,8 @@ class LinkApprove extends SpecialPage {
 		// Nothing has been approved recently? Okay...
 		if ( count( $links ) <= 0 ) {
 			$output .= $this->msg( 'linkfilter-no-recently-approved' )->escaped();
-		} else { // Yay, we have something! Let's build a list!
+		} else {
+			// Yay, we have something! Let's build a list!
 			foreach ( $links as $link ) {
 				$output .= '<div class="approved-link">
 				<a href="' . $link['url'] . '" target="new">' .

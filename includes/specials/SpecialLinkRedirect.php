@@ -1,6 +1,6 @@
 <?php
 
-class LinkRedirect extends UnlistedSpecialPage {
+class SpecialLinkRedirect extends UnlistedSpecialPage {
 
 	/**
 	 * Constructor
@@ -26,7 +26,5 @@ class LinkRedirect extends UnlistedSpecialPage {
 				</body>
 			</html>"
 		);
-
-		return '';
 	}
 }

@@ -8,7 +8,7 @@ use Wikimedia\AtEase\AtEase;
  * @file
  * @ingroup Extensions
  */
-class LinksHome extends SpecialPage {
+class SpecialLinksHome extends SpecialPage {
 
 	/**
 	 * Constructor
@@ -38,6 +38,12 @@ class LinksHome extends SpecialPage {
 		return $output;
 	}
 
+	/**
+	 * Get popular link articles (Link: pages which have at least 5 comments)
+	 * if that feature is enabled in site configuration.
+	 *
+	 * @return string
+	 */
 	function getPopularArticles() {
 		global $wgLinkPageDisplay;
 
@@ -90,7 +96,8 @@ class LinksHome extends SpecialPage {
 			}
 		}
 
-		$html .= '</div>' . "\n"; // .listpages-container
+		// .listpages-container
+		$html .= '</div>' . "\n";
 
 		$output = '<div class="link-container">
 			<h2>' . $this->msg( 'linkfilter-popular-articles' )->escaped() . '</h2>
@@ -137,6 +144,7 @@ class LinksHome extends SpecialPage {
 	 * Show the special page
 	 *
 	 * @param string|null $par Parameter passed to the page, if any [unused]
+	 * @return bool|void
 	 */
 	public function execute( $par ) {
 		$out = $this->getOutput();
@@ -212,12 +220,12 @@ class LinksHome extends SpecialPage {
 				$output .= '<div class="links-home-date">';
 				$output .= htmlspecialchars( $date, ENT_QUOTES );
 				$output .= '</div>';
-				#$unix = wfTimestamp( TS_MW, $link['approved_timestamp'] );
-				#$weekday = $this->getLanguage()->getWeekdayName( gmdate( 'w', $unix ) + 1 );
-				#$output .= '<div class="links-home-date">' . $weekday .
-				#	'</div>';
+				// $unix = wfTimestamp( TS_MW, $link['approved_timestamp'] );
+				// $weekday = $this->getLanguage()->getWeekdayName( gmdate( 'w', $unix ) + 1 );
+				// $output .= '<div class="links-home-date">' . $weekday . '</div>';
 			}
-			AtEase::restoreWarnings(); // okay, so suppressing E_NOTICEs is kinda bad practise, but... -Jack, January 21, 2010
+			// okay, so suppressing E_NOTICEs is kinda bad practise, but... -Jack, January 21, 2010
+			AtEase::restoreWarnings();
 			$last_date = $date;
 
 			$output .= "<div class=\"link-item-container{$border_fix2}\">
@@ -303,7 +311,8 @@ class LinksHome extends SpecialPage {
 			$output .= '</div>';
 		}
 
-		$output .= '</div>' . "\n"; // .links-home-left
+		// .links-home-left
+		$output .= '</div>' . "\n";
 
 		global $wgLinkPageDisplay;
 		if ( $wgLinkPageDisplay['rightcolumn'] ) {
@@ -329,7 +338,7 @@ class LinksHome extends SpecialPage {
 	 * Based on ProblemReports' makeFeed() function by Maciej Brencz
 	 *
 	 * @param string $type Feed type, RSS or Atom
-	 * @param array $links
+	 * @param array &$links
 	 * @return bool
 	 */
 	function makeFeed( $type, &$links ) {

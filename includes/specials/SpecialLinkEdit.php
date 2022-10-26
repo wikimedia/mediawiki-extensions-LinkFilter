@@ -1,6 +1,6 @@
 <?php
 
-class LinkEdit extends UnlistedSpecialPage {
+class SpecialLinkEdit extends UnlistedSpecialPage {
 
 	/**
 	 * Constructor
@@ -41,12 +41,11 @@ class LinkEdit extends UnlistedSpecialPage {
 			$request->wasPosted() &&
 			$_SESSION['alreadysubmitted'] == false &&
 			$user->matchEditToken( $request->getVal( 'wpEditToken' ) )
-		)
-		{
+		) {
 			$_SESSION['alreadysubmitted'] = true;
 
 			// Update link
-			$dbw = wfGetDB( DB_MASTER );
+			$dbw = wfGetDB( DB_PRIMARY );
 			$dbw->update(
 				'link',
 				[
