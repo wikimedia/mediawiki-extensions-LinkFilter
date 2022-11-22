@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Balyozxane",
 			"George Animal",
 			"Guherto"
 		]
@@ -11,7 +12,7 @@
 	"linkfilter-submit-title": "Girêdanekê tomar bike",
 	"linkfilter-submit-no-desc": "Ji kerema xwe re bo vê girêdanê danasînekê binivîse",
 	"linkfilter-submit-no-title": "Ji kerema xwe re sernavekî binivîse",
-	"linkfilter-edit-title": "$1 biguherîne",
+	"linkfilter-edit-title": "$1 biguhêre",
 	"linkfilter-title": "Sernav",
 	"linkfilter-description": "Danasîn",
 	"linkfilter-submit-button": "Girêdanê tomar bike",
