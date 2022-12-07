@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eleassar"
+			"Eleassar",
+			"Jack Phoenix"
 		]
 	},
 	"linkapprove": "Odobritev povezav",
@@ -11,7 +12,7 @@
 	"linkfilter-nothing-to-approve": "Trenutno ni nobenih povezav, ki bi čakale na odobritev.",
 	"linkfilter-no-recently-approved": "Pred kratkim ni bila odobrena nobena povezava.",
 	"linkfilter-no-links-at-all": "Predložena ni bila še nobena povezava ali pa administratorji povezav predloženih povezav še niso pregledali.",
-	"linkfilter-ago": "Pred $1 $ pod <i>$2</i>",
+	"linkfilter-ago": "Pred $1 pod <i>$2</i>",
 	"linkfilter-all": "Vse",
 	"linkfilter-submit": "Shrani",
 	"linkfilter-submit-title": "Predloži povezavo",
