@@ -4,6 +4,7 @@
 			"BaRaN6161 TURK",
 			"McAang",
 			"MuratTheTurkish",
+			"Rapsar",
 			"SaldırganSincap"
 		]
 	},
@@ -22,7 +23,7 @@
 	"linkfilter-submit-no-url": "URL'yi sağlamalısınız!",
 	"linkfilter-submit-no-title": "Lütfen bir başlık girin",
 	"linkfilter-submit-no-type": "Bir bağlantı türü seçin.",
-	"linkfilter-edit-title": "$1 düzenle",
+	"linkfilter-edit-title": "$1 değiştir",
 	"linkfilter-approve-links": "Bağlantıları onayla",
 	"linkfilter-submit-another": "Başka bir bağlantı gönder",
 	"linkfilter-login-title": "Oturum açık değil",
