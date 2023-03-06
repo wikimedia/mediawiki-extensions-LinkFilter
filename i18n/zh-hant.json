@@ -7,11 +7,12 @@
 			"LNDDYL",
 			"Liuxinyu970226",
 			"Shirayuki",
+			"Winston Sung",
 			"列维劳德"
 		]
 	},
 	"linkapprove": "批准連結",
-	"linkshome": "連結主頁",
+	"linkshome": "連結首頁",
 	"linksubmit": "送出連結",
 	"linkfilter-desc": "增加新特殊頁面及解析器鈎以提交、批准或拒絕連結",
 	"linkfilter-nothing-to-approve": "目前沒有等待審批的連結。",
@@ -34,7 +35,7 @@
 	"linkfilter-type": "連結類型",
 	"linkfilter-description": "說明",
 	"linkfilter-submit-button": "送出連結",
-	"linkfilter-home-button": "連結主頁",
+	"linkfilter-home-button": "連結首頁",
 	"linkfilter-submit-success-title": "連結已送出",
 	"linkfilter-submit-success-text": "您的連結已傳送以供核准",
 	"linkfilter-instructions": "您可以[[MediaWiki:Linkfilter-instructions|為使用者新增說明]]。",
