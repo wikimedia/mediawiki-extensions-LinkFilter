@@ -143,7 +143,7 @@ class SpecialLinkSubmit extends SpecialPage {
 
 		// Preserve the URL in case if the form was submitted but there were errors
 		$url = $request->getVal( '_url', $request->getVal( 'lf_URL' ) );
-		$title = $request->getVal( '_title' );
+		$title = $request->getVal( '_title', '' );
 
 		if ( !$url ) {
 			$url = 'http://';
