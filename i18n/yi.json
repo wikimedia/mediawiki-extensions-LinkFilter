@@ -11,5 +11,7 @@
 	"linkfilter-title": "טיטל",
 	"linkfilter-home-title": "$1 לינקען",
 	"linkfilter-next": "קומענדיגע",
-	"linkfilter-previous": "פֿריערדיקער"
+	"linkfilter-previous": "פֿריערדיקער",
+	"linkfilter-time-hours": "{{PLURAL:$1|איין שעה|$1 שעהן}}",
+	"linkfilter-time-seconds": "{{PLURAL:$1|איין סעקונדע|$1 סעקונדעס}}"
 }
