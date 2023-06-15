@@ -19,6 +19,7 @@
 	"linkfilter-submit-button": "שליחת קישור",
 	"linkfilter-submit-success-title": "הקישור נשלח",
 	"linkfilter-submittedby": "'''נשלח על־ידי''': [[User:$1|$1]]",
+	"linkfilter-admin-accept": "לקבל",
 	"linkfilter-about-submitter": "אודות השולח",
 	"linkfilter-anonymous": "קנאי אנונימי",
 	"linkfilter-comments": "{{PLURAL:$1|תגובה אחת|$1 תגובות}}",
@@ -27,5 +28,6 @@
 	"linkfilter-previous": "הקודם",
 	"linkfilter-description-left": "$1 נותרו",
 	"linkfilter-new-links-title": "קישור חדש",
-	"right-linkadmin": "ניהול קישורים שנשלחו על־ידי משתמשים"
+	"right-linkadmin": "ניהול קישורים שנשלחו על־ידי משתמשים",
+	"apihelp-linkfilter-param-status": "1 כדי לקבל, 2 כדי לדחות"
 }
