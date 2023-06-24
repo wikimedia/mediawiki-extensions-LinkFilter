@@ -72,7 +72,6 @@
 	"right-linkadmin": "Administrate user-submitted links",
 	"group-linkadmin.css": "/* CSS placed here will affect linkadmins only */",
 	"group-linkadmin.js": "/* JS placed here will affect linkadmins only */",
-	"apihelp-linkfilter-description": "Backend API module for approving user-submitted links",
 	"apihelp-linkfilter-summary": "Backend API module for approving user-submitted links",
 	"apihelp-linkfilter-param-id": "Link identifier number",
 	"apihelp-linkfilter-param-status": "1 to accept, 2 to reject",

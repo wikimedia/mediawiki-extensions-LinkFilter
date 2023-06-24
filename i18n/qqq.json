@@ -74,7 +74,6 @@
 	"right-linkadmin": "{{doc-right|linkadmin}}",
 	"group-linkadmin.css": "{{doc-group|linkadmin|css}}",
 	"group-linkadmin.js": "{{doc-group|linkadmin|js}}",
-	"apihelp-linkfilter-description": "{{doc-apihelp-description|linkfilter}}",
 	"apihelp-linkfilter-summary": "{{doc-apihelp-summary|linkfilter}}",
 	"apihelp-linkfilter-param-id": "{{doc-apihelp-param|linkfilter|id}}",
 	"apihelp-linkfilter-param-status": "{{doc-apihelp-param|linkfilter|status}}",
