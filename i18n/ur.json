@@ -65,7 +65,6 @@
 	"group-linkadmin-member": "{{GENDER:$1|ربط منتظم}}",
 	"grouppage-linkadmin": "{{ns:project}}:ربط منتظمین",
 	"right-linkadmin": "صارف کے جمع شدہ روابط کا نظم",
-	"apihelp-linkfilter-description": "صارف کے جمع شدہ روابطمنظور کرنے کے لیے بیک اینڈ اے پی آئی ماڈیول",
 	"apihelp-linkfilter-param-id": "ربط کا شناختی نمبر",
 	"apihelp-linkfilter-param-status": "1 قبول کرنے کے لیے 2 رد کریں",
 	"apihelp-linkfilter-example-1": "#37 روابط کو رد کیا  گيا"

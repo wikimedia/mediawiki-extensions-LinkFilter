@@ -69,7 +69,6 @@
 	"right-linkadmin": "Administrere innsendte lenker",
 	"group-linkadmin.css": "/* CSS plassert her vil kun gjelde lenkeadministratorer */",
 	"group-linkadmin.js": "/* JavaScript plassert her vil kun gjelde lenkeadministratorer */",
-	"apihelp-linkfilter-description": "Bakstykkemodul for å godkjenne innsendte lenker",
 	"apihelp-linkfilter-summary": "Bakstykkemodul for å godkjenne innsendte lenker",
 	"apihelp-linkfilter-param-id": "Lenke-ID-nummer",
 	"apihelp-linkfilter-param-status": "1 for å godkjenne, 2 for å avvise",

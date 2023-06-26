@@ -68,7 +68,6 @@
 	"action-linkadmin": "administrar ligamines submittite per usatores",
 	"right-linkadmin": "Administrar ligamines submittite per usatores",
 	"group-linkadmin.css": "/* Le codice CSS placiate hic affectara solmente administratores de ligamines */",
-	"apihelp-linkfilter-description": "Modulo API del servitor pro approbar ligamines submittite per le usator",
 	"apihelp-linkfilter-summary": "Modulo API del servitor pro approbar ligamines submittite per le usator",
 	"apihelp-linkfilter-param-id": "Numero de identification del ligamine",
 	"apihelp-linkfilter-param-status": "1 pro acceptar, 2 pro rejectar",

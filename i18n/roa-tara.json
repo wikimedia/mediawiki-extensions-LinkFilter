@@ -67,7 +67,6 @@
 	"grouppage-linkadmin": "{{ns:project}}:Amministrature de le collegaminde",
 	"action-linkadmin": "gestisce le collegaminde de le utinde confermate",
 	"right-linkadmin": "Gestisce le collegaminde de le utinde confermate",
-	"apihelp-linkfilter-description": "Module de API backend pe approvà le collegaminde de le utinde confermate",
 	"apihelp-linkfilter-summary": "Module de API backend pe approvà le collegaminde de le utinde confermate",
 	"apihelp-linkfilter-param-id": "Numere idendificative d'u collegamende",
 	"apihelp-linkfilter-param-status": "1 pe accettà, 2 pe scettà",

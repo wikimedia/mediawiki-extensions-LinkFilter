@@ -71,7 +71,6 @@
 	"right-linkadmin": "管理用户提交的链接",
 	"group-linkadmin.css": "/* 这里放置的CSS将只影响链接管理员 */",
 	"group-linkadmin.js": "/* 这里放置的JS只对链接管理员有效 */",
-	"apihelp-linkfilter-description": "用于通过用户提交链接的后端API模块",
 	"apihelp-linkfilter-summary": "用于通过用户提交链接的后端API模块",
 	"apihelp-linkfilter-param-id": "链接标识符编号",
 	"apihelp-linkfilter-param-status": "1接受、2拒绝",

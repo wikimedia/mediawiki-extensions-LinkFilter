@@ -72,7 +72,6 @@
 	"grouppage-linkadmin": "{{ns:project}}:Yönetici bağlantıları",
 	"action-linkadmin": "kullanıcı tarafından gönderilen bağlantıları yönet",
 	"right-linkadmin": "Kullanıcı tarafından gönderilen bağlantıları yönet",
-	"apihelp-linkfilter-description": "Kullanıcı tarafından gönderilen bağlantıları onaylamak için arka uç API modülü",
 	"apihelp-linkfilter-summary": "Kullanıcı tarafından gönderilen bağlantıları onaylamak için arka uç API modülü",
 	"apihelp-linkfilter-param-id": "Bağlantı tanımlayıcı numarası",
 	"apihelp-linkfilter-param-status": "1 kabul, 2 reddet",

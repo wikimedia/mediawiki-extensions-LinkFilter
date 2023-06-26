@@ -80,7 +80,6 @@
 	"right-linkadmin": "Адміністрування доданих користувачами посилань",
 	"group-linkadmin.css": "/* CSS, розміщений тут, вплине лише на linkadmins */",
 	"group-linkadmin.js": "/* JS, розміщений тут, вплине лише на linkadmins */",
-	"apihelp-linkfilter-description": "Backend-API-модуль для затвердження посилань, що додаються користувачами",
 	"apihelp-linkfilter-summary": "Бекенд-модуль API для затвердження поданих користувачами посилань",
 	"apihelp-linkfilter-param-id": "Номер ідентифікатора посилання",
 	"apihelp-linkfilter-param-status": "1 щоб прийняти, 2 щоб відхилити",

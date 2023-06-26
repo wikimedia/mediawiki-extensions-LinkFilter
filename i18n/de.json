@@ -68,7 +68,6 @@
 	"grouppage-linkadmin": "{{ns:project}}:Linkadminstrator",
 	"action-linkadmin": "von Benutzern eingereichte Links zu verwalten",
 	"right-linkadmin": "Von Benutzern eingereichte Links verwalten",
-	"apihelp-linkfilter-description": "Backend-API-Modul zum Bestätigen von durch Benutzer gespeicherte Links",
 	"apihelp-linkfilter-summary": "Backend-API-Modul zur Bestätigung von durch Benutzer gespeicherten Links",
 	"apihelp-linkfilter-param-id": "Nummer des Linkidentifikators",
 	"apihelp-linkfilter-param-status": "1 zum Akzeptieren, 2 zum Ablehnen",

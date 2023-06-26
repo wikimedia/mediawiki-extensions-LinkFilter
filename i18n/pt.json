@@ -69,7 +69,6 @@
 	"grouppage-linkadmin": "{{ns:project}}:Administradores de hiperligações",
 	"action-linkadmin": "administrar hiperligações enviadas pelos utilizadores",
 	"right-linkadmin": "Administrar hiperligações enviadas pelos utilizadores",
-	"apihelp-linkfilter-description": "Módulo de bastidores da API para aprovação de hiperligações enviadas pelos utilizadores",
 	"apihelp-linkfilter-summary": "Módulo de bastidores da API para aprovação de hiperligações enviadas pelos utilizadores",
 	"apihelp-linkfilter-param-id": "Número de identificação da hiperligação",
 	"apihelp-linkfilter-param-status": "1 para aceitar, 2 para rejeitar",
