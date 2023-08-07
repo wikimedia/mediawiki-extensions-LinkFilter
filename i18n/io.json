@@ -10,6 +10,7 @@
 	"linkfilter-title": "Titulo",
 	"linkfilter-description": "Deskriptado",
 	"linkfilter-admin-cat-filter": "Montrar nur ligili qui demandas aprobo en la kategorio:",
+	"linkfilter-admin-accept": "Aceptez",
 	"linkfilter-home-title": "ligili $1",
 	"linkfilter-previous": "antea",
 	"linkfilter-time-days": "{{PLURAL:$1|un dio|$1 dii}}",
