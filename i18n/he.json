@@ -8,7 +8,9 @@
 		]
 	},
 	"linkapprove": "אישור קישורים",
+	"linkshome": "דף הבית של קישורים",
 	"linksubmit": "שליחת קישור",
+	"linkfilter-desc": "הוספת דפים מיוחדים חדשים ו־hook מפענח לשליחה, קישור ודחייה של קישורים",
 	"linkfilter-nothing-to-approve": "כרגע אין קישורים שמחכים לאישור.",
 	"linkfilter-no-recently-approved": "אין קישורים שקיבלו אישור לאחרונה.",
 	"linkfilter-no-links-at-all": "עדיין לא הוגשו קישורים או שמנהלי הקישורים לא בדקו את הקישורים שהוגשו.",
@@ -29,6 +31,7 @@
 	"linkfilter-type": "סוג הקישור",
 	"linkfilter-description": "תיאור",
 	"linkfilter-submit-button": "שליחת קישור",
+	"linkfilter-home-button": "דף הבית של קישורים",
 	"linkfilter-submit-success-title": "הקישור נשלח",
 	"linkfilter-submit-success-text": "הקשר שלך נשלח לקבלת אישור",
 	"linkfilter-instructions": "באפשרותך [[MediaWiki:Linkfilter-instructions|להוסיף הוראות למשתמשים]].",
