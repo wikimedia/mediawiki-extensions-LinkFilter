@@ -71,7 +71,7 @@
 	"right-linkadmin": "Upravljanje povezav, ki jih predložijo uporabniki",
 	"group-linkadmin.css": "/* Tukaj postavljeni CSS bo vplival samo na administratorje povezav */",
 	"group-linkadmin.js": "/* Tukaj postavljeni JS bo vplival samo na administratorje povezav */",
-	"apihelp-linkfilter-summary": "Modul zalednega API-ja za odobritev povezav, ki jih predložijo uporabniki",
+	"apihelp-linkfilter-summary": "Zaledni API-modul za odobritev povezav, ki jih predložijo uporabniki",
 	"apihelp-linkfilter-param-id": "Številka identifikatorja povezave",
 	"apihelp-linkfilter-param-status": "1 za sprejetje, 2 za zavrnitev",
 	"apihelp-linkfilter-example-1": "Zavrne povezavo št. 37"
