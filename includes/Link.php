@@ -136,6 +136,7 @@ class Link {
 			// MW 1.36+
 			$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $linkTitle );
 		} else {
+			// @phan-suppress-next-line PhanUndeclaredStaticMethod
 			$page = WikiPage::factory( $linkTitle );
 		}
 		$pageContent = ContentHandler::makeContent(
