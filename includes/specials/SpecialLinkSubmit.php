@@ -118,8 +118,7 @@ class SpecialLinkSubmit extends SpecialPage {
 					'</div>
 					<div class="link-submit-button">
 						<form method="get" action="' . Link::getSubmitLinkURL() . '">
-							<input type="submit" class="site-button" onclick="window.location=\'' .
-								Link::getSubmitLinkURL() . '\'" value="' .
+							<input type="submit" class="site-button" value="' .
 								$this->msg( 'linkfilter-submit-another' )->escaped() . '" />
 						</form>
 					</div>'
