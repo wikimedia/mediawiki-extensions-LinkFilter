@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Obaid Raza"
 		]
 	},
@@ -67,5 +68,5 @@
 	"right-linkadmin": "صارف کے جمع شدہ روابط کا نظم",
 	"apihelp-linkfilter-param-id": "ربط کا شناختی نمبر",
 	"apihelp-linkfilter-param-status": "1 قبول کرنے کے لیے 2 رد کریں",
-	"apihelp-linkfilter-example-1": "#37 روابط کو رد کیا  گيا"
+	"apihelp-linkfilter-example-1": "#37 روابط کو رد کیا گيا"
 }
