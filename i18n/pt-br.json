@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Eduardo Addad de Oliveira",
-			"Luckas"
+			"Luckas",
+			"Amire80",
+			"Eduardoaddad"
 		]
 	},
 	"linkapprove": "Aprovar hiperligações",
@@ -66,7 +68,7 @@
 	"group-linkadmin": "Administradores de hiperligações",
 	"group-linkadmin-member": "{{GENDER:$1|Administrador de hiperligações|Administradora de hiperligações}}",
 	"grouppage-linkadmin": "{{ns:project}}:Administradores de hiperligações",
-	"action-linkadmin": "Administrar  links enviados pelos usuários",
+	"action-linkadmin": "Administrar links enviados pelos usuários",
 	"right-linkadmin": "Administrar hiperligações enviadas pelos usuários",
 	"group-linkadmin.css": "/* CSS colocado aqui afetará apenas os linkadmins */",
 	"group-linkadmin.js": "/* JS colocado aqui afetará apenas os linkadmins */",
