@@ -3,7 +3,8 @@
 		"authors": [
 			"Mainframe98",
 			"SPQRobin",
-			"Siebrand"
+			"Siebrand",
+			"McDutchie"
 		]
 	},
 	"linkapprove": "Koppelingen controleren",
@@ -39,6 +40,7 @@
 	"linkfilter-approve-title": "Koppelingenbeheer",
 	"linkfilter-submittedby": "Afkomstig van [[User:$1|$1]]",
 	"linkfilter-submitted": "Heeft $1 opgeslagen",
+	"linkfilter-admin-cat-filter": "Alleen koppelingen in afwachting van goedkeuring tonen in de categorie:",
 	"linkfilter-admin-accept": "Aanvaarden",
 	"linkfilter-admin-reject": "Afwijzen",
 	"linkfilter-admin-reject-success": "De koppeling is afgewezen",
@@ -66,5 +68,10 @@
 	"group-linkadmin": "Koppelingenbeheerders",
 	"group-linkadmin-member": "{{GENDER:$1|koppelingenbeheerder}}",
 	"grouppage-linkadmin": "{{ns:project}}:Koppelingenbeheerders",
-	"right-linkadmin": "Door gebruikers ingezonden koppelingen beheren"
+	"action-linkadmin": "door gebruikers ingezonden koppelingen te beheren",
+	"right-linkadmin": "Door gebruikers ingezonden koppelingen beheren",
+	"apihelp-linkfilter-summary": "Backend API-module voor het goedkeuren van door gebruikers ingediende koppelingen",
+	"apihelp-linkfilter-param-id": "Identificatienummer koppeling",
+	"apihelp-linkfilter-param-status": "1 om te accepteren, 2 om af te wijzen",
+	"apihelp-linkfilter-example-1": "Wijst koppeling nummer 37 af"
 }
