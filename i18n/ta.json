@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Fahimrazick",
 			"Shanmugamp7"
 		]
 	},
@@ -11,7 +12,7 @@
 	"linkfilter-submit": "சமர்ப்பி",
 	"linkfilter-submit-title": "ஒரு இணைப்பை சமர்ப்பிக்கவும்",
 	"linkfilter-submit-no-title": "தயவுசெய்து ஒரு தலைப்பை உள்ளிடவும்",
-	"linkfilter-submit-no-type": "ஒரு இணைப்பு வகையை தெரிவு செய்யவும்.",
+	"linkfilter-submit-no-type": "ஒரு தொடுப்பு வகையைத் தெரிவு செய்.",
 	"linkfilter-edit-title": "$1-ஐ தொகு",
 	"linkfilter-approve-links": "இணைப்புகளை ஏற்றுக்கொள்",
 	"linkfilter-submit-another": "மற்றொரு இணைப்பை சமர்ப்பிக்கவும்",
