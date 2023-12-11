@@ -1,17 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shanmugamp7"
+			"Shanmugamp7",
+			"Fahimrazick"
 		]
 	},
 	"linkapprove": "இணைப்புகளை ஏற்றுக்கொள்",
 	"linkshome": "இணைப்புகள் முகப்பு",
 	"linksubmit": "ஒரு இணைப்பை சமர்ப்பிக்கவும்",
-	"linkfilter-all": "அனைத்தும்",
+	"linkfilter-all": "யாவும்",
 	"linkfilter-submit": "சமர்ப்பி",
 	"linkfilter-submit-title": "ஒரு இணைப்பை சமர்ப்பிக்கவும்",
 	"linkfilter-submit-no-title": "தயவுசெய்து ஒரு தலைப்பை உள்ளிடவும்",
-	"linkfilter-submit-no-type": "ஒரு இணைப்பு வகையை தெரிவு செய்யவும்.",
+	"linkfilter-submit-no-type": "ஒரு தொடுப்பு வகையைத் தெரிவு செய்.",
 	"linkfilter-edit-title": "$1-ஐ தொகு",
 	"linkfilter-approve-links": "இணைப்புகளை ஏற்றுக்கொள்",
 	"linkfilter-submit-another": "மற்றொரு இணைப்பை சமர்ப்பிக்கவும்",
