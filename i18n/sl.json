@@ -66,7 +66,7 @@
 	"linkfilter-no-results": "Ni najdenih strani.",
 	"linkfilter-feed-title": "Povezave v projektu {{SITENAME}}",
 	"group-linkadmin": "Administratori povezav",
-	"group-linkadmin-member": "{{GENDER:$1|administrator povezav|administratorka povezav|administrator/ka povezav}}",
+	"group-linkadmin-member": "{{GENDER:$1|administrator povezav|administratorka povezav|administrator_ka povezav}}",
 	"grouppage-linkadmin": "{{ns:project}}:Administratorji povezav",
 	"action-linkadmin": "upravljati povezav, ki so jih predložili uporabniki",
 	"right-linkadmin": "Upravljanje povezav, ki jih predložijo uporabniki",
