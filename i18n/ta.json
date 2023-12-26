@@ -33,7 +33,7 @@
 	"linkfilter-admin-reject-success": "தொடுப்பு நிராகரிக்கப்பட்டது",
 	"linkfilter-admin-accept-success": "தொடுப்பு ஏற்கப்பட்டது",
 	"linkfilter-in-the-news": "செய்திகளில்",
-	"linkfilter-about-submitter": "சமர்ப்பிப்பவர் பற்றி",
+	"linkfilter-about-submitter": "சமர்ப்பிப்பவரைப் பற்றி",
 	"linkfilter-comments-of-day": "சிறந்த கருத்துகள்",
 	"linkfilter-comments": "{{PLURAL:$1|$1 கருத்து|$1 கருத்துகள்}}",
 	"linkfilter-home-title": "$1 தொடுப்புகள்",
