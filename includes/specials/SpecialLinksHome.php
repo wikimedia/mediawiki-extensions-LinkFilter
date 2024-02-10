@@ -82,7 +82,7 @@ class SpecialLinksHome extends SpecialPage {
 		}
 
 		$html = '<div class="listpages-container">';
-		if ( empty( $popularLinks ) ) {
+		if ( !$popularLinks ) {
 			$html .= $this->msg( 'linkfilter-no-results' )->escaped();
 		} else {
 			foreach ( $popularLinks as $popularLink ) {
