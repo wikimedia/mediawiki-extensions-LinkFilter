@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Anterdc99",
 			"Kuailong",
 			"LittlePaw365",
 			"Liuxinyu970226",
@@ -42,6 +43,7 @@
 	"linkfilter-approve-title": "链接管理员",
 	"linkfilter-submittedby": "'''提交者：'''[[User:$1|$1]]",
 	"linkfilter-submitted": "提交于 $1",
+	"linkfilter-admin-cat-filter": "仅显示分类中待批准的链接：",
 	"linkfilter-admin-accept": "接受",
 	"linkfilter-admin-reject": "拒绝",
 	"linkfilter-admin-reject-success": "链接已被拒绝",
@@ -69,6 +71,7 @@
 	"group-linkadmin": "链接管理员",
 	"group-linkadmin-member": "{{GENDER:$1|链接管理员}}",
 	"grouppage-linkadmin": "{{ns:project}}:链接管理员",
+	"action-linkadmin": "管理用户提交的链接",
 	"right-linkadmin": "管理用户提交的链接",
 	"group-linkadmin.css": "/* 这里放置的CSS只对链接管理员生效 */",
 	"group-linkadmin.js": "/* 这里放置的JS只对链接管理员生效 */",
