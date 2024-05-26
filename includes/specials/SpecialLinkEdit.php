@@ -44,22 +44,19 @@ class SpecialLinkEdit extends UnlistedSpecialPage {
 		) {
 			$_SESSION['alreadysubmitted'] = true;
 
+			$id = $request->getInt( 'id' );
 			// Update link
-			$dbw = wfGetDB( DB_PRIMARY );
-			$dbw->update(
-				'link',
+			$link = new Link();
+			$link->editLink(
+				$id,
 				[
 					'link_url' => $_POST['lf_URL'],
 					'link_description' => $_POST['lf_desc'],
 					'link_type' => intval( $_POST['lf_type'] )
-				],
-				[
-					'link_page_id' => $request->getInt( 'id' )
-				],
-				__METHOD__
+				]
 			);
 
-			$title = Title::newFromId( $request->getInt( 'id' ) );
+			$title = Title::newFromId( $id );
 			$out->redirect( $title->getFullURL() );
 		} else {
 			$out->addHTML( $this->displayEditForm() );

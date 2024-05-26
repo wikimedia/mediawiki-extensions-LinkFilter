@@ -1,6 +1,6 @@
 {
 	"name": "LinkFilter",
-	"version": "3.8.0",
+	"version": "3.9.0",
 	"author": [
 		"Aaron Wright",
 		"David Pean",
@@ -63,14 +63,18 @@
 		}
 	],
 	"APIModules": {
-		"linkfilter": "ApiLinkFilter"
+		"linkedit": "ApiLinkEdit",
+		"linkfilter": "ApiLinkFilter",
+		"linksubmit": "ApiLinkSubmit"
 	},
 	"ExtensionMessagesFiles": {
 		"LinkFilterAlias": "includes/LinkFilter.alias.php",
 		"LinkNamespaces": "includes/LinkFilter.namespaces.php"
 	},
 	"AutoloadClasses": {
+		"ApiLinkEdit": "includes/api/ApiLinkEdit.php",
 		"ApiLinkFilter": "includes/api/ApiLinkFilter.php",
+		"ApiLinkSubmit": "includes/api/ApiLinkSubmit.php",
 		"Link": "includes/Link.php",
 		"LinkList": "includes/LinkList.php",
 		"LinkPage": "includes/LinkPage.php",

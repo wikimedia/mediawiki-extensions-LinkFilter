@@ -121,6 +121,24 @@ class Link {
 	}
 
 	/**
+	 * Edit a link's data (other than the title).
+	 *
+	 * @param int $id page_id of the Link: page that we want to modify
+	 * @param array $fields Fields to alter
+	 * @return int Amount of impacted rows
+	 */
+	public function editLink( $id, $fields ) {
+		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw->update(
+			'link',
+			$fields,
+			[ 'link_page_id' => $id ],
+			__METHOD__
+		);
+		return (int)$dbw->affectedRows();
+	}
+
+	/**
 	 * Approve a link with the given ID and perform all the related magic.
 	 * This includes creating the Link: page, updating the database and updating
 	 * social statistics (when SocialProfile is installed & active).
