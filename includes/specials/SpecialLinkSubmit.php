@@ -72,7 +72,7 @@ class SpecialLinkSubmit extends SpecialPage {
 				// would prevent approving such a link, leaving link admins with no other
 				// choice than to reject it
 				try {
-					$title = Title::newFromTextThrow( $request->getVal( 'lf_title' ) );
+					$title = Title::newFromTextThrow( $request->getVal( 'lf_title' ), NS_LINK );
 				} catch ( Exception $e ) {
 					$out->setPageTitle( $this->msg( 'error' )->text() );
 					$out->addHTML( $this->displayAddForm(
@@ -103,13 +103,27 @@ class SpecialLinkSubmit extends SpecialPage {
 
 			// If we have a real URL, only then add the link to the database.
 			if ( $link->isURL( $request->getVal( 'lf_URL' ) ) ) {
-				$link->addLink(
+				$id = $link->addLink(
 					$request->getVal( 'lf_title' ),
 					$request->getVal( 'lf_desc' ),
 					htmlspecialchars( $request->getVal( 'lf_URL' ), ENT_QUOTES ),
 					$request->getInt( 'lf_type' ),
 					$user
 				);
+
+				$link->logAction(
+					'submit',
+					$user,
+					// Can't really use $link->getLinkWikiPage() here since we don't have a page for the link yet, obviously
+					$title,
+					[
+						// '4::id' => $id,
+						'5::url' => $request->getVal( 'lf_URL' ),
+						'6::desc' => $request->getVal( 'lf_desc' ),
+						'7::type' => $request->getInt( 'lf_type' )
+					]
+				);
+
 				// Great success, comrade!
 				$out->setPageTitle( $this->msg( 'linkfilter-submit-success-title' )->escaped() );
 				$out->addHTML(

@@ -45,6 +45,7 @@ class SpecialLinkEdit extends UnlistedSpecialPage {
 			$_SESSION['alreadysubmitted'] = true;
 
 			$id = $request->getInt( 'id' );
+
 			// Update link
 			$link = new Link();
 			$link->editLink(
@@ -56,7 +57,26 @@ class SpecialLinkEdit extends UnlistedSpecialPage {
 				]
 			);
 
+			// @todo FIXME: if the URL was changed, it should generate an edit
+			// to the Link: page in question (as the URL, and only that, is on the
+			// Link: page; all the other properties like description or type are stored
+			// in the link table and editable via this special page and/or its API equivalent)
+
 			$title = Title::newFromId( $id );
+
+			$link->logAction(
+				'edit',
+				$user,
+				$title,
+				[
+					// $id is NOT a link ID but rather a *page* ID, d'oh...
+					// '4::id' => $id,
+					'5::url' => $request->getText( 'lf_URL' ),
+					'6::desc' => $request->getText( 'lf_desc' ),
+					'7::type' => $request->getText( 'lf_type' )
+				]
+			);
+
 			$out->redirect( $title->getFullURL() );
 		} else {
 			$out->addHTML( $this->displayEditForm() );

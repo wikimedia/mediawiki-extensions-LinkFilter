@@ -67,6 +67,28 @@
 		"linkfilter": "ApiLinkFilter",
 		"linksubmit": "ApiLinkSubmit"
 	},
+	"LogTypes": [
+		"linkfilter"
+	],
+	"ActionFilteredLogs": {
+		"linkfilter": {
+			"approve": [
+				"approve"
+			],
+			"edit": [
+				"edit"
+			],
+			"reject": [
+				"reject"
+			],
+			"submit": [
+				"submit"
+			]
+		}
+	},
+	"LogActionsHandlers": {
+		"linkfilter/*": "LinkFilterLogFormatter"
+	},
 	"ExtensionMessagesFiles": {
 		"LinkFilterAlias": "includes/LinkFilter.alias.php",
 		"LinkNamespaces": "includes/LinkFilter.namespaces.php"
@@ -81,6 +103,7 @@
 		"LinkFeed": "includes/LinkFeed.php",
 		"LinkStatus": "includes/LinkStatus.php",
 		"LinkFilterHooks": "includes/LinkFilterHooks.php",
+		"LinkFilterLogFormatter": "includes/logging/LinkFilterLogFormatter.php",
 		"SpecialLinkApprove": "includes/specials/SpecialLinkApprove.php",
 		"SpecialLinkEdit": "includes/specials/SpecialLinkEdit.php",
 		"SpecialLinksHome": "includes/specials/SpecialLinksHome.php",

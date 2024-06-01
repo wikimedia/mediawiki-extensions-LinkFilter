@@ -45,7 +45,7 @@ class ApiLinkSubmit extends ApiBase {
 		// Ensure that the user-supplied garbage can be converted into a valid Title object
 		// and if not, bail out immediately.
 		try {
-			$title = Title::newFromTextThrow( $linkTitle );
+			$title = Title::newFromTextThrow( $linkTitle, NS_LINK );
 		} catch ( Exception $e ) {
 			// Reusing the same error message from MW core as SpecialLinkSubmit.php does
 			$this->dieWithError( [ 'img-auth-badtitle', $linkTitle ], 'badtitle' );
@@ -58,12 +58,24 @@ class ApiLinkSubmit extends ApiBase {
 		if ( !$link->isURL( $linkURL ) ) {
 			$this->dieWithError( 'invalid-url', 'invalidurl' );
 		} else {
-			$link->addLink(
+			$id = $link->addLink(
 				$linkTitle,
 				$description,
 				$linkURL,
 				$linkType,
 				$user
+			);
+
+			$link->logAction(
+				'submit',
+				$user,
+				$title,
+				[
+					// '4::id' => $id,
+					'5::url' => $linkURL,
+					'6::desc' => $description,
+					'7::type' => $linkType
+				]
 			);
 
 			// Report success back to the user here
