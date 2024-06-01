@@ -78,7 +78,7 @@ class Link {
 	 * @return bool True if it's an URL, otherwise false
 	 */
 	public static function isURL( $code ) {
-		return preg_match( '%^(?:http|https|ftp)://(?:www\.)?.*$%i', $code );
+		return preg_match( '/^(?:' . wfUrlProtocols() . ').*$/i', $code );
 	}
 
 	/**
