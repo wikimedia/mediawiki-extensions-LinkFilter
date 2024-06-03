@@ -56,6 +56,17 @@ class ApiLinkEdit extends ApiBase {
 			$this->dieWithError( [ 'img-auth-badtitle', $linkTitle ], 'badtitle' );
 		}
 
+		if ( !$title->exists() ) {
+			$this->dieWithError( 'apierror-missingtitle', 'missingtitle' );
+		}
+
+		// Now let's check whether we're even allowed to do this (delicious copypasta from core ApiEditPage.php)
+		$this->checkTitleUserPermissions(
+			$title,
+			'edit',
+			[ 'autoblock' => true ]
+		);
+
 		$linkURL = $params['url'];
 		if ( $linkURL ) {
 			$toUpdate['link_url'] = $linkURL;
@@ -70,6 +81,9 @@ class ApiLinkEdit extends ApiBase {
 		}
 
 		$link = new Link();
+		$pageId = $title->getArticleID();
+		$linkProperties = $link->getLinkByPageID( $pageId );
+		$originalURL = $linkProperties['url'];
 
 		// If we don't have a real URL, abort the mission.
 		if ( !$link->isURL( $linkURL ) ) {
@@ -77,12 +91,42 @@ class ApiLinkEdit extends ApiBase {
 		}
 
 		// Update link
-		$link->editLink( $title->getArticleID(), $toUpdate );
+		$link->editLink( $pageId, $toUpdate );
 
-		// @todo FIXME: if the URL was changed, it should generate an edit
-		// to the Link: page in question (as the URL, and only that, is on the
-		// Link: page; all the other properties like description or type are stored
-		// in the link table and editable via this API module and/or its special page equivalent)
+		// If the URL was changed, make an edit to the Link: page
+		// as the Link: page contains (only) that data; the other properties
+		// pertaining to a link are stored in the link table instead
+		//
+		// @todo FIXME: also this is basically duplicated here and in SpecialLinkEdit.php in nearly
+		// identical form, except this one calls $newURL $linkURL instead and that's about it
+		if ( isset( $toUpdate['link_url'] ) && $originalURL !== $linkURL ) {
+			// @todo FIXME: a bit too heavy, getLinkWikiPage() calls getLink() again, which is
+			// unnecessary for our needs, we already have all the data we need...
+			$page = $link->getLinkWikiPage( $linkProperties['id'] );
+			$pageContent = ContentHandler::makeContent(
+				$linkURL,
+				// Or we could use the existing $title variable but whatever...
+				$page->getTitle()
+			);
+
+			$summary = $this->msg(
+				'linkfilter-edit-summary-link-edited',
+				$originalURL,
+				$linkURL
+			)->inContentLanguage()->text();
+
+			if ( method_exists( $page, 'doUserEditContent' ) ) {
+				// MW 1.36+
+				$page->doUserEditContent(
+					$pageContent,
+					$user,
+					$summary
+				);
+			} else {
+				// @phan-suppress-next-line PhanUndeclaredMethod
+				$page->doEditContent( $pageContent, $summary );
+			}
+		}
 
 		$link->logAction(
 			'edit',
@@ -93,9 +137,9 @@ class ApiLinkEdit extends ApiBase {
 				// we get a Title object via the page title string, and the SpecialLinkEdit.php
 				// page gets one via a *page* ID
 				// '4::id' => $id,
-				'5::url' => $linkURL,
-				'6::desc' => $description,
-				'7::type' => $linkType
+				'5::url' => $linkURL ?? $originalURL,
+				'6::desc' => $description ?? $linkProperties['description'],
+				'7::type' => $linkType ?? $linkProperties['type']
 			]
 		);
 

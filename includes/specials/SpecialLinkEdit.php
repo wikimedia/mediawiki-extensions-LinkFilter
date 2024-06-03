@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class SpecialLinkEdit extends UnlistedSpecialPage {
 
 	/**
@@ -45,24 +47,76 @@ class SpecialLinkEdit extends UnlistedSpecialPage {
 			$_SESSION['alreadysubmitted'] = true;
 
 			$id = $request->getInt( 'id' );
+			$newURL = $request->getText( 'lf_URL' );
+
+			// The page has to exist first before it can be edited
+			// LinkFilter isn't MW core, you gotta submit a link first and then
+			// have it approved before it's possible to edit it
+			$title = Title::newFromId( $id );
+			if ( !$title->exists() ) {
+				$out->addHTML( Html::errorBox( $this->msg(
+					'htmlform-title-not-exists',
+					$title->getPrefixedText()
+				)->parse() ) );
+				return;
+			}
+
+			// Check that the user is allowed to edit this page; they may not necessarily be
+			// e.g. if the page is protected and they're not allowed to edit protected pages
+			// (weird, yet possible, edge case if linkadmin permissions are assigned to a group
+			// that *cannot* change protection settings)
+			$services = MediaWikiServices::getInstance();
+			if ( !$services->getPermissionManager()->userCan( 'edit', $user, $title ) ) {
+				$out->addHTML( Html::errorBox( $this->msg(
+					'protectedpagetext'
+				)->parse() ) );
+				return;
+			}
+
+			$link = new Link();
+			$linkProperties = $link->getLinkByPageID( $id );
+			$originalURL = $linkProperties['url'];
 
 			// Update link
-			$link = new Link();
 			$link->editLink(
 				$id,
 				[
-					'link_url' => $_POST['lf_URL'],
+					'link_url' => $newURL,
 					'link_description' => $_POST['lf_desc'],
 					'link_type' => intval( $_POST['lf_type'] )
 				]
 			);
 
-			// @todo FIXME: if the URL was changed, it should generate an edit
-			// to the Link: page in question (as the URL, and only that, is on the
-			// Link: page; all the other properties like description or type are stored
-			// in the link table and editable via this special page and/or its API equivalent)
+			// If the URL was changed, make an edit to the Link: page
+			// as the Link: page contains (only) that data; the other properties
+			// pertaining to a link are stored in the link table instead
+			if ( $originalURL !== $newURL ) {
+				// @todo FIXME: a bit too heavy, getLinkWikiPage() calls getLink() again, which is
+				// unnecessary for our needs, we already have all the data we need...
+				$page = $link->getLinkWikiPage( $linkProperties['id'] );
+				$pageContent = ContentHandler::makeContent(
+					$request->getText( 'lf_URL' ),
+					$page->getTitle()
+				);
 
-			$title = Title::newFromId( $id );
+				$summary = $this->msg(
+					'linkfilter-edit-summary-link-edited',
+					$originalURL,
+					$newURL
+				)->inContentLanguage()->text();
+
+				if ( method_exists( $page, 'doUserEditContent' ) ) {
+					// MW 1.36+
+					$page->doUserEditContent(
+						$pageContent,
+						$user,
+						$summary
+					);
+				} else {
+					// @phan-suppress-next-line PhanUndeclaredMethod
+					$page->doEditContent( $pageContent, $summary );
+				}
+			}
 
 			$link->logAction(
 				'edit',

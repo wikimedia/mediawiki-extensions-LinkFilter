@@ -65,6 +65,7 @@
 	"linkfilter-time-minutes": "Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.\n{{Related|Linkfilter-time}}",
 	"linkfilter-time-seconds": "Used as <code>$1</code> in {{msg-mw|Linkfilter-ago}}.\n{{Related|Linkfilter-time}}\n{{Identical|Second}}",
 	"linkfilter-edit-summary": "Edit summary; when a link administrator approves a link, a new page in the Link: namespace is created with this as the edit summary",
+	"linkfilter-edit-summary-link-edited": "Edit summary for when an existing link's URL is changed, either via Special:LinkEdit or its API equivalent.\nParameters:\n* $1 - original URL before the edit\n* $2 - new URL after the edit",
 	"linkfilter-no-results": "Displayed when $wgLinkPageDisplay['popular_articles'] is <code>true</code> in the configuration but there are no popular pages (they are shown under the [[MediaWiki:Linkfilter-popular-articles]] header) to display.",
 	"linkfilter-feed-title": "RSS feed title",
 	"log-name-linkfilter": "The name of the LinkFilter log.\n\nAlso used as page title in [[Special:Log/linkfilter]].",
