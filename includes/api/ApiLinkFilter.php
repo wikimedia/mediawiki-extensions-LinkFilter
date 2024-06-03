@@ -3,7 +3,7 @@
 use Wikimedia\AtEase\AtEase;
 
 /**
- * LinkFilter API module
+ * LinkFilter API module for approving and rejecting user-submitted links.
  *
  * @file
  * @ingroup API
@@ -32,7 +32,8 @@ class ApiLinkFilter extends ApiBase {
 		}
 
 		// Check permissions
-		if ( !Link::canAdmin( $this->getUser() ) ) {
+		$user = $this->getUser();
+		if ( !Link::canAdmin( $user ) ) {
 			return '';
 		}
 
@@ -44,9 +45,46 @@ class ApiLinkFilter extends ApiBase {
 			__METHOD__
 		);
 
-		if ( $status == 1 ) {
-			$l = new Link();
-			$l->approveLink( $id );
+		$wasApproved = ( $status == LinkStatus::APPROVED );
+
+		$link = new Link();
+
+		if ( $wasApproved ) {
+			$link->approveLink( $id );
+
+			$zelda = $link->getLink( $id );
+
+			$link->logAction(
+				'approve',
+				$user,
+				$link->getLinkWikiPage( $id ),
+				[
+					'4::id' => $id,
+					'5::url' => $zelda['url'],
+					'6::desc' => $zelda['description'],
+					// store the numeric type ID, can be easily enough converted into
+					// a more human-friendly string, e.g. with Link::getLinkType();
+					// that's precisely why this *isn't* using $zelda['type_name'] here
+					'7::type' => $zelda['type']
+				]
+			);
+		} else {
+			$zelda = $link->getLink( $id );
+
+			$link->logAction(
+				'reject',
+				$user,
+				$link->getLinkWikiPage( $id ),
+				[
+					'4::id' => $id,
+					'5::url' => $zelda['url'],
+					'6::desc' => $zelda['description'],
+					// store the numeric type ID, can be easily enough converted into
+					// a more human-friendly string, e.g. with Link::getLinkType();
+					// that's precisely why this *isn't* using $zelda['type_name'] here
+					'7::type' => $zelda['type']
+				]
+			);
 		}
 
 		// Top level

@@ -79,6 +79,26 @@ class ApiLinkEdit extends ApiBase {
 		// Update link
 		$link->editLink( $title->getArticleID(), $toUpdate );
 
+		// @todo FIXME: if the URL was changed, it should generate an edit
+		// to the Link: page in question (as the URL, and only that, is on the
+		// Link: page; all the other properties like description or type are stored
+		// in the link table and editable via this API module and/or its special page equivalent)
+
+		$link->logAction(
+			'edit',
+			$user,
+			$title,
+			[
+				// We don't have the *link* ID here (not that it's super useful anyway),
+				// we get a Title object via the page title string, and the SpecialLinkEdit.php
+				// page gets one via a *page* ID
+				// '4::id' => $id,
+				'5::url' => $linkURL,
+				'6::desc' => $description,
+				'7::type' => $linkType
+			]
+		);
+
 		// Report success back to the user here
 		$this->getResult()->addValue( null, $this->getModuleName(), [
 			'status' => 'OK',

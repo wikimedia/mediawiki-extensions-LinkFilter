@@ -84,12 +84,18 @@ class Link {
 	/**
 	 * Adds a link to the database table.
 	 *
+	 * @note This *does* update social statistics if SocialProfile is installed,
+	 *  but that's it -- this method intentionally does _not_ log any action,
+	 *  you should instead call this class' logAction() method yourself to
+	 *  do the logging.
+	 *
 	 * @param string $title Link title as supplied by the user
 	 * @param string $desc Link description as supplied by the user
 	 * @param string $url The actual URL
 	 * @param int $type Link type, either from the global variable or from
 	 *						this class' static array.
 	 * @param User $user
+	 * @return int ID (link_id) of the newly inserted database entry
 	 */
 	public function addLink( $title, $desc, $url, $type, User $user ) {
 		$dbw = wfGetDB( DB_PRIMARY );
@@ -106,18 +112,43 @@ class Link {
 				'link_url' => $url,
 				'link_description' => $desc,
 				'link_type' => intval( $type ),
-				'link_status' => 0,
+				'link_status' => LinkStatus::OPEN,
 				'link_submit_date' => $dbw->timestamp( $date ),
 				'link_submitter_actor' => $user->getActorId()
 			],
 			__METHOD__
 		);
 
+		$id = $dbw->insertId();
+
 		// If SocialProfile extension is installed, increase social statistics.
 		if ( class_exists( 'UserStatsTrack' ) ) {
 			$stats = new UserStatsTrack( $user->getId(), $user->getName() );
 			$stats->incStatField( 'links_submitted' );
 		}
+
+		return $id;
+	}
+
+	/**
+	 * Adds a log entry to Special:Log/linkfilter.
+	 *
+	 * @param string $action Log type subaction ('approve', 'reject', 'submit' or 'edit')
+	 * @param User $user The user who did this action
+	 * @param Title $target The impacted Title object (SpecialPage or Link: page)
+	 * @param array $params Log parameters
+	 * @param string $comment Log comment, if any
+	 */
+	public function logAction( $action, $user, $target, $params, $comment = '' ) {
+		$logEntry = new ManualLogEntry( 'linkfilter', $action );
+		$logEntry->setPerformer( $user );
+		$logEntry->setTarget( $target );
+		if ( $comment !== '' ) {
+			$logEntry->setComment( $comment );
+		}
+		$logEntry->setParameters( $params );
+		$logId = $logEntry->insert();
+		$logEntry->publish( $logId );
 	}
 
 	/**
@@ -139,6 +170,31 @@ class Link {
 	}
 
 	/**
+	 * Given a link ID, gets the appropriate WikiPage object for its Link: page.
+	 *
+	 * @param int $id Link ID
+	 * @return WikiPage|Title WikiPage on success, a Title pointing to Special:BadTitle on failure
+	 */
+	public function getLinkWikiPage( $id ) {
+		$link = $this->getLink( $id );
+		if ( $link === [] ) {
+			// Uh-oh...
+			return SpecialPage::getTitleFor( 'Badtitle' );
+		}
+
+		$linkTitle = Title::makeTitleSafe( NS_LINK, $link['title'] );
+		if ( method_exists( MediaWikiServices::class, 'getWikiPageFactory' ) ) {
+			// MW 1.36+
+			$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $linkTitle );
+		} else {
+			// @phan-suppress-next-line PhanUndeclaredStaticMethod
+			$page = WikiPage::factory( $linkTitle );
+		}
+
+		return $page;
+	}
+
+	/**
 	 * Approve a link with the given ID and perform all the related magic.
 	 * This includes creating the Link: page, updating the database and updating
 	 * social statistics (when SocialProfile is installed & active).
@@ -149,19 +205,15 @@ class Link {
 		$link = $this->getLink( $id );
 
 		// Create the wiki page for the newly-approved link
-		$linkTitle = Title::makeTitleSafe( NS_LINK, $link['title'] );
-		if ( method_exists( MediaWikiServices::class, 'getWikiPageFactory' ) ) {
-			// MW 1.36+
-			$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $linkTitle );
-		} else {
-			// @phan-suppress-next-line PhanUndeclaredStaticMethod
-			$page = WikiPage::factory( $linkTitle );
-		}
+		$page = $this->getLinkWikiPage( $id );
+
 		$pageContent = ContentHandler::makeContent(
 			$link['url'],
 			$page->getTitle()
 		);
+
 		$summary = wfMessage( 'linkfilter-edit-summary' )->inContentLanguage()->text();
+
 		if ( method_exists( $page, 'doUserEditContent' ) ) {
 			// MW 1.36+
 			$page->doUserEditContent(
@@ -173,6 +225,7 @@ class Link {
 			// @phan-suppress-next-line PhanUndeclaredMethod
 			$page->doEditContent( $pageContent, $summary );
 		}
+
 		$newPageID = $page->getID();
 
 		// Tie link record to wiki page

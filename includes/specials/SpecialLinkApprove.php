@@ -166,9 +166,44 @@ class SpecialLinkApprove extends SpecialPage {
 				__METHOD__
 			);
 
+			$link = new Link();
+
 			if ( $status == LinkStatus::APPROVED ) {
-				$link = new Link();
 				$link->approveLink( $id );
+
+				$zelda = $link->getLink( $id );
+
+				$link->logAction(
+					'approve',
+					$user,
+					$link->getLinkWikiPage( $id ),
+					[
+						'4::id' => $id,
+						'5::url' => $zelda['url'],
+						'6::desc' => $zelda['description'],
+						// store the numeric type ID, can be easily enough converted into
+						// a more human-friendly string, e.g. with Link::getLinkType();
+						// that's precisely why this *isn't* using $zelda['type_name'] here
+						'7::type' => $zelda['type']
+					]
+				);
+			} else {
+				$zelda = $link->getLink( $id );
+
+				$link->logAction(
+					'reject',
+					$user,
+					$link->getLinkWikiPage( $id ),
+					[
+						'4::id' => $id,
+						'5::url' => $zelda['url'],
+						'6::desc' => $zelda['description'],
+						// store the numeric type ID, can be easily enough converted into
+						// a more human-friendly string, e.g. with Link::getLinkType();
+						// that's precisely why this *isn't* using $zelda['type_name'] here
+						'7::type' => $zelda['type']
+					]
+				);
 			}
 		}
 
