@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Anterdc99",
+			"Googology",
 			"Kuailong",
 			"LittlePaw365",
 			"Liuxinyu970226",
@@ -75,6 +76,12 @@
 	"right-linkadmin": "管理用户提交的链接",
 	"group-linkadmin.css": "/* 这里放置的CSS只对链接管理员生效 */",
 	"group-linkadmin.js": "/* 这里放置的JS只对链接管理员生效 */",
+	"apihelp-linkedit-param-title": "链接名称：要编辑的页面",
+	"apihelp-linkedit-param-description": "链接内容的简短描述",
+	"apihelp-linkedit-param-url": "实际链接，包括协议部分",
+	"apihelp-linksubmit-param-description": "链接内容的简短描述",
+	"apihelp-linksubmit-param-type": "数字链接类型，请参阅<var>$wgLinkFilterTypes</var>了解人类可读的链接类型名称",
+	"apihelp-linksubmit-param-url": "用于提交的链接，包括协议部分",
 	"apihelp-linkfilter-summary": "用于通过用户提交链接的后端API模块",
 	"apihelp-linkfilter-param-id": "链接标识符编号",
 	"apihelp-linkfilter-param-status": "1接受、2拒绝",
