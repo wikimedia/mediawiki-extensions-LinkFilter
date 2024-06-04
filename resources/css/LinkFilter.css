@@ -61,20 +61,6 @@
 	font-size: 13px;
 }
 
-.remember-me {
-	margin: 10px 0 10px -4px;
-}
-
-.favorite-input {
-	margin: 8px 0;
-}
-
-.favorite-input-title {
-	font-weight: bold;
-	min-width: 40px;
-	margin: 0 10px 0 0;
-}
-
 .lr-input {
 	width: 300px;
 }
@@ -206,16 +192,6 @@
 	color: green;
 }
 
-#main {
-	padding: 0 !important;
-}
-
-#main p {
-	font-size: 12px;
-	font-weight: normal;
-	line-height: 16px;
-}
-
 #link-page-container {
 	overflow: hidden;
 }
@@ -323,10 +299,6 @@
 	margin: 0 10px 0 0;
 }
 
-.author-articles {
-	margin: 4px 0 0 0;
-}
-
 .more-container h3 {
 	margin: 0 0 5px 0 !important;
 	font-size: 11px;
@@ -342,71 +314,6 @@
 	text-decoration: none;
 	font-size: 14px;
 	font-weight: bold;
-}
-
-.author-article-item {
-	line-height: 12px;
-	margin: 0 0 4px 0;
-}
-
-.author-article-item a {
-	text-decoration: none;
-	font-size: 11px;
-}
-
-.author-item-small {
-	font-size: 10px;
-	color: #888;
-}
-
-.author-archive-link {
-	text-align: right;
-	font-size: 10px;
-}
-
-/* Recent Container */
-.recent-container {
-	margin: 0 0 10px;
-	padding: 0 0 10px;
-	font-size: 11px;
-	border-bottom: 1px solid #dcdcdc;
-}
-
-.recent-container div {
-	font-size: 10px;
-	margin: 0 0 5px 0;
-	line-height: 11px;
-	color: #888;
-}
-
-.recent-container h2 {
-	letter-spacing: -1px;
-	font-size: 14px;
-	margin: 0 0 1px 0 !important;
-	color: #333;
-}
-
-.recent-item {
-	margin: 0;
-}
-
-.recent-title {
-	color: #444;
-	font-size: 12px;
-	line-height: 13px;
-	font-weight: bold;
-	margin: 0 0 10px 0;
-}
-
-.recent-container img {
-	padding: 2px;
-	border: 1px solid #dcdcdc;
-	background-color: #fff;
-	margin: 2px 2px 0 0;
-}
-
-.recent-container a {
-	text-decoration: none;
 }
 
 /* Comment of the Day */
@@ -596,54 +503,6 @@
 .reply {
 	margin-left: 70px !important;
 	width: 460px;
-}
-
-.fc-item {
-	position: relative;
-	padding: 0 0 10px 0;
-	margin: 0 0 15px 0;
-}
-
-.fc-avatar {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-.fc-avatar img {
-	padding: 3px;
-	border: 1px solid #dcdcdc;
-	background-color: #fff;
-}
-
-.fc-container {
-	position: relative;
-	top: 0;
-	top: 0;
-	margin: 0 0 0 70px;
-	z-index: 2;
-}
-
-.fc-user {
-	font-weight: bold;
-	position: relative;
-	margin: 0 0 6px 0;
-}
-
-.fc-user a {
-	font-size: 14px;
-	text-decoration: none;
-}
-
-.fc-time {
-	font-size: 10px;
-	color: #888;
-	line-height: 11px !important;
-	font-weight: normal !important;
-}
-
-.fc-text {
-	margin-top: 30px;
 }
 
 /* Links Home */
