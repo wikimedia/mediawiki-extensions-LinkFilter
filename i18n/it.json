@@ -60,6 +60,7 @@
 	"linkfilter-edit-summary": "nuovo collegamento",
 	"linkfilter-no-results": "Nessuna pagina trovata.",
 	"linkfilter-feed-title": "Collegamenti {{SITENAME}}",
+	"log-action-filter-linkfilter": "Filtra per azione:",
 	"group-linkadmin": "Gestori dei collegamenti",
 	"group-linkadmin-member": "{{GENDER:$1|gestore dei collegamenti}}",
 	"grouppage-linkadmin": "{{ns:project}}:Gestori dei collegamenti",
