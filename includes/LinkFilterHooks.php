@@ -279,5 +279,14 @@ class LinkFilterHooks {
 		if ( $db->tableExists( 'link' ) && !$db->fieldExists( 'link', 'link_submitter_actor', __METHOD__ ) ) {
 			$updater->addExtensionField( 'link', 'link_submitter_actor', $sqlPath . '/patch-add_link_submitter_actor_column.sql' );
 		}
+
+		// Drop pre-actor legacy user name+ID fields if they still are present
+		if ( $db->fieldExists( 'link', 'link_submitter_user_id', __METHOD__ ) ) {
+			$updater->dropExtensionField( 'link', 'link_submitter_user_id', $sqlPath . '/patch-drop_link_submitter_user_id.sql' );
+		}
+
+		if ( $db->fieldExists( 'link', 'link_submitter_user_name', __METHOD__ ) ) {
+			$updater->dropExtensionField( 'link', 'link_submitter_user_name', $sqlPath . '/patch-drop_link_submitter_user_name.sql' );
+		}
 	}
 }
