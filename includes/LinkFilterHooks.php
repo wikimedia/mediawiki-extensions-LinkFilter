@@ -9,6 +9,31 @@
 use MediaWiki\MediaWikiServices;
 
 class LinkFilterHooks {
+	/**
+	 * APIGetAllowedParams hook handler - if the ConfirmEdit extension is installed,
+	 * <s>have ConfirmEdit</s> add its CAPTCHA-related parameters to ApiLinkEdit and ApiLinkSubmit.
+	 *
+	 * @param ApiBase $module
+	 * @param array &$params
+	 * @param int $flags
+	 * @return void
+	 */
+	public static function onAPIGetAllowedParams( $module, &$params, $flags ) {
+		if (
+			ExtensionRegistry::getInstance()->isLoaded( 'ConfirmEdit' ) &&
+			( $module instanceof ApiLinkEdit || $module instanceof ApiLinkSubmit )
+		) {
+			// I have no idea why it insists on this capitalization (though I do like it, mind you)
+			// and refuses to recognize the unprefixed, lowercased versions no matter what I do.
+			// FINE. Have it your way, then!
+			$params['wpCaptchaWord'] = [
+				ApiBase::PARAM_HELP_MSG => 'captcha-apihelp-param-captchaword',
+			];
+			$params['wpCaptchaId'] = [
+				ApiBase::PARAM_HELP_MSG => 'captcha-apihelp-param-captchaid',
+			];
+		}
+	}
 
 	/**
 	 * This function is called after a page has been moved successfully to

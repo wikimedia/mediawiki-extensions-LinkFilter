@@ -111,6 +111,7 @@
 		"SpecialLinkSubmit": "includes/specials/SpecialLinkSubmit.php"
 	},
 	"Hooks": {
+		"APIGetAllowedParams": "LinkFilterHooks::onAPIGetAllowedParams",
 		"PageMoveComplete": "LinkFilterHooks::updateLinkFilter",
 		"ArticleDelete": "LinkFilterHooks::deleteLinkFilter",
 		"ArticleFromTitle": "LinkFilterHooks::linkFromTitle",
