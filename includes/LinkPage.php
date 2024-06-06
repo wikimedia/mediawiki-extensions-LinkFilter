@@ -33,18 +33,37 @@ class LinkPage extends Article {
 	 *   getNewLinks(), but it has been pre-escaped already, but adding the suppression to that
 	 *   method (whether method-level, like here, or using the "suppress previous/next line" syntax)
 	 *   just doesn't work. :-(
+	 * @return void Only when viewing a diff
 	 */
 	function view() {
 		global $wgLinkPageDisplay;
 
 		$context = $this->getContext();
 		$out = $context->getOutput();
+		$request = $context->getRequest();
 		$user = $context->getUser();
 
 		$sk = $out->getSkin();
 
 		$out->setHTMLTitle( $this->getTitle()->getText() );
 		$out->setPageTitle( $this->getTitle()->getText() );
+
+		// Now (June 2024) that Link: pages can get edited (by Special:LinkEdit/its API equivalent),
+		// allow people to actually *view* the URL changes on the page by respecting the parameters
+		// and *not* doing custom processing if we have the "diff" URL parameter set
+		if (
+			$request->getRawVal( 'action' ) !== 'view' &&
+			$request->getInt( 'diff' )
+		) {
+			parent::view();
+			// Would be super nice if we could *not* return here and instead continue showing the
+			// highly customized page, but it looks kinda awkward when the real page content (the link
+			// URL and literally just that and nothing else) gets shown before all the cool stuff
+			// (for diff views at least).
+			// Ideally we'd be able to _not_ show the real page content while yet showing the diff,
+			// but that probably takes more than a bit of effort.
+			return;
+		}
 
 		$out->addHTML( '<div id="link-page-container" class="clearfix">' );
 
