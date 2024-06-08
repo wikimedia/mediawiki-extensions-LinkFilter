@@ -325,14 +325,10 @@
 	margin: 0 4px 0 0;
 }
 
-.cod-poster a {
-	font-size: 12px;
-	text-decoration: none;
-}
-
+.cod-poster a,
 .cod-comment a {
-	text-decoration: none;
 	font-size: 12px;
+	text-decoration: none;
 }
 
 .cod-comment {
