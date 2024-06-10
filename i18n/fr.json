@@ -4,6 +4,7 @@
 			"Gomoko",
 			"IAlex",
 			"SRXcraft",
+			"SleaY",
 			"Thibaut120094",
 			"Verdy p",
 			"Wladek92"
@@ -66,6 +67,7 @@
 	"linkfilter-time-minutes": "{{PLURAL:$1|une minute|$1 minutes}}",
 	"linkfilter-time-seconds": "{{PLURAL:$1|une seconde|$1 secondes}}",
 	"linkfilter-edit-summary": "nouveau lien",
+	"linkfilter-edit-summary-link-edited": "L'URL du lien a été modifiée de $1 à $2",
 	"linkfilter-no-results": "Aucune page trouvée.",
 	"linkfilter-feed-title": "Liens de {{SITENAME}}",
 	"group-linkadmin": "Administrateurs de liens",

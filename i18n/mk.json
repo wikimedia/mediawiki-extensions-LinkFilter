@@ -61,6 +61,7 @@
 	"linkfilter-time-minutes": "{{PLURAL:$1|една минута|$1 минути}}",
 	"linkfilter-time-seconds": "{{PLURAL:$1|една секунда|$1 секунди}}",
 	"linkfilter-edit-summary": "нова врска",
+	"linkfilter-edit-summary-link-edited": "URL-адресата на врската е сменета од $1 на $2",
 	"linkfilter-no-results": "Не пронајдов ниедна страница.",
 	"linkfilter-feed-title": "Врски на {{SITENAME}}",
 	"log-name-linkfilter": "Дневник на врски",
