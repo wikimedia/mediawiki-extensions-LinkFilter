@@ -66,6 +66,8 @@
 	"linkfilter-edit-summary-link-edited": "Link URL was changed from $1 to $2",
 	"linkfilter-no-results": "No pages found.",
 	"linkfilter-feed-title": "{{SITENAME}} links",
+	"fancycaptcha-linksubmit": "To submit a link for approval, please enter the words that appear below in the box ([[Special:Captcha/help|more info]]):",
+	"questycaptcha-linksubmit": "To submit a link for approval, please answer the question that appears below ([[Special:Captcha/help|more info]]):",
 	"log-name-linkfilter": "Link log",
 	"log-description-linkfilter": "Link-related actions taken via the LinkFilter system.",
 	"logentry-linkfilter-approve": "$1 {{GENDER:$1|approved}} the link titled \"$3\" with the URL $5, description \"$6\" and type \"$7\"",

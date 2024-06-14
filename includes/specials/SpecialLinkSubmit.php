@@ -61,8 +61,13 @@ class SpecialLinkSubmit extends SpecialPage {
 		) {
 			$_SESSION['alreadysubmitted'] = true;
 
+			$titleString = $request->getVal( 'lf_title' );
+			$description = $request->getVal( 'lf_desc' );
+			$type = $request->getInt( 'lf_type' );
+			$url = $request->getVal( 'lf_URL' );
+
 			// No link title? Show an error message in that case.
-			if ( !$request->getVal( 'lf_title' ) ) {
+			if ( !$titleString ) {
 				$out->setPageTitle( $this->msg( 'error' )->text() );
 				$out->addHTML( $this->displayAddForm() );
 				return true;
@@ -72,29 +77,74 @@ class SpecialLinkSubmit extends SpecialPage {
 				// would prevent approving such a link, leaving link admins with no other
 				// choice than to reject it
 				try {
-					$title = Title::newFromTextThrow( $request->getVal( 'lf_title' ), NS_LINK );
+					$title = Title::newFromTextThrow( $titleString, NS_LINK );
 				} catch ( Exception $e ) {
 					$out->setPageTitle( $this->msg( 'error' )->text() );
 					$out->addHTML( $this->displayAddForm(
 						// Yes, I'm reusing a core MW msg here. Naughty!
-						$this->msg( 'img-auth-badtitle', $request->getVal( 'lf_title' ) )->escaped()
+						$this->msg( 'img-auth-badtitle', $titleString )->escaped()
 					) );
 					return true;
 				}
 			}
 
 			// The link must have a description, too!
-			if ( !$request->getVal( 'lf_desc' ) ) {
+			if ( !$description ) {
 				$out->setPageTitle( $this->msg( 'error' )->text() );
 				$out->addHTML( $this->displayAddForm() );
 				return true;
 			}
 
 			// ...and it needs a type
-			if ( !$request->getInt( 'lf_type' ) ) {
+			if ( !$type ) {
 				$out->setPageTitle( $this->msg( 'error' )->text() );
 				$out->addHTML( $this->displayAddForm() );
 				return true;
+			}
+
+			// Rate limiting
+			if ( $user->pingLimiter( 'edit' ) ) {
+				$out->setPageTitle( $this->msg( 'error' )->text() );
+				// Intentionally not showing the form here!
+				$out->addWikiMsg( 'actionthrottledtext' );
+				$out->addReturnTo( Title::newMainPage() );
+				return true;
+			}
+
+			// Basic anti-spam check
+			$hasSpam = false;
+			$spammyFields = [];
+			$checkForSpam = [ $titleString, $description, $url ];
+
+			foreach ( $checkForSpam as $fieldValue ) {
+				$hasSpam = Link::validateSpamRegex( $fieldValue );
+				if ( $hasSpam ) {
+					$spammyFields[] = $fieldValue;
+				}
+			}
+
+			if ( $spammyFields !== [] ) {
+				$out->setPageTitle( $this->msg( 'spamprotectiontitle' )->text() );
+				$out->addHTML( $this->displayAddForm( $this->msg( 'spamprotectiontext' )->parse() ) );
+				return true;
+			}
+
+			// CAPTCHA support if the ConfirmEdit extension is available
+			if ( ExtensionRegistry::getInstance()->isLoaded( 'ConfirmEdit' ) ) {
+				$captcha = MediaWiki\Extension\ConfirmEdit\Hooks::getInstance();
+				if (
+					(
+						$captcha->triggersCaptcha( 'edit' ) ||
+						$captcha->triggersCaptcha( 'create' ) ||
+						$captcha->triggersCaptcha( 'addurl' )
+					) &&
+					!$captcha->canSkipCaptcha( $user, MediaWiki\MediaWikiServices::getInstance()->getMainConfig() ) &&
+					!$captcha->passCaptchaFromRequest( $request, $user )
+				) {
+					$out->setPageTitle( $this->msg( 'error' )->text() );
+					$out->addHTML( $this->displayAddForm( $this->msg( 'captcha-edit-fail' )->parse() ) );
+					return true;
+				}
 			}
 
 			// Initialize a new instance of the Link class so that we can use
@@ -102,12 +152,12 @@ class SpecialLinkSubmit extends SpecialPage {
 			$link = new Link();
 
 			// If we have a real URL, only then add the link to the database.
-			if ( $link->isURL( $request->getVal( 'lf_URL' ) ) ) {
+			if ( $link->isURL( $url ) ) {
 				$id = $link->addLink(
-					$request->getVal( 'lf_title' ),
-					$request->getVal( 'lf_desc' ),
-					htmlspecialchars( $request->getVal( 'lf_URL' ), ENT_QUOTES ),
-					$request->getInt( 'lf_type' ),
+					$titleString,
+					$description,
+					htmlspecialchars( $url, ENT_QUOTES ),
+					$type,
 					$user
 				);
 
@@ -118,9 +168,9 @@ class SpecialLinkSubmit extends SpecialPage {
 					$title,
 					[
 						// '4::id' => $id,
-						'5::url' => $request->getVal( 'lf_URL' ),
-						'6::desc' => $request->getVal( 'lf_desc' ),
-						'7::type' => $request->getInt( 'lf_type' )
+						'5::url' => $url,
+						'6::desc' => $description,
+						'7::type' => $type
 					]
 				);
 
@@ -225,8 +275,9 @@ class SpecialLinkSubmit extends SpecialPage {
 			// Preserve value in case if the form was submitted but there were errors
 			$output .= Xml::option( $type, $id, ( $id === $request->getInt( 'lf_type' ) ) );
 		}
-		$output .= '</select>
-				<div class="link-submit-button">
+		$output .= '</select>';
+		$output .= $this->getCAPTCHAForm();
+		$output .= '<div class="link-submit-button">
 					<input tabindex="5" class="site-button" type="submit" id="link-submit-button" value="' . $this->msg( 'linkfilter-submit-button' )->escaped() . '" />
 				</div>' .
 				Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
@@ -241,4 +292,40 @@ class SpecialLinkSubmit extends SpecialPage {
 		return $output;
 	}
 
+	/**
+	 * If the ConfirmEdit extension is installed *and* the user is subject to CAPTCHAs,
+	 * get a CAPTCHA form for them.
+	 *
+	 * @return string HTML
+	 */
+	private function getCAPTCHAForm() {
+		$captchaForm = '';
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'ConfirmEdit' ) ) {
+			$user = $this->getUser();
+			$out = $this->getOutput();
+			$captcha = MediaWiki\Extension\ConfirmEdit\Hooks::getInstance();
+			if (
+				// @todo I hate this conditional, but ConfirmEdit's shouldCheck() -- which,
+				// I guess, we should be using here, has an atrocious interface.
+				// It assumes that we have a WikiPage, a Title and even a Content object.
+				// It didn't work out for the CreateAPage extension (from which this code was
+				// copied and ever so slightly tweaked), it definitely doesn't work for us here.
+				// Thus we partially reimplement shouldCheck() here, sadly...
+				(
+					$captcha->triggersCaptcha( 'edit' ) ||
+					$captcha->triggersCaptcha( 'create' ) ||
+					$captcha->triggersCaptcha( 'addurl' )
+				) &&
+				!$captcha->canSkipCaptcha( $user, MediaWiki\MediaWikiServices::getInstance()->getMainConfig() )
+			) {
+				$formInformation = $captcha->getFormInformation();
+				$formMetainfo = $formInformation;
+				unset( $formMetainfo['html'] );
+				$captcha->addFormInformationToOutput( $out, $formMetainfo );
+				// For grep: fancycaptcha-linksubmit, questycaptcha-linksubmit
+				$captchaForm = '<br /><br />' . $captcha->getMessage( 'linksubmit' ) . $formInformation['html'];
+			}
+		}
+		return $captchaForm;
+	}
 }

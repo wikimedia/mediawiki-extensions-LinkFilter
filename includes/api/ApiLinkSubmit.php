@@ -51,6 +51,53 @@ class ApiLinkSubmit extends ApiBase {
 			$this->dieWithError( [ 'img-auth-badtitle', $linkTitle ], 'badtitle' );
 		}
 
+		// Rate limiting
+		if ( $user->pingLimiter( 'edit' ) ) {
+			$this->dieWithError( 'actionthrottledtext', 'throttled' );
+		}
+
+		// Basic anti-spam check
+		// @todo FIXME: other than the 1st and 3rd var names in $checkForSpam and the way of
+		// erroring out if $spammyFields is non-empty, this is verbatim pasta from SpecialLinkSubmit.php
+		$hasSpam = false;
+		$spammyFields = [];
+		$checkForSpam = [ $linkTitle, $description, $linkURL ];
+
+		foreach ( $checkForSpam as $fieldValue ) {
+			$hasSpam = Link::validateSpamRegex( $fieldValue );
+			if ( $hasSpam ) {
+				$spammyFields[] = $fieldValue;
+			}
+		}
+
+		if ( $spammyFields !== [] ) {
+			$this->dieWithError( 'spamprotectiontext', 'spam' );
+		}
+
+		// CAPTCHA support if the ConfirmEdit extension is available
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'ConfirmEdit' ) ) {
+			$captcha = MediaWiki\Extension\ConfirmEdit\Hooks::getInstance();
+			$request = $this->getRequest();
+			if (
+				(
+					$captcha->triggersCaptcha( 'edit' ) ||
+					$captcha->triggersCaptcha( 'create' ) ||
+					$captcha->triggersCaptcha( 'addurl' )
+				) &&
+				!$captcha->canSkipCaptcha( $user, MediaWiki\MediaWikiServices::getInstance()->getMainConfig() ) &&
+				!$captcha->passCaptchaFromRequest( $request, $user )
+			) {
+				// Get info about the CAPTCHA and return it to the user so that they can try solving it
+				$theActualCaptcha = $captcha->getCaptcha();
+				$index = $captcha->storeCaptcha( $theActualCaptcha );
+				$rv = [
+					'wpCaptchaWord' => $theActualCaptcha['question'],
+					'wpCaptchaId' => $index
+				];
+				return $this->getResult()->addValue( null, $this->getModuleName(), $rv );
+			}
+		}
+
 		// add to DB, or at least try
 		$link = new Link();
 
