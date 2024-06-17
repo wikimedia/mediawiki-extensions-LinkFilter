@@ -64,6 +64,8 @@
 	"linkfilter-edit-summary-link-edited": "URL-адресата на врската е сменета од $1 на $2",
 	"linkfilter-no-results": "Не пронајдов ниедна страница.",
 	"linkfilter-feed-title": "Врски на {{SITENAME}}",
+	"fancycaptcha-linksubmit": "За да поднесете врска на одобрување, внесете ги зборовите прикажани во полето подолу ([[Special:Captcha/help|повеќе инфо]]):",
+	"questycaptcha-linksubmit": "За да поднесете врска на одобрување, одговорете на прашањето прикажано подолу ([[Special:Captcha/help|повеќе инфо]]):",
 	"log-name-linkfilter": "Дневник на врски",
 	"log-description-linkfilter": "Дејства поврзани со врски преземени преку системот LinkFilter.",
 	"logentry-linkfilter-approve": "$1 {{GENDER:$1|ја одобри}} врската насловена како „$3“ со URL-адреса $5, опис „$6“ и вид „$7“",

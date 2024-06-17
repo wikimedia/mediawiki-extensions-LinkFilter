@@ -63,6 +63,8 @@
 	"linkfilter-edit-summary-link-edited": "URL de ligamine cambiate de $1 a $2",
 	"linkfilter-no-results": "Nulle pagina trovate.",
 	"linkfilter-feed-title": "Ligamines de {{SITENAME}}",
+	"fancycaptcha-linksubmit": "Pro submitter un ligamine al approbation, per favor insere le parolas que appare infra in le quadro ([[Special:Captcha/help|plus info]]):",
+	"questycaptcha-linksubmit": "Pro submitter un ligamine al approbation, per favor responde al question que appare infra ([[Special:Captcha/help|plus info]]):",
 	"log-name-linkfilter": "Registro de ligamines",
 	"log-description-linkfilter": "Actiones associate a ligamines, prendite per medio del systema LinkFilter.",
 	"logentry-linkfilter-approve": "$1 {{GENDER:$1|ha approbate}} le ligamine con titulo “$3”, URL $5, description “$6” e typo “$7”",
