@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Умар"
+			"Умар",
+			"Исмаил Садуев"
 		]
 	},
 	"linkapprove": "Магае хьажоргаш",
@@ -19,7 +20,7 @@
 	"linkfilter-submit-no-url": "Ахьа URL йазйан йеза!",
 	"linkfilter-submit-no-title": "Дехар до, дӀайазйе цӀе",
 	"linkfilter-submit-no-type": "Харжа зӀен тайпа.",
-	"linkfilter-edit-title": "Нисйе $1",
+	"linkfilter-edit-title": "$1 нисйан",
 	"linkfilter-approve-links": "Магае хьажоргаш",
 	"linkfilter-submit-another": "ТӀетоха кхин цхьа хьажорг",
 	"linkfilter-login-title": "ЦӀарца доцуш",
