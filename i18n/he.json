@@ -66,6 +66,8 @@
 	"linkfilter-edit-summary-link-edited": "ה־URL של הקישור שוּנה מ־$1 ל־$2",
 	"linkfilter-no-results": "לא נמצאו דפים.",
 	"linkfilter-feed-title": "קישורי {{SITENAME}}",
+	"fancycaptcha-linksubmit": "כדי לשלוח קישור לאישור, נא להזין את המילים שמופיעות בתיבה שלהלן ([[Special:Captcha/help|מידע נוסף]]):",
+	"questycaptcha-linksubmit": "כדי לשלוח קישור לאישור, נא לענות לשאלה שמופיעה בתיבה שלהלן ([[Special:Captcha/help|מידע נוסף]]):",
 	"log-name-linkfilter": "יומן קישורים",
 	"log-description-linkfilter": "פעולות של קישורים שנעשו באמצעות מערכת LinkFilter.",
 	"logentry-linkfilter-approve": "$1 {{GENDER:$1|אישר|אישר}} את הקישור שכותרתו \"$3\" עם הכתובת $5, התיאור \"$6\" והסוג \"$7\"",
