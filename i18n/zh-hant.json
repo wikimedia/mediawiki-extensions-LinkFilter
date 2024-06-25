@@ -14,7 +14,7 @@
 	"linkapprove": "批准連結",
 	"linkshome": "連結首頁",
 	"linksubmit": "送出連結",
-	"linkfilter-desc": "增加新特殊頁面及解析器鈎以提交、批准或拒絕連結",
+	"linkfilter-desc": "增加新特殊頁面及解析器掛勾以提交、核准或拒絕連結",
 	"linkfilter-nothing-to-approve": "目前沒有等待審批的連結。",
 	"linkfilter-no-recently-approved": "沒有連結最近獲批准。",
 	"linkfilter-no-links-at-all": "尚未送出任何連結，或連結管理員尚未轉核已送出的連結。",
