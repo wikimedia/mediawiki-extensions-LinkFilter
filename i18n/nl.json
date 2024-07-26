@@ -40,7 +40,7 @@
 	"linkfilter-approve-title": "Koppelingenbeheer",
 	"linkfilter-submittedby": "Afkomstig van [[User:$1|$1]]",
 	"linkfilter-submitted": "Heeft $1 opgeslagen",
-	"linkfilter-admin-cat-filter": "Alleen koppelingen in afwachting van goedkeuring tonen in de categorie:",
+	"linkfilter-admin-cat-filter": "Alleen koppelingen in afwachting van goedkeuring weergeven in de categorie:",
 	"linkfilter-admin-accept": "Aanvaarden",
 	"linkfilter-admin-reject": "Afwijzen",
 	"linkfilter-admin-reject-success": "De koppeling is afgewezen",
