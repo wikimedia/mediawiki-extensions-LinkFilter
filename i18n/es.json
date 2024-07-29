@@ -4,6 +4,7 @@
 			"Armando-Martin",
 			"Dgstranz",
 			"Fitoschido",
+			"Jack Phoenix",
 			"Macofe",
 			"Tiberius1701"
 		]
@@ -65,6 +66,7 @@
 	"linkfilter-edit-summary": "nuevo enlace",
 	"linkfilter-no-results": "No se encontró ninguna página.",
 	"linkfilter-feed-title": "Enlaces de {{SITENAME}}",
+	"log-name-linkfilter": "Registro de enlaces",
 	"group-linkadmin": "Administradores de enlace",
 	"group-linkadmin-member": "{{GENDER:$1|administrador|administradora}} de enlacess",
 	"grouppage-linkadmin": "{{ns:project}}:Administradores de enlaces",
