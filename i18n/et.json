@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Avjoska"
+			"Avjoska",
+			"Jack Phoenix"
 		]
 	},
+	"linkfilter-all": "Kõik",
 	"linkfilter-login-title": "Ei ole sisse logitud",
 	"linkfilter-title": "Pealkiri",
 	"linkfilter-description": "Kirjeldus",
