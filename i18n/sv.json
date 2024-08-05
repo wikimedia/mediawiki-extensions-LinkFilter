@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Jopparn",
 			"Lokal Profil",
 			"WikiPhoenix"
@@ -62,6 +63,9 @@
 	"linkfilter-edit-summary": "ny länk",
 	"linkfilter-no-results": "Inga sidor hittades.",
 	"linkfilter-feed-title": "Länkar på {{SITENAME}}",
+	"fancycaptcha-linksubmit": "För att skicka en länk till godkännande måste du först skriva orden som visas nedan i rutan\n([[Special:Captcha/help|mer information]]):",
+	"questycaptcha-linksubmit": "För att skicka en länk till godkännande, vänligen svara på frågan som finns nedan ([[Special:Captcha/help|mer information]]):",
+	"log-name-linkfilter": "Länklogg",
 	"group-linkadmin": "Länkadministratörer",
 	"group-linkadmin-member": "{{GENDER:$1|länkadministratör}}",
 	"grouppage-linkadmin": "{{ns:project}}:Länkadministratörer",
