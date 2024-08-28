@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kghbln",
-			"Metalhead64"
+			"Metalhead64",
+			"TomatoCake"
 		]
 	},
 	"linkapprove": "Akzeptieren von Links",
@@ -63,11 +64,18 @@
 	"linkfilter-edit-summary": "neuer Link",
 	"linkfilter-no-results": "Es wurden keine Seiten gefunden.",
 	"linkfilter-feed-title": "Links bei {{SITENAME}}",
+	"log-name-linkfilter": "Link-Logbuch",
+	"log-action-filter-linkfilter": "Nach Aktion filtern:",
+	"log-action-filter-linkfilter-approve": "Linkfreigaben",
+	"log-action-filter-linkfilter-edit": "Linkbearbeitungen",
+	"log-action-filter-linkfilter-reject": "Link-Ablehnungen",
+	"log-action-filter-linkfilter-submit": "Link-Einreichungen",
 	"group-linkadmin": "Linkadministratoren",
 	"group-linkadmin-member": "{{GENDER:$1|Linkadministrator|Linkadministratorin}}",
 	"grouppage-linkadmin": "{{ns:project}}:Linkadminstrator",
 	"action-linkadmin": "von Benutzern eingereichte Links zu verwalten",
 	"right-linkadmin": "Von Benutzern eingereichte Links verwalten",
+	"apihelp-linkedit-summary": "Benutzerdefinierte Eigenschaften eines Links bearbeiten",
 	"apihelp-linkedit-param-url": "Der eigentliche Link, inklusive Protokoll",
 	"apihelp-linksubmit-param-description": "Kurze Beschreibung, worum es bei dem Link geht",
 	"apihelp-linksubmit-param-type": "Numerischer Linktyp, siehe <var>$wgLinkFilterTypes</var> für die menschenlesbaren Linktypnamen",
