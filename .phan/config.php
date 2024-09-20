@@ -14,6 +14,8 @@ $cfg['directory_list'] = array_merge(
 		'../../extensions/RandomGameUnit',
 		'../../extensions/Renameuser',
 		'../../extensions/SocialProfile',
+		'../../extensions/SpamRegex',
+		'../../extensions/ConfirmEdit',
 	]
 );
 
@@ -26,6 +28,8 @@ $cfg['exclude_analysis_directory_list'] = array_merge(
 		'../../extensions/RandomGameUnit',
 		'../../extensions/Renameuser',
 		'../../extensions/SocialProfile',
+		'../../extensions/SpamRegex',
+		'../../extensions/ConfirmEdit',
 	]
 );
 
