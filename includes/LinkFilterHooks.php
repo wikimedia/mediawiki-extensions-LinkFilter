@@ -290,7 +290,7 @@ class LinkFilterHooks {
 
 		// If the user_stats table exists (=SocialProfile is installed), check if
 		// it has the columns we need and if not, create them.
-		if ( $db->tableExists( 'user_stats' ) ) {
+		if ( $db->tableExists( 'user_stats', __METHOD__ ) ) {
 			$ext = $isPostgreSQL ? '.postgres.sql' : '.sql';
 			if ( !$db->fieldExists( 'user_stats', 'stats_links_submitted', __METHOD__ ) ) {
 				$updater->addExtensionField( 'user_stats', 'stats_links_submitted', $sqlPath . '/patch-add_stats_links_submitted_column' . $ext );
@@ -301,7 +301,7 @@ class LinkFilterHooks {
 		}
 
 		// Actor support (see T227345)
-		if ( $db->tableExists( 'link' ) && !$db->fieldExists( 'link', 'link_submitter_actor', __METHOD__ ) ) {
+		if ( $db->tableExists( 'link', __METHOD__ ) && !$db->fieldExists( 'link', 'link_submitter_actor', __METHOD__ ) ) {
 			$updater->addExtensionField( 'link', 'link_submitter_actor', $sqlPath . '/patch-add_link_submitter_actor_column.sql' );
 		}
 
