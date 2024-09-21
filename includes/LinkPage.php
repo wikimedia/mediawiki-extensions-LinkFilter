@@ -158,7 +158,7 @@ class LinkPage extends Article {
 		$data = $cache->get( $key );
 
 		if ( !$data ) {
-			$dbr = wfGetDB( DB_PRIMARY );
+			$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 			$createDate = $dbr->selectField(
 				'revision',
 				'rev_timestamp',
@@ -368,7 +368,7 @@ class LinkPage extends Article {
 		} else {
 			wfDebugLog( 'LinkFilter', "Got comments of the day from DB\n" );
 
-			$dbr = wfGetDB( DB_PRIMARY );
+			$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 			$res = $dbr->select(
 				[ 'Comments', 'page' ],
 				[

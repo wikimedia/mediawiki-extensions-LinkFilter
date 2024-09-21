@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class LinkList {
 
 	/**
@@ -11,7 +13,7 @@ class LinkList {
 	 * @return array
 	 */
 	public function getLinkList( $status, $type, $limit = 0, $page = 0, $order = 'link_submit_date' ) {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		$params = [];
 		$params['ORDER BY'] = "$order DESC";
@@ -30,7 +32,7 @@ class LinkList {
 			$where['link_status'] = $status;
 		}
 
-		$dbr = wfGetDB( DB_PRIMARY );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		$res = $dbr->select(
 			[ 'link' ],
@@ -77,8 +79,6 @@ class LinkList {
 	 * @return int Number of links matching the given criteria
 	 */
 	public function getLinkListCount( $status, $type ) {
-		$dbr = wfGetDB( DB_REPLICA );
-
 		$where = [];
 		if ( $type > 0 ) {
 			$where['link_type'] = $type;
@@ -87,7 +87,7 @@ class LinkList {
 			$where['link_status'] = $status;
 		}
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'link',
 			[ 'COUNT(*) AS count' ],

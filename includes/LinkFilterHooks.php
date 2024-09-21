@@ -57,7 +57,7 @@ class LinkFilterHooks {
 		MediaWiki\Revision\RevisionRecord $revision
 	) {
 		if ( $old->getNamespace() == NS_LINK ) {
-			$dbw = wfGetDB( DB_PRIMARY );
+			$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 			$dbw->update(
 				'link',
 				[ 'link_name' => $new->getText() ],
@@ -78,7 +78,7 @@ class LinkFilterHooks {
 	public static function deleteLinkFilter( &$article, &$user, $reason ) {
 		if ( $article->getTitle()->getNamespace() == NS_LINK ) {
 			// Delete link record
-			$dbw = wfGetDB( DB_PRIMARY );
+			$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 			$dbw->update(
 				'link',
 				[ 'link_status' => LinkStatus::REJECTED ],
@@ -243,7 +243,7 @@ class LinkFilterHooks {
 	 */
 	public static function onCommentAdd( $commentClass, $commentID, $pageID ) {
 		if ( $commentID && $pageID ) {
-			$dbw = wfGetDB( DB_PRIMARY );
+			$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 			$dbw->update(
 				'link',
 				[ 'link_comment_count = link_comment_count+1' ],
@@ -262,7 +262,7 @@ class LinkFilterHooks {
 	 */
 	public static function onCommentDelete( $commentClass, $commentID, $pageID ) {
 		if ( $commentID && $pageID ) {
-			$dbw = wfGetDB( DB_PRIMARY );
+			$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 			$dbw->update(
 				'link',
 				[ 'link_comment_count = link_comment_count-1' ],

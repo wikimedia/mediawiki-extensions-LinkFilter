@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * A restricted special page for approving and rejecting user-submitted links.
  *
@@ -157,7 +160,7 @@ class SpecialLinkApprove extends SpecialPage {
 			$status = ( $request->getVal( 'action' ) === 'accept' ?
 					LinkStatus::APPROVED : LinkStatus::REJECTED );
 
-			$dbw = wfGetDB( DB_PRIMARY );
+			$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 			$dbw->update(
 				'link',
 				// 1 = accept; 2 = reject

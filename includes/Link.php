@@ -98,7 +98,7 @@ class Link {
 	 * @return int ID (link_id) of the newly inserted database entry
 	 */
 	public function addLink( $title, $desc, $url, $type, User $user ) {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		AtEase::suppressWarnings();
 		$date = date( 'Y-m-d H:i:s' );
@@ -211,7 +211,7 @@ class Link {
 	 * @return int Amount of impacted rows
 	 */
 	public function editLink( $id, $fields ) {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		$dbw->update(
 			'link',
 			$fields,
@@ -281,7 +281,7 @@ class Link {
 		$newPageID = $page->getID();
 
 		// Tie link record to wiki page
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		AtEase::suppressWarnings();
 		$date = date( 'Y-m-d H:i:s' );
@@ -318,7 +318,7 @@ class Link {
 			return [];
 		}
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		$row = $dbr->selectRow(
 			'link',
@@ -390,7 +390,7 @@ class Link {
 			return [];
 		}
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		$row = $dbr->selectRow(
 			'link',

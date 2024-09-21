@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\AtEase\AtEase;
 
 /**
@@ -51,7 +52,7 @@ class SpecialLinksHome extends SpecialPage {
 			return '';
 		}
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		// This query is a lot simpler than the ugly one used by BlogPage et
 		// al. which uses three tables and has that nasty subquery
