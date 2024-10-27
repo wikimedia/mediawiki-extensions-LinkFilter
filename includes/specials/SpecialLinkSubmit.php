@@ -214,7 +214,7 @@ class SpecialLinkSubmit extends SpecialPage {
 
 		if ( !$title ) {
 			$titleFromRequest = $request->getVal( 'lf_title' );
-			if ( isset( $titleFromRequest ) ) {
+			if ( $titleFromRequest !== null ) {
 				$title = $titleFromRequest;
 			}
 		}

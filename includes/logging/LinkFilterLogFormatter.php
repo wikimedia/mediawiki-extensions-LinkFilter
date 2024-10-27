@@ -18,7 +18,7 @@ class LinkFilterLogFormatter extends WikitextLogFormatter {
 	 * @return array
 	 */
 	protected function getMessageParameters() {
-		if ( isset( $this->parsedParameters ) ) {
+		if ( $this->parsedParameters !== null ) {
 			return $this->parsedParameters;
 		}
 
