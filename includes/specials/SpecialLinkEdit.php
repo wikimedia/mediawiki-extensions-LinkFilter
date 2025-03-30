@@ -105,17 +105,11 @@ class SpecialLinkEdit extends UnlistedSpecialPage {
 					$newURL
 				)->inContentLanguage()->text();
 
-				if ( method_exists( $page, 'doUserEditContent' ) ) {
-					// MW 1.36+
-					$page->doUserEditContent(
-						$pageContent,
-						$user,
-						$summary
-					);
-				} else {
-					// @phan-suppress-next-line PhanUndeclaredMethod
-					$page->doEditContent( $pageContent, $summary );
-				}
+				$page->doUserEditContent(
+					$pageContent,
+					$user,
+					$summary
+				);
 			}
 
 			$link->logAction(

@@ -101,13 +101,8 @@ class LinkFilterHooks {
 	public static function linkFromTitle( &$title, &$article, $context ) {
 		if ( $title->getNamespace() == NS_LINK ) {
 			$out = $context->getOutput();
-			if ( method_exists( $out, 'disableClientCache' ) ) {
-				// MW 1.38+
-				$out->disableClientCache();
-			} else {
-				// @phan-suppress-next-line PhanParamTooMany
-				$out->enableClientCache( false );
-			}
+
+			$out->disableClientCache();
 
 			if ( $context->getRequest()->getVal( 'action' ) == 'edit' ) {
 				if ( $title->getArticleID() == 0 ) {
@@ -188,13 +183,7 @@ class LinkFilterHooks {
 					'</a> / <a href="' . htmlspecialchars( $link_all->getFullURL(), ENT_QUOTES ) . '">' .
 						wfMessage( 'linkfilter-all' )->escaped() . '</a>';
 
-		if ( method_exists( $parser, 'getUserIdentity' ) ) {
-			// MW 1.36+
-			$user = MediaWikiServices::getInstance()->getUserFactory()->newFromUserIdentity( $parser->getUserIdentity() );
-		} else {
-			// @phan-suppress-next-line PhanUndeclaredMethod
-			$user = $parser->getUser();
-		}
+		$user = MediaWikiServices::getInstance()->getUserFactory()->newFromUserIdentity( $parser->getUserIdentity() );
 
 		// Show a link to the link administration panel for privileged users
 		if ( Link::canAdmin( $user ) ) {

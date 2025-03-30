@@ -235,13 +235,7 @@ class Link {
 		}
 
 		$linkTitle = Title::makeTitleSafe( NS_LINK, $link['title'] );
-		if ( method_exists( MediaWikiServices::class, 'getWikiPageFactory' ) ) {
-			// MW 1.36+
-			$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $linkTitle );
-		} else {
-			// @phan-suppress-next-line PhanUndeclaredStaticMethod
-			$page = WikiPage::factory( $linkTitle );
-		}
+		$page = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $linkTitle );
 
 		return $page;
 	}
@@ -266,17 +260,11 @@ class Link {
 
 		$summary = wfMessage( 'linkfilter-edit-summary' )->inContentLanguage()->text();
 
-		if ( method_exists( $page, 'doUserEditContent' ) ) {
-			// MW 1.36+
-			$page->doUserEditContent(
-				$pageContent,
-				RequestContext::getMain()->getUser(),
-				$summary
-			);
-		} else {
-			// @phan-suppress-next-line PhanUndeclaredMethod
-			$page->doEditContent( $pageContent, $summary );
-		}
+		$page->doUserEditContent(
+			$pageContent,
+			RequestContext::getMain()->getUser(),
+			$summary
+		);
 
 		$newPageID = $page->getID();
 
