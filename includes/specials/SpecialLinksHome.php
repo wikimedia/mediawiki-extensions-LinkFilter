@@ -1,6 +1,8 @@
 <?php
 
+use MediaWiki\Feed\FeedItem;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use Wikimedia\AtEase\AtEase;
 
 /**

@@ -5,6 +5,11 @@
  * @file
  * @ingroup Extensions
  */
+
+use MediaWiki\Html\Html;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
+
 class SpecialLinkSubmit extends SpecialPage {
 
 	/**
@@ -138,7 +143,7 @@ class SpecialLinkSubmit extends SpecialPage {
 						$captcha->triggersCaptcha( 'create' ) ||
 						$captcha->triggersCaptcha( 'addurl' )
 					) &&
-					!$captcha->canSkipCaptcha( $user, MediaWiki\MediaWikiServices::getInstance()->getMainConfig() ) &&
+					!$captcha->canSkipCaptcha( $user, MediaWikiServices::getInstance()->getMainConfig() ) &&
 					!$captcha->passCaptchaFromRequest( $request, $user )
 				) {
 					$out->setPageTitle( $this->msg( 'error' )->text() );
@@ -316,7 +321,7 @@ class SpecialLinkSubmit extends SpecialPage {
 					$captcha->triggersCaptcha( 'create' ) ||
 					$captcha->triggersCaptcha( 'addurl' )
 				) &&
-				!$captcha->canSkipCaptcha( $user, MediaWiki\MediaWikiServices::getInstance()->getMainConfig() )
+				!$captcha->canSkipCaptcha( $user, MediaWikiServices::getInstance()->getMainConfig() )
 			) {
 				$formInformation = $captcha->getFormInformation();
 				$formMetainfo = $formInformation;

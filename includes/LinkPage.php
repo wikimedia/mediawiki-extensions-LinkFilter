@@ -6,11 +6,12 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 class LinkPage extends Article {
 
 	/**
-	 * @var Title
+	 * @var MediaWiki\Title\Title
 	 */
 	public $title = null;
 
@@ -20,7 +21,7 @@ class LinkPage extends Article {
 	public $link;
 
 	/**
-	 * @param Title $title
+	 * @param MediaWiki\Title\Title $title
 	 */
 	function __construct( Title $title ) {
 		parent::__construct( $title );

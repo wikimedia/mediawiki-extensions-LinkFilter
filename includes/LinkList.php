@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 class LinkList {
 
@@ -13,8 +14,6 @@ class LinkList {
 	 * @return array
 	 */
 	public function getLinkList( $status, $type, $limit = 0, $page = 0, $order = 'link_submit_date' ) {
-		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
-
 		$params = [];
 		$params['ORDER BY'] = "$order DESC";
 		if ( $limit ) {

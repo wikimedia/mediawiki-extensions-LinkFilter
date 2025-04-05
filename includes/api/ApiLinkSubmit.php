@@ -6,6 +6,7 @@
  * @date 23 May 2024
  */
 
+use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\StringDef;
 

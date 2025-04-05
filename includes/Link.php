@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use Wikimedia\AtEase\AtEase;
 
 /**
@@ -136,7 +137,7 @@ class Link {
 	 *
 	 * @param string $action Log type subaction ('approve', 'reject', 'submit' or 'edit')
 	 * @param User $user The user who did this action
-	 * @param Title $target The impacted Title object (SpecialPage or Link: page)
+	 * @param MediaWiki\Title\Title $target The impacted Title object (SpecialPage or Link: page)
 	 * @param array $params Log parameters
 	 * @param string $comment Log comment, if any
 	 */

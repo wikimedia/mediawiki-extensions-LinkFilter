@@ -5,7 +5,7 @@
  * @file
  * @ingroup Extensions
  */
-class LinkFeed extends RSSFeed {
+class LinkFeed extends MediaWiki\Feed\RSSFeed {
 
 	/**
 	 * Format a date given a timestamp. If a timestamp is not given, nothing is returned
@@ -51,7 +51,7 @@ class LinkFeed extends RSSFeed {
 	/**
 	 * Output an individual feed item.
 	 *
-	 * @param FeedItem $item Item to be output
+	 * @param MediaWiki\Feed\FeedItem $item Item to be output
 	 */
 	function outItem( $item ) {
 		$url = $item->getUrl();

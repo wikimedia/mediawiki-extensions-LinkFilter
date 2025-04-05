@@ -93,7 +93,7 @@ class LinkFilterHooks {
 	 * Calls LinkPage instead of standard article for pages in the NS_LINK
 	 * namespace.
 	 *
-	 * @param Title &$title Title object associated with the current page
+	 * @param MediaWiki\Title\Title &$title Title object associated with the current page
 	 * @param Article|WikiPage &$article Article object (or child class) associated with
 	 *                         the current page
 	 * @param RequestContext $context
