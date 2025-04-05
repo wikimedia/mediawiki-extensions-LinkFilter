@@ -153,12 +153,13 @@ class LinkPage extends Article {
 	 * @return int Page creation date as a UNIX timestamp
 	 */
 	function getCreateDate( $pageId ) {
-		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$services = MediaWikiServices::getInstance();
+		$cache = $services->getMainWANObjectCache();
 		$key = $cache->makeKey( 'page', 'create_date', $pageId );
 		$data = $cache->get( $key );
 
 		if ( !$data ) {
-			$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+			$dbr = $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 			$createDate = $dbr->selectField(
 				'revision',
 				'rev_timestamp',

@@ -78,7 +78,8 @@ class Link {
 	 * @return bool True if it's an URL, otherwise false
 	 */
 	public static function isURL( $code ) {
-		return preg_match( '/^(?:' . wfUrlProtocols() . ').*$/i', $code );
+		$urlProtocols = MediaWikiServices::getInstance()->getUrlUtils()->validProtocols();
+		return preg_match( '/^(?:' . $urlProtocols . ').*$/i', $code );
 	}
 
 	/**
