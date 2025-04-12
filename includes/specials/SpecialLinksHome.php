@@ -150,6 +150,7 @@ class SpecialLinksHome extends SpecialPage {
 	 * @return bool|void
 	 */
 	public function execute( $par ) {
+		$lang = $this->getLanguage();
 		$out = $this->getOutput();
 		$request = $this->getRequest();
 
@@ -216,16 +217,16 @@ class SpecialLinksHome extends SpecialPage {
 			AtEase::suppressWarnings();
 			// @note approved_timestamp should be a TS in the TS_UNIX format but without
 			// the cast phan thinks it's *totally* not an integer...
-			$date = date( 'l, F j, Y', (int)$link['approved_timestamp'] );
+			$rawTimestamp = (int)$link['approved_timestamp'];
+			$date = date( 'l, F j, Y', $rawTimestamp );
 			// @phan-suppress-next-line PhanUndeclaredVariable Valid complaint, but I'm not sure how to fix it...
 			if ( $date != $last_date ) {
 				$border_fix2 = ' border-top-fix';
 				$output .= '<div class="links-home-date">';
-				$output .= htmlspecialchars( $date, ENT_QUOTES );
+				$weekdayName = $lang->sprintfDate( 'l', wfTimestamp( TS_MW, $rawTimestamp ) );
+				$date = $lang->date( (string)$rawTimestamp );
+				$output .= $this->msg( 'linkfilter-home-date', $date, $weekdayName )->escaped();
 				$output .= '</div>';
-				// $unix = wfTimestamp( TS_MW, $link['approved_timestamp'] );
-				// $weekday = $this->getLanguage()->getWeekdayName( gmdate( 'w', $unix ) + 1 );
-				// $output .= '<div class="links-home-date">' . $weekday . '</div>';
 			}
 			// okay, so suppressing E_NOTICEs is kinda bad practise, but... -Jack, January 21, 2010
 			AtEase::restoreWarnings();

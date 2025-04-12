@@ -52,6 +52,7 @@
 	"linkfilter-comments": "{{PLURAL:$1|$1 comment|$1 comments}}",
 	"linkfilter-home-title": "$1 links",
 	"linkfilter-home-title-all": "All links",
+	"linkfilter-home-date": "$2, $1",
 	"linkfilter-next": "next",
 	"linkfilter-previous": "previous",
 	"linkfilter-description-max": "Maximum characters",
