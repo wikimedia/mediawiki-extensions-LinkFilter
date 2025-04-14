@@ -4,6 +4,7 @@
 			"Darth Kule",
 			"Divadsn",
 			"Liuxinyu970226",
+			"Raymond",
 			"Shirayuki",
 			"Umherirrender"
 		]
@@ -54,7 +55,7 @@
 	"linkfilter-comments": "Used as link text. Parameters:\n* $1 - number of comments",
 	"linkfilter-home-title": "This is the page title of [[Special:LinksHome]] when the user is viewing links of a specific type (as opposed to viewing all the links).\n\nParameters:\n* $1 - the link type\nSee also:\n* {{msg-mw|Linkfilter-home-title-all}}\n{{Identical|Link}}",
 	"linkfilter-home-title-all": "This is the page title of [[Special:LinksHome]] when the user is viewing all the links (as opposed to viewing links of a specific type).\n\nSee also:\n* {{msg-mw|Linkfilter-home-title}}",
-	"linkfilter-home-date": "Used on [[Special:LinksHome]], the links' home page, as a header title.\n'''Only change this if you must!'''\nParameters:\n* $1 is a (properly internationalized) date, e.g. \"1 June 2024\"\n* $2 is the name of said weekday, e.g. \"Saturday\"",
+	"linkfilter-home-date": "{{optional}}\nUsed on [[Special:LinksHome]], the links' home page, as a header title.\n'''Only change this if you must!'''\nParameters:\n* $1 is a (properly internationalized) date, e.g. \"1 June 2024\"\n* $2 is the name of said weekday, e.g. \"Saturday\"",
 	"linkfilter-next": "Pagination link",
 	"linkfilter-previous": "Pagination link\n{{Identical|Previous}}",
 	"linkfilter-description-max": "Shown on [[Special:LinkEdit]] and [[Special:LinkSubmit]].\n\nFollowed by \" - \" and {{msg-mw|Linkfilter-description-left}}.",
