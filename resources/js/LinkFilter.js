@@ -3,7 +3,7 @@
  *
  * @file
  */
-var LinkFilter = {
+const LinkFilter = {
 	/**
 	 * Perform an administrative action (approval or rejection) on a submitted
 	 * link.
@@ -19,8 +19,8 @@ var LinkFilter = {
 			id: link_id,
 			status: action,
 			format: 'json'
-		} ).done( function ( data ) {
-			var msg;
+		} ).done( ( data ) => {
+			let msg;
 			switch ( action ) {
 				case 1:
 					msg = mw.msg( 'linkfilter-admin-accept-success' );
@@ -84,18 +84,18 @@ var LinkFilter = {
 	}
 };
 
-$( function () {
+$( () => {
 	// "Accept" links on Special:LinkApprove
 	$( '.action-accept' ).on( 'click', function ( e ) {
 		e.preventDefault();
-		var that = $( this );
+		const that = $( this );
 		LinkFilter.linkAction( 1, that.data( 'link-id' ) );
 	} );
 
 	// "Reject" links on Special:LinkApprove
 	$( '.action-reject' ).on( 'click', function ( e ) {
 		e.preventDefault();
-		var that = $( this );
+		const that = $( this );
 		LinkFilter.linkAction( 2, that.data( 'link-id' ) );
 	} );
 
@@ -105,14 +105,14 @@ $( function () {
 	} );
 
 	// Textarea on Special:LinkEdit/Special:LinkSubmit
-	$( 'textarea.lr-input' ).on( 'keyup', function () {
+	$( 'textarea.lr-input' ).on( 'keyup', () => {
 		LinkFilter.limitText( document.link.lf_desc, 300 );
-	} ).on( 'keydown', function () {
+	} ).on( 'keydown', () => {
 		LinkFilter.limitText( document.link.lf_desc, 300 );
 	} );
 
 	// Submit button on Special:LinkEdit/Special:LinkSubmit
-	$( '#link-submit-button' ).on( 'click', function ( e ) {
+	$( '#link-submit-button' ).on( 'click', ( e ) => {
 		e.preventDefault();
 		LinkFilter.submitLink();
 	} );
