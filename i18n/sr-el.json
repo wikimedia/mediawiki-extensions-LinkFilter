@@ -30,5 +30,6 @@
 	"linkfilter-new-links-title": "Nove veze",
 	"linkfilter-time-seconds": "{{PLURAL:$1|1 sekunda|$1 sekunda|$1 sekundi}}",
 	"linkfilter-no-results": "Nisu pronađene stranice.",
+	"log-action-filter-linkfilter": "Filtriraj po radnji:",
 	"group-linkadmin": "Administratori veza"
 }
