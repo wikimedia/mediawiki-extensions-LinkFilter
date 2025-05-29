@@ -323,7 +323,7 @@ class SpecialLinkSubmit extends SpecialPage {
 				) &&
 				!$captcha->canSkipCaptcha( $user, MediaWikiServices::getInstance()->getMainConfig() )
 			) {
-				$formInformation = $captcha->getFormInformation();
+				$formInformation = $captcha->getFormInformation( 1, $out );
 				$formMetainfo = $formInformation;
 				unset( $formMetainfo['html'] );
 				$captcha->addFormInformationToOutput( $out, $formMetainfo );
