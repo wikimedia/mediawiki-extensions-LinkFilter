@@ -3,7 +3,8 @@
 		"authors": [
 			"Meno25",
 			"Sonic N800",
-			"ديفيد"
+			"ديفيد",
+			"Mohammed Qays"
 		]
 	},
 	"linkapprove": "الموافقة على الروابط",
@@ -49,7 +50,7 @@
 	"linkfilter-about-submitter": "حول المقدم",
 	"linkfilter-anonymous": "معجب مجهول",
 	"linkfilter-comments-of-day": "أعلى التعليقات",
-	"linkfilter-comments": "{{PLURAL:$1|$1 تعليق|$1 تعليقات}}",
+	"linkfilter-comments": "{{PLURAL:$1|$1 تعليق|$1 تعليقان|$1 تعليقات|$1 تعليقًا|$1 تعليق}}",
 	"linkfilter-home-title": "وصلات $1",
 	"linkfilter-home-title-all": "كل الروابط",
 	"linkfilter-next": "التالي",
