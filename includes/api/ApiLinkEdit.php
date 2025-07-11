@@ -52,7 +52,7 @@ class ApiLinkEdit extends ApiBase {
 		// and if not, bail out immediately.
 		try {
 			$title = Title::newFromTextThrow( $linkTitle, NS_LINK );
-		} catch ( Exception $e ) {
+		} catch ( Exception ) {
 			// Reusing the same error message from MW core as SpecialLinkSubmit.php does
 			$this->dieWithError( [ 'img-auth-badtitle', $linkTitle ], 'badtitle' );
 		}

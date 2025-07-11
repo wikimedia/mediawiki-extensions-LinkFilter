@@ -83,7 +83,7 @@ class SpecialLinkSubmit extends SpecialPage {
 				// choice than to reject it
 				try {
 					$title = Title::newFromTextThrow( $titleString, NS_LINK );
-				} catch ( Exception $e ) {
+				} catch ( Exception ) {
 					$out->setPageTitle( $this->msg( 'error' )->text() );
 					$out->addHTML( $this->displayAddForm(
 						// Yes, I'm reusing a core MW msg here. Naughty!
