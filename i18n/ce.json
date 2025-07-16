@@ -62,6 +62,7 @@
 	"linkfilter-edit-summary": "Керла хьажорг",
 	"linkfilter-no-results": "АгӀонаш цакарий",
 	"linkfilter-feed-title": "Хьажоргаш {{SITENAME}}",
+	"log-action-filter-linkfilter": "Ардамца фильтр:",
 	"group-linkadmin": "Хьажорагийн администраторш",
 	"group-linkadmin-member": "{{GENDER:$1|хьажоргийн администратор}}",
 	"grouppage-linkadmin": "{{ns:project}}:Хьажорагийн администраторш",
