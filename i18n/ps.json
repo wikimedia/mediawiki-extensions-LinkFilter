@@ -4,7 +4,8 @@
 			"Af420",
 			"Ahmed-Najib-Biabani-Ibrahimkhel",
 			"Amjad Khan",
-			"Baloch Khan"
+			"Baloch Khan",
+			"شاه زمان پټان"
 		]
 	},
 	"linkfilter-ago": "$1  مخکې لاندې <i>$2</i>",
@@ -12,7 +13,7 @@
 	"linkfilter-submit": "سپارل",
 	"linkfilter-edit-title": "$1 سمون",
 	"linkfilter-title": "سرليک",
-	"linkfilter-description": "څرگندونه",
+	"linkfilter-description": "څرگنداوی",
 	"linkfilter-submittedby": "'''سپارنه د''': [[User:$1|$1]] لخوا",
 	"linkfilter-admin-accept": "منل",
 	"linkfilter-admin-reject": "ردول",
