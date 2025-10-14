@@ -21,6 +21,7 @@ class SpecialLinkEdit extends UnlistedSpecialPage {
 	public function execute( $par ) {
 		$out = $this->getOutput();
 		$request = $this->getRequest();
+		$session = $request->getSession();
 		$user = $this->getUser();
 
 		// Check permissions
@@ -43,10 +44,10 @@ class SpecialLinkEdit extends UnlistedSpecialPage {
 
 		if (
 			$request->wasPosted() &&
-			$_SESSION['alreadysubmitted'] == false &&
+			$session->get( 'alreadysubmitted' ) == false &&
 			$user->matchEditToken( $request->getVal( 'wpEditToken' ) )
 		) {
-			$_SESSION['alreadysubmitted'] = true;
+			$session->set( 'alreadysubmitted', true );
 
 			$id = $request->getInt( 'id' );
 			$newURL = $request->getText( 'lf_URL' );
@@ -160,7 +161,7 @@ class SpecialLinkEdit extends UnlistedSpecialPage {
 
 		$out->setPageTitle( $this->msg( 'linkfilter-edit-title', $link['title'] )->text() );
 
-		$_SESSION['alreadysubmitted'] = false;
+		$request->getSession()->set( 'alreadysubmitted', false );
 
 		$output = '<div class="lr-left">
 

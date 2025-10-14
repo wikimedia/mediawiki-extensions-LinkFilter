@@ -37,6 +37,7 @@ class SpecialLinkSubmit extends SpecialPage {
 	public function execute( $par ) {
 		$out = $this->getOutput();
 		$request = $this->getRequest();
+		$session = $request->getSession();
 		$user = $this->getUser();
 
 		// Anonymous users need to log in first
@@ -61,10 +62,10 @@ class SpecialLinkSubmit extends SpecialPage {
 		// processing it
 		if (
 			$request->wasPosted() &&
-			$_SESSION['alreadysubmitted'] == false &&
+			$session->get( 'alreadysubmitted' ) == false &&
 			$user->matchEditToken( $request->getVal( 'wpEditToken' ) )
 		) {
-			$_SESSION['alreadysubmitted'] = true;
+			$session->set( 'alreadysubmitted', true );
 
 			$titleString = $request->getVal( 'lf_title' );
 			$description = $request->getVal( 'lf_desc' );
@@ -225,7 +226,7 @@ class SpecialLinkSubmit extends SpecialPage {
 			}
 		}
 
-		$_SESSION['alreadysubmitted'] = false;
+		$request->getSession()->set( 'alreadysubmitted', false );
 
 		$descFromRequest = $request->getVal( 'lf_desc' );
 		$lf_desc = $descFromRequest ?: '';
