@@ -143,6 +143,7 @@ class SpecialLinkSubmit extends SpecialPage {
 						$captcha->triggersCaptcha( 'create' ) ||
 						$captcha->triggersCaptcha( 'addurl' )
 					) &&
+					// @phan-suppress-next-line PhanParamTooMany -- Pass config for compat with earlier versions
 					!$captcha->canSkipCaptcha( $user, MediaWikiServices::getInstance()->getMainConfig() ) &&
 					!$captcha->passCaptchaFromRequest( $request, $user )
 				) {
@@ -321,6 +322,7 @@ class SpecialLinkSubmit extends SpecialPage {
 					$captcha->triggersCaptcha( 'create' ) ||
 					$captcha->triggersCaptcha( 'addurl' )
 				) &&
+				// @phan-suppress-next-line PhanParamTooMany -- Pass config for compat with earlier versions
 				!$captcha->canSkipCaptcha( $user, MediaWikiServices::getInstance()->getMainConfig() )
 			) {
 				$formInformation = $captcha->getFormInformation( 1, $out );

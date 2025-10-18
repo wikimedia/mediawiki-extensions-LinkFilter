@@ -114,6 +114,7 @@ class ApiLinkEdit extends ApiBase {
 					$captcha->triggersCaptcha( 'create' ) ||
 					$captcha->triggersCaptcha( 'addurl' )
 				) &&
+				// @phan-suppress-next-line PhanParamTooMany -- Pass config for compat with earlier versions
 				!$captcha->canSkipCaptcha( $user, MediaWiki\MediaWikiServices::getInstance()->getMainConfig() ) &&
 				!$captcha->passCaptchaFromRequest( $request, $user )
 			) {
