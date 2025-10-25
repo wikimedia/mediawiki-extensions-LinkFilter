@@ -5,6 +5,9 @@
  * @file
  * @ingroup Extensions
  */
+
+use MediaWiki\MediaWikiServices;
+
 class LinkFeed extends MediaWiki\Feed\RSSFeed {
 
 	/**
@@ -55,12 +58,13 @@ class LinkFeed extends MediaWiki\Feed\RSSFeed {
 	 */
 	function outItem( $item ) {
 		$url = $item->getUrl();
+		$urlUtils = MediaWikiServices::getInstance()->getUrlUtils();
 ?>
 	<item>
 		<title><?php echo $item->getTitle() ?></title>
 		<description><![CDATA[<?php echo $item->getDescription() ?>]]></description>
-		<link><?php echo wfExpandUrl( $url, PROTO_CURRENT ) ?></link>
-		<guid isPermaLink="true"><?php echo wfExpandUrl( $url, PROTO_CURRENT ) ?></guid>
+		<link><?php echo $urlUtils->expand( $url, PROTO_CURRENT ) ?></link>
+		<guid isPermaLink="true"><?php echo $urlUtils->expand( $url, PROTO_CURRENT ) ?></guid>
 	</item>
 <?php
 	}
