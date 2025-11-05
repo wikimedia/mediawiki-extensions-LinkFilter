@@ -147,7 +147,7 @@ class SpecialLinkApprove extends SpecialPage {
 		$this->checkReadOnly();
 
 		// Set the page title
-		$out->setPageTitle( $this->msg( 'linkfilter-approve-title' ) );
+		$out->setPageTitle( $this->msg( 'linkfilter-approve-title' )->escaped() );
 
 		// Add CSS & JS
 		$out->addModuleStyles( 'ext.linkFilter.styles' );
