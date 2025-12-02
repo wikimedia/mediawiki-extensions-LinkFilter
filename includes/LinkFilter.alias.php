@@ -203,16 +203,25 @@ $specialPageAliases['vi'] = [
 	'LinkRedirect' => [ 'Đổi_hướng_liên_kết' ],
 ];
 
-/** Simplified Chinese (中文（简体）‎) */
-$specialPageAliases['zh-hans'] = [
-	'LinkApprove' => [ '链接批准' ],
-	'LinkEdit' => [ '链接编辑' ],
-	'LinksHome' => [ '链接首页' ],
-	'LinkRedirect' => [ '链接重定向' ],
-	'LinkSubmit' => [ '链接提交' ],
+/** Chinese (中文) */
+$specialPageAliases['zh'] = [
+	'LinkApprove' => [ 'LinkApprove' ],
+	'LinkEdit' => [ 'LinkEdit' ],
+	'LinksHome' => [ 'LinksHome' ],
+	'LinkRedirect' => [ 'LinkRedirect' ],
+	'LinkSubmit' => [ 'LinkSubmit' ],
 ];
 
-/** Traditional Chinese (中文（繁體）‎) */
+/** Simplified Chinese (中文（简体）) */
+$specialPageAliases['zh-hans'] = [
+	'LinkApprove' => [ '批准链接', '链接批准' ],
+	'LinkEdit' => [ '编辑链接', '链接编辑' ],
+	'LinksHome' => [ '首页链接', '链接首页' ],
+	'LinkRedirect' => [ '重定向链接', '链接重定向' ],
+	'LinkSubmit' => [ '提交链接', '链接提交' ],
+];
+
+/** Traditional Chinese (中文（繁體）) */
 $specialPageAliases['zh-hant'] = [
 	'LinkApprove' => [ '批准連結' ],
 	'LinkEdit' => [ '編輯連結' ],
