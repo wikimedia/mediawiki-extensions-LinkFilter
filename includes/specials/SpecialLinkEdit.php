@@ -200,7 +200,7 @@ class SpecialLinkEdit extends UnlistedSpecialPage {
 				<option value="">-</option>';
 		$linkTypes = Link::getLinkTypes();
 		foreach ( $linkTypes as $id => $type ) {
-			$output .= Xml::option( $type, $id, ( $link['type'] == $id ) );
+			$output .= Html::element( 'option', [ 'value' => $id, 'selected' => ( $link['type'] == $id ) ? 'selected' : null ], $type );
 		}
 		$output .= '</select>
 				<div class="link-submit-button">

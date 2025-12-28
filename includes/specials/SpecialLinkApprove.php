@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -297,7 +298,7 @@ class SpecialLinkApprove extends SpecialPage {
 		// "All" as ID #0.
 		$linkTypes = [ 0 => $this->msg( 'linkfilter-all' )->text() ] + Link::getLinkTypes();
 		foreach ( $linkTypes as $id => $linkType ) {
-			$output .= Xml::option( $linkType, $id, ( $id === $type ) );
+			$output .= Html::element( 'option', [ 'value' => $id, 'selected' => ( $id === $type ) ? 'selected' : null ], $linkType );
 		}
 		$output .= '</select>';
 		$output .= '<input type="submit" class="no-js-btn site-button" value="' . $this->msg( 'linkfilter-submit' )->escaped() . '" />';

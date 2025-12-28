@@ -280,7 +280,7 @@ class SpecialLinkSubmit extends SpecialPage {
 		$linkTypes = Link::getLinkTypes();
 		foreach ( $linkTypes as $id => $type ) {
 			// Preserve value in case if the form was submitted but there were errors
-			$output .= Xml::option( $type, $id, ( $id === $request->getInt( 'lf_type' ) ) );
+			$output .= Html::element( 'option', [ 'value' => $id, 'selected' => ( $id === $request->getInt( 'lf_type' ) ) ? 'selected' : null ], $type );
 		}
 		$output .= '</select>';
 		$output .= $this->getCAPTCHAForm();
