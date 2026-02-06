@@ -3,7 +3,6 @@
 use MediaWiki\Feed\FeedItem;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use Wikimedia\AtEase\AtEase;
 
 /**
  * Links' homepage -- a listing of user-submitted links.
@@ -214,11 +213,11 @@ class SpecialLinksHome extends SpecialPage {
 			}
 
 			$border_fix2 = '';
-			AtEase::suppressWarnings();
 			// @note approved_timestamp should be a TS in the TS_UNIX format but without
 			// the cast phan thinks it's *totally* not an integer...
 			$rawTimestamp = (int)$link['approved_timestamp'];
-			$date = date( 'l, F j, Y', $rawTimestamp );
+			// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
+			$date = @date( 'l, F j, Y', $rawTimestamp );
 			// @phan-suppress-next-line PhanUndeclaredVariable Valid complaint, but I'm not sure how to fix it...
 			if ( $date != $last_date ) {
 				$border_fix2 = ' border-top-fix';
@@ -228,8 +227,6 @@ class SpecialLinksHome extends SpecialPage {
 				$output .= $this->msg( 'linkfilter-home-date', $date, $weekdayName )->escaped();
 				$output .= '</div>';
 			}
-			// okay, so suppressing E_NOTICEs is kinda bad practise, but... -Jack, January 21, 2010
-			AtEase::restoreWarnings();
 			$last_date = $date;
 
 			$output .= "<div class=\"link-item-container{$border_fix2}\">

@@ -2,7 +2,6 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use Wikimedia\AtEase\AtEase;
 
 /**
  * Link class
@@ -102,9 +101,8 @@ class Link {
 	public function addLink( $title, $desc, $url, $type, User $user ) {
 		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
-		AtEase::suppressWarnings();
-		$date = date( 'Y-m-d H:i:s' );
-		AtEase::restoreWarnings();
+		// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
+		$date = @date( 'Y-m-d H:i:s' );
 
 		$dbw->insert(
 			'link',
@@ -273,9 +271,8 @@ class Link {
 		// Tie link record to wiki page
 		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
-		AtEase::suppressWarnings();
-		$date = date( 'Y-m-d H:i:s' );
-		AtEase::restoreWarnings();
+		// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
+		$date = @date( 'Y-m-d H:i:s' );
 
 		$dbw->update(
 			'link',
