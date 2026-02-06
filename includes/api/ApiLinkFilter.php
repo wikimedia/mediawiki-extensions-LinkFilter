@@ -1,7 +1,6 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
-use Wikimedia\AtEase\AtEase;
 
 /**
  * LinkFilter API module for approving and rejecting user-submitted links.
@@ -16,21 +15,8 @@ class ApiLinkFilter extends ApiBase {
 		// Get the request parameters
 		$params = $this->extractRequestParams();
 
-		AtEase::suppressWarnings();
 		$id = $params['id'];
 		$status = $params['status'];
-		AtEase::restoreWarnings();
-
-		// Make sure that we have the parameters we need and that their datatypes
-		// are even somewhat sane
-		if (
-			// @phan-suppress-next-line PhanImpossibleTypeComparison
-			!$id || $id === null || !is_numeric( $id ) ||
-			// @phan-suppress-next-line PhanImpossibleTypeComparison
-			!$status || $status === null || !is_numeric( $status )
-		) {
-			$this->dieWithError( [ 'apierror-missingparam' ], 'missingparam' );
-		}
 
 		// Check permissions
 		$user = $this->getUser();
