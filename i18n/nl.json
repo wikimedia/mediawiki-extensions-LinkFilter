@@ -89,7 +89,7 @@
 	"apihelp-linkedit-param-description": "Korte beschrijving van waar de koppeling over gaat",
 	"apihelp-linkedit-param-type": "Numeriek koppelingstype, zie <var>$wgLinkFilterTypes</var> voor de voor mensen leesbare koppelingstypenamen",
 	"apihelp-linkedit-param-url": "De daadwerkelijke koppeling, met protocol",
-	"apihelp-linkedit-example-1": "Stel de beschrijving van de koppeling met de naam “Test link” in op “Cute little animals to brighten up your day!”, de URL op https://cats.example.com/new-cat-photos-for-today/ en verander de koppelingscategorie in “Funny” (numerieke ID 4)",
+	"apihelp-linkedit-example-1": "Stel de beschrijving van de koppeling met de naam “Testkoppeling” in op “Cute little animals to brighten up your day!”, de URL op https://cats.example.com/new-cat-photos-for-today/ en verander de koppelingscategorie in “Funny” (numerieke ID 4)",
 	"apihelp-linksubmit-summary": "Stuur een koppeling naar de wachtrij om te worden bekeken en hopelijk goedgekeurd door een koppelingenbeheerder.",
 	"apihelp-linksubmit-param-title": "Koppelingstitel. Wordt gebruikt voor het maken van de “Link:”-pagina op de wiki nadat de koppeling is goedgekeurd door een koppelingenbeheerder",
 	"apihelp-linksubmit-param-description": "Korte beschrijving van waar de koppeling over gaat",
