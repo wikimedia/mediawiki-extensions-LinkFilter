@@ -8,6 +8,7 @@
 	"linkfilter-submit": "اماڻيو",
 	"linkfilter-url": "يوآرايل",
 	"linkfilter-home-title": "$1 ڳنڍڻا",
+	"linkfilter-next": "اڳيون",
 	"linkfilter-previous": "پويان",
 	"linkfilter-time-minutes": "{{PLURAL:$1|ھڪ منٽ|$1 منٽ}}"
 }
