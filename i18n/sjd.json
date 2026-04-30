@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Merrahtar"
+		]
+	},
+	"linkfilter-time-seconds": "{{PLURAL:$1|э̄ххт секунда|$1 секунда|$1 секундэдтӭ}}"
+}
