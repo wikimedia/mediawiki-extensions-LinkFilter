@@ -349,7 +349,7 @@ class SpecialLinksHome extends SpecialPage {
 			htmlspecialchars( $this->getPageTitle()->getFullURL(), ENT_QUOTES )
 		);
 
-		$feed->outHeader();
+		$feed->outputHeader( $this->getOutput() );
 
 		foreach ( $links as $link ) {
 			$item = new FeedItem(
@@ -360,7 +360,7 @@ class SpecialLinksHome extends SpecialPage {
 			$feed->outItem( $item );
 		}
 
-		$feed->outFooter();
+		$feed->outputFooter( $this->getOutput() );
 
 		return true;
 	}

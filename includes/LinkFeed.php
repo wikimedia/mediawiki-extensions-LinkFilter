@@ -28,8 +28,9 @@ class LinkFeed extends MediaWiki\Feed\RSSFeed {
 
 	/**
 	 * Output the header for this feed.
+	 * @param OutputPage $output
 	 */
-	function outHeader() {
+	function outputHeader( $output ): void {
 		global $wgServer, $wgScriptPath, $wgEmergencyContact;
 
 		$stuff = '';
@@ -39,7 +40,7 @@ class LinkFeed extends MediaWiki\Feed\RSSFeed {
 			$stuff = '<description>' . $message->escaped() . "</description>\n\t\t";
 		}
 
-		$this->outXmlHeader();
+		$this->outputXmlHeader( $output );
 ?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
 	<channel>
 		<title><?php echo wfMessage( 'linkfilter-feed-title' )->parse() ?></title>
