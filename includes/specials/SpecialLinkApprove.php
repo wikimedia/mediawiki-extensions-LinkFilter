@@ -11,11 +11,17 @@ use MediaWiki\MediaWikiServices;
  */
 class SpecialLinkApprove extends SpecialPage {
 
-	/**
-	 * Constructor
-	 */
 	public function __construct() {
-		parent::__construct( 'LinkApprove', 'linkadmin' );
+		if ( version_compare( MW_VERSION, '1.46', '>=' ) ) {
+			parent::__construct( 'LinkApprove' );
+		} else {
+			parent::__construct( 'LinkApprove', 'linkadmin' );
+		}
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'linkadmin';
 	}
 
 	/**
