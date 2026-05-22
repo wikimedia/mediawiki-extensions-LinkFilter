@@ -82,7 +82,7 @@
 	"group-linkadmin": "링크 관리자",
 	"group-linkadmin-member": "{{GENDER:$1|링크 관리자}}",
 	"grouppage-linkadmin": "{{ns:project}}:링크 관리자",
-	"action-linkadmin": "사용자가 제출한 링크를 관리할",
+	"action-linkadmin": "사용자가 제출한 링크 관리",
 	"right-linkadmin": "사용자가 제출한 링크 관리",
 	"group-linkadmin.css": "/* 이 CSS 설정은 링크 관리자에만 적용됩니다 */",
 	"group-linkadmin.js": "/* 이 자바스크립트 설정은 링크 관리자에만 적용됩니다 */",
