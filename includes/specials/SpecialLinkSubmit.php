@@ -7,7 +7,6 @@
  */
 
 use MediaWiki\Html\Html;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
 class SpecialLinkSubmit extends SpecialPage {
@@ -144,8 +143,7 @@ class SpecialLinkSubmit extends SpecialPage {
 						$captcha->triggersCaptcha( 'create' ) ||
 						$captcha->triggersCaptcha( 'addurl' )
 					) &&
-					// @phan-suppress-next-line PhanParamTooMany -- Pass config for compat with earlier versions
-					!$captcha->canSkipCaptcha( $user, MediaWikiServices::getInstance()->getMainConfig() ) &&
+					!$captcha->canSkipCaptcha( $user ) &&
 					!$captcha->passCaptchaFromRequest( $request, $user )
 				) {
 					$out->setPageTitle( $this->msg( 'error' )->text() );
@@ -323,8 +321,7 @@ class SpecialLinkSubmit extends SpecialPage {
 					$captcha->triggersCaptcha( 'create' ) ||
 					$captcha->triggersCaptcha( 'addurl' )
 				) &&
-				// @phan-suppress-next-line PhanParamTooMany -- Pass config for compat with earlier versions
-				!$captcha->canSkipCaptcha( $user, MediaWikiServices::getInstance()->getMainConfig() )
+				!$captcha->canSkipCaptcha( $user )
 			) {
 				$formInformation = $captcha->getFormInformation( 1, $out );
 				$formMetainfo = $formInformation;

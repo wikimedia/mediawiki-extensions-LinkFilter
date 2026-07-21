@@ -85,8 +85,7 @@ class ApiLinkSubmit extends ApiBase {
 					$captcha->triggersCaptcha( 'create' ) ||
 					$captcha->triggersCaptcha( 'addurl' )
 				) &&
-				// @phan-suppress-next-line PhanParamTooMany -- Pass config for compat with earlier versions
-				!$captcha->canSkipCaptcha( $user, MediaWiki\MediaWikiServices::getInstance()->getMainConfig() ) &&
+				!$captcha->canSkipCaptcha( $user ) &&
 				!$captcha->passCaptchaFromRequest( $request, $user )
 			) {
 				// Get info about the CAPTCHA and return it to the user so that they can try solving it
