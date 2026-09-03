@@ -4,7 +4,8 @@
 			"BeginaFelicysym",
 			"Chrumps",
 			"Sp5uhe",
-			"Woytecr"
+			"Woytecr",
+			"PanWor"
 		]
 	},
 	"linkapprove": "Zatwierdź łącza",
@@ -64,6 +65,9 @@
 	"linkfilter-edit-summary": "nowy link",
 	"linkfilter-no-results": "Nie znaleziono stron.",
 	"linkfilter-feed-title": "Łącza {{GRAMMAR:D.lp|{{SITENAME}}}}",
+	"logentry-linkfilter-approve": "$1 {{GENDER:$1|zatwierdził|zatwierdziła|zatwierdził(a)}} link zatytułowany „$3” z adresem URL „$5”, opisem „$6” i typem „$7”",
+	"logentry-linkfilter-edit": "$1 {{GENDER:$1|edytował|edytowała|edytował(a)}} link zatytułowany „$3”: adres URL to teraz „$5”, opis to teraz „$6”, a typ to teraz „$7”",
+	"logentry-linkfilter-reject": "$1 {{GENDER:$1|odrzucił|odrzuciła|odrzucił(a)}} link zatytułowany „$3” z adresem URL „$5”, opisem „$6” i typem „$7”",
 	"group-linkadmin": "Administratorzy łącz",
 	"group-linkadmin-member": "{{GENDER:$1|administrator łącz}}",
 	"grouppage-linkadmin": "{{ns:project}}:Administratorzy łącz",
