@@ -12,12 +12,7 @@ use MediaWiki\MediaWikiServices;
 class SpecialLinkApprove extends SpecialPage {
 
 	public function __construct() {
-		if ( version_compare( MW_VERSION, '1.46', '>=' ) ) {
-			parent::__construct( 'LinkApprove' );
-		} else {
-			// @phan-suppress-next-line PhanParamTooMany
-			parent::__construct( 'LinkApprove', 'linkadmin' );
-		}
+		parent::__construct( 'LinkApprove' );
 	}
 
 	/** @inheritDoc */
