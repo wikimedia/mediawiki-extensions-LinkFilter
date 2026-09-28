@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ar choler",
 			"Fohanno",
 			"Fulup",
 			"Huñvreüs",
@@ -40,7 +41,7 @@
 	"linkfilter-admin-reject": "Disteurel",
 	"linkfilter-admin-reject-success": "Nac'het eo bet al liamm",
 	"linkfilter-admin-accept-success": "Degemeret eo bet al liamm",
-	"linkfilter-in-the-news": "Er C'heleier",
+	"linkfilter-in-the-news": "Er c'heleier",
 	"linkfilter-about-submitter": "Diwar-benn ar c'haser",
 	"linkfilter-comments": "{{PLURAL:$1|$1 evezhiadenn}}",
 	"linkfilter-home-title": "$1 liamm",
