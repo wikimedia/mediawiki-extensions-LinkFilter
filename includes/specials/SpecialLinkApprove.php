@@ -15,6 +15,7 @@ class SpecialLinkApprove extends SpecialPage {
 		if ( version_compare( MW_VERSION, '1.46', '>=' ) ) {
 			parent::__construct( 'LinkApprove' );
 		} else {
+			// @phan-suppress-next-line PhanParamTooMany
 			parent::__construct( 'LinkApprove', 'linkadmin' );
 		}
 	}
